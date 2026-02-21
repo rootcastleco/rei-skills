@@ -22,7 +22,7 @@
 
 Our expertise spans **software development**, **PCB & hardware design**, **embedded systems**, **IoT & GPS telematics**, **data security**, **3D manufacturing**, **rapid prototyping**, and **e-commerce integrations**. This infrastructure serves industries from logistics and manufacturing to public services, security, fleet management, and critical monitoring operations.
 
-Under brands like **jTrack** and **NetFleet**, we support container security solutions (HSCTS), fleet telemetry devices, OBD-II product families, solar asset tracking systems, and mobile monitoring units. Through our technology partners in the **UK** and **US**, our platforms deliver cloud architectures, mobile applications, and modern API integrations.
+Fleet telemetry devices, OBD-II product families, solar asset tracking systems, and mobile monitoring units. Through our technology partners in the **UK** and **US**, our platforms deliver cloud architectures, mobile applications, and modern API integrations.
 
 > **🌍 5 International Partnerships | 150+ Global Projects**  
 > **🔗 Website:** [www.rootcastle.com](https://www.rootcastle.com)  
