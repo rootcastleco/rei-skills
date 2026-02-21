@@ -1,0 +1,65 @@
+name: 🏰 New Skill Submission
+description: Submit a new skill to the Rei Skills collection
+title: "[SKILL] "
+labels: ["new-skill", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🏰 Rei Skills — New Skill Submission
+        Thank you for contributing to the Rootcastle skill collection!
+
+  - type: input
+    id: skill-name
+    attributes:
+      label: Skill Name
+      description: A unique, kebab-case name for the skill
+      placeholder: "e.g., kubernetes-expert"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What does this skill do?
+      placeholder: "Describe the skill's purpose and when to use it..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Architecture
+        - Business
+        - Data & AI
+        - Development
+        - General
+        - Infrastructure
+        - Security
+        - Testing
+        - Workflow
+    validations:
+      required: true
+
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Risk Level
+      options:
+        - safe
+        - low
+        - medium
+        - high
+        - unknown
+    validations:
+      required: true
+
+  - type: textarea
+    id: skill-content
+    attributes:
+      label: SKILL.md Content
+      description: Paste the full SKILL.md content here (with frontmatter)
+      render: markdown

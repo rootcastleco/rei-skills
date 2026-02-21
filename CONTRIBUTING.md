@@ -1,252 +1,131 @@
-# 🤝 Contributing Guide - V4 Enterprise Edition
+# 🏰 Contributing to Rei Skills
 
-**Thank you for wanting to make this repo better!** This guide shows you exactly how to contribute, even if you're new to open source.
-With V4, we raised the bar for quality. Please read the **new Quality Standards** below carefully.
+**Welcome!** We're excited you want to contribute to the Rei Skills collection.
 
----
-
-## 🧐 The "Quality Bar" (V4 Standard)
-
-**Critical for new skills:** Every skill submitted must pass our **5-Point Quality Check** (see `docs/QUALITY_BAR.md` for details):
-
-1.  **Metadata**: Correct Frontmatter (`name`, `description`).
-    - The `name` MUST exactly match the folder name.
-    - The `description` MUST be concise (under 200 characters) and focus on WHEN to trigger the skill.
-2.  **Safety**: No harmful commands without "Risk" labels.
-3.  **Clarity**: Clear "When to use" section.
-4.  **Examples**: At least one copy-paste usage example.
-5.  **Actions**: Must define concrete steps, not just "thoughts".
+> **Maintained by:** [Rootcastle Engineering & Innovation](https://www.rootcastle.com) | Batuhan Ayrıbaş
 
 ---
 
-## Ways to Contribute
+## Quick Start
 
-You don't need to be an expert! Here are ways anyone can help:
-
-### 1. Improve Documentation (Easiest!)
-
-- Fix typos or grammar
-- Make explanations clearer
-- Add examples to existing skills
-- Translate documentation to other languages
-
-### 2. Report Issues
-
-- Found something confusing? Tell us!
-- Skill not working? Let us know!
-- Have suggestions? We want to hear them!
-
-### 3. Create New Skills
-
-- Share your expertise as a skill
-- Fill gaps in the current collection
-- Improve existing skills
-
-### 4. Test and Validate
-
-- Try skills and report what works/doesn't work
-- Test on different AI tools
-- Suggest improvements
+1. **Fork** the repository
+2. **Create** your skill directory in `skills/your-skill-name/`
+3. **Add** a `SKILL.md` file with proper frontmatter
+4. **Validate** with `npm run validate`
+5. **Submit** a Pull Request
 
 ---
 
-## Local development setup
+## SKILL.md Format
 
-To run validation, index generation, and README updates locally:
-
-1. **Node.js** (for catalog and installer): `npm ci`
-2. **Python 3** (for validate, index, readme scripts): install dependencies with
-   ```bash
-   pip install -r requirements.txt
-   ```
-   Then you can run `npm run chain` (validate → index → readme) and `npm run catalog`.
-
-**Validation:** The canonical validator is **Python** (`scripts/validate_skills.py`). Use `npm run validate` (or `npm run validate:strict` for CI-style checks). The JavaScript validator (`scripts/validate-skills.js`) is legacy/optional and uses a different schema; CI and PR checks rely on the Python validator only.
-
-**npm audit:** CI runs `npm audit --audit-level=high`. To fix issues locally: run `npm audit`, then `npm update` or `npm audit fix` as appropriate; for breaking changes, update dependencies manually and run tests.
-
----
-
-## How to Create a New Skill
-
-### Step-by-Step Guide
-
-#### Step 1: Choose Your Skill Topic
-
-Ask yourself: "What do I wish my AI assistant knew better?".
-Example: "I'm good at Docker, let me create a Docker skill".
-
-#### Step 2: Create the Folder Structure
-
-Skills live in the `skills/` directory. Use `kebab-case` for folder names.
-
-```bash
-# Navigate to skills
-cd skills/
-
-# Create your skill folder
-mkdir my-awesome-skill
-cd my-awesome-skill
-
-# Create the SKILL.md file
-touch SKILL.md
-```
-
-#### Step 3: Write Your SKILL.md
-
-Every skill needs this basic structure. **Copy this template:**
-
-```markdown
----
-name: my-awesome-skill
-description: "Brief one-line description of what this skill does"
----
-
-# Skill Title
-
-## Overview
-
-Explain what this skill does and when to use it.
-
-## When to Use This Skill
-
-- Use when [scenario 1]
-- Use when [scenario 2]
-
-## How It Works
-
-Detailed step-by-step instructions for the AI...
-
-## Examples
-
-### Example 1
-
-\`\`\`
-code example here
-\`\`\`
-
-## Best Practices
-
-- ✅ Do this
-- ❌ Don't do this
-```
-
-#### Step 4: Validate (CRITICAL V4 STEP)
-
-Use the canonical validator `scripts/validate_skills.py` via `npm run validate`. **We will not merge PRs that fail this check.**
-
-```bash
-npm run validate        # soft mode (warnings only)
-npm run validate:strict # strict mode (what CI runs)
-```
-
-This checks:
-
-- ✅ `SKILL.md` exists
-- ✅ Frontmatter is correct
-- ✅ Name matches folder name
-- ✅ Quality Bar checks passed
-
-#### Step 5: Submit Your Skill
-
-```bash
-git add skills/my-awesome-skill/
-git commit -m "feat: add my-awesome-skill"
-git push origin my-branch
-```
-
----
-
-## Skill Template (Copy & Paste)
-
-Save time! Copy this template:
+Every skill requires a `SKILL.md` file with YAML frontmatter:
 
 ```markdown
 ---
 name: your-skill-name
-description: "One sentence describing what this skill does and when to use it"
+description: "A clear, one-line description of what the skill does."
+risk: safe | low | medium | high | unknown
+source: rootcastle-rei
 ---
 
 # Your Skill Name
 
-## Overview
+## Purpose
+Explain what this skill does and when to use it.
 
-[2-3 sentences explaining what this skill does]
-
-## When to Use This Skill
-
-- Use when you need to [scenario 1]
-- Use when you want to [scenario 2]
-
-## Step-by-Step Guide
-
-### 1. [First Step Name]
-
-[Detailed instructions]
+## How It Works
+Step-by-step instructions...
 
 ## Examples
+Concrete usage examples...
 
-### Example 1: [Use Case Name]
+## When to Use
+When should an AI agent invoke this skill?
+```
 
-\`\`\`language
-// Example code here
-\`\`\`
+### Frontmatter Fields
 
-## Best Practices
+| Field         | Required | Description                                            |
+| :------------ | :------- | :----------------------------------------------------- |
+| `name`        | ✅       | Unique kebab-case identifier                           |
+| `description` | ✅       | One-line description (max 200 chars)                   |
+| `risk`        | ✅       | `safe`, `low`, `medium`, `high`, or `unknown`          |
+| `source`      | ✅       | `rootcastle-rei` for new contributions                 |
+| `category`    | Optional | E.g., `devops`, `security`, `frontend`                 |
+| `displayName` | Optional | Human-readable name (e.g., "Docker Expert")            |
 
-- ✅ **Do:** [Good practice]
-- ❌ **Don't:** [What to avoid]
+---
 
-## Troubleshooting
+## Quality Guidelines
 
-**Problem:** [Common Issue]
-**Solution:** [How to fix it]
+### ✅ Do
+
+- Write clear, actionable instructions
+- Include practical examples
+- Specify when the skill should (and shouldn't) be used
+- Follow OWASP guidelines for security-related skills
+- Add `⚠️ AUTHORIZED USE ONLY` to offensive/pentest skills
+- Keep content focused and under 500 lines
+
+### ❌ Don't
+
+- Include hardcoded API keys, tokens, or passwords
+- Add dangerous shell commands without warnings
+- Create duplicate skills (check existing ones first)
+- Use overly generic descriptions
+- Skip the frontmatter
+
+---
+
+## Validation
+
+Before submitting, run:
+
+```bash
+# Validate all skills
+npm run validate
+
+# Full build pipeline
+npm run build
+
+# Security audit
+npm run security-audit
+
+# Brand check (if adding new skills)
+npm run brand
 ```
 
 ---
 
-## Commit Message Guidelines
-
-Use these prefixes:
-
-- `feat:` - New skill or major feature
-- `docs:` - Documentation improvements
-- `fix:` - Bug fixes
-- `refactor:` - Code improvements without changing functionality
-- `test:` - Adding or updating tests
-- `chore:` - Maintenance tasks
-
-**Examples:**
+## Directory Structure
 
 ```
-feat: add kubernetes-deployment skill
-docs: improve getting started guide
-fix: correct typo in stripe-integration skill
+skills/
+└── your-skill-name/
+    ├── SKILL.md          # Required: Main skill file
+    ├── checklists.md     # Optional: Reference checklists
+    ├── scripts/          # Optional: Helper scripts
+    └── examples/         # Optional: Example files
 ```
 
 ---
 
-## Learning Resources
+## Pull Request Process
 
-### New to Git/GitHub?
-
-- [GitHub's Hello World Guide](https://guides.github.com/activities/hello-world/)
-- [Git Basics](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
-
-### New to Markdown?
-
-- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+1. Ensure your skill passes `npm run validate`
+2. One skill per PR (unless they're closely related)
+3. Include a brief description of what the skill does
+4. Maintainers will review within 48 hours
 
 ---
 
-## Code of Conduct
+## Reporting Issues
 
-- Be respectful and inclusive
-- Welcome newcomers
-- Focus on constructive feedback
-- **No harmful content**: See `docs/SECURITY_GUARDRAILS.md`.
+- **Bugs:** Use the [Bug Report](https://github.com/rootcastleco/rei-skills/issues/new?template=bug-report.yml) template
+- **New Ideas:** Use the [Feature Request](https://github.com/rootcastleco/rei-skills/issues/new?template=feature-request.yml) template
+- **Security:** Email `admin@rootcastle.com` (see [SECURITY.md](SECURITY.md))
 
 ---
 
-**Thank you for making this project better for everyone!**
-Every contribution, no matter how small, makes a difference. Whether you fix a typo, improve a sentence, or create a whole new skill - you're helping thousands of developers!
+> 🏰 **Rei Skills** — Curated by [Rootcastle Engineering & Innovation](https://www.rootcastle.com) | Batuhan Ayrıbaş  
+> Engineering Beyond Boundaries | admin@rootcastle.com
