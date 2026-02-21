@@ -12,7 +12,7 @@
 [![Codex CLI](https://img.shields.io/badge/Codex%20CLI-OpenAI-green)](https://github.com/openai/codex)
 [![Cursor](https://img.shields.io/badge/Cursor-AI%20IDE-orange)](https://cursor.sh)
 [![Copilot](https://img.shields.io/badge/GitHub%20Copilot-VSCode-lightblue)](https://github.com/features/copilot)
-[![Antigravity](https://img.shields.io/badge/Antigravity-DeepMind-red)](https://github.com/rootcastle/rei-skills)
+[![Antigravity](https://img.shields.io/badge/Antigravity-DeepMind-red)](https://github.com/rootcastleco/rei-skills)
 
 ---
 
@@ -147,19 +147,19 @@ Run `npx rei-skills --help` for all options.
 
 ```bash
 # Global (matches npx default)
-git clone https://github.com/rootcastle/rei-skills.git ~/.gemini/rei/skills
+git clone https://github.com/rootcastleco/rei-skills.git ~/.gemini/rei/skills
 
 # Workspace-specific
-git clone https://github.com/rootcastle/rei-skills.git .agent/skills
+git clone https://github.com/rootcastleco/rei-skills.git .agent/skills
 
 # Claude Code
-git clone https://github.com/rootcastle/rei-skills.git .claude/skills
+git clone https://github.com/rootcastleco/rei-skills.git .claude/skills
 
 # Gemini CLI
-git clone https://github.com/rootcastle/rei-skills.git .gemini/skills
+git clone https://github.com/rootcastleco/rei-skills.git .gemini/skills
 
 # Cursor
-git clone https://github.com/rootcastle/rei-skills.git .cursor/skills
+git clone https://github.com/rootcastleco/rei-skills.git .cursor/skills
 ```
 
 ---
@@ -177,7 +177,7 @@ npx github:rootcastle/rei-skills
 ### Windows clone issues (symlinks)
 
 ```bash
-git clone -c core.symlinks=true https://github.com/rootcastle/rei-skills.git .agent/skills
+git clone -c core.symlinks=true https://github.com/rootcastleco/rei-skills.git .agent/skills
 ```
 
 ### Skills installed but not detected

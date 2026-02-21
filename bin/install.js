@@ -10,7 +10,7 @@ const os = require("os");
 // Curated by Batuhan Ayrıbaş | www.rootcastle.com
 // ============================================================================
 
-const REPO = "https://github.com/rootcastle/rei-skills.git";
+const REPO = "https://github.com/rootcastleco/rei-skills.git";
 const HOME = process.env.HOME || process.env.USERPROFILE || "";
 const BRAND = "rei";
 

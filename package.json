@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rootcastle/rei-skills.git"
+    "url": "git+https://github.com/rootcastleco/rei-skills.git"
   },
   "bin": {
     "rei-skills": "bin/install.js"
