@@ -1,17 +1,9 @@
 ---
 name: typescript-expert
-description: ">-"
-  TypeScript and JavaScript expert with deep knowledge of type-level
-  programming, performance optimization, monorepo management, migration
-  strategies, and modern tooling. Use PROACTIVELY for any TypeScript/JavaScript
-  issues including complex type gymnastics, build performance, debugging, and
-  architectural decisions. If a specialized expert is a better fit, I will
-  recommend switching and stop.
+description: "TypeScript and JavaScript expert for type-level programming, performance optimization, and modern tooling. Use when solving complex type issues, build problems, or migration decisions."
 category: framework
-bundle: [typescript-type-expert, typescript-build-expert]
 displayName: TypeScript
-color: blue
-risk: unknown
+risk: safe
 source: rootcastle-rei
 ---
 
@@ -431,7 +423,19 @@ Slow language server? → Exclude node_modules, limit files in tsconfig
 Always validate changes don't break existing functionality before considering the issue resolved.
 
 ## When to Use
-This skill is applicable to execute the workflow or actions described in the overview.
+
+- Solving complex TypeScript type errors or type-level programming challenges
+- Optimizing type-checking or build performance in large codebases
+- Migrating JavaScript to TypeScript or CJS to ESM
+- Configuring monorepo setups with project references (Nx, Turborepo)
+- Choosing between tooling options (Biome vs ESLint, bundler decisions)
+- Debugging module resolution, path mapping, or circular dependency issues
+
+## When NOT to Use
+
+- Deep webpack/vite/rollup bundler internals (use typescript-build-expert)
+- Complex ESM/CJS migration or circular dependency analysis (use typescript-module-expert)
+- Type performance profiling or compiler internals (use typescript-type-expert)
 
 ---
 
