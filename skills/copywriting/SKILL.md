@@ -1,11 +1,7 @@
 ---
 name: copywriting
-description: ">"
-  Use this skill when writing, rewriting, or improving marketing copy
-  for any page (homepage, landing page, pricing, feature, product, or about page).
-  This skill produces clear, compelling, and testable copy while enforcing
-  alignment, honesty, and conversion best practices.
-risk: unknown
+description: "Write, rewrite, or improve marketing copy for any page type. Use when crafting homepage, landing page, pricing, or feature page copy with conversion best practices."
+risk: safe
 source: rootcastle-rei
 ---
 
@@ -227,7 +223,19 @@ If the copy feels clever but unclear,
 rewrite it until it feels obvious.
 
 ## When to Use
-This skill is applicable to execute the workflow or actions described in the overview.
+
+- Writing or rewriting homepage, landing page, pricing, feature, product, or about page copy
+- Improving conversion rates through clearer messaging and stronger CTAs
+- Reviewing existing copy for clarity, honesty, and alignment with business goals
+- Creating A/B test variants for headlines and calls-to-action
+- Translating product features into customer-facing benefits
+
+## When NOT to Use
+
+- Blog posts or long-form content (use a content writing skill instead)
+- Email sequences or drip campaigns (use email-marketing)
+- Social media copy (use social-media-marketing)
+- Technical documentation or API docs
 
 ---
 
