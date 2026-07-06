@@ -1,13 +1,7 @@
 ---
 name: seo-audit
-description: ">"
-  Diagnose and audit SEO issues affecting crawlability, indexation, rankings,
-  and organic performance. Use when the user asks for an SEO audit, technical SEO
-  review, ranking diagnosis, on-page SEO review, meta tag audit, or SEO health check.
-  This skill identifies issues and prioritizes actions but does not execute changes.
-  For large-scale page creation, use programmatic-seo. For structured data, use
-  schema-markup.
-risk: unknown
+description: "Diagnose and audit SEO issues affecting crawlability, indexation, and rankings. Use when performing technical SEO reviews, meta tag audits, or organic performance health checks."
+risk: safe
 source: rootcastle-rei
 ---
 
@@ -347,22 +341,6 @@ Include this **after the Executive Summary**:
 
 ---
 
-## Change Tracking (Optional but Recommended)
-
-If a previous audit exists:
-
-* Include **score delta** (+/−)
-* Attribute change to specific fixes
-* Avoid celebrating score increases without validating outcomes
-
----
-
-## Explicit Limitations (Always State)
-
-* Score reflects **SEO readiness**, not guaranteed rankings
-* External factors (competition, algorithm updates) are not scored
-* Authority score is directional, not exhaustive
-
 ### Findings Classification (Required · Scoring-Aligned)
 
 For **every identified issue**, provide the following fields.
@@ -489,7 +467,20 @@ Use these skills **only after the audit is complete** and findings are accepted.
 
 
 ## When to Use
-This skill is applicable to execute the workflow or actions described in the overview.
+
+- Performing a full-site or section-specific SEO audit
+- Diagnosing crawlability, indexation, or ranking drops
+- Reviewing technical SEO foundations (Core Web Vitals, mobile-friendliness, HTTPS)
+- Auditing on-page elements (title tags, meta descriptions, heading structure)
+- Evaluating content quality and E-E-A-T signals
+- Creating a prioritized SEO action plan with health scoring
+
+## When NOT to Use
+
+- Implementing SEO fixes (this skill diagnoses only — use specific implementation skills)
+- Large-scale programmatic page creation (use programmatic-seo)
+- Adding structured data / schema markup (use schema-markup)
+- Conversion rate optimization after ranking is established (use page-cro)
 
 ---
 
