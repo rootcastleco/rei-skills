@@ -153,21 +153,21 @@
     "source": "rootcastle-rei"
   },
   {
-    "id": "ai-engineer",
-    "path": "skills/ai-engineer",
-    "category": "uncategorized",
-    "name": "Ai Engineer",
-    "description": "You are an AI engineer specializing in production-grade LLM applications, generative AI systems, and intelligent agent architectures.",
-    "risk": "unknown",
-    "source": "unknown"
-  },
-  {
     "id": "ai-agents-architect",
     "path": "skills/ai-agents-architect",
     "category": "uncategorized",
     "name": "ai-agents-architect",
     "description": "Expert in designing and building autonomous AI agents. Masters tool use, memory systems, planning strategies, and multi-agent orchestration. Use when: build agent, AI agent, autonomous agent, tool ...",
     "risk": "unknown",
+    "source": "rootcastle-rei"
+  },
+  {
+    "id": "ai-engineer",
+    "path": "skills/ai-engineer",
+    "category": "uncategorized",
+    "name": "ai-engineer",
+    "description": "Build production-ready LLM applications, RAG systems, and intelligent agents. Use when implementing AI features, chatbots, vector search, or agent orchestration.",
+    "risk": "safe",
     "source": "rootcastle-rei"
   },
   {
@@ -2631,10 +2631,10 @@
     "id": "copywriting",
     "path": "skills/copywriting",
     "category": "uncategorized",
-    "name": "Copywriting",
-    "description": "Produce **clear, credible, and action-oriented marketing copy** that aligns with user intent and business goals.",
-    "risk": "unknown",
-    "source": "unknown"
+    "name": "copywriting",
+    "description": "Write, rewrite, or improve marketing copy for any page type. Use when crafting homepage, landing page, pricing, or feature page copy with conversion best practices.",
+    "risk": "safe",
+    "source": "rootcastle-rei"
   },
   {
     "id": "core-components",
@@ -6462,15 +6462,6 @@
     "source": "rootcastle-rei"
   },
   {
-    "id": "seo-audit",
-    "path": "skills/seo-audit",
-    "category": "uncategorized",
-    "name": "Seo Audit",
-    "description": "You are an **SEO diagnostic specialist**. Your role is to **identify, explain, and prioritize SEO issues** that affect organic visibility\u2014**not to implement fixes unless explicitly requested**.",
-    "risk": "unknown",
-    "source": "unknown"
-  },
-  {
     "id": "seo-authority-builder",
     "path": "skills/seo-authority-builder",
     "category": "uncategorized",
@@ -6568,6 +6559,15 @@
     "description": "- Working on seo structure architect tasks or workflows - Needing guidance, best practices, or checklists for seo structure architect",
     "risk": "unknown",
     "source": "unknown"
+  },
+  {
+    "id": "seo-audit",
+    "path": "skills/seo-audit",
+    "category": "uncategorized",
+    "name": "seo-audit",
+    "description": "Diagnose and audit SEO issues affecting crawlability, indexation, and rankings. Use when performing technical SEO reviews, meta tag audits, or organic performance health checks.",
+    "risk": "safe",
+    "source": "rootcastle-rei"
   },
   {
     "id": "server-management",
@@ -7353,15 +7353,6 @@
     "source": "rootcastle-rei"
   },
   {
-    "id": "typescript-expert",
-    "path": "skills/typescript-expert",
-    "category": "uncategorized",
-    "name": "Typescript Expert",
-    "description": "You are an advanced TypeScript expert with deep, practical knowledge of type-level programming, performance optimization, and real-world problem solving based on current best practices.",
-    "risk": "unknown",
-    "source": "unknown"
-  },
-  {
     "id": "typescript-pro",
     "path": "skills/typescript-pro",
     "category": "uncategorized",
@@ -7377,6 +7368,15 @@
     "name": "typescript-advanced-types",
     "description": "Master TypeScript's advanced type system including generics, conditional types, mapped types, template literals, and utility types for building type-safe applications. Use when implementing complex...",
     "risk": "unknown",
+    "source": "rootcastle-rei"
+  },
+  {
+    "id": "typescript-expert",
+    "path": "skills/typescript-expert",
+    "category": "uncategorized",
+    "name": "typescript-expert",
+    "description": "TypeScript and JavaScript expert for type-level programming, performance optimization, and modern tooling. Use when solving complex type issues, build problems, or migration decisions.",
+    "risk": "safe",
     "source": "rootcastle-rei"
   },
   {
@@ -7816,8 +7816,8 @@
     "path": "skills/workflow-automation",
     "category": "uncategorized",
     "name": "workflow-automation",
-    "description": "Workflow automation is the infrastructure that makes AI agents reliable. Without durable execution, a network hiccup during a 10-step payment flow means lost money and angry customers. With it, wor...",
-    "risk": "unknown",
+    "description": "Design and implement durable workflow automation with Temporal, Inngest, and n8n. Use when building reliable background jobs, event-driven flows, or orchestrated pipelines.",
+    "risk": "safe",
     "source": "rootcastle-rei"
   },
   {

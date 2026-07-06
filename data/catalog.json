@@ -413,7 +413,7 @@
     {
       "id": "ai-engineer",
       "name": "ai-engineer",
-      "description": "Build production-ready LLM applications, advanced RAG systems, and",
+      "description": "Build production-ready LLM applications, RAG systems, and intelligent agents. Use when implementing AI features, chatbots, vector search, or agent orchestration.",
       "category": "data-ai",
       "tags": [
         "ai"
@@ -423,7 +423,14 @@
         "engineer",
         "llm",
         "applications",
-        "rag"
+        "rag",
+        "intelligent",
+        "agents",
+        "implementing",
+        "features",
+        "chatbots",
+        "vector",
+        "search"
       ],
       "path": "skills/ai-engineer/SKILL.md"
     },
@@ -6600,13 +6607,24 @@
     {
       "id": "copywriting",
       "name": "copywriting",
-      "description": ">",
-      "category": "general",
+      "description": "Write, rewrite, or improve marketing copy for any page type. Use when crafting homepage, landing page, pricing, or feature page copy with conversion best practices.",
+      "category": "business",
       "tags": [
         "copywriting"
       ],
       "triggers": [
-        "copywriting"
+        "copywriting",
+        "write",
+        "rewrite",
+        "improve",
+        "marketing",
+        "copy",
+        "any",
+        "page",
+        "type",
+        "crafting",
+        "homepage",
+        "landing"
       ],
       "path": "skills/copywriting/SKILL.md"
     },
@@ -16547,7 +16565,7 @@
     {
       "id": "seo-audit",
       "name": "seo-audit",
-      "description": ">",
+      "description": "Diagnose and audit SEO issues affecting crawlability, indexation, and rankings. Use when performing technical SEO reviews, meta tag audits, or organic performance health checks.",
       "category": "business",
       "tags": [
         "seo",
@@ -16555,7 +16573,17 @@
       ],
       "triggers": [
         "seo",
-        "audit"
+        "audit",
+        "diagnose",
+        "issues",
+        "affecting",
+        "crawlability",
+        "indexation",
+        "rankings",
+        "performing",
+        "technical",
+        "reviews",
+        "meta"
       ],
       "path": "skills/seo-audit/SKILL.md"
     },
@@ -18828,13 +18856,24 @@
     {
       "id": "typescript-expert",
       "name": "typescript-expert",
-      "description": ">-",
+      "description": "TypeScript and JavaScript expert for type-level programming, performance optimization, and modern tooling. Use when solving complex type issues, build problems, or migration decisions.",
       "category": "development",
       "tags": [
         "typescript"
       ],
       "triggers": [
-        "typescript"
+        "typescript",
+        "javascript",
+        "type",
+        "level",
+        "programming",
+        "performance",
+        "optimization",
+        "tooling",
+        "solving",
+        "complex",
+        "issues",
+        "problems"
       ],
       "path": "skills/typescript-expert/SKILL.md"
     },
@@ -19955,22 +19994,22 @@
     {
       "id": "workflow-automation",
       "name": "workflow-automation",
-      "description": "Workflow automation is the infrastructure that makes AI agents reliable. Without durable execution, a network hiccup during a 10-step payment flow means lost money and angry customers. With it, wor...",
-      "category": "infrastructure",
+      "description": "Design and implement durable workflow automation with Temporal, Inngest, and n8n. Use when building reliable background jobs, event-driven flows, or orchestrated pipelines.",
+      "category": "architecture",
       "tags": [],
       "triggers": [
         "automation",
-        "infrastructure",
-        "makes",
-        "ai",
-        "agents",
-        "reliable",
-        "without",
         "durable",
-        "execution",
-        "network",
-        "hiccup",
-        "during"
+        "temporal",
+        "inngest",
+        "n8n",
+        "building",
+        "reliable",
+        "background",
+        "jobs",
+        "event",
+        "driven",
+        "flows"
       ],
       "path": "skills/workflow-automation/SKILL.md"
     },

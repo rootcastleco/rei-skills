@@ -4,7 +4,7 @@ Generated at: 2026-02-08T00:00:00.000Z
 
 Total skills: 883
 
-## architecture (58)
+## architecture (59)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -63,11 +63,12 @@ Total skills: 883
 | `tool-design` | Build tools that agents can use effectively, including architectural reduction patterns |  | agents, effectively, including, architectural, reduction |
 | `unreal-engine-cpp-pro` | Expert guide for Unreal Engine 5.x C++ development, covering UObject hygiene, performance patterns, and best practices. | unreal, engine, cpp | unreal, engine, cpp, pro, development, covering, uobject, hygiene, performance |
 | `wcag-audit-patterns` | Conduct WCAG 2.2 accessibility audits with automated testing, manual verification, and remediation guidance. Use when auditing websites for accessibility, fi... | wcag, audit | wcag, audit, conduct, accessibility, audits, automated, testing, manual, verification, remediation, guidance, auditing |
+| `workflow-automation` | Design and implement durable workflow automation with Temporal, Inngest, and n8n. Use when building reliable background jobs, event-driven flows, or orchestr... |  | automation, durable, temporal, inngest, n8n, building, reliable, background, jobs, event, driven, flows |
 | `workflow-orchestration-patterns` | Design durable workflows with Temporal for distributed systems. Covers workflow vs activity separation, saga patterns, state management, and determinism cons... |  | orchestration, durable, temporal, distributed, covers, vs, activity, separation, saga, state, determinism, constraints |
 | `workflow-patterns` | Use this skill when implementing tasks according to Conductor's TDD |  | skill, implementing, tasks, according, conductor, tdd |
 | `zapier-make-patterns` | No-code automation democratizes workflow building. Zapier and Make (formerly Integromat) let non-developers automate business processes without writing code.... | zapier, make | zapier, make, no, code, automation, democratizes, building, formerly, integromat, let, non, developers |
 
-## business (39)
+## business (40)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -75,6 +76,7 @@ Total skills: 883
 | `conductor-setup` | Initialize project with Conductor artifacts (product definition, | conductor, setup | conductor, setup, initialize, artifacts, product, definition |
 | `content-creator` | Create SEO-optimized marketing content with consistent brand voice. Includes brand voice analyzer, SEO optimizer, content frameworks, and social media templa... | content, creator | content, creator, seo, optimized, marketing, consistent, brand, voice, includes, analyzer, optimizer, frameworks |
 | `copy-editing` | When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,'... | copy, editing | copy, editing, user, wants, edit, review, improve, existing, marketing, mentions, my, feedback |
+| `copywriting` | Write, rewrite, or improve marketing copy for any page type. Use when crafting homepage, landing page, pricing, or feature page copy with conversion best pra... | copywriting | copywriting, write, rewrite, improve, marketing, copy, any, page, type, crafting, homepage, landing |
 | `deep-research` | Execute autonomous multi-step research using Google Gemini Deep Research Agent. Use for: market analysis, competitive landscaping, literature reviews, techni... | deep, research | deep, research, execute, autonomous, multi, step, google, gemini, agent, market, analysis, competitive |
 | `defi-protocol-templates` | Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending systems. Use when building decentralized finance applicat... | defi, protocol | defi, protocol, protocols, staking, amms, governance, lending, building, decentralized, finance, applications, smart |
 | `email-systems` | Email has the highest ROI of any marketing channel. $36 for every $1 spent. Yet most startups treat it as an afterthought - bulk blasts, no personalization, ... | email | email, highest, roi, any, marketing, channel, 36, every, spent, yet, most, startups |
@@ -91,7 +93,7 @@ Total skills: 883
 | `sales-automator` | Draft cold emails, follow-ups, and proposal templates. Creates | sales, automator | sales, automator, draft, cold, emails, follow, ups, proposal, creates |
 | `screenshots` | Generate marketing screenshots of your app using Playwright. Use when the user wants to create screenshots for Product Hunt, social media, landing pages, or ... | screenshots | screenshots, generate, marketing, app, playwright, user, wants, product, hunt, social, media, landing |
 | `scroll-experience` | Expert in building immersive scroll-driven experiences - parallax storytelling, scroll animations, interactive narratives, and cinematic web experiences. Lik... | scroll, experience | scroll, experience, building, immersive, driven, experiences, parallax, storytelling, animations, interactive, narratives, cinematic |
-| `seo-audit` | > | seo, audit | seo, audit |
+| `seo-audit` | Diagnose and audit SEO issues affecting crawlability, indexation, and rankings. Use when performing technical SEO reviews, meta tag audits, or organic perfor... | seo, audit | seo, audit, diagnose, issues, affecting, crawlability, indexation, rankings, performing, technical, reviews, meta |
 | `seo-authority-builder` | Analyzes content for E-E-A-T signals and suggests improvements to | seo, authority, builder | seo, authority, builder, analyzes, content, signals, suggests, improvements |
 | `seo-cannibalization-detector` | Analyzes multiple provided pages to identify keyword overlap and | seo, cannibalization, detector | seo, cannibalization, detector, analyzes, multiple, provided, pages, identify, keyword, overlap |
 | `seo-content-auditor` | Analyzes provided content for quality, E-E-A-T signals, and SEO | seo, content, auditor | seo, content, auditor, analyzes, provided, quality, signals |
@@ -120,7 +122,7 @@ Total skills: 883
 | `agent-tool-builder` | Tools are how AI agents interact with the world. A well-designed tool is the difference between an agent that works and one that hallucinates, fails silently... | agent, builder | agent, builder, how, ai, agents, interact, world, well, designed, difference, between, works |
 | `agents-v2-py` | Build container-based Foundry Agents with Azure AI Projects SDK (ImageBasedHostedAgentDefinition). Use when creating hosted agents with custom container imag... | agents, v2, py | agents, v2, py, container, foundry, azure, ai, sdk, imagebasedhostedagentdefinition, creating, hosted, custom |
 | `ai-agents-architect` | Expert in designing and building autonomous AI agents. Masters tool use, memory systems, planning strategies, and multi-agent orchestration. Use when: build ... | ai, agents | ai, agents, architect, designing, building, autonomous, masters, memory, planning, multi, agent, orchestration |
-| `ai-engineer` | Build production-ready LLM applications, advanced RAG systems, and | ai | ai, engineer, llm, applications, rag |
+| `ai-engineer` | Build production-ready LLM applications, RAG systems, and intelligent agents. Use when implementing AI features, chatbots, vector search, or agent orchestrat... | ai | ai, engineer, llm, applications, rag, intelligent, agents, implementing, features, chatbots, vector, search |
 | `ai-product` | Every product will be AI-powered. The question is whether you'll build it right or ship a demo that falls apart in production.  This skill covers LLM integra... | ai, product | ai, product, every, powered, question, whether, ll, right, ship, demo, falls, apart |
 | `ai-wrapper-product` | Expert in building products that wrap AI APIs (OpenAI, Anthropic, etc.) into focused tools people will pay for. Not just 'ChatGPT but different' - products t... | ai, wrapper, product | ai, wrapper, product, building, products, wrap, apis, openai, anthropic, etc, people, pay |
 | `analytics-tracking` | > | analytics, tracking | analytics, tracking |
@@ -398,7 +400,7 @@ Total skills: 883
 | `temporal-python-testing` | Test Temporal workflows with pytest, time-skipping, and mocking strategies. Covers unit testing, integration testing, replay testing, and local development s... | temporal, python | temporal, python, testing, test, pytest, time, skipping, mocking, covers, unit, integration, replay |
 | `twilio-communications` | Build communication features with Twilio: SMS messaging, voice calls, WhatsApp Business API, and user verification (2FA). Covers the full spectrum from simpl... | twilio, communications | twilio, communications, communication, features, sms, messaging, voice, calls, whatsapp, business, api, user |
 | `typescript-advanced-types` | Master TypeScript's advanced type system including generics, conditional types, mapped types, template literals, and utility types for building type-safe app... | typescript, advanced, types | typescript, advanced, types, type, including, generics, conditional, mapped, literals, utility, building, safe |
-| `typescript-expert` | >- | typescript | typescript |
+| `typescript-expert` | TypeScript and JavaScript expert for type-level programming, performance optimization, and modern tooling. Use when solving complex type issues, build proble... | typescript | typescript, javascript, type, level, programming, performance, optimization, tooling, solving, complex, issues, problems |
 | `typescript-pro` | Master TypeScript with advanced types, generics, and strict type | typescript | typescript, pro, types, generics, strict, type |
 | `ui-ux-pro-max` | UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 9 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwi... | ui, ux, max | ui, ux, max, pro, intelligence, 50, styles, 21, palettes, font, pairings, 20 |
 | `uv-package-manager` | Master the uv package manager for fast Python dependency management, virtual environments, and modern Python project workflows. Use when setting up Python pr... | uv, package, manager | uv, package, manager, fast, python, dependency, virtual, environments, setting, up, managing, dependencies |
@@ -406,7 +408,7 @@ Total skills: 883
 | `webapp-testing` | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing... | webapp | webapp, testing, toolkit, interacting, local, web, applications, playwright, supports, verifying, frontend, functionality |
 | `zustand-store-ts` | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creati... | zustand, store, ts | zustand, store, ts, stores, typescript, subscribewithselector, middleware, proper, state, action, separation, building |
 
-## general (216)
+## general (215)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -482,7 +484,6 @@ Total skills: 883
 | `context-management-context-restore` | Use when working with context management context restore | restore | restore, context, working |
 | `context-management-context-save` | Use when working with context management context save | save | save, context, working |
 | `context-optimization` | Apply compaction, masking, and caching strategies | optimization | optimization, context, apply, compaction, masking, caching |
-| `copywriting` | > | copywriting | copywriting |
 | `cpp-pro` | Write idiomatic C++ code with modern features, RAII, smart | cpp | cpp, pro, write, idiomatic, code, features, raii, smart |
 | `create-pr` | Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or preparing changes for review. Follows Sentry's code revi... | create, pr | create, pr, pull, requests, following, sentry, conventions, opening, prs, writing, descriptions, preparing |
 | `crypto-bd-agent` | > | crypto, business-development, token-scanning, x402, erc-8004, autonomous-agent, solana, ethereum, wallet-forensics | crypto, business-development, token-scanning, x402, erc-8004, autonomous-agent, solana, ethereum, wallet-forensics, bd, agent |
@@ -627,7 +628,7 @@ Total skills: 883
 | `x-article-publisher-skill` | Publish articles to X/Twitter | x, article, publisher, skill | x, article, publisher, skill, publish, articles, twitter |
 | `youtube-summarizer` | Extract transcripts from YouTube videos and generate comprehensive, detailed summaries using intelligent analysis frameworks | video, summarization, transcription, youtube, content-analysis | video, summarization, transcription, youtube, content-analysis, summarizer, extract, transcripts, videos, generate, detailed, summaries |
 
-## infrastructure (85)
+## infrastructure (84)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -715,7 +716,6 @@ Total skills: 883
 | `vercel-deploy-claimable` | Deploy applications and websites to Vercel. Use this skill when the user requests deployment actions such as 'Deploy my app', 'Deploy this to production', 'C... | vercel, deploy, claimable | vercel, deploy, claimable, applications, websites, skill, user, requests, deployment, actions, such, my |
 | `vercel-deployment` | Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production. | vercel, deployment | vercel, deployment, knowledge, deploying, next, js, deploy, hosting |
 | `wireshark-analysis` | This skill should be used when the user asks to "analyze network traffic with Wireshark", "capture packets for troubleshooting", "filter PCAP files", "follow... | wireshark | wireshark, analysis, skill, should, used, user, asks, analyze, network, traffic, capture, packets |
-| `workflow-automation` | Workflow automation is the infrastructure that makes AI agents reliable. Without durable execution, a network hiccup during a 10-step payment flow means lost... |  | automation, infrastructure, makes, ai, agents, reliable, without, durable, execution, network, hiccup, during |
 
 ## security (88)
 
