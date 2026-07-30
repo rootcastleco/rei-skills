@@ -9,7 +9,7 @@
 [![Cursor](https://img.shields.io/badge/Cursor-AI%20IDE-orange)](https://cursor.sh)
 [![Copilot](https://img.shields.io/badge/GitHub%20Copilot-VSCode-lightblue)](https://github.com/features/copilot)
 [![OpenCode](https://img.shields.io/badge/OpenCode-CLI-gray)](https://github.com/opencode-ai/opencode)
-[![Antigravity](https://img.shields.io/badge/Antigravity-DeepMind-red)](https://github.com/sickn33/antigravity-awesome-skills)
+[![Antigravity](https://img.shields.io/badge/Antigravity-DeepMind-red)](https://github.com/rootcastleco/rei-skills)
 
 **Antigravity Awesome Skills** là một thư viện được tuyển chọn và kiểm chứng kỹ lưỡng với **560 kỹ năng hiệu suất cao** được thiết kế để hoạt động mượt mà trên tất cả các trợ lý lập trình AI lớn:
 
@@ -68,16 +68,16 @@ Chúng tôi đã chuyển danh sách đầy đủ các kỹ năng sang một dan
 
 ```bash
 # Cài đặt phổ thông (hoạt động với hầu hết các công cụ)
-git clone https://github.com/sickn33/antigravity-awesome-skills.git .agent/skills
+git clone https://github.com/rootcastleco/rei-skills.git .agent/skills
 
 # Dành riêng cho Claude Code
-git clone https://github.com/sickn33/antigravity-awesome-skills.git .claude/skills
+git clone https://github.com/rootcastleco/rei-skills.git .claude/skills
 
 # Dành riêng cho Gemini CLI
-git clone https://github.com/sickn33/antigravity-awesome-skills.git .gemini/skills
+git clone https://github.com/rootcastleco/rei-skills.git .gemini/skills
 
 # Dành riêng cho Cursor
-git clone https://github.com/sickn33/antigravity-awesome-skills.git .cursor/skills
+git clone https://github.com/rootcastleco/rei-skills.git .cursor/skills
 ```
 
 ---
@@ -187,4 +187,4 @@ Chúng tôi chính thức cảm ơn những người đóng góp sau đây đã 
 
 ## Lịch sử Star
 
-[![Star History Chart](https://api.star-history.com/svg?repos=sickn33/antigravity-awesome-skills&type=date&legend=top-left)](https://www.star-history.com/#sickn33/antigravity-awesome-skills&type=date&legend=top-left)
+[![Star History Chart](https://api.star-history.com/svg?repos=rootcastleco/rei-skills&type=date&legend=top-left)](https://www.star-history.com/#rootcastleco/rei-skills&type=date&legend=top-left)

@@ -27,18 +27,18 @@ You **install the full repo once** (npx or clone); Starter Packs are curated lis
 **Option A — npx (easiest):**
 
 ```bash
-npx antigravity-awesome-skills
+npx rei-skills
 ```
 
-This clones to `~/.agent/skills` by default. Use `--cursor`, `--claude`, `--gemini`, or `--codex` to install for a specific tool, or `--path <dir>` for a custom location. Run `npx antigravity-awesome-skills --help` for details.
+This clones to `~/.agent/skills` by default. Use `--cursor`, `--claude`, `--gemini`, or `--codex` to install for a specific tool, or `--path <dir>` for a custom location. Run `npx rei-skills --help` for details.
 
-If you see a 404 error, use: `npx github:sickn33/antigravity-awesome-skills`
+If you see a 404 error, use: `npx github:rootcastleco/rei-skills`
 
 **Option B — git clone:**
 
 ```bash
 # Universal (works for most agents)
-git clone https://github.com/sickn33/antigravity-awesome-skills.git .agent/skills
+git clone https://github.com/rootcastleco/rei-skills.git .agent/skills
 ```
 
 ### 2. Pick Your Persona
