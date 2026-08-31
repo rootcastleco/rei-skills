@@ -7,6 +7,7 @@
     "api-testing-mock": "api-testing-observability-api-mock",
     "templates": "app-builder/templates",
     "application-performance-optimization": "application-performance-performance-optimization",
+    "atlas-cloud-generation": "atlas-cloud-image-generation",
     "azure-ai-dotnet": "azure-ai-agents-persistent-dotnet",
     "azure-ai-java": "azure-ai-agents-persistent-java",
     "azure-ai-py": "azure-ai-contentunderstanding-py",
