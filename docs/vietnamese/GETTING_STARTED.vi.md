@@ -24,7 +24,7 @@ Sao chép các kỹ năng vào thư mục agent của bạn:
 
 ```bash
 # Cài đặt phổ thông (hoạt động với hầu hết các agent)
-git clone https://github.com/sickn33/antigravity-awesome-skills.git .agent/skills
+git clone https://github.com/rootcastleco/rei-skills.git .agent/skills
 ```
 
 ### 2. Chọn vai trò của bạn

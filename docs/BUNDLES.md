@@ -6,9 +6,9 @@
 
 1. **Install the repository:**
    ```bash
-   npx antigravity-awesome-skills
+   npx rei-skills
    # or clone manually
-   git clone https://github.com/sickn33/antigravity-awesome-skills.git .agent/skills
+   git clone https://github.com/rootcastleco/rei-skills.git .agent/skills
    ```
 
 2. **Choose your bundle** from the list below based on your role or interests.
@@ -444,7 +444,7 @@ Keep a small list of high-frequency skills and reuse it across tasks to reduce c
 
 ## 🤝 Contributing
 
-Found a skill that should be in a bundle? Or want to create a new bundle? [Open an issue](https://github.com/sickn33/antigravity-awesome-skills/issues) or submit a PR!
+Found a skill that should be in a bundle? Or want to create a new bundle? [Open an issue](https://github.com/rootcastleco/rei-skills/issues) or submit a PR!
 
 ---
 

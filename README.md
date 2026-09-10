@@ -171,7 +171,7 @@ git clone https://github.com/rootcastleco/rei-skills.git .cursor/skills
 Use the GitHub package fallback:
 
 ```bash
-npx github:rootcastle/rei-skills
+npx github:rootcastleco/rei-skills
 ```
 
 ### Windows clone issues (symlinks)
