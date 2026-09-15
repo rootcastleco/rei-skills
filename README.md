@@ -1,6 +1,6 @@
 # 🏰 Rei Skills — 883+ Universal Agentic Skills
 
-> **The Ultimate Collection of 883+ Universal Agentic Skills for AI Coding Assistants — Curated by Rootcastle Engineering & Innovation (REI) | Batuhan Ayrıbaş**
+> **The Ultimate Collection of 884+ Universal Agentic Skills for AI Coding Assistants — Curated by Rootcastle Engineering & Innovation (REI) | Batuhan Ayrıbaş**
 
 [![Rootcastle](https://img.shields.io/badge/Rootcastle-Engineering-blue?style=for-the-badge)](https://www.rootcastle.com)
 [![npm](https://img.shields.io/badge/npm-rei--skills-red?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/rei-skills)
@@ -41,7 +41,7 @@ Fleet telemetry devices, OBD-II product families, solar asset tracking systems, 
 - [🎁 Curated Collections (Bundles)](#curated-collections)
 - [🧭 Workflows](#workflows)
 - [📦 Features & Categories](#features--categories)
-- [📚 Browse 883+ Skills](#browse-883-skills)
+- [📚 Browse 884+ Skills](#browse-884-skills)
 - [🔒 Security](#security)
 - [🤝 How to Contribute](#how-to-contribute)
 - [👥 Credits & Sources](#credits--sources)
@@ -252,7 +252,7 @@ Bundles help you choose skills. Workflows help you execute them in order.
 
 ---
 
-## Browse 883+ Skills
+## Browse 884+ Skills
 
 👉 **[View the Complete Skill Catalog (CATALOG.md)](CATALOG.md)**
 

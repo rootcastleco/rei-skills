@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 883
+Total skills: 884
 
 ## architecture (59)
 
@@ -628,7 +628,7 @@ Total skills: 883
 | `x-article-publisher-skill` | Publish articles to X/Twitter | x, article, publisher, skill | x, article, publisher, skill, publish, articles, twitter |
 | `youtube-summarizer` | Extract transcripts from YouTube videos and generate comprehensive, detailed summaries using intelligent analysis frameworks | video, summarization, transcription, youtube, content-analysis | video, summarization, transcription, youtube, content-analysis, summarizer, extract, transcripts, videos, generate, detailed, summaries |
 
-## infrastructure (84)
+## infrastructure (85)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -636,6 +636,7 @@ Total skills: 883
 | `airflow-dag-patterns` | Build production Apache Airflow DAGs with best practices for operators, sensors, testing, and deployment. Use when creating data pipelines, orchestrating wor... | airflow, dag | airflow, dag, apache, dags, operators, sensors, testing, deployment, creating, data, pipelines, orchestrating |
 | `api-testing-observability-api-mock` | You are an API mocking expert specializing in realistic mock services for development, testing, and demos. Design mocks that simulate real API behavior and e... | api, observability, mock | api, observability, mock, testing, mocking, specializing, realistic, development, demos, mocks, simulate, real |
 | `application-performance-performance-optimization` | Optimize end-to-end application performance with profiling, observability, and backend/frontend tuning. Use when coordinating performance optimization across... | application, performance, optimization | application, performance, optimization, optimize, profiling, observability, backend, frontend, tuning, coordinating, stack |
+| `atlas-cloud-image-generation` | Generate an image through Atlas Cloud with live model validation, one-shot submission, and bounded result polling. | atlas, cloud, image, generation | atlas, cloud, image, generation, generate, through, live, model, validation, one, shot, submission |
 | `aws-serverless` | Specialized skill for building production-ready serverless applications on AWS. Covers Lambda functions, API Gateway, DynamoDB, SQS/SNS event-driven patterns... | aws, serverless | aws, serverless, specialized, skill, building, applications, covers, lambda, functions, api, gateway, dynamodb |
 | `aws-skills` | AWS development with infrastructure automation and cloud architecture patterns | aws, skills | aws, skills, development, infrastructure, automation, cloud, architecture |
 | `azd-deployment` | Deploy containerized applications to Azure Container Apps using Azure Developer CLI (azd). Use when setting up azd projects, writing azure.yaml configuration... | azd, deployment | azd, deployment, deploy, containerized, applications, azure, container, apps, developer, cli, setting, up |
