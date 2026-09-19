@@ -459,6 +459,15 @@
     "source": "rootcastle-rei"
   },
   {
+    "id": "atlas-cloud-image-generation",
+    "path": "skills/atlas-cloud-image-generation",
+    "category": "uncategorized",
+    "name": "atlas-cloud-image-generation",
+    "description": "Generate an image through Atlas Cloud with live model validation, one-shot submission, and bounded result polling.",
+    "risk": "safe",
+    "source": "rootcastle-rei"
+  },
+  {
     "id": "attack-tree-construction",
     "path": "skills/attack-tree-construction",
     "category": "uncategorized",
