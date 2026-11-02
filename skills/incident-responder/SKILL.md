@@ -1,15 +1,10 @@
 ---
 name: incident-responder
-description: "Expert SRE incident responder specializing in rapid problem"
-  resolution, modern observability, and comprehensive incident management.
-  Masters incident command, blameless post-mortems, error budget management, and
-  system reliability patterns. Handles critical outages, communication
-  strategies, and continuous improvement. Use IMMEDIATELY for production
-  incidents or SRE practices.
+description: "Expert SRE incident responder specializing in rapid problem resolution, modern observability, and comprehensive incident management. Masters incident command, blameless post-mortems, error budget management, and system reliability patterns. Handles critical outages, communication strategies, and continuous improvement. Use IMMEDIATELY for production incidents or SRE practices."
 metadata:
   model: sonnet
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

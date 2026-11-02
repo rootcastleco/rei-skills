@@ -1,8 +1,8 @@
 ---
 name: paywall-upgrade-cro
 description: "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgrade screen,\" \"upgrade modal,..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Paywall and Upgrade Screen CRO

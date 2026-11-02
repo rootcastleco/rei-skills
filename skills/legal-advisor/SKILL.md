@@ -1,13 +1,10 @@
 ---
 name: legal-advisor
-description: "Draft privacy policies, terms of service, disclaimers, and legal"
-  notices. Creates GDPR-compliant texts, cookie policies, and data processing
-  agreements. Use PROACTIVELY for legal documentation, compliance texts, or
-  regulatory requirements.
+description: "Draft privacy policies, terms of service, disclaimers, and legal notices. Creates GDPR-compliant texts, cookie policies, and data processing agreements. Use PROACTIVELY for legal documentation, compliance texts, or regulatory requirements."
 metadata:
   model: sonnet
-risk: unknown
-source: rootcastle-rei
+risk: none
+source: community
 ---
 
 ## Use this skill when

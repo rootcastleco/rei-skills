@@ -1,7 +1,7 @@
 ---
 name: vercel-deployment
 description: "Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production."
-source: rootcastle-rei
+source: vercel-labs/agent-skills
 risk: safe
 ---
 

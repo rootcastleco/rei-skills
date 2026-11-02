@@ -1,8 +1,8 @@
 ---
 name: micro-saas-launcher
 description: "Expert in launching small, focused SaaS products fast - the indie hacker approach to building profitable software. Covers idea validation, MVP development, pricing, launch strategies, and growing t..."
-source: rootcastle-rei
-risk: unknown
+source: vibeship-spawner-skills (Apache 2.0)
+risk: safe
 ---
 
 # Micro-SaaS Launcher

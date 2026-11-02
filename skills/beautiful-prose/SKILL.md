@@ -1,7 +1,7 @@
 ---
 name: beautiful-prose
 description: "Hard-edged writing style contract for timeless, forceful English prose without AI tics"
-source: rootcastle-rei
+source: SHADOWPR0/beautiful_prose
 risk: safe
 ---
 

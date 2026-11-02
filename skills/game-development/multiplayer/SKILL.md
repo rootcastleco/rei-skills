@@ -2,8 +2,8 @@
 name: multiplayer
 description: "Multiplayer game development principles. Architecture, networking, synchronization."
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Multiplayer Game Development

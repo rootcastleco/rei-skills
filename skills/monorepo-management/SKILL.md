@@ -1,8 +1,8 @@
 ---
 name: monorepo-management
 description: "Master monorepo management with Turborepo, Nx, and pnpm workspaces to build efficient, scalable multi-package repositories with optimized builds and dependency management. Use when setting up monor..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Monorepo Management

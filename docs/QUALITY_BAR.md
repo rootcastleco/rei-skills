@@ -1,66 +1,46 @@
 # 🏆 Quality Bar & Validation Standards
 
-To transform **Antigravity Awesome Skills** from a collection of scripts into a trusted platform, every skill must meet a specific standard of quality and safety.
+To ensure **REI Skills** remains a trusted, engineering-grade skill layer for AI agents, every skill in the catalog (`895` skills) is validated against strict structural, metadata, and safety gates.
 
-## The "Validated" Badge ✅
+---
 
-A skill earns the "Validated" badge only if it passes these **5 automated checks**:
+## Automated Validation Gates
+
+Every `SKILL.md` in the repository must pass **both** validators in CI:
+
+1. `python scripts/validate_skills.py --strict --report data/quality-report.json`
+2. `node scripts/validate-skills.js`
+3. `node scripts/security_audit.js`
 
 ### 1. Metadata Integrity
+- `name`: Kebab-case identifier matching the directory name (`^[a-z0-9-]+$`).
+- `description`: Concise, single-line or clean YAML string (`<= 200` characters) stating what the skill does and when to trigger it.
+- `risk`: Explicit risk profile (`none`, `safe`, `critical`, `offensive`, or `unknown`).
+- `source`: Explicit provenance (`rootcastle-rei`, upstream GitHub repository URL, or `community`).
 
-The `SKILL.md` frontmatter must be valid YAML and contain:
-
-- `name`: Kebab-case, matches folder name.
-- `description`: Under 200 chars, clear value prop.
-- `risk`: One of `[none, safe, critical, offensive, unknown]`. Use `unknown` only for legacy or unclassified skills; prefer a concrete level for new skills.
-- `source`: URL to original source (or "self" if original).
-
-### 2. Clear Triggers ("When to use")
-
-The skill MUST have a section explicitly stating when to trigger it.
-
-- **Good**: "Use when the user asks to debug a React component."
-- **Bad**: "This skill helps you with code."
-Accepted headings: `## When to Use`, `## Use this skill when`, `## When to Use This Skill`.
+### 2. Actionable Triggers ("When to Use")
+Every skill should define clear activation triggers (`## When to Use`, `## Overview`, or explicit trigger conditions) so agents do not misroute tasks.
 
 ### 3. Safety & Risk Classification
+- 🟢 **`none`**: Pure reasoning, architecture, or documentation guidance.
+- 🔵 **`safe`**: Local workspace inspection, linting, static analysis, and read-only triage.
+- 🟠 **`critical`**: State-mutating operations (e.g., deployment, database migrations).
+- 🔴 **`offensive`**: Authorized security testing, red-teaming, and exploitation playbooks. **Must** include the mandatory `AUTHORIZED USE ONLY` disclaimer.
 
-Every skill must declare its risk level:
-
-- 🟢 **none**: Pure text/reasoning (e.g., Brainstorming).
-- 🔵 **safe**: Reads files, runs safe commands (e.g., Linter).
-- 🟠 **critical**: Modifies state, deletes files, pushes to prod (e.g., Git Push).
-- 🔴 **offensive**: Pentesting/Red Team tools. **MUST** have "Authorized Use Only" warning.
-
-### 4. Copy-Pasteable Examples
-
-At least one code block or interaction example that a user (or agent) can immediately use.
-
-### 5. Explicit Limitations
-
-A list of known edge cases or things the skill _cannot_ do.
-
-- _Example_: "Does not work on Windows without WSL."
+### 4. Referential Integrity
+All relative markdown links (`[label](path/to/file.md)`) inside every `SKILL.md` are verified at build time by `scripts/validate_skills.py` and `scripts/validate_references.py` to prevent agent file-not-found hallucinations.
 
 ---
 
-## Support Levels
-
-We also categorize skills by who maintains them:
-
-| Level         | Badge | Meaning                                             |
-| :------------ | :---- | :-------------------------------------------------- |
-| **Official**  | 🟣    | Maintained by the core team. High reliability.      |
-| **Community** | ⚪    | Contributed by the ecosystem. Best effort support.  |
-| **Verified**  | ✨    | Community skill that has passed deep manual review. |
-
----
-
-## How to Validate Your Skill
-
-The canonical validator is `scripts/validate_skills.py`. Run `npm run validate` (or `npm run validate:strict`) before submitting a PR:
+## Running Validation Locally
 
 ```bash
-npm run validate       # soft mode (warnings only)
-npm run validate:strict  # strict mode (CI uses this)
+# Strict Python schema + link validator + JSON quality report
+python scripts/validate_skills.py --strict --report data/quality-report.json
+
+# Node.js frontmatter validator
+node scripts/validate-skills.js
+
+# Security & offensive guardrail audit
+node scripts/security_audit.js
 ```

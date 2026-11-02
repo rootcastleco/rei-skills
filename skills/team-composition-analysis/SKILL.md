@@ -1,13 +1,10 @@
 ---
 name: team-composition-analysis
-description: "This skill should be used when the user asks to \\\"plan team"
-  structure", "determine hiring needs", "design org chart", "calculate
-  compensation", "plan equity allocation", or requests organizational design and
-  headcount planning for a startup.
+description: "This skill should be used when the user asks to \\\\\\\"plan team structure\", \"determine hiring needs\", \"design org chart\", \"calculate compensation\", \"plan equity allocation\", or requests organizational design and headcount planning for a startup."
 metadata:
   version: 1.0.0
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Team Composition Analysis

@@ -1,56 +1,51 @@
-# 🧪 Real-World Examples ("The Antigravity Cookbook")
+# 🧪 Real-World Engineering Examples ("The REI Cookbook")
 
-Skills are powerful on their own, but unstoppable when combined.
-Here are three common scenarios and how to solve them using this repository.
-
-## 🥘 Recipe 1: The "Legacy Code Audit"
-
-_Scenario: You just inherited a messy 5-year-old Node.js repo. You need to fix it safely._
-
-**Skills Used:**
-
-1. `concise-planning` (To map the chaos)
-2. `lint-and-validate` (To find the bugs)
-3. `security-audit` (To find the holes)
-
-**The Workflow:**
-
-1. **Plan**: "Agent, use `concise-planning` to create a checklist for refactoring `src/legacy-api.js`."
-2. **Audit**: "Run `security-audit` on the `package.json` to find vulnerable dependencies."
-3. **Fix**: "Use `lint-and-validate` rules to auto-fix the formatting issues in `src/`."
+Practical recipes combining **REI Skills** across software architecture, security auditing, and reverse engineering.
 
 ---
 
-## 🥘 Recipe 2: The "Modern Web App"
+## 🥘 Recipe 1: Binary Release Triage & Version Diff (`rei-rea`)
 
-_Scenario: You need to build a high-performance Landing Page in 2 hours._
+_Scenario: You have two builds of a compiled module (`telemetry-filter-v1.wasm` and `telemetry-filter-v2.wasm`) and need to verify what changed structurally between releases with hash-backed evidence._
+
+**Install the bundle:**
+```bash
+npx rei-skills add rei-rea --claude
+```
 
 **Skills Used:**
+1. `@rei-casebook-forensics` — Initialize a forensic case and intake artifacts with SHA-256 provenance.
+2. `@rei-wasm-and-managed` — Inspect WebAssembly imports, exports, and custom producer sections.
+3. `@rei-reconstruction-parity` & `@rei-evidence-ledger` — Diff exports/sections and classify findings into `[EVIDENCE]`, `[INFERENCE]`, and `[UNKNOWN]`.
 
-1. `frontend-design` (For aesthetics)
-2. `react-patterns` (For structure)
-3. `tailwind-mastery` (For speed)
-
-**The Workflow:**
-
-1. **Design**: "Use `frontend-design` to generate a color palette and typography for a 'Cyberpunk Coffee Shop'."
-2. **Scaffold**: "Initialize a Vite project. Then apply `react-patterns` to create the 'Hero' component."
-3. **Style**: "Use `tailwind-mastery` to make the buttons glassmorphic and responsive."
+**Try the live reproducible demo locally:**
+```bash
+python examples/rei-rea-demo/run_demo.py
+```
 
 ---
 
-## 🥘 Recipe 3: The "Agent Architect"
+## 🥘 Recipe 2: Legacy API Security & Refactoring Audit
 
-_Scenario: You want to build a custom AI agent that can verify its own code._
+_Scenario: You inherited a production Node.js/TypeScript backend and need to audit its authentication and input validation before refactoring._
 
 **Skills Used:**
+1. `@concise-planning` — Map endpoints and refactoring milestones.
+2. `@api-security-best-practices` — Audit authentication, rate limiting, and input validation.
+3. `@lint-and-validate` — Enforce static analysis and type checks.
 
-1. `mcp-builder` (To build tools)
-2. `agent-evaluation` (To test reliability)
-3. `prompt-engineering` (To refine instructions)
+**Prompt Example:**
+```text
+Use @concise-planning and @api-security-best-practices to audit src/routes/auth.ts and produce a prioritized remediation plan.
+```
 
-**The Workflow:**
+---
 
-1. **Build**: "Use `mcp-builder` to create a `verify-file` tool."
-2. **Instruct**: "Apply `prompt-engineering` patterns to the System Prompt so the agent always checks file paths."
-3. **Test**: "Run `agent-evaluation` to benchmark how often the agent fails to find the file."
+## 🥘 Recipe 3: Production AI Agent with MCP Tools
+
+_Scenario: You are building a domain-specific agent with custom MCP tools and deterministic evaluation gates._
+
+**Skills Used:**
+1. `@ai-agents-architect` — Define agent boundaries and fallback behavior.
+2. `@mcp-builder` — Implement schema-validated MCP tools.
+3. `@agent-evaluation` — Benchmark tool-calling reliability and failure modes.

@@ -1,322 +1,312 @@
-# 🏰 Rei Skills — 883+ Universal Agentic Skills
+<div align="center">
 
-> **The Ultimate Collection of 883+ Universal Agentic Skills for AI Coding Assistants — Curated by Rootcastle Engineering & Innovation (REI) | Batuhan Ayrıbaş**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/brand/rei-skills-hero-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/brand/rei-skills-hero-light.svg">
+  <img alt="REI Skills — The engineering-grade skill layer for AI agents" src="assets/brand/rei-skills-hero-dark.svg" width="100%">
+</picture>
 
-[![Rootcastle](https://img.shields.io/badge/Rootcastle-Engineering-blue?style=for-the-badge)](https://www.rootcastle.com)
-[![npm](https://img.shields.io/badge/npm-rei--skills-red?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/rei-skills)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/Skills-883+-green?style=for-the-badge)]()
+<br/>
 
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Anthropic-purple)](https://claude.ai)
-[![Gemini CLI](https://img.shields.io/badge/Gemini%20CLI-Google-blue)](https://github.com/google-gemini/gemini-cli)
-[![Codex CLI](https://img.shields.io/badge/Codex%20CLI-OpenAI-green)](https://github.com/openai/codex)
-[![Cursor](https://img.shields.io/badge/Cursor-AI%20IDE-orange)](https://cursor.sh)
-[![Copilot](https://img.shields.io/badge/GitHub%20Copilot-VSCode-lightblue)](https://github.com/features/copilot)
-[![Antigravity](https://img.shields.io/badge/Antigravity-DeepMind-red)](https://github.com/rootcastleco/rei-skills)
+# REI SKILLS
 
----
+**The engineering-grade skill layer for AI agents.**  
+*Discover. Install. Orchestrate. Verify.*
 
-## 🏰 About Rootcastle Engineering & Innovation
+[![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
+[![npm package](https://img.shields.io/badge/npm-rei--skills-0E3D8A?logo=npm&logoColor=white)](https://www.npmjs.com/package/rei-skills)
+[![Validated Skills](https://img.shields.io/badge/skills-895%20validated-228B55)](#explore-the-library)
+[![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
+[![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
 
-**Rootcastle** is an international technology company that unifies engineering disciplines under a single architecture. With our software and R&D center in **Estonia** integrated with manufacturing, hardware development, and engineering capabilities in **Turkey**, we develop reliable, flexible, and scalable technologies.
+**[Get Started](#install-in-seconds)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Documentation](docs/USAGE.md)** · **[Interactive Catalog](docs/site/index.html)** · **[Contribute](#contributing-and-community)**
 
-Our expertise spans **software development**, **PCB & hardware design**, **embedded systems**, **IoT & GPS telematics**, **data security**, **3D manufacturing**, **rapid prototyping**, and **e-commerce integrations**. This infrastructure serves industries from logistics and manufacturing to public services, security, fleet management, and critical monitoring operations.
-
-Fleet telemetry devices, OBD-II product families, solar asset tracking systems, and mobile monitoring units. Through our technology partners in the **UK** and **US**, our platforms deliver cloud architectures, mobile applications, and modern API integrations.
-
-> **🌍 5 International Partnerships | 150+ Global Projects**  
-> **🔗 Website:** [www.rootcastle.com](https://www.rootcastle.com)  
-> **📧 Contact:** admin@rootcastle.com  
-> **📱 Phone:** +90 507 545 29 39
+</div>
 
 ---
 
-## Table of Contents
+## Install in Seconds
 
-- [⚡ Quick Start](#quick-start)
-- [📖 Complete Usage Guide](docs/USAGE.md)
-- [🔌 Compatibility & Invocation](#compatibility--invocation)
-- [🛠️ Installation](#installation)
-- [🧯 Troubleshooting](#troubleshooting)
-- [🎁 Curated Collections (Bundles)](#curated-collections)
-- [🧭 Workflows](#workflows)
-- [📦 Features & Categories](#features--categories)
-- [📚 Browse 883+ Skills](#browse-883-skills)
-- [🔒 Security](#security)
-- [🤝 How to Contribute](#how-to-contribute)
-- [👥 Credits & Sources](#credits--sources)
-- [⚖️ License](#license)
-
----
-
-## Quick Start
-
-Install once, use everywhere. Get 883+ skills in your AI coding assistant in under a minute.
-
-### 1. Install
+Install the complete skill library or target a specific coding assistant with a single command:
 
 ```bash
-# Default: ~/.gemini/rei/skills (Global)
-npx rei-skills
-
-# Or choose your platform:
-npx rei-skills --claude       # Claude Code
-npx rei-skills --gemini       # Gemini CLI
-npx rei-skills --cursor       # Cursor IDE
-npx rei-skills --codex        # Codex CLI
-npx rei-skills --antigravity  # Antigravity IDE
-```
-
-### 2. Verify
-
-```bash
-test -d ~/.gemini/rei/skills && echo "✅ Rei Skills installed successfully"
-```
-
-### 3. Use Your First Skill
-
-> "Use **@brainstorming** to plan a SaaS MVP."
-
-### 4. Pick a Bundle
-
-- **Web Dev?** → Start with `Web Wizard`
-- **Security?** → Start with `Security Engineer`  
-- **General?** → Start with `Essentials`
-
-👉 **[Complete Usage Guide](docs/USAGE.md)** — Start here after installation  
-👉 **[Bundles Guide](docs/BUNDLES.md)** — Curated skill packs by role
-
----
-
-## Compatibility & Invocation
-
-Rei Skills follow the universal **SKILL.md** format and work with any AI coding assistant that supports agentic skills.
-
-| Tool            | Type | Invocation Example                | Path              |
-| :-------------- | :--- | :-------------------------------- | :---------------- |
-| **Claude Code** | CLI  | `>> /skill-name help me...`       | `.claude/skills/` |
-| **Gemini CLI**  | CLI  | `(User Prompt) Use skill-name...` | `.gemini/skills/` |
-| **Codex CLI**   | CLI  | `(User Prompt) Use skill-name...` | `.codex/skills/`  |
-| **Antigravity** | IDE  | `(Agent Mode) Use skill...`       | Global: `~/.gemini/rei/skills/` · Workspace: `.agent/skills/` |
-| **Cursor**      | IDE  | `@skill-name (in Chat)`           | `.cursor/skills/` |
-| **Copilot**     | Ext  | `(Paste content manually)`        | N/A               |
-| **OpenCode**    | CLI  | `opencode run @skill-name`        | `.agents/skills/`  |
-| **AdaL CLI**    | CLI  | `(Auto) Skills load on-demand`    | `.adal/skills/`   |
-
-> [!TIP]
-> **Default installer path**: `~/.gemini/rei/skills` (Global). Use `--path ~/.agent/skills` for workspace-specific install.
-
-> [!WARNING]
-> **Windows Users**: This repository uses **symlinks** for official skills. Enable Developer Mode or run Git as Administrator. See [Troubleshooting](#troubleshooting).
-
----
-
-## Installation
-
-### Option A: npx (Recommended)
-
-```bash
-# Default: ~/.gemini/rei/skills (Global)
-npx rei-skills
-
-# Claude Code
-npx rei-skills --claude
-
-# Gemini CLI
-npx rei-skills --gemini
-
-# Codex CLI
-npx rei-skills --codex
-
-# Cursor
-npx rei-skills --cursor
-
-# Antigravity IDE
-npx rei-skills --antigravity
-
-# OpenCode
-npx rei-skills --path .agents/skills
-
-# Custom path
-npx rei-skills --path ./my-skills
-```
-
-Run `npx rei-skills --help` for all options.
-
-### Option B: Git Clone
-
-```bash
-# Global (matches npx default)
-git clone https://github.com/rootcastleco/rei-skills.git ~/.gemini/rei/skills
-
-# Workspace-specific
-git clone https://github.com/rootcastleco/rei-skills.git .agent/skills
-
-# Claude Code
-git clone https://github.com/rootcastleco/rei-skills.git .claude/skills
-
-# Gemini CLI
-git clone https://github.com/rootcastleco/rei-skills.git .gemini/skills
-
-# Cursor
-git clone https://github.com/rootcastleco/rei-skills.git .cursor/skills
-```
-
----
-
-## Troubleshooting
-
-### `npx rei-skills` returns 404
-
-Use the GitHub package fallback:
-
-```bash
-npx github:rootcastle/rei-skills
-```
-
-### Windows clone issues (symlinks)
-
-```bash
-git clone -c core.symlinks=true https://github.com/rootcastleco/rei-skills.git .agent/skills
-```
-
-### Skills installed but not detected
-
-Install to the tool-specific path using the installer flags: `--claude`, `--gemini`, `--codex`, `--cursor`, `--antigravity`, or `--path <dir>`.
-
-### Update an existing installation
-
-```bash
-git -C ~/.gemini/rei/skills pull
-```
-
-### Reinstall from scratch
-
-```bash
-rm -rf ~/.gemini/rei/skills
 npx rei-skills
 ```
 
----
+### Target Any AI Coding Assistant, IDE, or Agent SDK (`21` Targets Supported)
 
-## Curated Collections
+REI Skills includes a built-in **Universal Multi-AI Transpiler & Adapter Engine** ([`lib/ai-adapters.js`](lib/ai-adapters.js)) that natively supports `SKILL.md` directories, Cursor `.mdc` rules, GitHub Copilot `.instructions.md` + `.prompt.md` files, Windsurf Cascade rules, Cline/RooCode/Continue/Aider/AmazonQ/Zed/Junie rules, universal `AGENTS.md` routers, and OpenAI/Anthropic/Gemini Function-Calling JSON schemas:
 
-**Bundles** are curated groups of skills for specific roles (e.g., `Web Wizard`, `Security Engineer`, `OSS Maintainer`).
+```bash
+# CLI & IDE Skill Directories (SKILL.md + references + scripts)
+npx rei-skills --claude                  # Anthropic Claude Code (~/.claude/skills)
+npx rei-skills --codex                   # OpenAI Codex CLI      (~/.codex/skills)
+npx rei-skills --gemini                  # Google Gemini CLI     (~/.gemini/skills)
+npx rei-skills --antigravity             # Google Antigravity    (~/.gemini/rei/skills)
+npx rei-skills --goose                   # Block Goose Agent     (~/.config/goose/skills)
+npx rei-skills --opencode                # OpenCode Agent        (~/.agents/skills)
+npx rei-skills --kiro                    # Kiro Spec-Driven IDE  (~/.kiro/skills)
+npx rei-skills --amp                     # Sourcegraph Amp       (~/.config/amp/skills)
 
-> **Bundles are NOT separate installations.** You already have all skills after one install. Bundles are simply recommended lists to help you focus.
+# Native IDE Rule & Prompt Transpilation (--workspace installs into current project)
+npx rei-skills add rei-rea --cursor -w   # Cursor (.cursor/skills/* + .cursor/rules/*.mdc)
+npx rei-skills add rei-rea --copilot -w  # GitHub Copilot (.github/instructions/*.instructions.md + prompts)
+npx rei-skills add rei-rea --windsurf -w # Windsurf Cascade (.windsurf/rules/*.md)
+npx rei-skills add rei-rea --cline -w    # Cline Autonomous Agent (.clinerules/*.md)
+npx rei-skills add rei-rea --roocode -w  # Roo Code (.roo/rules/*.md)
+npx rei-skills add rei-rea --continue -w # Continue.dev (.continue/rules/*.md)
+npx rei-skills add rei-rea --aider -w    # Aider (.aider/skills/*.md + CONVENTIONS.md)
+npx rei-skills add rei-rea --amazonq -w  # Amazon Q Developer (.amazonq/rules/*.md)
+npx rei-skills add rei-rea --zed -w      # Zed AI (.zed/rules/*.md)
+npx rei-skills add rei-rea --trae -w     # Trae AI IDE (.trae/rules/*.md)
+npx rei-skills add rei-rea --junie -w    # JetBrains Junie (.junie/skills/*.md)
+npx rei-skills add rei-rea --devin -w    # Cognition Devin (.devin/playbooks/*.devin.md)
+npx rei-skills add rei-rea --sdk -w      # OpenAI / Anthropic / Gemini / LangGraph Tool JSON
 
-### How to use bundles:
+# Configure ALL major AI assistants + generate universal AGENTS.md router at once:
+npx rei-skills add rei-rea --all-ai --path ./my-project
+```
 
-1. **Install the repository once** (all 883+ skills included)
-2. **Browse bundles** in [docs/BUNDLES.md](docs/BUNDLES.md)
-3. **Pick 3-5 skills** from a bundle to start
-4. **Reference them** in your conversations: `"Use @brainstorming..."`
+### Immediate Next Steps
 
-### Examples:
+```bash
+# 1. View all 21 supported AI assistants, native formats, and invocation hints
+npx rei-skills targets
 
-- **Building a SaaS MVP:** `Essentials` + `Full-Stack Developer` + `QA & Testing`
-- **Hardening production:** `Security Developer` + `DevOps & Cloud` + `Observability`
-- **Shipping OSS changes:** `Essentials` + `OSS Maintainer`
+# 2. Inspect your environment, installed AI directories, and REI REA status
+npx rei-skills doctor
 
----
+# 3. Search across 895 skills by domain, keyword, risk, or upstream source
+npx rei-skills search firmware
+npx rei-skills list --category reverse-engineering
 
-## Workflows
-
-Bundles help you choose skills. Workflows help you execute them in order.
-
-- [docs/WORKFLOWS.md](docs/WORKFLOWS.md) — Human-readable playbooks
-- [data/workflows.json](data/workflows.json) — Machine-readable workflow metadata
-
-**Available Workflows:**
-
-- 🚀 Ship a SaaS MVP
-- 🔒 Security Audit for a Web App
-- 🤖 Build an AI Agent System
-- 🧪 QA and Browser Automation
-
----
-
-## Features & Categories
-
-| Category       | Focus                                              | Example Skills                                                     |
-| :------------- | :------------------------------------------------- | :----------------------------------------------------------------- |
-| Architecture   | System design, ADRs, C4, scalable patterns         | `architecture`, `c4-context`, `senior-architect`                   |
-| Business       | Growth, pricing, CRO, SEO, go-to-market            | `copywriting`, `pricing-strategy`, `seo-audit`                     |
-| Data & AI      | LLM apps, RAG, agents, observability               | `rag-engineer`, `prompt-engineer`, `langgraph`                     |
-| Development    | Languages, frameworks, code quality                | `typescript-expert`, `python-patterns`, `react-patterns`           |
-| General        | Planning, docs, product ops, writing               | `brainstorming`, `doc-coauthoring`, `writing-plans`                |
-| Infrastructure | DevOps, cloud, serverless, CI/CD                   | `docker-expert`, `aws-serverless`, `vercel-deployment`             |
-| Security       | AppSec, pentesting, vuln analysis, compliance      | `api-security-best-practices`, `vulnerability-scanner`             |
-| Testing        | TDD, test design, QA workflows                     | `test-driven-development`, `testing-patterns`, `test-fixing`       |
-| Workflow       | Automation, orchestration, agents                  | `workflow-automation`, `inngest`, `trigger-dev`                    |
-
----
-
-## Browse 883+ Skills
-
-👉 **[View the Complete Skill Catalog (CATALOG.md)](CATALOG.md)**
+# 4. Install only a focused bundle or compile to any target format
+npx rei-skills add rei-rea --claude --print-mcp
+npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
+```
 
 ---
 
-## Security
+## Why REI Skills?
 
-All skills are audited for security vulnerabilities, hardcoded credentials, and dangerous commands.
+AI coding assistants perform best when given structured domain procedures, explicit boundaries, and verifiable checklists rather than ad-hoc prompts. **REI Skills** provides an indexed, schema-validated skill layer maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)**.
 
-- [Security Policy](SECURITY.md)
-- [Security Guardrails](docs/SECURITY_GUARDRAILS.md)
-- [Community Guidelines](docs/COMMUNITY_GUIDELINES.md)
-
-Offensive security skills (penetration testing, red teaming) are included for **authorized educational and professional use only**.
-
----
-
-## How to Contribute
-
-1. **Fork** the repository
-2. **Create a new directory** inside `skills/` for your skill
-3. **Add a `SKILL.md`** with the required frontmatter (`name`, `description`, `risk`, `source`). See [docs/SKILL_ANATOMY.md](docs/SKILL_ANATOMY.md) and [docs/QUALITY_BAR.md](docs/QUALITY_BAR.md).
-4. **Run validation**: `npm run validate`
-5. **Submit a Pull Request**
+| Capability | Engineering Implementation |
+| :--- | :--- |
+| **Universal `SKILL.md` Standard** | Every skill is validated for YAML frontmatter integrity, trigger rules (`## When to Use`), risk classification, and local reference links. |
+| **Safe, Non-Destructive CLI Manager** | `bin/install.js` verifies repository ownership before migrating legacy installs, creates backups, supports `--dry-run`, and materializes symlinks on Windows without Administrator privileges. |
+| **Compatibility Projection** | `npx rei-skills export --agent <target> --out <dir>` projects skills into narrow frontmatter schemas while preserving `agents/openai.yaml` and reference files. |
+| **Curated Bundles & Workflows** | Role-based skill bundles ([`docs/BUNDLES.md`](docs/BUNDLES.md)) and multi-step execution playbooks ([`docs/WORKFLOWS.md`](docs/WORKFLOWS.md)) coordinate complex engineering tasks. |
+| **Evidence-First Reverse Engineering** | First-class integration with **[REI REA](https://github.com/rootcastleco/Rei-Reverse-engineer)**: 12 specialist reverse-engineering skills plus an optional Python CLI and 14-tool local stdio MCP server. |
+| **Transparent Provenance & Risk Tiers** | Every skill declares its `risk` (`none`, `safe`, `critical`, `offensive`) and upstream `source` (`rootcastle-rei`, `microsoft/skills`, `anthropics/skills`, `openai/skills`, `vercel-labs/agent-skills`, or community). |
 
 ---
 
-## Credits & Sources
+## The Ecosystem
 
-This collection stands on the shoulders of the open-source community. Full attribution is preserved in **[CREDITS.md](CREDITS.md)**.
+<div align="center">
+  <img src="assets/brand/architecture.svg" alt="REI Skills Platform Architecture" width="100%">
+</div>
 
-Key sources include:
+REI Skills connects five platform components:
 
-- **[anthropics/skills](https://github.com/anthropics/skills)** — Official Anthropic skills
-- **[microsoft/skills](https://github.com/microsoft/skills)** — Official Microsoft skills
-- **[openai/skills](https://github.com/openai/skills)** — Official OpenAI Codex skills
-- **[google-gemini/gemini-skills](https://github.com/google-gemini/gemini-skills)** — Official Gemini skills
-- **[vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)** — Vercel Labs skills
-- **[supabase/agent-skills](https://github.com/supabase/agent-skills)** — Supabase skills
-- **The Open Source Community** — 300+ community contributors
-
----
-
-## Author
-
-**Batuhan Ayrıbaş**  
-Founder & Lead Engineer — Rootcastle Engineering & Innovation (REI)
-
-- 🌐 [www.rootcastle.com](https://www.rootcastle.com)
-- 📧 admin@rootcastle.com
-- 📱 +90 507 545 29 39
+1. **Universal Skill Registry (`skills/`, `data/catalog.json`):** 895 categorized, schema-checked skills with progressive reference loading (`references/`, `scripts/`, `examples/`).
+2. **REI Skill Manager (`bin/install.js`):** Cross-platform CLI for installing, searching, inspecting, verifying, and exporting skills.
+3. **Workflow Engine (`data/workflows.json`, `docs/WORKFLOWS.md`):** Structured playbooks that sequence multiple compatible skills for SaaS delivery, AppSec auditing, agent engineering, DDD modeling, and reverse engineering.
+4. **REI Reverse Engineering (`skills/rei-*`, `data/rei-rea-manifest.json`):** 12 specialist reverse-engineering skills synchronized from `rootcastleco/Rei-Reverse-engineer` (`v0.2.0 @ 09fbc7b`), with optional connection to the local `rei-rea` CLI/MCP workbench.
+5. **Developer Hub (`CATALOG.md`, `docs/site/index.html`):** Offline-capable static search interface and contributor documentation.
 
 ---
 
-## License
+## Explore the Library
 
-MIT License. See [LICENSE](LICENSE) for details.
+The registry currently contains **895 validated skills** across **10 engineering categories**. Counts below are generated directly from [`data/catalog.json`](data/catalog.json):
+
+<!-- CATEGORY_TABLE_START -->
+| Category | Count | Focus Area | Representative Skills |
+| :--- | ---: | :--- | :--- |
+| **Data & AI** (`data-ai`) | 163 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
+| **General Engineering** (`general`) | 154 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
+| **Software Development** (`development`) | 133 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
+| **Security & AppSec** (`security`) | 112 | Threat modeling, SAST, vulnerability auditing, authorized red-teaming | [`security-auditor`](skills/security-auditor/SKILL.md), [`threat-modeling-expert`](skills/threat-modeling-expert/SKILL.md), [`api-security-best-practices`](skills/api-security-best-practices/SKILL.md) |
+| **Infrastructure & Cloud** (`infrastructure`) | 101 | Kubernetes, Terraform, CI/CD, observability, SRE, service mesh | [`kubernetes-architect`](skills/kubernetes-architect/SKILL.md), [`terraform-specialist`](skills/terraform-specialist/SKILL.md), [`observability-engineer`](skills/observability-engineer/SKILL.md) |
+| **Workflows & Automation** (`workflow`) | 80 | Multi-agent orchestration, task automation, integration pipelines | [`workflow-automation`](skills/workflow-automation/SKILL.md), [`mcp-builder`](skills/mcp-builder/SKILL.md), [`gitops-workflow`](skills/gitops-workflow/SKILL.md) |
+| **Architecture & DDD** (`architecture`) | 67 | System design, C4 modeling, DDD, CQRS, event-driven systems | [`backend-architect`](skills/backend-architect/SKILL.md), [`domain-driven-design`](skills/domain-driven-design/SKILL.md), [`c4-context`](skills/c4-context/SKILL.md) |
+| **Product & Business** (`business`) | 40 | Product management, technical SEO, pricing, GTM analysis | [`product-manager-toolkit`](skills/product-manager-toolkit/SKILL.md), [`seo-audit`](skills/seo-audit/SKILL.md), [`pricing-strategy`](skills/pricing-strategy/SKILL.md) |
+| **Testing & QA** (`testing`) | 31 | Test-driven development, E2E browser automation, regression suites | [`test-driven-development`](skills/test-driven-development/SKILL.md), [`browser-automation`](skills/browser-automation/SKILL.md), [`e2e-testing-patterns`](skills/e2e-testing-patterns/SKILL.md) |
+| **Reverse Engineering** (`reverse-engineering`) | 14 | Binary intelligence, firmware/IoT triage, APK/Electron/WASM, forensics | [`rei-rea-orchestrator`](skills/rei-rea-orchestrator/SKILL.md), [`rei-binary-intelligence`](skills/rei-binary-intelligence/SKILL.md), [`rei-firmware-and-iot`](skills/rei-firmware-and-iot/SKILL.md) |
+<!-- CATEGORY_TABLE_END -->
+
+- **Full Markdown Catalog:** [`CATALOG.md`](CATALOG.md)
+- **Interactive Searchable Catalog:** [`docs/site/index.html`](docs/site/index.html)
+- **Curated Role Bundles:** [`docs/BUNDLES.md`](docs/BUNDLES.md) (`rei-rea`, `core-dev`, `security-core`, `k8s-core`, `data-core`, `ops-core`)
+- **Execution Workflows:** [`docs/WORKFLOWS.md`](docs/WORKFLOWS.md)
+
+---
+
+## REI Reverse Engineering (REI REA)
+
+REI Skills integrates the **[REI Reverse Engineering Workbench (`rootcastleco/Rei-Reverse-engineer`)](https://github.com/rootcastleco/Rei-Reverse-engineer)** as a first-class engineering module.
+
+### Architectural Separation: Bundled Guidance vs. Optional Workbench
+
+- **Included by default in `rei-skills`:** **12 specialist agent skills** (`skills/rei-*`) that guide AI assistants through evidence-first triage, SHA-256 artifact identity verification, format-specific analysis, and confidence tracking (`observed`, `inferred`, `unknown`).
+- **Optional Python/MCP Workbench (`rootcastle-rei-rea` v0.2.0):** A standalone, dependency-free Python 3.10+ CLI and **14-tool local stdio MCP server** installed separately from [`rootcastleco/Rei-Reverse-engineer`](https://github.com/rootcastleco/Rei-Reverse-engineer). Installing `rei-skills` never silently installs Python packages or executes external binaries.
+
+### The 12 Specialist REI REA Skills
+
+| Skill | Investigation Scope |
+| :--- | :--- |
+| [`rei-rea-orchestrator`](skills/rei-rea-orchestrator/SKILL.md) | Intake, SHA-256 identity, format-based routing, and verification checkpoints. |
+| [`rei-binary-intelligence`](skills/rei-binary-intelligence/SKILL.md) | Bounded PE, ELF, and WebAssembly v1 structural parsing and version-to-version diffs. |
+| [`rei-casebook-forensics`](skills/rei-casebook-forensics/SKILL.md) | SQLite casebook indexing, cross-case search, and metadata-only forensic bundle verification. |
+| [`rei-native-binaries`](skills/rei-native-binaries/SKILL.md) | PE, ELF, Mach-O, and COFF symbol, import, ABI, and call-graph inspection. |
+| [`rei-electron-and-js`](skills/rei-electron-and-js/SKILL.md) | Electron ASAR archives, preload scripts, IPC routes, and bundled JavaScript analysis. |
+| [`rei-android-apks`](skills/rei-android-apks/SKILL.md) | Android APK/AAB, DEX bytecode, manifest permissions, and JNI boundary triage. |
+| [`rei-firmware-and-iot`](skills/rei-firmware-and-iot/SKILL.md) | Authorized MCU, UEFI, embedded Linux, automotive telemetry, and GPS/IoT firmware analysis. |
+| [`rei-mobile-runtime`](skills/rei-mobile-runtime/SKILL.md) | Authorized Android/iOS lab runtime observation planning when static evidence is insufficient. |
+| [`rei-evidence-ledger`](skills/rei-evidence-ledger/SKILL.md) | Append-only SHA-256 hash-linked case records and confidence auditing. |
+| [`rei-reconstruction-parity`](skills/rei-reconstruction-parity/SKILL.md) | Clean-room behavioral specifications, differential test corpora, and parity verification. |
+| [`rei-wasm-and-managed`](skills/rei-wasm-and-managed/SKILL.md) | WebAssembly v1 modules, .NET CIL assemblies, and JVM bytecode analysis. |
+| [`rei-web-and-protocols`](skills/rei-web-and-protocols/SKILL.md) | HAR, PCAP/PCAPNG captures, telemetry frames, and protocol state-machine reconstruction. |
+
+### Accurate Capability States (REI REA v0.2.0)
+
+| Capability State | Scope in v0.2.0 | Verification Boundary |
+| :--- | :--- | :--- |
+| **Cataloged (`124` tools)** | Metadata records in `tools.json` with tags and homepages. | Discovery only; does **not** imply local installation or execution. |
+| **PATH-Detected** | Local executable probing via `rei-rea tools doctor`. | Confirms binary name on `PATH`; does not verify version or license. |
+| **Adapter-Supported (`11` tools)** | `file`, `readelf`, `objdump`, `llvm-objdump`, `llvm-readobj`, `nm`, `exiftool`, `otool`, `aapt2`, `rabin2`, `rz-bin`. | Requires local binary + explicit `--allow-external` flag; runs without a shell. |
+| **Built-In Tested** | Bounded PE, ELF, and WebAssembly v1 parsers, SHA-256 cases, SQLite casebook, 14 MCP tools. | Read-only stdlib implementation tested on Linux, macOS, and Windows. |
+| **Planned** | Live Ghidra/IDA/JADX/Frida session providers; upstream `morluto/rea` adapter. | Documented roadmap items; not active in v0.2.0. |
+
+👉 **Read the full integration guide:** [`docs/REI_REA_INTEGRATION.md`](docs/REI_REA_INTEGRATION.md) · **Run the reproducible demo:** [`examples/rei-rea-demo/`](examples/rei-rea-demo/README.md)
+
+---
+
+## Practical Demonstrations
+
+### 1. Install the REI REA Specialist Pack and Inspect a Skill
+
+```text
+$ npx rei-skills add rei-rea --path ./.agent/skills --local
+
+✅ REI Skills installed (12 items) to ./.agent/skills
+🔌 Optional REI REA Runtime & MCP Workbench Setup:
+   Skills are read-only agent instructions. To enable the optional local Python CLI & 14-tool MCP server:
+     git clone https://github.com/rootcastleco/Rei-Reverse-engineer.git
+     cd Rei-Reverse-engineer && python -m pip install -e .
+     rei-rea tools doctor
+```
+
+```text
+$ npx rei-skills info rei-rea-orchestrator
+
+🏰 Skill: rei-rea-orchestrator (rei-rea-orchestrator)
+   Category:    reverse-engineering
+   Risk Level:  safe
+   Provenance:  rootcastle-rei
+   Path:        skills/rei-rea-orchestrator/SKILL.md
+   Tags:        reverse-engineering, binary-analysis, orchestrator, mcp, rei-rea, triage
+   Description: Route authorized reverse-engineering investigations across binaries, APKs, Electron, firmware, and WASM using REI REA.
+   Files:       agents/openai.yaml, references/QUICKSTART.md, references/workflow.md, scripts/doctor.py, SKILL.md
+   REI REA:     Specialist Reverse-Engineering Skill (Upstream SHA-256: 9f50e748bcad…)
+```
+
+### 2. Coordinate an Engineering Workflow in Your Agent
+
+Invoke skills directly in Claude Code, Cursor, Codex, Gemini CLI, or Antigravity:
+
+```text
+# SaaS Architecture & Implementation Workflow
+Use @concise-planning and @backend-architect to define the API contract and PostgreSQL schema for our multi-tenant telemetry ingestion service, then validate query indexing with @postgres-best-practices.
+
+# Evidence-Led Reverse Engineering Workflow
+Use @rei-rea-orchestrator and @rei-binary-intelligence to inspect examples/rei-rea-demo/fixtures/telemetry-filter-v2.wasm, compare it against telemetry-filter-v1.wasm, and record observed structural differences.
+```
+
+### 3. Inspect and Diff Harmless WebAssembly Fixtures with REI REA
+
+Using the redistributable fixtures in [`examples/rei-rea-demo/fixtures/`](examples/rei-rea-demo/README.md) with the optional `rei-rea` CLI installed:
+
+```bash
+rei-rea diff \
+  examples/rei-rea-demo/fixtures/telemetry-filter-v1.wasm \
+  examples/rei-rea-demo/fixtures/telemetry-filter-v2.wasm
+```
+
+Verified output excerpt ([`examples/rei-rea-demo/DEMO_OUTPUT.json`](examples/rei-rea-demo/DEMO_OUTPUT.json)):
+
+```json
+{
+  "kind": "wasm",
+  "before_sha256": "a86707e622921126c88d3b27142cb9404320197c19c45ec4fb81a2a4e908949f",
+  "after_sha256": "766cc87ddc6f9df8964a05f2da01e7a0c8bf8b8370b53646d57b954b5b20ba59",
+  "structural_changes": {
+    "imports": {
+      "added": [
+        { "module": "env", "name": "audit_log_frame", "kind": 0 }
+      ],
+      "removed": []
+    },
+    "exports": {
+      "added": [
+        { "name": "validate_packet_header", "kind": 0, "index": 3 }
+      ],
+      "removed": []
+    }
+  }
+}
+```
+
+---
+
+## Compatibility
+
+Compatibility claims in REI Skills are backed by automated schema validation and installer verification (`scripts/tests/installer.test.js`):
+
+| AI Assistant / Client | Target Directory | Installer Flag | Verification Status | Invocation Pattern |
+| :--- | :--- | :--- | :--- | :--- |
+| **Claude Code** | `~/.claude/skills` | `--claude` | **Tested** (Installer + YAML schema + symlink materialization) | `/skill-name` or `@skill-name` |
+| **OpenAI Codex CLI** | `~/.codex/skills` | `--codex` | **Tested** (Includes `agents/openai.yaml` metadata in REI REA skills) | `Use @skill-name ...` |
+| **Gemini CLI** | `~/.gemini/skills` | `--gemini` | **Tested** (Installer + `SKILL.md` frontmatter parser) | `Use skill-name to ...` |
+| **Cursor IDE** | `~/.cursor/skills` | `--cursor` | **Tested** (Installer + MCP config backup generator) | `@skill-name` in Cursor Chat |
+| **Antigravity IDE** | `~/.gemini/rei/skills` | `--antigravity` | **Tested** (Default global target + workspace `.agent/skills`) | `Use @skill-name ...` |
+| **OpenCode CLI** | `.agents/skills` | `--path .agents/skills` | **Documented** (`SKILL.md` standard compatible) | `opencode run @skill-name` |
+| **GitHub Copilot** | Workspace files | `export --agent copilot` | **Documented** (Manual context attachment or projected markdown) | Attach `SKILL.md` in chat |
+
+---
+
+## Contributing and Community
+
+We welcome new skills, quality improvements, reference updates, and workflow playbooks!
+
+1. **Fork & Branch:** Create a feature branch from `main`.
+2. **Add or Improve a Skill:** Create `skills/<your-skill-name>/SKILL.md` following [`docs/SKILL_ANATOMY.md`](docs/SKILL_ANATOMY.md) and [`docs/QUALITY_BAR.md`](docs/QUALITY_BAR.md).
+3. **Validate Locally:**
+   ```bash
+   npm run validate:strict
+   npm run security-audit
+   npm run build
+   npm test
+   ```
+4. **Open a Pull Request:** Follow the checklist in [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md).
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), [`SUPPORT.md`](SUPPORT.md), and [`ROADMAP.md`](ROADMAP.md) for full details.
+
+---
+
+## License, Attribution, and Security
+
+- **License:** Original code, tooling, and Rootcastle-authored skills (including the 12 REI REA skills) are released under the **[MIT License](LICENSE)**.
+- **Upstream Attribution & Provenance:** REI Skills curates and preserves work from official vendor repositories (`anthropics/skills`, `microsoft/skills` — see [`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT) and [`docs/microsoft-skills-attribution.json`](docs/microsoft-skills-attribution.json), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`) and open-source contributors (`sickn33/antigravity-awesome-skills`, `rmyndharis/antigravity-skills`, `obra/superpowers`, `trailofbits/skills`, `getsentry/skills`, and others). Full credits are documented in **[`CREDITS.md`](CREDITS.md)** and **[`docs/SOURCES.md`](docs/SOURCES.md)**.
+- **Security Policy & Guardrails:** All 895 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See **[`SECURITY.md`](SECURITY.md)**, **[`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md)**, and **[`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md)**.
 
 ---
 
 <div align="center">
 
-**🏰 Rei Skills — Engineering Beyond Boundaries**
-
-*Curated by [Rootcastle Engineering & Innovation](https://www.rootcastle.com) | © REI 2025. All rights reserved.*
+**REI Skills — Engineering Beyond Boundaries**  
+Maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)** · Batuhan Ayrıbaş · [admin@rootcastle.com](mailto:admin@rootcastle.com)
 
 </div>

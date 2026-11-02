@@ -1,13 +1,10 @@
 ---
 name: test-automator
-description: "Master AI-powered test automation with modern frameworks,"
-  self-healing tests, and comprehensive quality engineering. Build scalable
-  testing strategies with advanced CI/CD integration. Use PROACTIVELY for
-  testing automation or quality assurance.
+description: "Master AI-powered test automation with modern frameworks, self-healing tests, and comprehensive quality engineering. Build scalable testing strategies with advanced CI/CD integration. Use PROACTIVELY for testing automation or quality assurance."
 metadata:
   model: sonnet
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

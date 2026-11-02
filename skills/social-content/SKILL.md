@@ -1,8 +1,8 @@
 ---
 name: social-content
 description: "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Social Content

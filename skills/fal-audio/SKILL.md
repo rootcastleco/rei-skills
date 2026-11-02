@@ -1,7 +1,7 @@
 ---
 name: fal-audio
 description: "Text-to-speech and speech-to-text using fal.ai audio models"
-source: rootcastle-rei
+source: fal-ai-community/skills
 risk: safe
 ---
 

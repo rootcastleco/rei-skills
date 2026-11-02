@@ -1,8 +1,8 @@
 ---
 name: avalonia-zafiro-development
 description: "Mandatory skills, conventions, and behavioral rules for Avalonia UI development using the Zafiro toolkit."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Avalonia Zafiro Development

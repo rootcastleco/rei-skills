@@ -3,8 +3,8 @@ name: conductor-implement
 description: "Execute tasks from a track's implementation plan following TDD workflow"
 metadata:
   argument-hint: "[track-id] [--task X.Y] [--phase N]"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Implement Track

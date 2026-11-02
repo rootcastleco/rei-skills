@@ -10,15 +10,20 @@ import json
 import os
 import re
 import sys
+from pathlib import Path
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 def collect_skill_ids(skills_dir):
-    """Return set of relative paths (skill ids) that have SKILL.md. Matches listSkillIdsRecursive behavior."""
+    """Return set of POSIX relative paths (skill ids) that have SKILL.md."""
     ids = set()
+    base = Path(skills_dir)
     for root, dirs, files in os.walk(skills_dir):
         dirs[:] = [d for d in dirs if not d.startswith(".")]
         if "SKILL.md" in files:
-            rel = os.path.relpath(root, skills_dir)
+            rel = Path(root).relative_to(base).as_posix()
             ids.add(rel)
     return ids
 
@@ -47,7 +52,6 @@ def main():
     bundle_ids = set(bundles_data.get("bundles", {}).keys())
     errors = []
 
-    # Workflows: recommendedSkills and relatedBundles
     for w in workflows_data.get("workflows", []):
         w_id = w.get("id", "?")
         for step in w.get("steps", []):
@@ -58,13 +62,11 @@ def main():
             if bid not in bundle_ids:
                 errors.append(f"workflows.json workflow '{w_id}' references missing bundle: {bid}")
 
-    # Bundles: every skill in each bundle
     for bid, bundle in bundles_data.get("bundles", {}).items():
         for slug in bundle.get("skills", []):
             if slug not in skill_ids:
                 errors.append(f"bundles.json bundle '{bid}' lists missing skill: {slug}")
 
-    # BUNDLES.md: links like [text](../skills/slug/) must point to existing skill dirs
     bundles_md_path = os.path.join(base_dir, "docs", "BUNDLES.md")
     if os.path.exists(bundles_md_path):
         with open(bundles_md_path, "r", encoding="utf-8") as f:

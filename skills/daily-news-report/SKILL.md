@@ -5,8 +5,8 @@ argument-hint: [optional: date]
 disable-model-invocation: false
 user-invocable: true
 allowed-tools: Task, WebFetch, Read, Write, Bash(mkdir*), Bash(date*), Bash(ls*), mcp__chrome-devtools__*
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Daily News Report v3.0

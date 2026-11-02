@@ -3,8 +3,8 @@ name: cc-skill-continuous-learning
 description: "Development skill from everything-claude-code"
 author: affaan-m
 version: "1.0"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # cc-skill-continuous-learning

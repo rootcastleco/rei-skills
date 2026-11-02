@@ -1,7 +1,7 @@
 ---
 name: claude-speed-reader
 description: "-Speed read Claude's responses at 600+ WPM using RSVP with Spritz-style ORP highlighting"
-source: rootcastle-rei
+source: SeanZoR/claude-speed-reader
 risk: safe
 ---
 

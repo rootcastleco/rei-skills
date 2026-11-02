@@ -4,8 +4,8 @@ description: "This skill should be used when the user asks to \"test for insecur
 metadata:
   author: zebbern
   version: "1.1"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # IDOR Vulnerability Testing

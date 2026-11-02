@@ -2,7 +2,7 @@
 name: ddd-tactical-patterns
 description: "Apply DDD tactical patterns in code using entities, value objects, aggregates, repositories, and domain events with explicit invariants."
 risk: safe
-source: rootcastle-rei
+source: community
 tags: [ddd, tactical, aggregates, value-objects, domain-events]
 ---
 

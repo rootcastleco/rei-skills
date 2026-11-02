@@ -1,7 +1,7 @@
 ---
 name: aws-skills
 description: "AWS development with infrastructure automation and cloud architecture patterns"
-source: rootcastle-rei
+source: zxkane/aws-skills
 risk: safe
 ---
 

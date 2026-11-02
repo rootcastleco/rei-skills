@@ -6,8 +6,8 @@ context: fork
 agent: Explore
 disable-model-invocation: true
 allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # last30days: Research Any Topic from the Last 30 Days

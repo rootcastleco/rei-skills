@@ -2,8 +2,8 @@
 name: azure-search-documents-ts
 description: "Build search applications using Azure AI Search SDK for JavaScript (@azure/search-documents). Use when creating/managing indexes, implementing vector/hybrid search, semantic ranking, or building ag..."
 package: "@azure/search-documents"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Azure AI Search SDK for TypeScript

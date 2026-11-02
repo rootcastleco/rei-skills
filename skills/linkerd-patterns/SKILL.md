@@ -1,8 +1,8 @@
 ---
 name: linkerd-patterns
 description: "Implement Linkerd service mesh patterns for lightweight, security-focused service mesh deployments. Use when setting up Linkerd, configuring traffic policies, or implementing zero-trust networking ..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Linkerd Patterns

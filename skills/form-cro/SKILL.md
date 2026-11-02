@@ -1,12 +1,8 @@
 ---
 name: form-cro
-description: ">"
-  Optimize any form that is NOT signup or account registration — including lead
-  capture, contact, demo request, application, survey, quote, and checkout forms.
-  Use when the goal is to increase form completion rate, reduce friction, or
-  improve lead quality without breaking compliance or downstream workflows.
-risk: unknown
-source: rootcastle-rei
+description: "Optimize any form that is NOT signup or account registration \u2014 including lead capture, contact, demo request, application, survey, quote, and checkout forms. Use when the goal is to increase form completion rate, reduce friction, or improve lead quality without breaking compliance or downstream workflows."
+risk: safe
+source: community
 ---
 
 # Form Conversion Rate Optimization (Form CRO)

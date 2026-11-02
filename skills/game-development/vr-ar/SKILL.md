@@ -2,8 +2,8 @@
 name: vr-ar
 description: "VR/AR development principles. Comfort, interaction, performance requirements."
 allowed-tools: Read, Write, Edit, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # VR/AR Development

@@ -2,8 +2,8 @@
 name: hosted-agents-v2-py
 description: "Build hosted agents using Azure AI Projects SDK with ImageBasedHostedAgentDefinition. Use when creating container-based agents in Azure AI Foundry."
 package: azure-ai-projects
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Azure AI Hosted Agents (Python)

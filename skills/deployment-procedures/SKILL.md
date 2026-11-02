@@ -2,8 +2,8 @@
 name: deployment-procedures
 description: "Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts."
 allowed-tools: Read, Glob, Grep, Bash
-risk: unknown
-source: rootcastle-rei
+risk: critical
+source: community
 ---
 
 # Deployment Procedures

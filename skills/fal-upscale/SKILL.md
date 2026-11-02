@@ -1,7 +1,7 @@
 ---
 name: fal-upscale
 description: "Upscale and enhance image and video resolution using AI"
-source: rootcastle-rei
+source: fal-ai-community/skills
 risk: safe
 ---
 

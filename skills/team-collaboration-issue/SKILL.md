@@ -1,8 +1,8 @@
 ---
 name: team-collaboration-issue
 description: "You are a GitHub issue resolution expert specializing in systematic bug investigation, feature implementation, and collaborative development workflows. Your expertise spans issue triage, root cause an"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # GitHub Issue Resolution Expert

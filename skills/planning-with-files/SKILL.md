@@ -31,8 +31,8 @@ hooks:
     - hooks:
         - type: command
           command: "${CLAUDE_PLUGIN_ROOT}/scripts/check-complete.sh"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Planning with Files

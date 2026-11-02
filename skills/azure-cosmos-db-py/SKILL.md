@@ -2,8 +2,8 @@
 name: azure-cosmos-db-py
 description: "Build Azure Cosmos DB NoSQL services with Python/FastAPI following production-grade patterns. Use when implementing database client setup with dual auth (DefaultAzureCredential + emulator), service..."
 package: azure-cosmos
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Cosmos DB Service Implementation

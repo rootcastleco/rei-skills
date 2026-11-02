@@ -1,131 +1,84 @@
-# 🏰 Contributing to Rei Skills
+# 🏰 Contributing to REI Skills
 
-**Welcome!** We're excited you want to contribute to the Rei Skills collection.
-
-> **Maintained by:** [Rootcastle Engineering & Innovation](https://www.rootcastle.com) | Batuhan Ayrıbaş
+Thank you for contributing to **REI Skills** — the engineering-grade skill layer for AI agents, maintained by **[Rootcastle Engineering & Innovation](https://rootcastle.com/)**.
 
 ---
 
-## Quick Start
+## 1. Quick Contribution Workflow
 
-1. **Fork** the repository
-2. **Create** your skill directory in `skills/your-skill-name/`
-3. **Add** a `SKILL.md` file with proper frontmatter
-4. **Validate** with `npm run validate`
-5. **Submit** a Pull Request
+1. **Fork & Branch:** Fork `rootcastleco/rei-skills` and create a feature branch (`feat/skill-<name>` or `fix/<issue>`).
+2. **Author or Update Skill:** Create `skills/<your-skill-name>/SKILL.md` following the schema below.
+3. **Run Local Validation & Build:**
+   ```bash
+   # Rebuild catalog, index, README, and static doc site
+   npm run build
+
+   # Run strict Python & Node validators (must exit 0)
+   npm run validate:strict
+   node scripts/validate-skills.js
+
+   # Run security audit & reference checks (must exit 0)
+   npm run security-audit
+   python scripts/validate_references.py
+
+   # Run test suite
+   npm test
+   ```
+4. **Submit Pull Request:** Open a PR against `main` using the repository Pull Request template.
 
 ---
 
-## SKILL.md Format
+## 2. `SKILL.md` Specification & Quality Bar
 
-Every skill requires a `SKILL.md` file with YAML frontmatter:
+Every skill directory (`skills/<skill-id>/SKILL.md`) must begin with valid YAML frontmatter:
 
 ```markdown
 ---
 name: your-skill-name
-description: "A clear, one-line description of what the skill does."
-risk: safe | low | medium | high | unknown
+description: "Concise one-line description of what the skill does and when to trigger it (max 200 chars)."
+risk: safe
 source: rootcastle-rei
 ---
 
-# Your Skill Name
+# Your Skill Title
 
-## Purpose
-Explain what this skill does and when to use it.
-
-## How It Works
-Step-by-step instructions...
-
-## Examples
-Concrete usage examples...
+## Overview
+Explain the engineering problem this skill solves.
 
 ## When to Use
-When should an AI agent invoke this skill?
+- Bullet points describing exact user intents or scenarios that should trigger this skill.
+
+## Workflow / Instructions
+Step-by-step actionable instructions for the AI agent.
+
+## Examples
+Copy-pasteable prompt or code examples.
+
+## Limitations
+Explicit boundaries or prerequisites.
 ```
 
-### Frontmatter Fields
+### Frontmatter Field Reference
 
-| Field         | Required | Description                                            |
-| :------------ | :------- | :----------------------------------------------------- |
-| `name`        | ✅       | Unique kebab-case identifier                           |
-| `description` | ✅       | One-line description (max 200 chars)                   |
-| `risk`        | ✅       | `safe`, `low`, `medium`, `high`, or `unknown`          |
-| `source`      | ✅       | `rootcastle-rei` for new contributions                 |
-| `category`    | Optional | E.g., `devops`, `security`, `frontend`                 |
-| `displayName` | Optional | Human-readable name (e.g., "Docker Expert")            |
+| Field | Required | Allowed Values / Rules |
+| :--- | :---: | :--- |
+| `name` | ✅ | Lowercase kebab-case matching the directory name (`^[a-z0-9-]+$`). |
+| `description` | ✅ | Clear single-line string (`<= 200` characters). Avoid unquoted colons. |
+| `risk` | ✅ | `none` (read-only reasoning), `safe` (local workspace inspection/code), `critical` (stateful ops), `offensive` (authorized pentesting — requires `⚠️ AUTHORIZED USE ONLY` banner). |
+| `source` | ✅ | `rootcastle-rei` for original Rootcastle skills, upstream repository URL for adapted/mirrored skills, or `community`. |
 
 ---
 
-## Quality Guidelines
+## 3. Provenance & Third-Party Attribution Rules
 
-### ✅ Do
-
-- Write clear, actionable instructions
-- Include practical examples
-- Specify when the skill should (and shouldn't) be used
-- Follow OWASP guidelines for security-related skills
-- Add `⚠️ AUTHORIZED USE ONLY` to offensive/pentest skills
-- Keep content focused and under 500 lines
-
-### ❌ Don't
-
-- Include hardcoded API keys, tokens, or passwords
-- Add dangerous shell commands without warnings
-- Create duplicate skills (check existing ones first)
-- Use overly generic descriptions
-- Skip the frontmatter
+- **Preserve Upstream Attribution:** Never strip third-party copyright notices, licenses, or `source:` URLs when updating adapted or mirrored skills.
+- **REI Reverse Engineering (`rei-*`) Skills:** The 12 `rei-*` skills are synchronized from [`rootcastleco/Rei-Reverse-engineer`](https://github.com/rootcastleco/Rei-Reverse-engineer) via `python scripts/sync_rei_rea.py --sync` and verified in CI via `python scripts/sync_rei_rea.py --check`.
 
 ---
 
-## Validation
+## 4. Reporting Issues & Security
 
-Before submitting, run:
-
-```bash
-# Validate all skills
-npm run validate
-
-# Full build pipeline
-npm run build
-
-# Security audit
-npm run security-audit
-
-# Brand check (if adding new skills)
-npm run brand
-```
-
----
-
-## Directory Structure
-
-```
-skills/
-└── your-skill-name/
-    ├── SKILL.md          # Required: Main skill file
-    ├── checklists.md     # Optional: Reference checklists
-    ├── scripts/          # Optional: Helper scripts
-    └── examples/         # Optional: Example files
-```
-
----
-
-## Pull Request Process
-
-1. Ensure your skill passes `npm run validate`
-2. One skill per PR (unless they're closely related)
-3. Include a brief description of what the skill does
-4. Maintainers will review within 48 hours
-
----
-
-## Reporting Issues
-
-- **Bugs:** Use the [Bug Report](https://github.com/rootcastleco/rei-skills/issues/new?template=bug-report.yml) template
-- **New Ideas:** Use the [Feature Request](https://github.com/rootcastleco/rei-skills/issues/new?template=feature-request.yml) template
-- **Security:** Email `admin@rootcastle.com` (see [SECURITY.md](SECURITY.md))
-
----
-
-> 🏰 **Rei Skills** — Curated by [Rootcastle Engineering & Innovation](https://www.rootcastle.com) | Batuhan Ayrıbaş  
-> Engineering Beyond Boundaries | admin@rootcastle.com
+- **Bug Reports:** [Bug Report Template](https://github.com/rootcastleco/rei-skills/issues/new?template=bug-report.yml)
+- **New Skill Proposals:** [New Skill Template](https://github.com/rootcastleco/rei-skills/issues/new?template=new-skill.yml)
+- **Documentation Improvements:** [Docs Improvement Template](https://github.com/rootcastleco/rei-skills/issues/new?template=docs-improvement.yml)
+- **Security Vulnerabilities:** Email `admin@rootcastle.com` privately (see [SECURITY.md](SECURITY.md)).

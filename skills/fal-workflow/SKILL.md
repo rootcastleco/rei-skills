@@ -1,7 +1,7 @@
 ---
 name: fal-workflow
 description: "Generate workflow JSON files for chaining AI models"
-source: rootcastle-rei
+source: fal-ai-community/skills
 risk: safe
 ---
 

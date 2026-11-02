@@ -2,7 +2,7 @@
 name: dbos-typescript
 description: "DBOS TypeScript SDK for building reliable, fault-tolerant applications with durable workflows. Use this skill when writing TypeScript code with DBOS, creating workflows and steps, using queues, usi..."
 risk: safe
-source: rootcastle-rei
+source: community
 license: MIT
 metadata:
   author: dbos

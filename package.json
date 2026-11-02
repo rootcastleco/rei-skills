@@ -1,23 +1,29 @@
 {
   "name": "rei-skills",
-  "version": "1.0.0",
-  "description": "883+ Universal Agentic Skills for Claude Code, Gemini CLI, Cursor & More — Curated by Rootcastle Engineering & Innovation (REI) | Batuhan Ayrıbaş",
-  "author": "Batuhan Ayrıbaş <admin@rootcastle.com> (https://www.rootcastle.com)",
-  "homepage": "https://www.rootcastle.com",
+  "version": "6.1.0",
+  "description": "The engineering-grade skill layer for AI agents. 895 validated skills, curated role bundles, orchestrated workflows, and REI Reverse Engineering (REA) for Claude Code, Codex, Gemini CLI & Cursor.",
+  "author": "Rootcastle Engineering & Innovation <admin@rootcastle.com> (https://rootcastle.com)",
+  "homepage": "https://rootcastle.com",
   "license": "MIT",
   "scripts": {
-    "validate": "python3 scripts/validate_skills.py",
-    "validate:strict": "python3 scripts/validate_skills.py --strict",
-    "index": "python3 scripts/generate_index.py",
-    "readme": "python3 scripts/update_readme.py",
-    "chain": "npm run validate && npm run index && npm run readme",
+    "validate": "python scripts/validate_skills.py",
+    "validate:strict": "python scripts/validate_skills.py --strict --report data/quality-report.json",
+    "validate:node": "node scripts/validate-skills.js",
+    "validate:refs": "python scripts/validate_references.py",
+    "index": "python scripts/generate_index.py",
+    "readme": "python scripts/update_readme.py",
     "catalog": "node scripts/build-catalog.js",
-    "build": "npm run chain && npm run catalog",
-    "test": "node scripts/tests/validate_skills_headings.test.js && python3 scripts/tests/test_validate_skills_headings.py && python3 scripts/tests/inspect_microsoft_repo.py && python3 scripts/tests/test_comprehensive_coverage.py",
+    "doc-site": "node scripts/build-doc-site.js",
+    "chain": "npm run validate:strict && npm run validate:node && npm run index && npm run catalog && npm run readme && npm run doc-site && npm run validate:refs",
+    "build": "npm run chain",
+    "test": "node scripts/tests/validate_skills_headings.test.js && python scripts/tests/test_validate_skills_headings.py && node scripts/tests/installer.test.js",
+    "test:network": "python scripts/tests/inspect_microsoft_repo.py && python scripts/tests/test_comprehensive_coverage.py",
     "brand": "node scripts/brand_skills.js",
     "security-audit": "node scripts/security_audit.js",
-    "sync:microsoft": "python3 scripts/sync_microsoft_skills.py",
-    "sync:all-official": "npm run sync:microsoft && npm run chain"
+    "sync:rea": "python scripts/sync_rei_rea.py --sync",
+    "check:rea": "python scripts/sync_rei_rea.py --check",
+    "sync:microsoft": "python scripts/sync_microsoft_skills.py",
+    "sync:all-official": "npm run sync:rea && npm run sync:microsoft && npm run build"
   },
   "devDependencies": {
     "yaml": "^2.8.2"
@@ -26,23 +32,35 @@
     "type": "git",
     "url": "git+https://github.com/rootcastleco/rei-skills.git"
   },
+  "bugs": {
+    "url": "https://github.com/rootcastleco/rei-skills/issues"
+  },
   "bin": {
     "rei-skills": "bin/install.js"
   },
   "files": [
-    "bin"
+    "bin",
+    "lib",
+    "data/rei-rea-manifest.json"
   ],
   "keywords": [
     "rei-skills",
     "rootcastle",
-    "claude-code",
-    "cursor",
-    "gemini-cli",
-    "agentic-skills",
-    "ai-coding",
     "ai-agents",
-    "engineering",
-    "iot",
-    "cybersecurity"
+    "agent-skills",
+    "claude-code",
+    "codex",
+    "gemini-cli",
+    "cursor",
+    "antigravity",
+    "opencode",
+    "mcp",
+    "model-context-protocol",
+    "reverse-engineering",
+    "binary-analysis",
+    "digital-forensics",
+    "cybersecurity",
+    "firmware-analysis",
+    "developer-tools"
   ]
 }

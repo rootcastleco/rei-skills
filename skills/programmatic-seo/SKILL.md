@@ -1,14 +1,8 @@
 ---
 name: programmatic-seo
-description: ">"
-  Design and evaluate programmatic SEO strategies for creating SEO-driven pages
-  at scale using templates and structured data. Use when the user mentions
-  programmatic SEO, pages at scale, template pages, directory pages, location pages,
-  comparison pages, integration pages, or keyword-pattern page generation.
-  This skill focuses on feasibility, strategy, and page system design—not execution
-  unless explicitly requested.
-risk: unknown
-source: rootcastle-rei
+description: "Design and evaluate programmatic SEO strategies for creating SEO-driven pages at scale using templates and structured data. Use when the user mentions programmatic SEO, pages at scale, template pages, directory pages, location pages, comparison pages, integration pages, or keyword-pattern page generation. This skill focuses on feasibility, strategy, and page system design\u2014not execution unless explicitly requested."
+risk: safe
+source: community
 ---
 
 ---

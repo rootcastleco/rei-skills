@@ -1,8 +1,8 @@
 ---
 name: nodejs-backend-patterns
 description: "Build production-ready Node.js backend services with Express/Fastify, implementing middleware patterns, error handling, authentication, database integration, and API design best practices. Use when..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Node.js Backend Patterns

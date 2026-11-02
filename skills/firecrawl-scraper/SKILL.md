@@ -1,8 +1,8 @@
 ---
 name: firecrawl-scraper
 description: "Deep web scraping, screenshots, PDF parsing, and website crawling using Firecrawl API"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # firecrawl-scraper

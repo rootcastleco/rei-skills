@@ -1,8 +1,8 @@
 ---
 name: playwright-skill
 description: "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login ..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 **IMPORTANT - Path Resolution:**

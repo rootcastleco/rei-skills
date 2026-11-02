@@ -2,8 +2,8 @@
 name: mobile-games
 description: "Mobile game development principles. Touch input, battery, performance, app stores."
 allowed-tools: Read, Write, Edit, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Mobile Game Development

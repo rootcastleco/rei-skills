@@ -4,7 +4,7 @@ description: "TypeScript and JavaScript expert for type-level programming, perfo
 category: framework
 displayName: TypeScript
 risk: safe
-source: rootcastle-rei
+source: community
 ---
 
 # TypeScript Expert

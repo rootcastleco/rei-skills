@@ -1,7 +1,7 @@
 ---
 name: fal-image-edit
 description: "AI-powered image editing with style transfer and object removal"
-source: rootcastle-rei
+source: fal-ai-community/skills
 risk: safe
 ---
 

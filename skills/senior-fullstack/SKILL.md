@@ -1,8 +1,8 @@
 ---
 name: senior-fullstack
 description: "Comprehensive fullstack development skill for building complete web applications with React, Next.js, Node.js, GraphQL, and PostgreSQL. Includes project scaffolding, code quality analysis, architec..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Senior Fullstack

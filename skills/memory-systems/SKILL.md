@@ -1,7 +1,7 @@
 ---
 name: memory-systems
 description: "Design short-term, long-term, and graph-based memory architectures"
-source: rootcastle-rei
+source: muratcankoylan/Agent-Skills-for-Context-Engineering
 risk: safe
 ---
 

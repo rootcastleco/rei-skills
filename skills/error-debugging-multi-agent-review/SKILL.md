@@ -1,8 +1,8 @@
 ---
 name: error-debugging-multi-agent-review
 description: "Use when working with error debugging multi agent review"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Multi-Agent Code Review Orchestration Tool

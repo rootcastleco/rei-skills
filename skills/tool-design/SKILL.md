@@ -1,7 +1,7 @@
 ---
 name: tool-design
 description: "Build tools that agents can use effectively, including architectural reduction patterns"
-source: rootcastle-rei
+source: muratcankoylan/Agent-Skills-for-Context-Engineering
 risk: safe
 ---
 

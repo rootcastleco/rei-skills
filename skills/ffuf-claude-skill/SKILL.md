@@ -1,7 +1,7 @@
 ---
 name: ffuf-claude-skill
 description: "Web fuzzing with ffuf"
-source: rootcastle-rei
+source: jthack/ffuf_claude_skill
 risk: safe
 ---
 

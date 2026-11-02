@@ -1,8 +1,8 @@
 ---
 name: product-manager-toolkit
 description: "Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use for feature prioritizati..."
-risk: unknown
-source: rootcastle-rei
+risk: none
+source: community
 ---
 
 # Product Manager Toolkit

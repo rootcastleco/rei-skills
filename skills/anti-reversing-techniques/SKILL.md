@@ -1,8 +1,8 @@
 ---
 name: anti-reversing-techniques
 description: "Understand anti-reversing, obfuscation, and protection techniques encountered during software analysis. Use when analyzing protected binaries, bypassing anti-debugging for authorized analysis, or u..."
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > **AUTHORIZED USE ONLY**: This skill contains dual-use security techniques. Before proceeding with any bypass or analysis:

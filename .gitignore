@@ -10,6 +10,7 @@ data/node_modules
 
 # Temporary analysis and report files
 *_REPORT.md
+!examples/rei-rea-demo/FINDING_REPORT.md
 *_ANALYSIS*.md
 *_COUNT.md
 *_SUMMARY.md

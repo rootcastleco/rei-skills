@@ -2,8 +2,8 @@
 name: docx-official
 description: "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional document..."
 license: Proprietary. LICENSE.txt has complete terms
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: anthropics/skills
 ---
 
 # DOCX creation, editing, and analysis

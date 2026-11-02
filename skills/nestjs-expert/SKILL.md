@@ -4,8 +4,8 @@ description: "Nest.js framework expert specializing in module architecture, depe
 category: framework
 displayName: Nest.js Framework Expert
 color: red
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Nest.js Expert

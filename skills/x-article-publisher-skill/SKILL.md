@@ -1,7 +1,7 @@
 ---
 name: x-article-publisher-skill
 description: "Publish articles to X/Twitter"
-source: rootcastle-rei
+source: community
 risk: safe
 ---
 

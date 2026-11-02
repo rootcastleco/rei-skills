@@ -2,8 +2,8 @@
 name: nodejs-best-practices
 description: "Node.js development principles and decision-making. Framework selection, async patterns, security, and architecture. Teaches thinking, not copying."
 allowed-tools: Read, Write, Edit, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Node.js Best Practices

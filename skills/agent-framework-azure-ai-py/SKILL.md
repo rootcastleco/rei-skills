@@ -2,8 +2,8 @@
 name: agent-framework-azure-ai-py
 description: "Build Azure AI Foundry agents using the Microsoft Agent Framework Python SDK (agent-framework-azure-ai). Use when creating persistent agents with AzureAIAgentsProvider, using hosted tools (code int..."
 package: agent-framework-azure-ai
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Agent Framework Azure Hosted Agents

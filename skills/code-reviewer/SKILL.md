@@ -1,14 +1,10 @@
 ---
 name: code-reviewer
-description: "Elite code review expert specializing in modern AI-powered code"
-  analysis, security vulnerabilities, performance optimization, and production
-  reliability. Masters static analysis tools, security scanning, and
-  configuration review with 2024/2025 best practices. Use PROACTIVELY for code
-  quality assurance.
+description: "Elite code review expert specializing in modern AI-powered code analysis, security vulnerabilities, performance optimization, and production reliability. Masters static analysis tools, security scanning, and configuration review with 2024/2025 best practices. Use PROACTIVELY for code quality assurance."
 metadata:
   model: opus
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

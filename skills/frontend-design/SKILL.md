@@ -2,8 +2,8 @@
 name: frontend-design
 description: "Create distinctive, production-grade frontend interfaces with intentional aesthetics, high craft, and non-generic visual identity. Use when building or styling web UIs, components, pages, dashboard..."
 license: Complete terms in LICENSE.txt
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Frontend Design (Distinctive, Production-Grade)

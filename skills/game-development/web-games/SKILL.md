@@ -2,8 +2,8 @@
 name: web-games
 description: "Web browser game development principles. Framework selection, WebGPU, optimization, PWA."
 allowed-tools: Read, Write, Edit, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Web Browser Game Development

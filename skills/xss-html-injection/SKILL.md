@@ -4,9 +4,11 @@ description: "This skill should be used when the user asks to \"test for XSS vul
 metadata:
   author: zebbern
   version: "1.1"
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
+
+> ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security assessments and educational use only. Use only against systems you own or have explicit written permission to test.
 
 # Cross-Site Scripting and HTML Injection Testing
 

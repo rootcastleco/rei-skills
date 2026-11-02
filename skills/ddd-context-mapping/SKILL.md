@@ -2,7 +2,7 @@
 name: ddd-context-mapping
 description: "Map relationships between bounded contexts and define integration contracts using DDD context mapping patterns."
 risk: safe
-source: rootcastle-rei
+source: community
 tags: [ddd, context-map, anti-corruption-layer, integration]
 ---
 

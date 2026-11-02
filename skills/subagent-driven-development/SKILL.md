@@ -1,8 +1,8 @@
 ---
 name: subagent-driven-development
 description: "Use when executing implementation plans with independent tasks in the current session"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Subagent-Driven Development

@@ -1,51 +1,41 @@
-# 🛡️ Security Guardrails & Policy
+# 🛡️ Security Guardrails & Authorized Use Policy
 
-Antigravity Awesome Skills is a powerful toolkit. With great power comes great responsibility. This document defines the **Rules of Engagement** for all security and offensive capabilities in this repository.
+**REI Skills** includes defensive security, reverse engineering, binary intelligence, and offensive security assessment skills. This document defines the mandatory security guardrails enforced across the repository.
 
-## 🔴 Offensive Skills Policy (The "Red Line")
+---
 
-**What is an Offensive Skill?**
-Any skill designed to penetrate, exploit, disrupt, or simulate attacks against systems.
-_Examples: Pentesting, SQL Injection, Phishing Simulation, Red Teaming._
+## 1. Offensive Skills Policy ("The Red Line")
 
-### 1. The "Authorized Use Only" Disclaimer
+Any skill with `risk: offensive` or covering penetration testing, exploit development, red teaming, or active vulnerability fuzzing is governed by strict rules:
 
-Every offensive skill **MUST** begin with this exact disclaimer in its `SKILL.md`:
+### A. Mandatory "Authorized Use Only" Banner
+Every offensive skill **must** include an explicit `AUTHORIZED USE ONLY` warning in its `SKILL.md`:
 
 > **⚠️ AUTHORIZED USE ONLY**
 > This skill is for educational purposes or authorized security assessments only.
 > You must have explicit, written permission from the system owner before using this tool.
 > Misuse of this tool is illegal and strictly prohibited.
 
-### 2. Mandatory User Confirmation
+This requirement is automatically enforced in CI by `node scripts/security_audit.js`.
 
-Offensive skills must **NEVER** run fully autonomously.
-
-- **Requirement**: The skill description/instructions must explicitly tell the agent to _ask for user confirmation_ before executing any exploit or attack command.
-- **Agent Instruction**: "Ask the user to verify the target URL/IP before running."
-
-### 3. Safe by Design
-
-- **No Weaponized Payloads**: Skills should not include active malware, ransomware, or non-educational exploits.
-- **Sandbox Recommended**: Instructions should recommend running in a contained environment (Docker/VM).
+### B. Human-in-the-Loop Confirmation
+Offensive skills instruct the AI agent to confirm target scope and authorization with the user before executing active network or exploitation commands.
 
 ---
 
-## 🔵 Defensive Skills Policy
+## 2. Reverse Engineering & Forensic Boundary (`rei-rea`)
 
-**What is a Defensive Skill?**
-Tools for hardening, auditing, monitoring, or protecting systems.
-_Examples: Linting, Log Analysis, Configuration Auditing._
-
-- **Data Privacy**: Defensive skills must not upload data to 3rd party servers without explicit user consent.
-- **Non-Destructive**: Audits should be read-only by default.
+The 12 **REI Reverse Engineering (`rei-rea`)** skills follow a **static-first, provenance-gated** methodology:
+- Static structural inspection (`rei-binary-intelligence`, `rei-native-binaries`, `rei-wasm-and-managed`, `rei-firmware-and-iot`) parses headers, sections, imports/exports, and entropy **without executing untrusted sample code**.
+- Dynamic instrumentation skills (`rei-mobile-runtime`) explicitly require isolated sandbox/emulator environments and authorized binaries.
+- Every finding is separated into `[EVIDENCE]`, `[INFERENCE]`, or `[UNKNOWN]` via `rei-evidence-ledger`.
 
 ---
 
-## ⚖️ Legal Disclaimer
+## 3. Automated Security Audit (`scripts/security_audit.js`)
 
-By using this repository, you agree that:
-
-1. You are responsible for your own actions.
-2. The authors and contributors are not liable for any damage caused by these tools.
-3. You will comply with all local, state, and federal laws regarding cybersecurity.
+Every commit and Pull Request runs `node scripts/security_audit.js`, which checks all 895 skills for:
+- Live hardcoded credentials or private keys
+- Destructive shell commands lacking safety warnings
+- Unclassified risk levels
+- Offensive skills missing `AUTHORIZED USE ONLY` banners

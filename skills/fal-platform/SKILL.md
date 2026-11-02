@@ -1,7 +1,7 @@
 ---
 name: fal-platform
 description: "Platform APIs for model management, pricing, and usage tracking"
-source: rootcastle-rei
+source: fal-ai-community/skills
 risk: safe
 ---
 

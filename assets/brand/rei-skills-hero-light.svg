@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="auto" role="img" aria-label="REI Skills — The engineering-grade skill layer for AI agents (Light Theme)">
+  <defs>
+    <linearGradient id="bgLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="60%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <pattern id="gridLight" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#0E3D8A" stroke-width="0.6" stroke-opacity="0.12"/>
+    </pattern>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="1200" height="420" rx="14" fill="url(#bgLight)"/>
+  <rect width="1200" height="420" rx="14" fill="url(#gridLight)"/>
+  <rect x="1.5" y="1.5" width="1197" height="417" rx="13" fill="none" stroke="#0E3D8A" stroke-width="2"/>
+
+  <!-- Top Instrumentation Bar -->
+  <rect x="2" y="2" width="1196" height="36" rx="12" fill="#000000"/>
+  <rect x="22" y="13" width="10" height="10" fill="#0E3D8A"/>
+  <rect x="38" y="13" width="10" height="10" fill="#228B55"/>
+  <rect x="54" y="13" width="10" height="10" fill="#334155"/>
+  <text x="80" y="24" fill="#CBD5E1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="1.5">ROOTCASTLE // REI-SKILLS PLATFORM // TELEMETRY &amp; AGENT ORCHESTRATION</text>
+  <text x="1176" y="24" text-anchor="end" fill="#34D399" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700">[STATUS: VERIFIED · 895 SKILLS]</text>
+
+  <!-- Left Column -->
+  <g transform="translate(54, 72)">
+    <rect x="0" y="0" width="356" height="28" rx="4" fill="#EFF6FF" stroke="#0E3D8A" stroke-width="1.2"/>
+    <rect x="10" y="9" width="10" height="10" fill="#228B55"/>
+    <text x="28" y="19" fill="#0E3D8A" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="1.2">ROOTCASTLE ENGINEERING &amp; INNOVATION</text>
+
+    <text x="0" y="92" fill="#000000" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="58" font-weight="900" letter-spacing="4">REI SKILLS</text>
+    <rect x="0" y="108" width="140" height="4" fill="#0E3D8A"/>
+    <rect x="148" y="108" width="64" height="4" fill="#228B55"/>
+
+    <text x="0" y="146" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700">The engineering-grade skill layer for AI agents.</text>
+    <text x="0" y="176" fill="#334155" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="600" letter-spacing="0.8">DISCOVER  ·  INSTALL  ·  ORCHESTRATE  ·  VERIFY</text>
+
+    <!-- Terminal Install Box -->
+    <rect x="0" y="202" width="490" height="54" rx="6" fill="#000000" stroke="#0E3D8A" stroke-width="1.5"/>
+    <text x="18" y="234" fill="#228B55" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="700">$</text>
+    <text x="38" y="234" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16" font-weight="600">npx rei-skills</text>
+    <text x="210" y="234" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13"># Claude · Codex · Gemini · Cursor</text>
+
+    <g transform="translate(0, 276)">
+      <rect x="0" y="0" width="148" height="32" rx="4" fill="#EFF6FF" stroke="#0E3D8A" stroke-width="1.2"/>
+      <text x="74" y="21" text-anchor="middle" fill="#0E3D8A" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="700">895 VALIDATED SKILLS</text>
+
+      <rect x="160" y="0" width="166" height="32" rx="4" fill="#ECFDF5" stroke="#228B55" stroke-width="1.2"/>
+      <text x="243" y="21" text-anchor="middle" fill="#166534" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="700">12 REI REA MODULES</text>
+
+      <rect x="338" y="0" width="152" height="32" rx="4" fill="#FFFFFF" stroke="#0E3D8A" stroke-width="1.2"/>
+      <text x="414" y="21" text-anchor="middle" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="700">SHA-256 PROVENANCE</text>
+    </g>
+  </g>
+
+  <!-- Right Column: Schematic Panel -->
+  <g transform="translate(610, 66)">
+    <rect x="0" y="0" width="536" height="314" rx="8" fill="#FFFFFF" stroke="#0E3D8A" stroke-width="1.5"/>
+    <rect x="0" y="0" width="536" height="34" rx="8" fill="#0E3D8A"/>
+    <text x="16" y="22" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="700" letter-spacing="1">SIGNAL BUS // SKILL REGISTRY &amp; REI REA WORKBENCH</text>
+    <text x="520" y="22" text-anchor="end" fill="#A7F3D0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">0x09FBC7B</text>
+
+    <path d="M 164 90 H 230 L 250 110 H 310" fill="none" stroke="#0E3D8A" stroke-width="2.2"/>
+    <path d="M 164 166 H 310" fill="none" stroke="#228B55" stroke-width="2.2"/>
+    <path d="M 164 242 H 230 L 250 222 H 310" fill="none" stroke="#0E3D8A" stroke-width="2.2"/>
+    <circle cx="230" cy="90" r="3.5" fill="#0E3D8A"/>
+    <circle cx="250" cy="166" r="3.5" fill="#228B55"/>
+    <circle cx="230" cy="242" r="3.5" fill="#0E3D8A"/>
+
+    <g transform="translate(20, 58)">
+      <rect width="144" height="58" rx="5" fill="#F8FAFC" stroke="#0E3D8A" stroke-width="1.4"/>
+      <text x="12" y="24" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="700">SKILL REGISTRY</text>
+      <text x="12" y="42" fill="#475569" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">10 Categories · YAML</text>
+    </g>
+
+    <g transform="translate(20, 134)">
+      <rect width="144" height="58" rx="5" fill="#ECFDF5" stroke="#228B55" stroke-width="1.6"/>
+      <text x="12" y="24" fill="#166534" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="700">REI REA SKILLS</text>
+      <text x="12" y="42" fill="#15803D" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">PE · ELF · WASM · APK</text>
+    </g>
+
+    <g transform="translate(20, 210)">
+      <rect width="144" height="58" rx="5" fill="#F8FAFC" stroke="#0E3D8A" stroke-width="1.4"/>
+      <text x="12" y="24" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="700">WORKFLOW ENGINE</text>
+      <text x="12" y="42" fill="#475569" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">7 Verified Playbooks</text>
+    </g>
+
+    <g transform="translate(310, 58)">
+      <rect width="204" height="210" rx="6" fill="#F8FAFC" stroke="#228B55" stroke-width="1.5"/>
+      <rect x="0" y="0" width="204" height="28" rx="6" fill="#000000"/>
+      <text x="102" y="18" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="700">AGENT &amp; MCP INTERFACE</text>
+
+      <text x="14" y="52" fill="#0F172A" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="700">Compatible Assistants:</text>
+      <text x="14" y="70" fill="#334155" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10.5">• Claude Code / Cursor</text>
+      <text x="14" y="86" fill="#334155" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10.5">• OpenAI Codex / Gemini CLI</text>
+      <text x="14" y="102" fill="#334155" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10.5">• Antigravity IDE</text>
+
+      <line x1="14" y1="116" x2="190" y2="116" stroke="#CBD5E1" stroke-width="1"/>
+
+      <text x="14" y="136" fill="#166534" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="700">REI REA Workbench (Opt-In):</text>
+      <text x="14" y="154" fill="#334155" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">• 14 Local stdio MCP Tools</text>
+      <text x="14" y="170" fill="#334155" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">• 124 Cataloged RE Tools</text>
+      <text x="14" y="186" fill="#334155" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">• 11 Static CLI Adapters</text>
+      <text x="14" y="202" fill="#166534" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10" font-weight="700">• Read-Only SHA-256 Cases</text>
+    </g>
+
+    <rect x="20" y="280" width="494" height="22" rx="3" fill="#F1F5F9"/>
+    <text x="28" y="295" fill="#475569" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10" font-weight="600">PROVENANCE: MIT · ANTHROPIC · MICROSOFT · OPENAI · VERCEL · ROOTCASTLE REI</text>
+  </g>
+</svg>

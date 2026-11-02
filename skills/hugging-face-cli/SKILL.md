@@ -1,7 +1,7 @@
 ---
 name: hugging-face-cli
 description: "Execute Hugging Face Hub operations using the `hf` CLI. Use when the user needs to download models/datasets/spaces, upload files to Hub repositories, create repos, manage local cache, or run comput..."
-source: rootcastle-rei
+source: huggingface/skills
 risk: safe
 ---
 

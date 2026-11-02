@@ -1,13 +1,10 @@
 ---
 name: graphql-architect
-description: "Master modern GraphQL with federation, performance optimization,"
-  and enterprise security. Build scalable schemas, implement advanced caching,
-  and design real-time systems. Use PROACTIVELY for GraphQL architecture or
-  performance optimization.
+description: "Master modern GraphQL with federation, performance optimization, and enterprise security. Build scalable schemas, implement advanced caching, and design real-time systems. Use PROACTIVELY for GraphQL architecture or performance optimization."
 metadata:
   model: opus
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 ## Use this skill when

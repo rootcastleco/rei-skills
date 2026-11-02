@@ -1,8 +1,8 @@
 ---
 name: go-concurrency-patterns
 description: "Master Go concurrency with goroutines, channels, sync primitives, and context. Use when building concurrent Go applications, implementing worker pools, or debugging race conditions."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Go Concurrency Patterns

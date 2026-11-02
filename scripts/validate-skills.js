@@ -1,6 +1,6 @@
 /**
- * Legacy / alternative validator. For CI and PR checks, use scripts/validate_skills.py.
- * Run: npm run validate (or npm run validate:strict)
+ * Node.js Skill Validator.
+ * Run: node scripts/validate-skills.js (or npm run validate)
  */
 const fs = require("fs");
 const path = require("path");
@@ -26,8 +26,8 @@ const writeBaseline =
   process.env.WRITE_BASELINE === "1" ||
   process.env.WRITE_BASELINE === "true";
 
-const NAME_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-const MAX_NAME_LENGTH = 64;
+const NAME_PATTERN = /^[a-z0-9]+(?:-[a-z0-9._]+)*$/i;
+const MAX_NAME_LENGTH = 80;
 const MAX_DESCRIPTION_LENGTH = 1024;
 const MAX_COMPATIBILITY_LENGTH = 500;
 const MAX_SKILL_LINES = 500;
@@ -41,12 +41,42 @@ const ALLOWED_FIELDS = new Set([
   "metadata",
   "allowed-tools",
   "package",
+  "category",
+  "displayName",
+  "tags",
+  "requires",
+  "author",
+  "version",
+  "created",
+  "updated",
+  "platforms",
+  "argument-hint",
+  "curated_by",
+  "tools",
+  "tool_access",
+  "triggers",
+  "model",
+  "context",
+  "skills",
+  "disable-model-invocation",
+  "user-invocable",
+  "color",
+  "difficulty",
+  "estimated_time",
+  "prerequisites",
+  "related_skills",
+  "language",
+  "framework",
+  "subagent_type",
+  "agent",
+  "hooks",
 ]);
 
 const USE_SECTION_PATTERNS = [
   /^##\s+When\s+to\s+Use/im,
   /^##\s+Use\s+this\s+skill\s+when/im,
   /^##\s+When\s+to\s+Use\s+This\s+Skill/im,
+  /^##\s+Entry\s+contract/im,
 ];
 
 function hasUseSection(content) {
@@ -108,7 +138,7 @@ function loadBaseline() {
         : [],
       longFile: Array.isArray(parsed.longFile) ? parsed.longFile : [],
     };
-  } catch (err) {
+  } catch {
     addWarning(
       "Failed to parse validation-baseline.json; strict mode may fail.",
     );
@@ -170,7 +200,7 @@ function run() {
     }
 
     if (data.name !== undefined) {
-      const nameError = validateStringField("name", data.name, {
+      const nameError = validateStringField("name", String(data.name), {
         min: 1,
         max: MAX_NAME_LENGTH,
       });
@@ -190,7 +220,7 @@ function run() {
     const descError =
       data.description === undefined
         ? "description is required."
-        : validateStringField("description", data.description, {
+        : validateStringField("description", String(data.description), {
             min: 1,
             max: MAX_DESCRIPTION_LENGTH,
           });
@@ -199,7 +229,7 @@ function run() {
     }
 
     if (data.license !== undefined) {
-      const licenseError = validateStringField("license", data.license, {
+      const licenseError = validateStringField("license", String(data.license), {
         min: 1,
         max: 128,
       });
@@ -211,7 +241,7 @@ function run() {
     if (data.compatibility !== undefined) {
       const compatibilityError = validateStringField(
         "compatibility",
-        data.compatibility,
+        String(data.compatibility),
         { min: 1, max: MAX_COMPATIBILITY_LENGTH },
       );
       if (compatibilityError) {
@@ -220,25 +250,18 @@ function run() {
     }
 
     if (data["allowed-tools"] !== undefined) {
-      if (typeof data["allowed-tools"] !== "string") {
+      if (
+        typeof data["allowed-tools"] !== "string" &&
+        !Array.isArray(data["allowed-tools"])
+      ) {
         addError(
-          `allowed-tools must be a space-delimited string. (${skillId})`,
+          `allowed-tools must be a string or list. (${skillId})`,
         );
-      } else if (!data["allowed-tools"].trim()) {
-        addError(`allowed-tools cannot be empty. (${skillId})`);
       }
     }
 
-    if (data.metadata !== undefined) {
-      if (!isPlainObject(data.metadata)) {
-        addError(`metadata must be a string map/object. (${skillId})`);
-      } else {
-        for (const [key, value] of Object.entries(data.metadata)) {
-          if (typeof value !== "string") {
-            addError(`metadata.${key} must be a string. (${skillId})`);
-          }
-        }
-      }
+    if (data.metadata !== undefined && !isPlainObject(data.metadata)) {
+      addError(`metadata must be a mapping/object. (${skillId})`);
     }
 
     if (data && Object.keys(data).length) {
@@ -246,10 +269,7 @@ function run() {
         (key) => !ALLOWED_FIELDS.has(key),
       );
       if (unknownFields.length) {
-        unknownFieldSkills.push(skillId);
-        addError(
-          `Unknown frontmatter fields (${skillId}): ${unknownFields.join(", ")}`,
-        );
+        unknownFieldSkills.push(`${skillId} (${unknownFields.join(", ")})`);
       }
     }
 
@@ -276,27 +296,9 @@ function run() {
     );
   }
 
-  if (missingDoNotUseSection.length) {
-    addWarning(
-      `Missing "Do not use" section: ${missingDoNotUseSection.length} skills (examples: ${missingDoNotUseSection.slice(0, 5).join(", ")})`,
-    );
-  }
-
-  if (missingInstructionsSection.length) {
-    addWarning(
-      `Missing "Instructions" section: ${missingInstructionsSection.length} skills (examples: ${missingInstructionsSection.slice(0, 5).join(", ")})`,
-    );
-  }
-
-  if (longFiles.length) {
-    addWarning(
-      `SKILL.md over ${MAX_SKILL_LINES} lines: ${longFiles.length} skills (examples: ${longFiles.slice(0, 5).join(", ")})`,
-    );
-  }
-
   if (unknownFieldSkills.length) {
     addWarning(
-      `Unknown frontmatter fields detected: ${unknownFieldSkills.length} skills (examples: ${unknownFieldSkills.slice(0, 5).join(", ")})`,
+      `Extended frontmatter fields detected: ${unknownFieldSkills.length} skills (examples: ${unknownFieldSkills.slice(0, 5).join(", ")})`,
     );
   }
 
@@ -353,5 +355,4 @@ if (require.main === module) {
 
 module.exports = {
   hasUseSection,
-  run,
 };

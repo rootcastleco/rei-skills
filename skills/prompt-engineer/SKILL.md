@@ -9,7 +9,7 @@ platforms: [github-copilot-cli, claude-code, codex]
 category: automation
 tags: [prompt-engineering, optimization, frameworks, ai-enhancement]
 risk: safe
-source: rootcastle-rei
+source: community
 ---
 
 ## Purpose

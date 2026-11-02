@@ -1,7 +1,7 @@
 ---
 name: upgrading-expo
 description: "Upgrade Expo SDK versions"
-source: rootcastle-rei
+source: expo/skills
 risk: safe
 ---
 

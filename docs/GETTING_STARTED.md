@@ -1,138 +1,65 @@
-# Getting Started with Antigravity Awesome Skills (V4)
+# 🚀 Getting Started with REI Skills
 
-**New here? This guide will help you supercharge your AI Agent in 5 minutes.**
+**Equip your AI coding agent with engineering-grade skills in under 2 minutes.**
 
-> **💡 Confused about what to do after installation?** Check out the [**Complete Usage Guide**](USAGE.md) for detailed explanations and examples!
-
----
-
-## 🤔 What Are "Skills"?
-
-AI Agents (like **Claude Code**, **Gemini**, **Cursor**) are smart, but they lack specific knowledge about your tools.
-**Skills** are specialized instruction manuals (markdown files) that teach your AI how to perform specific tasks perfectly, every time.
-
-**Analogy:** Your AI is a brilliant intern. **Skills** are the SOPs (Standard Operating Procedures) that make them a Senior Engineer.
+> Maintained by **[Rootcastle Engineering & Innovation](https://rootcastle.com/)** — *Engineering Beyond Boundaries.*
 
 ---
 
-## ⚡️ Quick Start: The "Starter Packs"
+## 1. What Are REI Skills?
 
-Don't panic about the 700+ skills. You don't need them all at once.
-We have curated **Starter Packs** to get you running immediately.
+AI coding assistants (**Claude Code**, **OpenAI Codex CLI**, **Gemini CLI**, **Cursor**, **Antigravity**, **OpenCode**) are general-purpose models. **REI Skills** are structured, schema-validated `SKILL.md` operational playbooks that give your agent deterministic workflows, architectural constraints, and domain expertise on demand.
 
-You **install the full repo once** (npx or clone); Starter Packs are curated lists to help you **pick which skills to use** by role (e.g. Web Wizard, Hacker Pack)—they are not a different way to install.
+---
 
-### 1. Install the Repo
+## 2. Quick Install
 
-**Option A — npx (easiest):**
+### Option A — Selective Skill or Bundle Install (Recommended)
+
+Install only the exact skills or role bundle your project needs:
 
 ```bash
-npx antigravity-awesome-skills
+# Install the Essentials starter bundle for Cursor
+npx rei-skills add essentials --cursor
+
+# Install the 12-skill REI Reverse Engineering (REA) bundle for Claude Code
+npx rei-skills add rei-rea --claude
+
+# Install a single skill into the universal .agent/skills directory
+npx rei-skills add systematic-debugging
 ```
 
-This clones to `~/.agent/skills` by default. Use `--cursor`, `--claude`, `--gemini`, or `--codex` to install for a specific tool, or `--path <dir>` for a custom location. Run `npx antigravity-awesome-skills --help` for details.
-
-If you see a 404 error, use: `npx github:sickn33/antigravity-awesome-skills`
-
-**Option B — git clone:**
+### Option B — Full Catalog Install (895 Skills)
 
 ```bash
-# Universal (works for most agents)
-git clone https://github.com/sickn33/antigravity-awesome-skills.git .agent/skills
+npx rei-skills                 # Default: ~/.gemini/antigravity/skills
+npx rei-skills --claude        # ~/.claude/skills
+npx rei-skills --cursor        # ./.cursor/skills
+npx rei-skills --gemini        # ~/.gemini/skills
+npx rei-skills --codex         # ~/.codex/skills
+npx rei-skills --opencode      # ~/.agents/skills
 ```
 
-### 2. Pick Your Persona
+---
 
-Find the bundle that matches your role (see [BUNDLES.md](BUNDLES.md)):
+## 3. Supported AI Clients
 
-| Persona               | Bundle Name    | What's Inside?                                    |
-| :-------------------- | :------------- | :------------------------------------------------ |
-| **Web Developer**     | `Web Wizard`   | React Patterns, Tailwind mastery, Frontend Design |
-| **Security Engineer** | `Hacker Pack`  | OWASP, Metasploit, Pentest Methodology            |
-| **Manager / PM**      | `Product Pack` | Brainstorming, Planning, SEO, Strategy            |
-| **Everything**        | `Essentials`   | Clean Code, Planning, Validation (The Basics)     |
+| Client | CLI Target Flag | Default Target Path |
+| :--- | :--- | :--- |
+| **Antigravity** | `--antigravity` | `~/.gemini/antigravity/skills` |
+| **Claude Code** | `--claude` | `~/.claude/skills` |
+| **Cursor** | `--cursor` | `./.cursor/skills` |
+| **Gemini CLI** | `--gemini` | `~/.gemini/skills` |
+| **OpenAI Codex CLI** | `--codex` | `~/.codex/skills` |
+| **OpenCode** | `--opencode` | `~/.agents/skills` |
+| **Kiro** | `--kiro` | `~/.kiro/skills` |
+| **Custom Workspace** | `--path <dir>` | `<dir>` |
 
 ---
 
-## 🧭 Bundles vs Workflows
+## 4. Next Steps
 
-Bundles and workflows solve different problems:
-
-- **Bundles** = curated sets by role (what to pick).
-- **Workflows** = step-by-step playbooks (how to execute).
-
-Start with bundles in [BUNDLES.md](BUNDLES.md), then run a workflow from [WORKFLOWS.md](WORKFLOWS.md) when you need guided execution.
-
-Example:
-
-> "Use **@antigravity-workflows** and run `ship-saas-mvp` for my project idea."
-
----
-
-## 🚀 How to Use a Skill
-
-Once installed, just talk to your AI naturally.
-
-### Example 1: Planning a Feature (**Essentials**)
-
-> "Use **@brainstorming** to help me design a new login flow."
-
-**What happens:** The AI loads the brainstorming skill, asks you structured questions, and produces a professional spec.
-
-### Example 2: Checking Your Code (**Web Wizard**)
-
-> "Run **@lint-and-validate** on this file and fix errors."
-
-**What happens:** The AI follows strict linting rules defined in the skill to clean your code.
-
-### Example 3: Security Audit (**Hacker Pack**)
-
-> "Use **@api-security-best-practices** to review my API endpoints."
-
-**What happens:** The AI audits your code against OWASP standards.
-
----
-
-## 🔌 Supported Tools
-
-| Tool            | Status          | Path              |
-| :-------------- | :-------------- | :---------------- |
-| **Claude Code** | ✅ Full Support | `.claude/skills/` |
-| **Gemini CLI**  | ✅ Full Support | `.gemini/skills/` |
-| **Codex CLI**   | ✅ Full Support | `.codex/skills/`  |
-| **Antigravity** | ✅ Native       | `.agent/skills/`  |
-| **Cursor**      | ✅ Native       | `.cursor/skills/` |
-| **Copilot**     | ⚠️ Text Only    | Manual copy-paste |
-
----
-
-## 🛡️ Trust & Safety (New in V4)
-
-We classify skills so you know what you're running:
-
-- 🟣 **Official**: Maintained by Anthropic/Google/Vendors (High Trust).
-- 🔵 **Safe**: Community skills that are non-destructive (Read-only/Planning).
-- 🔴 **Risk**: Skills that modify systems or perform security tests (Authorized Use Only).
-
-_Check the [Skill Catalog](../CATALOG.md) for the full list._
-
----
-
-## ❓ FAQ
-
-**Q: Do I need to install all 700+ skills?**
-A: You clone the whole repo once; your AI only _reads_ the skills you invoke (or that are relevant), so it stays lightweight. **Starter Packs** in [BUNDLES.md](BUNDLES.md) are curated lists to help you discover the right skills for your role—they don't change how you install.
-
-**Q: Can I make my own skills?**
-A: Yes! Use the **@skill-creator** skill to build your own.
-
-**Q: Is this free?**
-A: Yes, MIT License. Open Source forever.
-
----
-
-## ⏭️ Next Steps
-
-1. [Browse the Bundles](BUNDLES.md)
-2. [See Real-World Examples](EXAMPLES.md)
-3. [Contribute a Skill](../CONTRIBUTING.md)
+1. **[Usage Guide](USAGE.md)** — How to search, invoke, and chain skills in prompts
+2. **[Role Bundles](BUNDLES.md)** — 19 curated role packs (`essentials`, `rei-rea`, `fullstack`, `security-engineer`, etc.)
+3. **[Workflows](WORKFLOWS.md)** — Step-by-step multi-skill orchestration playbooks
+4. **[REI Reverse Engineering](REI_REA_INTEGRATION.md)** — Binary intelligence, casebook forensics, and MCP setup

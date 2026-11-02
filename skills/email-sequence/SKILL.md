@@ -1,8 +1,8 @@
 ---
 name: email-sequence
 description: "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campa..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Email Sequence Design

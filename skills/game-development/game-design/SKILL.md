@@ -2,8 +2,8 @@
 name: game-design
 description: "Game design principles. GDD structure, balancing, player psychology, progression."
 allowed-tools: Read, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Game Design Principles

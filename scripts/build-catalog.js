@@ -3,6 +3,7 @@ const path = require("path");
 const {
   listSkillIdsRecursive,
   readSkill,
+  toPosixPath,
   tokenize,
   unique,
 } = require("../lib/skill-utils");
@@ -99,7 +100,6 @@ const STOPWORDS = new Set([
   "using",
   "based",
   "ensure",
-  "ensure",
   "help",
   "needs",
   "need",
@@ -140,7 +140,6 @@ const TAG_STOPWORDS = new Set([
   "implementation",
   "strategy",
   "context",
-  "management",
   "feature",
   "features",
   "smart",
@@ -148,13 +147,29 @@ const TAG_STOPWORDS = new Set([
   "systems",
   "design",
   "development",
-  "development",
   "test",
   "testing",
-  "workflow",
 ]);
 
 const CATEGORY_RULES = [
+  {
+    name: "reverse-engineering",
+    keywords: [
+      "reverse-engineering",
+      "rei-rea",
+      "decompile",
+      "decompilation",
+      "disassembly",
+      "ghidra",
+      "radare2",
+      "rizin",
+      "binary-analysis",
+      "casebook",
+      "asar",
+      "apktool",
+      "jadx",
+    ],
+  },
   {
     name: "security",
     keywords: [
@@ -319,6 +334,11 @@ const CATEGORY_RULES = [
 ];
 
 const BUNDLE_RULES = {
+  "rei-rea": {
+    description:
+      "REI Reverse Engineering Workbench (REI REA): 12 specialist skills for evidence-first binary, APK, Electron, firmware, protocol, and WASM analysis.",
+    keywords: ["rei-rea", "reverse-engineering", "casebook"],
+  },
   "core-dev": {
     description:
       "Core development skills across languages, frameworks, and backend/frontend fundamentals.",
@@ -414,6 +434,8 @@ const BUNDLE_RULES = {
 };
 
 const CURATED_COMMON = [
+  "rei-rea-orchestrator",
+  "rei-binary-intelligence",
   "bash-pro",
   "python-pro",
   "javascript-pro",
@@ -455,6 +477,16 @@ function deriveTags(skill) {
 }
 
 function detectCategory(skill, tags) {
+  if (
+    skill.explicitCategory &&
+    CATEGORY_RULES.some((r) => r.name === skill.explicitCategory)
+  ) {
+    return skill.explicitCategory;
+  }
+  if (skill.id.startsWith("rei-")) {
+    return "reverse-engineering";
+  }
+
   const haystack = normalizeTokens([
     ...tags,
     ...tokenize(skill.name),
@@ -539,6 +571,12 @@ function buildBundles(skills) {
     const keywords = rule.keywords.map((keyword) => keyword.toLowerCase());
 
     for (const skill of skills) {
+      if (bundleName === "rei-rea") {
+        if (skill.id.startsWith("rei-") || skill.id === "reverse-engineer" || skill.id === "firmware-analyst") {
+          bundleSkills.push(skill.id);
+        }
+        continue;
+      }
       const tokenSet = skillTokens.get(skill.id) || new Set();
       if (keywords.some((keyword) => tokenSet.has(keyword))) {
         bundleSkills.push(skill.id);
@@ -563,11 +601,11 @@ function truncate(value, limit) {
 
 function renderCatalogMarkdown(catalog) {
   const lines = [];
-  lines.push("# Skill Catalog");
+  lines.push("# REI Skills Catalog");
   lines.push("");
-  lines.push(`Generated at: ${catalog.generatedAt}`);
+  lines.push("> **The engineering-grade skill layer for AI agents — Rootcastle Engineering & Innovation**");
   lines.push("");
-  lines.push(`Total skills: ${catalog.total}`);
+  lines.push(`Generated at: \`${catalog.generatedAt}\` · Total skills: **${catalog.total}**`);
   lines.push("");
 
   const categories = Array.from(
@@ -579,18 +617,17 @@ function renderCatalogMarkdown(catalog) {
     );
     lines.push(`## ${category} (${grouped.length})`);
     lines.push("");
-    lines.push("| Skill | Description | Tags | Triggers |");
-    lines.push("| --- | --- | --- | --- |");
+    lines.push("| Skill | Description | Risk | Source | Tags |");
+    lines.push("| --- | --- | --- | --- | --- |");
 
     for (const skill of grouped) {
-      const description = truncate(skill.description, 160).replace(
+      const description = truncate(skill.description, 140).replace(
         /\|/g,
         "\\|",
       );
-      const tags = skill.tags.join(", ");
-      const triggers = skill.triggers.join(", ");
+      const tags = skill.tags.slice(0, 6).join(", ");
       lines.push(
-        `| \`${skill.id}\` | ${description} | ${tags} | ${triggers} |`,
+        `| [\`${skill.id}\`](${skill.path}) | ${description} | \`${skill.risk}\` | \`${skill.source}\` | ${tags} |`,
       );
     }
 
@@ -611,13 +648,15 @@ function buildCatalog() {
     const triggers = buildTriggers(skill, tags);
 
     catalogSkills.push({
-      id: skill.id,
+      id: toPosixPath(skill.id),
       name: skill.name,
       description: skill.description,
       category,
+      risk: skill.risk || "safe",
+      source: skill.source || "community",
       tags,
       triggers,
-      path: path.relative(ROOT, skill.path),
+      path: toPosixPath(path.relative(ROOT, skill.path)),
     });
   }
 
@@ -639,19 +678,19 @@ function buildCatalog() {
   const bundlesPath = path.join(ROOT, "data", "bundles.json");
   const aliasesPath = path.join(ROOT, "data", "aliases.json");
 
-  fs.writeFileSync(catalogPath, JSON.stringify(catalog, null, 2));
-  fs.writeFileSync(catalogMarkdownPath, renderCatalogMarkdown(catalog));
+  fs.writeFileSync(catalogPath, JSON.stringify(catalog, null, 2) + "\n");
+  fs.writeFileSync(catalogMarkdownPath, renderCatalogMarkdown(catalog) + "\n");
   fs.writeFileSync(
     bundlesPath,
     JSON.stringify(
       { generatedAt: catalog.generatedAt, ...bundleData },
       null,
       2,
-    ),
+    ) + "\n",
   );
   fs.writeFileSync(
     aliasesPath,
-    JSON.stringify({ generatedAt: catalog.generatedAt, aliases }, null, 2),
+    JSON.stringify({ generatedAt: catalog.generatedAt, aliases }, null, 2) + "\n",
   );
 
   return catalog;

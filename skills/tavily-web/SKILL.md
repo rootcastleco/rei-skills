@@ -1,8 +1,8 @@
 ---
 name: tavily-web
 description: "Web search, content extraction, crawling, and research capabilities using Tavily API"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # tavily-web

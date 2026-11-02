@@ -1,13 +1,10 @@
 ---
 name: elixir-pro
-description: "Write idiomatic Elixir code with OTP patterns, supervision trees,"
-  and Phoenix LiveView. Masters concurrency, fault tolerance, and distributed
-  systems. Use PROACTIVELY for Elixir refactoring, OTP design, or complex BEAM
-  optimizations.
+description: "Write idiomatic Elixir code with OTP patterns, supervision trees, and Phoenix LiveView. Masters concurrency, fault tolerance, and distributed systems. Use PROACTIVELY for Elixir refactoring, OTP design, or complex BEAM optimizations."
 metadata:
   model: inherit
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 ## Use this skill when

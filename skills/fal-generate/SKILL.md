@@ -1,7 +1,7 @@
 ---
 name: fal-generate
 description: "Generate images and videos using fal.ai AI models"
-source: rootcastle-rei
+source: fal-ai-community/skills
 risk: safe
 ---
 

@@ -1,8 +1,8 @@
 ---
 name: terraform-module-library
 description: "Build reusable Terraform modules for AWS, Azure, and GCP infrastructure following infrastructure-as-code best practices. Use when creating infrastructure modules, standardizing cloud provisioning, ..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Terraform Module Library

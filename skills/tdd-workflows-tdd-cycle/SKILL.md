@@ -1,8 +1,8 @@
 ---
 name: tdd-workflows-tdd-cycle
 description: "Use when working with tdd workflows tdd cycle"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 ## Use this skill when
