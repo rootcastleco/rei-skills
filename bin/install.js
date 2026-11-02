@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * 🏰 REI Skills — Universal Multi-AI Skill Manager, Compiler & Installer CLI
+ * 🏰 REI Skills — Universal Multi-AI Skill Manager, Smart Router, MCP Server & Installer CLI
  * Rootcastle Engineering & Innovation (REI) | Batuhan Ayrıbaş
  * https://www.rootcastle.com
  */
@@ -43,6 +43,8 @@ const SUBCOMMANDS = new Set([
   "compile",
   "targets",
   "router",
+  "recommend",
+  "mcp",
 ]);
 
 function resolveDir(p) {
@@ -62,6 +64,7 @@ function parseArgs(argv = process.argv.slice(2)) {
     targetAi: null,
     formatArg: null,
     filterArg: null,
+    filesArg: null,
     categoryArg: null,
     bundleArg: null,
     riskArg: null,
@@ -146,6 +149,10 @@ function parseArgs(argv = process.argv.slice(2)) {
       opts.filterArg = argv[++i];
       continue;
     }
+    if (arg === "--files" && argv[i + 1]) {
+      opts.filesArg = argv[++i];
+      continue;
+    }
     if (arg === "--category" && argv[i + 1]) {
       opts.categoryArg = argv[++i].toLowerCase();
       continue;
@@ -194,7 +201,6 @@ function parseArgs(argv = process.argv.slice(2)) {
       opts.bundlesFlag = true;
       continue;
     }
-    // Check all 21 AI target flags dynamically (--claude, --cursor, --copilot, --windsurf, etc.)
     const cleanFlag = arg.startsWith("--") ? arg.slice(2).toLowerCase() : null;
     if (cleanFlag && AI_TARGETS[cleanFlag]) {
       opts[cleanFlag] = true;
@@ -283,13 +289,15 @@ function defaultDir(opts) {
 function printHelp() {
   console.log(`
 🏰 rei-skills — Rootcastle Engineering & Innovation
-   The universal engineering-grade skill layer for ALL AI agents | www.rootcastle.com
+   The universal engineering-grade skill layer & Smart MCP Server for AI agents
 
 Usage:
   npx rei-skills [command] [options]
 
 Commands:
   install                  Install skills into target AI directory (default)
+  recommend <task>         Smart Intent & Stack Router: recommend top skills, bundles & workflows
+  mcp                      Start the REI Skills Smart MCP Server over stdio (JSON-RPC 2.0)
   add <id|bundle|rei-rea>  Install a specific skill, role bundle, or REI REA pack
   search <query>           Search 895 skills by name, category, tags, risk, or source
   list                     List skills (--category, --bundle, --categories, --bundles)
@@ -325,28 +333,14 @@ Universal AI Target Flags (21 Supported AI Assistants & Runtimes):
   --sdk                    Universal Agent SDK JSON (OpenAI / Anthropic / Gemini / LangGraph)
   --all-ai                 Compile & install for ALL major workspace AI assistants at once
 
-Options:
-  --workspace, -w          Install into current project workspace instead of user home
-  --agents-md              Also generate/update universal AGENTS.md router in workspace
-  --path <dir>             Custom installation or verification directory
-  --format <fmt>           Export format: strict, extended, cursor-mdc, copilot-instructions,
-                           windsurf-rule, continue-rule, markdown-rule, sdk-json, agents-md
-  --filter <prefix>        Filter exported skills by ID prefix (e.g. --filter rei-)
-  --local                  Install from local package/checkout without network clone
-  --dry-run                Preview changes without modifying the filesystem
-  --mcp-config <file>      Safely add rei-rea MCP config to <file> (creates .bak backup)
-  --json                   Output machine-readable JSON
-
 Examples:
+  npx rei-skills recommend "reverse engineer android apk and firmware" --files app.apk,fw.bin
+  npx rei-skills mcp
   npx rei-skills targets
-  npx rei-skills add rei-rea --claude
+  npx rei-skills add rei-rea --claude --mcp-config ~/.claude/mcp.json
   npx rei-skills add rei-rea --copilot --workspace --agents-md
-  npx rei-skills add essentials --windsurf --workspace
-  npx rei-skills add fullstack --cursor --workspace
-  npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
-  npx rei-skills export --format strict --output ./dist-strict
 
-🌐 https://www.rootcastle.com | Engineering Beyond Boundaries
+🌐 https://rootcastleco.github.io/rei-skills/ | https://www.rootcastle.com
 `);
 }
 
@@ -408,10 +402,6 @@ function copyRecursiveSync(src, dest, skipGit = true) {
   }
 }
 
-/**
- * Resolves a skill entry in repoSkills, handling both OS symlinks and
- * Windows core.symlinks=false text pointer files (e.g. docx -> docx-official).
- */
 function resolveSkillSourceDir(repoSkills, entryName) {
   const src = path.join(repoSkills, entryName);
   if (!fs.existsSync(src)) return null;
@@ -571,6 +561,7 @@ function resolveCatalogSourceRoot(opts) {
 function loadCatalogData(sourceRoot = LOCAL_ROOT) {
   const catalogPath = path.join(sourceRoot, "data", "catalog.json");
   const bundlesPath = path.join(sourceRoot, "data", "bundles.json");
+  const workflowsPath = path.join(sourceRoot, "data", "workflows.json");
   const reaManifestPath = path.join(sourceRoot, "data", "rei-rea-manifest.json");
 
   const catalog = fs.existsSync(catalogPath)
@@ -579,15 +570,17 @@ function loadCatalogData(sourceRoot = LOCAL_ROOT) {
   const bundles = fs.existsSync(bundlesPath)
     ? JSON.parse(fs.readFileSync(bundlesPath, "utf8"))
     : { bundles: {} };
+  const workflows = fs.existsSync(workflowsPath)
+    ? JSON.parse(fs.readFileSync(workflowsPath, "utf8"))
+    : { workflows: [] };
   const reaManifest = fs.existsSync(reaManifestPath)
     ? JSON.parse(fs.readFileSync(reaManifestPath, "utf8"))
     : null;
 
-  return { catalog, bundles, reaManifest };
+  return { catalog, bundles, workflows, reaManifest };
 }
 
 function performSafeInstall(opts, filterSkillIds = null, label = "all skills") {
-  // Handle --all-ai multi-assistant workspace installation
   if (opts.allAi) {
     const baseWorkspace = opts.pathArg ? resolveDir(opts.pathArg) : process.cwd();
     const multiTargets = ["claude", "codex", "gemini", "cursor", "copilot", "windsurf", "cline", "roocode"];
@@ -599,7 +592,6 @@ function performSafeInstall(opts, filterSkillIds = null, label = "all skills") {
       performSafeInstall(subOpts, filterSkillIds, `${label} [${spec.name}]`);
       results.push({ ai: tId, path: subTarget, format: spec.format });
     }
-    // Always generate AGENTS.md at workspace root when --all-ai is used
     writeWorkspaceRouterFile(baseWorkspace, filterSkillIds);
     return results;
   }
@@ -662,7 +654,6 @@ function performSafeInstall(opts, filterSkillIds = null, label = "all skills") {
 
     const count = installSkillsIntoTarget(sourceRoot, target, filterSkillIds, targetSpec);
 
-    // Record installation receipt
     const receipt = {
       installedAt: new Date().toISOString(),
       aiTarget: targetSpec ? targetSpec.id : "antigravity",
@@ -706,8 +697,8 @@ function performSafeInstall(opts, filterSkillIds = null, label = "all skills") {
       if (backupDir) {
         console.log(`🛡️  Migration backup preserved at: ${backupDir}`);
       }
-      console.log("📦 Run `npx rei-skills targets`, `npx rei-skills search <keyword>`, or `npx rei-skills doctor` anytime.");
-      console.log("🌐 www.rootcastle.com | Engineering Beyond Boundaries\n");
+      console.log("📦 Run `npx rei-skills recommend \"<task>\"`, `npx rei-skills mcp`, or `npx rei-skills doctor` anytime.");
+      console.log("🌐 https://rootcastleco.github.io/rei-skills/ | Engineering Beyond Boundaries\n");
     }
   } catch (err) {
     console.error(`\n❌ Installation failed: ${err.message}`);
@@ -758,7 +749,7 @@ function handleTargets(opts) {
   for (const t of list) {
     console.log(`  • ${t.flag.padEnd(16)} ${t.name.padEnd(48)} [format: ${t.format.padEnd(20)}] (${t.defaultWorkspacePath})`);
   }
-  console.log(`\n💡 Tip: Use '--workspace' to install into the current project, '--all-ai' to configure all major AI assistants at once, or '--agents-md' to generate a universal AGENTS.md router.\n`);
+  console.log(`\n💡 Tip: Use '--workspace' to install into the current project, '--all-ai' to configure all major AI assistants at once, or 'npx rei-skills mcp' to launch the Smart Skill Management MCP Server.\n`);
 }
 
 function handleRouter(opts) {
@@ -780,6 +771,53 @@ function handleRouter(opts) {
   } else {
     console.log(`\n✅ Generated universal AGENTS.md router at: ${written}\n`);
   }
+}
+
+function handleRecommend(opts) {
+  const task = opts.positional.join(" ").trim();
+  if (!task && !opts.filesArg) {
+    console.error("Usage: rei-skills recommend \"<your task description>\" [--files file1.ts,file2.wasm] [--json]");
+    process.exit(1);
+  }
+  const { recommendForTask } = require("../lib/smart-router");
+  const { catalog, bundles, workflows } = loadCatalogData();
+
+  const res = recommendForTask(catalog, bundles, workflows, {
+    task,
+    files: opts.filesArg || "",
+    maxResults: 6,
+  });
+
+  if (opts.json) {
+    console.log(JSON.stringify(res, null, 2));
+    return;
+  }
+
+  console.log(`\n🧠 REI Smart Skill Router — Recommendations for: "${task}"`);
+  if (res.query.files && res.query.files.length > 0) {
+    console.log(`   Workspace Files Analyzed: ${res.query.files.join(", ")}`);
+  }
+  console.log("\n🎯 Top Recommended Skills:");
+  for (const s of res.recommendedSkills) {
+    console.log(`  • ${s.id.padEnd(34)} [${s.confidence}% match] (${s.category} · risk:${s.risk})`);
+    console.log(`    ↳ ${s.description}`);
+    console.log(`    ↳ Reason: ${s.reasons.join(", ")} | Install: npx rei-skills add ${s.id}`);
+  }
+
+  if (res.recommendedBundles.length > 0) {
+    console.log("\n📦 Recommended Role Bundles:");
+    for (const b of res.recommendedBundles) {
+      console.log(`  • ${b.id.padEnd(28)} (${b.matchedSkillsCount}/${b.totalSkillsCount} top skills matched) -> ${b.installCommand}`);
+    }
+  }
+
+  if (res.recommendedWorkflows.length > 0) {
+    console.log("\n🔄 Recommended Orchestration Workflows:");
+    for (const wf of res.recommendedWorkflows) {
+      console.log(`  • ${wf.name} (${wf.id}) — ${wf.description}`);
+    }
+  }
+  console.log();
 }
 
 function handleSearch(opts) {
@@ -954,6 +992,10 @@ function handleInfo(opts) {
 
 function writeMcpConfigSafely(configPath, dryRun = false) {
   const resolved = resolveDir(configPath);
+  const reiSkillsMcpEntry = {
+    command: "npx",
+    args: ["-y", "rei-skills", "mcp"],
+  };
   const mcpEntry = {
     command: "rei-rea",
     args: ["mcp"],
@@ -973,6 +1015,7 @@ function writeMcpConfigSafely(configPath, dryRun = false) {
   if (!existing.mcpServers || typeof existing.mcpServers !== "object") {
     existing.mcpServers = {};
   }
+  existing.mcpServers["rei-skills"] = reiSkillsMcpEntry;
   existing.mcpServers["rei-rea"] = mcpEntry;
 
   if (!dryRun) {
@@ -1025,6 +1068,10 @@ function handleAdd(opts) {
   if (targetName === "rei-rea" || opts.printMcp || opts.mcpConfigArg) {
     const mcpSnippet = {
       mcpServers: {
+        "rei-skills": {
+          command: "npx",
+          args: ["-y", "rei-skills", "mcp"],
+        },
         "rei-rea": {
           command: "rei-rea",
           args: ["mcp"],
@@ -1035,14 +1082,15 @@ function handleAdd(opts) {
     if (opts.mcpConfigArg) {
       const res = writeMcpConfigSafely(opts.mcpConfigArg, opts.dryRun);
       if (!opts.json) {
-        console.log(`🔧 Updated MCP configuration at: ${res.configPath}`);
+        console.log(`🔧 Updated MCP configuration (rei-skills + rei-rea) at: ${res.configPath}`);
         if (res.backupPath) {
           console.log(`🛡️  Previous MCP config backed up to: ${res.backupPath}`);
         }
       }
     } else if (opts.printMcp || !opts.json) {
-      console.log("🔌 Optional REI REA Runtime & MCP Workbench Setup:");
-      console.log("   Skills are read-only agent instructions. To enable the optional local Python CLI & 14-tool MCP server:");
+      console.log("🔌 Smart Skill Management MCP & REI REA Runtime Setup:");
+      console.log("   • Run `npx rei-skills mcp` to serve all 895 skills + Smart Task Router over MCP.");
+      console.log("   • Optional REI REA Python CLI & 14-tool Binary Intelligence MCP server:");
       console.log(`     git clone ${REA_REPO}`);
       console.log("     cd Rei-Reverse-engineer && python -m pip install -e .");
       console.log("     rei-rea tools doctor\n");
@@ -1105,6 +1153,7 @@ function handleDoctor(opts) {
     pythonVersion,
     catalogTotalSkills: catalog.total || 0,
     supportedAiTargetsCount: Object.keys(AI_TARGETS).length,
+    smartMcpServerReady: true,
     agentInstallations: installations,
     reiReaWorkbench: {
       specialistSkillsBundled: reaManifest ? reaManifest.skills.length : 12,
@@ -1131,6 +1180,7 @@ function handleDoctor(opts) {
   console.log(`  Git CLI:            ${report.gitAvailable ? "✅ Available" : "❌ Missing"}`);
   console.log(`  Python Runtime:     ${report.pythonAvailable ? `✅ ${report.pythonVersion}` : "⚠️ Not detected on PATH"}`);
   console.log(`  Catalog Inventory:  ${report.catalogTotalSkills} validated skills`);
+  console.log(`  Smart MCP Server:   ✅ Ready (run 'npx rei-skills mcp' or 'rei-skills-mcp')`);
   console.log(`  AI Compatibility:   ${report.supportedAiTargetsCount} AI assistants & SDK formats supported\n`);
 
   console.log("  Global AI Assistant Skill/Rule Directories:");
@@ -1337,6 +1387,14 @@ function main() {
   }
 
   switch (opts.command) {
+    case "mcp": {
+      const { startMcpServer } = require("./mcp-server");
+      startMcpServer();
+      break;
+    }
+    case "recommend":
+      handleRecommend(opts);
+      break;
     case "targets":
       handleTargets(opts);
       break;

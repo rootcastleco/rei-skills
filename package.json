@@ -1,9 +1,9 @@
 {
   "name": "rei-skills",
-  "version": "6.1.0",
-  "description": "The engineering-grade skill layer for AI agents. 895 validated skills, curated role bundles, orchestrated workflows, and REI Reverse Engineering (REA) for Claude Code, Codex, Gemini CLI & Cursor.",
+  "version": "6.2.0",
+  "description": "The universal engineering-grade skill layer & Smart MCP Server for AI agents. 895 validated skills, 21 AI adapters, workflows & REI Reverse Engineering (REA).",
   "author": "Rootcastle Engineering & Innovation <admin@rootcastle.com> (https://rootcastle.com)",
-  "homepage": "https://rootcastle.com",
+  "homepage": "https://rootcastleco.github.io/rei-skills/",
   "license": "MIT",
   "scripts": {
     "validate": "python scripts/validate_skills.py",
@@ -20,6 +20,7 @@
     "test:network": "python scripts/tests/inspect_microsoft_repo.py && python scripts/tests/test_comprehensive_coverage.py",
     "brand": "node scripts/brand_skills.js",
     "security-audit": "node scripts/security_audit.js",
+    "mcp": "node bin/mcp-server.js",
     "sync:rea": "python scripts/sync_rei_rea.py --sync",
     "check:rea": "python scripts/sync_rei_rea.py --check",
     "sync:microsoft": "python scripts/sync_microsoft_skills.py",
@@ -36,7 +37,8 @@
     "url": "https://github.com/rootcastleco/rei-skills/issues"
   },
   "bin": {
-    "rei-skills": "bin/install.js"
+    "rei-skills": "bin/install.js",
+    "rei-skills-mcp": "bin/mcp-server.js"
   },
   "files": [
     "bin",
@@ -52,9 +54,12 @@
     "codex",
     "gemini-cli",
     "cursor",
+    "github-copilot",
+    "windsurf",
     "antigravity",
     "opencode",
     "mcp",
+    "mcp-server",
     "model-context-protocol",
     "reverse-engineering",
     "binary-analysis",

@@ -14,12 +14,13 @@
 *Discover. Install. Orchestrate. Verify.*
 
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
+[![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm package](https://img.shields.io/badge/npm-rei--skills-0E3D8A?logo=npm&logoColor=white)](https://www.npmjs.com/package/rei-skills)
 [![Validated Skills](https://img.shields.io/badge/skills-895%20validated-228B55)](#explore-the-library)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
 
-**[Get Started](#install-in-seconds)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Documentation](docs/USAGE.md)** · **[Interactive Catalog](docs/site/index.html)** · **[Contribute](#contributing-and-community)**
+**[Get Started](#install-in-seconds)** · **[Smart Router & MCP](#smart-skill-router--mcp-server)** · **[Live Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Documentation](docs/USAGE.md)** · **[Contribute](#contributing-and-community)**
 
 </div>
 
@@ -70,20 +71,48 @@ npx rei-skills add rei-rea --all-ai --path ./my-project
 ### Immediate Next Steps
 
 ```bash
-# 1. View all 21 supported AI assistants, native formats, and invocation hints
+# 1. Smart Intent & Stack Router (English & Turkish + workspace file detection)
+npx rei-skills recommend "Reverse engineer Android APK and firmware" --files app.apk,router.bin
+
+# 2. Start the built-in Smart Skill Management MCP Server (stdio JSON-RPC 2.0)
+npx rei-skills mcp
+
+# 3. View all 21 supported AI assistants, native formats, and invocation hints
 npx rei-skills targets
 
-# 2. Inspect your environment, installed AI directories, and REI REA status
+# 4. Inspect your environment, installed AI directories, and REI REA status
 npx rei-skills doctor
 
-# 3. Search across 895 skills by domain, keyword, risk, or upstream source
+# 5. Search across 895 skills by domain, keyword, risk, or upstream source
 npx rei-skills search firmware
 npx rei-skills list --category reverse-engineering
 
-# 4. Install only a focused bundle or compile to any target format
+# 6. Install only a focused bundle or compile to any target format
 npx rei-skills add rei-rea --claude --print-mcp
 npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
 ```
+
+### Smart Skill Router & MCP Server
+
+Instead of loading all 895 skills into an AI agent's context window, REI Skills includes a **Smart Intent & Stack Router** ([`lib/smart-router.js`](lib/smart-router.js)) and a zero-dependency **Model Context Protocol (MCP) Server** ([`bin/mcp-server.js`](bin/mcp-server.js)) that any MCP-capable client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini CLI, Codex, Antigravity) can connect to:
+
+```json
+{
+  "mcpServers": {
+    "rei-skills": {
+      "command": "npx",
+      "args": ["-y", "rei-skills", "mcp"]
+    },
+    "rei-rea": {
+      "command": "rei-rea",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+- **8 Dynamic MCP Tools:** `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_install_skill`, `rei_compile_skill`, `rei_list_ai_targets`.
+- **Interactive Web Hub:** Try the live **Smart AI Task & Stack Router** in your browser at **[`https://rootcastleco.github.io/rei-skills/`](https://rootcastleco.github.io/rei-skills/)**.
 
 ---
 

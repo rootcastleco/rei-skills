@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REI Skills — Universal Multi-AI Developer Hub &amp; Skill Registry</title>
-  <meta name="description" content="The universal engineering-grade skill layer for all AI agents. Browse 895 validated skills across 21 AI coding assistants, IDEs, and SDKs." />
+  <title>REI Skills — Smart Multi-AI Skill Studio, MCP Hub &amp; Registry</title>
+  <meta name="description" content="The universal engineering-grade skill layer &amp; Smart MCP Server for AI agents. Browse 895 validated skills across 21 AI coding assistants, IDEs, and SDKs." />
   <style>
     :root {
       --bg: #070B14;
@@ -54,7 +54,7 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      background: rgba(7, 11, 20, 0.88);
+      background: rgba(7, 11, 20, 0.9);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 14px 24px;
@@ -65,7 +65,7 @@
       gap: 16px;
     }
     [data-theme="light"] .topbar {
-      background: rgba(248, 250, 252, 0.9);
+      background: rgba(248, 250, 252, 0.92);
     }
     .brand {
       display: flex;
@@ -105,6 +105,12 @@
       border-color: var(--border-active);
       color: var(--accent);
     }
+    .btn-primary {
+      background: rgba(0, 240, 255, 0.14);
+      border-color: var(--border-active);
+      color: var(--accent);
+      font-weight: 700;
+    }
     .ai-selector-wrap {
       display: flex;
       align-items: center;
@@ -129,7 +135,7 @@
     .hero {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 36px 24px 20px;
+      padding: 34px 24px 18px;
     }
     .hero-eyebrow {
       font-family: var(--font-mono);
@@ -147,7 +153,7 @@
     }
     .hero p {
       color: var(--text-secondary);
-      max-width: 860px;
+      max-width: 900px;
       font-size: 15px;
       margin-bottom: 20px;
     }
@@ -155,7 +161,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
     .stat-card {
       background: var(--surface);
@@ -174,6 +180,57 @@
       font-weight: 800;
       color: var(--text);
       margin-top: 4px;
+    }
+    .smart-box {
+      background: linear-gradient(135deg, rgba(13, 20, 36, 0.96), rgba(19, 29, 51, 0.96));
+      border: 1px solid var(--border-active);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    [data-theme="light"] .smart-box {
+      background: linear-gradient(135deg, #F0F9FF, #E0F2FE);
+    }
+    .smart-box-title {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .smart-inputs {
+      display: grid;
+      grid-template-columns: 2fr 1fr auto;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    @media (max-width: 820px) {
+      .smart-inputs { grid-template-columns: 1fr; }
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+    .chip:hover {
+      border-color: var(--border-active);
+      color: var(--accent);
     }
     .tabs {
       max-width: 1280px;
@@ -213,7 +270,7 @@
     @media (max-width: 820px) {
       .controls { grid-template-columns: 1fr; }
     }
-    input[type="search"], select {
+    input[type="search"], input[type="text"], select {
       background: var(--surface);
       border: 1px solid var(--border);
       color: var(--text);
@@ -222,7 +279,7 @@
       font-size: 14px;
       font-family: var(--font-sans);
     }
-    input[type="search"]:focus, select:focus {
+    input:focus, select:focus {
       outline: none;
       border-color: var(--border-active);
     }
@@ -269,6 +326,7 @@
     }
     .badge-cat { color: var(--accent-secondary); background: rgba(56, 189, 248, 0.1); }
     .badge-rea { color: var(--purple); border-color: var(--purple); background: rgba(192, 132, 252, 0.12); }
+    .badge-match { color: var(--emerald); border-color: var(--emerald); background: rgba(52, 211, 153, 0.12); }
     .badge-risk-none, .badge-risk-safe { color: var(--emerald); }
     .badge-risk-unknown { color: var(--amber); }
     .badge-risk-offensive { color: var(--red); border-color: var(--red); }
@@ -304,6 +362,16 @@
     .copy-cmd:hover {
       border-color: var(--border-active);
     }
+    pre.code-block {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      overflow-x: auto;
+      color: var(--text);
+    }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -311,7 +379,7 @@
   <header class="topbar">
     <div class="brand">
       <span>REI SKILLS</span>
-      <span class="brand-badge">UNIVERSAL MULTI-AI PLATFORM</span>
+      <span class="brand-badge">SMART MULTI-AI &amp; MCP HUB v6.2</span>
     </div>
     <div class="nav-actions">
       <div class="ai-selector-wrap">
@@ -326,8 +394,9 @@
 
   <section class="hero">
     <div class="hero-eyebrow">ROOTCASTLE ENGINEERING &amp; INNOVATION · ENGINEERING BEYOND BOUNDARIES</div>
-    <h1>The Universal Skill Layer for Every AI Agent</h1>
-    <p>Search, transpile, and install 895 schema-validated skills across <strong>21 AI coding assistants, IDEs, CLI agents, and SDKs</strong> — including Claude Code, OpenAI Codex, Gemini CLI, Antigravity, Cursor (<code>.mdc</code>), GitHub Copilot (<code>.instructions.md</code>), Windsurf, Cline, Roo Code, Continue.dev, Aider, Amazon Q, Zed, Block Goose, Trae, JetBrains Junie, OpenCode, Kiro, Amp, Devin, and LangGraph/SDK JSON.</p>
+    <h1>The Smart Skill Layer &amp; MCP Server for Every AI Agent</h1>
+    <p>Discover, route, transpile, and serve <strong>895 schema-validated skills</strong> across <strong>21 AI coding assistants, IDEs, CLI agents, and SDKs</strong> — powered by our built-in <strong>Smart Intent &amp; Stack Router</strong> and zero-dependency <strong>MCP Server (<code>npx rei-skills mcp</code>)</strong>.</p>
+
     <div class="stats-bar">
       <div class="stat-card">
         <div class="stat-label">Validated Skills</div>
@@ -338,6 +407,10 @@
         <div class="stat-value">21</div>
       </div>
       <div class="stat-card">
+        <div class="stat-label">Smart MCP Tools</div>
+        <div class="stat-value">8</div>
+      </div>
+      <div class="stat-card">
         <div class="stat-label">REI REA Specialist Skills</div>
         <div class="stat-value">12</div>
       </div>
@@ -345,19 +418,44 @@
         <div class="stat-label">Curated Bundles</div>
         <div class="stat-value">6</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">Orchestrated Workflows</div>
-        <div class="stat-value">7</div>
+    </div>
+
+    <!-- SMART AI TASK ROUTER -->
+    <div class="smart-box">
+      <div class="smart-box-title">
+        <span>🧠 SMART AI TASK &amp; STACK ROUTER (AKILLI YETENEK ÖNERİCİ — EN / TR)</span>
+        <span style="font-size:11px;color:var(--text-secondary);">CLI: <code>npx rei-skills recommend "&lt;task&gt;" --files a.ts,b.wasm</code></span>
+      </div>
+      <p style="font-size:13px;color:var(--text-secondary);">Describe what you want to build, debug, audit, or reverse-engineer (in English or Turkish) and optionally list workspace files to get instant multi-signal skill, bundle, and workflow recommendations:</p>
+      <div class="smart-inputs">
+        <input type="text" id="smartTaskInput" placeholder="e.g. Reverse engineer Android APK &amp; firmware image / Next.js SaaS billing &amp; security audit..." />
+        <input type="text" id="smartFilesInput" placeholder="Optional files: app.apk, router.bin, App.tsx" />
+        <button class="btn btn-primary" id="smartRunBtn" type="button">Recommend Skills</button>
+      </div>
+      <div class="chips">
+        <span class="chip" data-task="Reverse engineer Android APK, native JNI library and firmware image" data-files="app.apk,libnative.so,router.bin">🔬 Android APK &amp; Firmware Triage (REI REA)</span>
+        <span class="chip" data-task="Compare two WebAssembly builds and verify clean-room parity" data-files="v1.wasm,v2.wasm">🧬 WebAssembly Version Diff</span>
+        <span class="chip" data-task="Build production Next.js SaaS with Stripe billing, Postgres and E2E tests" data-files="next.config.ts,schema.prisma">🚀 Next.js SaaS + Stripe + Postgres</span>
+        <span class="chip" data-task="Web uygulaması güvenlik testi, API zafiyet analizi ve OWASP denetimi" data-files="routes/auth.ts">🛡️ Web &amp; API Güvenlik Denetimi (TR)</span>
+        <span class="chip" data-task="Design autonomous AI agent with MCP tools, RAG and LangGraph evaluation" data-files="agent.py">🤖 AI Agent + MCP + LangGraph</span>
+      </div>
+      <div id="smartResultsWrap" class="hidden" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--border);">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <strong style="font-family:var(--font-mono);font-size:13px;color:var(--emerald);" id="smartSummaryTitle"></strong>
+          <button class="copy-cmd" id="smartBatchInstallBtn"></button>
+        </div>
+        <div class="grid" id="smartSkillsGrid"></div>
       </div>
     </div>
   </section>
 
   <nav class="tabs">
     <button class="tab-btn active" data-tab="skills">Skill Registry (895)</button>
-    <button class="tab-btn" data-tab="ai-targets">AI Compatibility (21 AI Tools)</button>
-    <button class="tab-btn" data-tab="rea">REI Reverse Engineering (12)</button>
-    <button class="tab-btn" data-tab="bundles">Role Bundles (6)</button>
-    <button class="tab-btn" data-tab="workflows">Workflows (7)</button>
+    <button class="tab-btn" data-tab="mcp">🔌 Smart MCP Server Setup</button>
+    <button class="tab-btn" data-tab="ai-targets">🤖 AI Compatibility (21 AI Tools)</button>
+    <button class="tab-btn" data-tab="rea">🔬 REI Reverse Engineering (12)</button>
+    <button class="tab-btn" data-tab="bundles">📦 Role Bundles (6)</button>
+    <button class="tab-btn" data-tab="workflows">🔄 Workflows (7)</button>
   </nav>
 
   <main class="container">
@@ -377,6 +475,49 @@
         <div style="font-family:var(--font-mono);font-size:12px;align-self:center;color:var(--text-secondary);" id="resultCount"></div>
       </div>
       <div class="grid" id="skillsGrid"></div>
+    </div>
+
+    <!-- SMART MCP SERVER TAB -->
+    <div id="tab-mcp" class="hidden">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="card-header">
+          <div class="card-title">🔌 REI Skills Smart MCP Server (<code>rei-skills-mcp</code> / <code>npx rei-skills mcp</code>)</div>
+          <span class="badge badge-match">Zero-Dependency Stdio JSON-RPC 2.0</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-secondary);">
+          Connect your AI assistant directly to the <strong>REI Skills Smart MCP Server</strong>. Instead of loading all 895 skills into your prompt, your AI agent can dynamically call <code>rei_recommend_skills</code>, <code>rei_search_skills</code>, <code>rei_get_skill</code>, <code>rei_get_workflow</code>, <code>rei_install_skill</code>, and <code>rei_compile_skill</code> on demand!
+        </p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+          <button class="copy-cmd" onclick="copyCommand('npx rei-skills add rei-rea --claude --mcp-config ~/.claude/mcp.json', this)">Auto-Configure Claude Code MCP</button>
+          <button class="copy-cmd" onclick="copyCommand('npx rei-skills add rei-rea --cursor --mcp-config ~/.cursor/mcp.json', this)">Auto-Configure Cursor MCP</button>
+        </div>
+        <pre class="code-block" id="mcpJsonBlock">{
+  "mcpServers": {
+    "rei-skills": {
+      "command": "npx",
+      "args": ["-y", "rei-skills", "mcp"]
+    },
+    "rei-rea": {
+      "command": "rei-rea",
+      "args": ["mcp"]
+    }
+  }
+}</pre>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-title">1. rei_recommend_skills</div>
+          <p class="card-desc">Smart Intent &amp; Stack Router: analyzes natural language tasks (EN/TR) and workspace filenames (<code>.wasm</code>, <code>.apk</code>, <code>.tsx</code>, <code>Dockerfile</code>) to return top-ranked skills, workflows, and execution plans.</p>
+        </article>
+        <article class="card">
+          <div class="card-title">2. rei_get_skill</div>
+          <p class="card-desc">Loads the complete <code>SKILL.md</code> instructions and reference files (e.g. <code>references/workflow.md</code>) for any skill ID on demand without bloating context.</p>
+        </article>
+        <article class="card">
+          <div class="card-title">3. rei_install_skill &amp; rei_compile_skill</div>
+          <p class="card-desc">Installs or transpiles skills on the fly into any of the 21 supported AI assistant formats (<code>cursor-mdc</code>, <code>copilot-instructions</code>, <code>windsurf-rule</code>, <code>sdk-json</code>).</p>
+        </article>
+      </div>
     </div>
 
     <div id="tab-ai-targets" class="hidden">
@@ -403,6 +544,24 @@
     const WORKFLOWS = [{"id":"ship-saas-mvp","name":"Ship a SaaS MVP","description":"End-to-end workflow to scope, build, test, and ship a SaaS MVP quickly.","category":"web","relatedBundles":["core-dev","ops-core"],"steps":[{"title":"Plan the scope","goal":"Convert the idea into a clear implementation plan and milestones.","recommendedSkills":["brainstorming","concise-planning","writing-plans"],"notes":"Define problem, user persona, MVP boundaries, and acceptance criteria before coding."},{"title":"Build backend and API","goal":"Implement the core data model, API contracts, and auth baseline.","recommendedSkills":["backend-dev-guidelines","api-patterns","database-design","auth-implementation-patterns"],"notes":"Prefer small vertical slices; keep API contracts explicit and testable."},{"title":"Build frontend","goal":"Deliver the primary user flows with production-grade UX patterns.","recommendedSkills":["frontend-developer","react-patterns","frontend-design"],"notes":"Prioritize onboarding, empty states, and one complete happy-path flow."},{"title":"Test and validate","goal":"Catch regressions and ensure key flows work before release.","recommendedSkills":["test-driven-development","systematic-debugging","browser-automation","go-playwright"],"notes":"Use go-playwright when the product stack or QA tooling is Go-based."},{"title":"Ship safely","goal":"Release with basic observability and rollback readiness.","recommendedSkills":["deployment-procedures","observability-engineer","postmortem-writing"],"notes":"Define release checklist, minimum telemetry, and rollback triggers."}]},{"id":"security-audit-web-app","name":"Security Audit for a Web App","description":"Structured workflow for baseline AppSec review and risk triage.","category":"security","relatedBundles":["security-core","ops-core"],"steps":[{"title":"Define scope and threat model","goal":"Identify critical assets, trust boundaries, and threat scenarios.","recommendedSkills":["ethical-hacking-methodology","threat-modeling-expert","attack-tree-construction"],"notes":"Document in-scope targets, assumptions, and out-of-scope constraints."},{"title":"Review authentication and authorization","goal":"Find broken auth patterns and access-control weaknesses.","recommendedSkills":["broken-authentication","auth-implementation-patterns","idor-testing"],"notes":"Prioritize account takeover and privilege escalation paths."},{"title":"Assess API and input security","goal":"Detect high-impact API and injection risks.","recommendedSkills":["api-security-best-practices","api-fuzzing-bug-bounty","top-web-vulnerabilities"],"notes":"Map findings to severity and exploitability, not only CVSS."},{"title":"Harden and verify","goal":"Translate findings into concrete remediations and retest.","recommendedSkills":["security-auditor","sast-configuration","verification-before-completion"],"notes":"Track remediation owners and target dates; verify each fix with evidence."}]},{"id":"build-ai-agent-system","name":"Build an AI Agent System","description":"Workflow to design, implement, and evaluate a production-ready AI agent.","category":"ai-agents","relatedBundles":["core-dev","data-core"],"steps":[{"title":"Define use case and reliability targets","goal":"Choose a narrow use case and measurable quality goals.","recommendedSkills":["ai-agents-architect","agent-evaluation","product-manager-toolkit"],"notes":"Set latency, quality, and failure-rate thresholds before implementation."},{"title":"Design architecture and retrieval","goal":"Design tools, memory, and retrieval strategy for the agent.","recommendedSkills":["llm-app-patterns","rag-implementation","vector-database-engineer","embedding-strategies"],"notes":"Keep retrieval quality measurable and version prompt/tool contracts."},{"title":"Implement orchestration","goal":"Implement the orchestration loop and production safeguards.","recommendedSkills":["langgraph","mcp-builder","workflow-automation"],"notes":"Start with constrained tool permissions and explicit fallback behavior."},{"title":"Evaluate and iterate","goal":"Run benchmark scenarios and improve weak areas systematically.","recommendedSkills":["agent-evaluation","langfuse","kaizen"],"notes":"Use test datasets and failure buckets to guide each iteration cycle."}]},{"id":"qa-browser-automation","name":"QA and Browser Automation","description":"Workflow for robust E2E and browser-driven validation across stacks.","category":"testing","relatedBundles":["core-dev","ops-core"],"steps":[{"title":"Prepare test strategy","goal":"Define critical user journeys, environments, and test data.","recommendedSkills":["e2e-testing-patterns","test-driven-development","code-review-checklist"],"notes":"Focus on business-critical flows and keep setup deterministic."},{"title":"Implement browser tests","goal":"Automate key flows with resilient locators and stable waits.","recommendedSkills":["browser-automation","go-playwright"],"notes":"Use go-playwright for Go-native automation projects and Playwright for JS/TS stacks."},{"title":"Triage failures and harden","goal":"Stabilize flaky tests and establish repeatable CI execution.","recommendedSkills":["systematic-debugging","test-fixing","verification-before-completion"],"notes":"Classify failures by root cause: selector drift, timing, environment, data."}]},{"id":"design-ddd-core-domain","name":"Design a DDD Core Domain","description":"Workflow to model complex domains and implement tactical and evented patterns with explicit boundaries.","category":"architecture","relatedBundles":["core-dev","ops-core"],"steps":[{"title":"Assess DDD fit and scope","goal":"Decide if full DDD is justified and define the modeling scope.","recommendedSkills":["domain-driven-design","architecture-decision-records"],"notes":"Document why DDD is needed, where to keep it lightweight, and what success looks like."},{"title":"Create strategic model","goal":"Define subdomains, bounded contexts, and ubiquitous language.","recommendedSkills":["ddd-strategic-design"],"notes":"Classify subdomains and assign ownership before making implementation decisions."},{"title":"Map context relationships","goal":"Define context integration patterns, ownership, and translation boundaries.","recommendedSkills":["ddd-context-mapping"],"notes":"Prefer explicit contracts and anti-corruption layers where domain models diverge."},{"title":"Implement tactical model","goal":"Encode invariants with aggregates, value objects, repositories, and domain events.","recommendedSkills":["ddd-tactical-patterns","test-driven-development"],"notes":"Start from invariants and transaction boundaries, not from tables or endpoints."},{"title":"Adopt evented patterns selectively","goal":"Apply CQRS, event store, projections, and sagas only where required.","recommendedSkills":["cqrs-implementation","event-store-design","projection-patterns","saga-orchestration"],"notes":"Use evented patterns where consistency and scale tradeoffs are explicit and accepted."}]},{"id":"evidence-led-reverse-engineering","name":"Evidence-Led Reverse Engineering & Binary Intelligence","description":"Structured, read-only artifact triage, bounded structural parsing, version comparison, and SHA-256 casebook reporting powered by REI REA.","category":"reverse-engineering","relatedBundles":["rei-rea","security-core"],"steps":[{"title":"Establish authorization, SHA-256 identity, and routing plan","goal":"Record target hash, scope boundaries, and format-aware investigation plan before any analysis.","recommendedSkills":["rei-rea-orchestrator","rei-evidence-ledger"],"notes":"Use rei-rea inspect and rei-rea plan on authorized artifacts only. Never execute untrusted binaries."},{"title":"Perform bounded structural and format-specific analysis","goal":"Inspect PE/ELF/WASM headers, imports, exports, or Electron/APK/managed structures without execution.","recommendedSkills":["rei-binary-intelligence","rei-native-binaries","rei-wasm-and-managed","rei-electron-and-js"],"notes":"Use rei-rea deep and rei-rea diff to compare versions and distinguish observed structure from inferred behavior."},{"title":"Verify parity and export tamper-evident forensic casebook","goal":"Record observed/inferred/unknown evidence states, verify hash chains, and export metadata-only case bundles.","recommendedSkills":["rei-casebook-forensics","rei-reconstruction-parity"],"notes":"Run rei-rea case verify --recheck-target and rei-rea case bundle-verify before sharing findings."}]},{"id":"firmware-mobile-protocol-triage","name":"Firmware, Mobile & Protocol Interoperability Triage","description":"Analyze authorized embedded/IoT firmware images, Android APK packages, and telemetry/network protocol captures.","category":"reverse-engineering","relatedBundles":["rei-rea","security-core"],"steps":[{"title":"Triage firmware or mobile package structure","goal":"Identify container headers, filesystem boundaries, or APK/DEX/manifest components using read-only inspection.","recommendedSkills":["rei-rea-orchestrator","rei-firmware-and-iot","rei-android-apks"],"notes":"Keep all inspection read-only; opt-in static adapters require explicit --allow-external."},{"title":"Reconstruct telemetry frames and protocol state machines","goal":"Document frame boundaries, serialization, and API contracts from supplied PCAP/HAR or serial captures.","recommendedSkills":["rei-web-and-protocols","rei-mobile-runtime"],"notes":"Plan dynamic observation only in isolated lab environments when static evidence is insufficient."},{"title":"Validate clean-room compatibility corpus","goal":"Build reproducible golden-test fixtures and record evidence provenance.","recommendedSkills":["rei-reconstruction-parity","rei-evidence-ledger"],"notes":"Verify every specification claim against fixture hashes and test outcomes."}]}];
     const REA_MANIFEST = {"schema_version":"1.0.0","module":"rei-rea","title":"REI Reverse Engineering Workbench (REI REA)","upstream_repository":"https://github.com/rootcastleco/Rei-Reverse-engineer","upstream_version":"0.2.0","upstream_commit":"09fbc7b","upstream_full_commit":"09fbc7bd202f4a40aa78230e4517e7f39c4a158b","license":"MIT","upstream_rea_notice":"REI REA is an original Rootcastle Engineering & Innovation Python workbench. The independent morluto/rea project is tracked separately in Rei-Reverse-engineer/upstream/rea and retains its own upstream provenance.","runtime":{"package_name":"rootcastle-rei-rea","python_requirement":">=3.10","cli_command":"rei-rea","install_instructions":["git clone https://github.com/rootcastleco/Rei-Reverse-engineer.git","cd Rei-Reverse-engineer","python -m pip install -e .","rei-rea --version","rei-rea tools doctor"],"mcp_config":{"mcpServers":{"rei-rea":{"command":"rei-rea","args":["mcp"]}}},"cataloged_tool_count":124,"static_adapter_count":11,"mcp_tool_count":14,"specialist_skill_count":12},"capability_states":{"cataloged":"Listed in the 124-entry discovery registry with metadata and homepage. Does NOT imply local installation or execution support.","path_detected":"Executable name was resolved on the local machine PATH via `rei-rea tools doctor`.","adapter_supported":"Covered by one of the 11 reviewed, argument-locked static adapters requiring explicit `--allow-external` opt-in.","tested_in_env":"Verified against a reproducible local fixture in the active environment.","planned":"Documented for future provider integration (e.g., live Ghidra/IDA/JADX/Frida session control or upstream morluto/rea server).","unsupported":"Excluded from REI REA scope (e.g., autonomous exploit generation, firmware flashing, or unauthorized target interaction)."},"mcp_tools":[{"name":"rei_rea_providers","purpose":"Discover provider profiles without execution."},{"name":"rei_rea_tools","purpose":"Filter 124-entry tool catalog records by tag or capability."},{"name":"rei_rea_doctor","purpose":"Inspect local PATH availability vs adapter support."},{"name":"rei_rea_inspect","purpose":"Identify format and compute SHA-256 of an authorized artifact."},{"name":"rei_rea_plan","purpose":"Produce an evidence-based specialist skill and tool routing plan."},{"name":"rei_rea_signals","purpose":"Read bounded entropy, signature, and optional string signals."},{"name":"rei_rea_compare","purpose":"Compare hashes and bounded byte differences of two files."},{"name":"rei_rea_case_create","purpose":"Initialize a hash-linked SHA-256 evidence case."},{"name":"rei_rea_case_verify","purpose":"Validate append-only case event integrity and target hash."},{"name":"rei_rea_investigate","purpose":"Run read-only cross-hash-checked static analysis pipeline (<= 64 MiB)."},{"name":"rei_rea_deep","purpose":"Parse bounded PE, ELF, and WebAssembly v1 structural headers/tables."},{"name":"rei_rea_diff","purpose":"Compare parsed binary structures across two artifact versions."},{"name":"rei_rea_case_search","purpose":"Search an explicitly indexed local SQLite forensic casebook."},{"name":"rei_rea_bundle_verify","purpose":"Verify checksums of an exported metadata-only evidence bundle."}],"static_adapters":[{"id":"file","executable":"file","mode":"opt-in-static-adapter"},{"id":"readelf","executable":"readelf","mode":"opt-in-static-adapter"},{"id":"objdump","executable":"objdump","mode":"opt-in-static-adapter"},{"id":"llvm-objdump","executable":"llvm-objdump","mode":"opt-in-static-adapter"},{"id":"llvm-readobj","executable":"llvm-readobj","mode":"opt-in-static-adapter"},{"id":"nm","executable":"nm","mode":"opt-in-static-adapter"},{"id":"exiftool","executable":"exiftool","mode":"opt-in-static-adapter"},{"id":"otool","executable":"otool","mode":"opt-in-static-adapter"},{"id":"android-aapt2","executable":"aapt2","mode":"opt-in-static-adapter"},{"id":"radare2","executable":"rabin2","mode":"opt-in-static-adapter"},{"id":"rizin","executable":"rz-bin","mode":"opt-in-static-adapter"}],"skills":[{"id":"rei-android-apks","name":"rei-android-apks","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Analyze authorized Android APK, AAB, DEX bytecode, manifests, permissions, and JNI boundaries using read-only triage.","tags":["reverse-engineering","android","apk","dex","jni","mobile","rei-rea"],"upstream_sha256":"bc61fec6714c899ebf031d9edb7fbdc3ab7d33a3cb20241c3f255047058d7330","synced_sha256":"888e3653bc643edfcbf4d0e71ff2a752de873d06077e1e692bcf298f4dcc1aac","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-binary-intelligence","name":"rei-binary-intelligence","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Analyze authorized PE, ELF, and WebAssembly structure and version diffs with REI REA bounded static parsers.","tags":["reverse-engineering","binary-analysis","pe","elf","wasm","rei-rea"],"upstream_sha256":"eec37f3448b112fd3643e2ca4957c4258a6a9515c3f2baeddb97e911b619a390","synced_sha256":"01ad3fd5febe8bafb17cd9d1d87b5a8f8696b3ee27112c62a32c2517905df6fc","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-casebook-forensics","name":"rei-casebook-forensics","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Index, search, and verify tamper-evident SHA-256 reverse-engineering casebooks and metadata-only forensic bundles.","tags":["reverse-engineering","digital-forensics","casebook","evidence","sqlite","rei-rea"],"upstream_sha256":"a38a0364806859d793fa729030dfa9bafa1599cedf618e8662cf5026454ea8cd","synced_sha256":"a21ec18396224e7c0297098130e6c5f9ec37c5cab3c27686fdfb01a6a76ac6d9","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-electron-and-js","name":"rei-electron-and-js","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Investigate authorized Electron ASAR archives, preload scripts, IPC routes, and bundled JavaScript applications.","tags":["reverse-engineering","electron","asar","javascript","ipc","nodejs","rei-rea"],"upstream_sha256":"42a17523723159d63aae2608551d1f1da03e16a3fc243c7e6e0bc33687e7c338","synced_sha256":"62229899d26c5e315bf67b93b7ca06575f113a9ebdb14ce69b77866f5efae468","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-evidence-ledger","name":"rei-evidence-ledger","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Maintain and audit SHA-256 hash-linked reverse-engineering case observations with explicit confidence states.","tags":["reverse-engineering","evidence","provenance","forensics","audit","rei-rea"],"upstream_sha256":"c60d328823d56feb1c7e55317d37436dd30acb8335a10875dc883e6c896a62db","synced_sha256":"313aa3e8edbe76bf899e5a74d8efc288cb11ae8dcc78837700aec5f5ffde70f3","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-firmware-and-iot","name":"rei-firmware-and-iot","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Examine authorized MCU, UEFI, embedded Linux, automotive telemetry, and GPS/IoT firmware images safely.","tags":["reverse-engineering","firmware","iot","embedded","uefi","telemetry","rei-rea"],"upstream_sha256":"56fc18ecd82e10da13b194c3382961cb8713706f55a789a4545c5276b1df25b8","synced_sha256":"118d995f2a69c1950cd2974e5b855cc46765b054093c9a4e4198780af79b997c","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-mobile-runtime","name":"rei-mobile-runtime","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Plan explicitly authorized Android and iOS runtime observation and static-to-dynamic verification in lab environments.","tags":["reverse-engineering","mobile","android","ios","runtime-analysis","rei-rea"],"upstream_sha256":"01b5936927d04beceae1e1e1b0b94bfb2d32fc7e06daf249b5bd5dc869a4a975","synced_sha256":"fc7eee5ef9954d3c73804dee0b870afb93439500b176916261b127b516c1530f","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-native-binaries","name":"rei-native-binaries","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Inspect authorized PE, ELF, Mach-O, and native libraries for symbols, imports, ABI boundaries, and call graphs.","tags":["reverse-engineering","native-binaries","pe","elf","mach-o","abi","rei-rea"],"upstream_sha256":"c4e8b17c71e777be6934aca74cc64e96834b144d8453763b81d504250e27c30e","synced_sha256":"7c5979e73d87e2ce8314d035be7bc2d6c331e2bcd0d03f5a953b6d6cb3bd13a6","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-rea-orchestrator","name":"rei-rea-orchestrator","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Route authorized reverse-engineering investigations across binaries, APKs, Electron, firmware, and WASM using REI REA.","tags":["reverse-engineering","binary-analysis","orchestrator","mcp","rei-rea","triage"],"upstream_sha256":"9f50e748bcadc4ede4f850c42e1259b04c905f2ef7310dc4fe100756e1e93e8b","synced_sha256":"69d8964565d2cbc5cf4f2affeece7b36dbe82ce75a57c847a808645d4fea28f5","files":["agents/openai.yaml","references/QUICKSTART.md","references/workflow.md","scripts/doctor.py","SKILL.md"]},{"id":"rei-reconstruction-parity","name":"rei-reconstruction-parity","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Specify and verify clean-room behavioral parity and differential test corpora from observed artifact evidence.","tags":["reverse-engineering","reconstruction","parity-testing","clean-room","verification","rei-rea"],"upstream_sha256":"6a30881fd71c61575629fafc67d6ee7ad5ce80da17d344f357162c766d4ace20","synced_sha256":"5499fb3ba3f99a14844ca1515f664bb55157d10623bb5a638c7bdf1793a28bdf","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-wasm-and-managed","name":"rei-wasm-and-managed","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Trace authorized WebAssembly modules, .NET CIL assemblies, and JVM bytecode for type recovery and API analysis.","tags":["reverse-engineering","wasm","webassembly","dotnet","jvm","bytecode","rei-rea"],"upstream_sha256":"9fcab7b00cccbe48c2b6f654f1c1e118f232f3e2e88acbb6b8df20f85db51bfe","synced_sha256":"7f3f71e995332b778a64f2b0d2e8f098c2064e648da1641812025f73e63429c3","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]},{"id":"rei-web-and-protocols","name":"rei-web-and-protocols","category":"reverse-engineering","risk":"safe","source":"rootcastle-rei","short_description":"Analyze authorized HAR, PCAP/PCAPNG captures, telemetry frames, and protocol state machines for interoperability.","tags":["reverse-engineering","protocols","pcap","har","network-analysis","telemetry","rei-rea"],"upstream_sha256":"fd4cfb9428da4728b7b92a59a129860f7b840633d3d0c96d3b63dd61908c0a14","synced_sha256":"2304d01d9c49a4fc54cbfd3076585cc80ae3875e2f804f0f0cf521ee95fb6643","files":["agents/openai.yaml","references/workflow.md","SKILL.md"]}]};
 
+    const SYNONYMS = {
+      tersine: ['reverse', 'reverse-engineering', 'rei-rea', 'binary'],
+      muhendislik: ['engineering', 'reverse-engineering'],
+      mühendislik: ['engineering', 'reverse-engineering'],
+      guvenlik: ['security', 'vulnerability', 'audit', 'pentest', 'owasp'],
+      güvenlik: ['security', 'vulnerability', 'audit', 'pentest', 'owasp'],
+      zafiyet: ['vulnerability', 'security', 'exploit', 'audit'],
+      gomulu: ['firmware', 'iot', 'embedded'],
+      gömülü: ['firmware', 'iot', 'embedded'],
+      mobil: ['mobile', 'android', 'ios', 'apk', 'flutter'],
+      veritabani: ['database', 'sql', 'postgres', 'schema'],
+      veritabanı: ['database', 'sql', 'postgres', 'schema'],
+      arayuz: ['frontend', 'ui', 'ux', 'react', 'design', 'tailwind'],
+      arayüz: ['frontend', 'ui', 'ux', 'react', 'design', 'tailwind'],
+      mimari: ['architecture', 'ddd', 'microservices'],
+      ajan: ['agent', 'ai', 'llm', 'mcp', 'langgraph', 'rag']
+    };
+
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
     const riskFilter = document.getElementById('riskFilter');
@@ -410,7 +569,6 @@
     const skillsGrid = document.getElementById('skillsGrid');
     const resultCount = document.getElementById('resultCount');
 
-    // Populate AI target selector
     const allAiOpt = document.createElement('option');
     allAiOpt.value = '--all-ai';
     allAiOpt.textContent = 'All AI Assistants (--all-ai)';
@@ -424,7 +582,6 @@
       aiTargetSelect.appendChild(opt);
     });
 
-    // Populate categories
     const categories = [...new Set(SKILLS.map(s => s.category))].sort();
     categories.forEach(cat => {
       const opt = document.createElement('option');
@@ -451,6 +608,109 @@
     function getSelectedFlag() {
       return aiTargetSelect.value || '--claude';
     }
+
+    function runSmartRecommendation() {
+      const task = document.getElementById('smartTaskInput').value.trim();
+      const filesRaw = document.getElementById('smartFilesInput').value.trim();
+      if (!task && !filesRaw) return;
+
+      const flag = getSelectedFlag();
+      const rawTokens = (task + ' ' + filesRaw)
+        .toLowerCase()
+        .replace(/[^a-z0-9ğüşıöç._-]+/gi, ' ')
+        .split(/\s+/)
+        .filter(t => t.length >= 2);
+
+      const tokens = new Set();
+      rawTokens.forEach(t => {
+        tokens.add(t);
+        if (SYNONYMS[t]) SYNONYMS[t].forEach(s => tokens.add(s));
+      });
+
+      const boostMap = {};
+      const combined = (task + ' ' + filesRaw).toLowerCase();
+      if (/\.(wasm|wat)\b/.test(combined)) {
+        ['rei-wasm-and-managed', 'rei-binary-intelligence', 'rei-reconstruction-parity', 'rei-rea-orchestrator'].forEach((id, i) => boostMap[id] = 30 - i*4);
+      }
+      if (/\.(apk|dex|smali)\b/.test(combined)) {
+        ['rei-android-apks', 'rei-mobile-runtime', 'rei-binary-intelligence', 'rei-rea-orchestrator'].forEach((id, i) => boostMap[id] = 30 - i*4);
+      }
+      if (/\.(bin|fw|img|rom)\b/.test(combined)) {
+        ['rei-firmware-and-iot', 'rei-binary-intelligence', 'rei-evidence-ledger', 'rei-rea-orchestrator'].forEach((id, i) => boostMap[id] = 30 - i*4);
+      }
+      if (/\.(tsx|jsx)\b|next\.config/.test(combined)) {
+        ['nextjs-best-practices', 'react-best-practices', 'frontend-developer', 'tailwind-patterns'].forEach((id, i) => boostMap[id] = 24 - i*3);
+      }
+
+      const scored = [];
+      SKILLS.forEach(s => {
+        let score = boostMap[s.id] || 0;
+        const idL = s.id.toLowerCase();
+        const descL = s.description.toLowerCase();
+        const catL = s.category.toLowerCase();
+        const tagsL = (s.tags || []).map(x => x.toLowerCase());
+        let hits = 0;
+        tokens.forEach(tok => {
+          let m = false;
+          if (idL === tok || idL.split('-').includes(tok)) { score += 14; m = true; }
+          else if (idL.includes(tok)) { score += 8; m = true; }
+          if (tagsL.includes(tok)) { score += 9; m = true; }
+          if (catL.includes(tok)) { score += 6; m = true; }
+          if (descL.includes(tok)) { score += 5; m = true; }
+          if (m) hits++;
+        });
+        if (hits > 1) score += hits * 4;
+        if (score > 0) {
+          const conf = Math.min(99, Math.round((score / Math.max(32, tokens.size * 12)) * 100));
+          scored.push({ ...s, score, conf });
+        }
+      });
+
+      scored.sort((a, b) => b.score - a.score);
+      const top = scored.slice(0, 6);
+      const wrap = document.getElementById('smartResultsWrap');
+      wrap.classList.remove('hidden');
+
+      document.getElementById('smartSummaryTitle').textContent =
+        '🎯 Top ' + top.length + ' Smart-Routed Skills for your task:';
+
+      const firstId = top[0] ? top[0].id : 'essentials';
+      const batchCmd = 'npx rei-skills add ' + firstId + ' ' + flag;
+      const batchBtn = document.getElementById('smartBatchInstallBtn');
+      batchBtn.textContent = 'Install #1 Recommended: ' + batchCmd;
+      batchBtn.onclick = function() { copyCommand(batchCmd, batchBtn); };
+
+      document.getElementById('smartSkillsGrid').innerHTML = top.map(s => {
+        const cmd = 'npx rei-skills add ' + s.id + ' ' + flag;
+        return `
+          <article class="card">
+            <div>
+              <div class="card-header">
+                <div class="card-title">${escapeHtml(s.id)}</div>
+                <span class="badge badge-match">${s.conf}% match</span>
+              </div>
+              <p class="card-desc" style="margin-top:8px;">${escapeHtml(s.description)}</p>
+            </div>
+            <div class="card-footer">
+              <span class="badge badge-cat">${escapeHtml(s.category)}</span>
+              <button class="copy-cmd" onclick="copyCommand('${escapeHtml(cmd)}', this)">${escapeHtml(cmd)}</button>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    document.getElementById('smartRunBtn').addEventListener('click', runSmartRecommendation);
+    document.getElementById('smartTaskInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') runSmartRecommendation();
+    });
+    document.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.getElementById('smartTaskInput').value = chip.dataset.task || '';
+        document.getElementById('smartFilesInput').value = chip.dataset.files || '';
+        runSmartRecommendation();
+      });
+    });
 
     function renderSkills() {
       const q = searchInput.value.trim().toLowerCase();
@@ -592,6 +852,9 @@
       renderSkills();
       renderRea();
       renderBundles();
+      if (!document.getElementById('smartResultsWrap').classList.contains('hidden')) {
+        runSmartRecommendation();
+      }
     });
 
     document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -599,7 +862,7 @@
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const tab = btn.dataset.tab;
-        ['skills', 'ai-targets', 'rea', 'bundles', 'workflows'].forEach(t => {
+        ['skills', 'mcp', 'ai-targets', 'rea', 'bundles', 'workflows'].forEach(t => {
           document.getElementById('tab-' + t).classList.toggle('hidden', t !== tab);
         });
       });

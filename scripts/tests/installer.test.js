@@ -14,7 +14,7 @@ const { AI_TARGETS, transpileSkillContent } = require("../../lib/ai-adapters");
 const CLI_PATH = path.resolve(__dirname, "../../bin/install.js");
 const REPO_SKILLS = path.resolve(__dirname, "../../skills");
 
-console.log("Running REI Skill Manager, Universal AI Compiler & Installer safety tests...");
+console.log("Running REI Skill Manager, Smart Router, MCP Server, Universal AI Compiler & Installer safety tests...");
 
 // 1. Test CLI argument parsing across multiple AI targets
 {
@@ -101,6 +101,7 @@ console.log("Running REI Skill Manager, Universal AI Compiler & Installer safety
 
     const updatedMcp = JSON.parse(fs.readFileSync(mcpConfigPath, "utf8"));
     assert(updatedMcp.mcpServers.existingServer, "Existing MCP server must be preserved");
+    assert.strictEqual(updatedMcp.mcpServers["rei-skills"].command, "npx");
     assert.strictEqual(updatedMcp.mcpServers["rei-rea"].command, "rei-rea");
 
     const backups = fs.readdirSync(tmpTarget).filter((f) => f.startsWith("mcp_config.json.bak."));
@@ -122,7 +123,7 @@ console.log("Running REI Skill Manager, Universal AI Compiler & Installer safety
   }
 }
 
-// 5. Test Universal AI Compiler formats (Cursor .mdc, Copilot .instructions.md, Windsurf, SDK JSON, AGENTS.md)
+// 5. Test Universal AI Compiler formats, Smart Router, and MCP Server
 {
   const tmpExport = fs.mkdtempSync(path.join(os.tmpdir(), "rei-test-export-"));
   try {
@@ -166,9 +167,59 @@ console.log("Running REI Skill Manager, Universal AI Compiler & Installer safety
     assert.strictEqual(resTargets.status, 0);
     const targetsData = JSON.parse(resTargets.stdout);
     assert(targetsData.total >= 21);
+
+    // Test Smart Intent & Stack Router (English + Turkish + file extensions)
+    const resRec = spawnSync(
+      process.execPath,
+      [CLI_PATH, "recommend", "Android APK ve firmware tersine mühendislik analizi", "--files", "app.apk,router.bin", "--json"],
+      { encoding: "utf8" },
+    );
+    assert.strictEqual(resRec.status, 0, `recommend command failed: ${resRec.stderr}`);
+    const recData = JSON.parse(resRec.stdout);
+    assert(Array.isArray(recData.recommendedSkills) && recData.recommendedSkills.length > 0, "Smart router must return recommendedSkills");
+    const recIds = recData.recommendedSkills.map((s) => s.id);
+    assert(recIds.includes("rei-android-apks") || recIds.includes("rei-firmware-and-iot"), "Smart router must match APK or Firmware skills");
+    assert(Array.isArray(recData.query.extractedTokens) && recData.query.extractedTokens.length >= 2, "Smart router must extract intent & stack tokens");
+
+    // Test REI Skills MCP Server JSON-RPC 2.0 handler
+    const { handleJsonRpcRequest } = require("../../bin/mcp-server");
+    const initRes = handleJsonRpcRequest({ jsonrpc: "2.0", id: 1, method: "initialize", params: {} });
+    assert.strictEqual(initRes.result.serverInfo.name, "rei-skills-mcp");
+
+    const toolsRes = handleJsonRpcRequest({ jsonrpc: "2.0", id: 2, method: "tools/list", params: {} });
+    assert(toolsRes.result.tools.length >= 8, "MCP server must expose at least 8 tools");
+
+    const callRecRes = handleJsonRpcRequest({
+      jsonrpc: "2.0",
+      id: 3,
+      method: "tools/call",
+      params: {
+        name: "rei_recommend_skills",
+        arguments: {
+          task: "Analyze WebAssembly binary and verify clean-room parity",
+          workspace_files: ["sample_v1.wasm", "sample_v2.wasm"],
+          top_k: 4,
+        },
+      },
+    });
+    assert(!callRecRes.result.isError, "MCP rei_recommend_skills call should succeed");
+    const mcpRecPayload = JSON.parse(callRecRes.result.content[0].text);
+    assert(mcpRecPayload.recommendedSkills.some((s) => s.id === "rei-wasm-and-managed"));
+
+    const callSkillRes = handleJsonRpcRequest({
+      jsonrpc: "2.0",
+      id: 4,
+      method: "tools/call",
+      params: {
+        name: "rei_get_skill",
+        arguments: { id: "rei-rea-orchestrator" },
+      },
+    });
+    assert(!callSkillRes.result.isError, "MCP rei_get_skill should succeed");
+    assert(callSkillRes.result.content[0].text.includes("rei-rea-orchestrator"));
   } finally {
     fs.rmSync(tmpExport, { recursive: true, force: true });
   }
 }
 
-console.log("✅ All REI Skill Manager, Universal AI Compiler & Installer safety tests passed!");
+console.log("✅ All REI Skill Manager, Smart Router, MCP Server, Universal AI Compiler & Installer safety tests passed!");
