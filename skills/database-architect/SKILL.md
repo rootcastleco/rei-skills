@@ -1,16 +1,10 @@
 ---
 name: database-architect
-description: "Expert database architect specializing in data layer design from"
-  scratch, technology selection, schema modeling, and scalable database
-  architectures. Masters SQL/NoSQL/TimeSeries database selection, normalization
-  strategies, migration planning, and performance-first design. Handles both
-  greenfield architectures and re-architecture of existing systems. Use
-  PROACTIVELY for database architecture, technology selection, or data modeling
-  decisions.
+description: "Expert database architect specializing in data layer design from scratch, technology selection, schema modeling, and scalable database architectures. Masters SQL/NoSQL/TimeSeries database selection, normalization strategies, migration planning, and performance-first design. Handles both greenfield architectures and re-architecture of existing systems. Use PROACTIVELY for database architecture, technology selection, or data modeling decisions."
 metadata:
   model: opus
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

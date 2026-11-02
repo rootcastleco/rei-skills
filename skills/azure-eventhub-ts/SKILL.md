@@ -2,8 +2,8 @@
 name: azure-eventhub-ts
 description: "Build event streaming applications using Azure Event Hubs SDK for JavaScript (@azure/event-hubs). Use when implementing high-throughput event ingestion, real-time analytics, IoT telemetry, or event..."
 package: "@azure/event-hubs"
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: microsoft/skills
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

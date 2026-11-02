@@ -1,7 +1,7 @@
 ---
 name: pypict-skill
 description: "Pairwise test generation"
-source: rootcastle-rei
+source: omkamal/pypict-claude-skill
 risk: safe
 ---
 

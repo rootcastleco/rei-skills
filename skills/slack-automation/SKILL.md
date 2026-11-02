@@ -3,8 +3,8 @@ name: slack-automation
 description: "Automate Slack messaging, channel management, search, reactions, and threads via Rube MCP (Composio). Send messages, search conversations, manage channels/users, and react to messages programmatica..."
 requires:
   mcp: [rube]
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

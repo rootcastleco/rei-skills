@@ -2,8 +2,8 @@
 name: parallel-agents
 description: "Multi-agent orchestration patterns. Use when multiple independent tasks can run with different domain expertise or when comprehensive analysis requires multiple perspectives."
 allowed-tools: Read, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

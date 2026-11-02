@@ -1,8 +1,8 @@
 ---
 name: istio-traffic-management
 description: "Configure Istio traffic management including routing, load balancing, circuit breakers, and canary deployments. Use when implementing service mesh traffic policies, progressive delivery, or resilie..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Istio Traffic Management

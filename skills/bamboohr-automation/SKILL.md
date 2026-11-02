@@ -3,8 +3,8 @@ name: bamboohr-automation
 description: "Automate BambooHR tasks via Rube MCP (Composio): employees, time-off, benefits, dependents, employee updates. Always search tools first for current schemas."
 requires:
   mcp: [rube]
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # BambooHR Automation via Rube MCP

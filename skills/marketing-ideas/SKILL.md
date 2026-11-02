@@ -1,8 +1,8 @@
 ---
 name: marketing-ideas
 description: "Provide proven marketing strategies and growth ideas for SaaS and software products, prioritized using a marketing feasibility scoring system."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 # Marketing Ideas for SaaS (with Feasibility Scoring)
 

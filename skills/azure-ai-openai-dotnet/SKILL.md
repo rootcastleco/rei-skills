@@ -1,10 +1,9 @@
 ---
 name: azure-ai-openai-dotnet
-description: "|"
-  Azure OpenAI SDK for .NET. Client library for Azure OpenAI and OpenAI services. Use for chat completions, embeddings, image generation, audio transcription, and assistants. Triggers: "Azure OpenAI", "AzureOpenAIClient", "ChatClient", "chat completions .NET", "GPT-4", "embeddings", "DALL-E", "Whisper", "OpenAI .NET".
+description: "Azure OpenAI SDK for .NET. Client library for Azure OpenAI and OpenAI services. Use for chat completions, embeddings, image generation, audio transcription, and assistants. Triggers: \"Azure OpenAI\", \"AzureOpenAIClient\", \"ChatClient\", \"chat completions .NET\", \"GPT-4\", \"embeddings\", \"DALL-E\", \"Whisper\", \"OpenAI .NET\"."
 package: Azure.AI.OpenAI
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Azure.AI.OpenAI (.NET)

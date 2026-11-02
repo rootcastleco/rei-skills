@@ -1,0 +1,485 @@
+{
+  "rei_rea_version": "REI REA 0.2.0",
+  "fixtures": {
+    "v1": "fixtures/telemetry-filter-v1.wasm",
+    "v2": "fixtures/telemetry-filter-v2.wasm"
+  },
+  "inspect_v1": {
+    "path": "./fixtures/telemetry-filter-v1.wasm",
+    "kind": "wasm",
+    "sha256": "a86707e622921126c88d3b27142cb9404320197c19c45ec4fb81a2a4e908949f",
+    "identity_complete": true,
+    "bytes": 116,
+    "observations": {
+      "version": 1
+    },
+    "warnings": [],
+    "method": "SHA-256 of full file; first 116 bytes examined; bounded ZIP listing where applicable"
+  },
+  "deep_v1": {
+    "artifact": {
+      "path": "./fixtures/telemetry-filter-v1.wasm",
+      "sha256": "a86707e622921126c88d3b27142cb9404320197c19c45ec4fb81a2a4e908949f",
+      "kind": "wasm",
+      "bytes": 116
+    },
+    "status": "complete",
+    "profile": {
+      "version": 1,
+      "sections": [
+        {
+          "id": 0,
+          "offset": 8,
+          "payload_offset": 10,
+          "payload_size": 44,
+          "name": "rei.fixture"
+        },
+        {
+          "id": 1,
+          "offset": 54,
+          "payload_offset": 56,
+          "payload_size": 5
+        },
+        {
+          "id": 2,
+          "offset": 61,
+          "payload_offset": 63,
+          "payload_size": 22,
+          "entries_declared": 1
+        },
+        {
+          "id": 3,
+          "offset": 85,
+          "payload_offset": 87,
+          "payload_size": 2
+        },
+        {
+          "id": 7,
+          "offset": 89,
+          "payload_offset": 91,
+          "payload_size": 17,
+          "entries_declared": 1
+        },
+        {
+          "id": 10,
+          "offset": 108,
+          "payload_offset": 110,
+          "payload_size": 6
+        }
+      ],
+      "imports_sample": [
+        {
+          "module": "env",
+          "name": "telemetry_emit",
+          "kind": 0
+        }
+      ],
+      "exports_sample": [
+        {
+          "name": "calculate_crc",
+          "kind": 0,
+          "index": 1
+        }
+      ],
+      "limits": {
+        "sections": 256,
+        "names": 128,
+        "import_export_entries_examined": 4096
+      }
+    },
+    "parse_errors": [],
+    "bytes_available_to_parser": 116,
+    "limitations": [
+      "Only the first 32 MiB is available to the structural parser; complete status means parsing finished, not semantic validation"
+    ],
+    "provenance": "Built-in read-only structured parser; no target execution, decompilation or live instrumentation"
+  },
+  "deep_v2": {
+    "artifact": {
+      "path": "./fixtures/telemetry-filter-v2.wasm",
+      "sha256": "766cc87ddc6f9df8964a05f2da01e7a0c8bf8b8370b53646d57b954b5b20ba59",
+      "kind": "wasm",
+      "bytes": 169
+    },
+    "status": "complete",
+    "profile": {
+      "version": 1,
+      "sections": [
+        {
+          "id": 0,
+          "offset": 8,
+          "payload_offset": 10,
+          "payload_size": 44,
+          "name": "rei.fixture"
+        },
+        {
+          "id": 1,
+          "offset": 54,
+          "payload_offset": 56,
+          "payload_size": 5
+        },
+        {
+          "id": 2,
+          "offset": 61,
+          "payload_offset": 63,
+          "payload_size": 44,
+          "entries_declared": 2
+        },
+        {
+          "id": 3,
+          "offset": 107,
+          "payload_offset": 109,
+          "payload_size": 3
+        },
+        {
+          "id": 7,
+          "offset": 112,
+          "payload_offset": 114,
+          "payload_size": 42,
+          "entries_declared": 2
+        },
+        {
+          "id": 10,
+          "offset": 156,
+          "payload_offset": 158,
+          "payload_size": 11
+        }
+      ],
+      "imports_sample": [
+        {
+          "module": "env",
+          "name": "telemetry_emit",
+          "kind": 0
+        },
+        {
+          "module": "env",
+          "name": "audit_log_frame",
+          "kind": 0
+        }
+      ],
+      "exports_sample": [
+        {
+          "name": "calculate_crc",
+          "kind": 0,
+          "index": 2
+        },
+        {
+          "name": "validate_packet_header",
+          "kind": 0,
+          "index": 3
+        }
+      ],
+      "limits": {
+        "sections": 256,
+        "names": 128,
+        "import_export_entries_examined": 4096
+      }
+    },
+    "parse_errors": [],
+    "bytes_available_to_parser": 169,
+    "limitations": [
+      "Only the first 32 MiB is available to the structural parser; complete status means parsing finished, not semantic validation"
+    ],
+    "provenance": "Built-in read-only structured parser; no target execution, decompilation or live instrumentation"
+  },
+  "diff_v1_to_v2": {
+    "kind": "wasm",
+    "before_sha256": "a86707e622921126c88d3b27142cb9404320197c19c45ec4fb81a2a4e908949f",
+    "after_sha256": "766cc87ddc6f9df8964a05f2da01e7a0c8bf8b8370b53646d57b954b5b20ba59",
+    "structural_changes": {
+      "sections": {
+        "before": [
+          {
+            "id": 0,
+            "offset": 8,
+            "payload_offset": 10,
+            "payload_size": 44,
+            "name": "rei.fixture"
+          },
+          {
+            "id": 1,
+            "offset": 54,
+            "payload_offset": 56,
+            "payload_size": 5
+          },
+          {
+            "id": 2,
+            "offset": 61,
+            "payload_offset": 63,
+            "payload_size": 22,
+            "entries_declared": 1
+          },
+          {
+            "id": 3,
+            "offset": 85,
+            "payload_offset": 87,
+            "payload_size": 2
+          },
+          {
+            "id": 7,
+            "offset": 89,
+            "payload_offset": 91,
+            "payload_size": 17,
+            "entries_declared": 1
+          },
+          {
+            "id": 10,
+            "offset": 108,
+            "payload_offset": 110,
+            "payload_size": 6
+          }
+        ],
+        "after": [
+          {
+            "id": 0,
+            "offset": 8,
+            "payload_offset": 10,
+            "payload_size": 44,
+            "name": "rei.fixture"
+          },
+          {
+            "id": 1,
+            "offset": 54,
+            "payload_offset": 56,
+            "payload_size": 5
+          },
+          {
+            "id": 2,
+            "offset": 61,
+            "payload_offset": 63,
+            "payload_size": 44,
+            "entries_declared": 2
+          },
+          {
+            "id": 3,
+            "offset": 107,
+            "payload_offset": 109,
+            "payload_size": 3
+          },
+          {
+            "id": 7,
+            "offset": 112,
+            "payload_offset": 114,
+            "payload_size": 42,
+            "entries_declared": 2
+          },
+          {
+            "id": 10,
+            "offset": 156,
+            "payload_offset": 158,
+            "payload_size": 11
+          }
+        ]
+      },
+      "imports_sample": {
+        "before": [
+          {
+            "module": "env",
+            "name": "telemetry_emit",
+            "kind": 0
+          }
+        ],
+        "after": [
+          {
+            "module": "env",
+            "name": "telemetry_emit",
+            "kind": 0
+          },
+          {
+            "module": "env",
+            "name": "audit_log_frame",
+            "kind": 0
+          }
+        ]
+      },
+      "exports_sample": {
+        "before": [
+          {
+            "name": "calculate_crc",
+            "kind": 0,
+            "index": 1
+          }
+        ],
+        "after": [
+          {
+            "name": "calculate_crc",
+            "kind": 0,
+            "index": 2
+          },
+          {
+            "name": "validate_packet_header",
+            "kind": 0,
+            "index": 3
+          }
+        ]
+      }
+    },
+    "partial": false,
+    "limitations": "This is a structural change report; it cannot establish code execution paths or behavioral equivalence."
+  },
+  "routing_plan_v2": {
+    "inspection": {
+      "path": "./fixtures/telemetry-filter-v2.wasm",
+      "kind": "wasm",
+      "sha256": "766cc87ddc6f9df8964a05f2da01e7a0c8bf8b8370b53646d57b954b5b20ba59",
+      "identity_complete": true,
+      "bytes": 169,
+      "observations": {
+        "version": 1
+      },
+      "warnings": [],
+      "method": "SHA-256 of full file; first 169 bytes examined; bounded ZIP listing where applicable"
+    },
+    "plan": {
+      "artifact_kind": "wasm",
+      "artifact_sha256": "766cc87ddc6f9df8964a05f2da01e7a0c8bf8b8370b53646d57b954b5b20ba59",
+      "skill_routes": [
+        "rei-rea-orchestrator",
+        "rei-wasm-and-managed",
+        "rei-evidence-ledger"
+      ],
+      "tool_tags": [
+        "wasm"
+      ],
+      "tool_candidates": [
+        {
+          "id": "git",
+          "available_on_path": true,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "python",
+          "available_on_path": true,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "rea-upstream",
+          "available_on_path": true,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "sqlite3",
+          "available_on_path": true,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "exiftool",
+          "available_on_path": false,
+          "integration": "static-adapter"
+        },
+        {
+          "id": "file",
+          "available_on_path": false,
+          "integration": "static-adapter"
+        },
+        {
+          "id": "010-editor",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "binaryen",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "bulk-extractor",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "foremost",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "hashdeep",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "hexdump",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "hexyl",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "imhex",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "jq",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "kaitai",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "trid",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "wabt",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "wasm-tools",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "wasmtime",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "xxd",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "yara",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        },
+        {
+          "id": "yara-x",
+          "available_on_path": false,
+          "integration": "discovery-only"
+        }
+      ],
+      "steps": [
+        "Establish permission, investigation question, immutable input hash and resource limits",
+        "Inventory metadata and entry points; distinguish observed facts from hypotheses",
+        "Choose the smallest available read-only technique to trace one feature",
+        "Record evidence offsets/paths, contradictions and tool versions in the case ledger",
+        "Construct a behavioral specification, then implement outside the original",
+        "Compare outputs on an authorized reproducible test corpus; report gaps and rollback"
+      ],
+      "execution_policy": "No untrusted target execution or external tools run during plan/inspect. Opt in separately for vetted static adapters.",
+      "limitations": [
+        "Tool catalog is not an installation bundle",
+        "Tool availability is PATH detection, not a capability benchmark",
+        "No behavior recovered from headers or names alone"
+      ]
+    }
+  },
+  "case_verification": {
+    "valid": true,
+    "errors": [],
+    "event_count": 2,
+    "tail_hash": "d09c221fcbeb65200af041ed5ac40194325e33a803c40a2d9923c5fc9ede357a",
+    "target_sha256": "766cc87ddc6f9df8964a05f2da01e7a0c8bf8b8370b53646d57b954b5b20ba59",
+    "case_id": "20261102T161833Z-telemetry-filter-v2-766cc87ddc6f"
+  }
+}

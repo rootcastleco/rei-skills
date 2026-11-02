@@ -2,8 +2,8 @@
 name: game-art
 description: "Game art principles. Visual style selection, asset pipeline, animation workflow."
 allowed-tools: Read, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

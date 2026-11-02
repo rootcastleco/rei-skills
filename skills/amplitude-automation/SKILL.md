@@ -3,8 +3,8 @@ name: amplitude-automation
 description: "Automate Amplitude tasks via Rube MCP (Composio): events, user activity, cohorts, user identification. Always search tools first for current schemas."
 requires:
   mcp: [rube]
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Amplitude Automation via Rube MCP

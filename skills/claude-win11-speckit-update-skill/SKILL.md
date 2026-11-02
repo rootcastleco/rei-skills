@@ -1,7 +1,7 @@
 ---
 name: claude-win11-speckit-update-skill
 description: "Windows 11 system management"
-source: rootcastle-rei
+source: NotMyself/claude-win11-speckit-update-skill
 risk: safe
 ---
 

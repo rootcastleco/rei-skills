@@ -1,8 +1,8 @@
 ---
 name: solidity-security
 description: "Master smart contract security best practices to prevent common vulnerabilities and implement secure Solidity patterns. Use when writing smart contracts, auditing existing contracts, or implementin..."
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

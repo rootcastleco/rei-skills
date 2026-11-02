@@ -3,8 +3,8 @@ name: freshservice-automation
 description: "Automate Freshservice ITSM tasks via Rube MCP (Composio): create/update tickets, bulk operations, service requests, and outbound emails. Always search tools first for current schemas."
 requires:
   mcp: [rube]
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Freshservice Automation via Rube MCP

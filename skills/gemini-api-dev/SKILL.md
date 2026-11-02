@@ -1,8 +1,8 @@
 ---
 name: gemini-api-dev
 description: "Use this skill when building applications with Gemini models, Gemini API, working with multimodal content (text, images, audio, video), implementing function calling, using structured outputs, or n..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Gemini API Development Skill

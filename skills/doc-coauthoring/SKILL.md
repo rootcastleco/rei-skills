@@ -1,8 +1,8 @@
 ---
 name: doc-coauthoring
 description: "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This ..."
-risk: unknown
-source: rootcastle-rei
+risk: none
+source: community
 ---
 
 # Doc Co-Authoring Workflow

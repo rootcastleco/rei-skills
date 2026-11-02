@@ -1,21 +1,21 @@
-name: 🏰 Rei Skills CI — Rootcastle Engineering & Innovation
+name: 🏰 REI Skills CI — Rootcastle Engineering & Innovation
 
 permissions:
-  contents: write
+  contents: read
 
 on:
   push:
-    branches: ["main", "feat/*"]
+    branches: ["main", "feat/**"]
   pull_request:
     branches: ["main"]
   workflow_dispatch:
 
 jobs:
-  validate-and-build:
-    name: 🏰 Validate, Build & Sync
+  validate-and-verify:
+    name: 🏰 Validate, Audit, Build & Test
     runs-on: ubuntu-latest
     steps:
-      - name: 🏰 Checkout
+      - name: 🏰 Checkout Repository
         uses: actions/checkout@v4
 
       - name: 🐍 Setup Python
@@ -26,69 +26,45 @@ jobs:
       - name: 📦 Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: "20"
+          cache: "npm"
 
-      - name: 📥 Install Python deps
+      - name: 📥 Install Python Dependencies
         run: pip install pyyaml
 
-      - name: 📥 Install npm deps
+      - name: 📥 Install npm Dependencies
         run: npm ci
 
-      - name: ✅ Validate Skills
-        run: python3 scripts/validate_skills.py
+      - name: 🔬 Verify REI REA Sync Manifest Integrity
+        run: python scripts/sync_rei_rea.py --check
 
-      - name: 📊 Generate Index
-        run: python3 scripts/generate_index.py
+      - name: ✅ Strict Skill Schema & Link Validation (Python)
+        run: python scripts/validate_skills.py --strict --report data/quality-report.json
 
-      - name: 📝 Update README
-        run: python3 scripts/update_readme.py
+      - name: ✅ Frontmatter Validation (Node.js)
+        run: node scripts/validate-skills.js
 
-      - name: 🔒 npm Audit
-        run: npm audit --audit-level=high
-        continue-on-error: true
+      - name: 🔗 Verify Workflow & Bundle References
+        run: python scripts/validate_references.py
 
-      - name: 🧪 Run Tests
-        run: npm run test
-
-      - name: 📖 Build Catalog
-        run: npm run catalog
-
-      - name: 🔒 Security Audit
+      - name: 🔒 Security & Guardrails Audit
         run: node scripts/security_audit.js
-        continue-on-error: true
 
-      - name: 🏰 Verify Branding
-        run: |
-          MISSING=$(grep -rL "Rootcastle Engineering" skills/*/SKILL.md 2>/dev/null | wc -l | tr -d ' ')
-          echo "Files missing branding: $MISSING"
-          if [ "$MISSING" -gt "0" ]; then
-            echo "❌ Some SKILL.md files are missing Rootcastle branding"
-            echo "Run: node scripts/brand_skills.js"
-            exit 1
-          fi
-          echo "✅ All skills branded with Rootcastle"
+      - name: 🧪 Run Automated Test Suite (Headings + CLI Installer Safety)
+        run: npm test
 
-      - name: 🔧 Setup Git (main only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: 🏗️ Rebuild Index, Catalog, README & Doc Site
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          python scripts/generate_index.py
+          node scripts/build-catalog.js
+          python scripts/update_readme.py --check
+          node scripts/build-doc-site.js
 
-      - name: 📤 Auto-commit registry (main only)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: 🚨 Deterministic Artifact Drift Check
         run: |
-          git diff --quiet && exit 0
-          git pull origin main --rebase || true
-          git add README.md skills_index.json data/catalog.json data/bundles.json data/aliases.json CATALOG.md || true
-          git diff --cached --quiet && exit 0
-          git commit -m "chore: sync registry files [ci skip] 🏰"
-          git push origin HEAD
-
-      - name: 🚨 Drift Check
-        run: |
-          if ! git diff --quiet; then
-            echo "❌ Uncommitted changes detected. Run:"
-            echo "  npm run build && git add -A && git commit"
+          if ! git diff --quiet -- skills_index.json data/skills_index.json data/catalog.json data/bundles.json data/aliases.json CATALOG.md README.md docs/site/index.html; then
+            echo "❌ Generated catalog or documentation artifacts are out of sync."
+            echo "Run 'npm run build' locally and commit the updated files."
+            git status --short
             exit 1
           fi

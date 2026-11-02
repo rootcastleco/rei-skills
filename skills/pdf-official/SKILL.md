@@ -2,8 +2,8 @@
 name: pdf-official
 description: "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmaticall..."
 license: Proprietary. LICENSE.txt has complete terms
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: anthropics/skills
 ---
 
 # PDF Processing Guide

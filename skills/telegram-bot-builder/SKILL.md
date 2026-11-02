@@ -1,8 +1,8 @@
 ---
 name: telegram-bot-builder
 description: "Expert in building Telegram bots that solve real problems - from simple automation to complex AI-powered bots. Covers bot architecture, the Telegram Bot API, user experience, monetization strategie..."
-source: rootcastle-rei
-risk: unknown
+source: vibeship-spawner-skills (Apache 2.0)
+risk: offensive
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

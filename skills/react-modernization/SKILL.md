@@ -1,8 +1,8 @@
 ---
 name: react-modernization
 description: "Upgrade React applications to latest versions, migrate from class components to hooks, and adopt concurrent features. Use when modernizing React codebases, migrating to React Hooks, or upgrading to..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # React Modernization

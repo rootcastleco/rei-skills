@@ -3,8 +3,8 @@ name: telegram-automation
 description: "Automate Telegram tasks via Rube MCP (Composio): send messages, manage chats, share photos/documents, and handle bot commands. Always search tools first for current schemas."
 requires:
   mcp: [rube]
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Telegram Automation via Rube MCP

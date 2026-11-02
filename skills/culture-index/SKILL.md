@@ -1,7 +1,7 @@
 ---
 name: culture-index
 description: "Index and search culture documentation"
-source: rootcastle-rei
+source: trailofbits/skills
 risk: safe
 ---
 

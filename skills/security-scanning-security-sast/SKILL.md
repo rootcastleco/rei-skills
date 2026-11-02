@@ -1,14 +1,13 @@
 ---
 name: security-scanning-security-sast
-description: "Static Application Security Testing (SAST) for code vulnerability"
-  analysis across multiple languages and frameworks
+description: "Static Application Security Testing (SAST) for code vulnerability analysis across multiple languages and frameworks"
 metadata:
   globs: "**/*.py, **/*.js, **/*.ts, **/*.java, **/*.rb, **/*.go, **/*.rs, **/*.php"
   keywords: sast, static analysis, code security, vulnerability scanning, bandit,
     semgrep, eslint, sonarqube, codeql, security patterns, code review, ast
     analysis
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

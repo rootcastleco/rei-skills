@@ -1,8 +1,8 @@
 ---
 name: popup-cro
 description: "Create and optimize popups, modals, overlays, slide-ins, and banners to increase conversions without harming user experience or brand trust."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 # Popup CRO
 

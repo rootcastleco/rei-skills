@@ -2,8 +2,8 @@
 name: 2d-games
 description: "2D game development principles. Sprites, tilemaps, physics, camera."
 allowed-tools: Read, Write, Edit, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # 2D Game Development

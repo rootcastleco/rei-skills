@@ -1,8 +1,8 @@
 ---
 name: telegram-mini-app
 description: "Expert in building Telegram Mini Apps (TWA) - web apps that run inside Telegram with native-like experience. Covers the TON ecosystem, Telegram Web App API, payments, user authentication, and build..."
-source: rootcastle-rei
-risk: unknown
+source: vibeship-spawner-skills (Apache 2.0)
+risk: offensive
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

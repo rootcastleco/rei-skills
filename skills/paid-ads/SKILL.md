@@ -1,8 +1,8 @@
 ---
 name: paid-ads
 description: "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' '..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Paid Ads

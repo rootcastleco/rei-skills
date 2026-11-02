@@ -1,9 +1,39 @@
 # Changelog
 
-All notable changes to the **Antigravity Awesome Skills** collection are documented in this file.
+All notable changes to **REI Skills** (and its historical upstream lineage) are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [6.1.0] - 2026-11-02 - "Rootcastle Platform Modernization & REI REA Integration"
+
+> **Full platform modernization, 100% YAML schema & provenance repair across 895 skills, upgraded REI Skill Manager CLI, and first-class integration with the REI Reverse Engineering Workbench (`rei-rea`).**
+
+### 🚀 Added
+
+- **First-Class REI Reverse Engineering (`rei-rea`) Module (`12` Specialist Skills):**
+  - Synchronized from [`rootcastleco/Rei-Reverse-engineer`](https://github.com/rootcastleco/Rei-Reverse-engineer) (`v0.2.0`, commit `09fbc7b`) via `scripts/sync_rei_rea.py` with SHA-256 manifest verification (`data/rei-rea-manifest.json`):
+    - `rei-rea-orchestrator`, `rei-binary-intelligence`, `rei-casebook-forensics`, `rei-native-binaries`, `rei-electron-and-js`, `rei-android-apks`, `rei-firmware-and-iot`, `rei-mobile-runtime`, `rei-evidence-ledger`, `rei-reconstruction-parity`, `rei-wasm-and-managed`, `rei-web-and-protocols`.
+  - Added reproducible WebAssembly triage & version-diff walkthrough in `examples/rei-rea-demo/` (`run_demo.py`, `DEMO_OUTPUT.json`, `FINDING_REPORT.md`).
+  - Added `rei-rea` curated bundle in `data/bundles.json` and `docs/BUNDLES.md`, plus `reverse-engineer-binary-release` and `firmware-iot-security-triage` workflows in `data/workflows.json` and `docs/WORKFLOWS.md`.
+- **Upgraded REI Skill Manager CLI (`bin/install.js`):**
+  - New subcommands: `search`, `list`, `info`, `add` (selective single-skill or bundle install), `doctor`, `verify`, `update`, and `export` (`--format strict` for `agentskills-ref` consumers).
+  - Non-destructive `.git` remote verification before legacy directory migration, automatic timestamped backups, `--dry-run`, `--local`, `--mcp-config` (with `.bak` backup), and cross-platform Windows symlink materialization (`docx`, `pdf`, `pptx`, `xlsx`).
+  - Automated installer safety test suite (`scripts/tests/installer.test.js`).
+- **Interactive Developer Hub (`docs/site/index.html`):**
+  - Added `scripts/build-doc-site.js` to build a zero-dependency searchable web catalog with category/risk filtering and one-click install commands.
+- **Engineering, Security & Governance Documentation:**
+  - Added `docs/engineering/REPOSITORY_AUDIT.md`, `docs/engineering/ARCHITECTURE.md`, `docs/REI_REA_INTEGRATION.md`, `docs/INTEGRATIONS.md`, `docs/THREAT_MODEL.md`, `docs/RELEASE_PLAN.md`, `CODE_OF_CONDUCT.md`, `SUPPORT.md`, and `ROADMAP.md`.
+  - Added Rootcastle vector brand system under `assets/brand/`.
+
+### 🔧 Fixed
+
+- **100% YAML Frontmatter Validity (`895/895` Skills):** Repaired 221 broken multiline YAML descriptions caused by legacy block-scalar quoting and unified frontmatter parsing across Python and Node.js.
+- **Upstream Provenance Restoration:** Restored accurate upstream `source:` URLs across vendor and community skills (`microsoft/skills`, `anthropics/skills`, `obra/superpowers`, `rootcastleco/Rei-Reverse-engineer`, etc.) and added `scripts/brand_skills.js` dry-run protection.
+- **Cross-Platform Determinism:** Fixed POSIX path normalization in `data/catalog.json` and `CATALOG.md`, UTF-8 stdout handling on Windows, and `skills_index.json` / `data/skills_index.json` synchronization.
+- **CI & Security Hardening:** Enforced `permissions: contents: read`, removed `continue-on-error` from `scripts/security_audit.js`, removed auto-commit pushes to `main`, and resolved all unclassified risk and missing `AUTHORIZED USE ONLY` banner warnings (`0` critical, `0` high, `0` unclassified).
 
 ---
 

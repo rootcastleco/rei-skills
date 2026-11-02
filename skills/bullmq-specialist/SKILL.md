@@ -1,8 +1,8 @@
 ---
 name: bullmq-specialist
 description: "BullMQ expert for Redis-backed job queues, background processing, and reliable async execution in Node.js/TypeScript applications. Use when: bullmq, bull queue, redis queue, background job, job queue."
-source: rootcastle-rei
-risk: unknown
+source: vibeship-spawner-skills (Apache 2.0)
+risk: offensive
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

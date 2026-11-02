@@ -1,11 +1,9 @@
 ---
 name: azure-cosmos-py
-description: "|"
-  Azure Cosmos DB SDK for Python (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data.
-  Triggers: "cosmos db", "CosmosClient", "container", "document", "NoSQL", "partition key".
+description: "Azure Cosmos DB SDK for Python (NoSQL API). Use for document CRUD, queries, containers, and globally distributed data. Triggers: \"cosmos db\", \"CosmosClient\", \"container\", \"document\", \"NoSQL\", \"partition key\"."
 package: azure-cosmos
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Azure Cosmos DB SDK for Python

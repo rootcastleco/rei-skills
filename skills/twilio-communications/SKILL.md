@@ -1,8 +1,8 @@
 ---
 name: twilio-communications
 description: "Build communication features with Twilio: SMS messaging, voice calls, WhatsApp Business API, and user verification (2FA). Covers the full spectrum from simple notifications to complex IVR systems a..."
-source: rootcastle-rei
-risk: unknown
+source: vibeship-spawner-skills (Apache 2.0)
+risk: offensive
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

@@ -1,13 +1,10 @@
 ---
 name: api-documenter
-description: "Master API documentation with OpenAPI 3.1, AI-powered tools, and"
-  modern developer experience practices. Create interactive docs, generate SDKs,
-  and build comprehensive developer portals. Use PROACTIVELY for API
-  documentation or developer portal creation.
+description: "Master API documentation with OpenAPI 3.1, AI-powered tools, and modern developer experience practices. Create interactive docs, generate SDKs, and build comprehensive developer portals. Use PROACTIVELY for API documentation or developer portal creation."
 metadata:
   model: sonnet
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

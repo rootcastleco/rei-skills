@@ -1,7 +1,7 @@
 ---
 name: fix-review
 description: "Verify fix commits address audit findings without new bugs"
-source: rootcastle-rei
+source: trailofbits/skills
 risk: safe
 ---
 

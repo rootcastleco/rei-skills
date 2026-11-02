@@ -1,7 +1,7 @@
 ---
 name: context-optimization
 description: "Apply compaction, masking, and caching strategies"
-source: rootcastle-rei
+source: muratcankoylan/Agent-Skills-for-Context-Engineering
 risk: safe
 ---
 

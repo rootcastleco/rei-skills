@@ -1,8 +1,8 @@
 ---
 name: slack-bot-builder
 description: "Build Slack apps using the Bolt framework across Python, JavaScript, and Java. Covers Block Kit for rich UIs, interactive components, slash commands, event handling, OAuth installation flows, and W..."
-source: rootcastle-rei
-risk: unknown
+source: vibeship-spawner-skills (Apache 2.0)
+risk: offensive
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

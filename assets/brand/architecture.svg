@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" width="100%" height="auto" role="img" aria-label="REI Skills Platform Architecture Diagram">
+  <rect width="960" height="360" rx="12" fill="#040914" stroke="#0E3D8A" stroke-width="2"/>
+  <text x="480" y="34" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" font-weight="800" letter-spacing="2">REI SKILLS PLATFORM ARCHITECTURE // ROOTCASTLE ENGINEERING &amp; INNOVATION</text>
+  <line x1="30" y1="48" x2="930" y2="48" stroke="#0E3D8A" stroke-width="1"/>
+
+  <!-- Top Row: 3 Core Pillars -->
+  <g transform="translate(40, 68)">
+    <rect width="260" height="86" rx="6" fill="#081428" stroke="#0E3D8A" stroke-width="1.5"/>
+    <text x="130" y="26" text-anchor="middle" fill="#60A5FA" font-family="ui-monospace, SFMono-Regular, monospace" font-size="13" font-weight="700">1. UNIVERSAL SKILL REGISTRY</text>
+    <text x="130" y="48" text-anchor="middle" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">895 Validated Skills (SKILL.md)</text>
+    <text x="130" y="68" text-anchor="middle" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">Provenance · Risk Tiers · Schema Gate</text>
+  </g>
+
+  <g transform="translate(350, 68)">
+    <rect width="260" height="86" rx="6" fill="#081428" stroke="#228B55" stroke-width="1.5"/>
+    <text x="130" y="26" text-anchor="middle" fill="#34D399" font-family="ui-monospace, SFMono-Regular, monospace" font-size="13" font-weight="700">2. REI SKILL MANAGER CLI</text>
+    <text x="130" y="48" text-anchor="middle" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">install · search · list · info · add</text>
+    <text x="130" y="68" text-anchor="middle" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">doctor · verify · update · export</text>
+  </g>
+
+  <g transform="translate(660, 68)">
+    <rect width="260" height="86" rx="6" fill="#081428" stroke="#0E3D8A" stroke-width="1.5"/>
+    <text x="130" y="26" text-anchor="middle" fill="#60A5FA" font-family="ui-monospace, SFMono-Regular, monospace" font-size="13" font-weight="700">3. DEVELOPER HUB &amp; WORKFLOWS</text>
+    <text x="130" y="48" text-anchor="middle" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">7 Playbooks · 6 Curated Bundles</text>
+    <text x="130" y="68" text-anchor="middle" fill="#94A3B8" font-family="ui-monospace, SFMono-Regular, monospace" font-size="10">Static Searchable Catalog &amp; Docs</text>
+  </g>
+
+  <!-- Connector Lines -->
+  <path d="M 170 154 V 188 H 480 M 480 154 V 214 M 790 154 V 188 H 480" fill="none" stroke="#228B55" stroke-width="2"/>
+  <path d="M 240 188 V 214 M 720 188 V 214" fill="none" stroke="#0E3D8A" stroke-width="2"/>
+
+  <!-- Bottom Left: Coding Assistants -->
+  <g transform="translate(40, 214)">
+    <rect width="410" height="118" rx="6" fill="#061020" stroke="#0E3D8A" stroke-width="1.5"/>
+    <rect width="410" height="26" rx="6" fill="#0E3D8A"/>
+    <text x="205" y="17" text-anchor="middle" fill="#FFFFFF" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="700">AI CODING ASSISTANTS (COMPATIBLE TARGETS)</text>
+    <text x="20" y="50" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• Claude Code (~/.claude/skills)</text>
+    <text x="20" y="70" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• OpenAI Codex (~/.codex/skills + openai.yaml)</text>
+    <text x="20" y="90" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• Gemini CLI &amp; Antigravity (~/.gemini/rei/skills)</text>
+    <text x="20" y="110" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• Cursor IDE (~/.cursor/skills) &amp; OpenCode</text>
+  </g>
+
+  <!-- Bottom Right: REI REA Integration -->
+  <g transform="translate(510, 214)">
+    <rect width="410" height="118" rx="6" fill="#051812" stroke="#228B55" stroke-width="1.5"/>
+    <rect width="410" height="26" rx="6" fill="#228B55"/>
+    <text x="205" y="17" text-anchor="middle" fill="#000000" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" font-weight="800">REI REVERSE ENGINEERING WORKBENCH (REI REA)</text>
+    <text x="20" y="50" fill="#A7F3D0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• Bundled: 12 Specialist RE Skills (rei-rea-*)</text>
+    <text x="20" y="70" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• Optional Runtime: rootcastle-rei-rea v0.2.0</text>
+    <text x="20" y="90" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• Transport: JSON CLI + 14 Local stdio MCP Tools</text>
+    <text x="20" y="110" fill="#E2E8F0" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11">• Safety: Read-Only PE/ELF/WASM &amp; SHA-256 Cases</text>
+  </g>
+</svg>

@@ -1,8 +1,8 @@
 ---
 name: cost-optimization
 description: "Optimize cloud costs through resource rightsizing, tagging strategies, reserved instances, and spending analysis. Use when reducing cloud expenses, analyzing infrastructure costs, or implementing c..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Cloud Cost Optimization

@@ -2,7 +2,7 @@
 name: fp-ts-pragmatic
 description: "A practical, jargon-free guide to fp-ts functional programming - the 80/20 approach that gets results without the academic overhead. Use when writing TypeScript with fp-ts library."
 risk: safe
-source: rootcastle-rei
+source: whatiskadudoing/fp-ts-skills
 ---
 
 # Pragmatic Functional Programming

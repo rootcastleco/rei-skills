@@ -1,7 +1,7 @@
 ---
 name: nanobanana-ppt-skills
 description: "AI-powered PPT generation with document analysis and styled images"
-source: rootcastle-rei
+source: community
 risk: safe
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: vexor
 description: "Vector-powered CLI for semantic file search with a Claude/Codex skill"
-source: rootcastle-rei
+source: scarletkc/vexor
 risk: safe
 ---
 

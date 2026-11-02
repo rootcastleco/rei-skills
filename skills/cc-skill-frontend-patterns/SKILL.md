@@ -3,8 +3,8 @@ name: cc-skill-frontend-patterns
 description: "Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices."
 author: affaan-m
 version: "1.0"
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

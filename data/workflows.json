@@ -268,6 +268,87 @@
           "notes": "Use evented patterns where consistency and scale tradeoffs are explicit and accepted."
         }
       ]
+    },
+    {
+      "id": "evidence-led-reverse-engineering",
+      "name": "Evidence-Led Reverse Engineering & Binary Intelligence",
+      "description": "Structured, read-only artifact triage, bounded structural parsing, version comparison, and SHA-256 casebook reporting powered by REI REA.",
+      "category": "reverse-engineering",
+      "relatedBundles": [
+        "rei-rea",
+        "security-core"
+      ],
+      "steps": [
+        {
+          "title": "Establish authorization, SHA-256 identity, and routing plan",
+          "goal": "Record target hash, scope boundaries, and format-aware investigation plan before any analysis.",
+          "recommendedSkills": [
+            "rei-rea-orchestrator",
+            "rei-evidence-ledger"
+          ],
+          "notes": "Use rei-rea inspect and rei-rea plan on authorized artifacts only. Never execute untrusted binaries."
+        },
+        {
+          "title": "Perform bounded structural and format-specific analysis",
+          "goal": "Inspect PE/ELF/WASM headers, imports, exports, or Electron/APK/managed structures without execution.",
+          "recommendedSkills": [
+            "rei-binary-intelligence",
+            "rei-native-binaries",
+            "rei-wasm-and-managed",
+            "rei-electron-and-js"
+          ],
+          "notes": "Use rei-rea deep and rei-rea diff to compare versions and distinguish observed structure from inferred behavior."
+        },
+        {
+          "title": "Verify parity and export tamper-evident forensic casebook",
+          "goal": "Record observed/inferred/unknown evidence states, verify hash chains, and export metadata-only case bundles.",
+          "recommendedSkills": [
+            "rei-casebook-forensics",
+            "rei-reconstruction-parity"
+          ],
+          "notes": "Run rei-rea case verify --recheck-target and rei-rea case bundle-verify before sharing findings."
+        }
+      ]
+    },
+    {
+      "id": "firmware-mobile-protocol-triage",
+      "name": "Firmware, Mobile & Protocol Interoperability Triage",
+      "description": "Analyze authorized embedded/IoT firmware images, Android APK packages, and telemetry/network protocol captures.",
+      "category": "reverse-engineering",
+      "relatedBundles": [
+        "rei-rea",
+        "security-core"
+      ],
+      "steps": [
+        {
+          "title": "Triage firmware or mobile package structure",
+          "goal": "Identify container headers, filesystem boundaries, or APK/DEX/manifest components using read-only inspection.",
+          "recommendedSkills": [
+            "rei-rea-orchestrator",
+            "rei-firmware-and-iot",
+            "rei-android-apks"
+          ],
+          "notes": "Keep all inspection read-only; opt-in static adapters require explicit --allow-external."
+        },
+        {
+          "title": "Reconstruct telemetry frames and protocol state machines",
+          "goal": "Document frame boundaries, serialization, and API contracts from supplied PCAP/HAR or serial captures.",
+          "recommendedSkills": [
+            "rei-web-and-protocols",
+            "rei-mobile-runtime"
+          ],
+          "notes": "Plan dynamic observation only in isolated lab environments when static evidence is insufficient."
+        },
+        {
+          "title": "Validate clean-room compatibility corpus",
+          "goal": "Build reproducible golden-test fixtures and record evidence provenance.",
+          "recommendedSkills": [
+            "rei-reconstruction-parity",
+            "rei-evidence-ledger"
+          ],
+          "notes": "Verify every specification claim against fixture hashes and test outcomes."
+        }
+      ]
     }
   ]
 }

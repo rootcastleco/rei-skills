@@ -1,7 +1,7 @@
 ---
 name: sharp-edges
 description: "Identify error-prone APIs and dangerous configurations"
-source: rootcastle-rei
+source: trailofbits/skills
 risk: safe
 ---
 

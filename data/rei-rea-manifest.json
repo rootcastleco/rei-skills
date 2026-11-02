@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.0.0",
+  "module": "rei-rea",
+  "title": "REI Reverse Engineering Workbench (REI REA)",
+  "upstream_repository": "https://github.com/rootcastleco/Rei-Reverse-engineer",
+  "upstream_version": "0.2.0",
+  "upstream_commit": "09fbc7b",
+  "upstream_full_commit": "09fbc7bd202f4a40aa78230e4517e7f39c4a158b",
+  "license": "MIT",
+  "upstream_rea_notice": "REI REA is an original Rootcastle Engineering & Innovation Python workbench. The independent morluto/rea project is tracked separately in Rei-Reverse-engineer/upstream/rea and retains its own upstream provenance.",
+  "runtime": {
+    "package_name": "rootcastle-rei-rea",
+    "python_requirement": ">=3.10",
+    "cli_command": "rei-rea",
+    "install_instructions": [
+      "git clone https://github.com/rootcastleco/Rei-Reverse-engineer.git",
+      "cd Rei-Reverse-engineer",
+      "python -m pip install -e .",
+      "rei-rea --version",
+      "rei-rea tools doctor"
+    ],
+    "mcp_config": {
+      "mcpServers": {
+        "rei-rea": {
+          "command": "rei-rea",
+          "args": [
+            "mcp"
+          ]
+        }
+      }
+    },
+    "cataloged_tool_count": 124,
+    "static_adapter_count": 11,
+    "mcp_tool_count": 14,
+    "specialist_skill_count": 12
+  },
+  "capability_states": {
+    "cataloged": "Listed in the 124-entry discovery registry with metadata and homepage. Does NOT imply local installation or execution support.",
+    "path_detected": "Executable name was resolved on the local machine PATH via `rei-rea tools doctor`.",
+    "adapter_supported": "Covered by one of the 11 reviewed, argument-locked static adapters requiring explicit `--allow-external` opt-in.",
+    "tested_in_env": "Verified against a reproducible local fixture in the active environment.",
+    "planned": "Documented for future provider integration (e.g., live Ghidra/IDA/JADX/Frida session control or upstream morluto/rea server).",
+    "unsupported": "Excluded from REI REA scope (e.g., autonomous exploit generation, firmware flashing, or unauthorized target interaction)."
+  },
+  "mcp_tools": [
+    {
+      "name": "rei_rea_providers",
+      "purpose": "Discover provider profiles without execution."
+    },
+    {
+      "name": "rei_rea_tools",
+      "purpose": "Filter 124-entry tool catalog records by tag or capability."
+    },
+    {
+      "name": "rei_rea_doctor",
+      "purpose": "Inspect local PATH availability vs adapter support."
+    },
+    {
+      "name": "rei_rea_inspect",
+      "purpose": "Identify format and compute SHA-256 of an authorized artifact."
+    },
+    {
+      "name": "rei_rea_plan",
+      "purpose": "Produce an evidence-based specialist skill and tool routing plan."
+    },
+    {
+      "name": "rei_rea_signals",
+      "purpose": "Read bounded entropy, signature, and optional string signals."
+    },
+    {
+      "name": "rei_rea_compare",
+      "purpose": "Compare hashes and bounded byte differences of two files."
+    },
+    {
+      "name": "rei_rea_case_create",
+      "purpose": "Initialize a hash-linked SHA-256 evidence case."
+    },
+    {
+      "name": "rei_rea_case_verify",
+      "purpose": "Validate append-only case event integrity and target hash."
+    },
+    {
+      "name": "rei_rea_investigate",
+      "purpose": "Run read-only cross-hash-checked static analysis pipeline (<= 64 MiB)."
+    },
+    {
+      "name": "rei_rea_deep",
+      "purpose": "Parse bounded PE, ELF, and WebAssembly v1 structural headers/tables."
+    },
+    {
+      "name": "rei_rea_diff",
+      "purpose": "Compare parsed binary structures across two artifact versions."
+    },
+    {
+      "name": "rei_rea_case_search",
+      "purpose": "Search an explicitly indexed local SQLite forensic casebook."
+    },
+    {
+      "name": "rei_rea_bundle_verify",
+      "purpose": "Verify checksums of an exported metadata-only evidence bundle."
+    }
+  ],
+  "static_adapters": [
+    {
+      "id": "file",
+      "executable": "file",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "readelf",
+      "executable": "readelf",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "objdump",
+      "executable": "objdump",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "llvm-objdump",
+      "executable": "llvm-objdump",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "llvm-readobj",
+      "executable": "llvm-readobj",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "nm",
+      "executable": "nm",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "exiftool",
+      "executable": "exiftool",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "otool",
+      "executable": "otool",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "android-aapt2",
+      "executable": "aapt2",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "radare2",
+      "executable": "rabin2",
+      "mode": "opt-in-static-adapter"
+    },
+    {
+      "id": "rizin",
+      "executable": "rz-bin",
+      "mode": "opt-in-static-adapter"
+    }
+  ],
+  "skills": [
+    {
+      "id": "rei-android-apks",
+      "name": "rei-android-apks",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Analyze authorized Android APK, AAB, DEX bytecode, manifests, permissions, and JNI boundaries using read-only triage.",
+      "tags": [
+        "reverse-engineering",
+        "android",
+        "apk",
+        "dex",
+        "jni",
+        "mobile",
+        "rei-rea"
+      ],
+      "upstream_sha256": "bc61fec6714c899ebf031d9edb7fbdc3ab7d33a3cb20241c3f255047058d7330",
+      "synced_sha256": "888e3653bc643edfcbf4d0e71ff2a752de873d06077e1e692bcf298f4dcc1aac",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-binary-intelligence",
+      "name": "rei-binary-intelligence",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Analyze authorized PE, ELF, and WebAssembly structure and version diffs with REI REA bounded static parsers.",
+      "tags": [
+        "reverse-engineering",
+        "binary-analysis",
+        "pe",
+        "elf",
+        "wasm",
+        "rei-rea"
+      ],
+      "upstream_sha256": "eec37f3448b112fd3643e2ca4957c4258a6a9515c3f2baeddb97e911b619a390",
+      "synced_sha256": "01ad3fd5febe8bafb17cd9d1d87b5a8f8696b3ee27112c62a32c2517905df6fc",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-casebook-forensics",
+      "name": "rei-casebook-forensics",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Index, search, and verify tamper-evident SHA-256 reverse-engineering casebooks and metadata-only forensic bundles.",
+      "tags": [
+        "reverse-engineering",
+        "digital-forensics",
+        "casebook",
+        "evidence",
+        "sqlite",
+        "rei-rea"
+      ],
+      "upstream_sha256": "a38a0364806859d793fa729030dfa9bafa1599cedf618e8662cf5026454ea8cd",
+      "synced_sha256": "a21ec18396224e7c0297098130e6c5f9ec37c5cab3c27686fdfb01a6a76ac6d9",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-electron-and-js",
+      "name": "rei-electron-and-js",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Investigate authorized Electron ASAR archives, preload scripts, IPC routes, and bundled JavaScript applications.",
+      "tags": [
+        "reverse-engineering",
+        "electron",
+        "asar",
+        "javascript",
+        "ipc",
+        "nodejs",
+        "rei-rea"
+      ],
+      "upstream_sha256": "42a17523723159d63aae2608551d1f1da03e16a3fc243c7e6e0bc33687e7c338",
+      "synced_sha256": "62229899d26c5e315bf67b93b7ca06575f113a9ebdb14ce69b77866f5efae468",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-evidence-ledger",
+      "name": "rei-evidence-ledger",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Maintain and audit SHA-256 hash-linked reverse-engineering case observations with explicit confidence states.",
+      "tags": [
+        "reverse-engineering",
+        "evidence",
+        "provenance",
+        "forensics",
+        "audit",
+        "rei-rea"
+      ],
+      "upstream_sha256": "c60d328823d56feb1c7e55317d37436dd30acb8335a10875dc883e6c896a62db",
+      "synced_sha256": "313aa3e8edbe76bf899e5a74d8efc288cb11ae8dcc78837700aec5f5ffde70f3",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-firmware-and-iot",
+      "name": "rei-firmware-and-iot",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Examine authorized MCU, UEFI, embedded Linux, automotive telemetry, and GPS/IoT firmware images safely.",
+      "tags": [
+        "reverse-engineering",
+        "firmware",
+        "iot",
+        "embedded",
+        "uefi",
+        "telemetry",
+        "rei-rea"
+      ],
+      "upstream_sha256": "56fc18ecd82e10da13b194c3382961cb8713706f55a789a4545c5276b1df25b8",
+      "synced_sha256": "118d995f2a69c1950cd2974e5b855cc46765b054093c9a4e4198780af79b997c",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-mobile-runtime",
+      "name": "rei-mobile-runtime",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Plan explicitly authorized Android and iOS runtime observation and static-to-dynamic verification in lab environments.",
+      "tags": [
+        "reverse-engineering",
+        "mobile",
+        "android",
+        "ios",
+        "runtime-analysis",
+        "rei-rea"
+      ],
+      "upstream_sha256": "01b5936927d04beceae1e1e1b0b94bfb2d32fc7e06daf249b5bd5dc869a4a975",
+      "synced_sha256": "fc7eee5ef9954d3c73804dee0b870afb93439500b176916261b127b516c1530f",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-native-binaries",
+      "name": "rei-native-binaries",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Inspect authorized PE, ELF, Mach-O, and native libraries for symbols, imports, ABI boundaries, and call graphs.",
+      "tags": [
+        "reverse-engineering",
+        "native-binaries",
+        "pe",
+        "elf",
+        "mach-o",
+        "abi",
+        "rei-rea"
+      ],
+      "upstream_sha256": "c4e8b17c71e777be6934aca74cc64e96834b144d8453763b81d504250e27c30e",
+      "synced_sha256": "7c5979e73d87e2ce8314d035be7bc2d6c331e2bcd0d03f5a953b6d6cb3bd13a6",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-rea-orchestrator",
+      "name": "rei-rea-orchestrator",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Route authorized reverse-engineering investigations across binaries, APKs, Electron, firmware, and WASM using REI REA.",
+      "tags": [
+        "reverse-engineering",
+        "binary-analysis",
+        "orchestrator",
+        "mcp",
+        "rei-rea",
+        "triage"
+      ],
+      "upstream_sha256": "9f50e748bcadc4ede4f850c42e1259b04c905f2ef7310dc4fe100756e1e93e8b",
+      "synced_sha256": "69d8964565d2cbc5cf4f2affeece7b36dbe82ce75a57c847a808645d4fea28f5",
+      "files": [
+        "agents/openai.yaml",
+        "references/QUICKSTART.md",
+        "references/workflow.md",
+        "scripts/doctor.py",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-reconstruction-parity",
+      "name": "rei-reconstruction-parity",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Specify and verify clean-room behavioral parity and differential test corpora from observed artifact evidence.",
+      "tags": [
+        "reverse-engineering",
+        "reconstruction",
+        "parity-testing",
+        "clean-room",
+        "verification",
+        "rei-rea"
+      ],
+      "upstream_sha256": "6a30881fd71c61575629fafc67d6ee7ad5ce80da17d344f357162c766d4ace20",
+      "synced_sha256": "5499fb3ba3f99a14844ca1515f664bb55157d10623bb5a638c7bdf1793a28bdf",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-wasm-and-managed",
+      "name": "rei-wasm-and-managed",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Trace authorized WebAssembly modules, .NET CIL assemblies, and JVM bytecode for type recovery and API analysis.",
+      "tags": [
+        "reverse-engineering",
+        "wasm",
+        "webassembly",
+        "dotnet",
+        "jvm",
+        "bytecode",
+        "rei-rea"
+      ],
+      "upstream_sha256": "9fcab7b00cccbe48c2b6f654f1c1e118f232f3e2e88acbb6b8df20f85db51bfe",
+      "synced_sha256": "7f3f71e995332b778a64f2b0d2e8f098c2064e648da1641812025f73e63429c3",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "rei-web-and-protocols",
+      "name": "rei-web-and-protocols",
+      "category": "reverse-engineering",
+      "risk": "safe",
+      "source": "rootcastle-rei",
+      "short_description": "Analyze authorized HAR, PCAP/PCAPNG captures, telemetry frames, and protocol state machines for interoperability.",
+      "tags": [
+        "reverse-engineering",
+        "protocols",
+        "pcap",
+        "har",
+        "network-analysis",
+        "telemetry",
+        "rei-rea"
+      ],
+      "upstream_sha256": "fd4cfb9428da4728b7b92a59a129860f7b840633d3d0c96d3b63dd61908c0a14",
+      "synced_sha256": "2304d01d9c49a4fc54cbfd3076585cc80ae3875e2f804f0f0cf521ee95fb6643",
+      "files": [
+        "agents/openai.yaml",
+        "references/workflow.md",
+        "SKILL.md"
+      ]
+    }
+  ]
+}

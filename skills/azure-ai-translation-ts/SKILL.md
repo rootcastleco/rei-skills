@@ -2,8 +2,8 @@
 name: azure-ai-translation-ts
 description: "Build translation applications using Azure Translation SDKs for JavaScript (@azure-rest/ai-translation-text, @azure-rest/ai-translation-document). Use when implementing text translation, transliter..."
 package: "@azure-rest/ai-translation-text, @azure-rest/ai-translation-document"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Azure Translation SDKs for TypeScript

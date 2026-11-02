@@ -2,8 +2,8 @@
 name: busybox-on-windows
 description: "How to use a Win32 build of BusyBox to run many of the standard UNIX command line tools on Windows."
 license: MIT
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 BusyBox is a single binary that implements many common Unix tools.

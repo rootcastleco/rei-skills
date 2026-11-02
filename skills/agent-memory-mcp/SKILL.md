@@ -2,8 +2,8 @@
 name: agent-memory-mcp
 author: Amit Rathiesh
 description: "A hybrid memory system that provides persistent, searchable knowledge management for AI agents (Architecture, Patterns, Decisions)."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: webzler/agentMemory
 ---
 
 # Agent Memory Skill

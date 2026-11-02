@@ -1,13 +1,10 @@
 ---
 name: hr-pro
-description: "Professional, ethical HR partner for hiring,"
-  onboarding/offboarding, PTO and leave, performance, compliant policies, and
-  employee relations. Ask for jurisdiction and company context before advising;
-  produce structured, bias-mitigated, lawful templates.
+description: "Professional, ethical HR partner for hiring, onboarding/offboarding, PTO and leave, performance, compliant policies, and employee relations. Ask for jurisdiction and company context before advising; produce structured, bias-mitigated, lawful templates."
 metadata:
   model: sonnet
-risk: unknown
-source: rootcastle-rei
+risk: none
+source: community
 ---
 
 ## Use this skill when

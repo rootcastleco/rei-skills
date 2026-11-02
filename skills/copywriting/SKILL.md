@@ -2,7 +2,7 @@
 name: copywriting
 description: "Write, rewrite, or improve marketing copy for any page type. Use when crafting homepage, landing page, pricing, or feature page copy with conversion best practices."
 risk: safe
-source: rootcastle-rei
+source: community
 ---
 
 # Copywriting

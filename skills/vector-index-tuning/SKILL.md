@@ -1,8 +1,8 @@
 ---
 name: vector-index-tuning
 description: "Optimize vector index performance for latency, recall, and memory. Use when tuning HNSW parameters, selecting quantization strategies, or scaling vector search infrastructure."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Vector Index Tuning

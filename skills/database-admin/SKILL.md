@@ -1,15 +1,10 @@
 ---
 name: database-admin
-description: "Expert database administrator specializing in modern cloud"
-  databases, automation, and reliability engineering. Masters AWS/Azure/GCP
-  database services, Infrastructure as Code, high availability, disaster
-  recovery, performance optimization, and compliance. Handles multi-cloud
-  strategies, container databases, and cost optimization. Use PROACTIVELY for
-  database architecture, operations, or reliability engineering.
+description: "Expert database administrator specializing in modern cloud databases, automation, and reliability engineering. Masters AWS/Azure/GCP database services, Infrastructure as Code, high availability, disaster recovery, performance optimization, and compliance. Handles multi-cloud strategies, container databases, and cost optimization. Use PROACTIVELY for database architecture, operations, or reliability engineering."
 metadata:
   model: sonnet
-risk: unknown
-source: rootcastle-rei
+risk: critical
+source: community
 ---
 
 ## Use this skill when

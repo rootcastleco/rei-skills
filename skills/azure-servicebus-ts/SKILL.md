@@ -2,8 +2,8 @@
 name: azure-servicebus-ts
 description: "Build messaging applications using Azure Service Bus SDK for JavaScript (@azure/service-bus). Use when implementing queues, topics/subscriptions, message sessions, dead-letter handling, or enterpri..."
 package: "@azure/service-bus"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Azure Service Bus SDK for TypeScript

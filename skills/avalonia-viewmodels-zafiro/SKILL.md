@@ -1,8 +1,8 @@
 ---
 name: avalonia-viewmodels-zafiro
 description: "Optimal ViewModel and Wizard creation patterns for Avalonia using Zafiro and ReactiveUI."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Avalonia ViewModels with Zafiro

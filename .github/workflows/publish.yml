@@ -1,34 +1,50 @@
-name: 🏰 Publish to npm
+name: 🏰 Publish REI Skills to npm
 
 on:
-    release:
-        types: [published]
-    workflow_dispatch:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
 
 jobs:
-    publish:
-        name: 📦 Publish rei-skills
-        runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            id-token: write
-        steps:
-            - name: 🏰 Checkout
-              uses: actions/checkout@v4
+  publish:
+    name: 📦 Validate & Publish rei-skills
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏰 Checkout Repository
+        uses: actions/checkout@v4
 
-            - name: 📦 Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "20"
-                  registry-url: "https://registry.npmjs.org"
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-            - name: 📤 Publish to npm
-              run: npm publish --access public --provenance
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+          cache: "npm"
 
-            - name: ✅ Published
-              run: |
-                  echo "🏰 rei-skills published successfully!"
-                  echo "🌐 https://www.npmjs.com/package/rei-skills"
-                  echo "🏰 Rootcastle Engineering & Innovation"
+      - name: 📥 Install Dependencies
+        run: |
+          pip install pyyaml
+          npm ci
+
+      - name: ✅ Pre-Release Validation & Security Gate
+        run: |
+          python scripts/sync_rei_rea.py --check
+          python scripts/validate_skills.py --strict
+          node scripts/validate-skills.js
+          node scripts/security_audit.js
+          npm test
+          npm pack --dry-run
+
+      - name: 📤 Publish to npm Registry
+        if: env.NODE_AUTH_TOKEN != ''
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --provenance

@@ -1,7 +1,7 @@
 ---
 name: automate-whatsapp
 description: "Build WhatsApp automations with Kapso workflows: configure WhatsApp triggers, edit workflow graphs, manage executions, deploy functions, and use databases/integrations for state. Use when automatin..."
-source: rootcastle-rei
+source: gokapso/agent-skills
 risk: safe
 ---
 

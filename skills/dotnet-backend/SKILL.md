@@ -2,7 +2,7 @@
 name: dotnet-backend
 description: "Build ASP.NET Core 8+ backend services with EF Core, auth, background jobs, and production API patterns."
 risk: safe
-source: rootcastle-rei
+source: community
 allowed-tools: Read, Write, Edit, Bash
 model: opus
 ---

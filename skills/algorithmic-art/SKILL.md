@@ -2,8 +2,8 @@
 name: algorithmic-art
 description: "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields,..."
 license: Complete terms in LICENSE.txt
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 Algorithmic philosophies are computational aesthetic movements that are then expressed through code. Output .md files (philosophy), .html files (interactive viewer), and .js files (generative algorithms).

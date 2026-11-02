@@ -1,7 +1,7 @@
 ---
 name: superpowers-lab
 description: "Lab environment for Claude superpowers"
-source: rootcastle-rei
+source: community
 risk: safe
 ---
 

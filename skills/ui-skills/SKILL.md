@@ -1,7 +1,7 @@
 ---
 name: ui-skills
 description: "Opinionated, evolving constraints to guide agents when building interfaces"
-source: rootcastle-rei
+source: ibelick/ui-skills
 risk: safe
 ---
 

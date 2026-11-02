@@ -1,7 +1,7 @@
 ---
 name: workflow-automation
 description: "Design and implement durable workflow automation with Temporal, Inngest, and n8n. Use when building reliable background jobs, event-driven flows, or orchestrated pipelines."
-source: rootcastle-rei
+source: vibeship-spawner-skills (Apache 2.0)
 risk: safe
 ---
 

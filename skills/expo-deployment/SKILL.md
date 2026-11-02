@@ -1,7 +1,7 @@
 ---
 name: expo-deployment
 description: "Deploy Expo apps to production"
-source: rootcastle-rei
+source: expo/skills
 risk: safe
 ---
 

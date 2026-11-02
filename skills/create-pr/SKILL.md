@@ -1,7 +1,7 @@
 ---
 name: create-pr
 description: "Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or preparing changes for review. Follows Sentry's code review guidelines."
-source: rootcastle-rei
+source: getsentry/skills
 risk: safe
 ---
 

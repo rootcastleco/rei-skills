@@ -2,8 +2,8 @@
 name: web-design-guidelines
 description: "Review UI code for Web Interface Guidelines compliance. Use when asked to \\\"review my UI\\\", \\\"check accessibility\\\", \\\"audit design\\\", \\\"review UX\\\", or \\\"check my site aga..."
 argument-hint: <file-or-pattern>
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: vercel-labs/agent-skills
 ---
 
 # Web Interface Guidelines

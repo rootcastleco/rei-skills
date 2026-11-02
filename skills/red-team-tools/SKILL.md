@@ -4,8 +4,8 @@ description: "This skill should be used when the user asks to \"follow red team 
 metadata:
   author: zebbern
   version: "1.1"
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

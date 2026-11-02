@@ -1,7 +1,7 @@
 ---
 name: skill-rails-upgrade
 description: "Analyze Rails apps and provide upgrade assessments"
-source: rootcastle-rei
+source: robzolkos/skill-rails-upgrade
 risk: safe
 ---
 

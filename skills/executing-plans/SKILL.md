@@ -1,8 +1,8 @@
 ---
 name: executing-plans
 description: "Use when you have a written implementation plan to execute in a separate session with review checkpoints"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Executing Plans

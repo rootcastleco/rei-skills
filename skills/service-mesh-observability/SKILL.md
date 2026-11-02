@@ -1,8 +1,8 @@
 ---
 name: service-mesh-observability
 description: "Implement comprehensive observability for service meshes including distributed tracing, metrics, and visualization. Use when setting up mesh monitoring, debugging latency issues, or implementing SL..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Service Mesh Observability

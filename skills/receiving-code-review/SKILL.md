@@ -1,8 +1,8 @@
 ---
 name: receiving-code-review
 description: "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performat..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Code Review Reception

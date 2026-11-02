@@ -1,7 +1,7 @@
 ---
 name: makepad-skills
 description: "Makepad UI development skills for Rust apps: setup, patterns, shaders, packaging, and troubleshooting."
-source: rootcastle-rei
+source: ZhangHanDong/makepad-skills
 risk: safe
 ---
 

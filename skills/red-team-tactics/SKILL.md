@@ -2,8 +2,8 @@
 name: red-team-tactics
 description: "Red team tactics principles based on MITRE ATT&CK. Attack phases, detection evasion, reporting."
 allowed-tools: Read, Glob, Grep
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

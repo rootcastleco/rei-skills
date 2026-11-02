@@ -1,8 +1,8 @@
 ---
 name: pricing-strategy
 description: "Design pricing, packaging, and monetization strategies based on value, customer willingness to pay, and growth objectives."
-risk: unknown
-source: rootcastle-rei
+risk: none
+source: community
 ---
 
 # Pricing Strategy

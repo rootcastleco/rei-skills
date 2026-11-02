@@ -1,23 +1,27 @@
-# Pull Request Description
+## Summary
 
-Please include a summary of the change and which skill is added or fixed.
-
-## Quality Bar Checklist ✅
-
-**All items must be checked before merging.**
-
-- [ ] **Standards**: I have read `docs/QUALITY_BAR.md` and `docs/SECURITY_GUARDRAILS.md`.
-- [ ] **Metadata**: The `SKILL.md` frontmatter is valid (checked with `scripts/validate_skills.py`).
-- [ ] **Risk Label**: I have assigned the correct `risk:` tag (`none`, `safe`, `critical`, `offensive`).
-- [ ] **Triggers**: The "When to use" section is clear and specific.
-- [ ] **Security**: If this is an _offensive_ skill, I included the "Authorized Use Only" disclaimer.
-- [ ] **Local Test**: I have verified the skill works locally.
-- [ ] **Credits**: I have added the source credit in `README.md` (if applicable).
+<!-- Briefly describe what this Pull Request adds, fixes, or improves. -->
 
 ## Type of Change
 
-- [ ] New Skill (Feature)
-- [ ] Documentation Update
-- [ ] Infrastructure
+- [ ] New Skill (`skills/<skill-id>/SKILL.md`)
+- [ ] Skill Update / Bug Fix
+- [ ] REI Reverse Engineering (`rei-rea`) Sync or Enhancement
+- [ ] CLI Installer (`bin/install.js`) or Build Tooling (`scripts/`)
+- [ ] Documentation / Catalog Improvement
 
-## Screenshots (if applicable)
+## Provenance & Attribution
+
+- [ ] Original work authored for Rootcastle / REI Skills (`source: rootcastle-rei` or `source: community`)
+- [ ] Adapted or mirrored from an upstream open-source project (upstream URL preserved in `source:` and license/attribution verified in `CREDITS.md`)
+
+## Verification Checklist
+
+Please confirm you have run the following checks locally and all exited with code `0`:
+
+- [ ] `npm run build` (regenerated `skills_index.json`, `CATALOG.md`, `data/catalog.json`, `README.md`, `docs/site/index.html`)
+- [ ] `python scripts/validate_skills.py --strict` (strict YAML schema, trigger, and relative link validation)
+- [ ] `node scripts/validate-skills.js` (Node frontmatter validation)
+- [ ] `node scripts/security_audit.js` (0 critical/high findings, offensive skills include `AUTHORIZED USE ONLY` disclaimer)
+- [ ] `python scripts/validate_references.py` (all bundle and workflow references resolve)
+- [ ] `npm test` (catalog and installer safety test suite passes)

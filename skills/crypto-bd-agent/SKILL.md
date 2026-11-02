@@ -1,13 +1,8 @@
 ---
 name: crypto-bd-agent
-description: ">"
-  Autonomous crypto business development patterns — multi-chain token discovery,
-  100-point scoring with wallet forensics, x402 micropayments, ERC-8004 on-chain
-  identity, LLM cascade routing, and pipeline automation for CEX/DEX listing
-  acquisition. Use when building AI agents for crypto BD, token evaluation,
-  exchange listing outreach, or autonomous commerce with payment protocols.
+description: "Autonomous crypto business development patterns \u2014 multi-chain token discovery, 100-point scoring with wallet forensics, x402 micropayments, ERC-8004 on-chain identity, LLM cascade routing, and pipeline automation for CEX/DEX listing acquisition. Use when building AI agents for crypto BD, token evaluation, exchange listing outreach, or autonomous commerce with payment protocols."
 risk: safe
-source: rootcastle-rei
+source: community
 tags:
   - crypto
   - business-development

@@ -1,11 +1,10 @@
 ---
 name: conductor-setup
-description: "Initialize project with Conductor artifacts (product definition,"
-  tech stack, workflow, style guides)
+description: "Initialize project with Conductor artifacts (product definition, tech stack, workflow, style guides)"
 metadata:
   argument-hint: "[--resume]"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Conductor Setup

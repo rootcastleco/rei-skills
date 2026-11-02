@@ -1,8 +1,8 @@
 ---
 name: context-management-context-save
 description: "Use when working with context management context save"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Context Save Tool: Intelligent Context Management Specialist

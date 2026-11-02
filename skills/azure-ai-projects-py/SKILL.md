@@ -2,8 +2,8 @@
 name: azure-ai-projects-py
 description: "Build AI applications using the Azure AI Projects Python SDK (azure-ai-projects). Use when working with Foundry project clients, creating versioned agents with PromptAgentDefinition, running evalua..."
 package: azure-ai-projects
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: microsoft/skills
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

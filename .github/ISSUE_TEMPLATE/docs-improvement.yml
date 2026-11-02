@@ -1,0 +1,31 @@
+name: 📖 Documentation Improvement
+description: Report outdated documentation, broken links, or suggest a new guide or example
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the **REI Skills** documentation!
+  - type: input
+    id: doc-path
+    attributes:
+      label: Affected File or Page
+      description: Which documentation file or skill doc needs improvement?
+      placeholder: "e.g., README.md, docs/REI_REA_INTEGRATION.md, docs/USAGE.md"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is unclear, outdated, or missing?
+      description: Describe the issue or gap you encountered.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Improvement
+      description: How should the documentation be updated?
+    validations:
+      required: false

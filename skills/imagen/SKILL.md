@@ -1,7 +1,7 @@
 ---
 name: imagen
 description: "|"
-source: rootcastle-rei
+source: sanjay3290/ai-skills
 risk: safe
 ---
 

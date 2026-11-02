@@ -3,8 +3,8 @@ name: cc-skill-project-guidelines-example
 description: "Project Guidelines Skill (Example)"
 author: affaan-m
 version: "1.0"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Project Guidelines Skill (Example)

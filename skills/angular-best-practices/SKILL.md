@@ -2,7 +2,7 @@
 name: angular-best-practices
 description: "Angular performance optimization and best practices guide. Use when writing, reviewing, or refactoring Angular code for optimal performance, bundle size, and rendering efficiency."
 risk: safe
-source: rootcastle-rei
+source: community
 ---
 
 # Angular Best Practices

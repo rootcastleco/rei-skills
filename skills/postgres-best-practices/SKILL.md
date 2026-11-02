@@ -5,8 +5,8 @@ license: MIT
 metadata:
   author: supabase
   version: "1.0.0"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: supabase/agent-skills
 ---
 
 # Supabase Postgres Best Practices

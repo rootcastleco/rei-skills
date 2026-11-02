@@ -1,8 +1,8 @@
 ---
 name: gitlab-ci-patterns
 description: "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD, optimizing pipeline performance, or setting up..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # GitLab CI Patterns

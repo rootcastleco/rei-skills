@@ -1,13 +1,10 @@
 ---
 name: mlops-engineer
-description: "Build comprehensive ML pipelines, experiment tracking, and model"
-  registries with MLflow, Kubeflow, and modern MLOps tools. Implements automated
-  training, deployment, and monitoring across cloud platforms. Use PROACTIVELY
-  for ML infrastructure, experiment management, or pipeline automation.
+description: "Build comprehensive ML pipelines, experiment tracking, and model registries with MLflow, Kubeflow, and modern MLOps tools. Implements automated training, deployment, and monitoring across cloud platforms. Use PROACTIVELY for ML infrastructure, experiment management, or pipeline automation."
 metadata:
   model: inherit
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

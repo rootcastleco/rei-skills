@@ -1,8 +1,8 @@
 ---
 name: comprehensive-review-full-review
 description: "Use when working with comprehensive review full review"
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

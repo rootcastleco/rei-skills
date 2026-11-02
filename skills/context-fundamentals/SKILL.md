@@ -1,7 +1,7 @@
 ---
 name: context-fundamentals
 description: "Understand what context is, why it matters, and the anatomy of context in agent systems"
-source: rootcastle-rei
+source: muratcankoylan/Agent-Skills-for-Context-Engineering
 risk: safe
 ---
 

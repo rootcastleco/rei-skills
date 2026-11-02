@@ -1,8 +1,8 @@
 ---
 name: viral-generator-builder
 description: "Expert in building shareable generator tools that go viral - name generators, quiz makers, avatar creators, personality tests, and calculator tools. Covers the psychology of sharing, viral mechanic..."
-source: rootcastle-rei
-risk: unknown
+source: vibeship-spawner-skills (Apache 2.0)
+risk: safe
 ---
 
 # Viral Generator Builder

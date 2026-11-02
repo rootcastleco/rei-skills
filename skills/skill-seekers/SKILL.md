@@ -1,7 +1,7 @@
 ---
 name: skill-seekers
 description: "-Automatically convert documentation websites, GitHub repositories, and PDFs into Claude AI skills in minutes."
-source: rootcastle-rei
+source: yusufkaraaslan/Skill_Seekers
 risk: safe
 ---
 

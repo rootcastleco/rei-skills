@@ -1,8 +1,8 @@
 ---
 name: environment-setup-guide
 description: "Guide developers through setting up development environments with proper tools, dependencies, and configurations"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Environment Setup Guide

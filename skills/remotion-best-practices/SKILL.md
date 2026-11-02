@@ -5,8 +5,8 @@ author: remotion-dev
 version: "1.0"
 metadata:
   tags: remotion, video, react, animation, composition
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: remotion-dev/skills
 ---
 
 ## When to use

@@ -1,13 +1,10 @@
 ---
 name: python-pro
-description: "Master Python 3.12+ with modern features, async programming,"
-  performance optimization, and production-ready practices. Expert in the latest
-  Python ecosystem including uv, ruff, pydantic, and FastAPI. Use PROACTIVELY
-  for Python development, optimization, or advanced Python patterns.
+description: "Master Python 3.12+ with modern features, async programming, performance optimization, and production-ready practices. Expert in the latest Python ecosystem including uv, ruff, pydantic, and FastAPI. Use PROACTIVELY for Python development, optimization, or advanced Python patterns."
 metadata:
   model: opus
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

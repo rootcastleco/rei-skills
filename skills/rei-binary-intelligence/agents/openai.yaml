@@ -1,0 +1,3 @@
+interface:
+  display_name: "REI Binary Intelligence"
+  short_description: "Static PE, ELF & WASM analysis"

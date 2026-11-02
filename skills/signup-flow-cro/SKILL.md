@@ -1,8 +1,8 @@
 ---
 name: signup-flow-cro
 description: "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Signup Flow CRO

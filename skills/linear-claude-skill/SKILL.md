@@ -3,7 +3,7 @@ name: linear-claude-skill
 description: "Manage Linear issues, projects, and teams"
 allowed-tools: 
 - WebFetch(domain: linear.app)
-source: rootcastle-rei
+source: wrsmith108/linear-claude-skill
 risk: safe
 ---
 

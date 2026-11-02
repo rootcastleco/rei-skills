@@ -1,8 +1,8 @@
 ---
 name: backtesting-frameworks
 description: "Build robust backtesting systems for trading strategies with proper handling of look-ahead bias, survivorship bias, and transaction costs. Use when developing trading algorithms, validating strateg..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Backtesting Frameworks

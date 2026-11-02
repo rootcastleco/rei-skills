@@ -2,7 +2,7 @@
 name: seo-audit
 description: "Diagnose and audit SEO issues affecting crawlability, indexation, and rankings. Use when performing technical SEO reviews, meta tag audits, or organic performance health checks."
 risk: safe
-source: rootcastle-rei
+source: community
 ---
 
 # SEO Audit

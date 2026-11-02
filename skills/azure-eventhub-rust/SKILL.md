@@ -1,11 +1,9 @@
 ---
 name: azure-eventhub-rust
-description: "|"
-  Azure Event Hubs SDK for Rust. Use for sending and receiving events, streaming data ingestion.
-  Triggers: "event hubs rust", "ProducerClient rust", "ConsumerClient rust", "send event rust", "streaming rust".
+description: "Azure Event Hubs SDK for Rust. Use for sending and receiving events, streaming data ingestion. Triggers: \"event hubs rust\", \"ProducerClient rust\", \"ConsumerClient rust\", \"send event rust\", \"streaming rust\"."
 package: azure_messaging_eventhubs
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: microsoft/skills
 ---
 
 # Azure Event Hubs SDK for Rust

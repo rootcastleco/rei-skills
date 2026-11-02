@@ -1,7 +1,7 @@
 ---
 name: context-degradation
 description: "Recognize patterns of context failure: lost-in-middle, poisoning, distraction, and clash"
-source: rootcastle-rei
+source: muratcankoylan/Agent-Skills-for-Context-Engineering
 risk: safe
 ---
 

@@ -1,13 +1,10 @@
 ---
 name: frontend-security-coder
-description: "Expert in secure frontend coding practices specializing in XSS"
-  prevention, output sanitization, and client-side security patterns. Use
-  PROACTIVELY for frontend security implementations or client-side security code
-  reviews.
+description: "Expert in secure frontend coding practices specializing in XSS prevention, output sanitization, and client-side security patterns. Use PROACTIVELY for frontend security implementations or client-side security code reviews."
 metadata:
   model: sonnet
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

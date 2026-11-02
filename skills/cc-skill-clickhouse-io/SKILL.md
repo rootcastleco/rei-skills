@@ -3,8 +3,8 @@ name: cc-skill-clickhouse-io
 description: "ClickHouse database patterns, query optimization, analytics, and data engineering best practices for high-performance analytical workloads."
 author: affaan-m
 version: "1.0"
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

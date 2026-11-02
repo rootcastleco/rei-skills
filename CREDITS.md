@@ -4,6 +4,10 @@
 
 ---
 
+## Rootcastle First-Party Modules
+
+- **[rootcastleco/Rei-Reverse-engineer](https://github.com/rootcastleco/Rei-Reverse-engineer)** — REI Reverse Engineering & Application Intelligence Workbench (`rei-rea`, MIT License). Provides the 12 `rei-*` specialist reverse-engineering, binary triage, firmware analysis, and forensic provenance skills (`data/rei-rea-manifest.json`), building upon upstream references including **[morluto/rea](https://github.com/morluto/rea)**.
+
 ## Official Sources
 
 - **[anthropics/skills](https://github.com/anthropics/skills)** — Official Anthropic skills repository. Document manipulation (DOCX, PDF, PPTX, XLSX), Brand Guidelines, Internal Communications.

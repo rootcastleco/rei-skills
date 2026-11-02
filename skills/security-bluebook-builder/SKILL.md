@@ -1,7 +1,7 @@
 ---
 name: security-bluebook-builder
 description: "Build security Blue Books for sensitive apps"
-source: rootcastle-rei
+source: SHADOWPR0/security-bluebook-builder
 risk: safe
 ---
 

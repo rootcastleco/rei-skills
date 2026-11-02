@@ -1,13 +1,10 @@
 ---
 name: sql-pro
-description: "Master modern SQL with cloud-native databases, OLTP/OLAP"
-  optimization, and advanced query techniques. Expert in performance tuning,
-  data modeling, and hybrid analytical systems. Use PROACTIVELY for database
-  optimization or complex analysis.
+description: "Master modern SQL with cloud-native databases, OLTP/OLAP optimization, and advanced query techniques. Expert in performance tuning, data modeling, and hybrid analytical systems. Use PROACTIVELY for database optimization or complex analysis."
 metadata:
   model: inherit
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

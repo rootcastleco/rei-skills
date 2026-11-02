@@ -2,7 +2,7 @@
 name: hugging-face-jobs
 description: "This skill should be used when users want to run any workload on Hugging Face Jobs infrastructure. Covers UV scripts, Docker-based jobs, hardware selection, cost estimation, authentication with tok..."
 license: "Complete terms in LICENSE.txt"
-source: rootcastle-rei
+source: huggingface/skills
 risk: safe
 ---
 

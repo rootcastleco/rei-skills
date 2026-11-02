@@ -1,8 +1,8 @@
 ---
 name: openapi-spec-generation
 description: "Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patterns. Use when creating API documentation, generating SDKs, or ensuring API contract compliance."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # OpenAPI Spec Generation

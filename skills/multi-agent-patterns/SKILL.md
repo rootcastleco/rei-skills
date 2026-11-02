@@ -1,7 +1,7 @@
 ---
 name: multi-agent-patterns
 description: "Master orchestrator, peer-to-peer, and hierarchical multi-agent architectures"
-source: rootcastle-rei
+source: muratcankoylan/Agent-Skills-for-Context-Engineering
 risk: safe
 ---
 

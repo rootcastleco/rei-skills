@@ -1,8 +1,8 @@
 ---
 name: saga-orchestration
 description: "Implement saga patterns for distributed transactions and cross-aggregate workflows. Use when coordinating multi-step business processes, handling compensating transactions, or managing long-running..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Saga Orchestration

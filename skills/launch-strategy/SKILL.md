@@ -1,8 +1,8 @@
 ---
 name: launch-strategy
 description: "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,'..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Launch Strategy

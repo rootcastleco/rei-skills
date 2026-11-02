@@ -1,7 +1,7 @@
 ---
 name: design-md
 description: "Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files"
-source: rootcastle-rei
+source: google-labs-code/stitch-skills
 risk: safe
 ---
 

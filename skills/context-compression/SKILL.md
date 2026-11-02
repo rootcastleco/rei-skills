@@ -1,7 +1,7 @@
 ---
 name: context-compression
 description: "Design and evaluate compression strategies for long-running sessions"
-source: rootcastle-rei
+source: muratcankoylan/Agent-Skills-for-Context-Engineering
 risk: safe
 ---
 # Context Compression Strategies

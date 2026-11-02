@@ -1,8 +1,8 @@
 ---
 name: test-driven-development
 description: "Use when implementing any feature or bugfix, before writing implementation code"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Test-Driven Development (TDD)

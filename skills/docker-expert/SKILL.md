@@ -4,8 +4,8 @@ description: "Docker containerization expert with deep knowledge of multi-stage 
 category: devops
 color: blue
 displayName: Docker Expert
-risk: unknown
-source: rootcastle-rei
+risk: offensive
+source: community
 ---
 
 > ⚠️ **AUTHORIZED USE ONLY** — This skill is intended for authorized security professionals only. Use only against systems you own or have explicit written permission to test. Unauthorized use may violate applicable laws.

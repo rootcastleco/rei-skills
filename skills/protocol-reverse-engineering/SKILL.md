@@ -1,8 +1,8 @@
 ---
 name: protocol-reverse-engineering
 description: "Master network protocol reverse engineering including packet analysis, protocol dissection, and custom protocol documentation. Use when analyzing network traffic, understanding proprietary protocol..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Protocol Reverse Engineering

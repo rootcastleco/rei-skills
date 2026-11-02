@@ -1,8 +1,8 @@
 ---
 name: code-refactoring-context-restore
 description: "Use when working with code refactoring context restore"
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Context Restoration: Advanced Semantic Memory Rehydration

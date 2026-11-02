@@ -1,8 +1,8 @@
 ---
 name: llm-app-patterns
 description: "Production-ready patterns for building LLM applications. Covers RAG pipelines, agent architectures, prompt IDEs, and LLMOps monitoring. Use when designing AI applications, implementing RAG, buildin..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # 🤖 LLM Application Patterns

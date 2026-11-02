@@ -1,8 +1,8 @@
 ---
 name: code-documentation-doc-generate
 description: "You are a documentation expert specializing in creating comprehensive, maintainable documentation from code. Generate API docs, architecture diagrams, user guides, and technical references using AI..."
-risk: unknown
-source: rootcastle-rei
+risk: safe
+source: community
 ---
 
 # Automated Documentation Generation
