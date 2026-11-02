@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { AI_TARGETS } = require('../lib/ai-adapters');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
@@ -19,7 +20,6 @@ const reaManifest = readJson(path.join(DATA_DIR, 'rei-rea-manifest.json'), { ski
 
 fs.mkdirSync(SITE_DIR, { recursive: true });
 
-// Prepare compact JSON payload for instant client-side search & filtering
 const compactSkills = (catalog.skills || []).map(s => ({
   id: s.id,
   name: s.name || s.id,
@@ -32,13 +32,24 @@ const compactSkills = (catalog.skills || []).map(s => ({
   path: s.path || `skills/${s.id}`
 }));
 
+const compactAiTargets = Object.values(AI_TARGETS).map(t => ({
+  id: t.id,
+  flag: t.flag,
+  name: t.name,
+  ecosystem: t.ecosystem,
+  format: t.format,
+  workspacePath: t.defaultWorkspacePath,
+  indexFile: t.indexFile,
+  invocationHint: t.invocationHint
+}));
+
 const html = `<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REI Skills — Developer Hub &amp; Interactive Skill Registry</title>
-  <meta name="description" content="The engineering-grade skill layer for AI agents. Browse ${compactSkills.length} validated skills, bundles, workflows, and the REI Reverse Engineering (REA) module." />
+  <title>REI Skills — Universal Multi-AI Developer Hub &amp; Skill Registry</title>
+  <meta name="description" content="The universal engineering-grade skill layer for all AI agents. Browse ${compactSkills.length} validated skills across ${compactAiTargets.length} AI coding assistants, IDEs, and SDKs." />
   <style>
     :root {
       --bg: #070B14;
@@ -95,6 +106,7 @@ const html = `<!DOCTYPE html>
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 16px;
     }
     [data-theme="light"] .topbar {
@@ -120,7 +132,8 @@ const html = `<!DOCTYPE html>
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     .btn {
       font-family: var(--font-mono);
@@ -137,10 +150,31 @@ const html = `<!DOCTYPE html>
       border-color: var(--border-active);
       color: var(--accent);
     }
+    .ai-selector-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-active);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .ai-selector-wrap select {
+      border: none;
+      background: transparent;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px;
+      cursor: pointer;
+    }
     .hero {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 40px 24px 24px;
+      padding: 36px 24px 20px;
     }
     .hero-eyebrow {
       font-family: var(--font-mono);
@@ -151,22 +185,22 @@ const html = `<!DOCTYPE html>
       margin-bottom: 8px;
     }
     .hero h1 {
-      font-size: 36px;
+      font-size: 34px;
       font-weight: 800;
       letter-spacing: -0.5px;
       margin-bottom: 10px;
     }
     .hero p {
       color: var(--text-secondary);
-      max-width: 780px;
-      font-size: 16px;
+      max-width: 860px;
+      font-size: 15px;
       margin-bottom: 20px;
     }
     .stats-bar {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 12px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .stat-card {
       background: var(--surface);
@@ -192,12 +226,13 @@ const html = `<!DOCTYPE html>
       padding: 0 24px;
       display: flex;
       gap: 8px;
+      flex-wrap: wrap;
       border-bottom: 1px solid var(--border);
     }
     .tab-btn {
       font-family: var(--font-mono);
       font-size: 13px;
-      padding: 10px 18px;
+      padding: 10px 16px;
       background: transparent;
       border: none;
       border-bottom: 2px solid transparent;
@@ -321,9 +356,13 @@ const html = `<!DOCTYPE html>
   <header class="topbar">
     <div class="brand">
       <span>REI SKILLS</span>
-      <span class="brand-badge">ROOTCASTLE ENGINEERING &amp; INNOVATION</span>
+      <span class="brand-badge">UNIVERSAL MULTI-AI PLATFORM</span>
     </div>
     <div class="nav-actions">
+      <div class="ai-selector-wrap">
+        <span>Target AI:</span>
+        <select id="aiTargetSelect" title="Select target AI assistant to customize install commands"></select>
+      </div>
       <a class="btn" href="https://github.com/rootcastleco/rei-skills" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://github.com/rootcastleco/Rei-Reverse-engineer" target="_blank" rel="noopener">REI REA Workbench</a>
       <button class="btn" id="themeToggle" type="button">Toggle Theme</button>
@@ -331,13 +370,17 @@ const html = `<!DOCTYPE html>
   </header>
 
   <section class="hero">
-    <div class="hero-eyebrow">ENGINEERING BEYOND BOUNDARIES</div>
-    <h1>The Engineering-Grade Skill Layer for AI Agents</h1>
-    <p>Search, inspect, and install ${compactSkills.length} validated skills across Claude Code, OpenAI Codex CLI, Gemini CLI, Cursor, Antigravity, and OpenCode — featuring first-class integration with the REI Reverse Engineering &amp; Binary Intelligence Workbench.</p>
+    <div class="hero-eyebrow">ROOTCASTLE ENGINEERING &amp; INNOVATION · ENGINEERING BEYOND BOUNDARIES</div>
+    <h1>The Universal Skill Layer for Every AI Agent</h1>
+    <p>Search, transpile, and install ${compactSkills.length} schema-validated skills across <strong>${compactAiTargets.length} AI coding assistants, IDEs, CLI agents, and SDKs</strong> — including Claude Code, OpenAI Codex, Gemini CLI, Antigravity, Cursor (<code>.mdc</code>), GitHub Copilot (<code>.instructions.md</code>), Windsurf, Cline, Roo Code, Continue.dev, Aider, Amazon Q, Zed, Block Goose, Trae, JetBrains Junie, OpenCode, Kiro, Amp, Devin, and LangGraph/SDK JSON.</p>
     <div class="stats-bar">
       <div class="stat-card">
         <div class="stat-label">Validated Skills</div>
         <div class="stat-value">${compactSkills.length}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Supported AI Assistants</div>
+        <div class="stat-value">${compactAiTargets.length}</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">REI REA Specialist Skills</div>
@@ -356,6 +399,7 @@ const html = `<!DOCTYPE html>
 
   <nav class="tabs">
     <button class="tab-btn active" data-tab="skills">Skill Registry (${compactSkills.length})</button>
+    <button class="tab-btn" data-tab="ai-targets">AI Compatibility (${compactAiTargets.length} AI Tools)</button>
     <button class="tab-btn" data-tab="rea">REI Reverse Engineering (${(reaManifest.skills || []).length})</button>
     <button class="tab-btn" data-tab="bundles">Role Bundles (${Object.keys(bundlesData.bundles || {}).length})</button>
     <button class="tab-btn" data-tab="workflows">Workflows (${(workflowsData.workflows || []).length})</button>
@@ -380,6 +424,10 @@ const html = `<!DOCTYPE html>
       <div class="grid" id="skillsGrid"></div>
     </div>
 
+    <div id="tab-ai-targets" class="hidden">
+      <div class="grid" id="aiTargetsGrid"></div>
+    </div>
+
     <div id="tab-rea" class="hidden">
       <div class="grid" id="reaGrid"></div>
     </div>
@@ -395,6 +443,7 @@ const html = `<!DOCTYPE html>
 
   <script>
     const SKILLS = ${JSON.stringify(compactSkills)};
+    const AI_TARGETS = ${JSON.stringify(compactAiTargets)};
     const BUNDLES = ${JSON.stringify(bundlesData.bundles || {})};
     const WORKFLOWS = ${JSON.stringify(workflowsData.workflows || [])};
     const REA_MANIFEST = ${JSON.stringify(reaManifest)};
@@ -402,8 +451,23 @@ const html = `<!DOCTYPE html>
     const searchInput = document.getElementById('searchInput');
     const categoryFilter = document.getElementById('categoryFilter');
     const riskFilter = document.getElementById('riskFilter');
+    const aiTargetSelect = document.getElementById('aiTargetSelect');
     const skillsGrid = document.getElementById('skillsGrid');
     const resultCount = document.getElementById('resultCount');
+
+    // Populate AI target selector
+    const allAiOpt = document.createElement('option');
+    allAiOpt.value = '--all-ai';
+    allAiOpt.textContent = 'All AI Assistants (--all-ai)';
+    aiTargetSelect.appendChild(allAiOpt);
+
+    AI_TARGETS.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t.flag;
+      opt.textContent = t.name + ' (' + t.flag + ')';
+      if (t.id === 'claude') opt.selected = true;
+      aiTargetSelect.appendChild(opt);
+    });
 
     // Populate categories
     const categories = [...new Set(SKILLS.map(s => s.category))].sort();
@@ -429,10 +493,15 @@ const html = `<!DOCTYPE html>
       setTimeout(() => { btn.textContent = prev; }, 1200);
     }
 
+    function getSelectedFlag() {
+      return aiTargetSelect.value || '--claude';
+    }
+
     function renderSkills() {
       const q = searchInput.value.trim().toLowerCase();
       const cat = categoryFilter.value;
       const risk = riskFilter.value;
+      const flag = getSelectedFlag();
 
       const filtered = SKILLS.filter(s => {
         if (cat && s.category !== cat) return false;
@@ -451,7 +520,7 @@ const html = `<!DOCTYPE html>
 
       skillsGrid.innerHTML = slice.map(s => {
         const isRea = s.id.startsWith('rei-');
-        const cmd = 'npx rei-skills add ' + s.id;
+        const cmd = 'npx rei-skills add ' + s.id + ' ' + flag;
         return \`
           <article class="card">
             <div>
@@ -470,10 +539,36 @@ const html = `<!DOCTYPE html>
       }).join('');
     }
 
+    function renderAiTargets() {
+      document.getElementById('aiTargetsGrid').innerHTML = AI_TARGETS.map(t => {
+        const cmd = 'npx rei-skills ' + t.flag + ' --workspace';
+        return \`
+          <article class="card">
+            <div>
+              <div class="card-header">
+                <div class="card-title">\${escapeHtml(t.name)}</div>
+                <span class="badge badge-cat">\${escapeHtml(t.format)}</span>
+              </div>
+              <p class="card-desc" style="margin-top:8px;">
+                <strong>Flag:</strong> <code>\${escapeHtml(t.flag)}</code><br/>
+                <strong>Workspace Path:</strong> <code>\${escapeHtml(t.workspacePath)}</code><br/>
+                <strong>Invoke:</strong> <code>\${escapeHtml(t.invocationHint)}</code>
+              </p>
+            </div>
+            <div class="card-footer">
+              <span>index: \${escapeHtml(t.indexFile)}</span>
+              <button class="copy-cmd" onclick="copyCommand('\${escapeHtml(cmd)}', this)">\${escapeHtml(cmd)}</button>
+            </div>
+          </article>
+        \`;
+      }).join('');
+    }
+
     function renderRea() {
+      const flag = getSelectedFlag();
       const reaSkills = SKILLS.filter(s => s.id.startsWith('rei-'));
       document.getElementById('reaGrid').innerHTML = reaSkills.map(s => {
-        const cmd = 'npx rei-skills add ' + s.id;
+        const cmd = 'npx rei-skills add ' + s.id + ' ' + flag;
         return \`
           <article class="card">
             <div>
@@ -493,8 +588,9 @@ const html = `<!DOCTYPE html>
     }
 
     function renderBundles() {
+      const flag = getSelectedFlag();
       document.getElementById('bundlesGrid').innerHTML = Object.entries(BUNDLES).map(([id, b]) => {
-        const cmd = 'npx rei-skills add ' + id;
+        const cmd = 'npx rei-skills add ' + id + ' ' + flag;
         return \`
           <article class="card">
             <div>
@@ -537,13 +633,18 @@ const html = `<!DOCTYPE html>
     searchInput.addEventListener('input', renderSkills);
     categoryFilter.addEventListener('change', renderSkills);
     riskFilter.addEventListener('change', renderSkills);
+    aiTargetSelect.addEventListener('change', () => {
+      renderSkills();
+      renderRea();
+      renderBundles();
+    });
 
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const tab = btn.dataset.tab;
-        ['skills', 'rea', 'bundles', 'workflows'].forEach(t => {
+        ['skills', 'ai-targets', 'rea', 'bundles', 'workflows'].forEach(t => {
           document.getElementById('tab-' + t).classList.toggle('hidden', t !== tab);
         });
       });
@@ -555,6 +656,7 @@ const html = `<!DOCTYPE html>
     });
 
     renderSkills();
+    renderAiTargets();
     renderRea();
     renderBundles();
     renderWorkflows();
@@ -564,4 +666,4 @@ const html = `<!DOCTYPE html>
 `;
 
 fs.writeFileSync(path.join(SITE_DIR, 'index.html'), html, 'utf8');
-console.log(`✅ Built static searchable documentation site -> docs/site/index.html (${compactSkills.length} skills indexed)`);
+console.log(`✅ Built static searchable documentation site -> docs/site/index.html (${compactSkills.length} skills, ${compactAiTargets.length} AI targets indexed)`);

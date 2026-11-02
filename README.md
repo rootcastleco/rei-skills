@@ -33,29 +33,56 @@ Install the complete skill library or target a specific coding assistant with a 
 npx rei-skills
 ```
 
-### Target Your AI Coding Assistant
+### Target Any AI Coding Assistant, IDE, or Agent SDK (`21` Targets Supported)
+
+REI Skills includes a built-in **Universal Multi-AI Transpiler & Adapter Engine** ([`lib/ai-adapters.js`](lib/ai-adapters.js)) that natively supports `SKILL.md` directories, Cursor `.mdc` rules, GitHub Copilot `.instructions.md` + `.prompt.md` files, Windsurf Cascade rules, Cline/RooCode/Continue/Aider/AmazonQ/Zed/Junie rules, universal `AGENTS.md` routers, and OpenAI/Anthropic/Gemini Function-Calling JSON schemas:
 
 ```bash
-npx rei-skills --claude       # Claude Code   (~/.claude/skills)
-npx rei-skills --codex        # OpenAI Codex  (~/.codex/skills)
-npx rei-skills --gemini       # Gemini CLI    (~/.gemini/skills)
-npx rei-skills --cursor       # Cursor IDE    (~/.cursor/skills)
-npx rei-skills --antigravity  # Antigravity   (~/.gemini/rei/skills)
-npx rei-skills --path ./skills # Custom workspace directory
+# CLI & IDE Skill Directories (SKILL.md + references + scripts)
+npx rei-skills --claude                  # Anthropic Claude Code (~/.claude/skills)
+npx rei-skills --codex                   # OpenAI Codex CLI      (~/.codex/skills)
+npx rei-skills --gemini                  # Google Gemini CLI     (~/.gemini/skills)
+npx rei-skills --antigravity             # Google Antigravity    (~/.gemini/rei/skills)
+npx rei-skills --goose                   # Block Goose Agent     (~/.config/goose/skills)
+npx rei-skills --opencode                # OpenCode Agent        (~/.agents/skills)
+npx rei-skills --kiro                    # Kiro Spec-Driven IDE  (~/.kiro/skills)
+npx rei-skills --amp                     # Sourcegraph Amp       (~/.config/amp/skills)
+
+# Native IDE Rule & Prompt Transpilation (--workspace installs into current project)
+npx rei-skills add rei-rea --cursor -w   # Cursor (.cursor/skills/* + .cursor/rules/*.mdc)
+npx rei-skills add rei-rea --copilot -w  # GitHub Copilot (.github/instructions/*.instructions.md + prompts)
+npx rei-skills add rei-rea --windsurf -w # Windsurf Cascade (.windsurf/rules/*.md)
+npx rei-skills add rei-rea --cline -w    # Cline Autonomous Agent (.clinerules/*.md)
+npx rei-skills add rei-rea --roocode -w  # Roo Code (.roo/rules/*.md)
+npx rei-skills add rei-rea --continue -w # Continue.dev (.continue/rules/*.md)
+npx rei-skills add rei-rea --aider -w    # Aider (.aider/skills/*.md + CONVENTIONS.md)
+npx rei-skills add rei-rea --amazonq -w  # Amazon Q Developer (.amazonq/rules/*.md)
+npx rei-skills add rei-rea --zed -w      # Zed AI (.zed/rules/*.md)
+npx rei-skills add rei-rea --trae -w     # Trae AI IDE (.trae/rules/*.md)
+npx rei-skills add rei-rea --junie -w    # JetBrains Junie (.junie/skills/*.md)
+npx rei-skills add rei-rea --devin -w    # Cognition Devin (.devin/playbooks/*.devin.md)
+npx rei-skills add rei-rea --sdk -w      # OpenAI / Anthropic / Gemini / LangGraph Tool JSON
+
+# Configure ALL major AI assistants + generate universal AGENTS.md router at once:
+npx rei-skills add rei-rea --all-ai --path ./my-project
 ```
 
 ### Immediate Next Steps
 
 ```bash
-# 1. Inspect your environment, installed skill paths, and REI REA status
+# 1. View all 21 supported AI assistants, native formats, and invocation hints
+npx rei-skills targets
+
+# 2. Inspect your environment, installed AI directories, and REI REA status
 npx rei-skills doctor
 
-# 2. Search across 895 skills by domain, keyword, risk, or upstream source
+# 3. Search across 895 skills by domain, keyword, risk, or upstream source
 npx rei-skills search firmware
 npx rei-skills list --category reverse-engineering
 
-# 3. Install only a focused bundle or the 12 REI REA specialist skills
+# 4. Install only a focused bundle or compile to any target format
 npx rei-skills add rei-rea --claude --print-mcp
+npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
 ```
 
 ---

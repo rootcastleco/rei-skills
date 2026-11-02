@@ -9,13 +9,14 @@ const {
   isLegacyReiSkillsRepo,
   resolveSkillSourceDir,
 } = require("../../bin/install");
+const { AI_TARGETS, transpileSkillContent } = require("../../lib/ai-adapters");
 
 const CLI_PATH = path.resolve(__dirname, "../../bin/install.js");
 const REPO_SKILLS = path.resolve(__dirname, "../../skills");
 
-console.log("Running REI Skill Manager & Installer safety tests...");
+console.log("Running REI Skill Manager, Universal AI Compiler & Installer safety tests...");
 
-// 1. Test CLI argument parsing
+// 1. Test CLI argument parsing across multiple AI targets
 {
   const opts1 = parseArgs(["--claude", "--dry-run"]);
   assert.strictEqual(opts1.command, "install");
@@ -28,6 +29,14 @@ console.log("Running REI Skill Manager & Installer safety tests...");
   assert.deepStrictEqual(opts2.positional, ["firmware"]);
   assert.strictEqual(opts2.categoryArg, "reverse-engineering");
   assert.strictEqual(opts2.json, true);
+
+  // Verify all 21 AI targets are registered and parseable via flags
+  assert(Object.keys(AI_TARGETS).length >= 21, "Expected at least 21 AI targets");
+  for (const targetId of ["copilot", "windsurf", "cline", "roocode", "continue", "aider", "amazonq", "zed", "goose", "trae", "junie", "opencode", "kiro", "amp", "devin", "sdk"]) {
+    const parsed = parseArgs([`--${targetId}`, "--workspace"]);
+    assert.strictEqual(parsed[targetId], true, `Flag --${targetId} should set opts.${targetId}`);
+    assert.strictEqual(parsed.targetAi, targetId);
+  }
 }
 
 // 2. Test Windows symlink / text-pointer resolution for docx, pdf, pptx, xlsx
@@ -113,4 +122,53 @@ console.log("Running REI Skill Manager & Installer safety tests...");
   }
 }
 
-console.log("✅ All REI Skill Manager & Installer safety tests passed!");
+// 5. Test Universal AI Compiler formats (Cursor .mdc, Copilot .instructions.md, Windsurf, SDK JSON, AGENTS.md)
+{
+  const tmpExport = fs.mkdtempSync(path.join(os.tmpdir(), "rei-test-export-"));
+  try {
+    // Test Cursor .mdc export
+    const mdcDir = path.join(tmpExport, "cursor-mdc");
+    const resMdc = spawnSync(
+      process.execPath,
+      [CLI_PATH, "export", "--format", "cursor-mdc", "--filter", "rei-rea-orchestrator", "--output", mdcDir],
+      { encoding: "utf8" },
+    );
+    assert.strictEqual(resMdc.status, 0, `export cursor-mdc failed: ${resMdc.stderr}`);
+    const mdcContent = fs.readFileSync(path.join(mdcDir, "rei-rea-orchestrator.mdc"), "utf8");
+    assert(mdcContent.includes("alwaysApply: false"), "Cursor .mdc must contain alwaysApply frontmatter");
+
+    // Test GitHub Copilot .instructions.md export
+    const copilotDir = path.join(tmpExport, "copilot");
+    const resCopilot = spawnSync(
+      process.execPath,
+      [CLI_PATH, "export", "--format", "copilot-instructions", "--filter", "rei-rea-orchestrator", "--output", copilotDir],
+      { encoding: "utf8" },
+    );
+    assert.strictEqual(resCopilot.status, 0, `export copilot-instructions failed: ${resCopilot.stderr}`);
+    const copilotContent = fs.readFileSync(path.join(copilotDir, "rei-rea-orchestrator.instructions.md"), "utf8");
+    assert(copilotContent.includes('applyTo: "**"'), "Copilot instructions must contain applyTo frontmatter");
+
+    // Test SDK JSON export (OpenAI / Anthropic / Gemini tool definitions)
+    const sdkDir = path.join(tmpExport, "sdk");
+    const resSdk = spawnSync(
+      process.execPath,
+      [CLI_PATH, "export", "--format", "sdk-json", "--filter", "rei-rea-orchestrator", "--output", sdkDir],
+      { encoding: "utf8" },
+    );
+    assert.strictEqual(resSdk.status, 0, `export sdk-json failed: ${resSdk.stderr}`);
+    const sdkPayload = JSON.parse(fs.readFileSync(path.join(sdkDir, "rei-rea-orchestrator.json"), "utf8"));
+    assert(sdkPayload.openai_function, "SDK JSON must include openai_function schema");
+    assert(sdkPayload.anthropic_tool, "SDK JSON must include anthropic_tool schema");
+    assert(sdkPayload.gemini_function_declaration, "SDK JSON must include gemini_function_declaration schema");
+
+    // Test targets JSON output
+    const resTargets = spawnSync(process.execPath, [CLI_PATH, "targets", "--json"], { encoding: "utf8" });
+    assert.strictEqual(resTargets.status, 0);
+    const targetsData = JSON.parse(resTargets.stdout);
+    assert(targetsData.total >= 21);
+  } finally {
+    fs.rmSync(tmpExport, { recursive: true, force: true });
+  }
+}
+
+console.log("✅ All REI Skill Manager, Universal AI Compiler & Installer safety tests passed!");
