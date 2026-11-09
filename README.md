@@ -339,3 +339,9 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT
 Maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)** · Batuhan Ayrıbaş · [admin@rootcastle.com](mailto:admin@rootcastle.com)
 
 </div>
+
+## Rootcastle project guide
+
+[Project overview and practical workflow](https://rootcastle.com/en/projects/rei-skills/) · [Engineering walkthrough](https://rootcastle.com/en/engineering-notes/evidence-based-reverse-engineering/)
+
+The repository remains the reference for current setup, supported features and licensing. The project guide explains the workflow and its verification boundaries.
