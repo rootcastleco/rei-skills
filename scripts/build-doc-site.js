@@ -49,6 +49,7 @@ const html = `<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
+  <link rel="canonical" href="https://rootcastleco.github.io/rei-skills/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>REI Skills — Smart Multi-AI Skill Studio, MCP Hub &amp; Registry</title>
   <meta name="description" content="The universal engineering-grade skill layer &amp; Smart MCP Server for AI agents. Browse ${compactSkills.length} validated skills across ${compactAiTargets.length} AI coding assistants, IDEs, and SDKs." />
@@ -433,6 +434,7 @@ const html = `<!DOCTYPE html>
         <span>Target AI:</span>
         <select id="aiTargetSelect" title="Select target AI assistant to customize install commands"></select>
       </div>
+      <a class="btn" href="https://rootcastle.com/en/projects/rei-skills/">Rootcastle project guide</a>
       <a class="btn" href="https://github.com/rootcastleco/rei-skills" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://github.com/rootcastleco/Rei-Reverse-engineer" target="_blank" rel="noopener">REI REA Workbench</a>
       <button class="btn" id="themeToggle" type="button">Toggle Theme</button>
