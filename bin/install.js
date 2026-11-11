@@ -404,7 +404,15 @@ function copyRecursiveSync(src, dest, skipGit = true) {
 
 function resolveSkillSourceDir(repoSkills, entryName) {
   const src = path.join(repoSkills, entryName);
-  if (!fs.existsSync(src)) return null;
+  // npm omits symlinks from published tarballs. Resolve the known
+  // legacy aliases to their real directories when the link is absent.
+  if (!fs.existsSync(src)) {
+    const alias = KNOWN_SYMLINK_ALIASES[entryName];
+    const fallback = alias ? path.join(repoSkills, alias) : null;
+    return fallback && fs.existsSync(fallback) && fs.statSync(fallback).isDirectory()
+      ? fallback
+      : null;
+  }
 
   const lstat = fs.lstatSync(src);
   if (lstat.isSymbolicLink()) {
