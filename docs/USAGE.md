@@ -81,7 +81,31 @@ npx rei-skills export --format strict --output ./dist-strict-skills
 
 ---
 
-## 5. Related Guides
+## 5. Installing Skills via MCP (Safe Workflow)
+
+When an AI agent calls `rei_install_skill`, installation is staged in a temporary directory and the workspace is inspected before it is modified. An existing workspace directory is required.
+
+```json
+{
+  "target_name": "rei-rea-orchestrator",
+  "ai_assistant": "cursor",
+  "workspace_path": "/absolute/path/to/project",
+  "generate_agents_md": true,
+  "dry_run": true
+}
+```
+
+The preview lists new and existing destinations. If there are no conflicts, repeat the call without `dry_run`.
+
+To **update** a pre-existing skill or generated `AGENTS.md`, repeat the preview with `"conflict_policy": "backup"`, review the conflicts, then supply that result's exact `"preview_token"` with `"conflict_policy": "backup"` and `"dry_run": false`.
+
+The preview token binds the workspace path, proposed bytes, existing-file hashes, and conflict policy. Any intervening modification blocks the update. All existing target files are copied to `.rei-skills-backups/<transaction-id>/` before replacement. The JSON manifest records whether installation committed, rolled back, or needs recovery.
+
+**Failure model:** synchronous errors trigger restoration of original files and removal of created files; after forced shutdown, restore manually from the persistent backup. Filesystem writes are not atomic across the whole bundle. Symlinks in destination paths and unrecognized skills are rejected. The CLI interface is unchanged by this MCP hardening.
+
+---
+
+## 6. Related Guides
 
 - [Getting Started](GETTING_STARTED.md)
 - [Curated Role Bundles](BUNDLES.md)
