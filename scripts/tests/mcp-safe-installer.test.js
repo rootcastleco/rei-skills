@@ -71,6 +71,23 @@ fixture(({ workspace, staging }) => {
   assert.strictEqual(manifest.status, "committed");
   assert.strictEqual(manifest.files[0].action, "replace");
   assert.strictEqual(result.installedFileCount, 1);
+  if (process.platform !== "win32") {
+    const backupRootMode = fs.statSync(path.join(workspace, ".rei-skills-backups")).mode;
+    assert.strictEqual(backupRootMode & 0o077, 0, "Backups must be private to the current user");
+  }
+});
+
+// Existing world-readable backup directories are unsafe for protecting agent instructions.
+fixture(({ workspace, staging }) => {
+  if (process.platform === "win32") return;
+  put(staging, "AGENTS.md", "update");
+  put(workspace, "AGENTS.md", "secret instructions");
+  const publicBackup = path.join(workspace, ".rei-skills-backups");
+  fs.mkdirSync(publicBackup, { mode: 0o755 });
+  fs.chmodSync(publicBackup, 0o755);
+  const preview = plan(workspace, staging, "backup");
+  assert.throws(() => applyInstallPlan(preview, staging, { previewToken: preview.previewToken }), /Backup directory must not be accessible/);
+  assert.strictEqual(read(workspace, "AGENTS.md"), "secret instructions");
 });
 
 // On failed or partial writes, restore all prior content and remove created files.
