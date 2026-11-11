@@ -27,9 +27,6 @@
     "sync:all-official": "npm run sync:rea && npm run sync:microsoft && npm run build",
     "test:package": "node scripts/tests/npm-package.test.js"
   },
-  "devDependencies": {
-    "yaml": "^2.8.2"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rootcastleco/rei-skills.git"
@@ -71,5 +68,8 @@
     "cybersecurity",
     "firmware-analysis",
     "developer-tools"
-  ]
+  ],
+  "dependencies": {
+    "yaml": "^2.8.2"
+  }
 }
