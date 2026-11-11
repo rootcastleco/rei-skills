@@ -15,7 +15,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: npm-publish-${{ github.ref }}
+  group: npm-publish-rei-skills
   cancel-in-progress: false
 
 jobs:
@@ -97,12 +97,19 @@ jobs:
           console.log("Verified release artifact:", pack.filename, pack.size, "bytes;", paths.size, "files");
           NODE
 
-      - name: Publish to npm (OIDC trusted publishing or configured token)
-        # Preferred: npm Trusted Publisher for rootcastleco/rei-skills/publish.yml.
-        # NODE_AUTH_TOKEN is an optional legacy GitHub secret; never paste a token
-        # into a workflow file, workflow input, chat, or job log.
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Confirm version is not already published
+        run: |
+          set -euo pipefail
+          version="$(node -p 'require("./package.json").version')"
+          if npm view "rei-skills@$version" version --registry=https://registry.npmjs.org/ >/dev/null 2>&1; then
+            echo "Refusing to republish immutable npm version $version" >&2
+            exit 1
+          fi
+
+      - name: Publish to npm using OIDC trusted publishing
+        # Configure the trusted publisher at npmjs.com for:
+        # owner rootcastleco, repo rei-skills, workflow publish.yml,
+        # allow npm publish. Do not pass or store a long-lived npm token.
         run: npm publish --access public
 
       - name: Verify published npm version
