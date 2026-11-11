@@ -112,17 +112,8 @@ jobs:
         # allow npm publish. Do not pass or store a long-lived npm token.
         run: npm publish --access public
 
-      - name: Verify published npm version
+      - name: Verify published npm version and dist-tag
         run: |
           set -euo pipefail
           version="$(node -p 'require("./package.json").version')"
-          for attempt in 1 2 3 4 5; do
-            published="$(npm view "rei-skills@$version" version --registry=https://registry.npmjs.org/ 2>/dev/null || true)"
-            if [ "$published" = "$version" ]; then
-              echo "npm release verified: rei-skills@$version"
-              exit 0
-            fi
-            sleep 8
-          done
-          echo "npm did not yet report the published version" >&2
-          exit 1
+          node scripts/verify-npm-release.js "$version" --timeout-seconds=720
