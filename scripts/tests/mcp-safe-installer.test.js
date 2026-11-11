@@ -120,7 +120,7 @@ fixture(({ root, workspace, staging }) => {
 // Staging links, bad workspace and invalid policy never lead to silent success.
 fixture(({ root, workspace, staging }) => {
   put(staging, "safe.md", "safe");
-  assert.throws(() => plan(path.join(root, "missing"), staging), /existing directory/);
+  assert.throws(() => plan(path.join(root, "missing"), staging), /existing.*directory/);
   assert.throws(() => plan(workspace, staging, "overwrite"), /conflict_policy/);
   const outside = put(root, "outside.md", "untrusted");
   try {
