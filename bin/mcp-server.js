@@ -10,7 +10,9 @@
  */
 
 const fs = require("fs");
+const os = require("os");
 const path = require("path");
+const { buildInstallPlan, summarizePlan, applyInstallPlan } = require("../lib/mcp-safe-install");
 const {
   AI_TARGETS,
   transpileSkillContent,
@@ -200,7 +202,7 @@ const MCP_TOOLS = [
   {
     name: "rei_install_skill",
     description:
-      "Install a specific skill or curated role bundle into a project workspace directory, automatically transpiled into the native format of any of the 21 supported AI coding assistants (claude, cursor, copilot, windsurf, cline, roocode, codex, gemini, antigravity, etc.).",
+      "Safely install a skill or bundle into an existing project workspace. dry_run previews file changes without touching the workspace; conflicts abort by default. To replace existing files, preview with conflict_policy=backup then provide its preview_token to install with recoverable backups and rollback.",
     inputSchema: {
       type: "object",
       properties: {
@@ -218,7 +220,20 @@ const MCP_TOOLS = [
         },
         generate_agents_md: {
           type: "boolean",
-          description: "If true, also writes/updates a universal AGENTS.md router file in workspace_path.",
+          description: "If true, also writes a universal AGENTS.md router file; existing AGENTS.md requires a backup preview.",
+        },
+        dry_run: {
+          type: "boolean",
+          description: "If true, only preview target files, conflicts, and a preview_token. Never changes workspace files.",
+        },
+        conflict_policy: {
+          type: "string",
+          enum: ["abort", "backup"],
+          description: "Defaults to abort if any destination exists. backup permits replacement only after a matching dry_run preview_token.",
+        },
+        preview_token: {
+          type: "string",
+          description: "Exact token returned by a recent dry_run with the same target, assistant, workspace, router option and conflict_policy.",
         },
       },
       required: ["target_name", "ai_assistant", "workspace_path"],
@@ -350,53 +365,84 @@ function executeToolCall(name, args = {}) {
 
   if (name === "rei_install_skill") {
     const targetName = String(args.target_name || "").trim();
-    const aiId = String(args.ai_assistant || "claude").toLowerCase();
+    const aiId = String(args.ai_assistant || "").toLowerCase();
     const spec = AI_TARGETS[aiId];
     if (!spec) {
       throw new Error(`Unsupported ai_assistant '${aiId}'. Valid targets: ${Object.keys(AI_TARGETS).join(", ")}`);
     }
-    const workspaceRoot = path.resolve(String(args.workspace_path || process.cwd()));
-    const destDir = path.join(workspaceRoot, spec.defaultWorkspacePath);
+    if (!targetName) throw new Error("target_name is required.");
+    const workspacePath = args.workspace_path;
+    const conflictPolicy = args.conflict_policy || "abort";
 
     const bMap = bundles.bundles || {};
-    let skillIds = [];
+    const catalogMap = new Map((catalog.skills || []).map((s) => [s.id, s]));
+    let skillIds;
     if (targetName === "rei-rea") {
       skillIds = (catalog.skills || []).filter((s) => s.id.startsWith("rei-")).map((s) => s.id);
     } else if (bMap[targetName]) {
       skillIds = bMap[targetName].skills || [];
-    } else {
+    } else if (catalogMap.has(targetName)) {
       skillIds = [targetName];
+    } else {
+      throw new Error("Unknown skill or bundle: " + targetName);
     }
+    if (!skillIds.length) throw new Error("The selected bundle contains no skills.");
 
-    const catalogMap = new Map((catalog.skills || []).map((s) => [s.id, s]));
-    const installed = [];
-    for (const sid of skillIds) {
-      const resolvedSrc = resolveSkillSourceDir(SKILLS_DIR, sid);
-      if (!resolvedSrc) continue;
-      const res = materializeSkillForTarget(sid, resolvedSrc, destDir, spec, catalogMap.get(sid) || {});
-      installed.push({ skillId: sid, path: res.path, format: res.format });
+    // Always stage in an isolated temporary directory. Even dry_run cannot
+    // create directories, files, or router content within the user workspace.
+    const stagingRoot = fs.mkdtempSync(path.join(os.tmpdir(), "rei-mcp-stage-"));
+    try {
+      const destDir = path.join(stagingRoot, spec.defaultWorkspacePath);
+      const installed = [];
+      for (const sid of skillIds) {
+        if (!/^[a-z0-9][a-z0-9._-]*$/.test(sid) || !catalogMap.has(sid)) {
+          throw new Error("Invalid or unknown skill ID: " + sid);
+        }
+        const resolvedSrc = resolveSkillSourceDir(SKILLS_DIR, sid);
+        if (!resolvedSrc) throw new Error("Skill source directory unavailable: " + sid);
+        const res = materializeSkillForTarget(sid, resolvedSrc, destDir, spec, catalogMap.get(sid));
+        installed.push({ skillId: sid, format: res.format });
+      }
+
+      if (args.generate_agents_md) {
+        const selected = skillIds.map((sid) => catalogMap.get(sid));
+        const routerText = generateUniversalRouterMarkdown(selected, {
+          title: "AGENTS.md — REI Skills Universal AI Agent Router",
+          skillBasePath: spec.defaultWorkspacePath,
+        });
+        fs.writeFileSync(path.join(stagingRoot, "AGENTS.md"), routerText, "utf8");
+      }
+
+      const plan = buildInstallPlan(workspacePath, stagingRoot, conflictPolicy);
+      const summary = summarizePlan(plan);
+      if (args.dry_run) {
+        return {
+          status: "dry-run",
+          aiAssistant: spec.name,
+          format: spec.format,
+          targetName,
+          ...summary,
+          note: "No workspace files were changed. For replacements repeat with conflict_policy=backup and this preview_token.",
+        };
+      }
+
+      const installedResult = applyInstallPlan(plan, stagingRoot, { previewToken: args.preview_token });
+      return {
+        status: "installed",
+        aiAssistant: spec.name,
+        format: spec.format,
+        targetName,
+        destination: path.join(plan.root, spec.defaultWorkspacePath),
+        installedCount: installed.length,
+        installed,
+        ...summary,
+        backupPath: installedResult.backupPath,
+        transactionId: installedResult.transactionId,
+        agentsMdPath: args.generate_agents_md ? path.join(plan.root, "AGENTS.md") : null,
+      };
+    } finally {
+      fs.rmSync(stagingRoot, { recursive: true, force: true });
     }
-
-    let routerPath = null;
-    if (args.generate_agents_md) {
-      const selectedSkills = (catalog.skills || []).filter((s) => skillIds.includes(s.id));
-      const md = generateUniversalRouterMarkdown(selectedSkills, {
-        title: "AGENTS.md — REI Skills Universal AI Agent Router",
-        skillBasePath: spec.defaultWorkspacePath,
-      });
-      routerPath = path.join(workspaceRoot, "AGENTS.md");
-      fs.writeFileSync(routerPath, md, "utf8");
-    }
-
-    return {
-      status: "installed",
-      aiAssistant: spec.name,
-      format: spec.format,
-      destination: destDir,
-      installedCount: installed.length,
-      installed,
-      agentsMdPath: routerPath,
-    };
   }
 
   if (name === "rei_compile_skill") {

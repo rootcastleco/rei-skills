@@ -112,6 +112,18 @@ Instead of loading all 895 skills into an AI agent's context window, REI Skills 
 ```
 
 - **8 Dynamic MCP Tools:** `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_install_skill`, `rei_compile_skill`, `rei_list_ai_targets`.
+
+#### Safe MCP skill installation
+
+`rei_install_skill` stages the requested skill(s) outside the workspace and checks **every target file** before making changes. Unlike the earlier direct-write MCP path, it now supports a read-only workspace preview, explicit conflict policy, SHA-256 change detection, backups, and synchronous rollback:
+
+1. Preview: `{"target_name":"rei-rea-orchestrator","ai_assistant":"cursor","workspace_path":"/path/to/existing-project","dry_run":true}`. The result includes file counts, collisions, `canInstall`, and a `previewToken`. Preview does not change the target workspace.
+2. For a fresh install without conflicts, call the tool without `dry_run` (default `conflict_policy="abort"`).
+3. If files already exist, preview again with `"conflict_policy":"backup","dry_run":true`; inspect replacements and then call with `"conflict_policy":"backup","preview_token":"<exact previewToken>"`. Any modified destination invalidates the token and requires a new preview.
+4. The installer copies original files into `<workspace>/.rei-skills-backups/<transaction-id>/` with a JSON manifest before replacing them. It automatically restores touched files when a synchronous install fails. Interrupted process/power loss requires recovery from the preserved backup; installation across multiple files is **not** a filesystem-atomic transaction.
+
+Safety boundaries: existing workspaces only; unknown skill IDs and symlinks in destination paths are rejected; generated `AGENTS.md`, Cursor rules, and Copilot prompts are included in the same preflight. This intentionally rejects legacy silent overwrites: clients that update existing skills must opt into explicit backup mode.
+
 - **Interactive Web Hub:** Try the live **Smart AI Task & Stack Router** in your browser at **[`https://rootcastleco.github.io/rei-skills/`](https://rootcastleco.github.io/rei-skills/)**.
 
 ---
