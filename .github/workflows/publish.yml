@@ -1,50 +1,128 @@
-name: 🏰 Publish REI Skills to npm
+name: Publish REI Skills to npm
 
 on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      version:
+        description: "Exact package.json version from main to publish"
+        required: true
+        type: string
 
 permissions:
   contents: read
   id-token: write
 
+concurrency:
+  group: npm-publish-rei-skills
+  cancel-in-progress: false
+
 jobs:
   publish:
-    name: 📦 Validate & Publish rei-skills
+    name: Validate and publish rei-skills
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - name: 🏰 Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-      - name: 🐍 Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Set up Node.js for npm trusted publishing
+        uses: actions/setup-node@v6
         with:
-          node-version: "20"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
-          cache: "npm"
+          package-manager-cache: false
 
-      - name: 📥 Install Dependencies
+      - name: Verify release identity
+        env:
+          ACTION_EVENT: ${{ github.event_name }}
+          ACTION_REF: ${{ github.ref }}
+          REQUESTED_VERSION: ${{ inputs.version }}
         run: |
-          pip install pyyaml
-          npm ci
+          set -euo pipefail
+          name="$(node -p 'require("./package.json").name')"
+          version="$(node -p 'require("./package.json").version')"
+          test "$name" = "rei-skills" || { echo "Wrong npm package: $name"; exit 1; }
+          if [ "$ACTION_EVENT" = "workflow_dispatch" ]; then
+            test "$ACTION_REF" = "refs/heads/main" || { echo "Manual release must use main"; exit 1; }
+            test "$REQUESTED_VERSION" = "$version" || { echo "Version mismatch"; exit 1; }
+          else
+            test "$ACTION_REF" = "refs/tags/v$version" || { echo "Release tag mismatch"; exit 1; }
+          fi
+          npm --version
+          node --version
 
-      - name: ✅ Pre-Release Validation & Security Gate
+      - name: Install dependencies
         run: |
+          python -m pip install --disable-pip-version-check pyyaml
+          npm ci --no-audit --no-fund
+
+      - name: Run release checks
+        run: |
+          set -euo pipefail
           python scripts/sync_rei_rea.py --check
           python scripts/validate_skills.py --strict
           node scripts/validate-skills.js
+          python scripts/validate_references.py
           node scripts/security_audit.js
           npm test
-          npm pack --dry-run
 
-      - name: 📤 Publish to npm Registry
-        if: env.NODE_AUTH_TOKEN != ''
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public --provenance
+      - name: Verify tarball contents
+        run: |
+          set -euo pipefail
+          npm pack --ignore-scripts --dry-run --json > "$RUNNER_TEMP/rei-package.json"
+          node - "$RUNNER_TEMP/rei-package.json" <<'NODE'
+          const fs = require("node:fs");
+          const pack = JSON.parse(fs.readFileSync(process.argv[2], "utf8"))[0];
+          const paths = new Set(pack.files.map(f => f.path));
+          const required = [
+            "bin/install.js", "bin/mcp-server.js", "lib/mcp-safe-install.js",
+            "data/catalog.json", "data/bundles.json", "data/workflows.json",
+            "skills/rei-rea-orchestrator/SKILL.md"
+          ];
+          for (const file of required) {
+            if (!paths.has(file)) throw Error("Tarball missing: " + file);
+          }
+          if (paths.size < 800 || !pack.size || pack.size > 50 * 1024 * 1024) {
+            throw Error("Unexpected release artifact size or file count");
+          }
+          console.log("Verified release artifact:", pack.filename, pack.size, "bytes;", paths.size, "files");
+          NODE
+
+      - name: Confirm version is not already published
+        run: |
+          set -euo pipefail
+          version="$(node -p 'require("./package.json").version')"
+          if npm view "rei-skills@$version" version --registry=https://registry.npmjs.org/ >/dev/null 2>&1; then
+            echo "Refusing to republish immutable npm version $version" >&2
+            exit 1
+          fi
+
+      - name: Publish to npm using OIDC trusted publishing
+        # Configure the trusted publisher at npmjs.com for:
+        # owner rootcastleco, repo rei-skills, workflow publish.yml,
+        # allow npm publish. Do not pass or store a long-lived npm token.
+        run: npm publish --access public
+
+      - name: Verify published npm version
+        run: |
+          set -euo pipefail
+          version="$(node -p 'require("./package.json").version')"
+          for attempt in 1 2 3 4 5; do
+            published="$(npm view "rei-skills@$version" version --registry=https://registry.npmjs.org/ 2>/dev/null || true)"
+            if [ "$published" = "$version" ]; then
+              echo "npm release verified: rei-skills@$version"
+              exit 0
+            fi
+            sleep 8
+          done
+          echo "npm did not yet report the published version" >&2
+          exit 1
