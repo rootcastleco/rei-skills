@@ -26,6 +26,26 @@
 
 ---
 
+## Adaptive Prompt Archive, Safe Improvements & Rust Hook Gateway (Preview)
+
+**REI Skills now has an opt-in Prompt Archive adapter** for [Rootcastle Prompt Archive](https://promt.rootcastle.com/). It reads the published JSON catalog manifest, caches a bounded set of prompts, selects relevant reference prompts for an engineering task, and combines them with safe-only recommendations from the existing skill router.
+
+```bash
+npx rei-skills-prompt sync
+npx rei-skills-prompt compose "Review telemetry firmware for failure modes"
+npx rei-skills-prompt propose "Review telemetry firmware" --feedback "Add timeout and replay tests"
+```
+
+The MCP server additionally exposes `rei_compose_prompt` and `rei_propose_prompt_improvement` (10 tools total). **Automatic self-improvement means reviewable proposals, not unattended modification or execution.** Untrusted archive prompts never become executable hooks, installed skills or production releases without explicit review.
+
+A separate **Rust Hook Gateway preview** in [rust/rei-hook-gateway](rust/rei-hook-gateway/) accepts authenticated, allowlisted events on local loopback only. It currently **does not execute machine commands or offer remote-device transport**. Those capabilities require mTLS, signed policies, replay protection and independent security validation before activation.
+
+**HOL Guard integration:** REI Skills was contributed to Hashgraph Online's HOL Guard MCP ecosystem in [PR #7538](https://github.com/hashgraph-online/hol-guard/pull/7538) (**merged 15 Nov 2026**). HOL Guard integration is opt-in and separate from the Prompt Archive/Rust gateway; it does not automatically secure or activate these new capabilities.
+
+Architecture, trust boundaries, operation and release gates: [Prompt Automation & Rust Gateway](docs/PROMPT_AUTOMATION.md).
+
+---
+
 ## Install in Seconds
 
 Install the complete skill library or target a specific coding assistant with a single command:

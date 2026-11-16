@@ -20,6 +20,7 @@ const {
   generateUniversalRouterMarkdown,
 } = require("../lib/ai-adapters");
 const { recommendForTask } = require("../lib/smart-router");
+const { loadSnapshot, composePrompt, createImprovementProposal } = require("../lib/prompt-archive");
 const { resolveSkillSourceDir } = require("./install");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -259,6 +260,32 @@ const MCP_TOOLS = [
     },
   },
   {
+    name: "rei_compose_prompt",
+    description: "Generate a read-only, review-required task prompt from locally cached Rootcastle Prompt Archive records and recommended skills. Run rei-skills-prompt sync separately to refresh remote prompts.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        task: { type: "string", description: "Engineering task, maximum 4000 characters." },
+        cache_dir: { type: "string", description: "Optional trusted local cache directory." },
+        max_results: { type: "number", description: "Maximum 1-5 reference prompts." },
+      },
+      required: ["task"],
+    },
+  },
+  {
+    name: "rei_propose_prompt_improvement",
+    description: "Create a review-only proposal from task feedback. Never changes skills, prompts, hooks, or machine state.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        task: { type: "string" },
+        feedback: { type: "string" },
+        cache_dir: { type: "string" },
+      },
+      required: ["task", "feedback"],
+    },
+  },
+  {
     name: "rei_list_ai_targets",
     description:
       "List all 21 supported AI coding assistants, IDEs, CLI agents, and SDK targets with their CLI flags, native rule/skill formats, and invocation hints.",
@@ -457,6 +484,22 @@ function executeToolCall(name, args = {}) {
       format,
       compiledContent: compiled,
     };
+  }
+
+  if (name === "rei_compose_prompt") {
+    const snapshot = loadSnapshot(args.cache_dir || undefined);
+    const rec = recommendForTask(catalog, bundles, workflows, {
+      task: args.task || "", maxResults: 5, safeOnly: true,
+    });
+    return composePrompt(args.task, snapshot, {
+      limit: args.max_results || 3,
+      skills: rec.recommendedSkills.map(s => s.id),
+    });
+  }
+
+  if (name === "rei_propose_prompt_improvement") {
+    return createImprovementProposal(args.task, args.feedback,
+      loadSnapshot(args.cache_dir || undefined));
   }
 
   if (name === "rei_list_ai_targets") {

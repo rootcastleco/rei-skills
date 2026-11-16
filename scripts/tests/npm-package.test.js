@@ -23,8 +23,8 @@ try {
   const pack = JSON.parse(run(npm, ["pack", "--ignore-scripts", "--json", "--pack-destination", tmp]))[0];
   const paths = new Set(pack.files.map((file) => file.path));
   const required = [
-    "bin/install.js", "bin/mcp-server.js", "lib/ai-adapters.js",
-    "lib/smart-router.js", "lib/mcp-safe-install.js",
+    "bin/install.js", "bin/mcp-server.js", "bin/prompt-agent.js", "lib/ai-adapters.js",
+    "lib/smart-router.js", "lib/mcp-safe-install.js", "lib/prompt-archive.js",
     "data/catalog.json", "data/bundles.json", "data/workflows.json",
     "data/rei-rea-manifest.json", "skills/rei-rea-orchestrator/SKILL.md",
     "skills/docx-official/SKILL.md",
@@ -46,7 +46,7 @@ try {
     jsonrpc: "2.0", method: "tools/list", id: 10, params: {},
   });
   const tools = response.result.tools.map((entry) => entry.name);
-  assert.equal(tools.length, 8, "Packaged MCP must expose all eight tools");
+  assert.equal(tools.length, 10, "Packaged MCP must expose all ten tools");
 
   const skill = mcp.executeToolCall("rei_get_skill", { skill_id: "rei-rea-orchestrator" });
   assert(skill.skillMd.includes("rei-rea-orchestrator"));
@@ -70,7 +70,7 @@ try {
   assert.equal(preview.status, "dry-run");
   assert.equal(preview.canInstall, true);
   assert.equal(fs.readdirSync(workspace).length, 0, "Preview must not mutate workspace");
-  console.log("PASS: npm tarball includes runtime, catalog, skill tree, aliases and 8 working MCP tools.");
+  console.log("PASS: npm tarball includes runtime, catalog, skill tree, aliases and 10 working MCP tools.");
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });
 }
