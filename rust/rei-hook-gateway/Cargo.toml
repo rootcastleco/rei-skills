@@ -1,9 +1,9 @@
 [package]
 name = "rei-hook-gateway"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 publish = false
-description = "Local opt-in REI Skills hook gateway; no arbitrary command execution"
+description = "Local opt-in REI Skills typed secure communication gateway with capability policy, replay protection, rate limiting, backpressure, and isolated engineering adapter contracts"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }

@@ -21,6 +21,19 @@ const {
 } = require("../lib/ai-adapters");
 const { recommendForTask } = require("../lib/smart-router");
 const { loadSnapshot, composePrompt, createImprovementProposal } = require("../lib/prompt-archive");
+const { compileWorkflowPlan } = require("../lib/workflow-compiler");
+const {
+  listEngineeringAdapters,
+  getEngineeringAdapter,
+  evaluateEngineeringAdapter,
+} = require("../lib/engineering-adapters");
+const {
+  authorizeToolInvocation,
+  sanitizeToolOutput,
+  getHolGuardIntegrationStatus,
+  getSecurityAuditLog,
+  validateToolRegistration,
+} = require("../lib/hol-guard-policy");
 const { resolveSkillSourceDir } = require("./install");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -296,7 +309,66 @@ const MCP_TOOLS = [
   },
 ];
 
+const EXTENDED_MCP_TOOLS = [
+  {
+    name: "rei_compile_workflow_plan",
+    description:
+      "Compile a typed, dependency-ordered engineering DAG plan with execution mode boundaries and unit checks. Read-only planning tool.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        task: { type: "string", description: "Complex multi-step engineering objective." },
+        files: { type: "array", items: { type: "string" } },
+        safe_only: { type: "boolean" },
+      },
+      required: ["task"],
+    },
+  },
+  {
+    name: "rei_evaluate_adapter",
+    description:
+      "Inspect capability contracts or run deterministic computational verifiers on an engineering tool adapter (kicad, fusion360, embedded, scientific, industrial_measurement).",
+    inputSchema: {
+      type: "object",
+      properties: {
+        adapter_id: { type: "string" },
+        operation: { type: "string" },
+        params: { type: "object" },
+      },
+    },
+  },
+  {
+    name: "rei_security_status",
+    description:
+      "Inspect HOL Guard defense-in-depth local enforcement state, upstream runtime status, and recent sanitized security audit events.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        include_events: { type: "boolean" },
+      },
+    },
+  },
+];
+
+function getActiveMcpTools() {
+  const allowExtended = process.env.REI_MCP_EXTENDED_TOOLS === "1";
+  const candidateTools = allowExtended ? [...MCP_TOOLS, ...EXTENDED_MCP_TOOLS] : MCP_TOOLS;
+  return candidateTools.filter((tool) => validateToolRegistration(tool, { allowExtended }).valid);
+}
+
 function executeToolCall(name, args = {}) {
+  const auth = authorizeToolInvocation(name, args);
+  if (!auth.allowed) {
+    if (auth.findings && auth.findings.some((f) => f.ruleId === "POLICY_UNKNOWN_TOOL")) {
+      throw new Error(`HOL Guard policy denied tool '${name}' (Unknown MCP tool: ${name}): ${auth.reason}`);
+    }
+    throw new Error(`HOL Guard policy denied tool '${name}': ${auth.reason}`);
+  }
+  const rawResult = executeAuthorizedToolCall(name, args);
+  return sanitizeToolOutput(rawResult);
+}
+
+function executeAuthorizedToolCall(name, args = {}) {
   const { catalog, bundles, workflows } = getRegistryData();
 
   if (name === "rei_recommend_skills") {
@@ -509,6 +581,32 @@ function executeToolCall(name, args = {}) {
     };
   }
 
+  if (name === "rei_compile_workflow_plan") {
+    return compileWorkflowPlan(args.task || "", catalog, {
+      files: args.files || [],
+      safeOnly: Boolean(args.safe_only),
+    });
+  }
+
+  if (name === "rei_evaluate_adapter") {
+    if (!args.adapter_id) {
+      return { adapters: listEngineeringAdapters() };
+    }
+    if (!args.operation) {
+      const adapter = getEngineeringAdapter(args.adapter_id);
+      if (!adapter) throw new Error(`Unknown engineering adapter '${args.adapter_id}'`);
+      return adapter;
+    }
+    return evaluateEngineeringAdapter(args.adapter_id, args.operation, args.params || {});
+  }
+
+  if (name === "rei_security_status") {
+    return {
+      ...getHolGuardIntegrationStatus(),
+      recentEvents: args.include_events ? getSecurityAuditLog(20) : undefined,
+    };
+  }
+
   throw new Error(`Unknown MCP tool: ${name}`);
 }
 
@@ -547,7 +645,7 @@ function handleJsonRpcRequest(msg) {
         jsonrpc: "2.0",
         id,
         result: {
-          tools: MCP_TOOLS,
+          tools: getActiveMcpTools(),
         },
       };
     }
@@ -871,6 +969,8 @@ if (require.main === module) {
 
 module.exports = {
   MCP_TOOLS,
+  EXTENDED_MCP_TOOLS,
+  getActiveMcpTools,
   executeToolCall,
   handleJsonRpcRequest,
   startMcpServer,
