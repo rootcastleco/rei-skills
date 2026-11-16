@@ -217,6 +217,27 @@ console.log("Running REI Skill Manager, Smart Router, MCP Server, Universal AI C
     });
     assert(!callSkillRes.result.isError, "MCP rei_get_skill should succeed");
     assert(callSkillRes.result.content[0].text.includes("rei-rea-orchestrator"));
+
+    // Verify new platform CLI subcommands (plan, adapters, security-status)
+    const resPlan = spawnSync(
+      process.execPath,
+      [CLI_PATH, "plan", "Design a 4-channel vibration PCB and Fusion 360 enclosure", "--files", "pcb.kicad_pcb,housing.step", "--json"],
+      { encoding: "utf8" },
+    );
+    assert.strictEqual(resPlan.status, 0, `plan command failed: ${resPlan.stderr}`);
+    const planData = JSON.parse(resPlan.stdout);
+    assert.strictEqual(planData.executionRecord.claimedPhysicalExecution, false);
+    assert(Array.isArray(planData.stages) && planData.stages.length >= 3);
+
+    const resAdapters = spawnSync(process.execPath, [CLI_PATH, "adapters", "--json"], { encoding: "utf8" });
+    assert.strictEqual(resAdapters.status, 0, `adapters command failed: ${resAdapters.stderr}`);
+    const adaptersData = JSON.parse(resAdapters.stdout);
+    assert.strictEqual(adaptersData.total, 5);
+
+    const resSec = spawnSync(process.execPath, [CLI_PATH, "security-status", "--json"], { encoding: "utf8" });
+    assert.strictEqual(resSec.status, 0, `security-status command failed: ${resSec.stderr}`);
+    const secData = JSON.parse(resSec.stdout);
+    assert.strictEqual(secData.localEnforcement.active, true);
   } finally {
     fs.rmSync(tmpExport, { recursive: true, force: true });
   }

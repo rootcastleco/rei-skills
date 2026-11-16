@@ -3,68 +3,72 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/brand/rei-skills-hero-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/brand/rei-skills-hero-light.svg">
-  <img alt="REI Skills — The engineering-grade skill layer for AI agents" src="assets/brand/rei-skills-hero-dark.svg" width="100%">
+  <img alt="REI Skills — Autonomous Engineering Skill Intelligence Platform" src="assets/brand/rei-skills-hero-dark.svg" width="100%">
 </picture>
 
 <br/>
 
 # REI SKILLS
 
-**The engineering-grade skill layer for AI agents.**  
-*Discover. Install. Orchestrate. Verify.*
+**The adaptive, security-conscious engineering skill intelligence platform for AI agents.**  
+*Discover. Route. Orchestrate. Verify.*
 
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
 [![Validated Skills](https://img.shields.io/badge/skills-1423%20validated-228B55)](#explore-the-library)
+[![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-96.4%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
+[![Rust Gateway](https://img.shields.io/badge/Rust%20Gateway-v0.2.0-228B55)](docs/engineering/RUST_GATEWAY_SPEC.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
 
-**[npm package](https://www.npmjs.com/package/rei-skills)** · **[GitHub Pages](https://rootcastleco.github.io/rei-skills/)** · **[Publish workflow](https://github.com/rootcastleco/rei-skills/actions/workflows/publish.yml)**
+**[npm package](https://www.npmjs.com/package/rei-skills)** · **[Interactive Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Publish workflow](https://github.com/rootcastleco/rei-skills/actions/workflows/publish.yml)**
 
-**[Get Started](#install-in-seconds)** · **[Smart Router & MCP](#smart-skill-router--mcp-server)** · **[Live Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Documentation](docs/USAGE.md)** · **[Contribute](#contributing-and-community)**
+**[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Docs & Reports](#engineering-documentation--reports)**
 
 </div>
 
 ---
 
-## Adaptive Prompt Archive, Safe Improvements & Rust Hook Gateway (Preview)
+## Platform Architecture — Autonomous Skill Intelligence
 
-**REI Skills now has an opt-in Prompt Archive adapter** for [Rootcastle Prompt Archive](https://promt.rootcastle.com/). It reads the published JSON catalog manifest, caches a bounded set of prompts, selects relevant reference prompts for an engineering task, and combines them with safe-only recommendations from the existing skill router.
+**REI Skills** evolves a 1,423-skill repository into a verified, evaluated, and defense-in-depth engineering intelligence platform maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)**:
 
-```bash
-npx rei-skills prompt sync
-npx rei-skills prompt compose "Review telemetry firmware for failure modes"
-npx rei-skills prompt propose "Review telemetry firmware" --feedback "Add timeout and replay tests"
+```mermaid
+flowchart LR
+    T[Task Input & Files] --> N[Intent & EN/TR Normalization]
+    N --> HR[Hybrid BM25 + 256-dim Router]
+    HR --> WC[Workflow DAG Compiler]
+    WC --> PA[Prompt Archive v2 SHA-256]
+    PA --> HG[HOL Guard Deny-by-Default Policy]
+    HG --> EA[Capability-Aware Engineering Adapters]
+    HG --> RG[Rust Secure Gateway v0.2.0 Loopback IPC]
+    EA --> OB[Observability & Provenance]
+    RG --> OB
+    OB --> EV[Split Evaluation Engine]
+    EV --> IM[Controlled PR Draft Generator]
 ```
 
-The MCP server additionally exposes `rei_compose_prompt` and `rei_propose_prompt_improvement` (10 tools total). **Automatic self-improvement means reviewable proposals, not unattended modification or execution.** Untrusted archive prompts never become executable hooks, installed skills or production releases without explicit review.
+<div align="center">
+  <img src="assets/brand/architecture.svg" alt="REI Skills Platform Architecture" width="100%">
+</div>
 
-A separate **Rust Hook Gateway preview** in [rust/rei-hook-gateway](rust/rei-hook-gateway/) accepts authenticated, allowlisted events on local loopback only. It currently **does not execute machine commands or offer remote-device transport**. Those capabilities require mTLS, signed policies, replay protection and independent security validation before activation.
-
-**HOL Guard integration:** REI Skills was contributed to Hashgraph Online's HOL Guard MCP ecosystem in [PR #7538](https://github.com/hashgraph-online/hol-guard/pull/7538) (**merged 15 Nov 2026**). HOL Guard integration is opt-in and separate from the Prompt Archive/Rust gateway; it does not automatically secure or activate these new capabilities.
-
-Architecture, trust boundaries, operation and release gates: [Prompt Automation & Rust Gateway](docs/PROMPT_AUTOMATION.md).
-
----
-
-## 1,423 Validated Skills — Original Engineering Expansion
-
-**+528 new task-focused skills** across 33 engineering specialties (59.0% catalog growth), with the original 895 preserved. Coverage includes GNSS, vehicle telematics, JT808, BLE, cellular IoT, RTOS, firmware OTA, IoT security, Rust, industrial Ethernet, machinery vibration, rotor balancing, data acquisition, PCB, EMC, time-series data, edge ML, event streaming, cloud operations, mobile field apps, binary forensics, hardware-in-the-loop testing, safety assurance, optimization and reproducible research.
-
-All 528 new skills are original Rootcastle-authored, independently named, source-tagged and generated reproducibly from curated task briefs. They include explicit invocation conditions, engineering input and unit contracts, negative-case checks, and PASS/FAIL/NOT VERIFIED evidence requirements.
-
-**Quality boundary:** Passing structural and security validation does not constitute actual machine testing, metrological calibration or standards certification. Unverified field results remain NOT VERIFIED.
-
-**CAD and Electronics:** 128 source-grounded skills for circuit design, SPICE, KiCad ERC/DRC, Fusion 360 parametric geometry and Python API, 3D CAD assemblies, PCB–enclosure fit, and CAM/3D printing. Autodesk Electronics API preview is read-only for design changes. See [CAD/Electronics/Fusion integration](docs/CAD_ELECTRONICS_FUSION.md).
-
-See [Technical Skill Expansion](docs/TECHNICAL_SKILL_EXPANSION.md) for the 33-domain inventory, SHA-256 provenance manifest, reproducible generator, safety boundaries and test instructions.
+| Subsystem | Core Implementation | Verification Suite | Key Guarantee |
+| :--- | :--- | :--- | :--- |
+| **Hybrid Semantic Router** | [`lib/hybrid-router.js`](lib/hybrid-router.js), [`lib/smart-router.js`](lib/smart-router.js) | [`hybrid-router.test.js`](scripts/tests/hybrid-router.test.js) | Offline BM25 + 256-dim vectors, EN/TR normalization, `legacy` fallback |
+| **Workflow DAG Compiler** | [`lib/workflow-compiler.js`](lib/workflow-compiler.js) | [`workflow-compiler.test.js`](scripts/tests/workflow-compiler.test.js) | Topological ordering, SI/Fusion unit checks, `claimedPhysicalExecution: false` |
+| **Rootcastle Prompt Archive** | [`lib/prompt-archive.js`](lib/prompt-archive.js) | [`prompt-archive.test.js`](scripts/tests/prompt-archive.test.js) | SHA-256 verification, injection scan, offline TTL/bundled fallback |
+| **HOL Guard Policy Layer** | [`lib/hol-guard-policy.js`](lib/hol-guard-policy.js), [`bin/mcp-server.js`](bin/mcp-server.js) | [`hol-guard-policy.test.js`](scripts/tests/hol-guard-policy.test.js) | Deny-by-default MCP authorization, secret redaction, traversal gates |
+| **Engineering Adapters** | [`lib/engineering-adapters.js`](lib/engineering-adapters.js) | [`engineering-adapters.test.js`](scripts/tests/engineering-adapters.test.js) | Explicit capability & hardware boundaries across 5 engineering domains |
+| **Rust Secure Gateway** | [`rust/rei-hook-gateway`](rust/rei-hook-gateway/) (`v0.2.0`) | `cargo test` (`7/7` passing) | Loopback IPC, replay/rate-limit/backpressure, zero shell exec, mTLS closed |
+| **Observability & Self-Improvement** | [`lib/observability.js`](lib/observability.js), [`lib/evaluation-engine.js`](lib/evaluation-engine.js), [`lib/improvement-engine.js`](lib/improvement-engine.js) | [`improvement-engine.test.js`](scripts/tests/improvement-engine.test.js) | Non-regression held-out gating; review-only PR drafts (`automaticWrites: false`) |
+| **Multi-AI Installer & Safe MCP Staging** | [`bin/install.js`](bin/install.js), [`lib/ai-adapters.js`](lib/ai-adapters.js), [`lib/mcp-safe-install.js`](lib/mcp-safe-install.js) | [`installer.test.js`](scripts/tests/installer.test.js), [`mcp-safe-installer.test.js`](scripts/tests/mcp-safe-installer.test.js) | 21 AI targets, transactional backup/rollback, Windows symlink safety |
 
 ---
 
 ## Install in Seconds
 
-Install the complete skill library or target a specific coding assistant with a single command:
+Install the complete **1423 validated skills** library or project focused skills into any assistant with a single command:
 
 ```bash
 npx rei-skills
@@ -72,7 +76,7 @@ npx rei-skills
 
 ### Target Any AI Coding Assistant, IDE, or Agent SDK (`21` Targets Supported)
 
-REI Skills includes a built-in **Universal Multi-AI Transpiler & Adapter Engine** ([`lib/ai-adapters.js`](lib/ai-adapters.js)) that natively supports `SKILL.md` directories, Cursor `.mdc` rules, GitHub Copilot `.instructions.md` + `.prompt.md` files, Windsurf Cascade rules, Cline/RooCode/Continue/Aider/AmazonQ/Zed/Junie rules, universal `AGENTS.md` routers, and OpenAI/Anthropic/Gemini Function-Calling JSON schemas:
+The **Universal Multi-AI Transpiler & Adapter Engine** ([`lib/ai-adapters.js`](lib/ai-adapters.js)) natively projects `SKILL.md` directories, Cursor `.mdc` rules, GitHub Copilot `.instructions.md` + `.prompt.md` files, Windsurf Cascade rules, Cline/RooCode/Continue/Aider/AmazonQ/Zed/Junie rules, universal `AGENTS.md` routers, and OpenAI/Anthropic/Gemini Function-Calling JSON schemas:
 
 ```bash
 # CLI & IDE Skill Directories (SKILL.md + references + scripts)
@@ -104,33 +108,95 @@ npx rei-skills add rei-rea --sdk -w      # OpenAI / Anthropic / Gemini / LangGra
 npx rei-skills add rei-rea --all-ai --path ./my-project
 ```
 
-### Immediate Next Steps
+### Unified CLI Quick Reference
 
 ```bash
-# 1. Smart Intent & Stack Router (English & Turkish + workspace file detection)
-npx rei-skills recommend "Reverse engineer Android APK and firmware" --files app.apk,router.bin
+# 1. Hybrid Intent & Stack Routing (English & Turkish + workspace file detection)
+npx rei-skills recommend "Android APK ve firmware tersine mühendislik analizi" --files app.apk,router.bin
 
-# 2. Start the built-in Smart Skill Management MCP Server (stdio JSON-RPC 2.0)
-npx rei-skills mcp
+# 2. Dependency-Aware Workflow DAG Planning (computational vs hardware/CAD boundaries)
+npx rei-skills plan "Design a 4-channel vibration PCB and its Fusion 360 enclosure" --files pcb.kicad_pcb,housing.step --json
 
-# 3. View all 21 supported AI assistants, native formats, and invocation hints
-npx rei-skills targets
+# 3. Evaluate Router Performance on Held-Out Benchmark Split (train / dev / eval / all)
+npx rei-skills evaluate --split eval
 
-# 4. Inspect your environment, installed AI directories, and REI REA status
-npx rei-skills doctor
+# 4. Inspect Capability-Aware Engineering Adapters & HOL Guard Security Status
+npx rei-skills adapters --json
+npx rei-skills security-status --json
 
-# 5. Search across 1423 skills by domain, keyword, risk, or upstream source
-npx rei-skills search firmware
+# 5. Rootcastle Prompt Archive Sync, Composition & Controlled Improvement Drafts
+npx rei-skills prompt sync
+npx rei-skills prompt compose "Review telemetry firmware for failure modes"
+npx rei-skills improve --feedback "Add SPICE bench parity cross-check" --json
+
+# 6. Catalog Discovery, Diagnostics, MCP Server & Format Export
+npx rei-skills search firmware           # Search across 1423 skills by domain, keyword, risk, or upstream source
 npx rei-skills list --category reverse-engineering
-
-# 6. Install only a focused bundle or compile to any target format
-npx rei-skills add rei-rea --claude --print-mcp
+npx rei-skills targets
+npx rei-skills doctor
+npx rei-skills mcp                       # Start stdio JSON-RPC 2.0 MCP Server
 npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
 ```
 
-### Smart Skill Router & MCP Server
+---
 
-Instead of loading all 1423 skills into an AI agent's context window, REI Skills includes a **Smart Intent & Stack Router** ([`lib/smart-router.js`](lib/smart-router.js)) and a zero-dependency **Model Context Protocol (MCP) Server** ([`bin/mcp-server.js`](bin/mcp-server.js)) that any MCP-capable client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini CLI, Codex, Antigravity) can connect to:
+## Hybrid Semantic Skill Router & Benchmark Evaluation
+
+Instead of injecting all 1,423 skill manuals into an agent's context window, [`lib/hybrid-router.js`](lib/hybrid-router.js) ranks relevant skills in real time using:
+
+- **BM25 Weighted Inverted Index** (`WeakMap`-cached per catalog snapshot) paired with **256-dim offline character-trigram and domain-concept embeddings** (plus optional external `embeddingProvider` injection).
+- **Bilingual EN/TR Normalization:** Turkish ASCII folding, suffix stemming, domain lexicon expansion, and boundary-matched `PHRASE_RULES`.
+- **Context, Risk & Uncertainty Controls:** File extension signals (`.kicad_pcb`, `.step`, `.wasm`, `.apk`, `.tsx`, etc.), `safeOnly` risk filtering excluding `critical`/`offensive` skills, overlap detection, prerequisite domain graph hints, out-of-scope uncertainty gating (`high_uncertainty_or_out_of_scope`), and deterministic fallback (`engine: "legacy"`).
+
+Measured across the 260-task benchmark ([`data/benchmarks/routing-benchmark-v1.json`](data/benchmarks/routing-benchmark-v1.json), split `train` = 80 / `dev` = 60 / `eval` = 120 held-out; report in [`data/benchmarks/routing-evaluation-report.json`](data/benchmarks/routing-evaluation-report.json)):
+
+| Split | Router Engine | Recall@3 | MRR | nDCG@5 | Out-of-Scope FPR | Crit Misroute | `p95` Latency | `positive_tr` R@3 |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| **`train`** (80) | Legacy | 88.89% | 0.8412 | 0.7376 | 25.0% | 0 | 31.103 ms | 60.00% |
+| **`train`** (80) | **Hybrid** | **98.61%** | **0.9132** | **0.8457** | **0.0%** | **0** | **3.379 ms** | **100.00%** |
+| **`dev`** (60) | Legacy | 89.29% | 0.8603 | 0.7854 | 25.0% | 0 | 25.549 ms | 62.50% |
+| **`dev`** (60) | **Hybrid** | **94.64%** | **0.8786** | **0.8214** | **0.0%** | **0** | **3.590 ms** | **87.50%** |
+| **`eval`** (120 held-out) | Legacy | 91.07% | 0.8375 | 0.7587 | 37.5% | 0 | 26.035 ms | 70.00% |
+| **`eval`** (120 held-out) | **Hybrid** | **96.43%** | **0.8897** | **0.8456** | **0.0%** | **0** | **2.919 ms** | **100.00%** |
+
+Full breakdown: [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md).
+
+---
+
+## Workflow DAG Compiler & Capability-Aware Engineering Adapters
+
+### Typed Workflow Orchestration ([`lib/workflow-compiler.js`](lib/workflow-compiler.js))
+
+For complex multi-domain requests (such as *"Design a four-channel vibration measurement PCB and its Fusion 360 enclosure"*), `compileWorkflowPlan` constructs an acyclic topological DAG with unit compatibility checks (`mm` ↔ `cm`, `kHz` ↔ `Hz`), resource budgets, retry policies, explicit uncertainty states, and strict execution boundary classifications:
+
+- `COMPUTATIONAL_ONLY` — deterministic software planning, math, schema, and code verification.
+- `REQUIRES_CAD_OR_EDA_SOFTWARE` — requires external KiCad / Fusion 360 tooling for geometry or PCB edits.
+- `REQUIRES_CALIBRATED_INSTRUMENT_OR_HARDWARE` — requires physical sensors, DAQ hardware, or bench equipment.
+- `REQUIRES_HUMAN_APPROVAL` — explicit operator signoff prior to manufacturing, flashing, or actuation.
+
+Planning never fabricates physical outcomes (`executionRecord.claimedPhysicalExecution: false`).
+
+### Capability-Aware Engineering Adapters ([`lib/engineering-adapters.js`](lib/engineering-adapters.js))
+
+| Adapter ID | Domain | Safety Class | Computational Verifiers Implemented | External Software / Hardware Boundary |
+| :--- | :--- | :--- | :--- | :--- |
+| **`kicad`** | ECAD / PCB Design | `state_changing` | `planKicadVerification` (dry-run `kicad-cli` ERC/DRC plans, fab rules) | Requires `kicad-cli` on host to run actual checks; [`cad_ecad_verify.py`](scripts/cad_ecad_verify.py) |
+| **`fusion360`** | MCAD / Enclosures | `state_changing` | `convertFusionUnits` (`1 cm` DB unit math), `verifyEnclosureFit` | Requires Fusion Desktop Add-In for live timeline BRep edits |
+| **`embedded`** | GNSS / CAN / Firmware | `potentially_hazardous` | `validateNmeaSentence` (XOR checksum + GGA), `parseJ1939CanId` (29-bit PGN/SA) | Hardware flashing / bench telemetry requires physical target + approval |
+| **`scientific`** | Physics & Optimization | `read_only` | `verifyDimensionalConsistency` (7-base SI), `evaluateOptimizationFeasibility` | Pure numerical algebra; no closed-loop lab actuation |
+| **`industrial_measurement`** | Vibration & Balancing | `potentially_hazardous` | `validateSensorCalibration`, `computeVibrationFftMetrics`, `calculateSinglePlaneBalance` | Marked `COMPUTATIONAL_ONLY`; lockout/tagout & operator signoff mandatory |
+
+### Domain Expansion Coverage (`+528` Original Engineering Skills)
+
+- **33 Technical Specialties:** Integrated alongside the original 895 skills (`528 + 895 = 1,423`) covering GNSS, JT808 telematics, BLE, cellular IoT, RTOS, firmware OTA, IoT security, Rust, industrial Ethernet, machinery vibration, rotor balancing, DAQ, PCB/EMC, time-series pipelines, edge ML, binary forensics, HIL testing, safety assurance, and reproducible research ([`docs/TECHNICAL_SKILL_EXPANSION.md`](docs/TECHNICAL_SKILL_EXPANSION.md)).
+- **128 CAD, Electronics & Fusion 360 Skills:** Circuit design, SPICE parity, KiCad ERC/DRC, Fusion 360 parametric modeling & Python API, PCB–enclosure tolerance fits, and CAM ([`docs/CAD_ELECTRONICS_FUSION.md`](docs/CAD_ELECTRONICS_FUSION.md)).
+- **Quality boundary:** Passing schema and security audits does not constitute physical bench verification, metrological calibration, or standards certification; unmeasured hardware steps remain **NOT VERIFIED**.
+
+---
+
+## Smart MCP Server & HOL Guard Defense-in-Depth
+
+Connect any MCP client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini CLI, Codex, Antigravity) to [`bin/mcp-server.js`](bin/mcp-server.js) and optionally [`rootcastleco/Rei-Reverse-engineer`](https://github.com/rootcastleco/Rei-Reverse-engineer):
 
 ```json
 {
@@ -147,57 +213,38 @@ Instead of loading all 1423 skills into an AI agent's context window, REI Skills
 }
 ```
 
-- **10 Dynamic MCP Tools:** `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_install_skill`, `rei_compile_skill`, `rei_list_ai_targets`, `rei_compose_prompt`, `rei_propose_prompt_improvement`.
+### Registered MCP Tool Surface (`10` Core Tools + `3` Opt-In Extended)
 
-#### Safe MCP skill installation
+- **Default Core Tools (`10`):**
+  - *Policy Tier `inherit` (read / recommend / compose / compile):* `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_compile_skill`, `rei_list_ai_targets`, `rei_compose_prompt`, `rei_propose_prompt_improvement`.
+  - *Policy Tier `review` (staged workspace mutation):* `rei_install_skill` (`dry_run` preview, collision detection, `preview_token`, private `.rei-skills-backups/<transaction-id>/`, synchronous rollback).
+- **Opt-In Extended Tools (`REI_MCP_EXTENDED_TOOLS=1`):** `rei_compile_workflow_plan`, `rei_evaluate_adapter`, `rei_security_status`.
 
-`rei_install_skill` stages the requested skill(s) outside the workspace and checks **every target file** before making changes. Unlike the earlier direct-write MCP path, it now supports a read-only workspace preview, explicit conflict policy, SHA-256 change detection, backups, and synchronous rollback:
+### HOL Guard Integration & Local Policy Engine ([`lib/hol-guard-policy.js`](lib/hol-guard-policy.js))
 
-1. Preview: `{"target_name":"rei-rea-orchestrator","ai_assistant":"cursor","workspace_path":"/path/to/existing-project","dry_run":true}`. The result includes file counts, collisions, `canInstall`, and a `previewToken`. Preview does not change the target workspace.
-2. For a fresh install without conflicts, call the tool without `dry_run` (default `conflict_policy="abort"`).
-3. If files already exist, preview again with `"conflict_policy":"backup","dry_run":true`; inspect replacements and then call with `"conflict_policy":"backup","preview_token":"<exact previewToken>"`. Any modified destination invalidates the token and requires a new preview.
-4. The installer copies original files into `<workspace>/.rei-skills-backups/<transaction-id>/` with a JSON manifest before replacing them. It automatically restores touched files when a synchronous install fails. Interrupted process/power loss requires recovery from the preserved backup; installation across multiple files is **not** a filesystem-atomic transaction.
-
-Safety boundaries: existing workspaces only; unknown skill IDs and symlinks in destination paths are rejected; generated `AGENTS.md`, Cursor rules, and Copilot prompts are included in the same preflight. This intentionally rejects legacy silent overwrites: clients that update existing skills must opt into explicit backup mode.
-
-- **Interactive Web Hub:** Try the live **Smart AI Task & Stack Router** in your browser at **[`https://rootcastleco.github.io/rei-skills/`](https://rootcastleco.github.io/rei-skills/)**.
+- **Upstream Contribution:** REI Skills was contributed to Hashgraph Online's HOL Guard MCP ecosystem in [PR #7538](https://github.com/hashgraph-online/hol-guard/pull/7538) (**merged 15 Nov 2026**, schema `guard.mcp-server-contribution.v1`).
+- **Local Deny-by-Default Enforcement:** `executeToolCall` routes every request and output through [`lib/hol-guard-policy.js`](lib/hol-guard-policy.js) — enforcing unknown-tool denial, prompt-injection & tool-poisoning detection, dangerous machine command blocking, credential/system path confinement (`~/.ssh`, `~/.aws`, `.npmrc`, traversal guards), supply-chain checks, and automatic API key / token output redaction.
+- **Honest Runtime Disclosure:** `getHolGuardIntegrationStatus()` dynamically checks for `@hashgraphonline/hol-guard`; the external HOL Guard package is **not** installed locally in this repository by default, so local enforcement runs independently via `lib/hol-guard-policy.js` without misreporting external coverage.
 
 ---
 
-## Why REI Skills?
+## Rootcastle Prompt Intelligence, Rust Gateway `v0.2.0` & Continuous Improvement
 
-AI coding assistants perform best when given structured domain procedures, explicit boundaries, and verifiable checklists rather than ad-hoc prompts. **REI Skills** provides an indexed, schema-validated skill layer maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)**.
-
-| Capability | Engineering Implementation |
-| :--- | :--- |
-| **Universal `SKILL.md` Standard** | Every skill is validated for YAML frontmatter integrity, trigger rules (`## When to Use`), risk classification, and local reference links. |
-| **Safe, Non-Destructive CLI Manager** | `bin/install.js` verifies repository ownership before migrating legacy installs, creates backups, supports `--dry-run`, and materializes symlinks on Windows without Administrator privileges. |
-| **Compatibility Projection** | `npx rei-skills export --agent <target> --out <dir>` projects skills into narrow frontmatter schemas while preserving `agents/openai.yaml` and reference files. |
-| **Curated Bundles & Workflows** | Role-based skill bundles ([`docs/BUNDLES.md`](docs/BUNDLES.md)) and multi-step execution playbooks ([`docs/WORKFLOWS.md`](docs/WORKFLOWS.md)) coordinate complex engineering tasks. |
-| **Evidence-First Reverse Engineering** | First-class integration with **[REI REA](https://github.com/rootcastleco/Rei-Reverse-engineer)**: 12 specialist reverse-engineering skills plus an optional Python CLI and 14-tool local stdio MCP server. |
-| **Transparent Provenance & Risk Tiers** | Every skill declares its `risk` (`none`, `safe`, `critical`, `offensive`) and upstream `source` (`rootcastle-rei`, `microsoft/skills`, `anthropics/skills`, `openai/skills`, `vercel-labs/agent-skills`, or community). |
+- **Prompt Archive v2 ([`lib/prompt-archive.js`](lib/prompt-archive.js)):** Fetches versioned references from `https://promt.rootcastle.com/` with HTTPS allowlisting, SHA-256 `contentSha256` verification, injection scanning, language/domain tagging, incremental manifest caching, TTL expiry with `stale_offline_fallback` + `bundled_fallback`, snapshot diffing, and progressive `maxContextChars` budgeting. External prompts remain explicitly marked `UNTRUSTED_EXTERNAL_REFERENCE` and never install executable hooks or grant tool privileges.
+- **Rust Secure Communication Gateway (`v0.2.0`, [`rust/rei-hook-gateway`](rust/rei-hook-gateway/)):** Typed local loopback IPC gateway (`127.0.0.1:9783`, `serde`/`serde_json`/`subtle`, zero host shell execution) enforcing constant-time token compare, `SafetyClass` gates (`read_only`, `state_changing`, `potentially_hazardous`), isolated engineering adapter contracts (`kicad`, `fusion360`, `embedded_diagnostics`, `telemetry`, `lab_equipment`), bounded nonce/timestamp replay protection, idempotent request deduplication, sliding-window rate limits, `max_in_flight` backpressure, cancellation, sanitized audit ring buffer, and fail-closed non-loopback `validate_bind_address` (`remote_enabled: false` until verified `mTLS` credentials + SAN allowlist are supplied). See [`docs/engineering/RUST_GATEWAY_SPEC.md`](docs/engineering/RUST_GATEWAY_SPEC.md).
+- **Controlled Self-Improvement ([`lib/observability.js`](lib/observability.js), [`lib/evaluation-engine.js`](lib/evaluation-engine.js), [`lib/improvement-engine.js`](lib/improvement-engine.js)):** Executes sandboxed `Observe -> Detect Weakness -> Form Hypothesis -> Generate Candidate -> Test -> Compare Baseline -> Security Review -> Create PR Draft` experiments across `dev` and held-out `eval` splits, rejecting unsafe or non-beneficial mutations and outputting reviewable PR drafts with rollback plans (`automaticWrites: false`, `autoMerge: false`, `autoPublish: false`).
 
 ---
 
-## The Ecosystem
+## Interactive Web Hub
 
-<div align="center">
-  <img src="assets/brand/architecture.svg" alt="REI Skills Platform Architecture" width="100%">
-</div>
-
-REI Skills connects five platform components:
-
-1. **Universal Skill Registry (`skills/`, `data/catalog.json`):** 1423 categorized, schema-checked skills with progressive reference loading (`references/`, `scripts/`, `examples/`).
-2. **REI Skill Manager (`bin/install.js`):** Cross-platform CLI for installing, searching, inspecting, verifying, and exporting skills.
-3. **Workflow Engine (`data/workflows.json`, `docs/WORKFLOWS.md`):** Structured playbooks that sequence multiple compatible skills for SaaS delivery, AppSec auditing, agent engineering, DDD modeling, and reverse engineering.
-4. **REI Reverse Engineering (`skills/rei-*`, `data/rei-rea-manifest.json`):** 12 specialist reverse-engineering skills synchronized from `rootcastleco/Rei-Reverse-engineer` (`v0.2.0 @ 09fbc7b`), with optional connection to the local `rei-rea` CLI/MCP workbench.
-5. **Developer Hub (`CATALOG.md`, `docs/site/index.html`):** Offline-capable static search interface and contributor documentation.
+Explore the searchable catalog, live Hybrid Intent & Stack Router (EN/TR), pre-compiled **Workflow DAG Preview**, **Benchmark Evaluation Dashboard**, **HOL Guard Status**, **Prompt Archive Provenance**, and **Rust Gateway** architecture on **[GitHub Pages](https://rootcastleco.github.io/rei-skills/)** or build locally via `npm run doc-site` ([`docs/site/index.html`](docs/site/index.html)).
 
 ---
 
 ## Explore the Library
 
-The registry currently contains **1423 validated skills** across **10 engineering categories**. Counts below are generated directly from [`data/catalog.json`](data/catalog.json):
+The registry currently contains **1423 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
 
 <!-- CATEGORY_TABLE_START -->
 | Category | Count | Focus Area | Representative Skills |
@@ -215,7 +262,7 @@ The registry currently contains **1423 validated skills** across **10 engineerin
 <!-- CATEGORY_TABLE_END -->
 
 - **Full Markdown Catalog:** [`CATALOG.md`](CATALOG.md)
-- **Interactive Searchable Catalog:** [`docs/site/index.html`](docs/site/index.html)
+- **Interactive Web Hub:** [`docs/site/index.html`](docs/site/index.html)
 - **Curated Role Bundles:** [`docs/BUNDLES.md`](docs/BUNDLES.md) (`rei-rea`, `core-dev`, `security-core`, `k8s-core`, `data-core`, `ops-core`)
 - **Execution Workflows:** [`docs/WORKFLOWS.md`](docs/WORKFLOWS.md)
 
@@ -223,14 +270,10 @@ The registry currently contains **1423 validated skills** across **10 engineerin
 
 ## REI Reverse Engineering (REI REA)
 
-REI Skills integrates the **[REI Reverse Engineering Workbench (`rootcastleco/Rei-Reverse-engineer`)](https://github.com/rootcastleco/Rei-Reverse-engineer)** as a first-class engineering module.
+REI Skills integrates the **[REI Reverse Engineering Workbench (`rootcastleco/Rei-Reverse-engineer`)](https://github.com/rootcastleco/Rei-Reverse-engineer)** as a first-class engineering module:
 
-### Architectural Separation: Bundled Guidance vs. Optional Workbench
-
-- **Included by default in `rei-skills`:** **12 specialist agent skills** (`skills/rei-*`) that guide AI assistants through evidence-first triage, SHA-256 artifact identity verification, format-specific analysis, and confidence tracking (`observed`, `inferred`, `unknown`).
-- **Optional Python/MCP Workbench (`rootcastle-rei-rea` v0.2.0):** A standalone, dependency-free Python 3.10+ CLI and **14-tool local stdio MCP server** installed separately from [`rootcastleco/Rei-Reverse-engineer`](https://github.com/rootcastleco/Rei-Reverse-engineer). Installing `rei-skills` never silently installs Python packages or executes external binaries.
-
-### The 12 Specialist REI REA Skills
+- **Bundled by default in `rei-skills`:** **12 specialist agent skills** (`skills/rei-*`) guiding evidence-first triage, SHA-256 artifact identity verification, format-specific inspection, and confidence tracking (`observed`, `inferred`, `unknown`).
+- **Optional Python/MCP Workbench (`rootcastle-rei-rea` v0.2.0):** Standalone Python 3.10+ CLI and **14-tool local stdio MCP server** installed separately without mutating user environments automatically.
 
 | Skill | Investigation Scope |
 | :--- | :--- |
@@ -247,17 +290,7 @@ REI Skills integrates the **[REI Reverse Engineering Workbench (`rootcastleco/Re
 | [`rei-wasm-and-managed`](skills/rei-wasm-and-managed/SKILL.md) | WebAssembly v1 modules, .NET CIL assemblies, and JVM bytecode analysis. |
 | [`rei-web-and-protocols`](skills/rei-web-and-protocols/SKILL.md) | HAR, PCAP/PCAPNG captures, telemetry frames, and protocol state-machine reconstruction. |
 
-### Accurate Capability States (REI REA v0.2.0)
-
-| Capability State | Scope in v0.2.0 | Verification Boundary |
-| :--- | :--- | :--- |
-| **Cataloged (`124` tools)** | Metadata records in `tools.json` with tags and homepages. | Discovery only; does **not** imply local installation or execution. |
-| **PATH-Detected** | Local executable probing via `rei-rea tools doctor`. | Confirms binary name on `PATH`; does not verify version or license. |
-| **Adapter-Supported (`11` tools)** | `file`, `readelf`, `objdump`, `llvm-objdump`, `llvm-readobj`, `nm`, `exiftool`, `otool`, `aapt2`, `rabin2`, `rz-bin`. | Requires local binary + explicit `--allow-external` flag; runs without a shell. |
-| **Built-In Tested** | Bounded PE, ELF, and WebAssembly v1 parsers, SHA-256 cases, SQLite casebook, 14 MCP tools. | Read-only stdlib implementation tested on Linux, macOS, and Windows. |
-| **Planned** | Live Ghidra/IDA/JADX/Frida session providers; upstream `morluto/rea` adapter. | Documented roadmap items; not active in v0.2.0. |
-
-👉 **Read the full integration guide:** [`docs/REI_REA_INTEGRATION.md`](docs/REI_REA_INTEGRATION.md) · **Run the reproducible demo:** [`examples/rei-rea-demo/`](examples/rei-rea-demo/README.md)
+👉 **Full integration guide:** [`docs/REI_REA_INTEGRATION.md`](docs/REI_REA_INTEGRATION.md) · **Reproducible demo:** [`examples/rei-rea-demo/`](examples/rei-rea-demo/README.md)
 
 ---
 
@@ -269,11 +302,6 @@ REI Skills integrates the **[REI Reverse Engineering Workbench (`rootcastleco/Re
 $ npx rei-skills add rei-rea --path ./.agent/skills --local
 
 ✅ REI Skills installed (12 items) to ./.agent/skills
-🔌 Optional REI REA Runtime & MCP Workbench Setup:
-   Skills are read-only agent instructions. To enable the optional local Python CLI & 14-tool MCP server:
-     git clone https://github.com/rootcastleco/Rei-Reverse-engineer.git
-     cd Rei-Reverse-engineer && python -m pip install -e .
-     rei-rea tools doctor
 ```
 
 ```text
@@ -284,27 +312,9 @@ $ npx rei-skills info rei-rea-orchestrator
    Risk Level:  safe
    Provenance:  rootcastle-rei
    Path:        skills/rei-rea-orchestrator/SKILL.md
-   Tags:        reverse-engineering, binary-analysis, orchestrator, mcp, rei-rea, triage
-   Description: Route authorized reverse-engineering investigations across binaries, APKs, Electron, firmware, and WASM using REI REA.
-   Files:       agents/openai.yaml, references/QUICKSTART.md, references/workflow.md, scripts/doctor.py, SKILL.md
-   REI REA:     Specialist Reverse-Engineering Skill (Upstream SHA-256: 9f50e748bcad…)
 ```
 
-### 2. Coordinate an Engineering Workflow in Your Agent
-
-Invoke skills directly in Claude Code, Cursor, Codex, Gemini CLI, or Antigravity:
-
-```text
-# SaaS Architecture & Implementation Workflow
-Use @concise-planning and @backend-architect to define the API contract and PostgreSQL schema for our multi-tenant telemetry ingestion service, then validate query indexing with @postgres-best-practices.
-
-# Evidence-Led Reverse Engineering Workflow
-Use @rei-rea-orchestrator and @rei-binary-intelligence to inspect examples/rei-rea-demo/fixtures/telemetry-filter-v2.wasm, compare it against telemetry-filter-v1.wasm, and record observed structural differences.
-```
-
-### 3. Inspect and Diff Harmless WebAssembly Fixtures with REI REA
-
-Using the redistributable fixtures in [`examples/rei-rea-demo/fixtures/`](examples/rei-rea-demo/README.md) with the optional `rei-rea` CLI installed:
+### 2. Inspect Harmless WebAssembly Fixtures with REI REA
 
 ```bash
 rei-rea diff \
@@ -312,7 +322,7 @@ rei-rea diff \
   examples/rei-rea-demo/fixtures/telemetry-filter-v2.wasm
 ```
 
-Verified output excerpt ([`examples/rei-rea-demo/DEMO_OUTPUT.json`](examples/rei-rea-demo/DEMO_OUTPUT.json)):
+Verified excerpt ([`examples/rei-rea-demo/DEMO_OUTPUT.json`](examples/rei-rea-demo/DEMO_OUTPUT.json)):
 
 ```json
 {
@@ -320,18 +330,8 @@ Verified output excerpt ([`examples/rei-rea-demo/DEMO_OUTPUT.json`](examples/rei
   "before_sha256": "a86707e622921126c88d3b27142cb9404320197c19c45ec4fb81a2a4e908949f",
   "after_sha256": "766cc87ddc6f9df8964a05f2da01e7a0c8bf8b8370b53646d57b954b5b20ba59",
   "structural_changes": {
-    "imports": {
-      "added": [
-        { "module": "env", "name": "audit_log_frame", "kind": 0 }
-      ],
-      "removed": []
-    },
-    "exports": {
-      "added": [
-        { "name": "validate_packet_header", "kind": 0, "index": 3 }
-      ],
-      "removed": []
-    }
+    "imports": { "added": [{ "module": "env", "name": "audit_log_frame", "kind": 0 }], "removed": [] },
+    "exports": { "added": [{ "name": "validate_packet_header", "kind": 0, "index": 3 }], "removed": [] }
   }
 }
 ```
@@ -340,56 +340,63 @@ Verified output excerpt ([`examples/rei-rea-demo/DEMO_OUTPUT.json`](examples/rei
 
 ## Compatibility
 
-Compatibility claims in REI Skills are backed by automated schema validation and installer verification (`scripts/tests/installer.test.js`):
+Compatibility across adapters is verified via automated schema validation and installer tests ([`scripts/tests/installer.test.js`](scripts/tests/installer.test.js), [`scripts/tests/mcp-safe-installer.test.js`](scripts/tests/mcp-safe-installer.test.js), [`scripts/tests/npm-package.test.js`](scripts/tests/npm-package.test.js)):
 
 | AI Assistant / Client | Target Directory | Installer Flag | Verification Status | Invocation Pattern |
 | :--- | :--- | :--- | :--- | :--- |
 | **Claude Code** | `~/.claude/skills` | `--claude` | **Tested** (Installer + YAML schema + symlink materialization) | `/skill-name` or `@skill-name` |
-| **OpenAI Codex CLI** | `~/.codex/skills` | `--codex` | **Tested** (Includes `agents/openai.yaml` metadata in REI REA skills) | `Use @skill-name ...` |
+| **OpenAI Codex CLI** | `~/.codex/skills` | `--codex` | **Tested** (`agents/openai.yaml` metadata preserved) | `Use @skill-name ...` |
 | **Gemini CLI** | `~/.gemini/skills` | `--gemini` | **Tested** (Installer + `SKILL.md` frontmatter parser) | `Use skill-name to ...` |
-| **Cursor IDE** | `~/.cursor/skills` | `--cursor` | **Tested** (Installer + MCP config backup generator) | `@skill-name` in Cursor Chat |
+| **Cursor IDE** | `~/.cursor/skills` | `--cursor` | **Tested** (Installer + `.cursor/rules/*.mdc` + MCP backup) | `@skill-name` in Cursor Chat |
 | **Antigravity IDE** | `~/.gemini/rei/skills` | `--antigravity` | **Tested** (Default global target + workspace `.agent/skills`) | `Use @skill-name ...` |
-| **OpenCode CLI** | `.agents/skills` | `--path .agents/skills` | **Documented** (`SKILL.md` standard compatible) | `opencode run @skill-name` |
-| **GitHub Copilot** | Workspace files | `export --agent copilot` | **Documented** (Manual context attachment or projected markdown) | Attach `SKILL.md` in chat |
+| **GitHub Copilot** | `.github/instructions` | `--copilot` / `export` | **Tested** (`.instructions.md` transpiler + format tests) | Attach instructions / prompt |
+| **15 Additional Targets** | `.windsurf`, `.clinerules`, etc. | `--windsurf`, `--sdk`, etc. | **Tested** (`AI_TARGETS` matrix in `lib/ai-adapters.js`) | Native rule / SDK JSON |
+
+---
+
+## Engineering Documentation & Reports
+
+| Document | Scope |
+| :--- | :--- |
+| [`docs/engineering/ARCHITECTURE.md`](docs/engineering/ARCHITECTURE.md) | End-to-end platform pipeline and ADRs `001`–`008` |
+| [`docs/engineering/PHASE_A_BASELINE_REPORT.md`](docs/engineering/PHASE_A_BASELINE_REPORT.md) | Baseline audit, `npm publish` verification root-cause, and latency/FPR measurements |
+| [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md) | 260-task split evaluation (`Recall@3`, `MRR`, `nDCG@5`, `FPR`, `p95`) |
+| [`docs/engineering/RUST_GATEWAY_SPEC.md`](docs/engineering/RUST_GATEWAY_SPEC.md) | Wire schema, isolated adapter safety classes, replay/rate-limit/backpressure & mTLS gate |
+| [`docs/engineering/RELEASE_READINESS_REPORT.md`](docs/engineering/RELEASE_READINESS_REPORT.md) | Evidence-backed `PASS` / `FAIL` / `NOT VERIFIED` release readiness matrix |
+| [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md) | Platform threat model (`TM-01`–`TM-11`) and verification commands |
+| [`docs/PROMPT_AUTOMATION.md`](docs/PROMPT_AUTOMATION.md) | Prompt Archive & Rust gateway operational boundary guide |
+| [`docs/USAGE.md`](docs/USAGE.md) | Detailed CLI, MCP, and workflow usage guide |
 
 ---
 
 ## Contributing and Community
 
-We welcome new skills, quality improvements, reference updates, and workflow playbooks!
-
 1. **Fork & Branch:** Create a feature branch from `main`.
-2. **Add or Improve a Skill:** Create `skills/<your-skill-name>/SKILL.md` following [`docs/SKILL_ANATOMY.md`](docs/SKILL_ANATOMY.md) and [`docs/QUALITY_BAR.md`](docs/QUALITY_BAR.md).
+2. **Add or Improve a Skill:** Follow [`docs/SKILL_ANATOMY.md`](docs/SKILL_ANATOMY.md) and [`docs/QUALITY_BAR.md`](docs/QUALITY_BAR.md).
 3. **Validate Locally:**
    ```bash
    npm run validate:strict
    npm run security-audit
    npm run build
    npm test
+   cargo test --manifest-path rust/rei-hook-gateway/Cargo.toml
    ```
-4. **Open a Pull Request:** Follow the checklist in [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md).
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), [`SUPPORT.md`](SUPPORT.md), and [`ROADMAP.md`](ROADMAP.md) for full details.
+4. **Open a Pull Request:** Follow [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md). See also [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), [`SUPPORT.md`](SUPPORT.md), and [`ROADMAP.md`](ROADMAP.md).
 
 ---
 
 ## License, Attribution, and Security
 
-- **License:** Original code, tooling, and Rootcastle-authored skills (including the 12 REI REA skills) are released under the **[MIT License](LICENSE)**.
-- **Upstream Attribution & Provenance:** REI Skills curates and preserves work from official vendor repositories (`anthropics/skills`, `microsoft/skills` — see [`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT) and [`docs/microsoft-skills-attribution.json`](docs/microsoft-skills-attribution.json), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`) and open-source contributors (`sickn33/antigravity-awesome-skills`, `rmyndharis/antigravity-skills`, `obra/superpowers`, `trailofbits/skills`, `getsentry/skills`, and others). Full credits are documented in **[`CREDITS.md`](CREDITS.md)** and **[`docs/SOURCES.md`](docs/SOURCES.md)**.
-- **Security Policy & Guardrails:** All 1423 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See **[`SECURITY.md`](SECURITY.md)**, **[`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md)**, and **[`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md)**.
+- **License:** Original code, tooling, and Rootcastle-authored skills are released under the **[MIT License](LICENSE)**.
+- **Upstream Attribution & Provenance:** Preserves upstream work from `anthropics/skills`, `microsoft/skills` ([`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT)), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`, and open-source contributors documented in [`CREDITS.md`](CREDITS.md) and [`docs/SOURCES.md`](docs/SOURCES.md).
+- **Security Policy & Guardrails:** All 1423 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
 
 ---
 
 <div align="center">
 
 **REI Skills — Engineering Beyond Boundaries**  
-Maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)** · Batuhan Ayrıbaş · [admin@rootcastle.com](mailto:admin@rootcastle.com)
+Maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)** · Batuhan Ayrıbaş · [admin@rootcastle.com](mailto:admin@rootcastle.com)  
+[Project overview](https://rootcastle.com/en/projects/rei-skills/) · [Engineering walkthrough](https://rootcastle.com/en/engineering-notes/evidence-based-reverse-engineering/)
 
 </div>
-
-## Rootcastle project guide
-
-[Project overview and practical workflow](https://rootcastle.com/en/projects/rei-skills/) · [Engineering walkthrough](https://rootcastle.com/en/engineering-notes/evidence-based-reverse-engineering/)
-
-The repository remains the reference for current setup, supported features and licensing. The project guide explains the workflow and its verification boundaries.
