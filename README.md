@@ -15,10 +15,12 @@
 
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
-[![npm package](https://img.shields.io/badge/npm-rei--skills-0E3D8A?logo=npm&logoColor=white)](https://www.npmjs.com/package/rei-skills)
+[![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
 [![Validated Skills](https://img.shields.io/badge/skills-1423%20validated-228B55)](#explore-the-library)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
+
+**[npm package](https://www.npmjs.com/package/rei-skills)** · **[GitHub Pages](https://rootcastleco.github.io/rei-skills/)** · **[Publish workflow](https://github.com/rootcastleco/rei-skills/actions/workflows/publish.yml)**
 
 **[Get Started](#install-in-seconds)** · **[Smart Router & MCP](#smart-skill-router--mcp-server)** · **[Live Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Documentation](docs/USAGE.md)** · **[Contribute](#contributing-and-community)**
 
@@ -46,7 +48,7 @@ Architecture, trust boundaries, operation and release gates: [Prompt Automation 
 
 ---
 
-## 1,295 Validated Skills — Original Engineering Expansion
+## 1,423 Validated Skills — Original Engineering Expansion
 
 **+528 new task-focused skills** across 33 engineering specialties (59.0% catalog growth), with the original 895 preserved. Coverage includes GNSS, vehicle telematics, JT808, BLE, cellular IoT, RTOS, firmware OTA, IoT security, Rust, industrial Ethernet, machinery vibration, rotor balancing, data acquisition, PCB, EMC, time-series data, edge ML, event streaming, cloud operations, mobile field apps, binary forensics, hardware-in-the-loop testing, safety assurance, optimization and reproducible research.
 
