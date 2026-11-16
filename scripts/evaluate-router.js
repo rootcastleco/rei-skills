@@ -38,6 +38,7 @@ function runEvaluation() {
   const evalMetrics = hybridReport.splits.eval;
   const targetsMet = {
     evalRecallAt3Gte85Pct: evalMetrics.recallAt3 >= 0.85,
+    evalRecallAt3Gte95Pct: evalMetrics.recallAt3 >= 0.95,
     criticalRiskMisroutingZero: evalMetrics.criticalRiskMisroutingCount === 0,
     noFalsePositiveRegression: evalMetrics.falsePositiveRate <= legacyReport.splits.eval.falsePositiveRate,
   };
@@ -66,11 +67,11 @@ if (require.main === module) {
     const h = report.hybrid[splitName];
     console.log(
       `[${splitName}] Legacy R@3=${(b.recallAt3 * 100).toFixed(2)}% FPR=${(b.falsePositiveRate * 100).toFixed(1)}% p95=${b.latencyMs.p95}ms` +
-      `  -->  Hybrid R@3=${(h.recallAt3 * 100).toFixed(2)}% MRR=${h.mrr.toFixed(4)} nDCG@5=${h.ndcgAt5.toFixed(4)} FPR=${(h.falsePositiveRate * 100).toFixed(1)}% Crit=${h.criticalRiskMisroutingCount} p95=${h.latencyMs.p95}ms`
+      `  -->  Hybrid R@3=${(h.recallAt3 * 100).toFixed(2)}% P@3=${(h.precisionAt3 * 100).toFixed(1)}% IncAct=${(h.incorrectActivationRate * 100).toFixed(2)}% MRR=${h.mrr.toFixed(4)} nDCG@5=${h.ndcgAt5.toFixed(4)} FPR=${(h.falsePositiveRate * 100).toFixed(1)}% Crit=${h.criticalRiskMisroutingCount} AvgTok=${h.averageContextTokens} p95=${h.latencyMs.p95}ms`
     );
   }
   console.log("Targets:", report.targetsMet);
-  if (!report.targetsMet.evalRecallAt3Gte85Pct || !report.targetsMet.criticalRiskMisroutingZero) {
+  if (!report.targetsMet.evalRecallAt3Gte95Pct || !report.targetsMet.criticalRiskMisroutingZero) {
     process.exitCode = 1;
   }
 }

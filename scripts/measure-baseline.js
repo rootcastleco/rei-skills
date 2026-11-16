@@ -40,6 +40,9 @@ function evaluateSplit(tasks, recommendFn, catalog, bundles, workflows, engineLa
   let positiveCount = 0;
   let recallAt3Hits = 0;
   let recallAt3MicroSum = 0;
+  let precisionAt3Sum = 0;
+  let incorrectActivationCount = 0;
+  let contextTokenSum = 0;
   let mrrSum = 0;
   let ndcg5Sum = 0;
 
@@ -50,6 +53,7 @@ function evaluateSplit(tasks, recommendFn, catalog, bundles, workflows, engineLa
   let safetyViolations = 0;
 
   const perQueryType = {};
+  const perLanguage = {};
   const failures = [];
 
   for (const item of tasks) {
@@ -67,12 +71,30 @@ function evaluateSplit(tasks, recommendFn, catalog, bundles, workflows, engineLa
     const rec = res.recommendedSkills || [];
     const recIds = rec.map((r) => r.id);
     const expectedSet = new Set(item.expectedSkills || []);
+    const estTokens =
+      res.contextTokenBudget && Number.isFinite(res.contextTokenBudget.progressiveEstimatedTokens)
+        ? res.contextTokenBudget.progressiveEstimatedTokens
+        : rec.length * 48 + 650;
+    contextTokenSum += estTokens;
 
     const qt = item.queryType;
     if (!perQueryType[qt]) {
       perQueryType[qt] = { count: 0, recallAt3Hits: 0, mrrSum: 0, ndcg5Sum: 0 };
     }
     perQueryType[qt].count++;
+
+    const lang =
+      qt === "positive_tr"
+        ? "tr"
+        : qt === "multilingual_mixed"
+          ? "mixed"
+          : qt === "negative_out_of_scope"
+            ? "out_of_scope"
+            : "en";
+    if (!perLanguage[lang]) {
+      perLanguage[lang] = { count: 0, recallAt3Hits: 0 };
+    }
+    perLanguage[lang].count++;
 
     if (item.safeOnly) {
       safetyCount++;
@@ -88,10 +110,16 @@ function evaluateSplit(tasks, recommendFn, catalog, bundles, workflows, engineLa
       const hitInTop3 = top3.some((id) => expectedSet.has(id));
       const matchedCountTop3 = top3.filter((id) => expectedSet.has(id)).length;
       const itemRecall3 = matchedCountTop3 / Math.min(3, expectedSet.size);
+      const itemPrecision3 = top3.length > 0 ? matchedCountTop3 / top3.length : 0;
+      precisionAt3Sum += itemPrecision3;
+      if (!hitInTop3) {
+        incorrectActivationCount++;
+      }
 
       if (hitInTop3) {
         recallAt3Hits++;
         perQueryType[qt].recallAt3Hits++;
+        perLanguage[lang].recallAt3Hits++;
       } else {
         failures.push({
           id: item.id,
@@ -151,18 +179,30 @@ function evaluateSplit(tasks, recommendFn, catalog, bundles, workflows, engineLa
     };
   }
 
+  const languageBreakdown = {};
+  for (const [lang, stats] of Object.entries(perLanguage)) {
+    languageBreakdown[lang] = {
+      count: stats.count,
+      recallAt3HitRate: lang === "out_of_scope" ? null : Number((stats.recallAt3Hits / Math.max(1, stats.count)).toFixed(4)),
+    };
+  }
+
   return {
     totalTasks: tasks.length,
     positiveTasks: positiveCount,
     negativeTasks: negativeCount,
     safetyTasks: safetyCount,
     recallAt3: positiveCount ? Number((recallAt3Hits / positiveCount).toFixed(4)) : 0,
+    precisionAt3: positiveCount ? Number((precisionAt3Sum / positiveCount).toFixed(4)) : 0,
+    incorrectActivationRate: positiveCount ? Number((incorrectActivationCount / positiveCount).toFixed(4)) : 0,
     recallAt3Fractional: positiveCount ? Number((recallAt3MicroSum / positiveCount).toFixed(4)) : 0,
     mrr: positiveCount ? Number((mrrSum / positiveCount).toFixed(4)) : 0,
     ndcgAt5: positiveCount ? Number((ndcg5Sum / positiveCount).toFixed(4)) : 0,
     falsePositiveRate: negativeCount ? Number((negativeFalsePositives / negativeCount).toFixed(4)) : 0,
+    negativeTriggerFalsePositiveRate: negativeCount ? Number((negativeFalsePositives / negativeCount).toFixed(4)) : 0,
     criticalRiskMisroutingRate: safetyCount ? Number((safetyViolations / safetyCount).toFixed(4)) : 0,
     criticalRiskMisroutingCount: safetyViolations,
+    averageContextTokens: tasks.length ? Math.round(contextTokenSum / tasks.length) : 0,
     latencyMs: {
       p50: Number(p50.toFixed(3)),
       p95: Number(p95.toFixed(3)),
@@ -170,6 +210,7 @@ function evaluateSplit(tasks, recommendFn, catalog, bundles, workflows, engineLa
     },
     memoryDeltaMb: Number(((memAfter - memBefore) / (1024 * 1024)).toFixed(3)),
     queryTypeBreakdown,
+    languageBreakdown,
     sampleFailures: failures.slice(0, 15),
     failureCount: failures.length,
   };

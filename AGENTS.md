@@ -1,6 +1,6 @@
 # AGENTS.md — REI Skills Universal AI Agent Router
 
-> **Repository:** [rootcastleco/rei-skills](https://github.com/rootcastleco/rei-skills) (`v6.3.0`)
+> **Repository:** [rootcastleco/rei-skills](https://github.com/rootcastleco/rei-skills) (`v6.5.0`)
 > **Live Interactive Hub (GitHub Pages):** [https://rootcastleco.github.io/rei-skills/](https://rootcastleco.github.io/rei-skills/)  
 > **Brand Owner:** [Rootcastle Engineering & Innovation](https://rootcastle.com/) — *Engineering Beyond Boundaries.*  
 > **Compatibility:** OpenAI Codex, Anthropic Claude Code, Google Gemini CLI, Google Antigravity, Cursor, GitHub Copilot, Windsurf, Cline, Roo Code, Continue.dev, Aider, Amazon Q Developer, Zed AI, Block Goose, Trae, JetBrains Junie, OpenCode, Kiro, Sourcegraph Amp, Cognition Devin, and Multi-Model Agent SDKs.
@@ -9,7 +9,7 @@
 
 ## 1. Progressive Disclosure & Smart Routing Protocol (For All AI Agents)
 
-This repository contains **1423 schema-validated skills** in `skills/<skill-id>/SKILL.md`, **19 curated role bundles** in `data/bundles.json`, and **7 multi-skill workflows** in `data/workflows.json`.
+This repository contains **1423 schema-validated skills** in `skills/<skill-id>/SKILL.md`, **6 curated role bundles** in `data/bundles.json`, and **7 multi-skill workflows** in `data/workflows.json`.
 
 1. **Never load all 1423 skills into context simultaneously.**
 2. **Use the Smart Intent & Stack Router first:** Run `node bin/install.js recommend "<task>" --files f1,f2` (or call MCP tool `rei_recommend_skills`) to rank the exact 1–5 skills, bundles, and workflows relevant to the user's request and workspace files.

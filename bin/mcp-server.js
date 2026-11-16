@@ -202,7 +202,7 @@ const MCP_TOOLS = [
   {
     name: "rei_list_bundles",
     description:
-      "List all 19 curated role bundles (e.g. 'rei-rea', 'essentials', 'fullstack', 'security-engineer', 'ddd-architecture') or inspect the skills inside a specific bundle.",
+      "List all curated role bundles in data/bundles.json (currently 6: 'rei-rea', 'core-dev', 'security-core', 'k8s-core', 'data-core', 'ops-core') or inspect the skills inside a specific bundle.",
     inputSchema: {
       type: "object",
       properties: {
@@ -670,7 +670,9 @@ function handleJsonRpcRequest(msg) {
     }
 
     if (method === "resources/list") {
-      const { catalog } = getRegistryData();
+      const { catalog, bundles, workflows } = getRegistryData();
+      const bundleTotal = Object.keys((bundles && bundles.bundles) || {}).length;
+      const wfTotal = ((workflows && workflows.workflows) || []).length;
       return {
         jsonrpc: "2.0",
         id,
@@ -685,13 +687,13 @@ function handleJsonRpcRequest(msg) {
             {
               uri: "rei://bundles",
               name: "REI Skills Curated Role Bundles",
-              description: "19 role-based skill bundles including rei-rea",
+              description: `${bundleTotal} role-based skill bundles including rei-rea`,
               mimeType: "application/json",
             },
             {
               uri: "rei://workflows",
               name: "REI Skills Orchestrated Workflows",
-              description: "7 multi-skill execution playbooks",
+              description: `${wfTotal} multi-skill execution playbooks`,
               mimeType: "application/json",
             },
           ],

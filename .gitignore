@@ -12,6 +12,7 @@ data/node_modules
 *_REPORT.md
 !examples/rei-rea-demo/FINDING_REPORT.md
 !docs/engineering/*_REPORT.md
+!docs/QUALITY_REPORT.md
 *_ANALYSIS*.md
 *_COUNT.md
 *_SUMMARY.md

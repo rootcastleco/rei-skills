@@ -1,10 +1,11 @@
 {
   "schemaVersion": "rei.routing-comparison.v1",
-  "evaluatedAt": "2026-11-16T16:23:41.151Z",
+  "evaluatedAt": "2026-11-16T18:02:23.862Z",
   "benchmarkPath": "data/benchmarks/routing-benchmark-v1.json",
   "totalTasks": 260,
   "targetsMet": {
     "evalRecallAt3Gte85Pct": true,
+    "evalRecallAt3Gte95Pct": true,
     "criticalRiskMisroutingZero": true,
     "noFalsePositiveRegression": true
   },
@@ -15,18 +16,22 @@
       "negativeTasks": 8,
       "safetyTasks": 8,
       "recallAt3": 0.8889,
+      "precisionAt3": 0.4954,
+      "incorrectActivationRate": 0.1111,
       "recallAt3Fractional": 0.662,
       "mrr": 0.8412,
       "ndcgAt5": 0.7376,
       "falsePositiveRate": 0.25,
+      "negativeTriggerFalsePositiveRate": 0.25,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 1024,
       "latencyMs": {
-        "p50": 15.193,
-        "p95": 31.103,
-        "mean": 17.44
+        "p50": 13.066,
+        "p95": 26.757,
+        "mean": 14.756
       },
-      "memoryDeltaMb": 9.202,
+      "memoryDeltaMb": 5.193,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 45,
@@ -63,6 +68,24 @@
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 57,
+          "recallAt3HitRate": 0.9649
+        },
+        "tr": {
+          "count": 10,
+          "recallAt3HitRate": 0.6
+        },
+        "mixed": {
+          "count": 5,
+          "recallAt3HitRate": 0.6
+        },
+        "out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -213,18 +236,22 @@
       "negativeTasks": 4,
       "safetyTasks": 5,
       "recallAt3": 0.8929,
+      "precisionAt3": 0.5179,
+      "incorrectActivationRate": 0.1071,
       "recallAt3Fractional": 0.7351,
       "mrr": 0.8603,
       "ndcgAt5": 0.7854,
       "falsePositiveRate": 0.25,
+      "negativeTriggerFalsePositiveRate": 0.25,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 1034,
       "latencyMs": {
-        "p50": 15.105,
-        "p95": 25.549,
-        "mean": 15.904
+        "p50": 13.886,
+        "p95": 22.034,
+        "mean": 13.865
       },
-      "memoryDeltaMb": -2.679,
+      "memoryDeltaMb": -3.213,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 36,
@@ -261,6 +288,24 @@
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 44,
+          "recallAt3HitRate": 0.9545
+        },
+        "tr": {
+          "count": 8,
+          "recallAt3HitRate": 0.625
+        },
+        "mixed": {
+          "count": 4,
+          "recallAt3HitRate": 0.75
+        },
+        "out_of_scope": {
+          "count": 4,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -371,18 +416,22 @@
       "negativeTasks": 8,
       "safetyTasks": 8,
       "recallAt3": 0.9107,
+      "precisionAt3": 0.5357,
+      "incorrectActivationRate": 0.0893,
       "recallAt3Fractional": 0.7381,
       "mrr": 0.8375,
       "ndcgAt5": 0.7587,
       "falsePositiveRate": 0.375,
+      "negativeTriggerFalsePositiveRate": 0.375,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 1025,
       "latencyMs": {
-        "p50": 15.973,
-        "p95": 26.035,
-        "mean": 16.954
+        "p50": 13.94,
+        "p95": 21.084,
+        "mean": 14.241
       },
-      "memoryDeltaMb": 0.736,
+      "memoryDeltaMb": 8.108,
       "queryTypeBreakdown": {
         "ambiguous_multi_domain": {
           "count": 7,
@@ -419,6 +468,24 @@
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 86,
+          "recallAt3HitRate": 0.9767
+        },
+        "tr": {
+          "count": 20,
+          "recallAt3HitRate": 0.7
+        },
+        "mixed": {
+          "count": 6,
+          "recallAt3HitRate": 0.6667
+        },
+        "out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -611,18 +678,22 @@
       "negativeTasks": 20,
       "safetyTasks": 21,
       "recallAt3": 0.9,
+      "precisionAt3": 0.5194,
+      "incorrectActivationRate": 0.1,
       "recallAt3Fractional": 0.7146,
       "mrr": 0.8439,
       "ndcgAt5": 0.7586,
       "falsePositiveRate": 0.3,
+      "negativeTriggerFalsePositiveRate": 0.3,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 1027,
       "latencyMs": {
-        "p50": 15.081,
-        "p95": 25.226,
-        "mean": 16.021
+        "p50": 13.093,
+        "p95": 21.928,
+        "mean": 13.901
       },
-      "memoryDeltaMb": -3.692,
+      "memoryDeltaMb": -3.716,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 152,
@@ -659,6 +730,24 @@
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 187,
+          "recallAt3HitRate": 0.9679
+        },
+        "tr": {
+          "count": 38,
+          "recallAt3HitRate": 0.6579
+        },
+        "mixed": {
+          "count": 15,
+          "recallAt3HitRate": 0.6667
+        },
+        "out_of_scope": {
+          "count": 20,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -882,42 +971,46 @@
       "negativeTasks": 8,
       "safetyTasks": 8,
       "recallAt3": 0.9861,
-      "recallAt3Fractional": 0.7824,
-      "mrr": 0.9132,
-      "ndcgAt5": 0.8457,
+      "precisionAt3": 0.588,
+      "incorrectActivationRate": 0.0139,
+      "recallAt3Fractional": 0.787,
+      "mrr": 0.9079,
+      "ndcgAt5": 0.8392,
       "falsePositiveRate": 0,
+      "negativeTriggerFalsePositiveRate": 0,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 982,
       "latencyMs": {
-        "p50": 1.407,
-        "p95": 3.379,
-        "mean": 3.115
+        "p50": 1.322,
+        "p95": 3.966,
+        "mean": 3.003
       },
-      "memoryDeltaMb": -1.475,
+      "memoryDeltaMb": 3.269,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 45,
           "recallAt3HitRate": 0.9778,
-          "mrr": 0.9093,
-          "ndcgAt5": 0.8643
+          "mrr": 0.9081,
+          "ndcgAt5": 0.8566
         },
         "positive_tr": {
           "count": 10,
           "recallAt3HitRate": 1,
           "mrr": 1,
-          "ndcgAt5": 0.9388
+          "ndcgAt5": 0.9633
         },
         "multilingual_mixed": {
           "count": 5,
           "recallAt3HitRate": 1,
-          "mrr": 0.9,
-          "ndcgAt5": 0.7689
+          "mrr": 0.8667,
+          "ndcgAt5": 0.7125
         },
         "ambiguous_multi_domain": {
           "count": 4,
           "recallAt3HitRate": 1,
-          "mrr": 0.7083,
-          "ndcgAt5": 0.6164
+          "mrr": 0.6667,
+          "ndcgAt5": 0.5959
         },
         "safety_critical_filter": {
           "count": 8,
@@ -930,6 +1023,24 @@
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 57,
+          "recallAt3HitRate": 0.9825
+        },
+        "tr": {
+          "count": 10,
+          "recallAt3HitRate": 1
+        },
+        "mixed": {
+          "count": 5,
+          "recallAt3HitRate": 1
+        },
+        "out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -955,55 +1066,77 @@
       "positiveTasks": 56,
       "negativeTasks": 4,
       "safetyTasks": 5,
-      "recallAt3": 0.9464,
-      "recallAt3Fractional": 0.7827,
-      "mrr": 0.8786,
-      "ndcgAt5": 0.8214,
+      "recallAt3": 0.9643,
+      "precisionAt3": 0.5893,
+      "incorrectActivationRate": 0.0357,
+      "recallAt3Fractional": 0.8244,
+      "mrr": 0.9,
+      "ndcgAt5": 0.8412,
       "falsePositiveRate": 0,
+      "negativeTriggerFalsePositiveRate": 0,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 1012,
       "latencyMs": {
-        "p50": 1.261,
-        "p95": 3.59,
-        "mean": 1.541
+        "p50": 1.393,
+        "p95": 4.174,
+        "mean": 1.681
       },
-      "memoryDeltaMb": 1.192,
+      "memoryDeltaMb": -2.055,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 36,
           "recallAt3HitRate": 0.9722,
-          "mrr": 0.9083,
-          "ndcgAt5": 0.8859
+          "mrr": 0.9222,
+          "ndcgAt5": 0.9001
         },
         "positive_tr": {
           "count": 8,
-          "recallAt3HitRate": 0.875,
-          "mrr": 0.7813,
-          "ndcgAt5": 0.7623
+          "recallAt3HitRate": 1,
+          "mrr": 0.875,
+          "ndcgAt5": 0.8312
         },
         "multilingual_mixed": {
           "count": 4,
           "recallAt3HitRate": 0.75,
-          "mrr": 0.8125,
-          "ndcgAt5": 0.596
+          "mrr": 0.675,
+          "ndcgAt5": 0.546
         },
         "ambiguous_multi_domain": {
           "count": 3,
           "recallAt3HitRate": 1,
-          "mrr": 0.8333,
-          "ndcgAt5": 0.4898
+          "mrr": 1,
+          "ndcgAt5": 0.5475
         },
         "safety_critical_filter": {
           "count": 5,
           "recallAt3HitRate": 1,
           "mrr": 0.9,
-          "ndcgAt5": 0.8314
+          "ndcgAt5": 0.8453
         },
         "negative_out_of_scope": {
           "count": 4,
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 44,
+          "recallAt3HitRate": 0.9773
+        },
+        "tr": {
+          "count": 8,
+          "recallAt3HitRate": 1
+        },
+        "mixed": {
+          "count": 4,
+          "recallAt3HitRate": 0.75
+        },
+        "out_of_scope": {
+          "count": 4,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -1022,20 +1155,6 @@
           ]
         },
         {
-          "id": "dv-040",
-          "queryType": "positive_tr",
-          "task": "KiCad Gerber üretim dosyaları ve kart yığın kalınlık doğrulaması",
-          "expected": [
-            "rc-kicad-ecad-kicad-gerber-drill-package",
-            "rc-kicad-ecad-kicad-board-stackup"
-          ],
-          "gotTop3": [
-            "rc-kicad-ecad-kicad-drc-ci",
-            "rc-pcb-design-review-gerber-drill-review",
-            "rc-kicad-ecad-kicad-ecad-release-gate"
-          ]
-        },
-        {
           "id": "dv-046",
           "queryType": "multilingual_mixed",
           "task": "PCB ile Fusion 360 su geçirmez conta O-ring ve konnektör boşluk analizi",
@@ -1045,49 +1164,53 @@
           ],
           "gotTop3": [
             "rc-ecad-mcad-fit-pcb-to-enclosure-step",
-            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-fusion360-parametric-fusion-sweep-path",
             "rc-fusion360-api-fusion-api-export-step"
           ]
         }
       ],
-      "failureCount": 3
+      "failureCount": 2
     },
     "eval": {
       "totalTasks": 120,
       "positiveTasks": 112,
       "negativeTasks": 8,
       "safetyTasks": 8,
-      "recallAt3": 0.9643,
-      "recallAt3Fractional": 0.8006,
-      "mrr": 0.8897,
-      "ndcgAt5": 0.8456,
+      "recallAt3": 0.9732,
+      "precisionAt3": 0.5893,
+      "incorrectActivationRate": 0.0268,
+      "recallAt3Fractional": 0.8155,
+      "mrr": 0.9009,
+      "ndcgAt5": 0.8537,
       "falsePositiveRate": 0,
+      "negativeTriggerFalsePositiveRate": 0,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 994,
       "latencyMs": {
-        "p50": 1.267,
-        "p95": 2.919,
-        "mean": 1.488
+        "p50": 1.322,
+        "p95": 3.41,
+        "mean": 1.551
       },
-      "memoryDeltaMb": -3.604,
+      "memoryDeltaMb": 0.521,
       "queryTypeBreakdown": {
         "ambiguous_multi_domain": {
           "count": 7,
           "recallAt3HitRate": 0.8571,
           "mrr": 0.8857,
-          "ndcgAt5": 0.6246
+          "ndcgAt5": 0.6275
         },
         "positive_en": {
           "count": 71,
-          "recallAt3HitRate": 0.9718,
-          "mrr": 0.889,
-          "ndcgAt5": 0.8626
+          "recallAt3HitRate": 0.9859,
+          "mrr": 0.9042,
+          "ndcgAt5": 0.873
         },
         "positive_tr": {
           "count": 20,
           "recallAt3HitRate": 1,
-          "mrr": 0.9083,
-          "ndcgAt5": 0.8973
+          "mrr": 0.9167,
+          "ndcgAt5": 0.8881
         },
         "multilingual_mixed": {
           "count": 6,
@@ -1099,13 +1222,31 @@
           "count": 8,
           "recallAt3HitRate": 1,
           "mrr": 0.875,
-          "ndcgAt5": 0.8312
+          "ndcgAt5": 0.8723
         },
         "negative_out_of_scope": {
           "count": 8,
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 86,
+          "recallAt3HitRate": 0.9767
+        },
+        "tr": {
+          "count": 20,
+          "recallAt3HitRate": 1
+        },
+        "mixed": {
+          "count": 6,
+          "recallAt3HitRate": 0.8333
+        },
+        "out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -1121,21 +1262,7 @@
           "gotTop3": [
             "backend-architect",
             "cc-skill-backend-patterns",
-            "backend-dev-guidelines"
-          ]
-        },
-        {
-          "id": "ev-070",
-          "queryType": "positive_en",
-          "task": "Run systematic root-cause debugging and verify bugfix before marking complete",
-          "expected": [
-            "systematic-debugging",
-            "verification-before-completion"
-          ],
-          "gotTop3": [
-            "debugging-strategies",
-            "team-collaboration-issue",
-            "devops-troubleshooter"
+            "graphql"
           ]
         },
         {
@@ -1164,66 +1291,88 @@
           "gotTop3": [
             "rc-machine-vibration-sensor-calibration-chain",
             "rc-sensor-acquisition-accelerometer-sensitivity",
-            "rc-timeseries-telemetry-late-event-watermarks"
+            "rc-timeseries-telemetry-sensor-drift-detection"
           ]
         }
       ],
-      "failureCount": 4
+      "failureCount": 3
     },
     "all": {
       "totalTasks": 260,
       "positiveTasks": 240,
       "negativeTasks": 20,
       "safetyTasks": 21,
-      "recallAt3": 0.9667,
-      "recallAt3Fractional": 0.791,
-      "mrr": 0.8942,
-      "ndcgAt5": 0.84,
+      "recallAt3": 0.975,
+      "precisionAt3": 0.5889,
+      "incorrectActivationRate": 0.025,
+      "recallAt3Fractional": 0.809,
+      "mrr": 0.9028,
+      "ndcgAt5": 0.8464,
       "falsePositiveRate": 0,
+      "negativeTriggerFalsePositiveRate": 0,
       "criticalRiskMisroutingRate": 0,
       "criticalRiskMisroutingCount": 0,
+      "averageContextTokens": 994,
       "latencyMs": {
-        "p50": 1.073,
-        "p95": 2.648,
-        "mean": 1.234
+        "p50": 1.082,
+        "p95": 2.659,
+        "mean": 1.235
       },
-      "memoryDeltaMb": 0.573,
+      "memoryDeltaMb": 4.744,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 152,
-          "recallAt3HitRate": 0.9737,
-          "mrr": 0.8996,
-          "ndcgAt5": 0.8686
+          "recallAt3HitRate": 0.9803,
+          "mrr": 0.9096,
+          "ndcgAt5": 0.8746
         },
         "positive_tr": {
           "count": 38,
-          "recallAt3HitRate": 0.9737,
-          "mrr": 0.9057,
-          "ndcgAt5": 0.8798
+          "recallAt3HitRate": 1,
+          "mrr": 0.9298,
+          "ndcgAt5": 0.8959
         },
         "multilingual_mixed": {
           "count": 15,
           "recallAt3HitRate": 0.8667,
-          "mrr": 0.8611,
-          "ndcgAt5": 0.7146
+          "mrr": 0.8133,
+          "ndcgAt5": 0.6825
         },
         "ambiguous_multi_domain": {
           "count": 14,
           "recallAt3HitRate": 0.9286,
-          "mrr": 0.8238,
-          "ndcgAt5": 0.5933
+          "mrr": 0.8476,
+          "ndcgAt5": 0.6013
         },
         "safety_critical_filter": {
           "count": 21,
           "recallAt3HitRate": 1,
           "mrr": 0.9048,
-          "ndcgAt5": 0.8145
+          "ndcgAt5": 0.8335
         },
         "negative_out_of_scope": {
           "count": 20,
           "recallAt3HitRate": null,
           "mrr": null,
           "ndcgAt5": null
+        }
+      },
+      "languageBreakdown": {
+        "en": {
+          "count": 187,
+          "recallAt3HitRate": 0.9786
+        },
+        "tr": {
+          "count": 38,
+          "recallAt3HitRate": 1
+        },
+        "mixed": {
+          "count": 15,
+          "recallAt3HitRate": 0.8667
+        },
+        "out_of_scope": {
+          "count": 20,
+          "recallAt3HitRate": null
         }
       },
       "sampleFailures": [
@@ -1256,20 +1405,6 @@
           ]
         },
         {
-          "id": "dv-040",
-          "queryType": "positive_tr",
-          "task": "KiCad Gerber üretim dosyaları ve kart yığın kalınlık doğrulaması",
-          "expected": [
-            "rc-kicad-ecad-kicad-gerber-drill-package",
-            "rc-kicad-ecad-kicad-board-stackup"
-          ],
-          "gotTop3": [
-            "rc-kicad-ecad-kicad-drc-ci",
-            "rc-pcb-design-review-gerber-drill-review",
-            "rc-kicad-ecad-kicad-ecad-release-gate"
-          ]
-        },
-        {
           "id": "dv-046",
           "queryType": "multilingual_mixed",
           "task": "PCB ile Fusion 360 su geçirmez conta O-ring ve konnektör boşluk analizi",
@@ -1279,7 +1414,7 @@
           ],
           "gotTop3": [
             "rc-ecad-mcad-fit-pcb-to-enclosure-step",
-            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-fusion360-parametric-fusion-sweep-path",
             "rc-fusion360-api-fusion-api-export-step"
           ]
         },
@@ -1295,21 +1430,7 @@
           "gotTop3": [
             "backend-architect",
             "cc-skill-backend-patterns",
-            "backend-dev-guidelines"
-          ]
-        },
-        {
-          "id": "ev-070",
-          "queryType": "positive_en",
-          "task": "Run systematic root-cause debugging and verify bugfix before marking complete",
-          "expected": [
-            "systematic-debugging",
-            "verification-before-completion"
-          ],
-          "gotTop3": [
-            "debugging-strategies",
-            "team-collaboration-issue",
-            "devops-troubleshooter"
+            "graphql"
           ]
         },
         {
@@ -1338,45 +1459,45 @@
           "gotTop3": [
             "rc-machine-vibration-sensor-calibration-chain",
             "rc-sensor-acquisition-accelerometer-sensitivity",
-            "rc-timeseries-telemetry-late-event-watermarks"
+            "rc-timeseries-telemetry-sensor-drift-detection"
           ]
         }
       ],
-      "failureCount": 8
+      "failureCount": 6
     }
   },
   "delta": {
     "train": {
       "recallAt3Delta": 0.0972,
-      "mrrDelta": 0.072,
-      "ndcgAt5Delta": 0.1081,
+      "mrrDelta": 0.0667,
+      "ndcgAt5Delta": 0.1016,
       "falsePositiveRateDelta": -0.25,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.109
+      "p95LatencyRatio": 0.148
     },
     "dev": {
-      "recallAt3Delta": 0.0535,
-      "mrrDelta": 0.0183,
-      "ndcgAt5Delta": 0.036,
+      "recallAt3Delta": 0.0714,
+      "mrrDelta": 0.0397,
+      "ndcgAt5Delta": 0.0558,
       "falsePositiveRateDelta": -0.25,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.141
+      "p95LatencyRatio": 0.189
     },
     "eval": {
-      "recallAt3Delta": 0.0536,
-      "mrrDelta": 0.0522,
-      "ndcgAt5Delta": 0.0869,
+      "recallAt3Delta": 0.0625,
+      "mrrDelta": 0.0634,
+      "ndcgAt5Delta": 0.095,
       "falsePositiveRateDelta": -0.375,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.112
+      "p95LatencyRatio": 0.162
     },
     "all": {
-      "recallAt3Delta": 0.0667,
-      "mrrDelta": 0.0503,
-      "ndcgAt5Delta": 0.0814,
+      "recallAt3Delta": 0.075,
+      "mrrDelta": 0.0589,
+      "ndcgAt5Delta": 0.0878,
       "falsePositiveRateDelta": -0.3,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.105
+      "p95LatencyRatio": 0.121
     }
   }
 }

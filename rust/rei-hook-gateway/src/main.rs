@@ -355,4 +355,77 @@ mod tests {
         shutdown.trigger_shutdown();
         server_thread.join().expect("join").expect("clean exit");
     }
+
+    #[test]
+    fn frame_boundary_control_chars_and_abuse_invariants_hold() {
+        let mut cfg = GatewayConfig::with_secret(SECRET);
+        cfg.operator_approval_secret = Some(APPROVAL.to_string());
+        let engine = GatewayEngine::new(cfg).unwrap();
+        let cancel = CancellationToken::new();
+
+        // 0-byte, 1-byte without newline, exact 4096-byte invalid frame, 4097-byte overflow
+        assert_eq!(engine.process_raw_frame(b"", &cancel).status, "rejected");
+        assert_eq!(engine.process_raw_frame(b"x", &cancel).status, "rejected");
+        let mut exact_4096 = vec![b' '; 4095];
+        exact_4096.push(b'\n');
+        assert_eq!(exact_4096.len(), 4096);
+        assert_eq!(
+            engine.process_raw_frame(&exact_4096, &cancel).status,
+            "invalid_request"
+        );
+        let mut over_4097 = vec![b'a'; 4096];
+        over_4097.push(b'\n');
+        assert_eq!(over_4097.len(), 4097);
+        assert_eq!(
+            engine.process_raw_frame(&over_4097, &cancel).status,
+            "rejected"
+        );
+
+        // Embedded NUL byte / malformed JSON control bytes fail closed without exposing secrets
+        let nul_payload = format!(
+            "{{\"token\":\"{SECRET}\",\"event\":\"health\",\"correlation_id\":\"bad\0id\"}}\n"
+        );
+        let nul_resp = engine.process_raw_frame(nul_payload.as_bytes(), &cancel);
+        assert_eq!(nul_resp.status, "invalid_request");
+        let serialized_err = serde_json::to_string(&nul_resp).unwrap();
+        assert!(!serialized_err.contains(SECRET));
+
+        // Safety-class downgrade attempt rejected fail-closed
+        let downgrade = format!(
+            "{}\n",
+            serde_json::json!({
+                "token": SECRET,
+                "event": "adapter.invoke_preview",
+                "adapter": "kicad",
+                "operation": "export_gerber_preview",
+                "safety_class": "read_only",
+                "approval_token": APPROVAL,
+                "correlation_id": "downgrade-1"
+            })
+        );
+        let dg_resp = engine.process_raw_frame(downgrade.as_bytes(), &cancel);
+        assert_eq!(dg_resp.status, "denied");
+        assert_eq!(dg_resp.error.unwrap().code, "ERR_SAFETY_DOWNGRADE");
+
+        // Rapid nonce replay storm guarantees first accepted then replay_rejected
+        let storm_frame = format!(
+            "{}\n",
+            serde_json::json!({
+                "token": SECRET,
+                "event": "hook.preview",
+                "correlation_id": "storm-corr",
+                "nonce": "storm-nonce-0"
+            })
+        );
+        assert_eq!(
+            engine
+                .process_raw_frame(storm_frame.as_bytes(), &cancel)
+                .status,
+            "accepted_preview_only"
+        );
+        for _ in 0..10 {
+            let replay = engine.process_raw_frame(storm_frame.as_bytes(), &cancel);
+            assert_eq!(replay.status, "replay_rejected");
+        }
+    }
 }
