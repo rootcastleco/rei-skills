@@ -51,6 +51,9 @@ const SUBCOMMANDS = new Set([
   "adapters",
   "security-status",
   "improve",
+  "remove",
+  "uninstall",
+  "quality",
 ]);
 
 function resolveDir(p) {
@@ -82,6 +85,7 @@ function parseArgs(argv = process.argv.slice(2)) {
     feedbackArg: null,
     taskArg: null,
     operationArg: null,
+    tierArg: null,
     cursor: false,
     claude: false,
     gemini: false,
@@ -205,6 +209,10 @@ function parseArgs(argv = process.argv.slice(2)) {
     }
     if (arg === "--operation" && argv[i + 1]) {
       opts.operationArg = argv[++i];
+      continue;
+    }
+    if (arg === "--tier" && argv[i + 1]) {
+      opts.tierArg = argv[++i].toUpperCase();
       continue;
     }
     if (arg === "--all-ai") {
@@ -1440,10 +1448,143 @@ function handlePlan(opts) {
     `\n🧭 Workflow Plan: ${plan.planId} (stages: ${plan.stages.length}, claimedPhysicalExecution: ${plan.executionRecord.claimedPhysicalExecution})`,
   );
   for (const stage of plan.stages) {
-    const primarySkill = Array.isArray(stage.selectedSkills) && stage.selectedSkills[0] ? stage.selectedSkills[0].id : stage.stageId;
+    const primarySkill = Array.isArray(stage.skillIds) && stage.skillIds[0] ? stage.skillIds[0] : stage.stageId;
     console.log(`  ${stage.step}. [${stage.domain}] ${primarySkill} — mode: ${stage.executionMode}`);
   }
   console.log("");
+}
+
+function handleQuality(opts) {
+  const qualityReport = loadLocalJsonSafe("data/quality-report.json", { summary: {}, skills: [] });
+  const gold50Manifest = loadLocalJsonSafe("data/gold50-manifest.json", { skills: [] });
+  const gold50Eval = loadLocalJsonSafe("data/benchmarks/gold50-evaluation-report.json", null);
+  const gold50Ids = new Set((gold50Manifest.skills || []).map((s) => s.id));
+  const targetId = opts.positional[0] ? String(opts.positional[0]).trim() : null;
+
+  if (targetId) {
+    const found = (qualityReport.skills || []).find((s) => s.id === targetId);
+    if (!found) {
+      console.error(`Skill '${targetId}' not found in quality report.`);
+      process.exitCode = 1;
+      return;
+    }
+    const payload = {
+      ...found,
+      inGold50Program: gold50Ids.has(found.id),
+      gold50EvalRecord: gold50Eval ? (gold50Eval.skills || []).find((g) => g.id === found.id) || null : null,
+    };
+    if (opts.json) {
+      console.log(JSON.stringify(payload, null, 2));
+      return;
+    }
+    console.log(
+      `\n🏆 Quality [${found.id}]: ${found.quality_score_14}/14 (${found.quality_tier}) | quarantined=${found.quarantined} | Gold50=${payload.inGold50Program}\n`,
+    );
+    return;
+  }
+
+  let list = qualityReport.skills || [];
+  if (opts.tierArg) {
+    list = list.filter((s) => (s.quality_tier || "").toUpperCase() === opts.tierArg);
+  }
+  const output = {
+    summary: qualityReport.summary,
+    gold50Total: gold50Ids.size,
+    gold50TargetMet: gold50Eval ? gold50Eval.targetGte95PctMet : null,
+    matchedCount: list.length,
+    skills: opts.tierArg ? list.slice(0, 50) : undefined,
+  };
+  if (opts.json) {
+    console.log(JSON.stringify(output, null, 2));
+    return;
+  }
+  console.log(
+    `\n🏆 Quality Report (${qualityReport.summary.quality_framework_version || "14pt-v1"}): ` +
+      `total=${qualityReport.summary.total_skills} | avg=${qualityReport.summary.average_score_14}/14 | ` +
+      `tiers=${JSON.stringify(qualityReport.summary.tier_counts)} | Gold50=${qualityReport.summary.gold50_verified_count}/50\n`,
+  );
+}
+
+function handleRemove(opts) {
+  // Mode 1: Restore backup directory when --from <backupDir> is specified
+  if (opts.fromArg) {
+    const backupDir = resolveDir(opts.fromArg);
+    const targetRoot = resolveDir(opts.pathArg) || process.cwd();
+    const manifestPath = path.join(backupDir, "manifest.json");
+    if (!fs.existsSync(manifestPath)) {
+      console.error(`Backup manifest not found at '${manifestPath}'.`);
+      process.exitCode = 1;
+      return;
+    }
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+    const restored = [];
+    for (const fileEntry of manifest.files || []) {
+      const rel = String(fileEntry.relativePath || "");
+      const destPath = path.resolve(targetRoot, rel);
+      if (!destPath.startsWith(path.resolve(targetRoot) + path.sep)) {
+        throw new Error(`Unsafe restore path rejected: ${rel}`);
+      }
+      if (fileEntry.action === "replace") {
+        const srcBackup = path.join(backupDir, rel);
+        if (fs.existsSync(srcBackup)) {
+          if (!opts.dryRun) {
+            fs.mkdirSync(path.dirname(destPath), { recursive: true });
+            fs.copyFileSync(srcBackup, destPath);
+          }
+          restored.push({ path: rel, action: "restored_from_backup" });
+        }
+      } else if (fileEntry.action === "create" && fs.existsSync(destPath)) {
+        if (!opts.dryRun) fs.rmSync(destPath, { force: true });
+        restored.push({ path: rel, action: "removed_created_file" });
+      }
+    }
+    if (opts.json) {
+      console.log(JSON.stringify({ status: opts.dryRun ? "dry-run" : "restored", backupDir, targetRoot, restored }, null, 2));
+    } else {
+      console.log(`\n♻️ Restored ${restored.length} file(s) from ${backupDir} into ${targetRoot}\n`);
+    }
+    return;
+  }
+
+  // Mode 2: Remove specific skill ID from target AI/workspace directory
+  const skillId = opts.positional[0] ? String(opts.positional[0]).trim() : "";
+  if (!skillId || !/^[a-z0-9][a-z0-9._-]*$/.test(skillId)) {
+    console.error("Usage: rei-skills remove <skill-id> [--path <dir> | --cursor | --claude] [--dry-run] [--json]");
+    process.exitCode = 1;
+    return;
+  }
+
+  const skillsDestRoot = defaultDir(opts);
+  const removed = [];
+  const candidateSkillDir = path.resolve(skillsDestRoot, skillId);
+  if (!candidateSkillDir.startsWith(path.resolve(skillsDestRoot) + path.sep)) {
+    throw new Error(`Unsafe skill removal path rejected for '${skillId}'`);
+  }
+  if (fs.existsSync(candidateSkillDir)) {
+    if (!opts.dryRun) fs.rmSync(candidateSkillDir, { recursive: true, force: true });
+    removed.push(candidateSkillDir);
+  }
+
+  // Also check adjacent native rule files (Cursor .mdc, Copilot .instructions.md, Windsurf/Cline .md)
+  const parentRoot = path.dirname(skillsDestRoot);
+  const adjRules = [
+    path.join(parentRoot, "rules", `${skillId}.mdc`),
+    path.join(parentRoot, "rules", `${skillId}.md`),
+    path.join(parentRoot, "instructions", `${skillId}.instructions.md`),
+  ];
+  for (const rulePath of adjRules) {
+    if (fs.existsSync(rulePath)) {
+      if (!opts.dryRun) fs.rmSync(rulePath, { force: true });
+      removed.push(rulePath);
+    }
+  }
+
+  const status = opts.dryRun ? "dry-run" : removed.length > 0 ? "removed" : "not_found";
+  if (opts.json) {
+    console.log(JSON.stringify({ status, skillId, targetRoot: skillsDestRoot, removedCount: removed.length, removed }, null, 2));
+  } else {
+    console.log(`\n🗑️ ${status === "removed" ? "Removed" : status}: '${skillId}' (${removed.length} target path(s))\n`);
+  }
 }
 
 function handleEvaluate(opts) {
@@ -1568,6 +1709,13 @@ function main() {
       break;
     case "improve":
       handleImprove(opts);
+      break;
+    case "quality":
+      handleQuality(opts);
+      break;
+    case "remove":
+    case "uninstall":
+      handleRemove(opts);
       break;
     case "targets":
       handleTargets(opts);

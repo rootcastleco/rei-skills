@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased] — Auditable Quality Engine, Gold 50 & Capability Controls (`feat/auditable-quality-gold50-platform`)
+
+### Added
+- **14-Point Auditable Quality Engine & 6-Axis Verification (`lib/quality-engine.js`, `scripts/validate_skills.py`, `data/quality-report.json`):** Scored all 1,423 skills across 7 × (`0–2`) dimensions (`Q3`: 346, `Q2`: 936, `Q1`: 141, `Q0` Quarantine: 0; average `9.76 / 14`) while separating `schemaValid`, `referenceValidated`, `securityPolicyChecked`, `evaluationPassed`, `humanReviewed` (`0`), and `hardwareVerified` (`0` / `not_verified`). Failing schema, reference, or security checks force `Q0` quarantine.
+- **Gold 50 Engineering Program (`scripts/build-gold50-manifest.js`, `data/gold50-manifest.json`, `scripts/evaluate-gold50.js`):** Selected 50 priority skills across 10 engineering disciplines and evaluated 150 positive scenarios (`149/150` = `99.3%`), 100 negative/injection triggers (`100/100` = `100.0%`), 50 adapter transpilations (`50/50`), and 5 engineering adapter computational spot checks.
+- **CLI Commands & Adapter Compatibility (`bin/install.js`, `docs/ADAPTER_COMPATIBILITY_MATRIX.md`):** Added `quality` (`--tier`, `--json`) and `remove`/`uninstall` (`--from` snapshot restore + direct skill removal) CLI commands, fixed `handlePlan` to read `stage.skillIds`, documented `npx skills` (`vercel-labs/skills`) catalog compatibility (`0` invalid names/descriptions across `1,423` skills), and synchronized contradictory `19` vs `6` bundle counters in `AGENTS.md`, `docs/GETTING_STARTED.md`, and `bin/mcp-server.js`.
+- **Prompt Archive Authenticity Separation & Rollback (`lib/prompt-archive.js`, `docs/PROMPT_ARCHIVE_SECURITY.md`):** Explicitly separated SHA-256 content integrity (`integrityHashVerified: true`) from unsigned publisher authentication (`publisherSignatureVerified: false`), and added `prompt-archive.prev.json` backup with 1-step `rollbackSnapshot` and `pinPromptVersion`.
+- **5-Level Environment Capability Manifest & Conflict Validation (`lib/engineering-adapters.js`, `lib/workflow-compiler.js`):** Added `getEnvironmentCapabilityManifest` separating Documented → Installed → Simulation → Configured → Physical Bench (`not_verified`), plus invalid capability and resource conflict detection (`capabilityValidation`) in `compileWorkflowPlan`.
+- **Documentation & Tests:** Added `docs/audits/BASELINE_AUDIT.md`, `docs/QUALITY_METHODOLOGY.md`, `docs/QUALITY_REPORT.md`, `docs/CONTROLLED_IMPROVEMENT_PROTOCOL.md`, `scripts/tests/gold50-quality.test.js`, and Rust gateway boundary control-character abuse tests (`8/8` passing in `rust/rei-hook-gateway/src/main.rs`).
+
+### Changed
+- **Hybrid Router Enhancements (`lib/hybrid-router.js`, `scripts/measure-baseline.js`):** Deduplicated `STACK_RULES` bonus per rule, added slug-specialty scoring, Q0 quarantine filtering (`includeQuarantined` opt-in), `availableTools` compatibility checks, overlap/conflict suppression (`detectConflictingSkills`), `contextTokenBudget`, and `Precision@3` / `incorrectActivationRate` reporting — lifting held-out `eval` Recall@3 to `97.32%` (`Precision@3 = 58.9%`, `MRR = 0.9009`, `nDCG@5 = 0.8537`, `FPR = 0.0%`, `positive_tr = 100.0%`, `0` critical misrouting).
+- **Web Hub & Positioning (`README.md`, `package.json`, `scripts/build-doc-site.js`):** Aligned platform positioning copy and added Registry Quality Engine, Gold 50 Program, Precision@3, and 5-level Capability Manifest panels to the static Web Hub (`docs/site/index.html`).
+
+---
+
+## 6.5.0 — Auditable Autonomous Skill Intelligence Platform (2026-11-16)
+
+### Added & Changed
+- Integrated the 4-milestone Autonomous Skill Intelligence architecture (`PR #12`–`PR #15` and release commit `0f32ce1`): Hybrid BM25 + 256-dim offline semantic router (`lib/hybrid-router.js`, `260`-task EN/TR benchmark), Typed Workflow DAG compiler (`lib/workflow-compiler.js`), Rootcastle Prompt Archive v2 (`lib/prompt-archive.js`), HOL Guard deny-by-default policy engine (`lib/hol-guard-policy.js`, `bin/mcp-server.js` preserving 10 default MCP tools + opt-in `REI_MCP_EXTENDED_TOOLS=1`), Rust Secure Communication Gateway `v0.2.0` (`rust/rei-hook-gateway`), 5 capability-aware engineering adapters (`lib/engineering-adapters.js`), split evaluation & review-only improvement engine (`lib/observability.js`, `lib/evaluation-engine.js`, `lib/improvement-engine.js`), resilient npm publish verification (`scripts/verify-npm-release.js`), and interactive Web Hub upgrade (`scripts/build-doc-site.js`).
+
+---
+
 ## 6.4.0 — 528 Original Engineering Skills with CAD and Fusion 360 (2026-11-16)
 
 - Expanded the catalog from 895 to **1,423 validated skills** (+528, +59.0%), with 33 domain-specific engineering families.

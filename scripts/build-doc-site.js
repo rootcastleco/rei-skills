@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { AI_TARGETS } = require('../lib/ai-adapters');
 const { compileWorkflowPlan } = require('../lib/workflow-compiler');
-const { listEngineeringAdapters } = require('../lib/engineering-adapters');
+const { listEngineeringAdapters, getEnvironmentCapabilityManifest } = require('../lib/engineering-adapters');
 const { getHolGuardIntegrationStatus } = require('../lib/hol-guard-policy');
 const { loadBundledFallbackSnapshot } = require('../lib/prompt-archive');
 
@@ -22,6 +22,8 @@ const bundlesData = readJson(path.join(DATA_DIR, 'bundles.json'), { bundles: {} 
 const workflowsData = readJson(path.join(DATA_DIR, 'workflows.json'), { workflows: [] });
 const reaManifest = readJson(path.join(DATA_DIR, 'rei-rea-manifest.json'), { skills: [] });
 const evaluationReport = readJson(path.join(DATA_DIR, 'benchmarks', 'routing-evaluation-report.json'), null);
+const qualityReport = readJson(path.join(DATA_DIR, 'quality-report.json'), { summary: {} });
+const gold50Report = readJson(path.join(DATA_DIR, 'benchmarks', 'gold50-evaluation-report.json'), null);
 
 const sampleWorkflowPlan = compileWorkflowPlan(
   'Design a four-channel vibration measurement PCB and its Fusion 360 enclosure.',
@@ -34,6 +36,15 @@ if (sampleWorkflowPlan && sampleWorkflowPlan.executionRecord) {
 }
 const platformSummary = {
   evaluation: evaluationReport,
+  qualitySummary: qualityReport.summary || null,
+  gold50: gold50Report ? {
+    skillsPassedCount: gold50Report.skillsPassedCount,
+    totalSkills: gold50Report.totalSkills,
+    positivePassRate: gold50Report.positiveScenarios && gold50Report.positiveScenarios.passRate,
+    negativePassRate: gold50Report.negativeTriggers && gold50Report.negativeTriggers.passRate,
+    targetGte95PctMet: gold50Report.targetGte95PctMet,
+  } : null,
+  capabilityManifest: getEnvironmentCapabilityManifest({ deterministic: true }),
   samplePlan: sampleWorkflowPlan,
   adapters: listEngineeringAdapters(),
   security: getHolGuardIntegrationStatus(),
@@ -84,8 +95,8 @@ const html = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <link rel="canonical" href="https://rootcastleco.github.io/rei-skills/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REI Skills — Smart Multi-AI Skill Studio, MCP Hub &amp; Registry</title>
-  <meta name="description" content="The universal engineering-grade skill layer &amp; Smart MCP Server for AI agents. Browse ${compactSkills.length} validated skills across ${compactAiTargets.length} AI coding assistants, IDEs, and SDKs." />
+  <title>REI Skills — Auditable Engineering Skill Platform &amp; Smart MCP Hub</title>
+  <meta name="description" content="The auditable engineering skill platform for AI agents. Discover capabilities, build workflows, enforce security policies, and verify engineering outcomes across ${compactSkills.length} skills and ${compactAiTargets.length} AI tools." />
   <style>
     :root {
       --bg: #000000;
@@ -478,8 +489,8 @@ const html = `<!DOCTYPE html>
 
   <section class="hero">
     <div class="hero-eyebrow">ROOTCASTLE ENGINEERING &amp; INNOVATION · ENGINEERING BEYOND BOUNDARIES</div>
-    <h1>The Smart Skill Layer &amp; MCP Server for Every AI Agent</h1>
-    <p>Discover, route, transpile, and serve <strong>${compactSkills.length} schema-validated skills</strong> across <strong>${compactAiTargets.length} AI coding assistants, IDEs, CLI agents, and SDKs</strong> — powered by our built-in <strong>Smart Intent &amp; Stack Router</strong> and zero-dependency <strong>MCP Server (<code>npx rei-skills mcp</code>)</strong>.</p>
+    <h1>The Auditable Engineering Skill Platform for AI Agents</h1>
+    <p>Discover capabilities, build dependency-aware workflows, enforce security policies, and verify engineering outcomes across <strong>${compactSkills.length} validated skills</strong> and <strong>${compactAiTargets.length} AI coding assistants</strong> via the <strong>Hybrid Router</strong>, <strong>14-Point Quality Engine</strong>, and <strong>MCP Server (<code>npx rei-skills mcp</code>)</strong>.</p>
 
     <div class="stats-bar">
       <div class="stat-card">
@@ -570,7 +581,7 @@ const html = `<!DOCTYPE html>
           <span class="badge badge-match">Zero-Dependency Stdio JSON-RPC 2.0</span>
         </div>
         <p style="font-size:14px;color:var(--text-secondary);">
-          Connect your AI assistant directly to the <strong>REI Skills Smart MCP Server</strong>. Instead of loading all 895 skills into your prompt, your AI agent can dynamically call <code>rei_recommend_skills</code>, <code>rei_search_skills</code>, <code>rei_get_skill</code>, <code>rei_get_workflow</code>, <code>rei_install_skill</code>, and <code>rei_compile_skill</code> on demand!
+          Connect your AI assistant directly to the <strong>REI Skills Smart MCP Server</strong>. Instead of loading all ${compactSkills.length} skills into your prompt, your AI agent can dynamically call <code>rei_recommend_skills</code>, <code>rei_search_skills</code>, <code>rei_get_skill</code>, <code>rei_get_workflow</code>, <code>rei_install_skill</code>, and <code>rei_compile_skill</code> on demand!
         </p>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
           <button class="copy-cmd" onclick="copyCommand('npx rei-skills add rei-rea --claude --mcp-config ~/.claude/mcp.json', this)">Auto-Configure Claude Code MCP</button>
@@ -947,6 +958,7 @@ const html = `<!DOCTYPE html>
             <span class="badge badge-risk-safe">Recall@3 \${(ev.recallAt3 * 100).toFixed(2)}% (vs Legacy \${(leg.recallAt3 * 100).toFixed(2)}%)</span>
           </div>
           <p class="card-desc">
+            Precision@3: <strong>\${ev.precisionAt3 !== undefined ? (ev.precisionAt3 * 100).toFixed(2) + '%' : 'n/a'}</strong> ·
             MRR: <strong>\${ev.mrr}</strong> · nDCG@5: <strong>\${ev.ndcgAt5}</strong> ·
             Out-of-Scope FPR: <strong>\${(ev.falsePositiveRate * 100).toFixed(1)}%</strong> (Legacy \${(leg.falsePositiveRate * 100).toFixed(1)}%) ·
             Critical-Risk Misrouting: <strong>\${ev.criticalRiskMisroutingCount}</strong> ·
@@ -954,6 +966,59 @@ const html = `<!DOCTYPE html>
           </p>
         </div>
       \` : '<div class="card"><p class="card-desc">Benchmark evaluation report not generated yet.</p></div>';
+
+      const qs = PLATFORM.qualitySummary || null;
+      const tiers = (qs && qs.tier_counts) || {};
+      const g50 = PLATFORM.gold50 || null;
+      const qualityHtml = qs ? \`
+        <div class="grid" style="margin-bottom:16px;">
+          <article class="card">
+            <div class="card-header">
+              <div class="card-title">🏅 Registry Quality Engine (\${escapeHtml(qs.quality_framework_version || '14pt-v1')})</div>
+              <span class="badge badge-risk-safe">Avg \${qs.average_score_14 || 0}/14</span>
+            </div>
+            <p class="card-desc">
+              Tiers across \${qs.total_skills || 0} skills:
+              <strong>Q3</strong> \${tiers.Q3 || 0} · <strong>Q2</strong> \${tiers.Q2 || 0} · <strong>Q1</strong> \${tiers.Q1 || 0} · <strong>Q0 Quarantine</strong> \${tiers.Q0 || 0} ·
+              Human Reviewed: <strong>\${qs.human_reviewed_count || 0}</strong> · Hardware Verified: <strong>\${qs.hardware_verified_count || 0}</strong>
+            </p>
+          </article>
+          \${g50 ? \`
+          <article class="card">
+            <div class="card-header">
+              <div class="card-title">🥇 Gold 50 Engineering Program</div>
+              <span class="badge badge-risk-safe">\${g50.skillsPassedCount}/\${g50.totalSkills} Skills</span>
+            </div>
+            <p class="card-desc">
+              Positive Scenarios: <strong>\${((g50.positivePassRate || 0) * 100).toFixed(1)}%</strong> ·
+              Negative Triggers Safe: <strong>\${((g50.negativePassRate || 0) * 100).toFixed(1)}%</strong> ·
+              95%+ Target Met: <strong>\${Boolean(g50.targetGte95PctMet)}</strong>
+            </p>
+          </article>\` : ''}
+        </div>
+      \` : '';
+
+      const cm = PLATFORM.capabilityManifest || null;
+      const capLevelsHtml = cm && Array.isArray(cm.integrations) ? \`
+        <h3 style="margin:22px 0 10px;font-family:var(--font-mono);color:var(--accent);">🧱 5-Dimension Environment Capability Manifest</h3>
+        <div class="grid" style="margin-bottom:16px;">
+          \${cm.integrations.map(item => \`
+            <article class="card">
+              <div class="card-header">
+                <div class="card-title">\${escapeHtml(item.id)}</div>
+                <span class="badge badge-cat">\${escapeHtml(item.availableRuntimeApi || 'n/a')}</span>
+              </div>
+              <p class="card-desc">
+                \${escapeHtml(item.domain || '')}<br/>
+                Documented: <strong>\${Boolean(item.documentedSupport)}</strong> ·
+                Installed: <strong>\${Boolean(item.installedSoftware)}</strong> ·
+                Simulation: <strong>\${Boolean(item.simulationCapability)}</strong> ·
+                Verified Physical: <strong>\${Boolean(item.verifiedPhysicalExecution)}</strong>
+              </p>
+            </article>
+          \`).join('')}
+        </div>
+      \` : '';
 
       const plan = PLATFORM.samplePlan;
       const stagesHtml = (plan && plan.stages ? plan.stages : []).map(st => \`
@@ -982,9 +1047,11 @@ const html = `<!DOCTYPE html>
 
       container.innerHTML = \`
         \${evalHtml}
+        \${qualityHtml}
         <h3 style="margin:18px 0 10px;font-family:var(--font-mono);color:var(--accent);">🧭 Typed Workflow DAG Preview (Vibration PCB + Fusion 360 Enclosure)</h3>
         <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Plan ID: <code>\${escapeHtml(plan.planId)}</code> · Topological DAG (hasCycles=\${plan.dependencyGraph.hasCycles}) · claimedPhysicalExecution=<strong>\${plan.executionRecord.claimedPhysicalExecution}</strong></p>
         <div class="grid">\${stagesHtml}</div>
+        \${capLevelsHtml}
         <h3 style="margin:22px 0 10px;font-family:var(--font-mono);color:var(--accent);">🛡️ HOL Guard, Rust Secure Gateway &amp; Prompt Archive Provenance</h3>
         <div class="grid" style="margin-bottom:18px;">
           <article class="card">
@@ -997,7 +1064,7 @@ const html = `<!DOCTYPE html>
           </article>
           <article class="card">
             <div class="card-title">Rootcastle Prompt Archive</div>
-            <p class="card-desc">Source: <code>\${escapeHtml(pa.sourceUrl)}</code> · Classification: <strong>\${escapeHtml(pa.trustClassification)}</strong> (SHA-256 verified, offline bundled fallback ready)</p>
+            <p class="card-desc">Source: <code>\${escapeHtml(pa.sourceUrl)}</code> · Classification: <strong>\${escapeHtml(pa.trustClassification)}</strong> (SHA-256 verified, unsigned publisher, rollback ready)</p>
           </article>
         </div>
         <h3 style="margin:22px 0 10px;font-family:var(--font-mono);color:var(--accent);">🔌 Capability-Aware Engineering Adapters (Read-Only / Computational)</h3>

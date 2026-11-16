@@ -10,21 +10,22 @@
 
 # REI SKILLS
 
-**The adaptive, security-conscious engineering skill intelligence platform for AI agents.**  
-*Discover. Route. Orchestrate. Verify.*
+**The auditable engineering skill platform for AI agents.**  
+*Discover capabilities, build workflows, enforce security policies, and verify engineering outcomes across AI tools.*
 
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
 [![Validated Skills](https://img.shields.io/badge/skills-1423%20validated-228B55)](#explore-the-library)
-[![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-96.4%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
+[![Gold 50](https://img.shields.io/badge/Gold%2050-50%2F50%20verified-228B55)](#registry-quality-engine--gold-50-program)
+[![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-97.3%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
 [![Rust Gateway](https://img.shields.io/badge/Rust%20Gateway-v0.2.0-228B55)](docs/engineering/RUST_GATEWAY_SPEC.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
 
 **[npm package](https://www.npmjs.com/package/rei-skills)** · **[Interactive Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Publish workflow](https://github.com/rootcastleco/rei-skills/actions/workflows/publish.yml)**
 
-**[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Docs & Reports](#engineering-documentation--reports)**
+**[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Quality & Gold 50](#registry-quality-engine--gold-50-program)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[Docs & Reports](#engineering-documentation--reports)**
 
 </div>
 
@@ -55,14 +56,15 @@ flowchart LR
 
 | Subsystem | Core Implementation | Verification Suite | Key Guarantee |
 | :--- | :--- | :--- | :--- |
-| **Hybrid Semantic Router** | [`lib/hybrid-router.js`](lib/hybrid-router.js), [`lib/smart-router.js`](lib/smart-router.js) | [`hybrid-router.test.js`](scripts/tests/hybrid-router.test.js) | Offline BM25 + 256-dim vectors, EN/TR normalization, `legacy` fallback |
-| **Workflow DAG Compiler** | [`lib/workflow-compiler.js`](lib/workflow-compiler.js) | [`workflow-compiler.test.js`](scripts/tests/workflow-compiler.test.js) | Topological ordering, SI/Fusion unit checks, `claimedPhysicalExecution: false` |
-| **Rootcastle Prompt Archive** | [`lib/prompt-archive.js`](lib/prompt-archive.js) | [`prompt-archive.test.js`](scripts/tests/prompt-archive.test.js) | SHA-256 verification, injection scan, offline TTL/bundled fallback |
+| **Hybrid Semantic Router** | [`lib/hybrid-router.js`](lib/hybrid-router.js), [`lib/smart-router.js`](lib/smart-router.js) | [`hybrid-router.test.js`](scripts/tests/hybrid-router.test.js) | Offline BM25 + 256-dim vectors, EN/TR normalization, Q0 quarantine, tool & overlap filters |
+| **14-Point Quality & Gold 50** | [`lib/quality-engine.js`](lib/quality-engine.js), [`scripts/validate_skills.py`](scripts/validate_skills.py), [`scripts/evaluate-gold50.js`](scripts/evaluate-gold50.js) | [`gold50-quality.test.js`](scripts/tests/gold50-quality.test.js) | `14pt-v1` tiers (`Q3`–`Q0`), 6 verification axes, Gold 50 (`50/50` verified) |
+| **Workflow DAG Compiler** | [`lib/workflow-compiler.js`](lib/workflow-compiler.js) | [`workflow-compiler.test.js`](scripts/tests/workflow-compiler.test.js) | Topological ordering, SI/Fusion unit checks, conflict gates, `claimedPhysicalExecution: false` |
+| **Rootcastle Prompt Archive** | [`lib/prompt-archive.js`](lib/prompt-archive.js) | [`prompt-archive.test.js`](scripts/tests/prompt-archive.test.js) | SHA-256 content verification, unsigned publisher disclosure, version pin & 1-step rollback |
 | **HOL Guard Policy Layer** | [`lib/hol-guard-policy.js`](lib/hol-guard-policy.js), [`bin/mcp-server.js`](bin/mcp-server.js) | [`hol-guard-policy.test.js`](scripts/tests/hol-guard-policy.test.js) | Deny-by-default MCP authorization, secret redaction, traversal gates |
-| **Engineering Adapters** | [`lib/engineering-adapters.js`](lib/engineering-adapters.js) | [`engineering-adapters.test.js`](scripts/tests/engineering-adapters.test.js) | Explicit capability & hardware boundaries across 5 engineering domains |
-| **Rust Secure Gateway** | [`rust/rei-hook-gateway`](rust/rei-hook-gateway/) (`v0.2.0`) | `cargo test` (`7/7` passing) | Loopback IPC, replay/rate-limit/backpressure, zero shell exec, mTLS closed |
+| **Engineering Adapters** | [`lib/engineering-adapters.js`](lib/engineering-adapters.js) | [`engineering-adapters.test.js`](scripts/tests/engineering-adapters.test.js) | 5-level `getEnvironmentCapabilityManifest` + software/hardware boundaries across 5 domains |
+| **Rust Secure Gateway** | [`rust/rei-hook-gateway`](rust/rei-hook-gateway/) (`v0.2.0`) | `cargo test` (`8/8` passing) | Loopback IPC, replay/rate-limit/backpressure, boundary control-char rejection, mTLS closed |
 | **Observability & Self-Improvement** | [`lib/observability.js`](lib/observability.js), [`lib/evaluation-engine.js`](lib/evaluation-engine.js), [`lib/improvement-engine.js`](lib/improvement-engine.js) | [`improvement-engine.test.js`](scripts/tests/improvement-engine.test.js) | Non-regression held-out gating; review-only PR drafts (`automaticWrites: false`) |
-| **Multi-AI Installer & Safe MCP Staging** | [`bin/install.js`](bin/install.js), [`lib/ai-adapters.js`](lib/ai-adapters.js), [`lib/mcp-safe-install.js`](lib/mcp-safe-install.js) | [`installer.test.js`](scripts/tests/installer.test.js), [`mcp-safe-installer.test.js`](scripts/tests/mcp-safe-installer.test.js) | 21 AI targets, transactional backup/rollback, Windows symlink safety |
+| **Multi-AI Installer & Safe MCP Staging** | [`bin/install.js`](bin/install.js), [`lib/ai-adapters.js`](lib/ai-adapters.js), [`lib/mcp-safe-install.js`](lib/mcp-safe-install.js) | [`installer.test.js`](scripts/tests/installer.test.js), [`mcp-safe-installer.test.js`](scripts/tests/mcp-safe-installer.test.js) | 21 AI targets, `npx skills` compat, `remove`/`quality` CLI, transactional rollback |
 
 ---
 
@@ -72,6 +74,7 @@ Install the complete **1423 validated skills** library or project focused skills
 
 ```bash
 npx rei-skills
+npx skills add rootcastleco/rei-skills --list   # Standard Agent Skills / vercel-labs discovery
 ```
 
 ### Target Any AI Coding Assistant, IDE, or Agent SDK (`21` Targets Supported)
@@ -129,8 +132,10 @@ npx rei-skills prompt sync
 npx rei-skills prompt compose "Review telemetry firmware for failure modes"
 npx rei-skills improve --feedback "Add SPICE bench parity cross-check" --json
 
-# 6. Catalog Discovery, Diagnostics, MCP Server & Format Export
+# 6. Catalog Discovery, Quality Audits, Removal/Rollback, MCP Server & Format Export
 npx rei-skills search firmware           # Search across 1423 skills by domain, keyword, risk, or upstream source
+npx rei-skills quality rc-kicad-ecad-kicad-drc-ci --json
+npx rei-skills remove rei-rea-orchestrator --cursor -w
 npx rei-skills list --category reverse-engineering
 npx rei-skills targets
 npx rei-skills doctor
@@ -145,21 +150,31 @@ npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
 Instead of injecting all 1,423 skill manuals into an agent's context window, [`lib/hybrid-router.js`](lib/hybrid-router.js) ranks relevant skills in real time using:
 
 - **BM25 Weighted Inverted Index** (`WeakMap`-cached per catalog snapshot) paired with **256-dim offline character-trigram and domain-concept embeddings** (plus optional external `embeddingProvider` injection).
-- **Bilingual EN/TR Normalization:** Turkish ASCII folding, suffix stemming, domain lexicon expansion, and boundary-matched `PHRASE_RULES`.
-- **Context, Risk & Uncertainty Controls:** File extension signals (`.kicad_pcb`, `.step`, `.wasm`, `.apk`, `.tsx`, etc.), `safeOnly` risk filtering excluding `critical`/`offensive` skills, overlap detection, prerequisite domain graph hints, out-of-scope uncertainty gating (`high_uncertainty_or_out_of_scope`), and deterministic fallback (`engine: "legacy"`).
+- **Bilingual EN/TR Normalization:** Turkish ASCII folding, suffix stemming, domain lexicon expansion, deduplicated stack boosts, slug-specialty matching, and boundary-matched `PHRASE_RULES`.
+- **Quality, Tool & Token Budget Controls:** Default **Q0 quarantine filtering** (`includeQuarantined` opt-in), `availableTools` compatibility annotations, `detectConflictingSkills`, `contextTokenBudget` accounting, `safeOnly` risk filtering excluding `critical`/`offensive` skills, out-of-scope uncertainty gating (`high_uncertainty_or_out_of_scope`), and deterministic fallback (`engine: "legacy"`).
 
 Measured across the 260-task benchmark ([`data/benchmarks/routing-benchmark-v1.json`](data/benchmarks/routing-benchmark-v1.json), split `train` = 80 / `dev` = 60 / `eval` = 120 held-out; report in [`data/benchmarks/routing-evaluation-report.json`](data/benchmarks/routing-evaluation-report.json)):
 
-| Split | Router Engine | Recall@3 | MRR | nDCG@5 | Out-of-Scope FPR | Crit Misroute | `p95` Latency | `positive_tr` R@3 |
-| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| **`train`** (80) | Legacy | 88.89% | 0.8412 | 0.7376 | 25.0% | 0 | 31.103 ms | 60.00% |
-| **`train`** (80) | **Hybrid** | **98.61%** | **0.9132** | **0.8457** | **0.0%** | **0** | **3.379 ms** | **100.00%** |
-| **`dev`** (60) | Legacy | 89.29% | 0.8603 | 0.7854 | 25.0% | 0 | 25.549 ms | 62.50% |
-| **`dev`** (60) | **Hybrid** | **94.64%** | **0.8786** | **0.8214** | **0.0%** | **0** | **3.590 ms** | **87.50%** |
-| **`eval`** (120 held-out) | Legacy | 91.07% | 0.8375 | 0.7587 | 37.5% | 0 | 26.035 ms | 70.00% |
-| **`eval`** (120 held-out) | **Hybrid** | **96.43%** | **0.8897** | **0.8456** | **0.0%** | **0** | **2.919 ms** | **100.00%** |
+| Split | Router Engine | Recall@3 | Precision@3 | IncAct | MRR | nDCG@5 | Out-of-Scope FPR | `p95` Latency | `positive_tr` R@3 |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| **`train`** (80) | Legacy | 88.89% | 49.5% | 11.11% | 0.8412 | 0.7376 | 25.0% | 26.519 ms | 60.00% |
+| **`train`** (80) | **Hybrid** | **98.61%** | **58.8%** | **1.39%** | **0.9079** | **0.8392** | **0.0%** | **4.458 ms** | **100.00%** |
+| **`dev`** (60) | Legacy | 89.29% | 51.8% | 10.71% | 0.8603 | 0.7854 | 25.0% | 21.989 ms | 62.50% |
+| **`dev`** (60) | **Hybrid** | **96.43%** | **58.9%** | **3.57%** | **0.9000** | **0.8412** | **0.0%** | **5.942 ms** | **100.00%** |
+| **`eval`** (120 held-out) | Legacy | 91.07% | 53.6% | 8.93% | 0.8375 | 0.7587 | 37.5% | 22.127 ms | 70.00% |
+| **`eval`** (120 held-out) | **Hybrid** | **97.32%** | **58.9%** | **2.68%** | **0.9009** | **0.8537** | **0.0%** | **4.755 ms** | **100.00%** |
 
-Full breakdown: [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md).
+Critical-risk misrouting across all splits and engines: **0**. Full breakdown: [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md).
+
+---
+
+## Registry Quality Engine & Gold 50 Program
+
+Every skill in the 1,423-skill catalog is scored by the deterministic **14-Point Auditable Quality Engine** ([`lib/quality-engine.js`](lib/quality-engine.js), [`scripts/validate_skills.py`](scripts/validate_skills.py), [`data/quality-report.json`](data/quality-report.json)) across 7 × (`0..2`) = 14 dimensions, paired with **6 separated verification axes** (`schemaValid`, `referenceValidated`, `securityPolicyChecked`, `evaluationPassed`, `humanReviewed`, `hardwareVerified`):
+
+- **Quality Tiers (`14pt-v1`):** `Q3` Gold (**346** skills), `Q2` Solid (**936** skills), `Q1` Basic (**141** skills), `Q0` Quarantine (**0** skills) · Average `14pt-v1` score: **`9.76 / 14`** (legacy doc score `82.3 / 100`).
+- **Epistemic Integrity:** Failing schema, reference, or security checks force **`Q0` Quarantine** regardless of numerical score; unperformed checks remain explicit (`human_reviewed_count: 0`, `hardware_verified_count: 0` / `"not_verified"`).
+- **Gold 50 Engineering Program ([`data/gold50-manifest.json`](data/gold50-manifest.json), [`scripts/evaluate-gold50.js`](scripts/evaluate-gold50.js)):** Evaluates **50 priority skills across 10 engineering disciplines** — **50/50 (`100.0%`)** skills passing, **149/150 (`99.3%`)** positive EN & EN/TR scenarios passing, **100/100 (`100.0%`)** negative/injection triggers cleanly rejected, and **50/50** multi-AI adapter transpilations passing (`targetGte95PctMet: true`). See [`docs/QUALITY_METHODOLOGY.md`](docs/QUALITY_METHODOLOGY.md) and [`docs/QUALITY_REPORT.md`](docs/QUALITY_REPORT.md).
 
 ---
 
@@ -167,7 +182,7 @@ Full breakdown: [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/eng
 
 ### Typed Workflow Orchestration ([`lib/workflow-compiler.js`](lib/workflow-compiler.js))
 
-For complex multi-domain requests (such as *"Design a four-channel vibration measurement PCB and its Fusion 360 enclosure"*), `compileWorkflowPlan` constructs an acyclic topological DAG with unit compatibility checks (`mm` ↔ `cm`, `kHz` ↔ `Hz`), resource budgets, retry policies, explicit uncertainty states, and strict execution boundary classifications:
+For complex multi-domain requests (such as *"Design a four-channel vibration measurement PCB and its Fusion 360 enclosure"*), `compileWorkflowPlan` constructs an acyclic topological DAG with unit compatibility checks (`mm` ↔ `cm`, `kHz` ↔ `Hz`), capability & resource conflict detection (`capabilityValidation`), resource budgets, retry policies, explicit uncertainty states, and strict execution boundary classifications:
 
 - `COMPUTATIONAL_ONLY` — deterministic software planning, math, schema, and code verification.
 - `REQUIRES_CAD_OR_EDA_SOFTWARE` — requires external KiCad / Fusion 360 tooling for geometry or PCB edits.
@@ -190,7 +205,7 @@ Planning never fabricates physical outcomes (`executionRecord.claimedPhysicalExe
 
 - **33 Technical Specialties:** Integrated alongside the original 895 skills (`528 + 895 = 1,423`) covering GNSS, JT808 telematics, BLE, cellular IoT, RTOS, firmware OTA, IoT security, Rust, industrial Ethernet, machinery vibration, rotor balancing, DAQ, PCB/EMC, time-series pipelines, edge ML, binary forensics, HIL testing, safety assurance, and reproducible research ([`docs/TECHNICAL_SKILL_EXPANSION.md`](docs/TECHNICAL_SKILL_EXPANSION.md)).
 - **128 CAD, Electronics & Fusion 360 Skills:** Circuit design, SPICE parity, KiCad ERC/DRC, Fusion 360 parametric modeling & Python API, PCB–enclosure tolerance fits, and CAM ([`docs/CAD_ELECTRONICS_FUSION.md`](docs/CAD_ELECTRONICS_FUSION.md)).
-- **Quality boundary:** Passing schema and security audits does not constitute physical bench verification, metrological calibration, or standards certification; unmeasured hardware steps remain **NOT VERIFIED**.
+- **Quality & capability boundary:** `getEnvironmentCapabilityManifest()` separates 5 operational levels (`L0` Documented → `L1` Software Installed → `L2` Offline Simulation → `L3` Configured Bridge → `L4` Physical Hardware Bench, strictly `not_verified` without attached calibrated bench instruments). Passing schema and security audits never certifies hardware, machining tolerances, or RF/EMC compliance (`claimedPhysicalExecution: false`).
 
 ---
 
@@ -230,9 +245,9 @@ Connect any MCP client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini C
 
 ## Rootcastle Prompt Intelligence, Rust Gateway `v0.2.0` & Continuous Improvement
 
-- **Prompt Archive v2 ([`lib/prompt-archive.js`](lib/prompt-archive.js)):** Fetches versioned references from `https://promt.rootcastle.com/` with HTTPS allowlisting, SHA-256 `contentSha256` verification, injection scanning, language/domain tagging, incremental manifest caching, TTL expiry with `stale_offline_fallback` + `bundled_fallback`, snapshot diffing, and progressive `maxContextChars` budgeting. External prompts remain explicitly marked `UNTRUSTED_EXTERNAL_REFERENCE` and never install executable hooks or grant tool privileges.
-- **Rust Secure Communication Gateway (`v0.2.0`, [`rust/rei-hook-gateway`](rust/rei-hook-gateway/)):** Typed local loopback IPC gateway (`127.0.0.1:9783`, `serde`/`serde_json`/`subtle`, zero host shell execution) enforcing constant-time token compare, `SafetyClass` gates (`read_only`, `state_changing`, `potentially_hazardous`), isolated engineering adapter contracts (`kicad`, `fusion360`, `embedded_diagnostics`, `telemetry`, `lab_equipment`), bounded nonce/timestamp replay protection, idempotent request deduplication, sliding-window rate limits, `max_in_flight` backpressure, cancellation, sanitized audit ring buffer, and fail-closed non-loopback `validate_bind_address` (`remote_enabled: false` until verified `mTLS` credentials + SAN allowlist are supplied). See [`docs/engineering/RUST_GATEWAY_SPEC.md`](docs/engineering/RUST_GATEWAY_SPEC.md).
-- **Controlled Self-Improvement ([`lib/observability.js`](lib/observability.js), [`lib/evaluation-engine.js`](lib/evaluation-engine.js), [`lib/improvement-engine.js`](lib/improvement-engine.js)):** Executes sandboxed `Observe -> Detect Weakness -> Form Hypothesis -> Generate Candidate -> Test -> Compare Baseline -> Security Review -> Create PR Draft` experiments across `dev` and held-out `eval` splits, rejecting unsafe or non-beneficial mutations and outputting reviewable PR drafts with rollback plans (`automaticWrites: false`, `autoMerge: false`, `autoPublish: false`).
+- **Prompt Archive v2 ([`lib/prompt-archive.js`](lib/prompt-archive.js)):** Fetches versioned references from `https://promt.rootcastle.com/` with HTTPS allowlisting, explicit separation between SHA-256 content integrity (`integrityHashVerified: true`) and unsigned publisher verification (`publisherSignatureVerified: false`), injection scanning, `pinPromptVersion` pinning, 1-step `rollbackSnapshot` recovery, TTL expiry with `stale_offline_fallback` + `bundled_fallback`, and `maxContextChars` budgeting ([`docs/PROMPT_ARCHIVE_SECURITY.md`](docs/PROMPT_ARCHIVE_SECURITY.md)).
+- **Rust Secure Communication Gateway (`v0.2.0`, [`rust/rei-hook-gateway`](rust/rei-hook-gateway/), `8/8` `cargo test`):** Typed local loopback IPC gateway (`127.0.0.1:9783`, `serde`/`serde_json`/`subtle`, zero host shell execution) enforcing constant-time token compare, `SafetyClass` gates (`read_only`, `state_changing`, `potentially_hazardous`), isolated engineering adapter contracts (`kicad`, `fusion360`, `embedded_diagnostics`, `telemetry`, `lab_equipment`), bounded nonce/timestamp replay protection, control-char/boundary abuse rejection, sliding-window rate limits, `max_in_flight` backpressure, cancellation, sanitized audit ring buffer, and fail-closed non-loopback `validate_bind_address` (`remote_enabled: false` until verified `mTLS` credentials + SAN allowlist are supplied). See [`docs/engineering/RUST_GATEWAY_SPEC.md`](docs/engineering/RUST_GATEWAY_SPEC.md).
+- **Controlled Self-Improvement ([`lib/observability.js`](lib/observability.js), [`lib/evaluation-engine.js`](lib/evaluation-engine.js), [`lib/improvement-engine.js`](lib/improvement-engine.js)):** Executes sandboxed `Observe -> Detect Weakness -> Form Hypothesis -> Generate Candidate -> Test -> Compare Baseline -> Security Review -> Create PR Draft` experiments across `dev` and held-out `eval` splits, rejecting unsafe or non-beneficial mutations and outputting reviewable PR drafts with rollback plans (`automaticWrites: false`, `autoMerge: false`, `autoPublish: false`; see [`docs/CONTROLLED_IMPROVEMENT_PROTOCOL.md`](docs/CONTROLLED_IMPROVEMENT_PROTOCOL.md)).
 
 ---
 
@@ -340,10 +355,11 @@ Verified excerpt ([`examples/rei-rea-demo/DEMO_OUTPUT.json`](examples/rei-rea-de
 
 ## Compatibility
 
-Compatibility across adapters is verified via automated schema validation and installer tests ([`scripts/tests/installer.test.js`](scripts/tests/installer.test.js), [`scripts/tests/mcp-safe-installer.test.js`](scripts/tests/mcp-safe-installer.test.js), [`scripts/tests/npm-package.test.js`](scripts/tests/npm-package.test.js)):
+Compatibility across adapters is verified via automated schema validation, `npx skills` discovery checks (`vercel-labs/skills`), and installer tests ([`docs/ADAPTER_COMPATIBILITY_MATRIX.md`](docs/ADAPTER_COMPATIBILITY_MATRIX.md), [`scripts/tests/installer.test.js`](scripts/tests/installer.test.js), [`scripts/tests/mcp-safe-installer.test.js`](scripts/tests/mcp-safe-installer.test.js), [`scripts/tests/npm-package.test.js`](scripts/tests/npm-package.test.js)):
 
 | AI Assistant / Client | Target Directory | Installer Flag | Verification Status | Invocation Pattern |
 | :--- | :--- | :--- | :--- | :--- |
+| **`npx skills` (`vercel-labs/skills`)** | `skills/<id>/SKILL.md` | `--list` / direct URL | **Tested** (`0` invalid names/descriptions across `1,423` skills) | `npx skills add rootcastleco/rei-skills` |
 | **Claude Code** | `~/.claude/skills` | `--claude` | **Tested** (Installer + YAML schema + symlink materialization) | `/skill-name` or `@skill-name` |
 | **OpenAI Codex CLI** | `~/.codex/skills` | `--codex` | **Tested** (`agents/openai.yaml` metadata preserved) | `Use @skill-name ...` |
 | **Gemini CLI** | `~/.gemini/skills` | `--gemini` | **Tested** (Installer + `SKILL.md` frontmatter parser) | `Use skill-name to ...` |
@@ -358,9 +374,15 @@ Compatibility across adapters is verified via automated schema validation and in
 
 | Document | Scope |
 | :--- | :--- |
+| [`docs/audits/BASELINE_AUDIT.md`](docs/audits/BASELINE_AUDIT.md) | Baseline repository, `npx skills`, bundle count & verification gap audit |
+| [`docs/QUALITY_METHODOLOGY.md`](docs/QUALITY_METHODOLOGY.md) | `14pt-v1` rubric (`Q3`–`Q0`), Q0 quarantine rules, and 6 separated verification axes |
+| [`docs/QUALITY_REPORT.md`](docs/QUALITY_REPORT.md) | Registry-wide quality summary (`346 Q3`, `936 Q2`, `141 Q1`, `0 Q0`) & Gold 50 (`50/50`) results |
+| [`docs/ADAPTER_COMPATIBILITY_MATRIX.md`](docs/ADAPTER_COMPATIBILITY_MATRIX.md) | 21-target transpiler & `vercel-labs/skills` (`npx skills`) verified compatibility semantics |
+| [`docs/PROMPT_ARCHIVE_SECURITY.md`](docs/PROMPT_ARCHIVE_SECURITY.md) | SHA-256 integrity vs unsigned publisher distinction, pinning & 1-step rollback contract |
+| [`docs/CONTROLLED_IMPROVEMENT_PROTOCOL.md`](docs/CONTROLLED_IMPROVEMENT_PROTOCOL.md) | Evidence-gated, review-only improvement workflow & held-out non-regression policy |
 | [`docs/engineering/ARCHITECTURE.md`](docs/engineering/ARCHITECTURE.md) | End-to-end platform pipeline and ADRs `001`–`008` |
 | [`docs/engineering/PHASE_A_BASELINE_REPORT.md`](docs/engineering/PHASE_A_BASELINE_REPORT.md) | Baseline audit, `npm publish` verification root-cause, and latency/FPR measurements |
-| [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md) | 260-task split evaluation (`Recall@3`, `MRR`, `nDCG@5`, `FPR`, `p95`) |
+| [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md) | 260-task split evaluation (`Recall@3`, `Precision@3`, `MRR`, `nDCG@5`, `FPR`, `p95`) |
 | [`docs/engineering/RUST_GATEWAY_SPEC.md`](docs/engineering/RUST_GATEWAY_SPEC.md) | Wire schema, isolated adapter safety classes, replay/rate-limit/backpressure & mTLS gate |
 | [`docs/engineering/RELEASE_READINESS_REPORT.md`](docs/engineering/RELEASE_READINESS_REPORT.md) | Evidence-backed `PASS` / `FAIL` / `NOT VERIFIED` release readiness matrix |
 | [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md) | Platform threat model (`TM-01`–`TM-11`) and verification commands |

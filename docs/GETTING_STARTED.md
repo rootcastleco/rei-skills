@@ -60,6 +60,6 @@ npx rei-skills --opencode      # ~/.agents/skills
 ## 4. Next Steps
 
 1. **[Usage Guide](USAGE.md)** — How to search, invoke, and chain skills in prompts
-2. **[Role Bundles](BUNDLES.md)** — 19 curated role packs (`essentials`, `rei-rea`, `fullstack`, `security-engineer`, etc.)
+2. **[Role Bundles](BUNDLES.md)** — 6 curated role packs (`rei-rea`, `core-dev`, `security-core`, `k8s-core`, `data-core`, `ops-core`)
 3. **[Workflows](WORKFLOWS.md)** — Step-by-step multi-skill orchestration playbooks
 4. **[REI Reverse Engineering](REI_REA_INTEGRATION.md)** — Binary intelligence, casebook forensics, and MCP setup
