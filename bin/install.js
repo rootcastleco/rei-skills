@@ -45,6 +45,7 @@ const SUBCOMMANDS = new Set([
   "router",
   "recommend",
   "mcp",
+  "prompt",
 ]);
 
 function resolveDir(p) {
@@ -298,6 +299,7 @@ Commands:
   install                  Install skills into target AI directory (default)
   recommend <task>         Smart Intent & Stack Router: recommend top skills, bundles & workflows
   mcp                      Start the REI Skills Smart MCP Server over stdio (JSON-RPC 2.0)
+  prompt <sync|compose|propose>  Rootcastle Prompt Archive tasks (opt-in)
   add <id|bundle|rei-rea>  Install a specific skill, role bundle, or REI REA pack
   search <query>           Search 895 skills by name, category, tags, risk, or source
   list                     List skills (--category, --bundle, --categories, --bundles)
@@ -336,6 +338,8 @@ Universal AI Target Flags (21 Supported AI Assistants & Runtimes):
 Examples:
   npx rei-skills recommend "reverse engineer android apk and firmware" --files app.apk,fw.bin
   npx rei-skills mcp
+  npx rei-skills prompt sync
+  npx rei-skills prompt compose "Firmware safety audit"
   npx rei-skills targets
   npx rei-skills add rei-rea --claude --mcp-config ~/.claude/mcp.json
   npx rei-skills add rei-rea --copilot --workspace --agents-md
@@ -1395,6 +1399,14 @@ function main() {
   }
 
   switch (opts.command) {
+    case "prompt": {
+      const child = spawnSync(process.execPath,
+        [path.join(__dirname, "prompt-agent.js"), ...process.argv.slice(3)],
+        { stdio: "inherit" });
+      if (child.error) throw child.error;
+      process.exitCode = child.status === null ? 1 : child.status;
+      break;
+    }
     case "mcp": {
       const { startMcpServer } = require("./mcp-server");
       startMcpServer();

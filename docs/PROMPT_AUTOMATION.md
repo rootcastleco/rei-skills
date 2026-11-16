@@ -7,9 +7,9 @@
 
 ## What works now
 
-1. `npx rei-skills-prompt sync` downloads up to 32 catalog shards from the fixed HTTPS origin, rejects redirects, bounds response sizes and entry lengths, filters invalid records and writes an atomic snapshot to `~/.cache/rei-skills/prompt-archive.json`. Newly published prompts in the selected shards are discovered on subsequent syncs, **not pushed automatically**.
-2. `npx rei-skills-prompt compose "my engineering task"` selects cached references using deterministic keyword scoring and produces a **review-only** task prompt with SHA-256 provenance for each excerpt.
-3. `npx rei-skills-prompt propose "my task" --feedback "missing negative tests"` creates a proposed improvement record and **does not** edit a skill, create a commit, run a hook or deploy.
+1. `npx rei-skills prompt sync` downloads up to 32 catalog shards from the fixed HTTPS origin, rejects redirects, bounds response sizes and entry lengths, filters invalid records and writes an atomic snapshot to `~/.cache/rei-skills/prompt-archive.json`. Newly published prompts in the selected shards are discovered on subsequent syncs, **not pushed automatically**.
+2. `npx rei-skills prompt compose "my engineering task"` selects cached references using deterministic keyword scoring and produces a **review-only** task prompt with SHA-256 provenance for each excerpt.
+3. `npx rei-skills prompt propose "my task" --feedback "missing negative tests"` creates a proposed improvement record and **does not** edit a skill, create a commit, run a hook or deploy.
 4. MCP tools `rei_compose_prompt` and `rei_propose_prompt_improvement` call the same offline cache. `rei_compose_prompt` includes the already-existing safe-only skill router.
 5. Standalone Rust prototype `rust/rei-hook-gateway/` provides an optional loopback-only TCP listener (127.0.0.1:9783), mandatory token and allowlisted `health`, `hook.preview`, `hook.audit` events. It returns acknowledgements **without executing machine commands**.
 
@@ -54,8 +54,8 @@ Continuous feedback may **propose** better prompts, hook templates and tests. No
 npm ci
 node scripts/tests/prompt-archive.test.js
 npm test
-npx rei-skills-prompt sync
-npx rei-skills-prompt compose "firmware telemetry security validation"
+npx rei-skills prompt sync
+npx rei-skills prompt compose "firmware telemetry security validation"
 ```
 
 For the optional Rust prototype (requires Rust toolchain):

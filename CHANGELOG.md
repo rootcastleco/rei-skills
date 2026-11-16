@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## 6.3.0 — Adaptive Prompt Archive and Hook Gateway preview (2026-11-16)
+
+- Added opt-in Rootcastle Prompt Archive synchronization and bounded local cache with prompt provenance hashes.
+- Added task-scoped prompt drafting and feedback proposals without automatic execution or skill mutation.
+- Added two MCP tools: `rei_compose_prompt` and `rei_propose_prompt_improvement`.
+- Added a Rust loopback-only authenticated hook gateway preview with deny-by-default events and contract tests; **not a remote machine controller**.
+- Documented the merged [HOL Guard contribution #7538](https://github.com/hashgraph-online/hol-guard/pull/7538) and new feature in README.
+- Added an explicit `[publish npm]` merge-title gate to the trusted npm publishing workflow; unchanged OIDC identity and release checks.
+
 ## [6.1.0] - 2026-11-02 - "Rootcastle Platform Modernization & REI REA Integration"
 
 > **Full platform modernization, 100% YAML schema & provenance repair across 895 skills, upgraded REI Skill Manager CLI, and first-class integration with the REI Reverse Engineering Workbench (`rei-rea`).**

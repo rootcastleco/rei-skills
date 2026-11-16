@@ -31,9 +31,9 @@
 **REI Skills now has an opt-in Prompt Archive adapter** for [Rootcastle Prompt Archive](https://promt.rootcastle.com/). It reads the published JSON catalog manifest, caches a bounded set of prompts, selects relevant reference prompts for an engineering task, and combines them with safe-only recommendations from the existing skill router.
 
 ```bash
-npx rei-skills-prompt sync
-npx rei-skills-prompt compose "Review telemetry firmware for failure modes"
-npx rei-skills-prompt propose "Review telemetry firmware" --feedback "Add timeout and replay tests"
+npx rei-skills prompt sync
+npx rei-skills prompt compose "Review telemetry firmware for failure modes"
+npx rei-skills prompt propose "Review telemetry firmware" --feedback "Add timeout and replay tests"
 ```
 
 The MCP server additionally exposes `rei_compose_prompt` and `rei_propose_prompt_improvement` (10 tools total). **Automatic self-improvement means reviewable proposals, not unattended modification or execution.** Untrusted archive prompts never become executable hooks, installed skills or production releases without explicit review.
@@ -131,7 +131,7 @@ Instead of loading all 895 skills into an AI agent's context window, REI Skills 
 }
 ```
 
-- **8 Dynamic MCP Tools:** `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_install_skill`, `rei_compile_skill`, `rei_list_ai_targets`.
+- **10 Dynamic MCP Tools:** `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_install_skill`, `rei_compile_skill`, `rei_list_ai_targets`, `rei_compose_prompt`, `rei_propose_prompt_improvement`.
 
 #### Safe MCP skill installation
 

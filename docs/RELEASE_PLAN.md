@@ -45,9 +45,15 @@ The `npm test` suite includes `test:package`, which packs and installs the relea
 
 The release workflow uses Node.js 24 (npm CLI 11.5.1 or later is required by trusted publishing) and Python 3.11. It checks source identity, the exact package version, artifact contents, CI and security gates, and refuses to republish an existing npm version.
 
+## Explicit npm release on authorized main merge
+
+When a reviewed feature changes the npm package version, a maintainer may use a **squash merge commit title containing `[publish npm]`** to trigger the trusted `publish.yml` workflow via a `main` push that modifies `package.json`. Other pushes do not invoke the publishing job. This path is intended for an explicitly approved release, not for every merge; the manual workflow and GitHub Release triggers continue to work. The release workflow still validates, packs, checks version immutability and verifies registry indexing before reporting success.
+
+Confirm a successful CI run on the exact PR head before merge, and verify the publishing run and npm registry after merge. Do not reuse an existing npm version.
+
 ## Publishing
 
-**Preferred:** in GitHub → Actions → **Publish REI Skills to npm** → **Run workflow**, select branch `main` and enter the exact `package.json` version (e.g. `6.2.0` when applicable). The manual workflow refuses branches other than `main` or a mismatched version. You may also publish a GitHub Release with tag `v<package.json version>`; the release checkout must contain the matching package version and workflow.
+**Preferred:** in GitHub → Actions → **Publish REI Skills to npm** → **Run workflow**, select branch `main` and enter the exact `package.json` version (e.g. `6.3.0` when applicable). The manual workflow refuses branches other than `main` or a mismatched version. You may also publish a GitHub Release with tag `v<package.json version>`; the release checkout must contain the matching package version and workflow.
 
 The workflow must show a successful `npm publish` step **and** verify the version in the public npm registry. GitHub check success alone does not prove npm publication when a publish step was conditionally skipped; this workflow does not silently skip that step.
 

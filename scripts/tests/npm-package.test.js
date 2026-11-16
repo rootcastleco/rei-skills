@@ -27,7 +27,7 @@ try {
     "lib/smart-router.js", "lib/mcp-safe-install.js", "lib/prompt-archive.js",
     "data/catalog.json", "data/bundles.json", "data/workflows.json",
     "data/rei-rea-manifest.json", "skills/rei-rea-orchestrator/SKILL.md",
-    "skills/docx-official/SKILL.md",
+    "skills/docx-official/SKILL.md", "rust/rei-hook-gateway/Cargo.toml",
   ];
   for (const file of required) {
     assert(paths.has(file), "npm artifact missing: " + file);

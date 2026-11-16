@@ -42,6 +42,15 @@ async function main() {
       cacheDir: dir,
       fetchFn: async () => ({ok:false,status:503,headers:{get:()=>null}}),
     }), /HTTP 503/);
+    const oversizedStream = new ReadableStream({
+      start(controller) {
+        controller.enqueue(new Uint8Array(1024));
+        controller.close();
+      },
+    });
+    await assert.rejects(() => fetchJson("https://promt.rootcastle.com/catalog/large.json",
+      async () => ({ok:true, status:200, headers:{get:()=>null}, body:oversizedStream}), 100),
+    /too large/);
     assert.equal(loadSnapshot(dir).total, 3, "Failure must retain last valid cache");
     const mcp = require("../../bin/mcp-server");
     assert.equal(mcp.executeToolCall("rei_compose_prompt", {task:"firmware audit", cache_dir:dir}).requiresApproval, true);
