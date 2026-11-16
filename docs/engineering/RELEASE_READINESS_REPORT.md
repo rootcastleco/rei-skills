@@ -1,4 +1,4 @@
-# REI Skills — Platform Release Readiness Report (`v6.5.0+` / `feat/auditable-quality-gold50-platform`)
+# REI Skills — Platform Release Readiness Report (`v6.6.0`)
 
 **Prepared By:** Principal Architecture & Release Engineering Review  
 **Branches / PR Lineage:**  

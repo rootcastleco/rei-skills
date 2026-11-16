@@ -1,6 +1,6 @@
 {
   "name": "rei-skills",
-  "version": "6.5.0",
+  "version": "6.6.0",
   "description": "The auditable engineering skill platform for AI agents. Discover capabilities, build workflows, enforce security policies, and verify engineering outcomes across AI tools.",
   "author": "Rootcastle Engineering & Innovation <admin@rootcastle.com> (https://rootcastle.com)",
   "homepage": "https://rootcastleco.github.io/rei-skills/",
@@ -48,7 +48,9 @@
     "skills",
     "README.md",
     "LICENSE",
-    "rust/rei-hook-gateway",
+    "rust/rei-hook-gateway/Cargo.toml",
+    "rust/rei-hook-gateway/Cargo.lock",
+    "rust/rei-hook-gateway/src",
     "docs/CAD_ELECTRONICS_FUSION.md",
     "examples/fusion360-readonly-inspector",
     "scripts/cad_ecad_verify.py"

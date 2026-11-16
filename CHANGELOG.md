@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased] — Auditable Quality Engine, Gold 50 & Capability Controls (`feat/auditable-quality-gold50-platform`)
+## 6.6.0 — Auditable Quality Engine, Gold 50 & Capability Controls (2026-11-16)
 
 ### Added
 - **14-Point Auditable Quality Engine & 6-Axis Verification (`lib/quality-engine.js`, `scripts/validate_skills.py`, `data/quality-report.json`):** Scored all 1,423 skills across 7 × (`0–2`) dimensions (`Q3`: 346, `Q2`: 936, `Q1`: 141, `Q0` Quarantine: 0; average `9.76 / 14`) while separating `schemaValid`, `referenceValidated`, `securityPolicyChecked`, `evaluationPassed`, `humanReviewed` (`0`), and `hardwareVerified` (`0` / `not_verified`). Failing schema, reference, or security checks force `Q0` quarantine.
