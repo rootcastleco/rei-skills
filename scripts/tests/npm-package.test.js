@@ -12,8 +12,12 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rei-npm-smoke-"));
 const npm = process.platform === "win32" ? "npm.cmd" : "npm";
 function run(command, args, cwd = root) {
   const result = spawnSync(command, args, {
-    cwd, encoding: "utf8", maxBuffer: 40 * 1024 * 1024,
-    timeout: 180000, env: { ...process.env, npm_config_audit: "false", npm_config_fund: "false" },
+    cwd,
+    encoding: "utf8",
+    maxBuffer: 40 * 1024 * 1024,
+    timeout: 180000,
+    shell: process.platform === "win32",
+    env: { ...process.env, npm_config_audit: "false", npm_config_fund: "false" },
   });
   assert.equal(result.status, 0, [command, ...args].join(" ") + "\n" + result.stderr + "\n" + result.stdout);
   return result.stdout;
@@ -51,7 +55,10 @@ try {
   const installed = path.join(tmp, "node_modules", "rei-skills");
   for (const binary of ["rei-skills", "rei-skills-prompt"]) {
     const file = path.join(installed, "bin", binary === "rei-skills" ? "install.js" : "prompt-agent.js");
-    assert(fs.statSync(file).mode & 0o111, binary + " must be executable on Unix");
+    if (process.platform !== "win32") {
+      assert(fs.statSync(file).mode & 0o111, binary + " must be executable on Unix");
+    }
+    assert(fs.readFileSync(file, "utf8").startsWith("#!/usr/bin/env node"), binary + " must declare node shebang");
     const binaryResult = spawnSync(process.execPath, [file, "--help"], {
       cwd: tmp, encoding: "utf8", timeout: 30000,
     });

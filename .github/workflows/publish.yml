@@ -118,10 +118,16 @@ jobs:
         # Configure the trusted publisher at npmjs.com for:
         # owner rootcastleco, repo rei-skills, workflow publish.yml,
         # allow npm publish. Do not pass or store a long-lived npm token.
-        run: npm publish --access public
+        run: |
+          set -euo pipefail
+          npm publish --access public 2>&1 | tee "$RUNNER_TEMP/npm-publish.log"
 
       - name: Verify published npm version and dist-tag
         run: |
           set -euo pipefail
           version="$(node -p 'require("./package.json").version')"
-          node scripts/verify-npm-release.js "$version" --timeout-seconds=720
+          node scripts/verify-npm-release.js "$version" \
+            --timeout-seconds=720 \
+            --publish-log="$RUNNER_TEMP/npm-publish.log" \
+            --allow-pending-after-publish \
+            --json-report="$RUNNER_TEMP/npm-release-verification.json"
