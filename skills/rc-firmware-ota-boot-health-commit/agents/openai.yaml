@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Boot Health Commit
+  short_description: Evidence-based boot health commit checks

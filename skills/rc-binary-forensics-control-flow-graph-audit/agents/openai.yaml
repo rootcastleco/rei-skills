@@ -1,0 +1,3 @@
+interface:
+  display_name: Binary Forensics & Reconstruction — Control Flow Graph Audit
+  short_description: Evidence-based control flow graph audit checks

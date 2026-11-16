@@ -1,0 +1,92 @@
+# REI original skill expansion — technical briefs 01/05
+# Header: @slug|label|category|risk|inputs|units|baseline|hazards|operational boundary
+# Each technical task must specify a distinct executable verification question.
+@gnss-measurement|GNSS Measurement|data-ai|safe|RINEX observation files, NMEA records, satellite ephemerides and surveyed control points|meters, seconds, cycles and hertz|same-epoch surveyed control point and an independent GNSS solver|cycle slips, invalid ephemerides and timescale offsets|Use traceable signal models; do not promise positioning accuracy without surveyed observations.
+pseudorange-residuals: Compute per-satellite code innovations after satellite clock and geometric range corrections, then flag outliers.
+carrier-cycle-slip: Detect phase discontinuities using geometry-free combinations and compare flags with receiver lock indicators.
+doppler-velocity-check: Reconcile Doppler-derived range rates with velocity solutions and independent time-aligned motion evidence.
+nmea-talker-validation: Check NMEA sentence framing, talker identifiers, field counts and checksums under partial serial reads.
+rinex-observation-import: Parse RINEX observation epochs and signal identifiers without dropping unknown constellations or units.
+ephemeris-age-screening: Reject stale broadcast orbital parameters using correct issue identifiers and observation epoch age.
+multi-constellation-time: Convert GPS, Galileo, BeiDou and UTC timestamps explicitly before fusing epoch measurements.
+satellite-visibility-masks: Evaluate elevation masks against skyplot geometry and explain loss of usable satellites.
+raim-integrity-residuals: Test redundant satellite geometry, residual thresholds and fault exclusion under single-satellite anomalies.
+multipath-diagnostics: Separate repeated reflector-induced code errors from clock drift using stationary-site residual patterns.
+rtcm-correction-latency: Measure differential correction age, message sequence integrity and baseline impact at the rover.
+cycle-ambiguity-status: Distinguish float and fixed carrier ambiguities using declared estimator convergence evidence.
+antenna-phase-center: Record antenna mounting offsets, phase-center models and effect on lever-arm-corrected positions.
+geodetic-frame-transform: Convert coordinates between datum and reference-frame definitions with epoch and axis order checks.
+cold-start-acquisition: Compare time-to-first-fix distributions across cold, warm and aided starts using identical RF exposure.
+geofence-position-uncertainty: Prevent boundary decisions when horizontal uncertainty overlaps the geofence tolerance band.
+
+@fleet-telematics|Fleet Telematics|development|safe|vehicle GPS events, ignition state transitions, CAN signals and distance counters|seconds, meters, kilometers per hour and engine hours|sampled vehicle ground-truth trip with signed route and stop annotations|out-of-order messages, counter rollover and GPS dropout|Avoid assigning inferred driver behavior without sufficient timestamped vehicle evidence.
+trip-segmentation: Partition ignition and motion events into trips without generating phantom trips on intermittent ignition.
+idle-time-estimation: Differentiate engine-on stationary idling from traffic stops using RPM, speed and hysteresis.
+distance-odometer-reconcile: Compare GNSS-integrated distance with odometer counters and quantify drift and rollover.
+stop-dwell-analysis: Compute stop arrival and departure intervals despite GPS jitter and sparse sampling.
+harsh-braking-validation: Test deceleration events against sensor bandwidth, units and false-positive road conditions.
+speed-alert-hysteresis: Apply threshold dwell and hysteresis so noisy speeds do not repeatedly fire identical alerts.
+offline-buffer-ordering: Reconcile buffered offline telemetry after reconnect while preserving event-time ordering and deduplication.
+device-heartbeat-status: Classify device online, stale and offline states using documented heartbeat windows and clock drift.
+fuel-level-smoothing: Filter fuel signal quantization while preserving genuine refueling and drain discontinuities.
+driver-assignment-boundary: Tie driver identifiers to authenticated sign-in intervals without leaking assignments between vehicles.
+geofence-entry-exit: Generate stateful geofence transitions with position uncertainty and road-edge jitter tests.
+engine-hours-consistency: Cross-check reported engine-hour accumulation with ignition duty cycle and missing packets.
+fleet-alert-dedup: Apply deterministic event keys and expiry windows to avoid duplicate user notifications after replay.
+route-gap-reporting: Label track gaps and uncertain interpolation instead of inventing road geometry or visited points.
+telemetry-retention-planning: Partition historical fleet data under retrieval, retention, privacy and deletion constraints.
+field-device-battery-health: Interpret vehicle tracker supply and backup battery readings with temperature and undervoltage evidence.
+
+@jt808-protocol|JT808 Device Protocol|development|safe|JT808 binary frames, terminal parameters, serial logs and acknowledgements|bytes, sequence numbers, seconds and milliseconds|golden terminal capture and protocol-version-specific field definitions|escaped delimiters, replayed acknowledgements and truncated frames|Never issue remote terminal commands without explicit authorization and terminal capability checks.
+packet-boundary-recovery: Reconstruct delimited frames across TCP splits while rejecting unbounded frame growth.
+byte-escape-decoding: Reverse protocol escape sequences correctly and test round-trip frame serialization.
+checksum-xor-verification: Verify per-frame XOR checksum after unescaping and reject altered payloads before parsing.
+terminal-id-normalization: Interpret terminal identifier encoding across declared JT808 versions without dropping leading digits.
+multipart-assembly: Reassemble subpackages by original message identifier, terminal and sequence window with limits.
+command-ack-correlation: Match response acknowledgements to issued command IDs, serial numbers and terminal sessions.
+reconnect-session-state: Preserve authenticated terminal state transitions across reconnects without reusing stale sessions.
+location-body-decode: Decode latitude, longitude, status, alarm and speed bitfields with explicit fixed-point units.
+extension-field-parsing: Parse optional TLV-like location extensions by declared length and preserve unknown extensions.
+auth-token-transition: Separate registration, authentication and authorization states before accepting application messages.
+sequence-wraparound: Distinguish legitimate 16-bit sequence rollover from duplicates and delayed packets.
+terminal-parameter-audit: Produce read-only parameter comparisons against approved device configuration baselines.
+message-id-allowlist: Route only supported message IDs and preserve evidence for unsupported future protocol variants.
+command-timeout-retry: Bound outstanding command retries and prevent duplicate command side effects after lost acknowledgements.
+frame-fuzz-negative-cases: Test malformed escape bytes, incorrect length flags and invalid checksum handling without hangs.
+terminal-clock-drift: Estimate device clock offsets from receive timestamps while keeping event-time origin explicit.
+
+@ble-sensor-nodes|BLE Sensor Nodes|development|safe|BLE advertisements, GATT characteristic maps, sensor timestamps and power traces|microamperes, milliseconds, hertz and decibels|reference sensor node and analyzer capture under controlled RF conditions|connection loss, GATT MTU mismatch and battery depletion|Do not extrapolate RF or battery life beyond measured environments and duty cycles.
+advertisement-payload-budget: Fit sensor metadata into advertising payload limits with explicit version and manufacturer identifiers.
+gatt-characteristic-contract: Define read, write and notify permissions for measurement and configuration characteristics.
+connection-interval-power: Measure active and idle current across connection interval changes and reconnection events.
+mtu-fragment-reassembly: Reassemble measurement records across ATT payload boundaries without silent truncation.
+notification-backpressure: Bound queued notification samples and report loss counters when central subscribers stall.
+bonding-key-lifecycle: Define pair, rotate, revoke and factory-reset paths without exposing long-term bond secrets.
+sensor-timestamp-encoding: Preserve monotonic sampling times through BLE payload serialization and central-clock alignment.
+radio-interference-survey: Measure packet loss in the presence of Wi-Fi co-channel and physical-body attenuation.
+firmware-gatt-compatibility: Version BLE services so older mobile clients reject incompatible characteristic layouts safely.
+advertise-sleep-schedule: Compare wake-up duty cycle with power trace and expected discovery latency distribution.
+battery-voltage-interpretation: Map loaded battery voltage to health only with chemistry, temperature and load evidence.
+multi-node-identity: Distinguish rotating device addresses from persistent logical sensor identities without cross-device aliasing.
+pairing-downgrade-defense: Reject unauthenticated control operations and incompatible pairing security levels.
+sensor-payload-crc: Detect corrupt application data with framing integrity independent of BLE link-layer acknowledgements.
+ota-transport-segmentation: Define OTA fragment acknowledgment and resume behavior without issuing unsafe firmware installs.
+disconnect-state-recovery: Restore sensor subscriptions and time alignment after repeated BLE connection interruptions.
+
+@cellular-gateway|Cellular IoT Gateway|infrastructure|safe|LTE modem diagnostics, SIM profiles, PDP context logs, RSSI readings and retry telemetry|dBm, seconds, bytes and milliamperes|known-good network profile and reproducible modem connection trace|coverage gaps, DNS failure, carrier NAT and modem resets|Respect SIM account and roaming controls; never assume network connectivity from signal bars alone.
+modem-attach-sequence: Correlate registration, attachment and data-context transitions with documented AT response codes.
+apn-profile-selection: Validate PDP context parameters across expected carrier profiles and explicit roaming conditions.
+reconnect-backoff-budget: Bound exponential retries with jitter while preserving offline telemetry and power limits.
+carrier-nat-inbound-policy: Confirm inbound reachability constraints before designing server-initiated device sessions.
+tls-session-resumption: Compare handshake overhead and resumed-session security when gateway connectivity is intermittent.
+modem-watchdog-reset: Define escalation from soft reconnection to modem reset using bounded failure counters.
+signal-quality-rsrp-sinr: Interpret RSRP, RSRQ and SINR jointly rather than equating RSSI with packet reliability.
+sim-failover-isolation: Test eSIM profile changes or redundant SIM logic without leaking credentials between carriers.
+dns-expiry-recovery: Re-resolve services after TTL expiry and route changes without pinning obsolete endpoint addresses.
+cellular-power-burst: Characterize current spikes during attach and transmission relative to regulator headroom.
+gnss-cellular-coexistence: Check RF antenna isolation and timing interactions during cellular TX and GNSS acquisition.
+upload-bandwidth-policy: Throttle backlog uploads to preserve command responsiveness under limited uplink throughput.
+packet-loss-dashboard: Measure end-to-end message drops separately from cellular link retries and server rejection.
+offline-queue-durability: Test persistence across abrupt battery loss while enforcing storage wear and queue bounds.
+modem-firmware-inventory: Track module firmware and carrier certification requirements without automatic unreviewed updates.
+field-coverage-mapping: Pair link diagnostics with location and time to distinguish real network holes from modem faults.

@@ -1,0 +1,3 @@
+interface:
+  display_name: Rust Protocol Services — Tokio Cancellation Safety
+  short_description: Evidence-based tokio cancellation safety checks

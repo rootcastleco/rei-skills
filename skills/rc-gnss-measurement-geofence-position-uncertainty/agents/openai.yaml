@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Geofence Position Uncertainty
+  short_description: Evidence-based geofence position uncertainty checks

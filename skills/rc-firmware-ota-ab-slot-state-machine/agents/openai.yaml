@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Ab Slot State Machine
+  short_description: Evidence-based ab slot state machine checks

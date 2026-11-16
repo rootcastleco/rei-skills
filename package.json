@@ -1,7 +1,7 @@
 {
   "name": "rei-skills",
-  "version": "6.3.0",
-  "description": "The universal engineering-grade skill layer & Smart MCP Server for AI agents. 895 validated skills, 21 AI adapters, workflows & REI Reverse Engineering (REA).",
+  "version": "6.4.0",
+  "description": "The universal engineering-grade skill layer & Smart MCP Server for AI agents. 1295 validated skills, 21 AI adapters, workflows & REI Reverse Engineering (REA).",
   "author": "Rootcastle Engineering & Innovation <admin@rootcastle.com> (https://rootcastle.com)",
   "homepage": "https://rootcastleco.github.io/rei-skills/",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "doc-site": "node scripts/build-doc-site.js",
     "chain": "npm run validate:strict && npm run validate:node && npm run index && npm run catalog && npm run readme && npm run doc-site && npm run validate:refs",
     "build": "npm run chain",
-    "test": "node scripts/tests/validate_skills_headings.test.js && python scripts/tests/test_validate_skills_headings.py && node scripts/tests/installer.test.js && node scripts/tests/mcp-safe-installer.test.js && npm run test:package && node scripts/tests/npm-release-verification.test.js && node scripts/tests/prompt-archive.test.js",
+    "test": "node scripts/tests/validate_skills_headings.test.js && python scripts/tests/test_validate_skills_headings.py && node scripts/tests/installer.test.js && node scripts/tests/mcp-safe-installer.test.js && npm run test:package && node scripts/tests/npm-release-verification.test.js && node scripts/tests/prompt-archive.test.js && npm run test:expansion",
     "test:network": "python scripts/tests/inspect_microsoft_repo.py && python scripts/tests/test_comprehensive_coverage.py",
     "brand": "node scripts/brand_skills.js",
     "security-audit": "node scripts/security_audit.js",
@@ -25,7 +25,8 @@
     "check:rea": "python scripts/sync_rei_rea.py --check",
     "sync:microsoft": "python scripts/sync_microsoft_skills.py",
     "sync:all-official": "npm run sync:rea && npm run sync:microsoft && npm run build",
-    "test:package": "node scripts/tests/npm-package.test.js"
+    "test:package": "node scripts/tests/npm-package.test.js",
+    "test:expansion": "python scripts/generate_technical_skills.py --check && python scripts/tests/test_technical_expansion.py"
   },
   "repository": {
     "type": "git",

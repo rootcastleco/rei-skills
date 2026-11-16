@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Ephemeris Age Screening
+  short_description: Evidence-based ephemeris age screening checks

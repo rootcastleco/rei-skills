@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Cycle Ambiguity Status
+  short_description: Evidence-based cycle ambiguity status checks

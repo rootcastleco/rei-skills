@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — High Cardinality Labels
+  short_description: Evidence-based high cardinality labels checks

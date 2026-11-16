@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Event Time Vs Ingest
+  short_description: Evidence-based event time vs ingest checks

@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Image Signature Verification
+  short_description: Evidence-based image signature verification checks

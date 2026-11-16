@@ -1,0 +1,3 @@
+interface:
+  display_name: Fleet Telematics — Speed Alert Hysteresis
+  short_description: Evidence-based speed alert hysteresis checks

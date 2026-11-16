@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Fleet Rollout Canary
+  short_description: Evidence-based fleet rollout canary checks

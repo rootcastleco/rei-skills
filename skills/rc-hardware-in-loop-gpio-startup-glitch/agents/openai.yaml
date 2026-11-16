@@ -1,0 +1,3 @@
+interface:
+  display_name: Hardware-in-the-Loop Testing — Gpio Startup Glitch
+  short_description: Evidence-based gpio startup glitch checks

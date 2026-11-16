@@ -1,0 +1,3 @@
+interface:
+  display_name: JT808 Device Protocol — Checksum Xor Verification
+  short_description: Evidence-based checksum xor verification checks

@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Pseudorange Residuals
+  short_description: Evidence-based pseudorange residuals checks

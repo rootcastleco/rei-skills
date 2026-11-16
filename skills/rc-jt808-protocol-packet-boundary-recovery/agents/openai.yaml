@@ -1,0 +1,3 @@
+interface:
+  display_name: JT808 Device Protocol — Packet Boundary Recovery
+  short_description: Evidence-based packet boundary recovery checks

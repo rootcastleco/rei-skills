@@ -1,0 +1,3 @@
+interface:
+  display_name: Fleet Telematics — Fuel Level Smoothing
+  short_description: Evidence-based fuel level smoothing checks

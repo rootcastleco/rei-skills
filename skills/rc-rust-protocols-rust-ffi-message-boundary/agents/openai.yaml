@@ -1,0 +1,3 @@
+interface:
+  display_name: Rust Protocol Services — Rust Ffi Message Boundary
+  short_description: Evidence-based rust ffi message boundary checks

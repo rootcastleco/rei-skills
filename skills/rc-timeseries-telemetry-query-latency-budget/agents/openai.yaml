@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Query Latency Budget
+  short_description: Evidence-based query latency budget checks

@@ -1,0 +1,3 @@
+interface:
+  display_name: BLE Sensor Nodes — Battery Voltage Interpretation
+  short_description: Evidence-based battery voltage interpretation checks

@@ -1,0 +1,3 @@
+interface:
+  display_name: JT808 Device Protocol — Message Id Allowlist
+  short_description: Evidence-based message id allowlist checks

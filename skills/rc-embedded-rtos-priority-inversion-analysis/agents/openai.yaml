@@ -1,0 +1,3 @@
+interface:
+  display_name: Embedded RTOS Engineering — Priority Inversion Analysis
+  short_description: Evidence-based priority inversion analysis checks

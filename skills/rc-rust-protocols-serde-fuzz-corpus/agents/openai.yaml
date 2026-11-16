@@ -1,0 +1,3 @@
+interface:
+  display_name: Rust Protocol Services — Serde Fuzz Corpus
+  short_description: Evidence-based serde fuzz corpus checks

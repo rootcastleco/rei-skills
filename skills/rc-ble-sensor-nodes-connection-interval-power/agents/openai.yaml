@@ -1,0 +1,3 @@
+interface:
+  display_name: BLE Sensor Nodes — Connection Interval Power
+  short_description: Evidence-based connection interval power checks

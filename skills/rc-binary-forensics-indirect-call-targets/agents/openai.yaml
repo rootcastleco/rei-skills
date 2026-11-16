@@ -1,0 +1,3 @@
+interface:
+  display_name: Binary Forensics & Reconstruction — Indirect Call Targets
+  short_description: Evidence-based indirect call targets checks

@@ -1,0 +1,3 @@
+interface:
+  display_name: Hardware-in-the-Loop Testing — Sensor Timing Skew
+  short_description: Evidence-based sensor timing skew checks

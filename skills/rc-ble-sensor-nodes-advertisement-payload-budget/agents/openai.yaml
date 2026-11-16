@@ -1,0 +1,3 @@
+interface:
+  display_name: BLE Sensor Nodes — Advertisement Payload Budget
+  short_description: Evidence-based advertisement payload budget checks

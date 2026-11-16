@@ -1,0 +1,3 @@
+interface:
+  display_name: Embedded RTOS Engineering — Mutex Deadlock Triage
+  short_description: Evidence-based mutex deadlock triage checks

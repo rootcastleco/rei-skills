@@ -1,0 +1,3 @@
+interface:
+  display_name: BLE Sensor Nodes — Pairing Downgrade Defense
+  short_description: Evidence-based pairing downgrade defense checks

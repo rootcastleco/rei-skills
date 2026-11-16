@@ -1,0 +1,3 @@
+interface:
+  display_name: Industrial Ethernet Diagnostics — Mac Address Table Drift
+  short_description: Evidence-based mac address table drift checks

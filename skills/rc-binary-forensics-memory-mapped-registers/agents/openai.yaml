@@ -1,0 +1,3 @@
+interface:
+  display_name: Binary Forensics & Reconstruction — Memory Mapped Registers
+  short_description: Evidence-based memory mapped registers checks

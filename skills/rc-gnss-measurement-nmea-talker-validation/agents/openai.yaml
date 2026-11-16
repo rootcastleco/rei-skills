@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Nmea Talker Validation
+  short_description: Evidence-based nmea talker validation checks

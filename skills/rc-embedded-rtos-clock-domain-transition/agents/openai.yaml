@@ -1,0 +1,3 @@
+interface:
+  display_name: Embedded RTOS Engineering — Clock Domain Transition
+  short_description: Evidence-based clock domain transition checks

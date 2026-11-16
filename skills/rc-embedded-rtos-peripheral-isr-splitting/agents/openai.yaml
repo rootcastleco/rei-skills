@@ -1,0 +1,3 @@
+interface:
+  display_name: Embedded RTOS Engineering — Peripheral Isr Splitting
+  short_description: Evidence-based peripheral isr splitting checks

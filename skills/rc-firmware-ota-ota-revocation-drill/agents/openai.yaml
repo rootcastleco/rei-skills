@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Ota Revocation Drill
+  short_description: Evidence-based ota revocation drill checks

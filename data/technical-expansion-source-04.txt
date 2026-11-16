@@ -1,0 +1,90 @@
+# REI original skill expansion — technical briefs 04/05
+@timeseries-telemetry|Time Series Telemetry|data-ai|safe|timestamped sensor events, device metadata, partition policies and aggregation queries|nanoseconds, milliseconds, events per second and bytes|raw immutable event set with independent query reconciliation|duplicate event IDs, clock skew, downsampling bias and missing partitions|Do not delete raw evidence or silently interpolate over missing operational events.
+event-time-vs-ingest: Separate event timestamps from collector arrival time and calculate observed skew distribution.
+late-event-watermarks: Define watermark windows and update policies for legitimately late sensor messages.
+out-of-order-upsert: Use idempotent keys and conflict precedence to reconcile out-of-order event updates.
+downsample-aggregation: Compare time-weighted and sample-weighted aggregates before reducing historical resolution.
+device-schema-evolution: Preserve old telemetry decoder compatibility when new firmware adds optional sensor channels.
+retention-tier-rotation: Move aged data to cheaper storage without losing required audit and retrieval guarantees.
+raw-to-derived-lineage: Trace every aggregate and anomaly score back to source event IDs and transformation versions.
+time-bucket-boundary: Test daylight-saving transitions and UTC-based window boundaries in time grouping queries.
+sparse-series-display: Distinguish genuine zero readings from missing measurements in API and chart exports.
+high-cardinality-labels: Bound device and session label cardinality before building metrics and query indexes.
+continuous-query-replay: Recover materialized aggregates after streaming outages without double counting prior windows.
+sensor-drift-detection: Compare long-term sensor baseline changes under controlled operating conditions and calibration events.
+timestamp-precision-storage: Avoid rounding subsecond field measurements where order or phase relationships matter.
+data-quality-quarantine: Separate malformed telemetry from valid rows while preserving error reasons and recovery path.
+query-latency-budget: Benchmark typical fleet history filters with realistic cardinality and bounded scan costs.
+historical-correction-audit: Track who corrected retroactive events, the rationale and before-after derived values.
+
+@edge-machine-learning|Edge Machine Learning Systems|data-ai|safe|versioned datasets, embedded model artifacts, device resource profiles and inference traces|milliseconds, kilobytes, joules and prediction error|held-out field dataset and measurable non-ML baseline|data leakage, quantization drift, sensor dropout and thermal throttling|Never allow an unvalidated model to directly actuate hazardous machinery or erase original sensor evidence.
+quantization-error-bounds: Compare int8 and floating-point inference on the same holdout samples and error tolerance.
+feature-pipeline-parity: Validate training-time feature transforms against production device arithmetic and units.
+concept-drift-alerting: Detect sustained distribution shift without treating deployment-time noise as automatic retraining approval.
+model-memory-budget: Fit model tensors and arena allocations under measured peak memory and fragmentation constraints.
+inference-latency-profiling: Measure tail latency under competing sensor and network workloads on target hardware.
+sensor-failure-fallback: Return explicit degraded confidence or deterministic fallback when required input channels disappear.
+on-device-threshold-calibration: Calibrate decision thresholds with site-specific false-positive consequences and confidence intervals.
+model-version-provenance: Map binary model checksum to dataset, training code, seed and deployed firmware revision.
+embedding-distance-monitor: Check nearest-neighbor distance behavior under changing operating conditions and sensor drift.
+federated-update-review: Quantify update privacy and robustness without assuming local weight sharing is harmless.
+battery-inference-duty: Estimate wake-up and compute energy cost under actual device duty cycle and ambient conditions.
+model-rollout-shadow: Run candidate inference alongside a baseline without allowing its outputs to control equipment.
+anomaly-groundtruth-review: Separate labeled faults from operator notes and unlabeled anomaly windows in model evaluation.
+edge-accelerator-compat: Verify supported operators, memory layouts and runtime library versions on each accelerator target.
+on-device-data-minimization: Capture sufficient diagnostic features while excluding identifiers and raw recordings not needed.
+feedback-loop-guardrail: Reject self-generated labels as ground truth until independent field review and revalidation.
+
+@event-streaming|Event Stream Processing|architecture|safe|broker topics, consumer logs, delivery acknowledgements and retry queues|events per second, milliseconds, partitions and offsets|reference replay log with independently counted event identifiers|duplicate deliveries, poison messages and partition reordering|Never claim exactly-once behavior unless the full broker-to-side-effect transaction boundary is verified.
+topic-schema-contract: Version event envelope and payload schemas while documenting producer and consumer compatibility.
+partition-key-selection: Choose partition keys from ordering requirements and measured hot-key distribution.
+consumer-offset-recovery: Replay committed offsets after crashes without skipping messages or duplicating external side effects.
+idempotency-key-design: Construct stable deduplication keys from source identity and event lifecycle semantics.
+dead-letter-queue: Quarantine invalid events with retention, reason codes and safe replay admission checks.
+event-outbox-atomicity: Reconcile database transaction commits with broker publication using a durable outbox state.
+stream-backpressure: Bound queued work and retry storms under slow downstream consumers.
+event-order-consistency: Define per-entity ordering guarantees without assuming order across independent partitions.
+schema-registry-migration: Validate backward and forward compatibility before activating new event serialization contracts.
+stream-window-aggregation: Compare tumbling, hopping and session windows with late-data correction behavior.
+consumer-group-rebalance: Test processing handoff during rebalance while keeping checkpoint and side-effect semantics explicit.
+broker-disaster-recovery: Validate offset and durability recovery after broker failure without resetting consumer state blindly.
+event-contract-testing: Exercise representative producers and consumers with malformed and unknown optional fields.
+payload-size-guardrails: Reject oversize events before expensive parsing and surface structured rejection metrics.
+delivery-latency-slo: Measure end-to-end event latency separately from broker enqueue and processing delays.
+retention-replay-policy: Keep enough durable history for recovery without silently changing regulatory retention needs.
+
+@cloud-service-ops|Cloud Service Operations|infrastructure|safe|deployment manifests, application logs, traces, resource dashboards and incident runbooks|requests per second, milliseconds, CPU percent and storage gigabytes|last stable release and repeatable production-like synthetic traffic baseline|regional outage, secret expiry, overloaded queues and failed rollback|Production changes need explicit deployment authorization and tested recovery paths.
+rolling-deploy-health: Set startup and readiness probes to prevent routing traffic to partially initialized instances.
+zero-downtime-schema: Stage compatible database changes before switching applications and verify reversible migrations.
+secrets-rotation-check: Revoke old credentials only after all service identities accept new scoped secrets.
+service-error-budget: Translate service-level objectives into measurable release freeze and alert conditions.
+request-trace-correlation: Propagate trace IDs across gateways, database calls and background jobs without exposing PII.
+autoscaling-thresholds: Evaluate scale triggers against saturation and warm-up delays rather than average CPU alone.
+queue-worker-saturation: Bound backlog growth under bursts and trigger shedding before memory or disk exhaustion.
+database-connection-pool: Derive pool limits from backend capacity and retry behavior under concurrent deployments.
+disaster-restore-drill: Restore from immutable backup into an isolated environment and verify application-level consistency.
+tls-certificate-expiry: Model certificate replacement and automated renewal failure without permitting expired trust.
+multi-region-routing: Separate health-based failover from data consistency and write-leader election concerns.
+slo-latency-histograms: Report p50, p95 and p99 request latency with route labels and cardinality limits.
+deployment-feature-flags: Stage new behavior behind documented flags with operator identity and rollback deadline.
+audit-log-redaction: Confirm that logs do not include tokens, personal coordinates or payload secrets under errors.
+infrastructure-cost-baseline: Compare monthly cost using measured resource consumption and traffic distributions.
+runbook-chaos-exercises: Test operator response to a simulated service outage using controlled non-production faults.
+
+@mobile-field-ops|Mobile Field Applications|development|safe|Android or iOS application builds, offline field records, GPS permissions and sync diagnostics|milliseconds, megabytes, location accuracy and battery percent|reference device test suite and representative disconnected field session|background termination, unsent edits and permission revocation|Handle personal location and account tokens as sensitive; do not bypass OS permission or privacy controls.
+offline-edit-conflicts: Resolve local and server record conflicts without silently overwriting operator-entered notes.
+android-background-limits: Verify background telemetry behavior against actual OS service and power-management restrictions.
+ios-location-permissions: Handle precise, approximate, denied and background location permissions without coercion.
+field-camera-evidence: Retain orientation, capture time and attachment provenance when uploading documented equipment photos.
+barcode-scan-dedup: Prevent repeated barcode reads from multiplying inventory mutations under rapid camera frames.
+sync-resume-after-loss: Continue partial transfers with integrity checks after radio loss and app process death.
+device-storage-encryption: Protect cached field records and credentials with supported platform storage primitives.
+mobile-battery-profiling: Quantify GPS, BLE and network duty-cycle impact across screen-on and background use.
+map-coordinate-roundtrip: Preserve coordinate reference and precision across GPS capture, map display and backend storage.
+field-form-validation: Validate mandatory measurements and units without losing partially entered forms offline.
+bluetooth-pairing-ui: Show authenticated pairing and reconnect status without claiming devices are connected prematurely.
+push-alert-state: Reconcile foreground and background notification state to avoid duplicate safety-related alerts.
+app-permission-recovery: Restore workflow after user revokes camera, Bluetooth or network permissions during a session.
+mobile-export-audit: Export reports with stable record IDs, revision history and selected fields only.
+multilingual-label-overflow: Test technical labels and units under TR, EN and BG localizations and accessibility settings.
+app-release-smoke-matrix: Run install, login, field capture, offline sync and rollback checks on supported OS versions.

@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Data Quality Quarantine
+  short_description: Evidence-based data quality quarantine checks

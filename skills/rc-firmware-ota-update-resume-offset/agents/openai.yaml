@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Update Resume Offset
+  short_description: Evidence-based update resume offset checks

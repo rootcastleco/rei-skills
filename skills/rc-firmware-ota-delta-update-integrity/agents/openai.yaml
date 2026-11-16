@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Delta Update Integrity
+  short_description: Evidence-based delta update integrity checks

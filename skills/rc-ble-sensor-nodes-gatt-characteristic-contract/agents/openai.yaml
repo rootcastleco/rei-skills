@@ -1,0 +1,3 @@
+interface:
+  display_name: BLE Sensor Nodes — Gatt Characteristic Contract
+  short_description: Evidence-based gatt characteristic contract checks

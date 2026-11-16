@@ -1,0 +1,3 @@
+interface:
+  display_name: Rust Protocol Services — Framed Codec Bounds
+  short_description: Evidence-based framed codec bounds checks

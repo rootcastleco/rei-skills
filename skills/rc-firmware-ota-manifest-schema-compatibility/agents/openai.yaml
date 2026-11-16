@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Manifest Schema Compatibility
+  short_description: Evidence-based manifest schema compatibility checks

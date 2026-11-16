@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Historical Correction Audit
+  short_description: Evidence-based historical correction audit checks
