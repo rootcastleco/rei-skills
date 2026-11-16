@@ -46,6 +46,11 @@ const SUBCOMMANDS = new Set([
   "recommend",
   "mcp",
   "prompt",
+  "plan",
+  "evaluate",
+  "adapters",
+  "security-status",
+  "improve",
 ]);
 
 function resolveDir(p) {
@@ -73,6 +78,10 @@ function parseArgs(argv = process.argv.slice(2)) {
     mcpConfigArg: null,
     versionArg: null,
     tagArg: null,
+    splitArg: null,
+    feedbackArg: null,
+    taskArg: null,
+    operationArg: null,
     cursor: false,
     claude: false,
     gemini: false,
@@ -180,6 +189,22 @@ function parseArgs(argv = process.argv.slice(2)) {
     }
     if (arg === "--tag" && argv[i + 1]) {
       opts.tagArg = argv[++i];
+      continue;
+    }
+    if (arg === "--split" && argv[i + 1]) {
+      opts.splitArg = argv[++i].toLowerCase();
+      continue;
+    }
+    if (arg === "--feedback" && argv[i + 1]) {
+      opts.feedbackArg = argv[++i];
+      continue;
+    }
+    if (arg === "--task" && argv[i + 1]) {
+      opts.taskArg = argv[++i];
+      continue;
+    }
+    if (arg === "--operation" && argv[i + 1]) {
+      opts.operationArg = argv[++i];
       continue;
     }
     if (arg === "--all-ai") {
@@ -1390,6 +1415,120 @@ function handleExport(opts) {
   }
 }
 
+function loadLocalJsonSafe(relPath, fallback) {
+  const fullPath = path.join(LOCAL_ROOT, relPath);
+  if (!fs.existsSync(fullPath)) return fallback;
+  return JSON.parse(fs.readFileSync(fullPath, "utf8"));
+}
+
+function handlePlan(opts) {
+  const { compileWorkflowPlan } = require("../lib/workflow-compiler");
+  const task = opts.taskArg || opts.positional.join(" ") || "";
+  if (!task.trim()) {
+    console.error("Usage: rei-skills plan \"<engineering task>\" [--files f1,f2] [--json]");
+    process.exitCode = 1;
+    return;
+  }
+  const files = opts.filesArg ? opts.filesArg.split(",").map((f) => f.trim()).filter(Boolean) : [];
+  const catalog = loadLocalJsonSafe("data/catalog.json", { skills: [] });
+  const plan = compileWorkflowPlan(task, catalog, { files });
+  if (opts.json) {
+    console.log(JSON.stringify(plan, null, 2));
+    return;
+  }
+  console.log(
+    `\n🧭 Workflow Plan: ${plan.planId} (stages: ${plan.stages.length}, claimedPhysicalExecution: ${plan.executionRecord.claimedPhysicalExecution})`,
+  );
+  for (const stage of plan.stages) {
+    const primarySkill = Array.isArray(stage.selectedSkills) && stage.selectedSkills[0] ? stage.selectedSkills[0].id : stage.stageId;
+    console.log(`  ${stage.step}. [${stage.domain}] ${primarySkill} — mode: ${stage.executionMode}`);
+  }
+  console.log("");
+}
+
+function handleEvaluate(opts) {
+  const { evaluateBenchmarkSplit } = require("../lib/evaluation-engine");
+  const split = opts.splitArg || "eval";
+  const result = evaluateBenchmarkSplit({ split, engine: "hybrid" });
+  if (opts.json) {
+    console.log(JSON.stringify(result, null, 2));
+    return;
+  }
+  console.log(
+    `\n📊 Router Evaluation [${result.split}] (${result.taskCount} tasks): ` +
+      `Recall@3=${(result.metrics.recallAt3 * 100).toFixed(2)}% | ` +
+      `MRR=${result.metrics.mrr} | nDCG@5=${result.metrics.ndcgAt5} | ` +
+      `FPR=${(result.metrics.falsePositiveRate * 100).toFixed(1)}% | ` +
+      `CritMisroute=${result.metrics.criticalRiskMisroutingCount} | p95=${result.metrics.latencyMs.p95}ms\n`,
+  );
+}
+
+function handleAdapters(opts) {
+  const { listEngineeringAdapters, getEngineeringAdapter } = require("../lib/engineering-adapters");
+  const target = opts.positional[0];
+  if (target) {
+    const spec = getEngineeringAdapter(target);
+    if (!spec) {
+      console.error(`Unknown engineering adapter '${target}'.`);
+      process.exitCode = 1;
+      return;
+    }
+    console.log(opts.json ? JSON.stringify(spec, null, 2) : `${spec.id} (${spec.domain}) [${spec.safetyClass}]: ${spec.supportedApis.join(", ")}`);
+    return;
+  }
+  const adapters = listEngineeringAdapters();
+  if (opts.json) {
+    console.log(JSON.stringify({ total: adapters.length, adapters }, null, 2));
+    return;
+  }
+  console.log(`\n🔌 Capability-Aware Engineering Adapters (${adapters.length}):`);
+  for (const a of adapters) {
+    console.log(`  - ${a.id} (${a.domain}) | safetyClass=${a.safetyClass} | claimedPhysicalExecution=${a.claimedPhysicalExecution}`);
+  }
+  console.log("");
+}
+
+function handleSecurityStatus(opts) {
+  const { getHolGuardIntegrationStatus, verifySupplyChainManifests } = require("../lib/hol-guard-policy");
+  const payload = {
+    ...getHolGuardIntegrationStatus(),
+    supplyChain: verifySupplyChainManifests({ rootDir: LOCAL_ROOT }),
+  };
+  if (opts.json) {
+    console.log(JSON.stringify(payload, null, 2));
+    return;
+  }
+  console.log(
+    `\n🛡️ HOL Guard Local Enforcement: active=${payload.localEnforcement.active} (${payload.localEnforcement.mode}) | ` +
+      `External package installed=${payload.externalRuntime.installed} | SupplyChain=${payload.supplyChain.verified}\n`,
+  );
+}
+
+function handleImprove(opts) {
+  const { runImprovementCycle } = require("../lib/improvement-engine");
+  const benchmarkReport = loadLocalJsonSafe("data/benchmarks/routing-evaluation-report.json", null);
+  const feedbackLog = [];
+  if (opts.feedbackArg) {
+    feedbackLog.push({
+      task: opts.taskArg || opts.positional.join(" ") || "CLI improvement feedback",
+      feedback: opts.feedbackArg,
+    });
+  }
+  const result = runImprovementCycle({
+    benchmarkReport,
+    feedbackLog,
+    hypothesis: opts.feedbackArg ? `Explore improvement from feedback: ${opts.feedbackArg}` : undefined,
+  });
+  if (opts.json) {
+    console.log(JSON.stringify(result, null, 2));
+    return;
+  }
+  console.log(
+    `\n🔄 Continuous Improvement Cycle [${result.candidateId}]: decision=${result.decision} | ` +
+      `automaticWrites=${result.automaticWrites} | autoMerge=${result.autoMerge}\n`,
+  );
+}
+
 function main() {
   const opts = parseArgs();
 
@@ -1414,6 +1553,21 @@ function main() {
     }
     case "recommend":
       handleRecommend(opts);
+      break;
+    case "plan":
+      handlePlan(opts);
+      break;
+    case "evaluate":
+      handleEvaluate(opts);
+      break;
+    case "adapters":
+      handleAdapters(opts);
+      break;
+    case "security-status":
+      handleSecurityStatus(opts);
+      break;
+    case "improve":
+      handleImprove(opts);
       break;
     case "targets":
       handleTargets(opts);

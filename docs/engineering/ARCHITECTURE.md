@@ -105,3 +105,45 @@ REI Skills is structured around five distinct, modular capabilities with explici
 - **Decision:**
   1. Repair all frontmatter YAML so every `SKILL.md` parses cleanly under both `yaml` (Node.js) and `pyyaml` (Python).
   2. Restore upstream `source:` values (`microsoft/skills`, `anthropics/skills`, `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`, and documented community sources from `docs/SOURCES.md`), while recording `curated_by: rootcastle-rei` when curated by Rootcastle.
+
+---
+
+## 3. Next-Generation Platform Architecture (`v6.4.0+`)
+
+### 3.1 End-to-End Execution & Trust Boundary Pipeline
+
+```mermaid
+flowchart LR
+    U[Task Input & Workspace Files] --> IA[Intent & Bilingual Normalization]
+    IA --> HR[Hybrid BM25 + 256-dim Router]
+    HR --> WC[Workflow DAG Compiler]
+    WC --> PA[Prompt Archive v2 SHA-256 & Composer]
+    PA --> HG[HOL Guard Deny-by-Default Policy Layer]
+    HG --> AD[Capability-Aware Engineering Adapters]
+    HG --> RG[Rust Secure Gateway v0.2.0 Loopback IPC]
+    AD --> OB[Observability & Epistemic Provenance]
+    RG --> OB
+    OB --> EV[Split Evaluation Engine]
+    EV --> IM[Controlled PR Draft Generator]
+```
+
+### ADR-004: Hybrid Semantic & BM25 Skill Routing with Legacy Fallback
+- **Context:** Pure token substring scoring struggled on Turkish queries (`positive_tr Recall@3 = 65.79%`), multi-domain tasks, and out-of-scope false positives (`eval FPR = 37.50%`).
+- **Decision:** Implement `lib/hybrid-router.js` combining a `WeakMap`-cached BM25 inverted index, 256-dim deterministic character trigram + domain-concept vectors (plus optional `embeddingProvider`), Turkish ASCII folding & suffix stemming, `PHRASE_RULES`, cross-domain diversity, overlap detection, and uncertainty gating. Retain `recommendForTaskLegacy` as deterministic fallback (`engine: "legacy"`).
+- **Consequences:** Held-out `eval` (120 tasks) `Recall@3` improved from `91.07%` to `96.43%`, `FPR` dropped from `37.50%` to `0.0%`, `positive_tr` reached `100.0%`, `criticalRiskMisroutingCount = 0`, and `p95` latency dropped from `26.079ms` to `2.919ms`.
+
+### ADR-005: Dependency-Aware Workflow Compilation & Epistemic Boundaries
+- **Context:** Multi-disciplinary hardware/CAD/embedded requests cannot safely execute in an undifferentiated flat list or claim physical work occurred from text alone.
+- **Decision:** Add `lib/workflow-compiler.js` (`compileWorkflowPlan`) producing topological DAG stages, explicit SI/Fusion unit contracts (`mm -> cm`), resource budgets, retry policies, and strict execution mode labels (`COMPUTATIONAL_ONLY`, `REQUIRES_CAD_OR_EDA_SOFTWARE`, `REQUIRES_CALIBRATED_INSTRUMENT_OR_HARDWARE`, `REQUIRES_HUMAN_APPROVAL`) with `executionRecord.claimedPhysicalExecution: false`.
+
+### ADR-006: Typed Rust Secure Communication Gateway (`v0.2.0`) & Fail-Closed mTLS
+- **Context:** A naive preview socket lacks replay protection, concurrency bounds, per-client capabilities, and remote exposure safeguards.
+- **Decision:** Evolve `rust/rei-hook-gateway` (`lib.rs`, `main.rs`) with `SafetyClass` classification, isolated contracts (`kicad`, `fusion360`, `embedded_diagnostics`, `telemetry`, `lab_equipment`), bounded nonce/timestamp replay cache, idempotent deduplication, sliding-window rate limits, in-flight backpressure, sanitized audit ring buffer, graceful shutdown draining, and fail-closed `validate_bind_address` (`remote_enabled: false` by default). Preserves legacy 3-field payload compatibility and executes zero host shells.
+
+### ADR-007: Defense-in-Depth HOL Guard Policy & Honest Integration Disclosure
+- **Context:** MCP tool contracts require pre-invocation authorization, injection filtering, credential redaction, and path confinement without breaking the 10-tool surface asserted by existing package tests.
+- **Decision:** Add `lib/hol-guard-policy.js` wired into `bin/mcp-server.js` (`authorizeToolInvocation` + `sanitizeToolOutput`), keeping the default `tools/list` surface at 10 tools and gating extended inspection tools behind `REI_MCP_EXTENDED_TOOLS=1`. `getHolGuardIntegrationStatus()` accurately distinguishes local policy enforcement from optional installation of `@hashgraphonline/hol-guard`.
+
+### ADR-008: Controlled Evaluation-Driven Continuous Improvement
+- **Context:** Autonomous self-modification poses safety, regression, and supply-chain risks.
+- **Decision:** Separate `train` (80), `dev` (60), and held-out `eval` (120) splits in `data/benchmarks/routing-benchmark-v1.json`. `lib/improvement-engine.js` runs sandboxed in-memory experiments, validates every mutation through HOL Guard security gates, rejects zero-benefit or regressive candidates via `compareBenchmarkRuns`, and produces review-only PR drafts (`automaticWrites: false`, `autoMerge: false`, `autoPublish: false`).

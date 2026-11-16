@@ -147,7 +147,17 @@ Instead of loading all 1423 skills into an AI agent's context window, REI Skills
 }
 ```
 
-- **10 Dynamic MCP Tools:** `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_install_skill`, `rei_compile_skill`, `rei_list_ai_targets`, `rei_compose_prompt`, `rei_propose_prompt_improvement`.
+- **10 Dynamic MCP Tools:** `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_install_skill`, `rei_compile_skill`, `rei_list_ai_targets`, `rei_compose_prompt`, `rei_propose_prompt_improvement`. Set `REI_MCP_EXTENDED_TOOLS=1` to opt into 3 additional inspection tools (`rei_compile_workflow_plan`, `rei_evaluate_adapter`, `rei_security_status`). All MCP tool calls pass through `lib/hol-guard-policy.js` deny-by-default authorization and output redaction.
+
+#### Platform Intelligence & Verification CLI
+
+- **Hybrid Semantic Router & Evaluation:** `npx rei-skills evaluate --split eval` measures held-out routing accuracy (`Recall@3 = 96.43%`, `MRR = 0.8897`, `nDCG@5 = 0.8456`, `FPR = 0.0%`, `CritMisroute = 0`, `p95 = 2.919ms`). Legacy substring fallback remains available (`engine: "legacy"`).
+- **Workflow DAG Compiler:** `npx rei-skills plan "<task>" --files f1,f2 --json` compiles topological stage graphs with SI/Fusion unit checks and explicit execution boundaries (`claimedPhysicalExecution: false`).
+- **Capability-Aware Engineering Adapters:** `npx rei-skills adapters --json` inspects computational verifiers and hardware/software boundary contracts for `kicad`, `fusion360`, `embedded`, `scientific`, and `industrial_measurement`.
+- **HOL Guard Security & Controlled Improvement:** `npx rei-skills security-status --json` reports local enforcement and supply-chain verification; `npx rei-skills improve --feedback "<text>" --json` produces review-only PR drafts without mutating files (`automaticWrites: false`).
+- **Rust Secure Communication Gateway (`v0.2.0`):** Opt-in local loopback daemon (`rust/rei-hook-gateway`) enforcing replay protection, sliding-window rate limits, backpressure, per-client capabilities, and fail-closed non-loopback `mTLS` gating (`remote_enabled: false` by default).
+
+See [`docs/engineering/ARCHITECTURE.md`](docs/engineering/ARCHITECTURE.md), [`docs/engineering/RUST_GATEWAY_SPEC.md`](docs/engineering/RUST_GATEWAY_SPEC.md), [`docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md`](docs/engineering/BENCHMARK_AND_EVALUATION_REPORT.md), and [`docs/engineering/RELEASE_READINESS_REPORT.md`](docs/engineering/RELEASE_READINESS_REPORT.md) for detailed architecture, benchmarks, and verification evidence.
 
 #### Safe MCP skill installation
 

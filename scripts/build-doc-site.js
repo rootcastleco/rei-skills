@@ -3,6 +3,10 @@
 const fs = require('fs');
 const path = require('path');
 const { AI_TARGETS } = require('../lib/ai-adapters');
+const { compileWorkflowPlan } = require('../lib/workflow-compiler');
+const { listEngineeringAdapters } = require('../lib/engineering-adapters');
+const { getHolGuardIntegrationStatus } = require('../lib/hol-guard-policy');
+const { loadBundledFallbackSnapshot } = require('../lib/prompt-archive');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA_DIR = path.join(ROOT, 'data');
@@ -17,6 +21,31 @@ const catalog = readJson(path.join(DATA_DIR, 'catalog.json'), { total: 0, skills
 const bundlesData = readJson(path.join(DATA_DIR, 'bundles.json'), { bundles: {} });
 const workflowsData = readJson(path.join(DATA_DIR, 'workflows.json'), { workflows: [] });
 const reaManifest = readJson(path.join(DATA_DIR, 'rei-rea-manifest.json'), { skills: [] });
+const evaluationReport = readJson(path.join(DATA_DIR, 'benchmarks', 'routing-evaluation-report.json'), null);
+
+const sampleWorkflowPlan = compileWorkflowPlan(
+  'Design a four-channel vibration measurement PCB and its Fusion 360 enclosure.',
+  catalog,
+  { files: ['pcb/vibration.kicad_pcb', 'cad/enclosure.step'] }
+);
+const platformSummary = {
+  evaluation: evaluationReport,
+  samplePlan: sampleWorkflowPlan,
+  adapters: listEngineeringAdapters(),
+  security: getHolGuardIntegrationStatus(),
+  promptArchive: {
+    sourceUrl: 'https://promt.rootcastle.com/',
+    trustClassification: 'UNTRUSTED_EXTERNAL_REFERENCE',
+    bundledFallbackCount: (loadBundledFallbackSnapshot().prompts || []).length,
+  },
+  rustGateway: {
+    version: '0.2.0',
+    transport: '127.0.0.1:9783 (loopback IPC, zero shell execution)',
+    remoteMtlsEnabledByDefault: false,
+    safetyClasses: ['read_only', 'state_changing', 'potentially_hazardous'],
+    controls: ['Constant-time auth', 'Replay & dedup cache', 'Sliding-window rate limit', 'Concurrency backpressure', 'Sanitized audit ring buffer'],
+  },
+};
 
 fs.mkdirSync(SITE_DIR, { recursive: true });
 // Ensure GitHub Pages serves static assets without Jekyll interference
@@ -55,18 +84,20 @@ const html = `<!DOCTYPE html>
   <meta name="description" content="The universal engineering-grade skill layer &amp; Smart MCP Server for AI agents. Browse ${compactSkills.length} validated skills across ${compactAiTargets.length} AI coding assistants, IDEs, and SDKs." />
   <style>
     :root {
-      --bg: #070B14;
-      --surface: #0D1424;
-      --surface-elevated: #131D33;
-      --border: #1E293B;
-      --border-active: #0EA5E9;
+      --bg: #000000;
+      --surface: #0A0E17;
+      --surface-elevated: #11192B;
+      --border: #1B2A47;
+      --border-active: #0E3D8A;
       --text: #F8FAFC;
       --text-secondary: #94A3B8;
       --text-muted: #64748B;
-      --accent: #00F0FF;
-      --accent-secondary: #38BDF8;
+      --rc-blue: #0E3D8A;
+      --rc-green: #228B55;
+      --accent: #3B82F6;
+      --accent-secondary: #0E3D8A;
       --purple: #C084FC;
-      --emerald: #34D399;
+      --emerald: #228B55;
       --amber: #FBBF24;
       --red: #F87171;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -102,7 +133,7 @@ const html = `<!DOCTYPE html>
       position: sticky;
       top: 0;
       z-index: 30;
-      background: rgba(7, 11, 20, 0.9);
+      background: rgba(0, 0, 0, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 14px 24px;
@@ -128,9 +159,9 @@ const html = `<!DOCTYPE html>
       font-size: 11px;
       padding: 3px 8px;
       border-radius: 999px;
-      background: rgba(0, 240, 255, 0.12);
-      border: 1px solid var(--border-active);
-      color: var(--accent);
+      background: rgba(14, 61, 138, 0.28);
+      border: 1px solid #0E3D8A;
+      color: #E2E8F0;
     }
     .nav-actions {
       display: flex;
@@ -154,9 +185,9 @@ const html = `<!DOCTYPE html>
       color: var(--accent);
     }
     .btn-primary {
-      background: rgba(0, 240, 255, 0.14);
-      border-color: var(--border-active);
-      color: var(--accent);
+      background: #0E3D8A;
+      border-color: #228B55;
+      color: #FFFFFF;
       font-weight: 700;
     }
     .ai-selector-wrap {
@@ -457,7 +488,7 @@ const html = `<!DOCTYPE html>
       </div>
       <div class="stat-card">
         <div class="stat-label">Smart MCP Tools</div>
-        <div class="stat-value">8</div>
+        <div class="stat-value">10</div>
       </div>
       <div class="stat-card">
         <div class="stat-label">REI REA Specialist Skills</div>
@@ -505,6 +536,7 @@ const html = `<!DOCTYPE html>
     <button class="tab-btn" data-tab="rea">🔬 REI Reverse Engineering (${(reaManifest.skills || []).length})</button>
     <button class="tab-btn" data-tab="bundles">📦 Role Bundles (${Object.keys(bundlesData.bundles || {}).length})</button>
     <button class="tab-btn" data-tab="workflows">🔄 Workflows (${(workflowsData.workflows || []).length})</button>
+    <button class="tab-btn" data-tab="platform">📊 Evaluation, DAG &amp; Security</button>
   </nav>
 
   <main class="container">
@@ -584,6 +616,10 @@ const html = `<!DOCTYPE html>
     <div id="tab-workflows" class="hidden">
       <div class="grid" id="workflowsGrid"></div>
     </div>
+
+    <div id="tab-platform" class="hidden">
+      <div id="platformOverview"></div>
+    </div>
   </main>
 
   <script>
@@ -592,6 +628,7 @@ const html = `<!DOCTYPE html>
     const BUNDLES = ${JSON.stringify(bundlesData.bundles || {})};
     const WORKFLOWS = ${JSON.stringify(workflowsData.workflows || [])};
     const REA_MANIFEST = ${JSON.stringify(reaManifest)};
+    const PLATFORM = ${JSON.stringify(platformSummary)};
 
     const SYNONYMS = {
       tersine: ['reverse', 'reverse-engineering', 'rei-rea', 'binary'],
@@ -894,6 +931,76 @@ const html = `<!DOCTYPE html>
       }).join('');
     }
 
+    function renderPlatformOverview() {
+      const container = document.getElementById('platformOverview');
+      if (!container) return;
+      const ev = PLATFORM.evaluation && PLATFORM.evaluation.hybrid ? PLATFORM.evaluation.hybrid.eval : null;
+      const leg = PLATFORM.evaluation && PLATFORM.evaluation.legacy ? PLATFORM.evaluation.legacy.eval : null;
+      const evalHtml = ev && leg ? \`
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-header">
+            <div class="card-title">📊 Hybrid Router Benchmark (Held-Out Eval: \${ev.totalTasks} tasks)</div>
+            <span class="badge badge-risk-safe">Recall@3 \${(ev.recallAt3 * 100).toFixed(2)}% (vs Legacy \${(leg.recallAt3 * 100).toFixed(2)}%)</span>
+          </div>
+          <p class="card-desc">
+            MRR: <strong>\${ev.mrr}</strong> · nDCG@5: <strong>\${ev.ndcgAt5}</strong> ·
+            Out-of-Scope FPR: <strong>\${(ev.falsePositiveRate * 100).toFixed(1)}%</strong> (Legacy \${(leg.falsePositiveRate * 100).toFixed(1)}%) ·
+            Critical-Risk Misrouting: <strong>\${ev.criticalRiskMisroutingCount}</strong> ·
+            p95 Latency: <strong>\${ev.latencyMs.p95}ms</strong> (Legacy \${leg.latencyMs.p95}ms)
+          </p>
+        </div>
+      \` : '<div class="card"><p class="card-desc">Benchmark evaluation report not generated yet.</p></div>';
+
+      const plan = PLATFORM.samplePlan;
+      const stagesHtml = (plan && plan.stages ? plan.stages : []).map(st => \`
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">\${st.step}. \${escapeHtml(st.title)}</div>
+            <span class="badge badge-cat">\${escapeHtml(st.executionMode)}</span>
+          </div>
+          <p class="card-desc">Domain: <code>\${escapeHtml(st.domain)}</code> · Depends on: \${escapeHtml((st.dependsOn || []).join(', ') || 'root')}</p>
+        </article>
+      \`).join('');
+
+      const adaptersHtml = (PLATFORM.adapters || []).map(a => \`
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">\${escapeHtml(a.id)} (\${escapeHtml(a.domain)})</div>
+            <span class="badge badge-cat">\${escapeHtml(a.safetyClass)}</span>
+          </div>
+          <p class="card-desc">Simulated/computational ops: \${escapeHtml((a.simulatedOperations || []).join(', '))} · External tool/hardware required: <strong>\${a.requiresExternalSoftwareOrHardware}</strong> · Claimed physical execution: <strong>\${a.claimedPhysicalExecution}</strong></p>
+        </article>
+      \`).join('');
+
+      const sec = PLATFORM.security || {};
+      const gw = PLATFORM.rustGateway || {};
+      const pa = PLATFORM.promptArchive || {};
+
+      container.innerHTML = \`
+        \${evalHtml}
+        <h3 style="margin:18px 0 10px;font-family:var(--font-mono);color:var(--accent);">🧭 Typed Workflow DAG Preview (Vibration PCB + Fusion 360 Enclosure)</h3>
+        <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Plan ID: <code>\${escapeHtml(plan.planId)}</code> · Topological DAG (hasCycles=\${plan.dependencyGraph.hasCycles}) · claimedPhysicalExecution=<strong>\${plan.executionRecord.claimedPhysicalExecution}</strong></p>
+        <div class="grid">\${stagesHtml}</div>
+        <h3 style="margin:22px 0 10px;font-family:var(--font-mono);color:var(--accent);">🛡️ HOL Guard, Rust Secure Gateway &amp; Prompt Archive Provenance</h3>
+        <div class="grid" style="margin-bottom:18px;">
+          <article class="card">
+            <div class="card-title">HOL Guard Policy Engine</div>
+            <p class="card-desc">Local Mode: <strong>\${escapeHtml(sec.localEnforcement ? sec.localEnforcement.mode : 'deny_by_default')}</strong> · Upstream PR #\${sec.upstreamContract ? sec.upstreamContract.contributionPr : 7538} · External package installed locally: <strong>\${sec.externalRuntime ? sec.externalRuntime.installed : false}</strong></p>
+          </article>
+          <article class="card">
+            <div class="card-title">Rust Gateway v\${escapeHtml(gw.version)}</div>
+            <p class="card-desc">\${escapeHtml(gw.transport)} · Remote mTLS enabled by default: <strong>\${gw.remoteMtlsEnabledByDefault}</strong> · Controls: \${escapeHtml((gw.controls || []).join(', '))}</p>
+          </article>
+          <article class="card">
+            <div class="card-title">Rootcastle Prompt Archive</div>
+            <p class="card-desc">Source: <code>\${escapeHtml(pa.sourceUrl)}</code> · Classification: <strong>\${escapeHtml(pa.trustClassification)}</strong> (SHA-256 verified, offline bundled fallback ready)</p>
+          </article>
+        </div>
+        <h3 style="margin:22px 0 10px;font-family:var(--font-mono);color:var(--accent);">🔌 Capability-Aware Engineering Adapters (Read-Only / Computational)</h3>
+        <div class="grid">\${adaptersHtml}</div>
+      \`;
+    }
+
     searchInput.addEventListener('input', renderSkills);
     categoryFilter.addEventListener('change', renderSkills);
     riskFilter.addEventListener('change', renderSkills);
@@ -911,7 +1018,7 @@ const html = `<!DOCTYPE html>
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const tab = btn.dataset.tab;
-        ['skills', 'mcp', 'ai-targets', 'rea', 'bundles', 'workflows'].forEach(t => {
+        ['skills', 'mcp', 'ai-targets', 'rea', 'bundles', 'workflows', 'platform'].forEach(t => {
           document.getElementById('tab-' + t).classList.toggle('hidden', t !== tab);
         });
       });
@@ -927,6 +1034,7 @@ const html = `<!DOCTYPE html>
     renderRea();
     renderBundles();
     renderWorkflows();
+    renderPlatformOverview();
   </script>
 </body>
 </html>
