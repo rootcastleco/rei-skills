@@ -41,6 +41,15 @@ try {
   ], tmp);
 
   const installed = path.join(tmp, "node_modules", "rei-skills");
+  for (const binary of ["rei-skills", "rei-skills-prompt"]) {
+    const file = path.join(installed, "bin", binary === "rei-skills" ? "install.js" : "prompt-agent.js");
+    assert(fs.statSync(file).mode & 0o111, binary + " must be executable on Unix");
+    const binaryResult = spawnSync(process.execPath, [file, "--help"], {
+      cwd: tmp, encoding: "utf8", timeout: 30000,
+    });
+    assert.equal(binaryResult.status, 0, binary + " --help must work after npm install");
+  }
+
   const mcp = require(path.join(installed, "bin", "mcp-server.js"));
   const response = mcp.handleJsonRpcRequest({
     jsonrpc: "2.0", method: "tools/list", id: 10, params: {},

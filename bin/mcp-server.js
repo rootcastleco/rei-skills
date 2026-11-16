@@ -261,7 +261,7 @@ const MCP_TOOLS = [
   },
   {
     name: "rei_compose_prompt",
-    description: "Generate a read-only, review-required task prompt from locally cached Rootcastle Prompt Archive records and recommended skills. Run rei-skills-prompt sync separately to refresh remote prompts.",
+    description: "Generate a read-only, review-required task prompt from locally cached Rootcastle Prompt Archive records and recommended skills. Run rei-skills prompt sync separately to refresh remote prompts.",
     inputSchema: {
       type: "object",
       properties: {
