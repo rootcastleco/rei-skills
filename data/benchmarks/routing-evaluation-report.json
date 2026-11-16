@@ -1,0 +1,1382 @@
+{
+  "schemaVersion": "rei.routing-comparison.v1",
+  "evaluatedAt": "2026-11-16T16:23:41.151Z",
+  "benchmarkPath": "data/benchmarks/routing-benchmark-v1.json",
+  "totalTasks": 260,
+  "targetsMet": {
+    "evalRecallAt3Gte85Pct": true,
+    "criticalRiskMisroutingZero": true,
+    "noFalsePositiveRegression": true
+  },
+  "legacy": {
+    "train": {
+      "totalTasks": 80,
+      "positiveTasks": 72,
+      "negativeTasks": 8,
+      "safetyTasks": 8,
+      "recallAt3": 0.8889,
+      "recallAt3Fractional": 0.662,
+      "mrr": 0.8412,
+      "ndcgAt5": 0.7376,
+      "falsePositiveRate": 0.25,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 15.193,
+        "p95": 31.103,
+        "mean": 17.44
+      },
+      "memoryDeltaMb": 9.202,
+      "queryTypeBreakdown": {
+        "positive_en": {
+          "count": 45,
+          "recallAt3HitRate": 0.9778,
+          "mrr": 0.9304,
+          "ndcgAt5": 0.8611
+        },
+        "positive_tr": {
+          "count": 10,
+          "recallAt3HitRate": 0.6,
+          "mrr": 0.625,
+          "ndcgAt5": 0.4429
+        },
+        "multilingual_mixed": {
+          "count": 5,
+          "recallAt3HitRate": 0.6,
+          "mrr": 0.54,
+          "ndcgAt5": 0.4352
+        },
+        "ambiguous_multi_domain": {
+          "count": 4,
+          "recallAt3HitRate": 0.75,
+          "mrr": 0.6875,
+          "ndcgAt5": 0.5578
+        },
+        "safety_critical_filter": {
+          "count": 8,
+          "recallAt3HitRate": 1,
+          "mrr": 0.875,
+          "ndcgAt5": 0.6906
+        },
+        "negative_out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "tr-005",
+          "queryType": "positive_en",
+          "task": "Align PCB STEP solid inside enclosure and verify mounting hole pattern",
+          "expected": [
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-ecad-mcad-fit-mounting-hole-pattern"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-cad-3d-assembly-parametric-enclosure-layout",
+            "rc-fusion360-api-fusion-api-export-step"
+          ]
+        },
+        {
+          "id": "tr-050",
+          "queryType": "positive_tr",
+          "task": "Tek düzlemli rotor balans deneme ağırlığı ve faz açısı hesabı",
+          "expected": [
+            "rc-rotor-mass-balance-single-plane-influence",
+            "rc-rotor-mass-balance-trial-mass-selection",
+            "rc-rotor-mass-balance-phase-wrap-correction"
+          ],
+          "gotTop3": [
+            "rc-rotor-mass-balance-mass-radius-conversion",
+            "rc-rotor-mass-balance-angle-reference-polarity",
+            "rc-rotor-mass-balance-balance-quality-grade"
+          ]
+        },
+        {
+          "id": "tr-051",
+          "queryType": "positive_tr",
+          "task": "Makine titreşim spektrumu hız dönüşümü ve yatak arıza frekansları",
+          "expected": [
+            "rc-machine-vibration-acceleration-to-velocity",
+            "rc-machine-vibration-bearing-defect-sidebands"
+          ],
+          "gotTop3": [
+            "azure-communication-callingserver-java",
+            "azure-eventgrid-dotnet",
+            "azure-eventgrid-java"
+          ]
+        },
+        {
+          "id": "tr-052",
+          "queryType": "positive_tr",
+          "task": "GNSS konum verisinde çoklu yansıma ve taşıyıcı faz kayması tespiti",
+          "expected": [
+            "rc-gnss-measurement-carrier-cycle-slip",
+            "rc-gnss-measurement-multipath-diagnostics"
+          ],
+          "gotTop3": [
+            "rc-gnss-measurement-doppler-velocity-check",
+            "rc-cellular-gateway-gnss-cellular-coexistence",
+            "rc-gnss-measurement-antenna-phase-center"
+          ]
+        },
+        {
+          "id": "tr-053",
+          "queryType": "positive_tr",
+          "task": "Gömülü RTOS kesme gecikmesi ve görev yığın taşma denetimi",
+          "expected": [
+            "rc-embedded-rtos-interrupt-latency-profiling",
+            "rc-embedded-rtos-stack-watermark-audit"
+          ],
+          "gotTop3": [
+            "rei-firmware-and-iot",
+            "rc-embedded-rtos-brownout-recovery-state",
+            "rc-embedded-rtos-priority-inversion-analysis"
+          ]
+        },
+        {
+          "id": "tr-056",
+          "queryType": "multilingual_mixed",
+          "task": "PCB 3D muhafaza mekanik uyumluluk ve montaj deliği tolerans kontrolü",
+          "expected": [
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-ecad-mcad-fit-mounting-hole-pattern"
+          ],
+          "gotTop3": [
+            "rc-cad-3d-assembly-parametric-enclosure-layout",
+            "rc-cad-3d-assembly-mechanical-thermal-expansion",
+            "rc-cad-3d-assembly-drawing-release-inspection"
+          ]
+        },
+        {
+          "id": "tr-060",
+          "queryType": "multilingual_mixed",
+          "task": "PostgreSQL veritabanı indeks ve sorgu performans optimizasyonu",
+          "expected": [
+            "postgres-best-practices",
+            "database-design"
+          ],
+          "gotTop3": [
+            "postgresql",
+            "database-migrations-sql-migrations",
+            "sql-pro"
+          ]
+        },
+        {
+          "id": "tr-064",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Evaluate LLM agent retrieval accuracy and deploy behind autoscaled cloud API",
+          "expected": [
+            "agent-evaluation",
+            "rag-implementation",
+            "rc-cloud-service-ops-autoscaling-thresholds"
+          ],
+          "gotTop3": [
+            "rc-cloud-service-ops-rolling-deploy-health",
+            "llm-application-dev-langchain-agent",
+            "rc-cloud-service-ops-deployment-feature-flags"
+          ]
+        },
+        {
+          "id": "tr-073",
+          "queryType": "negative_out_of_scope",
+          "task": "Write a romantic poem about sunset over the Bosphorus bridge",
+          "expected": [],
+          "gotTop3": [
+            "rc-circuit-architecture-sensor-bridge-conditioning",
+            "rc-sensor-acquisition-bridge-sensor-conditioning",
+            "seo-content-writer"
+          ],
+          "topConfidence": 36
+        },
+        {
+          "id": "tr-078",
+          "queryType": "negative_out_of_scope",
+          "task": "Explain the rules of chess castling and en passant",
+          "expected": [],
+          "gotTop3": [
+            "code-documentation-code-explain",
+            "rc-industrial-ethernet-gateway-firewall-rules",
+            "rc-timeseries-telemetry-out-of-order-upsert"
+          ],
+          "topConfidence": 57
+        }
+      ],
+      "failureCount": 10
+    },
+    "dev": {
+      "totalTasks": 60,
+      "positiveTasks": 56,
+      "negativeTasks": 4,
+      "safetyTasks": 5,
+      "recallAt3": 0.8929,
+      "recallAt3Fractional": 0.7351,
+      "mrr": 0.8603,
+      "ndcgAt5": 0.7854,
+      "falsePositiveRate": 0.25,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 15.105,
+        "p95": 25.549,
+        "mean": 15.904
+      },
+      "memoryDeltaMb": -2.679,
+      "queryTypeBreakdown": {
+        "positive_en": {
+          "count": 36,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9815,
+          "ndcgAt5": 0.9556
+        },
+        "positive_tr": {
+          "count": 8,
+          "recallAt3HitRate": 0.625,
+          "mrr": 0.5313,
+          "ndcgAt5": 0.3489
+        },
+        "multilingual_mixed": {
+          "count": 4,
+          "recallAt3HitRate": 0.75,
+          "mrr": 0.6607,
+          "ndcgAt5": 0.4097
+        },
+        "ambiguous_multi_domain": {
+          "count": 3,
+          "recallAt3HitRate": 0.3333,
+          "mrr": 0.4833,
+          "ndcgAt5": 0.383
+        },
+        "safety_critical_filter": {
+          "count": 5,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9,
+          "ndcgAt5": 0.8
+        },
+        "negative_out_of_scope": {
+          "count": 4,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "dv-038",
+          "queryType": "positive_tr",
+          "task": "İki düzlemli rotor dengeleme kuplaj matrisi ve etki katsayısı doğrulama",
+          "expected": [
+            "rc-rotor-mass-balance-two-plane-coupling",
+            "rc-rotor-mass-balance-influence-matrix-conditioning"
+          ],
+          "gotTop3": [
+            "rc-rotor-mass-balance-single-plane-influence",
+            "rc-rotor-mass-balance-mass-radius-conversion",
+            "rc-rotor-mass-balance-angle-reference-polarity"
+          ]
+        },
+        {
+          "id": "dv-041",
+          "queryType": "positive_tr",
+          "task": "Gömülü sistem OTA güncelleme güç kesintisi ve imzalı imaj doğrulama",
+          "expected": [
+            "rc-firmware-ota-power-loss-injection",
+            "rc-firmware-ota-image-signature-verification"
+          ],
+          "gotTop3": [
+            "rei-firmware-and-iot",
+            "rc-firmware-ota-anti-rollback-versioning",
+            "rc-firmware-ota-bootloader-recovery-console"
+          ]
+        },
+        {
+          "id": "dv-044",
+          "queryType": "positive_tr",
+          "task": "Filo telematik araç hız uyarısı histerezis ve çevrimdışı tampon sıralama",
+          "expected": [
+            "rc-fleet-telematics-speed-alert-hysteresis",
+            "rc-fleet-telematics-offline-buffer-ordering"
+          ],
+          "gotTop3": [
+            "azure-communication-callingserver-java",
+            "azure-eventgrid-dotnet",
+            "azure-eventgrid-java"
+          ]
+        },
+        {
+          "id": "dv-046",
+          "queryType": "multilingual_mixed",
+          "task": "PCB ile Fusion 360 su geçirmez conta O-ring ve konnektör boşluk analizi",
+          "expected": [
+            "rc-ecad-mcad-fit-waterproof-gasket-stack",
+            "rc-cad-3d-assembly-o-ring-groove-design"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-extrude-revolve",
+            "rc-fusion360-parametric-fusion-loft-profile-match",
+            "rc-fusion360-parametric-fusion-surface-stitch"
+          ]
+        },
+        {
+          "id": "dv-049",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Design a CNC-milled aluminium vibration sensor fixture with tolerance drawings",
+          "expected": [
+            "rc-fusion360-cam-fusion-cam-setup-wcs",
+            "rc-cad-3d-assembly-drawing-release-inspection",
+            "rc-ecad-mcad-fit-sensor-mount-orientation"
+          ],
+          "gotTop3": [
+            "rc-machine-vibration-sensor-calibration-chain",
+            "rc-machine-vibration-sensor-mounting-bias",
+            "rc-cad-3d-assembly-bearing-housing-tolerance"
+          ]
+        },
+        {
+          "id": "dv-050",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Build a high-reliability CAN telemetry logger with hardware-in-loop and safety gate",
+          "expected": [
+            "rc-circuit-architecture-can-transceiver-protection",
+            "rc-hardware-in-loop-can-traffic-replay",
+            "rc-safety-assurance-release-safety-gate"
+          ],
+          "gotTop3": [
+            "rc-hardware-in-loop-adc-calibration-fixture",
+            "rc-hardware-in-loop-bootloader-fallback",
+            "rc-hardware-in-loop-brownout-edge-sequences"
+          ]
+        },
+        {
+          "id": "dv-060",
+          "queryType": "negative_out_of_scope",
+          "task": "What is the best watering schedule for indoor monstera plants",
+          "expected": [],
+          "gotTop3": [
+            "angular-best-practices",
+            "postgres-best-practices",
+            "rc-ble-sensor-nodes-advertise-sleep-schedule"
+          ],
+          "topConfidence": 36
+        }
+      ],
+      "failureCount": 7
+    },
+    "eval": {
+      "totalTasks": 120,
+      "positiveTasks": 112,
+      "negativeTasks": 8,
+      "safetyTasks": 8,
+      "recallAt3": 0.9107,
+      "recallAt3Fractional": 0.7381,
+      "mrr": 0.8375,
+      "ndcgAt5": 0.7587,
+      "falsePositiveRate": 0.375,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 15.973,
+        "p95": 26.035,
+        "mean": 16.954
+      },
+      "memoryDeltaMb": 0.736,
+      "queryTypeBreakdown": {
+        "ambiguous_multi_domain": {
+          "count": 7,
+          "recallAt3HitRate": 0.8571,
+          "mrr": 0.7619,
+          "ndcgAt5": 0.4676
+        },
+        "positive_en": {
+          "count": 71,
+          "recallAt3HitRate": 0.9859,
+          "mrr": 0.9277,
+          "ndcgAt5": 0.8868
+        },
+        "positive_tr": {
+          "count": 20,
+          "recallAt3HitRate": 0.7,
+          "mrr": 0.605,
+          "ndcgAt5": 0.4764
+        },
+        "multilingual_mixed": {
+          "count": 6,
+          "recallAt3HitRate": 0.6667,
+          "mrr": 0.5,
+          "ndcgAt5": 0.3333
+        },
+        "safety_critical_filter": {
+          "count": 8,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9375,
+          "ndcgAt5": 0.9014
+        },
+        "negative_out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "ev-018",
+          "queryType": "positive_en",
+          "task": "Synchronize 2D PCB outline with mechanical enclosure cavity and verify board thickness",
+          "expected": [
+            "rc-ecad-mcad-fit-board-outline-synchronization",
+            "rc-ecad-mcad-fit-board-thickness-allowance"
+          ],
+          "gotTop3": [
+            "rc-cad-3d-assembly-parametric-enclosure-layout",
+            "rc-ecad-mcad-fit-fusion-3d-pcb-review",
+            "rc-fusion360-parametric-fusion-step-stl-export"
+          ]
+        },
+        {
+          "id": "ev-073",
+          "queryType": "positive_tr",
+          "task": "Dört kanallı titreşim ölçüm PCB kartı ve Fusion 360 muhafaza kutusu tasarla",
+          "expected": [
+            "rc-sensor-acquisition-accelerometer-sensitivity",
+            "rc-circuit-architecture-adc-reference-network",
+            "rc-kicad-ecad-kicad-ecad-release-gate",
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-fusion360-parametric-fusion-design-parameter-table"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-shell-uniform-wall",
+            "rc-fusion360-parametric-fusion-extrude-revolve",
+            "rc-cad-3d-assembly-parametric-enclosure-layout"
+          ]
+        },
+        {
+          "id": "ev-076",
+          "queryType": "positive_tr",
+          "task": "Fusion 360 parametrik kutu duvar kalınlığı ve çakışma girişim kontrolü",
+          "expected": [
+            "rc-fusion360-parametric-fusion-shell-uniform-wall",
+            "rc-fusion360-parametric-fusion-interference-detection"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-fusion360-parametric-fusion-extrude-revolve",
+            "rc-fusion360-parametric-fusion-configured-variants"
+          ]
+        },
+        {
+          "id": "ev-085",
+          "queryType": "positive_tr",
+          "task": "BLE sensör düğümü pil voltajı yorumlama ve bağlantı aralığı güç ölçümü",
+          "expected": [
+            "rc-ble-sensor-nodes-battery-voltage-interpretation",
+            "rc-ble-sensor-nodes-connection-interval-power"
+          ],
+          "gotTop3": [
+            "rc-ble-sensor-nodes-advertise-sleep-schedule",
+            "rc-ble-sensor-nodes-advertisement-payload-budget",
+            "rc-ble-sensor-nodes-disconnect-state-recovery"
+          ]
+        },
+        {
+          "id": "ev-088",
+          "queryType": "positive_tr",
+          "task": "PCB elektromanyetik uyumluluk yakın alan taraması ve ESD deşarj yolu",
+          "expected": [
+            "rc-electromagnetic-compat-radiated-near-field-map",
+            "rc-electromagnetic-compat-esd-discharge-path"
+          ],
+          "gotTop3": [
+            "rc-pcb-design-review-esd-entry-protection",
+            "rc-circuit-architecture-esd-tvs-coordination",
+            "rc-pcb-design-review-analog-digital-partition"
+          ]
+        },
+        {
+          "id": "ev-090",
+          "queryType": "positive_tr",
+          "task": "Acil durdurma güvenlik kilidi ve hata ağacı ayrıştırma analizi",
+          "expected": [
+            "rc-safety-assurance-emergency-stop-interface",
+            "rc-safety-assurance-fault-tree-decomposition"
+          ],
+          "gotTop3": [
+            "laravel-security-audit",
+            "security-auditor",
+            "rc-iot-device-security-mutual-tls-handshake-audit"
+          ]
+        },
+        {
+          "id": "ev-092",
+          "queryType": "positive_tr",
+          "task": "Bulut servisi log gizliliği PII maskeleme ve sıfır kesintili şema geçişi",
+          "expected": [
+            "rc-cloud-service-ops-audit-log-redaction",
+            "rc-cloud-service-ops-zero-downtime-schema"
+          ],
+          "gotTop3": [
+            "cloud-architect",
+            "hybrid-cloud-architect",
+            "multi-cloud-architecture"
+          ]
+        },
+        {
+          "id": "ev-093",
+          "queryType": "multilingual_mixed",
+          "task": "Fusion 360 ile PCB STEP montaj uyumu ve konnektör yönü doğrulama",
+          "expected": [
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-ecad-mcad-fit-connector-mating-sweep"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-fusion360-api-fusion-api-export-step",
+            "rc-fusion360-parametric-fusion-loft-profile-match"
+          ]
+        },
+        {
+          "id": "ev-095",
+          "queryType": "multilingual_mixed",
+          "task": "Android saha uygulaması çevrimdışı senkronizasyon ve barkod tekilleştirme",
+          "expected": [
+            "rc-mobile-field-ops-sync-resume-after-loss",
+            "rc-mobile-field-ops-barcode-scan-dedup"
+          ],
+          "gotTop3": [
+            "rc-mobile-field-ops-android-background-limits",
+            "rei-android-apks",
+            "rei-mobile-runtime"
+          ]
+        },
+        {
+          "id": "ev-103",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Collect industrial vibration telemetry via BLE sensor into timeseries outage-safe pipeline",
+          "expected": [
+            "rc-ble-sensor-nodes-mtu-fragment-reassembly",
+            "rc-timeseries-telemetry-out-of-order-upsert",
+            "rc-event-streaming-dead-letter-queue"
+          ],
+          "gotTop3": [
+            "rc-timeseries-telemetry-sensor-drift-detection",
+            "rc-machine-vibration-sensor-mounting-bias",
+            "rc-machine-vibration-sensor-calibration-chain"
+          ]
+        },
+        {
+          "id": "ev-114",
+          "queryType": "negative_out_of_scope",
+          "task": "What are the best sightseeing museums to visit in Rome during spring",
+          "expected": [],
+          "gotTop3": [
+            "angular-best-practices",
+            "postgres-best-practices",
+            "api-security-best-practices"
+          ],
+          "topConfidence": 36
+        },
+        {
+          "id": "ev-117",
+          "queryType": "negative_out_of_scope",
+          "task": "Kedi tüyü koltuktan en kolay nasıl temizlenir",
+          "expected": [],
+          "gotTop3": [
+            "social-content",
+            "linkedin-automation",
+            "paid-ads"
+          ],
+          "topConfidence": 41
+        },
+        {
+          "id": "ev-119",
+          "queryType": "negative_out_of_scope",
+          "task": "Write a wedding toast speech for my best friend",
+          "expected": [],
+          "gotTop3": [
+            "angular-best-practices",
+            "azure-speech-to-text-rest-py",
+            "postgres-best-practices"
+          ],
+          "topConfidence": 36
+        }
+      ],
+      "failureCount": 13
+    },
+    "all": {
+      "totalTasks": 260,
+      "positiveTasks": 240,
+      "negativeTasks": 20,
+      "safetyTasks": 21,
+      "recallAt3": 0.9,
+      "recallAt3Fractional": 0.7146,
+      "mrr": 0.8439,
+      "ndcgAt5": 0.7586,
+      "falsePositiveRate": 0.3,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 15.081,
+        "p95": 25.226,
+        "mean": 16.021
+      },
+      "memoryDeltaMb": -3.692,
+      "queryTypeBreakdown": {
+        "positive_en": {
+          "count": 152,
+          "recallAt3HitRate": 0.9868,
+          "mrr": 0.9412,
+          "ndcgAt5": 0.8955
+        },
+        "positive_tr": {
+          "count": 38,
+          "recallAt3HitRate": 0.6579,
+          "mrr": 0.5947,
+          "ndcgAt5": 0.4407
+        },
+        "multilingual_mixed": {
+          "count": 15,
+          "recallAt3HitRate": 0.6667,
+          "mrr": 0.5562,
+          "ndcgAt5": 0.3876
+        },
+        "ambiguous_multi_domain": {
+          "count": 14,
+          "recallAt3HitRate": 0.7143,
+          "mrr": 0.681,
+          "ndcgAt5": 0.4752
+        },
+        "safety_critical_filter": {
+          "count": 21,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9048,
+          "ndcgAt5": 0.7969
+        },
+        "negative_out_of_scope": {
+          "count": 20,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "tr-005",
+          "queryType": "positive_en",
+          "task": "Align PCB STEP solid inside enclosure and verify mounting hole pattern",
+          "expected": [
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-ecad-mcad-fit-mounting-hole-pattern"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-cad-3d-assembly-parametric-enclosure-layout",
+            "rc-fusion360-api-fusion-api-export-step"
+          ]
+        },
+        {
+          "id": "tr-050",
+          "queryType": "positive_tr",
+          "task": "Tek düzlemli rotor balans deneme ağırlığı ve faz açısı hesabı",
+          "expected": [
+            "rc-rotor-mass-balance-single-plane-influence",
+            "rc-rotor-mass-balance-trial-mass-selection",
+            "rc-rotor-mass-balance-phase-wrap-correction"
+          ],
+          "gotTop3": [
+            "rc-rotor-mass-balance-mass-radius-conversion",
+            "rc-rotor-mass-balance-angle-reference-polarity",
+            "rc-rotor-mass-balance-balance-quality-grade"
+          ]
+        },
+        {
+          "id": "tr-051",
+          "queryType": "positive_tr",
+          "task": "Makine titreşim spektrumu hız dönüşümü ve yatak arıza frekansları",
+          "expected": [
+            "rc-machine-vibration-acceleration-to-velocity",
+            "rc-machine-vibration-bearing-defect-sidebands"
+          ],
+          "gotTop3": [
+            "azure-communication-callingserver-java",
+            "azure-eventgrid-dotnet",
+            "azure-eventgrid-java"
+          ]
+        },
+        {
+          "id": "tr-052",
+          "queryType": "positive_tr",
+          "task": "GNSS konum verisinde çoklu yansıma ve taşıyıcı faz kayması tespiti",
+          "expected": [
+            "rc-gnss-measurement-carrier-cycle-slip",
+            "rc-gnss-measurement-multipath-diagnostics"
+          ],
+          "gotTop3": [
+            "rc-gnss-measurement-doppler-velocity-check",
+            "rc-cellular-gateway-gnss-cellular-coexistence",
+            "rc-gnss-measurement-antenna-phase-center"
+          ]
+        },
+        {
+          "id": "tr-053",
+          "queryType": "positive_tr",
+          "task": "Gömülü RTOS kesme gecikmesi ve görev yığın taşma denetimi",
+          "expected": [
+            "rc-embedded-rtos-interrupt-latency-profiling",
+            "rc-embedded-rtos-stack-watermark-audit"
+          ],
+          "gotTop3": [
+            "rei-firmware-and-iot",
+            "rc-embedded-rtos-brownout-recovery-state",
+            "rc-embedded-rtos-priority-inversion-analysis"
+          ]
+        },
+        {
+          "id": "tr-056",
+          "queryType": "multilingual_mixed",
+          "task": "PCB 3D muhafaza mekanik uyumluluk ve montaj deliği tolerans kontrolü",
+          "expected": [
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-ecad-mcad-fit-mounting-hole-pattern"
+          ],
+          "gotTop3": [
+            "rc-cad-3d-assembly-parametric-enclosure-layout",
+            "rc-cad-3d-assembly-mechanical-thermal-expansion",
+            "rc-cad-3d-assembly-drawing-release-inspection"
+          ]
+        },
+        {
+          "id": "tr-060",
+          "queryType": "multilingual_mixed",
+          "task": "PostgreSQL veritabanı indeks ve sorgu performans optimizasyonu",
+          "expected": [
+            "postgres-best-practices",
+            "database-design"
+          ],
+          "gotTop3": [
+            "postgresql",
+            "database-migrations-sql-migrations",
+            "sql-pro"
+          ]
+        },
+        {
+          "id": "tr-064",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Evaluate LLM agent retrieval accuracy and deploy behind autoscaled cloud API",
+          "expected": [
+            "agent-evaluation",
+            "rag-implementation",
+            "rc-cloud-service-ops-autoscaling-thresholds"
+          ],
+          "gotTop3": [
+            "rc-cloud-service-ops-rolling-deploy-health",
+            "llm-application-dev-langchain-agent",
+            "rc-cloud-service-ops-deployment-feature-flags"
+          ]
+        },
+        {
+          "id": "tr-073",
+          "queryType": "negative_out_of_scope",
+          "task": "Write a romantic poem about sunset over the Bosphorus bridge",
+          "expected": [],
+          "gotTop3": [
+            "rc-circuit-architecture-sensor-bridge-conditioning",
+            "rc-sensor-acquisition-bridge-sensor-conditioning",
+            "seo-content-writer"
+          ],
+          "topConfidence": 36
+        },
+        {
+          "id": "tr-078",
+          "queryType": "negative_out_of_scope",
+          "task": "Explain the rules of chess castling and en passant",
+          "expected": [],
+          "gotTop3": [
+            "code-documentation-code-explain",
+            "rc-industrial-ethernet-gateway-firewall-rules",
+            "rc-timeseries-telemetry-out-of-order-upsert"
+          ],
+          "topConfidence": 57
+        },
+        {
+          "id": "dv-038",
+          "queryType": "positive_tr",
+          "task": "İki düzlemli rotor dengeleme kuplaj matrisi ve etki katsayısı doğrulama",
+          "expected": [
+            "rc-rotor-mass-balance-two-plane-coupling",
+            "rc-rotor-mass-balance-influence-matrix-conditioning"
+          ],
+          "gotTop3": [
+            "rc-rotor-mass-balance-single-plane-influence",
+            "rc-rotor-mass-balance-mass-radius-conversion",
+            "rc-rotor-mass-balance-angle-reference-polarity"
+          ]
+        },
+        {
+          "id": "dv-041",
+          "queryType": "positive_tr",
+          "task": "Gömülü sistem OTA güncelleme güç kesintisi ve imzalı imaj doğrulama",
+          "expected": [
+            "rc-firmware-ota-power-loss-injection",
+            "rc-firmware-ota-image-signature-verification"
+          ],
+          "gotTop3": [
+            "rei-firmware-and-iot",
+            "rc-firmware-ota-anti-rollback-versioning",
+            "rc-firmware-ota-bootloader-recovery-console"
+          ]
+        },
+        {
+          "id": "dv-044",
+          "queryType": "positive_tr",
+          "task": "Filo telematik araç hız uyarısı histerezis ve çevrimdışı tampon sıralama",
+          "expected": [
+            "rc-fleet-telematics-speed-alert-hysteresis",
+            "rc-fleet-telematics-offline-buffer-ordering"
+          ],
+          "gotTop3": [
+            "azure-communication-callingserver-java",
+            "azure-eventgrid-dotnet",
+            "azure-eventgrid-java"
+          ]
+        },
+        {
+          "id": "dv-046",
+          "queryType": "multilingual_mixed",
+          "task": "PCB ile Fusion 360 su geçirmez conta O-ring ve konnektör boşluk analizi",
+          "expected": [
+            "rc-ecad-mcad-fit-waterproof-gasket-stack",
+            "rc-cad-3d-assembly-o-ring-groove-design"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-extrude-revolve",
+            "rc-fusion360-parametric-fusion-loft-profile-match",
+            "rc-fusion360-parametric-fusion-surface-stitch"
+          ]
+        },
+        {
+          "id": "dv-049",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Design a CNC-milled aluminium vibration sensor fixture with tolerance drawings",
+          "expected": [
+            "rc-fusion360-cam-fusion-cam-setup-wcs",
+            "rc-cad-3d-assembly-drawing-release-inspection",
+            "rc-ecad-mcad-fit-sensor-mount-orientation"
+          ],
+          "gotTop3": [
+            "rc-machine-vibration-sensor-calibration-chain",
+            "rc-machine-vibration-sensor-mounting-bias",
+            "rc-cad-3d-assembly-bearing-housing-tolerance"
+          ]
+        }
+      ],
+      "failureCount": 30
+    }
+  },
+  "hybrid": {
+    "train": {
+      "totalTasks": 80,
+      "positiveTasks": 72,
+      "negativeTasks": 8,
+      "safetyTasks": 8,
+      "recallAt3": 0.9861,
+      "recallAt3Fractional": 0.7824,
+      "mrr": 0.9132,
+      "ndcgAt5": 0.8457,
+      "falsePositiveRate": 0,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 1.407,
+        "p95": 3.379,
+        "mean": 3.115
+      },
+      "memoryDeltaMb": -1.475,
+      "queryTypeBreakdown": {
+        "positive_en": {
+          "count": 45,
+          "recallAt3HitRate": 0.9778,
+          "mrr": 0.9093,
+          "ndcgAt5": 0.8643
+        },
+        "positive_tr": {
+          "count": 10,
+          "recallAt3HitRate": 1,
+          "mrr": 1,
+          "ndcgAt5": 0.9388
+        },
+        "multilingual_mixed": {
+          "count": 5,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9,
+          "ndcgAt5": 0.7689
+        },
+        "ambiguous_multi_domain": {
+          "count": 4,
+          "recallAt3HitRate": 1,
+          "mrr": 0.7083,
+          "ndcgAt5": 0.6164
+        },
+        "safety_critical_filter": {
+          "count": 8,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9375,
+          "ndcgAt5": 0.7873
+        },
+        "negative_out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "tr-037",
+          "queryType": "positive_en",
+          "task": "Optimize PostgreSQL indexing and connection pooling performance",
+          "expected": [
+            "postgres-best-practices",
+            "database-design"
+          ],
+          "gotTop3": [
+            "postgresql",
+            "azure-postgres-ts",
+            "sql-optimization-patterns"
+          ]
+        }
+      ],
+      "failureCount": 1
+    },
+    "dev": {
+      "totalTasks": 60,
+      "positiveTasks": 56,
+      "negativeTasks": 4,
+      "safetyTasks": 5,
+      "recallAt3": 0.9464,
+      "recallAt3Fractional": 0.7827,
+      "mrr": 0.8786,
+      "ndcgAt5": 0.8214,
+      "falsePositiveRate": 0,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 1.261,
+        "p95": 3.59,
+        "mean": 1.541
+      },
+      "memoryDeltaMb": 1.192,
+      "queryTypeBreakdown": {
+        "positive_en": {
+          "count": 36,
+          "recallAt3HitRate": 0.9722,
+          "mrr": 0.9083,
+          "ndcgAt5": 0.8859
+        },
+        "positive_tr": {
+          "count": 8,
+          "recallAt3HitRate": 0.875,
+          "mrr": 0.7813,
+          "ndcgAt5": 0.7623
+        },
+        "multilingual_mixed": {
+          "count": 4,
+          "recallAt3HitRate": 0.75,
+          "mrr": 0.8125,
+          "ndcgAt5": 0.596
+        },
+        "ambiguous_multi_domain": {
+          "count": 3,
+          "recallAt3HitRate": 1,
+          "mrr": 0.8333,
+          "ndcgAt5": 0.4898
+        },
+        "safety_critical_filter": {
+          "count": 5,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9,
+          "ndcgAt5": 0.8314
+        },
+        "negative_out_of_scope": {
+          "count": 4,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "dv-007",
+          "queryType": "positive_en",
+          "task": "Plan Fusion 360 additive 3D print orientation and clearance coupon fit",
+          "expected": [
+            "rc-fusion360-cam-fusion-additive-orientation",
+            "rc-fusion360-cam-fusion-3d-print-fit"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-extrude-revolve",
+            "rc-fusion360-api-fusion-api-export-stl",
+            "rc-fusion360-cam-fusion-additive-slicing"
+          ]
+        },
+        {
+          "id": "dv-040",
+          "queryType": "positive_tr",
+          "task": "KiCad Gerber üretim dosyaları ve kart yığın kalınlık doğrulaması",
+          "expected": [
+            "rc-kicad-ecad-kicad-gerber-drill-package",
+            "rc-kicad-ecad-kicad-board-stackup"
+          ],
+          "gotTop3": [
+            "rc-kicad-ecad-kicad-drc-ci",
+            "rc-pcb-design-review-gerber-drill-review",
+            "rc-kicad-ecad-kicad-ecad-release-gate"
+          ]
+        },
+        {
+          "id": "dv-046",
+          "queryType": "multilingual_mixed",
+          "task": "PCB ile Fusion 360 su geçirmez conta O-ring ve konnektör boşluk analizi",
+          "expected": [
+            "rc-ecad-mcad-fit-waterproof-gasket-stack",
+            "rc-cad-3d-assembly-o-ring-groove-design"
+          ],
+          "gotTop3": [
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-fusion360-api-fusion-api-export-step"
+          ]
+        }
+      ],
+      "failureCount": 3
+    },
+    "eval": {
+      "totalTasks": 120,
+      "positiveTasks": 112,
+      "negativeTasks": 8,
+      "safetyTasks": 8,
+      "recallAt3": 0.9643,
+      "recallAt3Fractional": 0.8006,
+      "mrr": 0.8897,
+      "ndcgAt5": 0.8456,
+      "falsePositiveRate": 0,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 1.267,
+        "p95": 2.919,
+        "mean": 1.488
+      },
+      "memoryDeltaMb": -3.604,
+      "queryTypeBreakdown": {
+        "ambiguous_multi_domain": {
+          "count": 7,
+          "recallAt3HitRate": 0.8571,
+          "mrr": 0.8857,
+          "ndcgAt5": 0.6246
+        },
+        "positive_en": {
+          "count": 71,
+          "recallAt3HitRate": 0.9718,
+          "mrr": 0.889,
+          "ndcgAt5": 0.8626
+        },
+        "positive_tr": {
+          "count": 20,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9083,
+          "ndcgAt5": 0.8973
+        },
+        "multilingual_mixed": {
+          "count": 6,
+          "recallAt3HitRate": 0.8333,
+          "mrr": 0.8611,
+          "ndcgAt5": 0.7484
+        },
+        "safety_critical_filter": {
+          "count": 8,
+          "recallAt3HitRate": 1,
+          "mrr": 0.875,
+          "ndcgAt5": 0.8312
+        },
+        "negative_out_of_scope": {
+          "count": 8,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "ev-069",
+          "queryType": "positive_en",
+          "task": "Build Node.js microservices backend API design and GraphQL schema architecture",
+          "expected": [
+            "nodejs-backend-patterns",
+            "api-design-principles",
+            "graphql-architect"
+          ],
+          "gotTop3": [
+            "backend-architect",
+            "cc-skill-backend-patterns",
+            "backend-dev-guidelines"
+          ]
+        },
+        {
+          "id": "ev-070",
+          "queryType": "positive_en",
+          "task": "Run systematic root-cause debugging and verify bugfix before marking complete",
+          "expected": [
+            "systematic-debugging",
+            "verification-before-completion"
+          ],
+          "gotTop3": [
+            "debugging-strategies",
+            "team-collaboration-issue",
+            "devops-troubleshooter"
+          ]
+        },
+        {
+          "id": "ev-094",
+          "queryType": "multilingual_mixed",
+          "task": "SPICE simülasyonu ile osiloskop ölçüm dalga formu karşılaştırması",
+          "expected": [
+            "rc-circuit-simulation-simulation-to-bench-parity",
+            "rc-circuit-simulation-spice-transient-startup"
+          ],
+          "gotTop3": [
+            "rc-circuit-simulation-spice-regression-harness",
+            "rc-circuit-simulation-spice-noise-budget",
+            "rc-circuit-simulation-spice-model-library-audit"
+          ]
+        },
+        {
+          "id": "ev-103",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Collect industrial vibration telemetry via BLE sensor into timeseries outage-safe pipeline",
+          "expected": [
+            "rc-ble-sensor-nodes-mtu-fragment-reassembly",
+            "rc-timeseries-telemetry-out-of-order-upsert",
+            "rc-event-streaming-dead-letter-queue"
+          ],
+          "gotTop3": [
+            "rc-machine-vibration-sensor-calibration-chain",
+            "rc-sensor-acquisition-accelerometer-sensitivity",
+            "rc-timeseries-telemetry-late-event-watermarks"
+          ]
+        }
+      ],
+      "failureCount": 4
+    },
+    "all": {
+      "totalTasks": 260,
+      "positiveTasks": 240,
+      "negativeTasks": 20,
+      "safetyTasks": 21,
+      "recallAt3": 0.9667,
+      "recallAt3Fractional": 0.791,
+      "mrr": 0.8942,
+      "ndcgAt5": 0.84,
+      "falsePositiveRate": 0,
+      "criticalRiskMisroutingRate": 0,
+      "criticalRiskMisroutingCount": 0,
+      "latencyMs": {
+        "p50": 1.073,
+        "p95": 2.648,
+        "mean": 1.234
+      },
+      "memoryDeltaMb": 0.573,
+      "queryTypeBreakdown": {
+        "positive_en": {
+          "count": 152,
+          "recallAt3HitRate": 0.9737,
+          "mrr": 0.8996,
+          "ndcgAt5": 0.8686
+        },
+        "positive_tr": {
+          "count": 38,
+          "recallAt3HitRate": 0.9737,
+          "mrr": 0.9057,
+          "ndcgAt5": 0.8798
+        },
+        "multilingual_mixed": {
+          "count": 15,
+          "recallAt3HitRate": 0.8667,
+          "mrr": 0.8611,
+          "ndcgAt5": 0.7146
+        },
+        "ambiguous_multi_domain": {
+          "count": 14,
+          "recallAt3HitRate": 0.9286,
+          "mrr": 0.8238,
+          "ndcgAt5": 0.5933
+        },
+        "safety_critical_filter": {
+          "count": 21,
+          "recallAt3HitRate": 1,
+          "mrr": 0.9048,
+          "ndcgAt5": 0.8145
+        },
+        "negative_out_of_scope": {
+          "count": 20,
+          "recallAt3HitRate": null,
+          "mrr": null,
+          "ndcgAt5": null
+        }
+      },
+      "sampleFailures": [
+        {
+          "id": "tr-037",
+          "queryType": "positive_en",
+          "task": "Optimize PostgreSQL indexing and connection pooling performance",
+          "expected": [
+            "postgres-best-practices",
+            "database-design"
+          ],
+          "gotTop3": [
+            "postgresql",
+            "azure-postgres-ts",
+            "sql-optimization-patterns"
+          ]
+        },
+        {
+          "id": "dv-007",
+          "queryType": "positive_en",
+          "task": "Plan Fusion 360 additive 3D print orientation and clearance coupon fit",
+          "expected": [
+            "rc-fusion360-cam-fusion-additive-orientation",
+            "rc-fusion360-cam-fusion-3d-print-fit"
+          ],
+          "gotTop3": [
+            "rc-fusion360-parametric-fusion-extrude-revolve",
+            "rc-fusion360-api-fusion-api-export-stl",
+            "rc-fusion360-cam-fusion-additive-slicing"
+          ]
+        },
+        {
+          "id": "dv-040",
+          "queryType": "positive_tr",
+          "task": "KiCad Gerber üretim dosyaları ve kart yığın kalınlık doğrulaması",
+          "expected": [
+            "rc-kicad-ecad-kicad-gerber-drill-package",
+            "rc-kicad-ecad-kicad-board-stackup"
+          ],
+          "gotTop3": [
+            "rc-kicad-ecad-kicad-drc-ci",
+            "rc-pcb-design-review-gerber-drill-review",
+            "rc-kicad-ecad-kicad-ecad-release-gate"
+          ]
+        },
+        {
+          "id": "dv-046",
+          "queryType": "multilingual_mixed",
+          "task": "PCB ile Fusion 360 su geçirmez conta O-ring ve konnektör boşluk analizi",
+          "expected": [
+            "rc-ecad-mcad-fit-waterproof-gasket-stack",
+            "rc-cad-3d-assembly-o-ring-groove-design"
+          ],
+          "gotTop3": [
+            "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+            "rc-fusion360-parametric-fusion-step-stl-export",
+            "rc-fusion360-api-fusion-api-export-step"
+          ]
+        },
+        {
+          "id": "ev-069",
+          "queryType": "positive_en",
+          "task": "Build Node.js microservices backend API design and GraphQL schema architecture",
+          "expected": [
+            "nodejs-backend-patterns",
+            "api-design-principles",
+            "graphql-architect"
+          ],
+          "gotTop3": [
+            "backend-architect",
+            "cc-skill-backend-patterns",
+            "backend-dev-guidelines"
+          ]
+        },
+        {
+          "id": "ev-070",
+          "queryType": "positive_en",
+          "task": "Run systematic root-cause debugging and verify bugfix before marking complete",
+          "expected": [
+            "systematic-debugging",
+            "verification-before-completion"
+          ],
+          "gotTop3": [
+            "debugging-strategies",
+            "team-collaboration-issue",
+            "devops-troubleshooter"
+          ]
+        },
+        {
+          "id": "ev-094",
+          "queryType": "multilingual_mixed",
+          "task": "SPICE simülasyonu ile osiloskop ölçüm dalga formu karşılaştırması",
+          "expected": [
+            "rc-circuit-simulation-simulation-to-bench-parity",
+            "rc-circuit-simulation-spice-transient-startup"
+          ],
+          "gotTop3": [
+            "rc-circuit-simulation-spice-regression-harness",
+            "rc-circuit-simulation-spice-noise-budget",
+            "rc-circuit-simulation-spice-model-library-audit"
+          ]
+        },
+        {
+          "id": "ev-103",
+          "queryType": "ambiguous_multi_domain",
+          "task": "Collect industrial vibration telemetry via BLE sensor into timeseries outage-safe pipeline",
+          "expected": [
+            "rc-ble-sensor-nodes-mtu-fragment-reassembly",
+            "rc-timeseries-telemetry-out-of-order-upsert",
+            "rc-event-streaming-dead-letter-queue"
+          ],
+          "gotTop3": [
+            "rc-machine-vibration-sensor-calibration-chain",
+            "rc-sensor-acquisition-accelerometer-sensitivity",
+            "rc-timeseries-telemetry-late-event-watermarks"
+          ]
+        }
+      ],
+      "failureCount": 8
+    }
+  },
+  "delta": {
+    "train": {
+      "recallAt3Delta": 0.0972,
+      "mrrDelta": 0.072,
+      "ndcgAt5Delta": 0.1081,
+      "falsePositiveRateDelta": -0.25,
+      "criticalRiskMisroutingDelta": 0,
+      "p95LatencyRatio": 0.109
+    },
+    "dev": {
+      "recallAt3Delta": 0.0535,
+      "mrrDelta": 0.0183,
+      "ndcgAt5Delta": 0.036,
+      "falsePositiveRateDelta": -0.25,
+      "criticalRiskMisroutingDelta": 0,
+      "p95LatencyRatio": 0.141
+    },
+    "eval": {
+      "recallAt3Delta": 0.0536,
+      "mrrDelta": 0.0522,
+      "ndcgAt5Delta": 0.0869,
+      "falsePositiveRateDelta": -0.375,
+      "criticalRiskMisroutingDelta": 0,
+      "p95LatencyRatio": 0.112
+    },
+    "all": {
+      "recallAt3Delta": 0.0667,
+      "mrrDelta": 0.0503,
+      "ndcgAt5Delta": 0.0814,
+      "falsePositiveRateDelta": -0.3,
+      "criticalRiskMisroutingDelta": 0,
+      "p95LatencyRatio": 0.105
+    }
+  }
+}
