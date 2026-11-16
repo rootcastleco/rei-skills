@@ -22,7 +22,7 @@ Developers using AI coding assistants (Claude Code, OpenAI Codex CLI, Gemini CLI
 
 | Dimension | Generic Skill Lists | REI Skills (`v6.1.0`) |
 | :--- | :--- | :--- |
-| **Schema & Link Integrity** | Unchecked Markdown / broken YAML | **1295/1295** skills pass strict Python + Node schema and relative-link validation |
+| **Schema & Link Integrity** | Unchecked Markdown / broken YAML | **1423/1423** skills pass strict Python + Node schema and relative-link validation |
 | **Security & Risk Governance** | Unclassified prompts | Every skill classified (`none`, `safe`, `critical`, `offensive`) + automated `security_audit.js` |
 | **Installation Granularity** | Full clone only | Full catalog **or** selective `npx rei-skills add <skill-or-bundle>` + `doctor` & `verify` |
 | **Cross-Client Compatibility** | Single frontmatter assumption | Extended provenance frontmatter + `npx rei-skills export --format strict` |

@@ -34,7 +34,7 @@ The 12 **REI Reverse Engineering (`rei-rea`)** skills follow a **static-first, p
 
 ## 3. Automated Security Audit (`scripts/security_audit.js`)
 
-Every commit and Pull Request runs `node scripts/security_audit.js`, which checks all 1295 skills for:
+Every commit and Pull Request runs `node scripts/security_audit.js`, which checks all 1423 skills for:
 - Live hardcoded credentials or private keys
 - Destructive shell commands lacking safety warnings
 - Unclassified risk levels

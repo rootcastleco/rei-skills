@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "source": "rootcastle-original-technical-expansion-2026",
-  "domain_count": 25,
+  "domain_count": 33,
   "skills_per_domain": 16,
-  "skill_count": 400,
+  "skill_count": 528,
   "skills": [
     {
       "id": "rc-binary-forensics-algorithm-numeric-parity",
@@ -166,6 +166,86 @@
       "sha256": "7a7d9b5a6fe07d483fad6a384f3cc172e46d8b5a3d3daa4a6472b75dd31feb23"
     },
     {
+      "id": "rc-cad-3d-assembly-assembly-bom-structure",
+      "category": "development",
+      "sha256": "29dd60397bd2c62abb768c30c3811cb258342b45b92996198b712b7e952ab5c7"
+    },
+    {
+      "id": "rc-cad-3d-assembly-bearing-housing-tolerance",
+      "category": "development",
+      "sha256": "80739d7c4230c8cbbae1e0d2beccb9358192135561e01fef3bfcdf9bd429ce23"
+    },
+    {
+      "id": "rc-cad-3d-assembly-drawing-release-inspection",
+      "category": "development",
+      "sha256": "05918eb8b85578dab6e832650735360ec71b70531c49f794153a71813dab1e35"
+    },
+    {
+      "id": "rc-cad-3d-assembly-fastener-boss-placement",
+      "category": "development",
+      "sha256": "8d1b937f1958c6e3eb0f1f3cacd8c114e59a948fb0e9102551fbf59d98bf102a"
+    },
+    {
+      "id": "rc-cad-3d-assembly-gdandt-datum-selection",
+      "category": "development",
+      "sha256": "d35a5c678bcacf5e1cbe1fe8156134379635b7075bf94802a148ef1a54636298"
+    },
+    {
+      "id": "rc-cad-3d-assembly-injection-mold-draft",
+      "category": "development",
+      "sha256": "4d9421ac5bf6839f4864ca54754452f58995d43d1f98306baec17191d1f47492"
+    },
+    {
+      "id": "rc-cad-3d-assembly-mechanical-thermal-expansion",
+      "category": "development",
+      "sha256": "ced32c5595d9ed77a87cd1eaaf8a252b5ef41bd037fd6ea124bc52ede39617b7"
+    },
+    {
+      "id": "rc-cad-3d-assembly-mechanism-joint-clearance",
+      "category": "development",
+      "sha256": "af2920be2dd5edc3293c425f3fcd98b7e7722f6fd8b399ff274d538619df43d5"
+    },
+    {
+      "id": "rc-cad-3d-assembly-o-ring-groove-design",
+      "category": "development",
+      "sha256": "2ab00ca14e35293f8aaf4f3527b5a0f7f1acf8ab1a650988fad9021b2844ca40"
+    },
+    {
+      "id": "rc-cad-3d-assembly-parametric-enclosure-layout",
+      "category": "development",
+      "sha256": "defd6564adb689ad9ab1bf8edb4570cc48105f92ece52308e633feb7de723c58"
+    },
+    {
+      "id": "rc-cad-3d-assembly-plastic-snap-fit-risk",
+      "category": "development",
+      "sha256": "bfd94e7ae82de3a09811de7f5c61d62f0738e814c67f300bbe19e550d96d1639"
+    },
+    {
+      "id": "rc-cad-3d-assembly-printed-part-anisotropy",
+      "category": "development",
+      "sha256": "3fec153f3fed6a8ac4e84ed72564ab956f811f21301622a537b40281fbe9792c"
+    },
+    {
+      "id": "rc-cad-3d-assembly-shafts-couplings-alignment",
+      "category": "development",
+      "sha256": "2d4c243c424fc71d65747cb05a42679c92b383b318838c455a333c2cf735348a"
+    },
+    {
+      "id": "rc-cad-3d-assembly-sheet-metal-bend-allowance",
+      "category": "development",
+      "sha256": "917cb561696d66abf64444ec226e6110a878d1660223bde38f5ee7ac4fd9d3ce"
+    },
+    {
+      "id": "rc-cad-3d-assembly-thread-clearance-fit",
+      "category": "development",
+      "sha256": "b9d1864af1c503a902e333f78650d9ced197841062d644ec65216149f93ce59b"
+    },
+    {
+      "id": "rc-cad-3d-assembly-tolerance-stack-up",
+      "category": "development",
+      "sha256": "b439416021fa15fb172fa6707b0f6212e0bf7861ef3aba1aada4c0b37ff3f24b"
+    },
+    {
       "id": "rc-cellular-gateway-apn-profile-selection",
       "category": "infrastructure",
       "sha256": "8ef492a01c08fbbf88cb6a1ae45cc34c28fe33ae50770323b53d19d6d3a646e1"
@@ -246,6 +326,166 @@
       "sha256": "820bb1a795d5fa756dc3ba8c84915463bc197a6f26ecb66d39f21633d262f761"
     },
     {
+      "id": "rc-circuit-architecture-adc-reference-network",
+      "category": "development",
+      "sha256": "83489708b9479a9567477f4a7b1fcd22702be8df98b25394febdbcca8c37a9fd"
+    },
+    {
+      "id": "rc-circuit-architecture-analog-front-end-bias",
+      "category": "development",
+      "sha256": "87e870dc317aa3f2d65bd7925268f45be57342128436aa615d8bc32589df6fdc"
+    },
+    {
+      "id": "rc-circuit-architecture-boost-startup-sequencing",
+      "category": "development",
+      "sha256": "4bf83d47c96208ab35f2dbc43bc2b08f0c694f098c164744c1c58491f5526d9b"
+    },
+    {
+      "id": "rc-circuit-architecture-buck-converter-selection",
+      "category": "development",
+      "sha256": "89983e567452c59d872b8d757063cf2481cf7be9f864ec1f381259353eb0feab"
+    },
+    {
+      "id": "rc-circuit-architecture-can-transceiver-protection",
+      "category": "development",
+      "sha256": "3e10eaff8b9e12f0c1d0d446f28c3069cd7cfe6b07728b499f0fd830f772e838"
+    },
+    {
+      "id": "rc-circuit-architecture-connector-pinout-assurance",
+      "category": "development",
+      "sha256": "1641fbca6220d415de2bf53f7b3961ec27b13d9e9fe24e245815d2a706ab0c16"
+    },
+    {
+      "id": "rc-circuit-architecture-design-power-derating",
+      "category": "development",
+      "sha256": "6b94fd9a406c48e2d9ba034c443e041a3795fe77b2a40c3f8826a0ef348d2209"
+    },
+    {
+      "id": "rc-circuit-architecture-esd-tvs-coordination",
+      "category": "development",
+      "sha256": "f46b88000cbe90ad4eb6b30524230b39e4cfa431a20e152c6efde5aae4db5635"
+    },
+    {
+      "id": "rc-circuit-architecture-isolated-interface-barrier",
+      "category": "development",
+      "sha256": "2737f7a50c91447c7c5119fcee52d3c44aa775ee35e42e9c1ffb2631a19706bb"
+    },
+    {
+      "id": "rc-circuit-architecture-ldo-dropout-analysis",
+      "category": "development",
+      "sha256": "bb0c89aa151446674671c61e0cfdd4a7b89bf98084e5fd7007994791ffd11c18"
+    },
+    {
+      "id": "rc-circuit-architecture-mosfet-gate-drive",
+      "category": "development",
+      "sha256": "c3ecd92564de20be6dbf4e9802bc1a099795c4ef328d8089273ac11adaf400b8"
+    },
+    {
+      "id": "rc-circuit-architecture-opamp-stability-margin",
+      "category": "development",
+      "sha256": "d98ffcf88ff8906f3989b739d14b1b4fc7c8a7ee4f955961765896b72bb22f8e"
+    },
+    {
+      "id": "rc-circuit-architecture-power-tree-budgeting",
+      "category": "development",
+      "sha256": "86d0c883559b54feca994e4068fd1fbbe53e7c539572783abc67e8584574a9fa"
+    },
+    {
+      "id": "rc-circuit-architecture-reverse-polarity-protection",
+      "category": "development",
+      "sha256": "f3e595f47a6ac336421ce3b9f0704ba2c228490e283b7db9c319c1f83d3319df"
+    },
+    {
+      "id": "rc-circuit-architecture-rs485-bus-termination",
+      "category": "development",
+      "sha256": "8fb12feffd90b0c7fe116b307798a462d1950bba0c2eff732660eab023efe978"
+    },
+    {
+      "id": "rc-circuit-architecture-sensor-bridge-conditioning",
+      "category": "development",
+      "sha256": "b6ae6dfe26cb6e16d72d6a022db87c9e81aa69a9b65d44c54a185a8e9c2d2a9f"
+    },
+    {
+      "id": "rc-circuit-simulation-adc-sampling-settling",
+      "category": "testing",
+      "sha256": "217a4b6eb4dd47398aa00a8f8f5730cc379c080ab857d805e2d21f9a582f1469"
+    },
+    {
+      "id": "rc-circuit-simulation-esd-pulse-model-limits",
+      "category": "testing",
+      "sha256": "5bc5eea580c5927dec151674ae549e72744d16a850e5a34db98089182a41a667"
+    },
+    {
+      "id": "rc-circuit-simulation-filter-transfer-verification",
+      "category": "testing",
+      "sha256": "e635cf05eeed16c25da04400b9c4fa8ce5f2a87748cfdf698b7eb573ce24ab98"
+    },
+    {
+      "id": "rc-circuit-simulation-opamp-loop-gain-test",
+      "category": "testing",
+      "sha256": "d118a3270b92fe3786f1228da3a7e7b68af359c138cf4dc4ba711e0ab9857787"
+    },
+    {
+      "id": "rc-circuit-simulation-sensitivity-component-rank",
+      "category": "testing",
+      "sha256": "99bb6a06b499ad24bb1758ae6b28aacb9cca8f7622a38c9ec0ebaa3f8b48ff51"
+    },
+    {
+      "id": "rc-circuit-simulation-simulation-to-bench-parity",
+      "category": "testing",
+      "sha256": "209329117a312254a7e2e7150ed869d27f781d0598f55b1544ddf5d20a26039d"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-model-library-audit",
+      "category": "testing",
+      "sha256": "2ce3ad15fd38c04719dce3c9e4a7949c4008c8ed63095b57e1995c49f2b9f4fb"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-monte-carlo",
+      "category": "testing",
+      "sha256": "e288573c289c92895bcc34ac2d74b21cc3b2ad7e88a58498d8c1046490ccbb9f"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-noise-budget",
+      "category": "testing",
+      "sha256": "d5d53f59cb736ae13676e64fba640543ba8bf43d2f7a5030d37d2837d29f753f"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-operating-point",
+      "category": "testing",
+      "sha256": "1098a9bd370352c4b8e5126efa64cdd2f880b0e89ae74e145374ca2944bbb9eb"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-regression-harness",
+      "category": "testing",
+      "sha256": "83feddf7cae76fdcaad02154b63464aa21d4df0572730aac13bed769ed91002d"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-small-signal-ac",
+      "category": "testing",
+      "sha256": "2910ff9c4affa22ddddb5255fe531eb26bfc315c36ea62b14effbd6200d2a1ab"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-transient-startup",
+      "category": "testing",
+      "sha256": "979cb07ad22a82646c00c3e563797e42cada961b12ce262b390f85b315e17340"
+    },
+    {
+      "id": "rc-circuit-simulation-switching-regulator-transient",
+      "category": "testing",
+      "sha256": "07a8e529448f6a2a3d2ad5c23e015268531bb3154838ec5d4e95c8dfe872c7c2"
+    },
+    {
+      "id": "rc-circuit-simulation-thermal-electrical-iterate",
+      "category": "testing",
+      "sha256": "bf3c03d9449cfb5798c8a8f28a1ce964349688c8a085018881e644be30c96f9a"
+    },
+    {
+      "id": "rc-circuit-simulation-worst-case-corner-sweep",
+      "category": "testing",
+      "sha256": "6160e38919b0e7ba66cb5968ba4b4af5e15a5b95ad7b7772b0de007b23d5d6fd"
+    },
+    {
       "id": "rc-cloud-service-ops-audit-log-redaction",
       "category": "infrastructure",
       "sha256": "4cfdb0da59b2c8ddb847176b8f54014af1a0ca9852aa5d4922d42176b470b2d4"
@@ -324,6 +564,86 @@
       "id": "rc-cloud-service-ops-zero-downtime-schema",
       "category": "infrastructure",
       "sha256": "d51f87f60d6f18df49083c8769390e1abd9236c1ee7be9e4f9fca7ffebdf2487"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-antenna-rf-keepout",
+      "category": "architecture",
+      "sha256": "82a044b9f655c15a6259bb48257a40b147561211eb1f2edfaf9afb7ed9e419e4"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-assembly-exploded-service",
+      "category": "architecture",
+      "sha256": "ac8590bbd480d0544218c81876b5d8c6f31f8f180c2ae2c31d9d529b3b403b99"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-battery-pack-envelope",
+      "category": "architecture",
+      "sha256": "c38bcf555334f2a212323ace07eff6d229ab872e8d03746b5a7a9dcd563654f8"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-board-outline-synchronization",
+      "category": "architecture",
+      "sha256": "3146a622f6f749a2cddfec98984c2a19e95b0ef92bf50837c4101edee9e48ab4"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-board-thickness-allowance",
+      "category": "architecture",
+      "sha256": "247c2ddb96c94d55dc7ca4624d4354e357f4b35c61c2f58953523f84c4094e39"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-cad-format-roundtrip",
+      "category": "architecture",
+      "sha256": "5f4ba80c98ba6e9843ae28b9dd1c310ff0c08117296161d736b6d0abdb083793"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-component-height-envelope",
+      "category": "architecture",
+      "sha256": "143b3dcc4b2a3660065a0631928a7545db2981bc87aa5daf69139dc8c53a5dea"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-connector-mating-sweep",
+      "category": "architecture",
+      "sha256": "139feb75c990fd3713be42754943fc36a51e0fa514376b2bf0791eaf2207fbf3"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-ecad-mcad-revision-diff",
+      "category": "architecture",
+      "sha256": "96eec8b9e550406361a1ebfff676ec57c4e450fb9755f3cca28160740e6d0257"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-fusion-3d-pcb-review",
+      "category": "architecture",
+      "sha256": "be96ea165cf209f3e7f9d137ebefb5e614c38150024ceb9af0a04a67368ce17d"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-mechanical-electrical-release",
+      "category": "architecture",
+      "sha256": "95fac1733f0fde48f5e1ff2cd50b58e270718f57a4055b35f655e639431a1cf3"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-mounting-hole-pattern",
+      "category": "architecture",
+      "sha256": "670eddd6bd766f4c078b4d132ea3f0cbc3f117dc1343d518a582a400859f3ed7"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+      "category": "architecture",
+      "sha256": "1e873d33e21f51247c7b561f285719e5fc2b3e6ce4c7d6d83d68b3c68a8dbbb6"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-sensor-mount-orientation",
+      "category": "architecture",
+      "sha256": "5d4cb82c4027aab43cb6140414a9463f879556b15e27281e631ce97a816f84ee"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-thermal-enclosure-coupling",
+      "category": "architecture",
+      "sha256": "640dfd9badb9abd45c5f3b14cb76f497ff22c3edf52eacee920eebf7c9f0a63b"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-waterproof-gasket-stack",
+      "category": "architecture",
+      "sha256": "7de3895cc9b17e9d25516013d0f26fa955d9a7993ad93592f5106f365c9c48c9"
     },
     {
       "id": "rc-edge-machine-learning-anomaly-groundtruth-review",
@@ -806,6 +1126,246 @@
       "sha256": "a6787376889b5f07a6f244d40557ed6ecfa410df55a29227a9b3952dfa086888"
     },
     {
+      "id": "rc-fusion360-api-fusion-api-addin-lifecycle",
+      "category": "development",
+      "sha256": "5c21795f357b7c93dd18788c29fbf89c9c1f2f2585ed133ca3bcffb01cba5e8b"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-batch-safety",
+      "category": "development",
+      "sha256": "2cb5393dd59f1c7ca243d608b6491b339050075b1c689bcd07425648cea6c5a2"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-component-occurrence",
+      "category": "development",
+      "sha256": "9f8d6ca48d0e481fcf0d037b997b88207ff4a5860f07faaadef56c9078d3f583"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-eagle-export",
+      "category": "development",
+      "sha256": "eaa5b0a9483abd38bb7ecb592351312eb9305fee4159ea29537d7e71f83df833"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-ecad-readonly",
+      "category": "development",
+      "sha256": "c71a49f7d0be3710a912f832d42dc7f5257bffb442eb59e2fba2ca8f858367cb"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-exception-report",
+      "category": "development",
+      "sha256": "1d54aac2df753792de1aea16ec8185266798acddf7971ea964cee1921129238e"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-export-step",
+      "category": "development",
+      "sha256": "93446d66fa84f2b06a6c55177aef047fa5ec7f2b5a3f106b8fee96f6a1001ea7"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-export-stl",
+      "category": "development",
+      "sha256": "65681f595dde732d106d861221bbbfb54109277f0f44fe9e85b74c6e1b2a2987"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-feature-timeline",
+      "category": "development",
+      "sha256": "b23ef2dca3feefe1d8d30a6bc2636ef6f8e3350c2d9ef8f9bd0b1caaf9cb03b7"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-parameter-units",
+      "category": "development",
+      "sha256": "87b4e24a86403305a2e63cfa0e1596e1755f1b9d63a778a80464f1039c82fcfc"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-product-cast",
+      "category": "development",
+      "sha256": "2890f86f68ddda8ec1abbc973218abcd427a40b24ce69ce7ea2296c0e7fe4114"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-script-benchmarks",
+      "category": "development",
+      "sha256": "232620162f78d5623ae56bb5db3927538e0b3ac597776ac24f886195ff87d984"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-script-scaffold",
+      "category": "development",
+      "sha256": "4fe0b06ba5b1b00dfea05ab64687585adced03d92ff037e944be7429f4e452f4"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-sketch-profile-read",
+      "category": "development",
+      "sha256": "0bdfa6affb3d0e23022a1d5aa0568c5d4d2d57e456293cf3edbf0844df847d6a"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-user-parameters",
+      "category": "development",
+      "sha256": "28cf501743d9d2ee0bd9ffda287c0a12b278922868a4be4944e1ce1aa85e49ad"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-version-feature",
+      "category": "development",
+      "sha256": "978f0e85cb5db228b9765fab97f897ba31f55fdc00668d23f3b050a828a71068"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-3d-print-fit",
+      "category": "testing",
+      "sha256": "923b60f75682481bfb3b2cbe9e7af4c9bf95fcddf353b3e35c1d1fb18a9ca95e"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-additive-orientation",
+      "category": "testing",
+      "sha256": "cb3860f22a58edd31daea394310d6bfb908678c1954e5c834c2f988bd4dbd7ff"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-additive-slicing",
+      "category": "testing",
+      "sha256": "15c4838298190160ebb7ea41576579a736b011abc79b0a06f52e27cb4093820c"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-2d-contour",
+      "category": "testing",
+      "sha256": "f0f12c83c8286714119e8f4a875213b1bdbf2372bae4db51172947b55009ecc0"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-3axis-finish",
+      "category": "testing",
+      "sha256": "a37ae0c451e7bd59ec36692b53a0a54a9cea498242cb5ef27cb78449cd7b7dec"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-adaptive-clearing",
+      "category": "testing",
+      "sha256": "6ab78878c38452a497702adf1979c9951dcfbd70270b797bfc57221e71dc0381"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-drilling-cycles",
+      "category": "testing",
+      "sha256": "e864222dc39f42b27df444a6c089500f600f9d314c035f45fbf588faa993dc8b"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-first-article",
+      "category": "testing",
+      "sha256": "2315684c2d53d23c898df38fe451aecc318ab10fc9c20081b8fbfe228cf13a14"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-fixture-clearance",
+      "category": "testing",
+      "sha256": "4d029112a2b62ce183e6ad53041937e4af7f2a7b5fcbf31e855f540ecc61b82e"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-nc-traceability",
+      "category": "testing",
+      "sha256": "78dd8cc08dd877357de873920aa45b5008b5b355662c73a8a7ae25bfb11b60f8"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-postprocess-review",
+      "category": "testing",
+      "sha256": "b9deaffd85fdd5c4a1d75e3dc5b1844bc45afd037b91453b5d75ab10a46c792e"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-setup-variants",
+      "category": "testing",
+      "sha256": "ba28e7985b412e92cdcc822884ccff390746a63f6384fd250311a390be258910"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-setup-wcs",
+      "category": "testing",
+      "sha256": "9fefcbd761293e0c67f37c63bb093603a7fa94f5a711912ca2b955368f9f8d20"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-tool-library",
+      "category": "testing",
+      "sha256": "58b3bbdf1e124c9df519b225b707ce58206b1a63b3ee62d22260e5cc20c63796"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-toolpath-verify",
+      "category": "testing",
+      "sha256": "aa3a6ec493f06ba7022de245358b4cd6b7e80d168fd8bf2c13f5c962c5efee9c"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-machining-stock-cost",
+      "category": "testing",
+      "sha256": "feb3d2e7d73b54b28d988681577eb2b94f94a18dde48d1a7b4e43c9246f8d42c"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-configured-variants",
+      "category": "development",
+      "sha256": "60793162b74b135ea34aece04174959cd6418b75e1545bdf7d539064ab43e7c2"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-design-parameter-table",
+      "category": "development",
+      "sha256": "532d7e1251712a5beac31775485a88e2b189011b65561b0e30c83329c2285df4"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-extrude-revolve",
+      "category": "development",
+      "sha256": "a9d2b7d004691244fb3614a08e307e0867e94423209e702ec5a261e2eaf244e3"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-fillet-chamfer",
+      "category": "development",
+      "sha256": "ca2189585fc83dd8f46ec85b2113ae94bc853de9dac4a7374e4f7f1edd7d74b4"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-interference-detection",
+      "category": "development",
+      "sha256": "c473577bfbe252311080b17a4e00feecad9f8b536ead38acdef97fa2fa6548be"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-joint-motion",
+      "category": "development",
+      "sha256": "e82cb4472b92288dc9198105f20bbf3deee4258e66ab287d6fc1862320e037db"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-loft-profile-match",
+      "category": "development",
+      "sha256": "49070dd0873965d665373211228cc99b6b76c1a0288fe82a6818a6e36ff3c659"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-mass-properties",
+      "category": "development",
+      "sha256": "4f27ba8004dbfd84a0cec5697072cbc1fc66f4c482fd756f5888a6f7f23dfcce"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-pattern-feature",
+      "category": "development",
+      "sha256": "324724d598022cd3cbd47592af574a38f2378949fc299559a8fd1b6c56768a25"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-reference-geometry",
+      "category": "development",
+      "sha256": "663968a7b68d3a369a0b8e3ba216a7a5eda008fb0fa949afe53231f783c14417"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-sheet-metal-flat",
+      "category": "development",
+      "sha256": "03fe6552e27d1c080c1bff246c3632a14528cb74c943877394fb023cc1fe39d4"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-shell-uniform-wall",
+      "category": "development",
+      "sha256": "2717f340d270231701a3b40527c373a647a2a0000e114333ea2f0177f030f5e9"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-sketch-constraint-audit",
+      "category": "development",
+      "sha256": "3457695b3847fcdce9ed40331160ac9e99282958ebef4d409820ab32564de272"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-step-stl-export",
+      "category": "development",
+      "sha256": "1359248908af3409d4c6a5de6a60cd0ded9fa9872eac03589701466399e0a09a"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-surface-stitch",
+      "category": "development",
+      "sha256": "16a8ab16d2577af05c748b6f8f5d185de27968512867f2e5e7bcae71c10a90d7"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-sweep-path",
+      "category": "development",
+      "sha256": "abf1058ee9b353e7ab233c328f83954c7027b5f05d58b97642bfa7b00ddaace3"
+    },
+    {
       "id": "rc-gnss-measurement-antenna-phase-center",
       "category": "data-ai",
       "sha256": "f2e151202c9da7aae12b1678173557136ae6ac347a370a7281e2765139cea0b9"
@@ -1204,6 +1764,86 @@
       "id": "rc-jt808-protocol-terminal-parameter-audit",
       "category": "development",
       "sha256": "b2acaa25496f7e849439fae05c02ae674877e7ecabb22cf4e1fc2055cc32129a"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-3d-model-links",
+      "category": "development",
+      "sha256": "77b436e7e08482d5f8e6b693e4b87d3a9f1c8700db5a2172d09b1d29f1ddfed2"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-board-stackup",
+      "category": "development",
+      "sha256": "b7d348ce525ccff67e2dd57a36f0a3899338abcf00fdec77aa0c3e5c5893adf4"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-bom-variant",
+      "category": "development",
+      "sha256": "1d1575b3a419e38a6b44ea46a0fbec4599c44da83f28c45324312cc4df6cfedf"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-cli-jobset",
+      "category": "development",
+      "sha256": "af1f4dcd3ae756db0e3e6ac52148a33a9e7e0cc66e127dbff8ed635839864a54"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-drc-ci",
+      "category": "development",
+      "sha256": "17b59fb000fc6a651f57db506b9b7cd3c11c8b0731fe0fdf6e0ed2844cafb2f8"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-ecad-release-gate",
+      "category": "development",
+      "sha256": "23e9ba2fe869d4823c3a2a6f6d8675e373130758f8c255460cb3360d0698cac2"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-erc-automation",
+      "category": "development",
+      "sha256": "8cd51cd705ac39431ed9bafc921a61c805ef20f130a92bc268d8681e5878bd6c"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-footprint-assignment",
+      "category": "development",
+      "sha256": "973a5e44861c46919d2c8b7ad34c364d02ae29872dc405b620ae07b5a791dc54"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-gerber-drill-package",
+      "category": "development",
+      "sha256": "99d20d6d68b5bfa16c41dc06454f7a174cb98b5321d7416287ac31e4e6693132"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-hierarchical-sheets",
+      "category": "development",
+      "sha256": "efbc5272dce452069ec2a8084457be02892d8a7718a0e5f8bc348face6cfeadf"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-library-versioning",
+      "category": "development",
+      "sha256": "423bfb3c6504bc385f671e1856ace76b62cd222fbda15bf5053a4ec4170ca886"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-netclass-routing",
+      "category": "development",
+      "sha256": "53445c43b9e9ce202d8fe0acfe5d0080ae4c7edc15837faa7b01a5d56813ad52"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-pickplace-origins",
+      "category": "development",
+      "sha256": "29dfcfab55a01c7806497f5d3c5f8956632d4c4cbf9e779e0f07274b59fc01aa"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-step-export",
+      "category": "development",
+      "sha256": "093c08ed7baeedf2c4b925588af1bacf87bb1f3f2ed0feb6e6a88caed5730f72"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-symbol-pin-types",
+      "category": "development",
+      "sha256": "a14adf33ef2fa94f2c2a671eadafc6caafa8979c8487df8467bd10ec80c91246"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-zone-return-paths",
+      "category": "development",
+      "sha256": "aec6350f8837265a0e681baeb5dda9d9e394169c000e8652ad52acf12d18ba66"
     },
     {
       "id": "rc-machine-vibration-acceleration-to-velocity",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression and provenance checks for the 400 original REI technical skills."""
+"""Regression and provenance checks for the 528 original REI technical skills."""
 import hashlib
 import json
 from pathlib import Path
@@ -13,12 +13,12 @@ catalog = json.loads((ROOT / "data/catalog.json").read_text(encoding="utf-8"))
 by_id = {entry["id"]: entry for entry in catalog["skills"]}
 
 assert manifest["schema_version"] == 1
-assert manifest["skill_count"] == 400
-assert manifest["domain_count"] == 25
+assert manifest["skill_count"] == 528
+assert manifest["domain_count"] == 33
 assert manifest["skills_per_domain"] == 16
-assert len(manifest["skills"]) == 400
-assert len({entry["id"] for entry in manifest["skills"]}) == 400
-assert catalog["total"] == len(catalog["skills"]) == 1295
+assert len(manifest["skills"]) == 528
+assert len({entry["id"] for entry in manifest["skills"]}) == 528
+assert catalog["total"] == len(catalog["skills"]) == 1423
 assert len([s for s in catalog["skills"] if s["source"] != SOURCE]) == 895
 
 titles = set()
@@ -49,6 +49,12 @@ for item in manifest["skills"]:
     assert fm["category"] == item["category"]
     assert fm["risk"] in ("safe", "critical")
     assert "interface" in yaml.safe_load(agent.read_text(encoding="utf-8"))
+    if sid.startswith((
+        "rc-circuit-architecture-", "rc-circuit-simulation-", "rc-kicad-ecad-",
+        "rc-fusion360-", "rc-cad-3d-assembly-", "rc-ecad-mcad-fit-",
+    )):
+        assert "## Authoritative product references" in text, sid
+        assert "https://help.autodesk.com/" in text or "https://docs.kicad.org/" in text, sid
     title = text.split("\n# ", 1)[1].splitlines()[0]
     assert title not in titles, sid
     assert fm["description"] not in descriptions, sid
@@ -57,4 +63,4 @@ for item in manifest["skills"]:
     descriptions.add(fm["description"])
     hashes.add(digest)
 
-print("PASS: 400 unique original skills, 895 existing skills preserved, 1295 indexed, SHA-256 and metadata verified.")
+print("PASS: 528 unique original skills, 895 existing skills preserved, 1423 indexed, SHA-256 and metadata verified.")

@@ -6291,6 +6291,150 @@
     "source": "rootcastle-original-technical-expansion-2026"
   },
   {
+    "id": "rc-cad-3d-assembly-assembly-bom-structure",
+    "path": "skills/rc-cad-3d-assembly-assembly-bom-structure",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-assembly-bom-structure",
+    "description": "Investigate assembly bom structure for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to keep part numbers, component instances and mass properties consistent with drawing BOM.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-bearing-housing-tolerance",
+    "path": "skills/rc-cad-3d-assembly-bearing-housing-tolerance",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-bearing-housing-tolerance",
+    "description": "Investigate bearing housing tolerance for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to define bearing fits and shoulder geometry from actual tolerance class and load cases.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-drawing-release-inspection",
+    "path": "skills/rc-cad-3d-assembly-drawing-release-inspection",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-drawing-release-inspection",
+    "description": "Investigate drawing release inspection for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to verify dimensioned drawing revision, sections, hole tables and critical inspection dimensions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-fastener-boss-placement",
+    "path": "skills/rc-cad-3d-assembly-fastener-boss-placement",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-fastener-boss-placement",
+    "description": "Investigate fastener boss placement for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to compute screw boss and standoff geometry from real fastener sizes and manufacturing tolerances.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-gdandt-datum-selection",
+    "path": "skills/rc-cad-3d-assembly-gdandt-datum-selection",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-gdandt-datum-selection",
+    "description": "Investigate gdandt datum selection for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to choose functional datum reference frames and tolerances tied to real assembly requirements.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-injection-mold-draft",
+    "path": "skills/rc-cad-3d-assembly-injection-mold-draft",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-injection-mold-draft",
+    "description": "Investigate injection mold draft for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to review draft angle, tooling parting direction and undercuts on a molded enclosure.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-mechanical-thermal-expansion",
+    "path": "skills/rc-cad-3d-assembly-mechanical-thermal-expansion",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-mechanical-thermal-expansion",
+    "description": "Investigate mechanical thermal expansion for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to check thermal clearance over specified materials and field temperature intervals.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-mechanism-joint-clearance",
+    "path": "skills/rc-cad-3d-assembly-mechanism-joint-clearance",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-mechanism-joint-clearance",
+    "description": "Investigate mechanism joint clearance for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to verify range of motion and collision clearance across constrained mechanism positions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-o-ring-groove-design",
+    "path": "skills/rc-cad-3d-assembly-o-ring-groove-design",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-o-ring-groove-design",
+    "description": "Investigate o ring groove design for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to size seal gland geometry from manufacturer compression and stretch data rather than visual estimate.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-parametric-enclosure-layout",
+    "path": "skills/rc-cad-3d-assembly-parametric-enclosure-layout",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-parametric-enclosure-layout",
+    "description": "Investigate parametric enclosure layout for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to establish PCB, connector and access volumes before selecting enclosure envelope dimensions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-plastic-snap-fit-risk",
+    "path": "skills/rc-cad-3d-assembly-plastic-snap-fit-risk",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-plastic-snap-fit-risk",
+    "description": "Investigate plastic snap fit risk for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to estimate strain at snap-fit features with printed or molded material properties and repeated cycles.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-printed-part-anisotropy",
+    "path": "skills/rc-cad-3d-assembly-printed-part-anisotropy",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-printed-part-anisotropy",
+    "description": "Investigate printed part anisotropy for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to orient additive parts for load paths while accounting for layer-dependent material strength.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-shafts-couplings-alignment",
+    "path": "skills/rc-cad-3d-assembly-shafts-couplings-alignment",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-shafts-couplings-alignment",
+    "description": "Investigate shafts couplings alignment for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to evaluate shaft-axis alignment, coupling engagement and assembly reachability.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-sheet-metal-bend-allowance",
+    "path": "skills/rc-cad-3d-assembly-sheet-metal-bend-allowance",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-sheet-metal-bend-allowance",
+    "description": "Investigate sheet metal bend allowance for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to check blank development with material-specific bend radius and bend allowance assumptions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-thread-clearance-fit",
+    "path": "skills/rc-cad-3d-assembly-thread-clearance-fit",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-thread-clearance-fit",
+    "description": "Investigate thread clearance fit for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to compare thread engagement, clearance hole and tap-drill references for the chosen material.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-cad-3d-assembly-tolerance-stack-up",
+    "path": "skills/rc-cad-3d-assembly-tolerance-stack-up",
+    "category": "development",
+    "name": "rc-cad-3d-assembly-tolerance-stack-up",
+    "description": "Investigate tolerance stack up for 3d cad assembly and mechanical design with traceable evidence and reproducible negative-case testing. Use when asked to compute worst-case and statistical accumulation of mating dimensions under an explicit assumptions ledger.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
     "id": "rc-cellular-gateway-apn-profile-selection",
     "path": "skills/rc-cellular-gateway-apn-profile-selection",
     "category": "infrastructure",
@@ -6431,6 +6575,294 @@
     "category": "infrastructure",
     "name": "rc-cellular-gateway-upload-bandwidth-policy",
     "description": "Investigate upload bandwidth policy for cellular iot gateway with traceable evidence and reproducible negative-case testing. Use when asked to throttle backlog uploads to preserve command responsiveness under limited uplink throughput.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-adc-reference-network",
+    "path": "skills/rc-circuit-architecture-adc-reference-network",
+    "category": "development",
+    "name": "rc-circuit-architecture-adc-reference-network",
+    "description": "Investigate adc reference network for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to bound voltage reference noise, input settling and source impedance against ADC sample-and-hold timing.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-analog-front-end-bias",
+    "path": "skills/rc-circuit-architecture-analog-front-end-bias",
+    "category": "development",
+    "name": "rc-circuit-architecture-analog-front-end-bias",
+    "description": "Investigate analog front end bias for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to calculate sensor source impedance, input bias current and offset propagation for the selected amplifier.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-boost-startup-sequencing",
+    "path": "skills/rc-circuit-architecture-boost-startup-sequencing",
+    "category": "development",
+    "name": "rc-circuit-architecture-boost-startup-sequencing",
+    "description": "Investigate boost startup sequencing for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to check startup current limiting and output overshoot before connecting sensitive downstream loads.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-buck-converter-selection",
+    "path": "skills/rc-circuit-architecture-buck-converter-selection",
+    "category": "development",
+    "name": "rc-circuit-architecture-buck-converter-selection",
+    "description": "Investigate buck converter selection for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to size the inductor, switch current and input capacitance against ripple and worst-case transients.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-can-transceiver-protection",
+    "path": "skills/rc-circuit-architecture-can-transceiver-protection",
+    "category": "development",
+    "name": "rc-circuit-architecture-can-transceiver-protection",
+    "description": "Investigate can transceiver protection for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to review CAN common-mode limits, bus protection and termination against anticipated wiring faults.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-connector-pinout-assurance",
+    "path": "skills/rc-circuit-architecture-connector-pinout-assurance",
+    "category": "development",
+    "name": "rc-circuit-architecture-connector-pinout-assurance",
+    "description": "Investigate connector pinout assurance for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to compare electrical net names with physical mating connector orientation and alternate part drawings.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-design-power-derating",
+    "path": "skills/rc-circuit-architecture-design-power-derating",
+    "category": "development",
+    "name": "rc-circuit-architecture-design-power-derating",
+    "description": "Investigate design power derating for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to compute component power, voltage and temperature derating with documented environmental assumptions.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-esd-tvs-coordination",
+    "path": "skills/rc-circuit-architecture-esd-tvs-coordination",
+    "category": "development",
+    "name": "rc-circuit-architecture-esd-tvs-coordination",
+    "description": "Investigate esd tvs coordination for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to select protection standoff, clamp voltage and parasitic capacitance against component absolute maximums.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-isolated-interface-barrier",
+    "path": "skills/rc-circuit-architecture-isolated-interface-barrier",
+    "category": "development",
+    "name": "rc-circuit-architecture-isolated-interface-barrier",
+    "description": "Investigate isolated interface barrier for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to establish isolation creepage, rated working voltage and return paths from the required equipment environment.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-ldo-dropout-analysis",
+    "path": "skills/rc-circuit-architecture-ldo-dropout-analysis",
+    "category": "development",
+    "name": "rc-circuit-architecture-ldo-dropout-analysis",
+    "description": "Investigate ldo dropout analysis for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to validate regulator dropout over battery voltage, transient load and junction temperature from specified data.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-mosfet-gate-drive",
+    "path": "skills/rc-circuit-architecture-mosfet-gate-drive",
+    "category": "development",
+    "name": "rc-circuit-architecture-mosfet-gate-drive",
+    "description": "Investigate mosfet gate drive for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to calculate gate charge, transition loss and driver peak current across supply and thermal conditions.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-opamp-stability-margin",
+    "path": "skills/rc-circuit-architecture-opamp-stability-margin",
+    "category": "development",
+    "name": "rc-circuit-architecture-opamp-stability-margin",
+    "description": "Investigate opamp stability margin for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to evaluate closed-loop gain and output capacitive loading against amplifier bandwidth and phase-margin evidence.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-power-tree-budgeting",
+    "path": "skills/rc-circuit-architecture-power-tree-budgeting",
+    "category": "development",
+    "name": "rc-circuit-architecture-power-tree-budgeting",
+    "description": "Investigate power tree budgeting for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to sum worst-case load and startup currents per supply rail, then check upstream regulator headroom and dissipation.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-reverse-polarity-protection",
+    "path": "skills/rc-circuit-architecture-reverse-polarity-protection",
+    "category": "development",
+    "name": "rc-circuit-architecture-reverse-polarity-protection",
+    "description": "Investigate reverse polarity protection for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to compare diode and ideal-MOSFET protections for reverse connection, inrush and power loss.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-rs485-bus-termination",
+    "path": "skills/rc-circuit-architecture-rs485-bus-termination",
+    "category": "development",
+    "name": "rc-circuit-architecture-rs485-bus-termination",
+    "description": "Investigate rs485 bus termination for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to check differential termination, fail-safe bias and ground reference across cable length and node count.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-architecture-sensor-bridge-conditioning",
+    "path": "skills/rc-circuit-architecture-sensor-bridge-conditioning",
+    "category": "development",
+    "name": "rc-circuit-architecture-sensor-bridge-conditioning",
+    "description": "Investigate sensor bridge conditioning for electronic circuit architecture with traceable evidence and reproducible negative-case testing. Use when asked to size instrumentation amplifier gain and common-mode window for a ratiometric bridge sensor.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-adc-sampling-settling",
+    "path": "skills/rc-circuit-simulation-adc-sampling-settling",
+    "category": "testing",
+    "name": "rc-circuit-simulation-adc-sampling-settling",
+    "description": "Investigate adc sampling settling for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to simulate source RC and hold capacitor charging to the required conversion error bound.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-esd-pulse-model-limits",
+    "path": "skills/rc-circuit-simulation-esd-pulse-model-limits",
+    "category": "testing",
+    "name": "rc-circuit-simulation-esd-pulse-model-limits",
+    "description": "Investigate esd pulse model limits for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to distinguish behavioral transient circuit stress models from laboratory IEC immunity evidence.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-filter-transfer-verification",
+    "path": "skills/rc-circuit-simulation-filter-transfer-verification",
+    "category": "testing",
+    "name": "rc-circuit-simulation-filter-transfer-verification",
+    "description": "Investigate filter transfer verification for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to compare hand-derived transfer function poles and zeros against simulated Bode response.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-opamp-loop-gain-test",
+    "path": "skills/rc-circuit-simulation-opamp-loop-gain-test",
+    "category": "testing",
+    "name": "rc-circuit-simulation-opamp-loop-gain-test",
+    "description": "Investigate opamp loop gain test for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to evaluate loop gain or injection-method evidence for feedback stability without relying on closed-loop peaking alone.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-sensitivity-component-rank",
+    "path": "skills/rc-circuit-simulation-sensitivity-component-rank",
+    "category": "testing",
+    "name": "rc-circuit-simulation-sensitivity-component-rank",
+    "description": "Investigate sensitivity component rank for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to rank output sensitivity to component variation using parameter sweeps and dimensional scaling.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-simulation-to-bench-parity",
+    "path": "skills/rc-circuit-simulation-simulation-to-bench-parity",
+    "category": "testing",
+    "name": "rc-circuit-simulation-simulation-to-bench-parity",
+    "description": "Investigate simulation to bench parity for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to align simulated node waveforms with calibrated oscilloscope captures under identical stimulus and load.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-spice-model-library-audit",
+    "path": "skills/rc-circuit-simulation-spice-model-library-audit",
+    "category": "testing",
+    "name": "rc-circuit-simulation-spice-model-library-audit",
+    "description": "Investigate spice model library audit for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to check semiconductor model provenance, supported simulator syntax and unknown device subcircuits.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-spice-monte-carlo",
+    "path": "skills/rc-circuit-simulation-spice-monte-carlo",
+    "category": "testing",
+    "name": "rc-circuit-simulation-spice-monte-carlo",
+    "description": "Investigate spice monte carlo for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to explore component tolerance distributions with fixed random seeds and report yield confidence intervals.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-spice-noise-budget",
+    "path": "skills/rc-circuit-simulation-spice-noise-budget",
+    "category": "testing",
+    "name": "rc-circuit-simulation-spice-noise-budget",
+    "description": "Investigate spice noise budget for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to integrate output-referred or input-referred noise over the specified bandwidth using realistic model parameters.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-spice-operating-point",
+    "path": "skills/rc-circuit-simulation-spice-operating-point",
+    "category": "testing",
+    "name": "rc-circuit-simulation-spice-operating-point",
+    "description": "Investigate spice operating point for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to solve DC node voltages and branch currents, cross-checking bias and device operating regions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-spice-regression-harness",
+    "path": "skills/rc-circuit-simulation-spice-regression-harness",
+    "category": "testing",
+    "name": "rc-circuit-simulation-spice-regression-harness",
+    "description": "Investigate spice regression harness for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to create deterministic input decks and pass-fail measurement assertions across simulator version changes.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-spice-small-signal-ac",
+    "path": "skills/rc-circuit-simulation-spice-small-signal-ac",
+    "category": "testing",
+    "name": "rc-circuit-simulation-spice-small-signal-ac",
+    "description": "Investigate spice small signal ac for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to generate gain and phase over frequency, validating model linearization and excitation assumptions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-spice-transient-startup",
+    "path": "skills/rc-circuit-simulation-spice-transient-startup",
+    "category": "testing",
+    "name": "rc-circuit-simulation-spice-transient-startup",
+    "description": "Investigate spice transient startup for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to simulate startup, load steps and source droops while checking numerical step and initial-condition sensitivity.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-switching-regulator-transient",
+    "path": "skills/rc-circuit-simulation-switching-regulator-transient",
+    "category": "testing",
+    "name": "rc-circuit-simulation-switching-regulator-transient",
+    "description": "Investigate switching regulator transient for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to compare overshoot, ripple and recovery under worst-case current step and load behavior.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-thermal-electrical-iterate",
+    "path": "skills/rc-circuit-simulation-thermal-electrical-iterate",
+    "category": "testing",
+    "name": "rc-circuit-simulation-thermal-electrical-iterate",
+    "description": "Investigate thermal electrical iterate for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to recalculate temperature-dependent conduction loss and junction temperature with explicit heat-path assumptions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-circuit-simulation-worst-case-corner-sweep",
+    "path": "skills/rc-circuit-simulation-worst-case-corner-sweep",
+    "category": "testing",
+    "name": "rc-circuit-simulation-worst-case-corner-sweep",
+    "description": "Investigate worst case corner sweep for circuit simulation and verification with traceable evidence and reproducible negative-case testing. Use when asked to sweep supply, temperature and nominal device extremes with traceable parameter ranges.",
     "risk": "safe",
     "source": "rootcastle-original-technical-expansion-2026"
   },
@@ -6576,6 +7008,150 @@
     "name": "rc-cloud-service-ops-zero-downtime-schema",
     "description": "Investigate zero downtime schema for cloud service operations with traceable evidence and reproducible negative-case testing. Use when asked to stage compatible database changes before switching applications and verify reversible migrations.",
     "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-antenna-rf-keepout",
+    "path": "skills/rc-ecad-mcad-fit-antenna-rf-keepout",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-antenna-rf-keepout",
+    "description": "Investigate antenna rf keepout for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to model antenna ground clearance and surrounding enclosure material restrictions from device references.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-assembly-exploded-service",
+    "path": "skills/rc-ecad-mcad-fit-assembly-exploded-service",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-assembly-exploded-service",
+    "description": "Investigate assembly exploded service for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to confirm service sequence and access to connectors, screws and programming headers.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-battery-pack-envelope",
+    "path": "skills/rc-ecad-mcad-fit-battery-pack-envelope",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-battery-pack-envelope",
+    "description": "Investigate battery pack envelope for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to verify battery swelling allowance, service access and protection component clearances.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-board-outline-synchronization",
+    "path": "skills/rc-ecad-mcad-fit-board-outline-synchronization",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-board-outline-synchronization",
+    "description": "Investigate board outline synchronization for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to compare PCB 2D outline against mechanical cavity under revision-controlled source ownership.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-board-thickness-allowance",
+    "path": "skills/rc-ecad-mcad-fit-board-thickness-allowance",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-board-thickness-allowance",
+    "description": "Investigate board thickness allowance for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to include actual board stackup thickness and manufacturing variation in standoff gap checks.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-cad-format-roundtrip",
+    "path": "skills/rc-ecad-mcad-fit-cad-format-roundtrip",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-cad-format-roundtrip",
+    "description": "Investigate cad format roundtrip for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to validate STEP, STL and native document units and bounding boxes after geometry conversion.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-component-height-envelope",
+    "path": "skills/rc-ecad-mcad-fit-component-height-envelope",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-component-height-envelope",
+    "description": "Investigate component height envelope for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to construct maximal 3D keep-out volumes for tall capacitors, coils and antennas.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-connector-mating-sweep",
+    "path": "skills/rc-ecad-mcad-fit-connector-mating-sweep",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-connector-mating-sweep",
+    "description": "Investigate connector mating sweep for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to confirm cable exit, latch travel and mating connector insertion clearances across assembly motion.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-ecad-mcad-revision-diff",
+    "path": "skills/rc-ecad-mcad-fit-ecad-mcad-revision-diff",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-ecad-mcad-revision-diff",
+    "description": "Investigate ecad mcad revision diff for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to compare PCB and mechanical revisions by part ID, body count and geometric deltas.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-fusion-3d-pcb-review",
+    "path": "skills/rc-ecad-mcad-fit-fusion-3d-pcb-review",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-fusion-3d-pcb-review",
+    "description": "Investigate fusion 3d pcb review for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to use linked Electronics 3D PCB views to inspect component interference without assuming a write-capable API.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-mechanical-electrical-release",
+    "path": "skills/rc-ecad-mcad-fit-mechanical-electrical-release",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-mechanical-electrical-release",
+    "description": "Investigate mechanical electrical release for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to gate manufacturing export on PCB ERC, DRC, fit analysis and approved assembly drawings.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-mounting-hole-pattern",
+    "path": "skills/rc-ecad-mcad-fit-mounting-hole-pattern",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-mounting-hole-pattern",
+    "description": "Investigate mounting hole pattern for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to reconcile hole-center distances, pad clearances and enclosure bosses under tolerance stackups.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+    "path": "skills/rc-ecad-mcad-fit-pcb-to-enclosure-step",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+    "description": "Investigate pcb to enclosure step for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to import a PCB STEP assembly into mechanical CAD while checking scale and coordinate origin.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-sensor-mount-orientation",
+    "path": "skills/rc-ecad-mcad-fit-sensor-mount-orientation",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-sensor-mount-orientation",
+    "description": "Investigate sensor mount orientation for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to align accelerometer or gyroscope axes to fixture datums and verify measurement orientation.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-thermal-enclosure-coupling",
+    "path": "skills/rc-ecad-mcad-fit-thermal-enclosure-coupling",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-thermal-enclosure-coupling",
+    "description": "Investigate thermal enclosure coupling for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to estimate heat paths from power components to chassis and verify physical contact assumptions.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-ecad-mcad-fit-waterproof-gasket-stack",
+    "path": "skills/rc-ecad-mcad-fit-waterproof-gasket-stack",
+    "category": "architecture",
+    "name": "rc-ecad-mcad-fit-waterproof-gasket-stack",
+    "description": "Investigate waterproof gasket stack for ecad-mcad electronics mechanical integration with traceable evidence and reproducible negative-case testing. Use when asked to combine PCB mounting constraints with seal compression and assembly torque requirements.",
+    "risk": "critical",
     "source": "rootcastle-original-technical-expansion-2026"
   },
   {
@@ -7443,6 +8019,438 @@
     "source": "rootcastle-original-technical-expansion-2026"
   },
   {
+    "id": "rc-fusion360-api-fusion-api-addin-lifecycle",
+    "path": "skills/rc-fusion360-api-fusion-api-addin-lifecycle",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-addin-lifecycle",
+    "description": "Investigate fusion api addin lifecycle for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to design add-in start and stop lifecycle with event-handler ownership and deterministic cleanup.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-batch-safety",
+    "path": "skills/rc-fusion360-api-fusion-api-batch-safety",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-batch-safety",
+    "description": "Investigate fusion api batch safety for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to gate multi-file automation on explicit user consent, output directory validation and per-file rollbacks.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-component-occurrence",
+    "path": "skills/rc-fusion360-api-fusion-api-component-occurrence",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-component-occurrence",
+    "description": "Investigate fusion api component occurrence for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to traverse component geometry and occurrence transforms without confusing prototype and instance space.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-eagle-export",
+    "path": "skills/rc-fusion360-api-fusion-api-eagle-export",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-eagle-export",
+    "description": "Investigate fusion api eagle export for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to export Electronics schematics or PCB boards to supported EAGLE file formats and verify the result.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-ecad-readonly",
+    "path": "skills/rc-fusion360-api-fusion-api-ecad-readonly",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-ecad-readonly",
+    "description": "Investigate fusion api ecad readonly for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to read adsk.electron board or schematic data without calling unsupported public Electronics write operations.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-exception-report",
+    "path": "skills/rc-fusion360-api-fusion-api-exception-report",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-exception-report",
+    "description": "Investigate fusion api exception report for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to catch API errors with context and stack trace while avoiding disclosure of private design paths.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-export-step",
+    "path": "skills/rc-fusion360-api-fusion-api-export-step",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-export-step",
+    "description": "Investigate fusion api export step for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to use Design.exportManager to export a selected design or component after verifying the active document.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-export-stl",
+    "path": "skills/rc-fusion360-api-fusion-api-export-stl",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-export-stl",
+    "description": "Investigate fusion api export stl for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to choose supported mesh export settings and check tessellation tolerance before printing.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-feature-timeline",
+    "path": "skills/rc-fusion360-api-fusion-api-feature-timeline",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-feature-timeline",
+    "description": "Investigate fusion api feature timeline for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to audit design timeline dependencies and report features broken by parameter edits.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-parameter-units",
+    "path": "skills/rc-fusion360-api-fusion-api-parameter-units",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-parameter-units",
+    "description": "Investigate fusion api parameter units for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to use ValueInput expressions with explicit units instead of assuming raw numbers are millimeters.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-product-cast",
+    "path": "skills/rc-fusion360-api-fusion-api-product-cast",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-product-cast",
+    "description": "Investigate fusion api product cast for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to distinguish Design, CAM and Electronics products before accessing feature-specific objects.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-script-benchmarks",
+    "path": "skills/rc-fusion360-api-fusion-api-script-benchmarks",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-script-benchmarks",
+    "description": "Investigate fusion api script benchmarks for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to record API traversal runtime and resulting object counts for representative CAD assembly sizes.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-script-scaffold",
+    "path": "skills/rc-fusion360-api-fusion-api-script-scaffold",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-script-scaffold",
+    "description": "Investigate fusion api script scaffold for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to create a Fusion Python script entrypoint with run context and explicit active-product checks.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-sketch-profile-read",
+    "path": "skills/rc-fusion360-api-fusion-api-sketch-profile-read",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-sketch-profile-read",
+    "description": "Investigate fusion api sketch profile read for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to inspect closed sketch profiles and construction geometry before attempting feature creation.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-user-parameters",
+    "path": "skills/rc-fusion360-api-fusion-api-user-parameters",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-user-parameters",
+    "description": "Investigate fusion api user parameters for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to read or modify named user parameters on a copy and verify the regeneration result.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-api-fusion-api-version-feature",
+    "path": "skills/rc-fusion360-api-fusion-api-version-feature",
+    "category": "development",
+    "name": "rc-fusion360-api-fusion-api-version-feature",
+    "description": "Investigate fusion api version feature for fusion 360 api and script automation with traceable evidence and reproducible negative-case testing. Use when asked to detect optional API features at runtime rather than assuming preview interfaces are universally available.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-3d-print-fit",
+    "path": "skills/rc-fusion360-cam-fusion-3d-print-fit",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-3d-print-fit",
+    "description": "Investigate fusion 3d print fit for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to apply measured printer compensation and clearance coupons rather than assuming nominal CAD fit.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-additive-orientation",
+    "path": "skills/rc-fusion360-cam-fusion-additive-orientation",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-additive-orientation",
+    "description": "Investigate fusion additive orientation for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to choose build orientation and support strategy from loads, surface requirements and material.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-additive-slicing",
+    "path": "skills/rc-fusion360-cam-fusion-additive-slicing",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-additive-slicing",
+    "description": "Investigate fusion additive slicing for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to verify watertight mesh, layer-height resolution and thin-wall feasibility before generating print data.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-2d-contour",
+    "path": "skills/rc-fusion360-cam-fusion-cam-2d-contour",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-2d-contour",
+    "description": "Investigate fusion cam 2d contour for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to generate contour allowances and check lead-in clearances near fixtures and tabs.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-3axis-finish",
+    "path": "skills/rc-fusion360-cam-fusion-cam-3axis-finish",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-3axis-finish",
+    "description": "Investigate fusion cam 3axis finish for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to assess scallop height, tool radius and machining reach on curved part surfaces.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-adaptive-clearing",
+    "path": "skills/rc-fusion360-cam-fusion-cam-adaptive-clearing",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-adaptive-clearing",
+    "description": "Investigate fusion cam adaptive clearing for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to compare adaptive step-over, remaining stock and machine limits with simulated engagement.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-drilling-cycles",
+    "path": "skills/rc-fusion360-cam-fusion-cam-drilling-cycles",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-drilling-cycles",
+    "description": "Investigate fusion cam drilling cycles for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to validate peck depth, retract plane and hole ordering under machine-specific controller behavior.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-first-article",
+    "path": "skills/rc-fusion360-cam-fusion-cam-first-article",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-first-article",
+    "description": "Investigate fusion cam first article for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to define first-article inspection dimensions and a guarded dry-run acceptance checklist.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-fixture-clearance",
+    "path": "skills/rc-fusion360-cam-fusion-cam-fixture-clearance",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-fixture-clearance",
+    "description": "Investigate fusion cam fixture clearance for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to include vise, clamp and fixture collision models in machining simulation.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-nc-traceability",
+    "path": "skills/rc-fusion360-cam-fusion-cam-nc-traceability",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-nc-traceability",
+    "description": "Investigate fusion cam nc traceability for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to save machine, postprocessor version, tool list and program hash alongside each NC revision.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-postprocess-review",
+    "path": "skills/rc-fusion360-cam-fusion-cam-postprocess-review",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-postprocess-review",
+    "description": "Investigate fusion cam postprocess review for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to inspect machine-specific postprocessor and emitted G-code before any machine transfer.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-setup-variants",
+    "path": "skills/rc-fusion360-cam-fusion-cam-setup-variants",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-setup-variants",
+    "description": "Investigate fusion cam setup variants for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to preserve toolpath setup ownership across parametric design configurations and revision changes.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-setup-wcs",
+    "path": "skills/rc-fusion360-cam-fusion-cam-setup-wcs",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-setup-wcs",
+    "description": "Investigate fusion cam setup wcs for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to define machine, stock and work coordinate origin with an independent fixture reference.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-tool-library",
+    "path": "skills/rc-fusion360-cam-fusion-cam-tool-library",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-tool-library",
+    "description": "Investigate fusion cam tool library for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to validate toolholder geometry, diameter, stick-out and cutting parameters against actual tooling.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-cam-toolpath-verify",
+    "path": "skills/rc-fusion360-cam-fusion-cam-toolpath-verify",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-cam-toolpath-verify",
+    "description": "Investigate fusion cam toolpath verify for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to compare stock simulation and machine kinematics against expected finished part dimensions.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-cam-fusion-machining-stock-cost",
+    "path": "skills/rc-fusion360-cam-fusion-machining-stock-cost",
+    "category": "testing",
+    "name": "rc-fusion360-cam-fusion-machining-stock-cost",
+    "description": "Investigate fusion machining stock cost for fusion 360 cam and 3d printing preparation with traceable evidence and reproducible negative-case testing. Use when asked to estimate removal volume and cycle time from simulated cutting and measured machine baseline.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-configured-variants",
+    "path": "skills/rc-fusion360-parametric-fusion-configured-variants",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-configured-variants",
+    "description": "Investigate fusion configured variants for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to define consistent dimensional configurations and verify regenerated bodies across every variant.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-design-parameter-table",
+    "path": "skills/rc-fusion360-parametric-fusion-design-parameter-table",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-design-parameter-table",
+    "description": "Investigate fusion design parameter table for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to define named dimensioned user parameters and equations that regenerate consistent part variants.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-extrude-revolve",
+    "path": "skills/rc-fusion360-parametric-fusion-extrude-revolve",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-extrude-revolve",
+    "description": "Investigate fusion extrude revolve for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to choose additive and subtractive features with stable planar references and timeline ordering.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-fillet-chamfer",
+    "path": "skills/rc-fusion360-parametric-fusion-fillet-chamfer",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-fillet-chamfer",
+    "description": "Investigate fusion fillet chamfer for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to order edge finishing features to reduce timeline fragility and preserve manufacturer tool access.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-interference-detection",
+    "path": "skills/rc-fusion360-parametric-fusion-interference-detection",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-interference-detection",
+    "description": "Investigate fusion interference detection for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to inspect mating parts and nearby features under maximum and minimum tolerance conditions.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-joint-motion",
+    "path": "skills/rc-fusion360-parametric-fusion-joint-motion",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-joint-motion",
+    "description": "Investigate fusion joint motion for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to express assembly joint axes and limits from the actual component and occurrence transforms.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-loft-profile-match",
+    "path": "skills/rc-fusion360-parametric-fusion-loft-profile-match",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-loft-profile-match",
+    "description": "Investigate fusion loft profile match for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to control section profile correspondence and surface continuity across changing cross sections.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-mass-properties",
+    "path": "skills/rc-fusion360-parametric-fusion-mass-properties",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-mass-properties",
+    "description": "Investigate fusion mass properties for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to cross-check volume, center of mass and material density for dimensional and material correctness.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-pattern-feature",
+    "path": "skills/rc-fusion360-parametric-fusion-pattern-feature",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-pattern-feature",
+    "description": "Investigate fusion pattern feature for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to compare rectangular and circular feature patterns under parameter changes and topology renaming.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-reference-geometry",
+    "path": "skills/rc-fusion360-parametric-fusion-reference-geometry",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-reference-geometry",
+    "description": "Investigate fusion reference geometry for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to anchor sketches to origin planes and stable construction geometry rather than transient face IDs.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-sheet-metal-flat",
+    "path": "skills/rc-fusion360-parametric-fusion-sheet-metal-flat",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-sheet-metal-flat",
+    "description": "Investigate fusion sheet metal flat for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to evaluate bend rules, material thickness and flat-pattern validity before producing cut layouts.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-shell-uniform-wall",
+    "path": "skills/rc-fusion360-parametric-fusion-shell-uniform-wall",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-shell-uniform-wall",
+    "description": "Investigate fusion shell uniform wall for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to establish enclosure wall-thickness constraints and test shell failures around narrow internal radii.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-sketch-constraint-audit",
+    "path": "skills/rc-fusion360-parametric-fusion-sketch-constraint-audit",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-sketch-constraint-audit",
+    "description": "Investigate fusion sketch constraint audit for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to eliminate unintended sketch degrees of freedom without overconstraining geometry or construction lines.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-step-stl-export",
+    "path": "skills/rc-fusion360-parametric-fusion-step-stl-export",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-step-stl-export",
+    "description": "Investigate fusion step stl export for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to export native and neutral representations and compare bounding boxes, units and watertightness.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-surface-stitch",
+    "path": "skills/rc-fusion360-parametric-fusion-surface-stitch",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-surface-stitch",
+    "description": "Investigate fusion surface stitch for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to repair open surfaces with verified geometric tolerance and closed-body checks.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-fusion360-parametric-fusion-sweep-path",
+    "path": "skills/rc-fusion360-parametric-fusion-sweep-path",
+    "category": "development",
+    "name": "rc-fusion360-parametric-fusion-sweep-path",
+    "description": "Investigate fusion sweep path for fusion 360 parametric 3d design with traceable evidence and reproducible negative-case testing. Use when asked to build and verify profiles swept along guide paths without self-intersection or unexpected twists.",
+    "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
     "id": "rc-gnss-measurement-antenna-phase-center",
     "path": "skills/rc-gnss-measurement-antenna-phase-center",
     "category": "data-ai",
@@ -8160,6 +9168,150 @@
     "name": "rc-jt808-protocol-terminal-parameter-audit",
     "description": "Investigate terminal parameter audit for jt808 device protocol with traceable evidence and reproducible negative-case testing. Use when asked to produce read-only parameter comparisons against approved device configuration baselines.",
     "risk": "safe",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-3d-model-links",
+    "path": "skills/rc-kicad-ecad-kicad-3d-model-links",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-3d-model-links",
+    "description": "Investigate kicad 3d model links for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to verify the referenced STEP or WRL model path and mechanical orientation for every critical footprint.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-board-stackup",
+    "path": "skills/rc-kicad-ecad-kicad-board-stackup",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-board-stackup",
+    "description": "Investigate kicad board stackup for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to validate dielectric thickness, copper weight and impedance constraints against a fabricator stackup.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-bom-variant",
+    "path": "skills/rc-kicad-ecad-kicad-bom-variant",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-bom-variant",
+    "description": "Investigate kicad bom variant for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to generate BOM with DNI variants and verify manufacturer part numbers against assembly revision.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-cli-jobset",
+    "path": "skills/rc-kicad-ecad-kicad-cli-jobset",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-cli-jobset",
+    "description": "Investigate kicad cli jobset for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to define reusable KiCad CLI jobset inputs and verify the installed release supports each requested export.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-drc-ci",
+    "path": "skills/rc-kicad-ecad-kicad-drc-ci",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-drc-ci",
+    "description": "Investigate kicad drc ci for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to run board DRC with schematic-parity checks when supported by the installed KiCad CLI version.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-ecad-release-gate",
+    "path": "skills/rc-kicad-ecad-kicad-ecad-release-gate",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-ecad-release-gate",
+    "description": "Investigate kicad ecad release gate for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to audit schematic parity, ERC/DRC, fabrication files, BOM, assembly drawings and mechanical fit evidence.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-erc-automation",
+    "path": "skills/rc-kicad-ecad-kicad-erc-automation",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-erc-automation",
+    "description": "Investigate kicad erc automation for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to run schematic ERC through the installed KiCad CLI and preserve all error and warning classifications.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-footprint-assignment",
+    "path": "skills/rc-kicad-ecad-kicad-footprint-assignment",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-footprint-assignment",
+    "description": "Investigate kicad footprint assignment for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to reconcile pin-to-pad mapping, footprint geometry and selected supplier package identity.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-gerber-drill-package",
+    "path": "skills/rc-kicad-ecad-kicad-gerber-drill-package",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-gerber-drill-package",
+    "description": "Investigate kicad gerber drill package for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to rebuild Gerber and drill outputs and independently check layer, drill and board-outline consistency.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-hierarchical-sheets",
+    "path": "skills/rc-kicad-ecad-kicad-hierarchical-sheets",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-hierarchical-sheets",
+    "description": "Investigate kicad hierarchical sheets for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to review hierarchical sheet pins and global labels for unintended cross-sheet electrical connections.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-library-versioning",
+    "path": "skills/rc-kicad-ecad-kicad-library-versioning",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-library-versioning",
+    "description": "Investigate kicad library versioning for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to preserve symbol and footprint library provenance while upgrading a shared KiCad project.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-netclass-routing",
+    "path": "skills/rc-kicad-ecad-kicad-netclass-routing",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-netclass-routing",
+    "description": "Investigate kicad netclass routing for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to define clearance and track-width constraints from measured current and manufacturer capability.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-pickplace-origins",
+    "path": "skills/rc-kicad-ecad-kicad-pickplace-origins",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-pickplace-origins",
+    "description": "Investigate kicad pickplace origins for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to cross-check placement file origins, rotations and board-side conventions with assembled reference units.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-step-export",
+    "path": "skills/rc-kicad-ecad-kicad-step-export",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-step-export",
+    "description": "Investigate kicad step export for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to export a board solid model for enclosure checking and record model coverage and coordinate origin.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-symbol-pin-types",
+    "path": "skills/rc-kicad-ecad-kicad-symbol-pin-types",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-symbol-pin-types",
+    "description": "Investigate kicad symbol pin types for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to inspect symbol electrical types and alternate units before approving electrical-rule exceptions.",
+    "risk": "critical",
+    "source": "rootcastle-original-technical-expansion-2026"
+  },
+  {
+    "id": "rc-kicad-ecad-kicad-zone-return-paths",
+    "path": "skills/rc-kicad-ecad-kicad-zone-return-paths",
+    "category": "development",
+    "name": "rc-kicad-ecad-kicad-zone-return-paths",
+    "description": "Investigate kicad zone return paths for kicad schematic and pcb automation with traceable evidence and reproducible negative-case testing. Use when asked to verify filled copper zones and return-current continuity after each important routing revision.",
+    "risk": "critical",
     "source": "rootcastle-original-technical-expansion-2026"
   },
   {

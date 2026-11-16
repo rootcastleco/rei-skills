@@ -301,7 +301,7 @@ Commands:
   mcp                      Start the REI Skills Smart MCP Server over stdio (JSON-RPC 2.0)
   prompt <sync|compose|propose>  Rootcastle Prompt Archive tasks (opt-in)
   add <id|bundle|rei-rea>  Install a specific skill, role bundle, or REI REA pack
-  search <query>           Search 1295 skills by name, category, tags, risk, or source
+  search <query>           Search 1423 skills by name, category, tags, risk, or source
   list                     List skills (--category, --bundle, --categories, --bundles)
   info <skill-id>          Inspect a skill's metadata, risk, provenance, and files
   targets                  List all 21 supported AI assistants, formats, and flags
@@ -1101,7 +1101,7 @@ function handleAdd(opts) {
       }
     } else if (opts.printMcp || !opts.json) {
       console.log("🔌 Smart Skill Management MCP & REI REA Runtime Setup:");
-      console.log("   • Run `npx rei-skills mcp` to serve all 1295 skills + Smart Task Router over MCP.");
+      console.log("   • Run `npx rei-skills mcp` to serve all 1423 skills + Smart Task Router over MCP.");
       console.log("   • Optional REI REA Python CLI & 14-tool Binary Intelligence MCP server:");
       console.log(`     git clone ${REA_REPO}`);
       console.log("     cd Rei-Reverse-engineer && python -m pip install -e .");

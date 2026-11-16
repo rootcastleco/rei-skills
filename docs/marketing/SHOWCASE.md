@@ -22,7 +22,7 @@ python examples/rei-rea-demo/run_demo.py
 
 ## 2. Selective Role Bundle Installation (`npx rei-skills add`)
 
-Instead of copying 1295 folders into every project workspace, developers can install role-specific bundles on demand:
+Instead of copying 1423 folders into every project workspace, developers can install role-specific bundles on demand:
 
 ```bash
 # Install 12 reverse-engineering skills

@@ -1,0 +1,3 @@
+interface:
+  display_name: KiCad Schematic and PCB Automation — Kicad Ecad Release Gate
+  short_description: Evidence-based kicad ecad release gate checks

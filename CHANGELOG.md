@@ -7,13 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## 6.4.0 — 400 Original Engineering Skills (2026-11-16)
+## 6.4.0 — 528 Original Engineering Skills with CAD and Fusion 360 (2026-11-16)
 
-- Expanded the catalog from 895 to **1,295 validated skills** (+400, +44.7%), with 25 domain-specific engineering families.
-- Added 400 individual skill entrypoints and OpenAI UI metadata files; source is original Rootcastle-authored engineering workflows rather than repackaged third-party prompts.
-- Added five curated topic briefs, an offline deterministic skill generator, SHA-256 manifest and no-drift regression tests.
-- Specialized coverage includes GNSS/RINEX/RTCM, JT808, vehicle telematics, BLE, cellular gateways, embedded RTOS, OTA, device security, Rust, Ethernet, vibration, rotor balancing, acquisition, PCB/EMC, telemetry, edge ML, cloud, mobile, forensics, HIL, safety, optimization and reproducible research.
-- Updated catalog and documentation and increased npm package smoke-test coverage to check the new skill tree.
+- Expanded the catalog from 895 to **1,423 validated skills** (+528, +59.0%), with 33 domain-specific engineering families.
+- Added 528 individual skill entrypoints and OpenAI UI metadata files; source is original Rootcastle-authored engineering workflows rather than repackaged third-party prompts.
+- Added six curated topic briefs, an offline deterministic skill generator, SHA-256 manifest and no-drift regression tests.
+- Specialized coverage includes Autodesk Fusion Design and read-only Electronics APIs, KiCad, SPICE, 3D CAD/CAM, ECAD–MCAD integration, GNSS/RINEX/RTCM, JT808, vehicle telematics, BLE, cellular gateways, embedded RTOS, OTA, device security, Rust, Ethernet, vibration, rotor balancing, acquisition, PCB/EMC, telemetry, edge ML, cloud, mobile, forensics, HIL, safety, optimization and reproducible research.
+- Updated catalog and documentation; added Turkish/English CAD routing, read-only Fusion inspector, dry-run KiCad ERC/DRC verifier, and increased npm package smoke-test coverage to check the new skill tree.
 - Schema validation does **not** constitute physical-device, safety or standards compliance; field-dependent claims remain NOT VERIFIED without measured evidence.
 
 ## 6.3.0 — Adaptive Prompt Archive and Hook Gateway preview (2026-11-16)

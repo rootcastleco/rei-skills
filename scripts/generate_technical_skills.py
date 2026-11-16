@@ -18,9 +18,43 @@ SOURCE_FILES = sorted((ROOT / "data").glob("technical-expansion-source-*.txt"))
 SKILLS = ROOT / "skills"
 MANIFEST = ROOT / "data" / "technical-expansion-manifest.json"
 SOURCE = "rootcastle-original-technical-expansion-2026"
-EXPECTED_DOMAINS = 25
+EXPECTED_DOMAINS = 33
 TASKS_PER_DOMAIN = 16
 EXPECTED_SKILLS = EXPECTED_DOMAINS * TASKS_PER_DOMAIN
+
+# Research-backed sources for newly added CAD and electronics workflow families.
+# Older 400 entries retain their original instruction bodies and hashes.
+RESEARCH_SOURCES = {
+    "circuit-architecture": [
+        ("Fusion Electronics workflow", "https://help.autodesk.com/view/fusion360/ENU/?contextId=ECD-PROJECTS"),
+        ("KiCad schematic reference", "https://docs.kicad.org/10.0/en/eeschema/eeschema.html"),
+    ],
+    "circuit-simulation": [
+        ("KiCad ngspice simulation", "https://docs.kicad.org/10.0/en/eeschema/eeschema.html"),
+    ],
+    "kicad-ecad": [
+        ("KiCad CLI 10.0", "https://docs.kicad.org/10.0/en/cli/cli.html"),
+    ],
+    "fusion360-parametric": [
+        ("Fusion Design API and units", "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/Units_UM.htm"),
+        ("Fusion Design object", "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/fusion_Design.htm"),
+    ],
+    "fusion360-api": [
+        ("Fusion API manual", "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/UserManualIndex_UM.htm"),
+        ("Fusion Electronics read-only API", "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ElectronicsIntro.htm"),
+    ],
+    "cad-3d-assembly": [
+        ("Fusion Components and Occurrences", "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ComponentsProxies_UM.htm"),
+    ],
+    "ecad-mcad-fit": [
+        ("Fusion Electronics integration", "https://help.autodesk.com/view/fusion360/ENU/?contextId=ECD-PROJECTS"),
+        ("Fusion Electronics API limitations", "https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/files/ElectronicsIntro.htm"),
+    ],
+    "fusion360-cam": [
+        ("Fusion manufacturing setup", "https://help.autodesk.com/view/fusion360/ENU/?contextId=MFG-CREATE-SETUP"),
+        ("Fusion post processing", "https://help.autodesk.com/view/fusion360/ENU/?contextId=MFG-POST-PROCESS-OPERATIONS"),
+    ],
+}
 
 def parse_spec(text):
     domains = []
@@ -132,6 +166,15 @@ measured_units: {domain['units']}
 status: NOT VERIFIED until a traceable comparison is supplied
 {fence}
 """
+    sources = RESEARCH_SOURCES.get(domain["slug"], [])
+    if sources:
+        markdown += (
+            "\n## Authoritative product references\n\n"
+            + "\n".join(f"- [{label}]({url})" for label, url in sources)
+            + "\n\n**Capability boundary:** Verify the installed edition, API version, "
+              "file revision and applicable manufacturing environment. A documented workflow "
+              "is not a claim that a CAD model was executed or a physical device was tested.\n"
+        )
     ui = {"interface": {
         "display_name": title[:80],
         "short_description": f"Evidence-based {task_slug.replace('-', ' ')} checks"[:110],
@@ -142,8 +185,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="Verify deterministic generated outputs without changing files")
     args = parser.parse_args()
-    if len(SOURCE_FILES) != 5:
-        raise ValueError(f"Expected five reviewed source files, found {len(SOURCE_FILES)}")
+    if len(SOURCE_FILES) != 6:
+        raise ValueError(f"Expected six reviewed source files, found {len(SOURCE_FILES)}")
     domains = parse_spec("\n".join(path.read_text(encoding="utf-8") for path in SOURCE_FILES))
     manifest = {
         "schema_version": 1, "source": SOURCE, "domain_count": EXPECTED_DOMAINS,

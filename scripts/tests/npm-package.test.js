@@ -31,6 +31,11 @@ try {
     "skills/rc-gnss-measurement-carrier-cycle-slip/SKILL.md",
     "skills/rc-rotor-mass-balance-two-plane-coupling/SKILL.md",
     "skills/rc-embedded-rtos-priority-inversion-analysis/SKILL.md",
+    "skills/rc-fusion360-api-fusion-api-ecad-readonly/SKILL.md",
+    "skills/rc-circuit-architecture-power-tree-budgeting/SKILL.md",
+    "skills/rc-kicad-ecad-kicad-drc-ci/SKILL.md",
+    "scripts/cad_ecad_verify.py",
+    "examples/fusion360-readonly-inspector/FusionReadOnlyInspector/FusionReadOnlyInspector.py",
   ];
   for (const file of required) {
     assert(paths.has(file), "npm artifact missing: " + file);

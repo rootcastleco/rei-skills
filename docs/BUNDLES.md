@@ -7,7 +7,7 @@
 
 1. **Install the full catalog or a specific bundle:**
    ```bash
-   # Full catalog (1295 skills)
+   # Full catalog (1423 skills)
    npx rei-skills
 
    # Or install a single role bundle selectively

@@ -98,7 +98,7 @@ const MCP_TOOLS = [
   {
     name: "rei_recommend_skills",
     description:
-      "Smart Intent & Stack Router: Analyzes a natural language engineering task (in English or Turkish) and optional file names/extensions to recommend the highest-scoring skills, multi-skill workflows, role bundles, and an ordered execution plan from the 1295-skill REI Skills catalog.",
+      "Smart Intent & Stack Router: Analyzes a natural language engineering task (in English or Turkish) and optional file names/extensions to recommend the highest-scoring skills, multi-skill workflows, role bundles, and an ordered execution plan from the 1423-skill REI Skills catalog.",
     inputSchema: {
       type: "object",
       properties: {
@@ -130,7 +130,7 @@ const MCP_TOOLS = [
   {
     name: "rei_search_skills",
     description:
-      "Search the 1295 validated REI Skills catalog by keyword, category, risk level (none, safe, critical, offensive), or source provenance.",
+      "Search the 1423 validated REI Skills catalog by keyword, category, risk level (none, safe, critical, offensive), or source provenance.",
     inputSchema: {
       type: "object",
       properties: {
@@ -610,7 +610,7 @@ function handleJsonRpcRequest(msg) {
             {
               uriTemplate: "rei://skill/{id}",
               name: "Load REI Skill Instructions by ID",
-              description: "Reads the full SKILL.md for any of the 1295 skills",
+              description: "Reads the full SKILL.md for any of the 1423 skills",
               mimeType: "text/markdown",
             },
           ],

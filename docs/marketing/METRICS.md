@@ -10,8 +10,8 @@ This document defines the transparent, verifiable engineering and adoption metri
 
 | Metric | Verification Command | Current Verified Value (`v6.1.0`) | Target |
 | :--- | :--- | :---: | :---: |
-| **Total Indexed Skills** | `python scripts/validate_skills.py --strict` | `1295` | `>= 1295` |
-| **Strict Schema Pass Rate (Python)** | `python scripts/validate_skills.py --strict` | `100%` (`1295/1295`, `0` errors, `0` warnings) | `100%` |
+| **Total Indexed Skills** | `python scripts/validate_skills.py --strict` | `1423` | `>= 1423` |
+| **Strict Schema Pass Rate (Python)** | `python scripts/validate_skills.py --strict` | `100%` (`1423/1423`, `0` errors, `0` warnings) | `100%` |
 | **Strict Schema Pass Rate (Node)** | `node scripts/validate-skills.js` | `100%` (`0` errors, `0` warnings) | `100%` |
 | **Security Audit Critical / High Issues** | `node scripts/security_audit.js` | `0` Critical, `0` High, `0` Unclassified | `0` |
 | **Broken Bundle / Workflow References** | `python scripts/validate_references.py` | `0` | `0` |
