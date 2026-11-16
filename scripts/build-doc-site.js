@@ -28,6 +28,10 @@ const sampleWorkflowPlan = compileWorkflowPlan(
   catalog,
   { files: ['pcb/vibration.kicad_pcb', 'cad/enclosure.step'] }
 );
+if (sampleWorkflowPlan && sampleWorkflowPlan.executionRecord) {
+  sampleWorkflowPlan.executionRecord.compiledAt =
+    (evaluationReport && evaluationReport.evaluatedAt) || 'deterministic-static-build';
+}
 const platformSummary = {
   evaluation: evaluationReport,
   samplePlan: sampleWorkflowPlan,
