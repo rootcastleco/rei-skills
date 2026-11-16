@@ -1,0 +1,4947 @@
+{
+  "schemaVersion": "rei.routing-benchmark.v1",
+  "generatedAt": "2026-11-16T00:00:00.000Z",
+  "catalogTotalSkills": 1423,
+  "totalTasks": 260,
+  "splits": {
+    "train": 80,
+    "dev": 60,
+    "eval": 120
+  },
+  "distributions": {
+    "queryTypes": {
+      "positive_en": 152,
+      "positive_tr": 38,
+      "multilingual_mixed": 15,
+      "ambiguous_multi_domain": 14,
+      "safety_critical_filter": 21,
+      "negative_out_of_scope": 20
+    },
+    "languages": {
+      "en": 197,
+      "tr": 48,
+      "mixed": 15
+    }
+  },
+  "tasks": [
+    {
+      "id": "tr-001",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design low-noise ADC voltage reference and sampling settling network",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-adc-reference-network",
+        "rc-circuit-simulation-adc-sampling-settling"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture",
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-002",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Compute worst-case power tree budget and LDO dropout margin under peak load",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-power-tree-budgeting",
+        "rc-circuit-architecture-ldo-dropout-analysis"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-003",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Run KiCad schematic ERC and board DRC with schematic parity check",
+      "files": [
+        "sensor.kicad_sch",
+        "sensor.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-kicad-ecad-kicad-erc-automation",
+        "rc-kicad-ecad-kicad-drc-ci",
+        "rc-kicad-ecad-kicad-ecad-release-gate"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-004",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Export Fusion 360 parametric enclosure design to STEP and STL",
+      "files": [
+        "housing.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-parametric-fusion-step-stl-export",
+        "rc-fusion360-api-fusion-api-export-step"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-parametric",
+        "fusion360-api"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-005",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Align PCB STEP solid inside enclosure and verify mounting hole pattern",
+      "files": [
+        "board.step",
+        "case.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+        "rc-ecad-mcad-fit-mounting-hole-pattern"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-006",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Analyze Android APK DEX bytecode, manifest permissions, and JNI bridge",
+      "files": [
+        "app.apk"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-android-apks",
+        "rei-rea-orchestrator"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-007",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Triage embedded router firmware image for SquashFS partitions and entropy",
+      "files": [
+        "router.bin"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-firmware-and-iot",
+        "rei-binary-intelligence",
+        "rc-binary-forensics-firmware-partition-map"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering",
+        "binary-forensics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-008",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Inspect Electron ASAR archive preload script and IPC routes",
+      "files": [
+        "desktop.asar"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-electron-and-js",
+        "rei-rea-orchestrator"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-009",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate GNSS carrier cycle slip and RAIM integrity residuals",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-carrier-cycle-slip",
+        "rc-gnss-measurement-raim-integrity-residuals"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-010",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Convert accelerometer vibration spectrum to velocity and check FFT window leakage",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-machine-vibration-acceleration-to-velocity",
+        "rc-machine-vibration-fft-window-leakage"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "machine-vibration"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-011",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Calculate single-plane rotor balancing trial mass influence vector and phase wrap",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rotor-mass-balance-single-plane-influence",
+        "rc-rotor-mass-balance-phase-wrap-correction",
+        "rc-rotor-mass-balance-trial-mass-selection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-012",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design IEPE accelerometer anti-alias filter and ADC quantization error budget",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-sensor-acquisition-accelerometer-sensitivity",
+        "rc-sensor-acquisition-anti-alias-filter-choice",
+        "rc-sensor-acquisition-adc-quantization-budget"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "sensor-acquisition"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-013",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit embedded RTOS DMA buffer ownership and priority inversion on shared mutexes",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-embedded-rtos-dma-buffer-ownership",
+        "rc-embedded-rtos-priority-inversion-analysis"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "embedded-rtos"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-014",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Implement A/B firmware OTA slot state machine with anti-rollback counter",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-firmware-ota-ab-slot-state-machine",
+        "rc-firmware-ota-anti-rollback-versioning"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-015",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Decode JT808 device protocol byte escaping and verify XOR checksum",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-jt808-protocol-byte-escape-decoding",
+        "rc-jt808-protocol-checksum-xor-verification"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "jt808-protocol"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-016",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design BLE sensor node GATT characteristic contract and MTU fragment reassembly",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ble-sensor-nodes-gatt-characteristic-contract",
+        "rc-ble-sensor-nodes-mtu-fragment-reassembly"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ble-sensor-nodes"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-017",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Diagnose cellular IoT gateway modem attach sequence and offline queue persistence",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cellular-gateway-modem-attach-sequence",
+        "rc-cellular-gateway-offline-queue-durability"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cellular-gateway"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-018",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify industrial Ethernet PTP clock asymmetry and redundant ring convergence",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-industrial-ethernet-ptp-clock-error",
+        "rc-industrial-ethernet-redundant-ring-convergence"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "industrial-ethernet"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-019",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit IoT device mutual TLS handshake and provisioning supply chain security",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-iot-device-security-mutual-tls-handshake-audit",
+        "rc-iot-device-security-provisioning-supply-chain"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "iot-device-security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-020",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Investigate PCB conducted emission harmonics and ESD discharge return path",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-electromagnetic-compat-conducted-emission-scans",
+        "rc-electromagnetic-compat-esd-discharge-path"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "electromagnetic-compat"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-021",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Review analog digital ground partition and differential pair skew on 4-layer PCB",
+      "files": [
+        "board.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-pcb-design-review-analog-digital-partition",
+        "rc-pcb-design-review-high-speed-differential-pairs"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "pcb-design-review"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-022",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Run hardware-in-the-loop ADC calibration fixture and CAN traffic replay",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-hardware-in-loop-adc-calibration-fixture",
+        "rc-hardware-in-loop-can-traffic-replay"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "hardware-in-loop"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-023",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Build fleet telematics trip segmentation and geofence entry exit hysteresis",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fleet-telematics-trip-segmentation",
+        "rc-fleet-telematics-geofence-entry-exit"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fleet-telematics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-024",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Handle timeseries telemetry late event watermarks and out-of-order upserts",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-timeseries-telemetry-late-event-watermarks",
+        "rc-timeseries-telemetry-out-of-order-upsert"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "timeseries-telemetry"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-025",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design Kafka event outbox atomicity and dead letter queue replay policy",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-event-streaming-event-outbox-atomicity",
+        "rc-event-streaming-dead-letter-queue"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "event-streaming"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-026",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Implement Rust async protocol backpressure channel budget and framed codec bounds",
+      "files": [
+        "Cargo.toml",
+        "codec.rs"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rust-protocols-backpressure-channel-budget",
+        "rc-rust-protocols-framed-codec-bounds",
+        "rust-pro"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rust-protocols",
+        "development"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-027",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate edge ML int8 quantization error bounds and sensor failure fallback",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-edge-machine-learning-quantization-error-bounds",
+        "rc-edge-machine-learning-sensor-failure-fallback"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "edge-machine-learning"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-028",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit multiobjective Pareto optimization constraint feasibility and variable scaling",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-optimization-experiments-constraint-feasibility-audit",
+        "rc-optimization-experiments-multiobjective-pareto-review"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "optimization-experiments"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-029",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Set up reproducible experiment seed control and measurement uncertainty budget",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-reproducible-research-experiment-seed-control",
+        "rc-reproducible-research-measurement-uncertainty-budget"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reproducible-research"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-030",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Construct fault tree decomposition and safety release gate matrix",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-safety-assurance-fault-tree-decomposition",
+        "rc-safety-assurance-release-safety-gate"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "safety-assurance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-031",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Size O-ring seal groove and tolerance stack-up for waterproof CAD enclosure",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cad-3d-assembly-o-ring-groove-design",
+        "rc-cad-3d-assembly-tolerance-stack-up"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-032",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Generate Fusion 360 CAM adaptive clearing toolpath and verify postprocessor NC code",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-cam-adaptive-clearing",
+        "rc-fusion360-cam-fusion-cam-postprocess-review"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-033",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Create Fusion 360 Python script using ValueInput parameter units",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-api-fusion-api-parameter-units",
+        "rc-fusion360-api-fusion-api-script-scaffold"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-api"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-034",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Build stateful multi-agent workflow with LangGraph and RAG retrieval",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "langgraph",
+        "rag-engineer",
+        "rag-implementation"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "data-ai"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-035",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Build Model Context Protocol server with validated tool schemas",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "mcp-builder"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "workflow",
+        "data-ai"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-036",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Model bounded contexts, aggregates, and CQRS projections using DDD",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "domain-driven-design",
+        "ddd-strategic-design",
+        "ddd-tactical-patterns",
+        "cqrs-implementation"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-037",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Optimize PostgreSQL indexing and connection pooling performance",
+      "files": [
+        "schema.sql"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "postgres-best-practices",
+        "database-design"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "data-ai"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-038",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Write Next.js App Router server components and optimize React rendering",
+      "files": [
+        "app.tsx",
+        "next.config.ts"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "nextjs-best-practices",
+        "react-best-practices"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "development"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-039",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Set up Kubernetes GitOps deployment pipeline with Prometheus observability",
+      "files": [
+        "Dockerfile"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "kubernetes-architect",
+        "gitops-workflow",
+        "observability-engineer"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "infrastructure"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-040",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Implement test-driven development and end-to-end Playwright browser tests",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "test-driven-development",
+        "playwright-skill",
+        "e2e-testing-patterns"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "testing"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-041",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Debug failing async unit tests systematically before writing fixes",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "systematic-debugging",
+        "test-fixing"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "testing",
+        "general"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-042",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Configure cloud autoscaling thresholds, error budgets, and TLS certificate expiry alerts",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cloud-service-ops-autoscaling-thresholds",
+        "rc-cloud-service-ops-service-error-budget",
+        "rc-cloud-service-ops-tls-certificate-expiry"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cloud-service-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-043",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Handle mobile field app offline edit conflicts and Android background limits",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-mobile-field-ops-offline-edit-conflicts",
+        "rc-mobile-field-ops-android-background-limits"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "mobile-field-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-044",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Analyze WebAssembly binary structure and verify clean-room behavioral parity",
+      "files": [
+        "filter.wasm"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-wasm-and-managed",
+        "rei-reconstruction-parity",
+        "rei-binary-intelligence"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-045",
+      "split": "train",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Examine PE/ELF native binary symbols, imports, and SHA-256 casebook ledger",
+      "files": [
+        "libcodec.so"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-native-binaries",
+        "rei-casebook-forensics",
+        "rei-evidence-ledger"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-046",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Elektronik devre tasarımı güç kaynağı voltaj regülatörü ve buck dönüştürücü",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-power-tree-budgeting",
+        "rc-circuit-architecture-buck-converter-selection",
+        "rc-circuit-architecture-ldo-dropout-analysis"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-047",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Fusion 360 ile parametrik 3D muhafaza çizimi ve STEP dışa aktarımı",
+      "files": [
+        "enclosure.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-parametric-fusion-design-parameter-table",
+        "rc-fusion360-parametric-fusion-step-stl-export"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-048",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "KiCad şematik ERC ve PCB DRC kurallarını doğrula",
+      "files": [
+        "board.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-kicad-ecad-kicad-erc-automation",
+        "rc-kicad-ecad-kicad-drc-ci"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-049",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Android APK ve gömülü firmware dosyası tersine mühendislik analizi",
+      "files": [
+        "app.apk",
+        "fw.bin"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-android-apks",
+        "rei-firmware-and-iot",
+        "rei-rea-orchestrator"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-050",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Tek düzlemli rotor balans deneme ağırlığı ve faz açısı hesabı",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rotor-mass-balance-single-plane-influence",
+        "rc-rotor-mass-balance-trial-mass-selection",
+        "rc-rotor-mass-balance-phase-wrap-correction"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-051",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Makine titreşim spektrumu hız dönüşümü ve yatak arıza frekansları",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-machine-vibration-acceleration-to-velocity",
+        "rc-machine-vibration-bearing-defect-sidebands"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "machine-vibration"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-052",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "GNSS konum verisinde çoklu yansıma ve taşıyıcı faz kayması tespiti",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-carrier-cycle-slip",
+        "rc-gnss-measurement-multipath-diagnostics"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-053",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Gömülü RTOS kesme gecikmesi ve görev yığın taşma denetimi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-embedded-rtos-interrupt-latency-profiling",
+        "rc-embedded-rtos-stack-watermark-audit"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "embedded-rtos"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-054",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Sac metal büküm payı ve vida dişi delik tolerans analizi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cad-3d-assembly-sheet-metal-bend-allowance",
+        "rc-cad-3d-assembly-thread-clearance-fit"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-055",
+      "split": "train",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "SPICE geçici rejim simülasyonu ve opamp kararlılık faz marjı analizi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-simulation-spice-transient-startup",
+        "rc-circuit-simulation-opamp-loop-gain-test",
+        "rc-circuit-architecture-opamp-stability-margin"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-simulation",
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-056",
+      "split": "train",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "PCB 3D muhafaza mekanik uyumluluk ve montaj deliği tolerans kontrolü",
+      "files": [
+        "pcb.step"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+        "rc-ecad-mcad-fit-mounting-hole-pattern"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-057",
+      "split": "train",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "JT808 protokolü konum paketi çözme ve CRC doğrulama",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-jt808-protocol-location-body-decode",
+        "rc-jt808-protocol-checksum-xor-verification"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "jt808-protocol"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-058",
+      "split": "train",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "Rust ile güvenli soket sunucu ve rate limit backpressure tasarımı",
+      "files": [
+        "server.rs"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rust-protocols-rate-limit-admission-control",
+        "rc-rust-protocols-backpressure-channel-budget",
+        "rust-pro"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rust-protocols"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-059",
+      "split": "train",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "WebSocket ve PCAP ağ trafiği protokol analizi",
+      "files": [
+        "traffic.pcapng"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-web-and-protocols",
+        "rei-evidence-ledger"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-060",
+      "split": "train",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "PostgreSQL veritabanı indeks ve sorgu performans optimizasyonu",
+      "files": [
+        "queries.sql"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "postgres-best-practices",
+        "database-design"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "data-ai"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-061",
+      "split": "train",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Build a battery-powered BLE vibration sensor enclosure with PCB fit checks",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ble-sensor-nodes-battery-voltage-interpretation",
+        "rc-ecad-mcad-fit-battery-pack-envelope",
+        "rc-sensor-acquisition-accelerometer-sensitivity"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ble-sensor-nodes",
+        "ecad-mcad-fit",
+        "sensor-acquisition"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-062",
+      "split": "train",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Create an RTK GNSS fleet tracker with cellular coexistence and NMEA validation",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-nmea-talker-validation",
+        "rc-cellular-gateway-gnss-cellular-coexistence",
+        "rc-fleet-telematics-distance-odometer-reconcile"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement",
+        "cellular-gateway",
+        "fleet-telematics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-063",
+      "split": "train",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Investigate suspicious firmware update failure and verify bootloader handoff hash chain",
+      "files": [
+        "update.bin"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-firmware-and-iot",
+        "rc-binary-forensics-bootloader-handoff-map",
+        "rc-firmware-ota-boot-health-commit"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering",
+        "binary-forensics",
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-064",
+      "split": "train",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Evaluate LLM agent retrieval accuracy and deploy behind autoscaled cloud API",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "agent-evaluation",
+        "rag-implementation",
+        "rc-cloud-service-ops-autoscaling-thresholds"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "data-ai",
+        "cloud-service-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-065",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Test web authentication flows and IDOR access controls safely without offensive exploits",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "auth-implementation-patterns",
+        "broken-authentication",
+        "idor-testing"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-066",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Inspect Fusion 360 Electronics board parameters read-only without modifying CAD",
+      "files": [
+        "enclosure.f3d"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-fusion360-api-fusion-api-ecad-readonly",
+        "rc-fusion360-parametric-fusion-design-parameter-table"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "fusion360-api",
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-067",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Perform static read-only triage on firmware and ELF binary artifacts",
+      "files": [
+        "sample.elf"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rei-binary-intelligence",
+        "rei-native-binaries",
+        "rei-evidence-ledger"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-068",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Audit cloud service logs for PII redaction and TLS certificate expiry safely",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-cloud-service-ops-audit-log-redaction",
+        "rc-cloud-service-ops-tls-certificate-expiry"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "cloud-service-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-069",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Simulate SPICE switching regulator transient without making hardware board changes",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-circuit-simulation-switching-regulator-transient",
+        "rc-circuit-simulation-spice-operating-point"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-070",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Verify GNSS coordinate datum transform and ephemeris age bounds safely",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-gnss-measurement-geodetic-frame-transform",
+        "rc-gnss-measurement-ephemeris-age-screening"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-071",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "tr",
+      "task": "Güvenli okuma modunda Fusion 360 tasarım parametrelerini incele ve STEP kontrolü yap",
+      "files": [
+        "housing.f3d"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-fusion360-api-fusion-api-ecad-readonly",
+        "rc-fusion360-parametric-fusion-step-stl-export"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "fusion360-api",
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-072",
+      "split": "train",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Run read-only TypeScript strictness and Postgres query plan tuning",
+      "files": [
+        "query.sql"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "typescript-pro",
+        "postgres-best-practices"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "development",
+        "data-ai"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "tr-073",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Write a romantic poem about sunset over the Bosphorus bridge",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "tr-074",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Give me a traditional recipe for homemade sourdough bread and croissants",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "tr-075",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "tr",
+      "task": "Bugün akşam yemeği için mantarlı makarna tarifi ver",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "tr-076",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Who won the UEFA Champions League final in 2012",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "tr-077",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "tr",
+      "task": "Kapadokya hafta sonu tatili için otel ve balon turu öner",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "tr-078",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Explain the rules of chess castling and en passant",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "tr-079",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Translate happy birthday into Japanese and Spanish",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "tr-080",
+      "split": "train",
+      "queryType": "negative_out_of_scope",
+      "language": "tr",
+      "task": "Bahçedeki domates fideleri ne zaman sulanmalı",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "dv-001",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Calculate op-amp loop gain stability margin under capacitive load",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-opamp-stability-margin",
+        "rc-circuit-simulation-opamp-loop-gain-test"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture",
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-002",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify RS485 bus termination, fail-safe bias, and TVS protection standoff",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-rs485-bus-termination",
+        "rc-circuit-architecture-esd-tvs-coordination"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-003",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check KiCad hierarchical sheet labels and footprint pin-to-pad assignment",
+      "files": [
+        "main.kicad_sch"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-kicad-ecad-kicad-hierarchical-sheets",
+        "rc-kicad-ecad-kicad-footprint-assignment"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-004",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit KiCad Gerber and Excellon drill fabrication outputs for release",
+      "files": [
+        "board.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-kicad-ecad-kicad-gerber-drill-package",
+        "rc-kicad-ecad-kicad-ecad-release-gate"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-005",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check Fusion 360 shell uniform wall thickness and interference detection",
+      "files": [
+        "enclosure.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-parametric-fusion-shell-uniform-wall",
+        "rc-fusion360-parametric-fusion-interference-detection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-006",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify connector mating sweep and component height keep-out inside enclosure",
+      "files": [
+        "assembly.step"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-connector-mating-sweep",
+        "rc-ecad-mcad-fit-component-height-envelope"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-007",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Plan Fusion 360 additive 3D print orientation and clearance coupon fit",
+      "files": [
+        "bracket.stl"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-additive-orientation",
+        "rc-fusion360-cam-fusion-3d-print-fit"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-008",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate two-plane rotor balancing coupling matrix conditioning",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rotor-mass-balance-two-plane-coupling",
+        "rc-rotor-mass-balance-influence-matrix-conditioning"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-009",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Diagnose envelope bearing vibration defects and tachometer dropout",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-machine-vibration-envelope-bearing-features",
+        "rc-machine-vibration-tachometer-dropout"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "machine-vibration"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-010",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify synchronous multi-channel ADC sampling phase and channel skew compensation",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-sensor-acquisition-synchronous-sampling-phase",
+        "rc-sensor-acquisition-channel-skew-compensation"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "sensor-acquisition"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-011",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Compute GNSS pseudorange residuals and RTCM differential correction latency",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-pseudorange-residuals",
+        "rc-gnss-measurement-rtcm-correction-latency"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-012",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design RTOS brownout recovery state and watchdog supervision tree",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-embedded-rtos-brownout-recovery-state",
+        "rc-embedded-rtos-watchdog-supervision-tree"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "embedded-rtos"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-013",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify OTA firmware image cryptographic signature and power loss injection recovery",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-firmware-ota-image-signature-verification",
+        "rc-firmware-ota-power-loss-injection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-014",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Investigate decompiler pointer types and indirect call targets in firmware ELF",
+      "files": [
+        "fw.elf"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-binary-forensics-decompiler-type-repair",
+        "rc-binary-forensics-indirect-call-targets",
+        "rei-native-binaries"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "binary-forensics",
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-015",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Trace BLE sensor pairing downgrade defense and bonding key lifecycle",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ble-sensor-nodes-pairing-downgrade-defense",
+        "rc-ble-sensor-nodes-bonding-key-lifecycle"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ble-sensor-nodes"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-016",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Characterize cellular gateway RSRP SINR signal quality and TLS session resumption",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cellular-gateway-signal-quality-rsrp-sinr",
+        "rc-cellular-gateway-tls-session-resumption"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cellular-gateway"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-017",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Reassemble multipart JT808 protocol packets and handle 16-bit sequence wraparound",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-jt808-protocol-multipart-assembly",
+        "rc-jt808-protocol-sequence-wraparound"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "jt808-protocol"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-018",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Inspect industrial Ethernet PoE load budget and VLAN management isolation",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-industrial-ethernet-poe-load-budget",
+        "rc-industrial-ethernet-vlan-isolation-review"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "industrial-ethernet"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-019",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify IoT diagnostic debug port lockdown and secure boot measurement",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-iot-device-security-diagnostic-port-lockdown",
+        "rc-iot-device-security-secure-boot-measurement"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "iot-device-security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-020",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Map PCB near-field radiated emissions and Ethernet magnetics isolation layout",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-electromagnetic-compat-radiated-near-field-map",
+        "rc-electromagnetic-compat-ethernet-magnetics-layout"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "electromagnetic-compat"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-021",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit PCB copper pour isolation, decoupling loop inductance, and thermal via paths",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-pcb-design-review-copper-pour-isolation",
+        "rc-pcb-design-review-decoupling-loop-inductance",
+        "rc-pcb-design-review-thermal-via-path"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "pcb-design-review"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-022",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify HIL relay output interlock and sensor timing skew under fault injection",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-hardware-in-loop-relay-output-interlock",
+        "rc-hardware-in-loop-sensor-timing-skew"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "hardware-in-loop"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-023",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate fleet telematics harsh braking detection and fuel level smoothing",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fleet-telematics-harsh-braking-validation",
+        "rc-fleet-telematics-fuel-level-smoothing"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fleet-telematics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-024",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Trace raw-to-derived timeseries telemetry lineage and query latency budget",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-timeseries-telemetry-raw-to-derived-lineage",
+        "rc-timeseries-telemetry-query-latency-budget"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "timeseries-telemetry"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-025",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate Kafka topic schema registry migration and partition key hot-spot distribution",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-event-streaming-schema-registry-migration",
+        "rc-event-streaming-partition-key-selection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "event-streaming"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-026",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit Rust tokio cancellation safety and serde fuzz corpus bounds",
+      "files": [
+        "Cargo.toml"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rust-protocols-tokio-cancellation-safety",
+        "rc-rust-protocols-serde-fuzz-corpus"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rust-protocols"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-027",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify edge ML training-to-device feature pipeline parity and concept drift alerts",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-edge-machine-learning-feature-pipeline-parity",
+        "rc-edge-machine-learning-concept-drift-alerting"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "edge-machine-learning"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-028",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check finite-difference gradient verification and stochastic seed variance in solver",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-optimization-experiments-gradient-finite-difference",
+        "rc-optimization-experiments-stochastic-seed-variance"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "optimization-experiments"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-029",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Prevent train-test preprocessing leakage and build replication package layout",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-reproducible-research-preprocessing-leakage-review",
+        "rc-reproducible-research-replication-package-layout"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reproducible-research"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-030",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify emergency stop hardware interlock precedence and safe state transitions",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-safety-assurance-emergency-stop-interface",
+        "rc-safety-assurance-safe-state-definition"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "safety-assurance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-031",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design plastic enclosure snap-fit strain and injection mold draft angle review",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cad-3d-assembly-plastic-snap-fit-risk",
+        "rc-cad-3d-assembly-injection-mold-draft"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-032",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Align simulated SPICE circuit node waveforms with oscilloscope bench measurements",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-simulation-simulation-to-bench-parity",
+        "rc-circuit-simulation-spice-monte-carlo"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-033",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Implement distributed saga orchestration and architecture decision records",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "saga-orchestration",
+        "architecture-decision-records"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-034",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Build embedding retrieval strategy and vector database index",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "embedding-strategies",
+        "vector-database-engineer"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "data-ai"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-035",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Configure Prometheus metrics and Grafana monitoring dashboards",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "prometheus-configuration",
+        "grafana-dashboards",
+        "observability-engineer"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "infrastructure"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-036",
+      "split": "dev",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design mobile field app barcode scan deduplication and encrypted local storage",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-mobile-field-ops-barcode-scan-dedup",
+        "rc-mobile-field-ops-device-storage-encryption"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "mobile-field-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-037",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Dört kanallı senkron ADC örnekleme ve anti-alias filtre tasarımı",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-sensor-acquisition-synchronous-sampling-phase",
+        "rc-sensor-acquisition-anti-alias-filter-choice",
+        "rc-circuit-architecture-adc-reference-network"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "sensor-acquisition",
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-038",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "İki düzlemli rotor dengeleme kuplaj matrisi ve etki katsayısı doğrulama",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rotor-mass-balance-two-plane-coupling",
+        "rc-rotor-mass-balance-influence-matrix-conditioning"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-039",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Fusion 360 API ile kullanıcı parametre birimleri ve STEP ihracatı",
+      "files": [
+        "case.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-api-fusion-api-parameter-units",
+        "rc-fusion360-api-fusion-api-export-step"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-api"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-040",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "KiCad Gerber üretim dosyaları ve kart yığın kalınlık doğrulaması",
+      "files": [
+        "pcb.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-kicad-ecad-kicad-gerber-drill-package",
+        "rc-kicad-ecad-kicad-board-stackup"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-041",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Gömülü sistem OTA güncelleme güç kesintisi ve imzalı imaj doğrulama",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-firmware-ota-power-loss-injection",
+        "rc-firmware-ota-image-signature-verification"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-042",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Tersine mühendislik ikili dosya fark analizi ve SHA-256 kanıt defteri",
+      "files": [
+        "v1.wasm",
+        "v2.wasm"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-binary-intelligence",
+        "rei-evidence-ledger",
+        "rei-casebook-forensics"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-043",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "IoT cihazı karşılıklı TLS el sıkışma ve kimlik doğrulama güvenliği",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-iot-device-security-mutual-tls-handshake-audit",
+        "rc-iot-device-security-device-identity-provisioning"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "iot-device-security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-044",
+      "split": "dev",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Filo telematik araç hız uyarısı histerezis ve çevrimdışı tampon sıralama",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fleet-telematics-speed-alert-hysteresis",
+        "rc-fleet-telematics-offline-buffer-ordering"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fleet-telematics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-045",
+      "split": "dev",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "CNC freze 3 eksen takım yolu simülasyonu ve G-code postprocess kontrolü",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-cam-3axis-finish",
+        "rc-fusion360-cam-fusion-cam-postprocess-review",
+        "rc-fusion360-cam-fusion-cam-toolpath-verify"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-046",
+      "split": "dev",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "PCB ile Fusion 360 su geçirmez conta O-ring ve konnektör boşluk analizi",
+      "files": [
+        "board.step"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-waterproof-gasket-stack",
+        "rc-cad-3d-assembly-o-ring-groove-design"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit",
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-047",
+      "split": "dev",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "Docker container dağıtımı ve Terraform altyapı planı",
+      "files": [
+        "Dockerfile",
+        "main.tf"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "docker-expert",
+        "terraform-specialist",
+        "deployment-procedures"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "infrastructure"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-048",
+      "split": "dev",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "TypeScript ve React frontend bileşen mimarisi ve test otomasyonu",
+      "files": [
+        "Panel.tsx"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "typescript-pro",
+        "react-patterns",
+        "frontend-developer"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "development"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-049",
+      "split": "dev",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Design a CNC-milled aluminium vibration sensor fixture with tolerance drawings",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-cam-setup-wcs",
+        "rc-cad-3d-assembly-drawing-release-inspection",
+        "rc-ecad-mcad-fit-sensor-mount-orientation"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam",
+        "cad-3d-assembly",
+        "ecad-mcad-fit"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-050",
+      "split": "dev",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Build a high-reliability CAN telemetry logger with hardware-in-loop and safety gate",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-can-transceiver-protection",
+        "rc-hardware-in-loop-can-traffic-replay",
+        "rc-safety-assurance-release-safety-gate"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture",
+        "hardware-in-loop",
+        "safety-assurance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-051",
+      "split": "dev",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Reverse engineer mobile companion app and BLE telemetry protocol captures",
+      "files": [
+        "app.apk",
+        "ble.pcap"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-android-apks",
+        "rei-web-and-protocols",
+        "rc-ble-sensor-nodes-sensor-payload-crc"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering",
+        "ble-sensor-nodes"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-052",
+      "split": "dev",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Evaluate CAD assembly tolerances and Fusion 360 STL export settings safely",
+      "files": [
+        "part.f3d"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-cad-3d-assembly-tolerance-stack-up",
+        "rc-fusion360-api-fusion-api-export-stl"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "cad-3d-assembly",
+        "fusion360-api"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-053",
+      "split": "dev",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Analyze Android APK manifest and Electron ASAR IPC routes safely read-only",
+      "files": [
+        "app.apk",
+        "app.asar"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rei-android-apks",
+        "rei-electron-and-js"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-054",
+      "split": "dev",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Verify database schema design and event outbox atomicity without unsafe cluster commands",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "database-design",
+        "rc-event-streaming-event-outbox-atomicity"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "data-ai",
+        "event-streaming"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-055",
+      "split": "dev",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Run Python testing patterns and systematic debugging on failing unit suite",
+      "files": [
+        "test_app.py"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "python-testing-patterns",
+        "systematic-debugging"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "testing"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-056",
+      "split": "dev",
+      "queryType": "safety_critical_filter",
+      "language": "tr",
+      "task": "Salt okunur modda SPICE filtre transfer fonksiyonu ve Monte Carlo analizi yap",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-circuit-simulation-filter-transfer-verification",
+        "rc-circuit-simulation-spice-monte-carlo"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "dv-057",
+      "split": "dev",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Recommend top jazz albums from the 1960s to listen to while driving",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "dv-058",
+      "split": "dev",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "How do I renew a tourist passport and apply for a Schengen visa",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "dv-059",
+      "split": "dev",
+      "queryType": "negative_out_of_scope",
+      "language": "tr",
+      "task": "İstanbul boğazında sabah koşusu için en güzel parkurlar hangileri",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "dv-060",
+      "split": "dev",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "What is the best watering schedule for indoor monstera plants",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-001",
+      "split": "eval",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Design a four-channel vibration measurement PCB and its Fusion 360 enclosure",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-sensor-acquisition-accelerometer-sensitivity",
+        "rc-circuit-architecture-adc-reference-network",
+        "rc-kicad-ecad-kicad-ecad-release-gate",
+        "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+        "rc-fusion360-parametric-fusion-design-parameter-table"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "sensor-acquisition",
+        "circuit-architecture",
+        "kicad-ecad",
+        "ecad-mcad-fit",
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-002",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Bound op-amp input bias current and sensor source impedance in analog front-end",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-analog-front-end-bias",
+        "rc-circuit-architecture-sensor-bridge-conditioning"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-003",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Compare ideal MOSFET vs diode reverse polarity protection and boost startup inrush",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-reverse-polarity-protection",
+        "rc-circuit-architecture-boost-startup-sequencing"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-004",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Run SPICE small-signal AC Bode plot and integrated noise budget simulation",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-simulation-spice-small-signal-ac",
+        "rc-circuit-simulation-spice-noise-budget",
+        "rc-circuit-simulation-filter-transfer-verification"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-005",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Run worst-case corner sweep across supply voltage and junction temperature in SPICE",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-simulation-worst-case-corner-sweep",
+        "rc-circuit-simulation-thermal-electrical-iterate"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-006",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify KiCad netclass clearance rules, copper zone return paths, and BOM DNI variants",
+      "files": [
+        "board.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-kicad-ecad-kicad-netclass-routing",
+        "rc-kicad-ecad-kicad-zone-return-paths",
+        "rc-kicad-ecad-kicad-bom-variant"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-007",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Export KiCad board STEP 3D model and verify symbol 3D model footprint links",
+      "files": [
+        "board.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-kicad-ecad-kicad-step-export",
+        "rc-kicad-ecad-kicad-3d-model-links"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-008",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify schematic pin-to-pad net parity, pick-and-place origins, and Gerber layers",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-pcb-design-review-schematic-pcb-net-parity",
+        "rc-kicad-ecad-kicad-pickplace-origins",
+        "rc-pcb-design-review-gerber-drill-review"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "pcb-design-review",
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-009",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check PCB creepage clearance spacing and mounting hole chassis standoff tolerances",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-pcb-design-review-creepage-clearance-review",
+        "rc-pcb-design-review-mounting-hole-clearance"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "pcb-design-review"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-010",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit Fusion 360 sketch constraint degrees of freedom and origin reference geometry",
+      "files": [
+        "housing.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-parametric-fusion-sketch-constraint-audit",
+        "rc-fusion360-parametric-fusion-reference-geometry"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-011",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Create Fusion 360 sheet metal flat pattern bend layout and configured dimensional variants",
+      "files": [
+        "bracket.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-parametric-fusion-sheet-metal-flat",
+        "rc-fusion360-parametric-fusion-configured-variants"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-012",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Traverse Fusion 360 component occurrences and feature timeline without breaking parameters",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-api-fusion-api-component-occurrence",
+        "rc-fusion360-api-fusion-api-feature-timeline",
+        "rc-fusion360-api-fusion-api-user-parameters"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-api"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-013",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify Fusion 360 add-in lifecycle cleanup and batch export safety gates",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-api-fusion-api-addin-lifecycle",
+        "rc-fusion360-api-fusion-api-batch-safety"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-api"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-014",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Inspect CNC work coordinate origin WCS, fixture collision clearances, and tool library",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-cam-setup-wcs",
+        "rc-fusion360-cam-fusion-cam-fixture-clearance",
+        "rc-fusion360-cam-fusion-cam-tool-library"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-015",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Prepare additive 3D printing slicing check and part layer anisotropy orientation",
+      "files": [
+        "enclosure.stl"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-additive-slicing",
+        "rc-cad-3d-assembly-printed-part-anisotropy"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam",
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-016",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Establish GD&T datum reference frame, bearing housing fits, and fastener boss geometry",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cad-3d-assembly-gdandt-datum-selection",
+        "rc-cad-3d-assembly-bearing-housing-tolerance",
+        "rc-cad-3d-assembly-fastener-boss-placement"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-017",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check mechanical thermal expansion clearance and assembly BOM structure consistency",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cad-3d-assembly-mechanical-thermal-expansion",
+        "rc-cad-3d-assembly-assembly-bom-structure"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-018",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Synchronize 2D PCB outline with mechanical enclosure cavity and verify board thickness",
+      "files": [
+        "board.step"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-board-outline-synchronization",
+        "rc-ecad-mcad-fit-board-thickness-allowance"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-019",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Analyze thermal heat dissipation path from power regulator PCB to aluminum chassis",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-thermal-enclosure-coupling",
+        "rc-pcb-design-review-thermal-via-path"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit",
+        "pcb-design-review"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-020",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate antenna RF keep-out clearance and CAD roundtrip STEP/STL unit conversion",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-antenna-rf-keepout",
+        "rc-ecad-mcad-fit-cad-format-roundtrip"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-021",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check cross-channel phase coherence and order-tracked vibration spectrum across changing RPM",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-machine-vibration-phase-coherence-review",
+        "rc-machine-vibration-order-tracked-spectrum"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "machine-vibration"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-022",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify anti-alias Nyquist sampling margin and waveform impact clipping vs transient shocks",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-machine-vibration-sampling-alias-bound",
+        "rc-machine-vibration-waveform-impact-events"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "machine-vibration"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-023",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate rotor ISO balance quality grade G2.5 and discrete blade correction constraints",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rotor-mass-balance-balance-quality-grade",
+        "rc-rotor-mass-balance-correction-location-constraints"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-024",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify keyphasor angle polarity and residual 1X unbalance acceptance check",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rotor-mass-balance-angle-reference-polarity",
+        "rc-rotor-mass-balance-residual-unbalance-check"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-025",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Characterize sensor noise floor PSD, reference voltage drift, and transducer open-wire fault",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-sensor-acquisition-noise-floor-characterization",
+        "rc-sensor-acquisition-reference-voltage-drift",
+        "rc-sensor-acquisition-transducer-open-wire"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "sensor-acquisition"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-026",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify oversampling decimation filter gain and bridge strain-gauge conditioning",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-sensor-acquisition-oversampling-decimation",
+        "rc-sensor-acquisition-bridge-sensor-conditioning"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "sensor-acquisition"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-027",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Convert multi-constellation GPS Galileo BeiDou time and import RINEX observation files",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-multi-constellation-time",
+        "rc-gnss-measurement-rinex-observation-import"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-028",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check GNSS float vs fixed carrier ambiguity status and antenna phase center lever arm",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-cycle-ambiguity-status",
+        "rc-gnss-measurement-antenna-phase-center"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-029",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Profile RTOS WCET hard deadline scheduling budget and mutex deadlock acquisition order",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-embedded-rtos-wcet-scheduling-budget",
+        "rc-embedded-rtos-mutex-deadlock-triage"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "embedded-rtos"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-030",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify dynamic clock domain transition baud rates and tickless idle sleep timers",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-embedded-rtos-clock-domain-transition",
+        "rc-embedded-rtos-rtos-tickless-idle"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "embedded-rtos"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-031",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify delta OTA firmware hash reconstruction and fleet canary rollout stop conditions",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-firmware-ota-delta-update-integrity",
+        "rc-firmware-ota-fleet-rollout-canary"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-032",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Calculate flash wear erase cycle budget and encrypted OTA key rotation plan",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-firmware-ota-flash-wear-budgeting",
+        "rc-firmware-ota-secure-key-rotation"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-033",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Recover binary protocol frame parser and checksum CRC polynomial from firmware",
+      "files": [
+        "modem.bin"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-binary-forensics-protocol-frame-recovery",
+        "rc-binary-forensics-checksum-routine-identify"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "binary-forensics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-034",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Compare binary firmware versions while separating compiler noise from code changes",
+      "files": [
+        "fw_v1.elf",
+        "fw_v2.elf"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-binary-forensics-binary-diff-provenance",
+        "rei-binary-intelligence",
+        "rei-reconstruction-parity"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "binary-forensics",
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-035",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Investigate suspicious PE/Mach-O executable imports and build forensic casebook",
+      "files": [
+        "target.exe"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-native-binaries",
+        "rei-casebook-forensics",
+        "rei-evidence-ledger"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-036",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit WebAssembly custom sections and .NET/JVM managed bytecode types",
+      "files": [
+        "module.wasm"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-wasm-and-managed",
+        "rei-binary-intelligence"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-037",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Examine Android APK native JNI calls and plan isolated Frida runtime inspection",
+      "files": [
+        "app.apk"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-android-apks",
+        "rei-mobile-runtime"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-038",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Inspect Electron desktop app preload bridge and HAR/PCAP network frame captures",
+      "files": [
+        "app.asar",
+        "trace.har"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-electron-and-js",
+        "rei-web-and-protocols"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-039",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Balance BLE advertisement payload size and connection interval power consumption",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ble-sensor-nodes-advertisement-payload-budget",
+        "rc-ble-sensor-nodes-connection-interval-power"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ble-sensor-nodes"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-040",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Handle BLE disconnect state recovery and notification backpressure under subscriber stall",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ble-sensor-nodes-disconnect-state-recovery",
+        "rc-ble-sensor-nodes-notification-backpressure"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ble-sensor-nodes"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-041",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Bound cellular modem reconnect backoff jitter and characterize TX current burst",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cellular-gateway-reconnect-backoff-budget",
+        "rc-cellular-gateway-cellular-power-burst"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cellular-gateway"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-042",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Handle cellular SIM failover credential isolation and APN roaming profile validation",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cellular-gateway-sim-failover-isolation",
+        "rc-cellular-gateway-apn-profile-selection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cellular-gateway"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-043",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Reconstruct split TCP JT808 protocol frame boundaries and fuzz malformed length flags",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-jt808-protocol-packet-boundary-recovery",
+        "rc-jt808-protocol-frame-fuzz-negative-cases"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "jt808-protocol"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-044",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Correlate JT808 command ACKs and preserve terminal authentication session across reconnect",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-jt808-protocol-command-ack-correlation",
+        "rc-jt808-protocol-reconnect-session-state"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "jt808-protocol"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-045",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Diagnose industrial Ethernet TSN scheduled traffic windows and PHY cable pair faults",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-industrial-ethernet-time-sensitive-networking",
+        "rc-industrial-ethernet-cable-pair-faults"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "industrial-ethernet"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-046",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Detect spanning tree miswired loops and switch microburst buffer tail drop",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-industrial-ethernet-spanning-tree-loop-guard",
+        "rc-industrial-ethernet-switch-buffer-tail-drop"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "industrial-ethernet"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-047",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Enforce IoT cloud policy least privilege and protocol nonce replay protection",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-iot-device-security-cloud-policy-least-privilege",
+        "rc-iot-device-security-protocol-replay-protection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "iot-device-security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-048",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Rotate compromised IoT device keys and verify factory reset revokes stored secrets",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-iot-device-security-incident-key-containment",
+        "rc-iot-device-security-factory-reset-secrets"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "iot-device-security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-049",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Check cable harness radiated emission resonance and chassis shield termination",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-electromagnetic-compat-cable-harness-resonance",
+        "rc-electromagnetic-compat-shield-termination-study"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "electromagnetic-compat"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-050",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Test clock slew-rate emission reduction and filter insertion loss impedance matching",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-electromagnetic-compat-clock-edge-noise-reduction",
+        "rc-electromagnetic-compat-filter-insertion-loss"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "electromagnetic-compat"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-051",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Validate HIL brownout supply droop reset sequence and UART noisy frame recovery",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-hardware-in-loop-brownout-edge-sequences",
+        "rc-hardware-in-loop-uart-frame-loss"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "hardware-in-loop"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-052",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Test HIL GPIO startup glitch state and watchdog hang fail-safe recovery",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-hardware-in-loop-gpio-startup-glitch",
+        "rc-hardware-in-loop-watchdog-hang-recovery"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "hardware-in-loop"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-053",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Separate stationary engine idling from traffic stops and reconcile engine hours",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fleet-telematics-idle-time-estimation",
+        "rc-fleet-telematics-engine-hours-consistency"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fleet-telematics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-054",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Deduplicate fleet replay alerts and flag GPS track route gaps without inventing geometry",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fleet-telematics-fleet-alert-dedup",
+        "rc-fleet-telematics-route-gap-reporting"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fleet-telematics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-055",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Handle DST time-bucket boundaries and sparse zero-vs-missing timeseries telemetry",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-timeseries-telemetry-time-bucket-boundary",
+        "rc-timeseries-telemetry-sparse-series-display"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "timeseries-telemetry"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-056",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Bound high-cardinality telemetry labels and replay continuous queries after outage",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-timeseries-telemetry-high-cardinality-labels",
+        "rc-timeseries-telemetry-continuous-query-replay"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "timeseries-telemetry"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-057",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Preserve per-entity Kafka event ordering and handle consumer group rebalance checkpoints",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-event-streaming-event-order-consistency",
+        "rc-event-streaming-consumer-group-rebalance"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "event-streaming"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-058",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design idempotency keys and window aggregation with late event corrections",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-event-streaming-idempotency-key-design",
+        "rc-event-streaming-stream-window-aggregation"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "event-streaming"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-059",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Audit Rust async lock ordering, zero-copy borrowed buffer lifetimes, and FFI ABI safety",
+      "files": [
+        "lib.rs"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rust-protocols-async-lock-order",
+        "rc-rust-protocols-zero-copy-lifetime-audit",
+        "rc-rust-protocols-rust-ffi-message-boundary"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rust-protocols"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-060",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Profile Rust tail latency p95/p99 and implement graceful shutdown connection draining",
+      "files": [
+        "Cargo.toml"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rust-protocols-latency-tail-profiling",
+        "rc-rust-protocols-graceful-shutdown-drain"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rust-protocols"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-061",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Fit edge anomaly model memory arena budget and run shadow inference rollout",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-edge-machine-learning-model-memory-budget",
+        "rc-edge-machine-learning-model-rollout-shadow"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "edge-machine-learning"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-062",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Evaluate solver trust-region step acceptance and mixed-integer discrete feasibility",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-optimization-experiments-trust-region-step",
+        "rc-optimization-experiments-mixed-integer-rounding"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "optimization-experiments"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-063",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Perform ablation baseline isolation and preserve negative experiment outcomes",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-reproducible-research-ablation-baseline-design",
+        "rc-reproducible-research-negative-result-reporting"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reproducible-research"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-064",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Build FMEA detection coverage matrix and hardware watchdog safety case",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-safety-assurance-fmea-detection-coverage",
+        "rc-safety-assurance-watchdog-safety-case"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "safety-assurance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-065",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Perform zero-downtime database schema migration and disaster backup restore drill",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cloud-service-ops-zero-downtime-schema",
+        "rc-cloud-service-ops-disaster-restore-drill"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cloud-service-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-066",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Verify mobile field app multilingual TR/EN label overflow and map GPS coordinate roundtrip",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-mobile-field-ops-multilingual-label-overflow",
+        "rc-mobile-field-ops-map-coordinate-roundtrip"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "mobile-field-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-067",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design FastAPI async backend with OpenAPI contracts and PostgreSQL optimization",
+      "files": [
+        "api.py",
+        "schema.sql"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "fastapi-pro",
+        "openapi-spec-generation",
+        "postgres-best-practices"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "development",
+        "data-ai"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-068",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Configure SAST pipeline security scanning and threat model attack trees",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "sast-configuration",
+        "threat-modeling-expert",
+        "attack-tree-construction"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-069",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Build Node.js microservices backend API design and GraphQL schema architecture",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "nodejs-backend-patterns",
+        "api-design-principles",
+        "graphql-architect"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "development",
+        "architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-070",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Run systematic root-cause debugging and verify bugfix before marking complete",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "systematic-debugging",
+        "verification-before-completion"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "general",
+        "testing"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-071",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Design C4 architecture context diagrams and event-driven microservices patterns",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "c4-context",
+        "microservices-patterns",
+        "architecture"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-072",
+      "split": "eval",
+      "queryType": "positive_en",
+      "language": "en",
+      "task": "Set up Helm chart scaffolding and Kubernetes cloud-native cluster architecture",
+      "files": [
+        "Chart.yaml"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "helm-chart-scaffolding",
+        "kubernetes-architect"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "infrastructure"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-073",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Dört kanallı titreşim ölçüm PCB kartı ve Fusion 360 muhafaza kutusu tasarla",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-sensor-acquisition-accelerometer-sensitivity",
+        "rc-circuit-architecture-adc-reference-network",
+        "rc-kicad-ecad-kicad-ecad-release-gate",
+        "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+        "rc-fusion360-parametric-fusion-design-parameter-table"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "sensor-acquisition",
+        "circuit-architecture",
+        "kicad-ecad",
+        "ecad-mcad-fit",
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-074",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Elektronik devre şematik çizimi ve RS485 hat sonlandırma TVS koruması",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-architecture-rs485-bus-termination",
+        "rc-circuit-architecture-esd-tvs-coordination"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-075",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "KiCad baskı devre yerleşimi ve şematik netlist eşitlik kontrolü",
+      "files": [
+        "vibration.kicad_pcb"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-pcb-design-review-schematic-pcb-net-parity",
+        "rc-kicad-ecad-kicad-drc-ci"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "pcb-design-review",
+        "kicad-ecad"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-076",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Fusion 360 parametrik kutu duvar kalınlığı ve çakışma girişim kontrolü",
+      "files": [
+        "kutu.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-parametric-fusion-shell-uniform-wall",
+        "rc-fusion360-parametric-fusion-interference-detection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-parametric"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-077",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "3D baskı yönlendirme ve mekanik parça katman anizotropisi incelemesi",
+      "files": [
+        "kapak.stl"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-additive-orientation",
+        "rc-cad-3d-assembly-printed-part-anisotropy"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam",
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-078",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Rotor kütle balanslama açı referans yönü ve kalan dengesizlik kontrolü",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rotor-mass-balance-angle-reference-polarity",
+        "rc-rotor-mass-balance-residual-unbalance-check"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-079",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "İvmeölçer sensör kalibrasyon zinciri ve FFT pencere sızıntısı hesabı",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-machine-vibration-sensor-calibration-chain",
+        "rc-machine-vibration-fft-window-leakage"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "machine-vibration"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-080",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "GNSS NMEA cümle doğrulama ve uydu yörünge efemeris yaş süzgeci",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-nmea-talker-validation",
+        "rc-gnss-measurement-ephemeris-age-screening"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-081",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Gömülü yazılım A/B OTA bellek bölümü ve geri dönüş koruması",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-firmware-ota-ab-slot-state-machine",
+        "rc-firmware-ota-anti-rollback-versioning"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-082",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "RTOS zamanlama bütçesi WCET ve bekçi köpeği watchdog kurtarma ağacı",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-embedded-rtos-wcet-scheduling-budget",
+        "rc-embedded-rtos-watchdog-supervision-tree"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "embedded-rtos"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-083",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "WebAssembly ikili modül tersine mühendislik ve temiz oda eşdeğerlik testi",
+      "files": [
+        "dsp.wasm"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-wasm-and-managed",
+        "rei-reconstruction-parity"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-084",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Gömülü aygıt yazılımı bölüm haritası ve entropi analizi",
+      "files": [
+        "dump.bin"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-firmware-and-iot",
+        "rc-binary-forensics-firmware-partition-map"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering",
+        "binary-forensics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-085",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "BLE sensör düğümü pil voltajı yorumlama ve bağlantı aralığı güç ölçümü",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ble-sensor-nodes-battery-voltage-interpretation",
+        "rc-ble-sensor-nodes-connection-interval-power"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ble-sensor-nodes"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-086",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Hücresel IoT modem sinyal kalitesi RSRP SINR ve çevrimdışı kuyruk dayanıklılığı",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cellular-gateway-signal-quality-rsrp-sinr",
+        "rc-cellular-gateway-offline-queue-durability"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cellular-gateway"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-087",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Endüstriyel Ethernet gPTP saat senkron hatası ve PoE güç bütçesi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-industrial-ethernet-ptp-clock-error",
+        "rc-industrial-ethernet-poe-load-budget"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "industrial-ethernet"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-088",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "PCB elektromanyetik uyumluluk yakın alan taraması ve ESD deşarj yolu",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-electromagnetic-compat-radiated-near-field-map",
+        "rc-electromagnetic-compat-esd-discharge-path"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "electromagnetic-compat"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-089",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Çok amaçlı optimizasyon Pareto sınırı ve kısıt fizibilite denetimi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-optimization-experiments-multiobjective-pareto-review",
+        "rc-optimization-experiments-constraint-feasibility-audit"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "optimization-experiments"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-090",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Acil durdurma güvenlik kilidi ve hata ağacı ayrıştırma analizi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-safety-assurance-emergency-stop-interface",
+        "rc-safety-assurance-fault-tree-decomposition"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "safety-assurance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-091",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Mikroservis olay güdümlü mimari ve alan güdümlü tasarım DDD sınırları",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "domain-driven-design",
+        "ddd-strategic-design",
+        "microservices-patterns"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "architecture"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-092",
+      "split": "eval",
+      "queryType": "positive_tr",
+      "language": "tr",
+      "task": "Bulut servisi log gizliliği PII maskeleme ve sıfır kesintili şema geçişi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-cloud-service-ops-audit-log-redaction",
+        "rc-cloud-service-ops-zero-downtime-schema"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "cloud-service-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-093",
+      "split": "eval",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "Fusion 360 ile PCB STEP montaj uyumu ve konnektör yönü doğrulama",
+      "files": [
+        "board.step",
+        "case.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+        "rc-ecad-mcad-fit-connector-mating-sweep"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ecad-mcad-fit"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-094",
+      "split": "eval",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "SPICE simülasyonu ile osiloskop ölçüm dalga formu karşılaştırması",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-circuit-simulation-simulation-to-bench-parity",
+        "rc-circuit-simulation-spice-transient-startup"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-095",
+      "split": "eval",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "Android saha uygulaması çevrimdışı senkronizasyon ve barkod tekilleştirme",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-mobile-field-ops-sync-resume-after-loss",
+        "rc-mobile-field-ops-barcode-scan-dedup"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "mobile-field-ops"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-096",
+      "split": "eval",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "Zaman serisi telemetri geç gelen veri watermark ve sorgu gecikme bütçesi",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-timeseries-telemetry-late-event-watermarks",
+        "rc-timeseries-telemetry-query-latency-budget"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "timeseries-telemetry"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-097",
+      "split": "eval",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "Electron masaüstü uygulaması ASAR ve preload köprü güvenlik incelemesi",
+      "files": [
+        "app.asar"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-electron-and-js",
+        "rei-evidence-ledger"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-098",
+      "split": "eval",
+      "queryType": "multilingual_mixed",
+      "language": "mixed",
+      "task": "Rust protokol çerçeveleme codec sınırları ve yeniden bağlanma tekrar koruması",
+      "files": [
+        "gateway.rs"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-rust-protocols-framed-codec-bounds",
+        "rc-rust-protocols-reconnect-state-replay"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "rust-protocols"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-099",
+      "split": "eval",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Build a cellular GNSS vehicle tracker speaking JT808 with secure OTA rollback",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-gnss-measurement-nmea-talker-validation",
+        "rc-jt808-protocol-location-body-decode",
+        "rc-cellular-gateway-gnss-cellular-coexistence",
+        "rc-firmware-ota-ab-slot-state-machine"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "gnss-measurement",
+        "jt808-protocol",
+        "cellular-gateway",
+        "firmware-ota"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-100",
+      "split": "eval",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Diagnose motor bearing vibration spikes, balance rotor, and verify tachometer pulses",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-machine-vibration-bearing-defect-sidebands",
+        "rc-machine-vibration-tachometer-dropout",
+        "rc-rotor-mass-balance-single-plane-influence"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "machine-vibration",
+        "rotor-mass-balance"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-101",
+      "split": "eval",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Prepare aluminum vibration fixture for CNC milling with tolerance drawing and step inspection",
+      "files": [
+        "fixture.f3d"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-fusion360-cam-fusion-cam-setup-wcs",
+        "rc-fusion360-cam-fusion-cam-postprocess-review",
+        "rc-cad-3d-assembly-drawing-release-inspection"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "fusion360-cam",
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-102",
+      "split": "eval",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Triage unknown IoT binary image, extract protocol parser, and verify clean-room parity",
+      "files": [
+        "device.bin"
+      ],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rei-firmware-and-iot",
+        "rc-binary-forensics-protocol-frame-recovery",
+        "rei-reconstruction-parity"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "reverse-engineering",
+        "binary-forensics"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-103",
+      "split": "eval",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Collect industrial vibration telemetry via BLE sensor into timeseries outage-safe pipeline",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-ble-sensor-nodes-mtu-fragment-reassembly",
+        "rc-timeseries-telemetry-out-of-order-upsert",
+        "rc-event-streaming-dead-letter-queue"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "ble-sensor-nodes",
+        "timeseries-telemetry",
+        "event-streaming"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-104",
+      "split": "eval",
+      "queryType": "ambiguous_multi_domain",
+      "language": "en",
+      "task": "Design reproducible edge ML anomaly detector with int8 quantization and battery budget",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [
+        "rc-edge-machine-learning-quantization-error-bounds",
+        "rc-edge-machine-learning-battery-inference-duty",
+        "rc-reproducible-research-experiment-seed-control"
+      ],
+      "forbiddenRisks": [],
+      "expectedDomains": [
+        "edge-machine-learning",
+        "reproducible-research"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-105",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Review authentication JWT/OAuth2 design and broken authentication checks safely",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "auth-implementation-patterns",
+        "broken-authentication"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "security"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-106",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Inspect Fusion 360 Electronics board and user parameters in strict read-only mode",
+      "files": [
+        "board.f3d"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-fusion360-api-fusion-api-ecad-readonly",
+        "rc-fusion360-api-fusion-api-user-parameters"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "fusion360-api"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-107",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Analyze suspicious binary and firmware image statically without running untrusted code",
+      "files": [
+        "sample.bin"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rei-binary-intelligence",
+        "rei-firmware-and-iot",
+        "rei-rea-orchestrator"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-108",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Run read-only SPICE filter transfer and ADC settling verification simulations",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-circuit-simulation-filter-transfer-verification",
+        "rc-circuit-simulation-adc-sampling-settling"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "circuit-simulation"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-109",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Evaluate CAD assembly GD&T datums and tolerance stackup without CAM cutting",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-cad-3d-assembly-gdandt-datum-selection",
+        "rc-cad-3d-assembly-tolerance-stack-up"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "cad-3d-assembly"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-110",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Validate GNSS NMEA checksum and multipath diagnostics safely without radio transmission",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-gnss-measurement-nmea-talker-validation",
+        "rc-gnss-measurement-multipath-diagnostics"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "gnss-measurement"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-111",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "en",
+      "task": "Check cloud observability SLO histograms and audit log PII redaction safely",
+      "files": [],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rc-cloud-service-ops-slo-latency-histograms",
+        "rc-cloud-service-ops-audit-log-redaction",
+        "observability-engineer"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "cloud-service-ops",
+        "infrastructure"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-112",
+      "split": "eval",
+      "queryType": "safety_critical_filter",
+      "language": "tr",
+      "task": "Salt okunur şekilde Android APK ve tersine mühendislik kanıt defteri oluştur",
+      "files": [
+        "app.apk"
+      ],
+      "safeOnly": true,
+      "expectedSkills": [
+        "rei-android-apks",
+        "rei-casebook-forensics",
+        "rei-evidence-ledger"
+      ],
+      "forbiddenRisks": [
+        "offensive",
+        "critical"
+      ],
+      "expectedDomains": [
+        "reverse-engineering"
+      ],
+      "expectLowConfidence": false
+    },
+    {
+      "id": "ev-113",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Compose a lullaby for a newborn baby with acoustic guitar chords",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-114",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "What are the best sightseeing museums to visit in Rome during spring",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-115",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "tr",
+      "task": "Türk kahvesi köpüklü nasıl pişirilir anlat",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-116",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Summarize the plot of Pride and Prejudice by Jane Austen",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-117",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "tr",
+      "task": "Kedi tüyü koltuktan en kolay nasıl temizlenir",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-118",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Help me plan a three-day hiking trip in the Swiss Alps",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-119",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "en",
+      "task": "Write a wedding toast speech for my best friend",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    },
+    {
+      "id": "ev-120",
+      "split": "eval",
+      "queryType": "negative_out_of_scope",
+      "language": "tr",
+      "task": "Galatasaray Fenerbahçe derbisi kaç kaç bitti",
+      "files": [],
+      "safeOnly": false,
+      "expectedSkills": [],
+      "forbiddenRisks": [],
+      "expectedDomains": [],
+      "expectLowConfidence": true
+    }
+  ]
+}
