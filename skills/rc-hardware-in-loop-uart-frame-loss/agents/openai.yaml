@@ -1,0 +1,3 @@
+interface:
+  display_name: Hardware-in-the-Loop Testing — Uart Frame Loss
+  short_description: Evidence-based uart frame loss checks

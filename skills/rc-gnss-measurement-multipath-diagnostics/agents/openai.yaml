@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Multipath Diagnostics
+  short_description: Evidence-based multipath diagnostics checks

@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Satellite Visibility Masks
+  short_description: Evidence-based satellite visibility masks checks

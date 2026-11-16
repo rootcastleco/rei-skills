@@ -15,10 +15,12 @@
 
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
-[![npm package](https://img.shields.io/badge/npm-rei--skills-0E3D8A?logo=npm&logoColor=white)](https://www.npmjs.com/package/rei-skills)
-[![Validated Skills](https://img.shields.io/badge/skills-895%20validated-228B55)](#explore-the-library)
+[![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
+[![Validated Skills](https://img.shields.io/badge/skills-1423%20validated-228B55)](#explore-the-library)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
+
+**[npm package](https://www.npmjs.com/package/rei-skills)** · **[GitHub Pages](https://rootcastleco.github.io/rei-skills/)** · **[Publish workflow](https://github.com/rootcastleco/rei-skills/actions/workflows/publish.yml)**
 
 **[Get Started](#install-in-seconds)** · **[Smart Router & MCP](#smart-skill-router--mcp-server)** · **[Live Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Explore Skills](#explore-the-library)** · **[REI REA](#rei-reverse-engineering-rei-rea)** · **[Documentation](docs/USAGE.md)** · **[Contribute](#contributing-and-community)**
 
@@ -43,6 +45,20 @@ A separate **Rust Hook Gateway preview** in [rust/rei-hook-gateway](rust/rei-hoo
 **HOL Guard integration:** REI Skills was contributed to Hashgraph Online's HOL Guard MCP ecosystem in [PR #7538](https://github.com/hashgraph-online/hol-guard/pull/7538) (**merged 15 Nov 2026**). HOL Guard integration is opt-in and separate from the Prompt Archive/Rust gateway; it does not automatically secure or activate these new capabilities.
 
 Architecture, trust boundaries, operation and release gates: [Prompt Automation & Rust Gateway](docs/PROMPT_AUTOMATION.md).
+
+---
+
+## 1,423 Validated Skills — Original Engineering Expansion
+
+**+528 new task-focused skills** across 33 engineering specialties (59.0% catalog growth), with the original 895 preserved. Coverage includes GNSS, vehicle telematics, JT808, BLE, cellular IoT, RTOS, firmware OTA, IoT security, Rust, industrial Ethernet, machinery vibration, rotor balancing, data acquisition, PCB, EMC, time-series data, edge ML, event streaming, cloud operations, mobile field apps, binary forensics, hardware-in-the-loop testing, safety assurance, optimization and reproducible research.
+
+All 528 new skills are original Rootcastle-authored, independently named, source-tagged and generated reproducibly from curated task briefs. They include explicit invocation conditions, engineering input and unit contracts, negative-case checks, and PASS/FAIL/NOT VERIFIED evidence requirements.
+
+**Quality boundary:** Passing structural and security validation does not constitute actual machine testing, metrological calibration or standards certification. Unverified field results remain NOT VERIFIED.
+
+**CAD and Electronics:** 128 source-grounded skills for circuit design, SPICE, KiCad ERC/DRC, Fusion 360 parametric geometry and Python API, 3D CAD assemblies, PCB–enclosure fit, and CAM/3D printing. Autodesk Electronics API preview is read-only for design changes. See [CAD/Electronics/Fusion integration](docs/CAD_ELECTRONICS_FUSION.md).
+
+See [Technical Skill Expansion](docs/TECHNICAL_SKILL_EXPANSION.md) for the 33-domain inventory, SHA-256 provenance manifest, reproducible generator, safety boundaries and test instructions.
 
 ---
 
@@ -103,7 +119,7 @@ npx rei-skills targets
 # 4. Inspect your environment, installed AI directories, and REI REA status
 npx rei-skills doctor
 
-# 5. Search across 895 skills by domain, keyword, risk, or upstream source
+# 5. Search across 1423 skills by domain, keyword, risk, or upstream source
 npx rei-skills search firmware
 npx rei-skills list --category reverse-engineering
 
@@ -114,7 +130,7 @@ npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
 
 ### Smart Skill Router & MCP Server
 
-Instead of loading all 895 skills into an AI agent's context window, REI Skills includes a **Smart Intent & Stack Router** ([`lib/smart-router.js`](lib/smart-router.js)) and a zero-dependency **Model Context Protocol (MCP) Server** ([`bin/mcp-server.js`](bin/mcp-server.js)) that any MCP-capable client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini CLI, Codex, Antigravity) can connect to:
+Instead of loading all 1423 skills into an AI agent's context window, REI Skills includes a **Smart Intent & Stack Router** ([`lib/smart-router.js`](lib/smart-router.js)) and a zero-dependency **Model Context Protocol (MCP) Server** ([`bin/mcp-server.js`](bin/mcp-server.js)) that any MCP-capable client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini CLI, Codex, Antigravity) can connect to:
 
 ```json
 {
@@ -171,7 +187,7 @@ AI coding assistants perform best when given structured domain procedures, expli
 
 REI Skills connects five platform components:
 
-1. **Universal Skill Registry (`skills/`, `data/catalog.json`):** 895 categorized, schema-checked skills with progressive reference loading (`references/`, `scripts/`, `examples/`).
+1. **Universal Skill Registry (`skills/`, `data/catalog.json`):** 1423 categorized, schema-checked skills with progressive reference loading (`references/`, `scripts/`, `examples/`).
 2. **REI Skill Manager (`bin/install.js`):** Cross-platform CLI for installing, searching, inspecting, verifying, and exporting skills.
 3. **Workflow Engine (`data/workflows.json`, `docs/WORKFLOWS.md`):** Structured playbooks that sequence multiple compatible skills for SaaS delivery, AppSec auditing, agent engineering, DDD modeling, and reverse engineering.
 4. **REI Reverse Engineering (`skills/rei-*`, `data/rei-rea-manifest.json`):** 12 specialist reverse-engineering skills synchronized from `rootcastleco/Rei-Reverse-engineer` (`v0.2.0 @ 09fbc7b`), with optional connection to the local `rei-rea` CLI/MCP workbench.
@@ -181,21 +197,21 @@ REI Skills connects five platform components:
 
 ## Explore the Library
 
-The registry currently contains **895 validated skills** across **10 engineering categories**. Counts below are generated directly from [`data/catalog.json`](data/catalog.json):
+The registry currently contains **1423 validated skills** across **10 engineering categories**. Counts below are generated directly from [`data/catalog.json`](data/catalog.json):
 
 <!-- CATEGORY_TABLE_START -->
 | Category | Count | Focus Area | Representative Skills |
 | :--- | ---: | :--- | :--- |
-| **Data & AI** (`data-ai`) | 163 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
-| **General Engineering** (`general`) | 154 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
-| **Software Development** (`development`) | 133 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
-| **Security & AppSec** (`security`) | 112 | Threat modeling, SAST, vulnerability auditing, authorized red-teaming | [`security-auditor`](skills/security-auditor/SKILL.md), [`threat-modeling-expert`](skills/threat-modeling-expert/SKILL.md), [`api-security-best-practices`](skills/api-security-best-practices/SKILL.md) |
-| **Infrastructure & Cloud** (`infrastructure`) | 101 | Kubernetes, Terraform, CI/CD, observability, SRE, service mesh | [`kubernetes-architect`](skills/kubernetes-architect/SKILL.md), [`terraform-specialist`](skills/terraform-specialist/SKILL.md), [`observability-engineer`](skills/observability-engineer/SKILL.md) |
+| **Data & AI** (`data-ai`) | 243 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
+| **General Engineering** (`general`) | 170 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
+| **Software Development** (`development`) | 357 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
+| **Security & AppSec** (`security`) | 144 | Threat modeling, SAST, vulnerability auditing, authorized red-teaming | [`security-auditor`](skills/security-auditor/SKILL.md), [`threat-modeling-expert`](skills/threat-modeling-expert/SKILL.md), [`api-security-best-practices`](skills/api-security-best-practices/SKILL.md) |
+| **Infrastructure & Cloud** (`infrastructure`) | 149 | Kubernetes, Terraform, CI/CD, observability, SRE, service mesh | [`kubernetes-architect`](skills/kubernetes-architect/SKILL.md), [`terraform-specialist`](skills/terraform-specialist/SKILL.md), [`observability-engineer`](skills/observability-engineer/SKILL.md) |
 | **Workflows & Automation** (`workflow`) | 80 | Multi-agent orchestration, task automation, integration pipelines | [`workflow-automation`](skills/workflow-automation/SKILL.md), [`mcp-builder`](skills/mcp-builder/SKILL.md), [`gitops-workflow`](skills/gitops-workflow/SKILL.md) |
-| **Architecture & DDD** (`architecture`) | 67 | System design, C4 modeling, DDD, CQRS, event-driven systems | [`backend-architect`](skills/backend-architect/SKILL.md), [`domain-driven-design`](skills/domain-driven-design/SKILL.md), [`c4-context`](skills/c4-context/SKILL.md) |
+| **Architecture & DDD** (`architecture`) | 99 | System design, C4 modeling, DDD, CQRS, event-driven systems | [`backend-architect`](skills/backend-architect/SKILL.md), [`domain-driven-design`](skills/domain-driven-design/SKILL.md), [`c4-context`](skills/c4-context/SKILL.md) |
 | **Product & Business** (`business`) | 40 | Product management, technical SEO, pricing, GTM analysis | [`product-manager-toolkit`](skills/product-manager-toolkit/SKILL.md), [`seo-audit`](skills/seo-audit/SKILL.md), [`pricing-strategy`](skills/pricing-strategy/SKILL.md) |
-| **Testing & QA** (`testing`) | 31 | Test-driven development, E2E browser automation, regression suites | [`test-driven-development`](skills/test-driven-development/SKILL.md), [`browser-automation`](skills/browser-automation/SKILL.md), [`e2e-testing-patterns`](skills/e2e-testing-patterns/SKILL.md) |
-| **Reverse Engineering** (`reverse-engineering`) | 14 | Binary intelligence, firmware/IoT triage, APK/Electron/WASM, forensics | [`rei-rea-orchestrator`](skills/rei-rea-orchestrator/SKILL.md), [`rei-binary-intelligence`](skills/rei-binary-intelligence/SKILL.md), [`rei-firmware-and-iot`](skills/rei-firmware-and-iot/SKILL.md) |
+| **Testing & QA** (`testing`) | 111 | Test-driven development, E2E browser automation, regression suites | [`test-driven-development`](skills/test-driven-development/SKILL.md), [`browser-automation`](skills/browser-automation/SKILL.md), [`e2e-testing-patterns`](skills/e2e-testing-patterns/SKILL.md) |
+| **Reverse Engineering** (`reverse-engineering`) | 30 | Binary intelligence, firmware/IoT triage, APK/Electron/WASM, forensics | [`rei-rea-orchestrator`](skills/rei-rea-orchestrator/SKILL.md), [`rei-binary-intelligence`](skills/rei-binary-intelligence/SKILL.md), [`rei-firmware-and-iot`](skills/rei-firmware-and-iot/SKILL.md) |
 <!-- CATEGORY_TABLE_END -->
 
 - **Full Markdown Catalog:** [`CATALOG.md`](CATALOG.md)
@@ -361,7 +377,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md), [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT
 
 - **License:** Original code, tooling, and Rootcastle-authored skills (including the 12 REI REA skills) are released under the **[MIT License](LICENSE)**.
 - **Upstream Attribution & Provenance:** REI Skills curates and preserves work from official vendor repositories (`anthropics/skills`, `microsoft/skills` — see [`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT) and [`docs/microsoft-skills-attribution.json`](docs/microsoft-skills-attribution.json), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`) and open-source contributors (`sickn33/antigravity-awesome-skills`, `rmyndharis/antigravity-skills`, `obra/superpowers`, `trailofbits/skills`, `getsentry/skills`, and others). Full credits are documented in **[`CREDITS.md`](CREDITS.md)** and **[`docs/SOURCES.md`](docs/SOURCES.md)**.
-- **Security Policy & Guardrails:** All 895 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See **[`SECURITY.md`](SECURITY.md)**, **[`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md)**, and **[`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md)**.
+- **Security Policy & Guardrails:** All 1423 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See **[`SECURITY.md`](SECURITY.md)**, **[`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md)**, and **[`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md)**.
 
 ---
 

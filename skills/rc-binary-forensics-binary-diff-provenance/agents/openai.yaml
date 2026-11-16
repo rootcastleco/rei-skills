@@ -1,0 +1,3 @@
+interface:
+  display_name: Binary Forensics & Reconstruction — Binary Diff Provenance
+  short_description: Evidence-based binary diff provenance checks

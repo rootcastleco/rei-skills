@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Retention Tier Rotation
+  short_description: Evidence-based retention tier rotation checks

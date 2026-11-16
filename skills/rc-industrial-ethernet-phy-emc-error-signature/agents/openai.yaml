@@ -1,0 +1,3 @@
+interface:
+  display_name: Industrial Ethernet Diagnostics — Phy Emc Error Signature
+  short_description: Evidence-based phy emc error signature checks

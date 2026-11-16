@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Bootloader Recovery Console
+  short_description: Evidence-based bootloader recovery console checks

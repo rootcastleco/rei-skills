@@ -1,0 +1,3 @@
+interface:
+  display_name: Fleet Telematics — Device Heartbeat Status
+  short_description: Evidence-based device heartbeat status checks

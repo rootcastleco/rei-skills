@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Rinex Observation Import
+  short_description: Evidence-based rinex observation import checks

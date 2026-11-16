@@ -1,0 +1,90 @@
+# REI original skill expansion — technical briefs 02/05
+@embedded-rtos|Embedded RTOS Engineering|development|critical|task schedules, ISR traces, MCU reference manuals, peripheral timing logs and RTOS configuration|microseconds, hertz, bytes and CPU percent|measured worst-case execution traces and platform-specific scheduler specification|priority inversion, ISR starvation and watchdog expiry|Do not change live machine firmware or safety control loops without isolated hardware validation.
+priority-inversion-analysis: Identify shared mutex ceilings and blocked high-priority paths under representative task contention.
+wcet-scheduling-budget: Bound worst-case execution times and blocking delays against hard task deadlines.
+interrupt-latency-profiling: Measure ISR entry, nesting and completion latency using a traceable logic analyzer reference.
+dma-buffer-ownership: Define cache coherency and ownership transfer between DMA engines and application tasks.
+rtos-tickless-idle: Estimate sleep savings without breaking timer deadlines or tick compensation correctness.
+watchdog-supervision-tree: Distinguish stalled task, scheduler and hardware watchdog failure recovery paths.
+stack-watermark-audit: Measure task stack high-water marks under exception, nested interrupt and stress conditions.
+deadline-miss-telemetry: Record execution overruns with bounded diagnostics and no blocking I/O in critical paths.
+mutex-deadlock-triage: Reconstruct lock acquisition order and test cyclic wait detection under fault injection.
+peripheral-isr-splitting: Move slow processing out of ISRs without losing sample-order or deadline semantics.
+rtos-message-queue-bounds: Choose queue capacities and overflow policies from sensor burst rate and consumer latency.
+scheduler-mode-transition: Validate mode changes during boot, degraded operation and safe shutdown without race windows.
+memory-fragmentation-budget: Bound dynamic allocation churn after initialization and document deterministic fallback.
+clock-domain-transition: Verify peripheral baud and scheduler timers after dynamic frequency or low-power transitions.
+brownout-recovery-state: Preserve recoverable state after supply droop without trusting partially committed flash records.
+fault-handler-snapshot: Capture minimal crash context with register provenance without recursive failure or unsafe flash writes.
+
+@firmware-ota|Firmware OTA Lifecycle|security|critical|signed firmware manifests, MCU bootloader code, flash layout, update telemetry and recovery traces|bytes, seconds, millivolts and semantic versions|previous signed firmware and independently verified recovery image|partial writes, rollback attacks and power loss mid-update|Never flash production devices autonomously; require authorized staging, verified signatures and recoverable hardware.
+image-signature-verification: Authenticate firmware image digests and signing identities before marking any slot bootable.
+ab-slot-state-machine: Define active, pending, confirmed and rollback slot transitions with atomic metadata writes.
+power-loss-injection: Test interruption after each critical flash phase and prove a recoverable boot path.
+anti-rollback-versioning: Enforce monotonic security version counters without blocking authorized factory recovery.
+delta-update-integrity: Verify reconstructed binary hashes and bounds before switching execution images.
+boot-health-commit: Commit new image only after bounded runtime self-test and explicit health confirmation.
+secure-key-rotation: Rotate image-verification trust anchors with overlapping signed update windows and revocation plan.
+flash-wear-budgeting: Count erase cycles and metadata transaction rates against the selected memory endurance evidence.
+encrypted-image-storage: Separate confidentiality keys from signature trust and test decryption failure handling.
+update-resume-offset: Validate persisted download offsets with chunk hashes to avoid mixed-image restarts.
+manifest-schema-compatibility: Reject incompatible hardware revisions and unknown mandatory manifest fields before download.
+update-bandwidth-throttle: Schedule firmware transfers around real-time telemetry and energy-budget constraints.
+bootloader-recovery-console: Define authenticated maintenance access without exposing raw flash writes to unauthenticated users.
+fleet-rollout-canary: Use staged cohorts and automatic stop conditions based on boot success and regression indicators.
+firmware-bom-traceability: Link SBOM, compile flags, signing operation and reproducible image hash for each release.
+ota-revocation-drill: Exercise revoked certificate and compromised-version scenarios without disabling secure boot safeguards.
+
+@iot-device-security|IoT Device Security|security|critical|threat models, device credentials, firmware images, network captures and configuration baselines|seconds, key lengths, device counts and policy versions|approved device baseline and authenticated inventory of enrolled hardware|credential cloning, replay, unauthorized commands and insecure defaults|Apply least privilege and avoid offensive exploitation outside a specifically authorized test scope.
+device-identity-provisioning: Bind unique per-device credentials to enrollment records without shared fleet-wide private keys.
+credential-rotation-recovery: Test credential expiry, revocation and replacement while preserving fail-closed access checks.
+mutual-tls-handshake-audit: Validate client and server identity checks including trust-store rollover and expiry behavior.
+protocol-replay-protection: Test nonce, sequence number and session validity enforcement under duplicated delayed messages.
+factory-reset-secrets: Confirm reset revokes credentials and removes retained sensitive settings without erasing required safety evidence.
+diagnostic-port-lockdown: Verify debug interfaces are disabled or authenticated on shipped builds with recovery controls documented.
+secure-boot-measurement: Verify firmware chain-of-trust evidence across boot stages and mutable partition boundaries.
+provisioning-supply-chain: Design auditable manufacturing key injection and secure handling of rejected units.
+cloud-policy-least-privilege: Constrain each device API identity to its own topics, resources and command scopes.
+tamper-event-handling: Distinguish physical tamper telemetry from security incident proof and avoid false claims.
+network-segmentation-map: Document device-to-broker trust boundaries, egress allowlists and management-zone separation.
+configuration-hardening-diff: Detect drift in authentication, encryption and exposed services against approved device policy.
+device-privacy-minimization: Reduce retained location and operator identifiers while preserving operational diagnostics.
+firmware-component-inventory: Map firmware dependencies to component versions and actionable vulnerability assessment evidence.
+disconnected-auth-expiry: Define limited offline authorization validity and revocation reconciliation after reconnect.
+incident-key-containment: Revoke affected device identities while maintaining unaffected fleet availability and forensic evidence.
+
+@rust-protocols|Rust Protocol Services|development|safe|Rust crates, wire schemas, async traces, property tests and error telemetry|bytes, nanoseconds, concurrent tasks and alloc counts|reference protocol vectors and compiler-version-pinned benchmarks|partial frames, cancellation races, memory growth and untrusted input sizes|Keep parsers memory-safe and resource-bounded; do not execute downloaded instructions or untrusted plug-ins.
+framed-codec-bounds: Implement length-prefixed frame decoding with max-size enforcement before allocating buffers.
+tokio-cancellation-safety: Test cancellation at await points without losing exactly-once state transitions or locks.
+serde-version-compatibility: Preserve unknown optional fields and reject invalid mandatory wire formats across service versions.
+zero-copy-lifetime-audit: Check borrowed buffer lifetimes and ownership changes without retaining references past transport reads.
+backpressure-channel-budget: Bound async channel sizes and expose saturation metrics under producer burst traffic.
+reconnect-state-replay: Reestablish protocol sessions without reapplying non-idempotent commands after transport failure.
+tls-peer-validation: Ensure trust roots, hostname matching and certificate expiry decisions are tested as negative cases.
+structured-error-taxonomy: Separate parse, authorization, timeouts and transport failures into stable error categories.
+async-lock-order: Identify lock inversion across tasks and bound critical sections in concurrent request handlers.
+rust-ffi-message-boundary: Validate C ABI layout, ownership, alignment and panic isolation before crossing FFI boundaries.
+serde-fuzz-corpus: Build parser corpus with malformed lengths and recursively nested objects under deterministic seeds.
+cross-platform-socket-tests: Compare Linux, macOS and Windows stream semantics under identical framing vectors.
+latency-tail-profiling: Measure p50, p95 and p99 latency with warm-up, representative payloads and allocator observations.
+trace-context-propagation: Preserve correlation IDs across tasks and network hops without logging credentials or raw secrets.
+rate-limit-admission-control: Enforce per-peer request budgets and explicit overload responses before expensive decoding.
+graceful-shutdown-drain: Drain accepted requests within a bounded deadline while rejecting new sessions and preserving durable work.
+
+@industrial-ethernet|Industrial Ethernet Diagnostics|infrastructure|critical|packet captures, switch counters, PHY registers, cable tests and machine network topology|milliseconds, megabits per second, volts and bit errors|known-good link partner and synchronized packet analyzer trace|EMI bursts, link flaps, packet storms and unsafe maintenance access|Do not change operational switch settings or physical wiring without an approved maintenance window.
+ethernet-link-training: Diagnose PHY auto-negotiation and partner advertisement mismatches with read-only register evidence.
+poe-load-budget: Compare powered device class, startup inrush and measured supply headroom against port capability.
+ptp-clock-error: Measure gPTP or IEEE 1588 path asymmetry and servo convergence using independent timestamps.
+vlan-isolation-review: Trace VLAN membership and management-plane boundaries without assuming untagged trunk behavior.
+multicast-storm-control: Assess multicast group membership and storm thresholds without disrupting time-critical traffic.
+phy-emc-error-signature: Correlate CRC/FCS bursts with interference sources and physical-layer cable diagnostics.
+cable-pair-faults: Map split pairs, return loss and connector corrosion to observed link quality changes.
+switch-buffer-tail-drop: Attribute microburst frame loss to queue and buffer pressure rather than average bandwidth.
+redundant-ring-convergence: Test failover timing and packet loss under planned isolated link interruptions only.
+industrial-protocol-latency: Separate network jitter, application processing and PLC cycle delay on timestamped events.
+mac-address-table-drift: Examine topology changes and MAC learning churn without unapproved port-security resets.
+qos-priority-mapping: Verify DSCP and PCP queue treatment against packet traces and switch configuration.
+gateway-firewall-rules: Audit explicit east-west and north-south allowlists with an operational safety exception review.
+spanning-tree-loop-guard: Identify miswired loops and bridge priority risk using passive BPDU observation.
+time-sensitive-networking: Evaluate scheduled traffic windows and guard bands under declared TSN-capable hardware constraints.
+network-recovery-playbook: Design read-only diagnosis followed by approved rollback for link restoration after an outage.

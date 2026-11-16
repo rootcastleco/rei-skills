@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Device Schema Evolution
+  short_description: Evidence-based device schema evolution checks

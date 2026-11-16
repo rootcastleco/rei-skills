@@ -1,0 +1,3 @@
+interface:
+  display_name: BLE Sensor Nodes — Disconnect State Recovery
+  short_description: Evidence-based disconnect state recovery checks

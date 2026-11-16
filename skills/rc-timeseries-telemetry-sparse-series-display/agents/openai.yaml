@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Sparse Series Display
+  short_description: Evidence-based sparse series display checks

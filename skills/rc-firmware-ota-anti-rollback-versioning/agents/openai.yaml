@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Anti Rollback Versioning
+  short_description: Evidence-based anti rollback versioning checks

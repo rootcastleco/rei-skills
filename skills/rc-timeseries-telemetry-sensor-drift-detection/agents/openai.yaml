@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Sensor Drift Detection
+  short_description: Evidence-based sensor drift detection checks

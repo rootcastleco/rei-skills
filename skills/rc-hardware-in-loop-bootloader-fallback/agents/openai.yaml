@@ -1,0 +1,3 @@
+interface:
+  display_name: Hardware-in-the-Loop Testing — Bootloader Fallback
+  short_description: Evidence-based bootloader fallback checks

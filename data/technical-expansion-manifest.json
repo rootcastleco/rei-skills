@@ -1,0 +1,2649 @@
+{
+  "schema_version": 1,
+  "source": "rootcastle-original-technical-expansion-2026",
+  "domain_count": 33,
+  "skills_per_domain": 16,
+  "skill_count": 528,
+  "skills": [
+    {
+      "id": "rc-binary-forensics-algorithm-numeric-parity",
+      "category": "reverse-engineering",
+      "sha256": "f935087541fe9cb6741cf9d059219354c9bdc1c03f99d5beb606003b06de5d1f"
+    },
+    {
+      "id": "rc-binary-forensics-binary-architecture-fingerprint",
+      "category": "reverse-engineering",
+      "sha256": "99e47c97b5b0116a899c221a3f9cd3706e150caf052340c321fd7ae582b34304"
+    },
+    {
+      "id": "rc-binary-forensics-binary-diff-provenance",
+      "category": "reverse-engineering",
+      "sha256": "acee89586160402de3ba56d1e6767dae0ed8c06f91272ef9bc3a95eabc2eaf9e"
+    },
+    {
+      "id": "rc-binary-forensics-bootloader-handoff-map",
+      "category": "reverse-engineering",
+      "sha256": "82cccdde80aade0f767a1120177f4b92e91ee4784e91c72e6d1f998c17e2b0ae"
+    },
+    {
+      "id": "rc-binary-forensics-checksum-routine-identify",
+      "category": "reverse-engineering",
+      "sha256": "4c2f56e195b42254df0202de7b5f2fa304350b8baebac03622179e7ad2c741cd"
+    },
+    {
+      "id": "rc-binary-forensics-control-flow-graph-audit",
+      "category": "reverse-engineering",
+      "sha256": "16dd9fe07ef0aac8fa4522eb1297b411e55d6aaea5a94f1053bb7017f073dde6"
+    },
+    {
+      "id": "rc-binary-forensics-decompiler-type-repair",
+      "category": "reverse-engineering",
+      "sha256": "cc99b3287eae985bf72a9013330783aa2e7fef57884c0435b840d69c4b4aed8c"
+    },
+    {
+      "id": "rc-binary-forensics-firmware-partition-map",
+      "category": "reverse-engineering",
+      "sha256": "787bde20c18c0d26110c3d3886d3e018d67b7295e418f35ff1146073c0b66050"
+    },
+    {
+      "id": "rc-binary-forensics-function-boundary-validation",
+      "category": "reverse-engineering",
+      "sha256": "36a2b84cb48a3a8338f8230aa5a135be9c02bc18363fdb7b90a206c0dfd73415"
+    },
+    {
+      "id": "rc-binary-forensics-indirect-call-targets",
+      "category": "reverse-engineering",
+      "sha256": "272ff811697ee47a141cc3d4c8ebdb94d50e9bb0ac6d19dcd2cdcb2996e39d50"
+    },
+    {
+      "id": "rc-binary-forensics-memory-mapped-registers",
+      "category": "reverse-engineering",
+      "sha256": "a5b72d497cfe2f3a47383e33a6b25bf4480fa683ea9ad89c4fc597f39fdfeefa"
+    },
+    {
+      "id": "rc-binary-forensics-protocol-frame-recovery",
+      "category": "reverse-engineering",
+      "sha256": "0d38ff74c4fcd1d18362efb1ec85ea2f8c6ec765a6dd1b7da2c5b615c722b711"
+    },
+    {
+      "id": "rc-binary-forensics-reconstruction-coverage-map",
+      "category": "reverse-engineering",
+      "sha256": "b1dd7a2e7bd690428f8763bdfad935544c422295feb64a92ff5ed7e5538f9368"
+    },
+    {
+      "id": "rc-binary-forensics-static-taint-boundary",
+      "category": "reverse-engineering",
+      "sha256": "094e535dcf0470819cb3151b70605601e0357721ea2178fd032c9ab06388781e"
+    },
+    {
+      "id": "rc-binary-forensics-strings-reference-triage",
+      "category": "reverse-engineering",
+      "sha256": "008765349d56c658f9f09ef0faa00b7e56f9fb5853d4420932595676c8303da3"
+    },
+    {
+      "id": "rc-binary-forensics-unpacked-image-hash-chain",
+      "category": "reverse-engineering",
+      "sha256": "03f97ffdc346eea3900f1dbbc889999b660cb41545bca1a5a7453cd0ece77c70"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-advertise-sleep-schedule",
+      "category": "development",
+      "sha256": "7dcb9e16d4df0589d8be915b3139fa3dd3d833081a2d4a11f480beefe4f4df8d"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-advertisement-payload-budget",
+      "category": "development",
+      "sha256": "e39af8c5fc0e70bd8ace334bef6b5e73a3a37910101ac9da9378c1c7d71364ad"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-battery-voltage-interpretation",
+      "category": "development",
+      "sha256": "f79578d19d859e35f9de1b95cb4176f7f23422f7535fcb32ee0e15387bb2e623"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-bonding-key-lifecycle",
+      "category": "development",
+      "sha256": "7cb44181818311c1a501f32a3e6aa1511f7c735f62b5ca4a9fd74e891674d683"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-connection-interval-power",
+      "category": "development",
+      "sha256": "830bdb69b5a3100991dfe4d8a5507e986d79ab947e74b8637d4ae12768d22527"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-disconnect-state-recovery",
+      "category": "development",
+      "sha256": "2bf78b30c8a1c9630360a7352ee61991ac60f7f9d4a0896464c49ed343ec40d6"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-firmware-gatt-compatibility",
+      "category": "development",
+      "sha256": "fd82a6442e5b56f5287fe6193ad475717ac80070e992c2251cdd1c4b175d3932"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-gatt-characteristic-contract",
+      "category": "development",
+      "sha256": "66ded8586a322e514c1fd885ab33daae2ad75d3ef96381264ce98525733cb8e5"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-mtu-fragment-reassembly",
+      "category": "development",
+      "sha256": "6c150cd45d999fa795b480672e78244156f233d1e26bb621b0b587626e29be7f"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-multi-node-identity",
+      "category": "development",
+      "sha256": "fbb09afad5b0c302d9e107787f862ea4febcac3b08c0eb48dbbdb41c42e306ce"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-notification-backpressure",
+      "category": "development",
+      "sha256": "2db75f5c5a198ecdc58db62b25d2840197fb92275a2c2a69871ce4fdb51908f3"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-ota-transport-segmentation",
+      "category": "development",
+      "sha256": "2866710e1126dbfb81c236cf1e2f7fef08b0a8927ad70dbff49d27750991d84c"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-pairing-downgrade-defense",
+      "category": "development",
+      "sha256": "4989827e7ae8656c8a991605be625aca03d9a7d65ec8269e5b83bbeef0ca43c4"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-radio-interference-survey",
+      "category": "development",
+      "sha256": "877281b077bfe9b9d935c1d12f81bb0359ad47f5cb859ca199981473b0702fbe"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-sensor-payload-crc",
+      "category": "development",
+      "sha256": "d950cdb21bd7643aff67ed163f99eab17894f4e06b98db731160cf5d25b14515"
+    },
+    {
+      "id": "rc-ble-sensor-nodes-sensor-timestamp-encoding",
+      "category": "development",
+      "sha256": "7a7d9b5a6fe07d483fad6a384f3cc172e46d8b5a3d3daa4a6472b75dd31feb23"
+    },
+    {
+      "id": "rc-cad-3d-assembly-assembly-bom-structure",
+      "category": "development",
+      "sha256": "29dd60397bd2c62abb768c30c3811cb258342b45b92996198b712b7e952ab5c7"
+    },
+    {
+      "id": "rc-cad-3d-assembly-bearing-housing-tolerance",
+      "category": "development",
+      "sha256": "80739d7c4230c8cbbae1e0d2beccb9358192135561e01fef3bfcdf9bd429ce23"
+    },
+    {
+      "id": "rc-cad-3d-assembly-drawing-release-inspection",
+      "category": "development",
+      "sha256": "05918eb8b85578dab6e832650735360ec71b70531c49f794153a71813dab1e35"
+    },
+    {
+      "id": "rc-cad-3d-assembly-fastener-boss-placement",
+      "category": "development",
+      "sha256": "8d1b937f1958c6e3eb0f1f3cacd8c114e59a948fb0e9102551fbf59d98bf102a"
+    },
+    {
+      "id": "rc-cad-3d-assembly-gdandt-datum-selection",
+      "category": "development",
+      "sha256": "d35a5c678bcacf5e1cbe1fe8156134379635b7075bf94802a148ef1a54636298"
+    },
+    {
+      "id": "rc-cad-3d-assembly-injection-mold-draft",
+      "category": "development",
+      "sha256": "4d9421ac5bf6839f4864ca54754452f58995d43d1f98306baec17191d1f47492"
+    },
+    {
+      "id": "rc-cad-3d-assembly-mechanical-thermal-expansion",
+      "category": "development",
+      "sha256": "ced32c5595d9ed77a87cd1eaaf8a252b5ef41bd037fd6ea124bc52ede39617b7"
+    },
+    {
+      "id": "rc-cad-3d-assembly-mechanism-joint-clearance",
+      "category": "development",
+      "sha256": "af2920be2dd5edc3293c425f3fcd98b7e7722f6fd8b399ff274d538619df43d5"
+    },
+    {
+      "id": "rc-cad-3d-assembly-o-ring-groove-design",
+      "category": "development",
+      "sha256": "2ab00ca14e35293f8aaf4f3527b5a0f7f1acf8ab1a650988fad9021b2844ca40"
+    },
+    {
+      "id": "rc-cad-3d-assembly-parametric-enclosure-layout",
+      "category": "development",
+      "sha256": "defd6564adb689ad9ab1bf8edb4570cc48105f92ece52308e633feb7de723c58"
+    },
+    {
+      "id": "rc-cad-3d-assembly-plastic-snap-fit-risk",
+      "category": "development",
+      "sha256": "bfd94e7ae82de3a09811de7f5c61d62f0738e814c67f300bbe19e550d96d1639"
+    },
+    {
+      "id": "rc-cad-3d-assembly-printed-part-anisotropy",
+      "category": "development",
+      "sha256": "3fec153f3fed6a8ac4e84ed72564ab956f811f21301622a537b40281fbe9792c"
+    },
+    {
+      "id": "rc-cad-3d-assembly-shafts-couplings-alignment",
+      "category": "development",
+      "sha256": "2d4c243c424fc71d65747cb05a42679c92b383b318838c455a333c2cf735348a"
+    },
+    {
+      "id": "rc-cad-3d-assembly-sheet-metal-bend-allowance",
+      "category": "development",
+      "sha256": "917cb561696d66abf64444ec226e6110a878d1660223bde38f5ee7ac4fd9d3ce"
+    },
+    {
+      "id": "rc-cad-3d-assembly-thread-clearance-fit",
+      "category": "development",
+      "sha256": "b9d1864af1c503a902e333f78650d9ced197841062d644ec65216149f93ce59b"
+    },
+    {
+      "id": "rc-cad-3d-assembly-tolerance-stack-up",
+      "category": "development",
+      "sha256": "b439416021fa15fb172fa6707b0f6212e0bf7861ef3aba1aada4c0b37ff3f24b"
+    },
+    {
+      "id": "rc-cellular-gateway-apn-profile-selection",
+      "category": "infrastructure",
+      "sha256": "8ef492a01c08fbbf88cb6a1ae45cc34c28fe33ae50770323b53d19d6d3a646e1"
+    },
+    {
+      "id": "rc-cellular-gateway-carrier-nat-inbound-policy",
+      "category": "infrastructure",
+      "sha256": "8f39ebd8f008db91bb5bcf5cf41cb08e85c48df6114b175567182043a80aa466"
+    },
+    {
+      "id": "rc-cellular-gateway-cellular-power-burst",
+      "category": "infrastructure",
+      "sha256": "04b9d7dcb4c111a44562488a090b506a1608fc3ef918a7154a86cb6badbf15d3"
+    },
+    {
+      "id": "rc-cellular-gateway-dns-expiry-recovery",
+      "category": "infrastructure",
+      "sha256": "45368ca7a173c5d9d2d75b5485dc21600f7f33e7a9cf16ea2f1a089870027a3e"
+    },
+    {
+      "id": "rc-cellular-gateway-field-coverage-mapping",
+      "category": "infrastructure",
+      "sha256": "9a494096aa9d687ff368a85e71eab32c29b7dd578a9e3e6dbe4ee8c8958596c2"
+    },
+    {
+      "id": "rc-cellular-gateway-gnss-cellular-coexistence",
+      "category": "infrastructure",
+      "sha256": "59726a1c83a8ba246e786b3eb6d53560c927800b1cca99e15e9bb5db3e4f099a"
+    },
+    {
+      "id": "rc-cellular-gateway-modem-attach-sequence",
+      "category": "infrastructure",
+      "sha256": "b4d24c9f8ff06a8d09a429aa2f7ddde4e54462acef72bd841e498a0c884e434a"
+    },
+    {
+      "id": "rc-cellular-gateway-modem-firmware-inventory",
+      "category": "infrastructure",
+      "sha256": "7954a8a7f70966a29914d75d17c9605fcb0d25fbd307b93c469095ebf4f3b36d"
+    },
+    {
+      "id": "rc-cellular-gateway-modem-watchdog-reset",
+      "category": "infrastructure",
+      "sha256": "868ab9f31210b623e47f984a3cbfe9defee3cbd746fbbfdb0711abe1c9fa440d"
+    },
+    {
+      "id": "rc-cellular-gateway-offline-queue-durability",
+      "category": "infrastructure",
+      "sha256": "c3f796c77f87e749f67960593d3ee8554a1682fb7a90ced403587dda7bc48db2"
+    },
+    {
+      "id": "rc-cellular-gateway-packet-loss-dashboard",
+      "category": "infrastructure",
+      "sha256": "3be986aab6af3db3a36e51b2fb6fef7dc0cef351280387df7eb993e53b0e33b9"
+    },
+    {
+      "id": "rc-cellular-gateway-reconnect-backoff-budget",
+      "category": "infrastructure",
+      "sha256": "deb82dfdb12c2de46c88071ea705336a2fe4789f840f026d09bbff225cee59cb"
+    },
+    {
+      "id": "rc-cellular-gateway-signal-quality-rsrp-sinr",
+      "category": "infrastructure",
+      "sha256": "b191ed96d02eff9673c45c4a17085a72169e709ba54788c1fb8f6c1c1e0dc549"
+    },
+    {
+      "id": "rc-cellular-gateway-sim-failover-isolation",
+      "category": "infrastructure",
+      "sha256": "a28963c35f2d77e74d0cb53b9f9d2a348b0e1b02236750ac0ccdef15d4b84134"
+    },
+    {
+      "id": "rc-cellular-gateway-tls-session-resumption",
+      "category": "infrastructure",
+      "sha256": "8a75dccfde61524e48a61c9d2aa52091d26ea288dc2264d9beb339c92fdd59e8"
+    },
+    {
+      "id": "rc-cellular-gateway-upload-bandwidth-policy",
+      "category": "infrastructure",
+      "sha256": "820bb1a795d5fa756dc3ba8c84915463bc197a6f26ecb66d39f21633d262f761"
+    },
+    {
+      "id": "rc-circuit-architecture-adc-reference-network",
+      "category": "development",
+      "sha256": "83489708b9479a9567477f4a7b1fcd22702be8df98b25394febdbcca8c37a9fd"
+    },
+    {
+      "id": "rc-circuit-architecture-analog-front-end-bias",
+      "category": "development",
+      "sha256": "87e870dc317aa3f2d65bd7925268f45be57342128436aa615d8bc32589df6fdc"
+    },
+    {
+      "id": "rc-circuit-architecture-boost-startup-sequencing",
+      "category": "development",
+      "sha256": "4bf83d47c96208ab35f2dbc43bc2b08f0c694f098c164744c1c58491f5526d9b"
+    },
+    {
+      "id": "rc-circuit-architecture-buck-converter-selection",
+      "category": "development",
+      "sha256": "89983e567452c59d872b8d757063cf2481cf7be9f864ec1f381259353eb0feab"
+    },
+    {
+      "id": "rc-circuit-architecture-can-transceiver-protection",
+      "category": "development",
+      "sha256": "3e10eaff8b9e12f0c1d0d446f28c3069cd7cfe6b07728b499f0fd830f772e838"
+    },
+    {
+      "id": "rc-circuit-architecture-connector-pinout-assurance",
+      "category": "development",
+      "sha256": "1641fbca6220d415de2bf53f7b3961ec27b13d9e9fe24e245815d2a706ab0c16"
+    },
+    {
+      "id": "rc-circuit-architecture-design-power-derating",
+      "category": "development",
+      "sha256": "6b94fd9a406c48e2d9ba034c443e041a3795fe77b2a40c3f8826a0ef348d2209"
+    },
+    {
+      "id": "rc-circuit-architecture-esd-tvs-coordination",
+      "category": "development",
+      "sha256": "f46b88000cbe90ad4eb6b30524230b39e4cfa431a20e152c6efde5aae4db5635"
+    },
+    {
+      "id": "rc-circuit-architecture-isolated-interface-barrier",
+      "category": "development",
+      "sha256": "2737f7a50c91447c7c5119fcee52d3c44aa775ee35e42e9c1ffb2631a19706bb"
+    },
+    {
+      "id": "rc-circuit-architecture-ldo-dropout-analysis",
+      "category": "development",
+      "sha256": "bb0c89aa151446674671c61e0cfdd4a7b89bf98084e5fd7007994791ffd11c18"
+    },
+    {
+      "id": "rc-circuit-architecture-mosfet-gate-drive",
+      "category": "development",
+      "sha256": "c3ecd92564de20be6dbf4e9802bc1a099795c4ef328d8089273ac11adaf400b8"
+    },
+    {
+      "id": "rc-circuit-architecture-opamp-stability-margin",
+      "category": "development",
+      "sha256": "d98ffcf88ff8906f3989b739d14b1b4fc7c8a7ee4f955961765896b72bb22f8e"
+    },
+    {
+      "id": "rc-circuit-architecture-power-tree-budgeting",
+      "category": "development",
+      "sha256": "86d0c883559b54feca994e4068fd1fbbe53e7c539572783abc67e8584574a9fa"
+    },
+    {
+      "id": "rc-circuit-architecture-reverse-polarity-protection",
+      "category": "development",
+      "sha256": "f3e595f47a6ac336421ce3b9f0704ba2c228490e283b7db9c319c1f83d3319df"
+    },
+    {
+      "id": "rc-circuit-architecture-rs485-bus-termination",
+      "category": "development",
+      "sha256": "8fb12feffd90b0c7fe116b307798a462d1950bba0c2eff732660eab023efe978"
+    },
+    {
+      "id": "rc-circuit-architecture-sensor-bridge-conditioning",
+      "category": "development",
+      "sha256": "b6ae6dfe26cb6e16d72d6a022db87c9e81aa69a9b65d44c54a185a8e9c2d2a9f"
+    },
+    {
+      "id": "rc-circuit-simulation-adc-sampling-settling",
+      "category": "testing",
+      "sha256": "217a4b6eb4dd47398aa00a8f8f5730cc379c080ab857d805e2d21f9a582f1469"
+    },
+    {
+      "id": "rc-circuit-simulation-esd-pulse-model-limits",
+      "category": "testing",
+      "sha256": "5bc5eea580c5927dec151674ae549e72744d16a850e5a34db98089182a41a667"
+    },
+    {
+      "id": "rc-circuit-simulation-filter-transfer-verification",
+      "category": "testing",
+      "sha256": "e635cf05eeed16c25da04400b9c4fa8ce5f2a87748cfdf698b7eb573ce24ab98"
+    },
+    {
+      "id": "rc-circuit-simulation-opamp-loop-gain-test",
+      "category": "testing",
+      "sha256": "d118a3270b92fe3786f1228da3a7e7b68af359c138cf4dc4ba711e0ab9857787"
+    },
+    {
+      "id": "rc-circuit-simulation-sensitivity-component-rank",
+      "category": "testing",
+      "sha256": "99bb6a06b499ad24bb1758ae6b28aacb9cca8f7622a38c9ec0ebaa3f8b48ff51"
+    },
+    {
+      "id": "rc-circuit-simulation-simulation-to-bench-parity",
+      "category": "testing",
+      "sha256": "209329117a312254a7e2e7150ed869d27f781d0598f55b1544ddf5d20a26039d"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-model-library-audit",
+      "category": "testing",
+      "sha256": "2ce3ad15fd38c04719dce3c9e4a7949c4008c8ed63095b57e1995c49f2b9f4fb"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-monte-carlo",
+      "category": "testing",
+      "sha256": "e288573c289c92895bcc34ac2d74b21cc3b2ad7e88a58498d8c1046490ccbb9f"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-noise-budget",
+      "category": "testing",
+      "sha256": "d5d53f59cb736ae13676e64fba640543ba8bf43d2f7a5030d37d2837d29f753f"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-operating-point",
+      "category": "testing",
+      "sha256": "1098a9bd370352c4b8e5126efa64cdd2f880b0e89ae74e145374ca2944bbb9eb"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-regression-harness",
+      "category": "testing",
+      "sha256": "83feddf7cae76fdcaad02154b63464aa21d4df0572730aac13bed769ed91002d"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-small-signal-ac",
+      "category": "testing",
+      "sha256": "2910ff9c4affa22ddddb5255fe531eb26bfc315c36ea62b14effbd6200d2a1ab"
+    },
+    {
+      "id": "rc-circuit-simulation-spice-transient-startup",
+      "category": "testing",
+      "sha256": "979cb07ad22a82646c00c3e563797e42cada961b12ce262b390f85b315e17340"
+    },
+    {
+      "id": "rc-circuit-simulation-switching-regulator-transient",
+      "category": "testing",
+      "sha256": "07a8e529448f6a2a3d2ad5c23e015268531bb3154838ec5d4e95c8dfe872c7c2"
+    },
+    {
+      "id": "rc-circuit-simulation-thermal-electrical-iterate",
+      "category": "testing",
+      "sha256": "bf3c03d9449cfb5798c8a8f28a1ce964349688c8a085018881e644be30c96f9a"
+    },
+    {
+      "id": "rc-circuit-simulation-worst-case-corner-sweep",
+      "category": "testing",
+      "sha256": "6160e38919b0e7ba66cb5968ba4b4af5e15a5b95ad7b7772b0de007b23d5d6fd"
+    },
+    {
+      "id": "rc-cloud-service-ops-audit-log-redaction",
+      "category": "infrastructure",
+      "sha256": "4cfdb0da59b2c8ddb847176b8f54014af1a0ca9852aa5d4922d42176b470b2d4"
+    },
+    {
+      "id": "rc-cloud-service-ops-autoscaling-thresholds",
+      "category": "infrastructure",
+      "sha256": "4d68feb465405f0f0cd61e7659c700eef5578a2d6aea29c0da3bed6ce36e2365"
+    },
+    {
+      "id": "rc-cloud-service-ops-database-connection-pool",
+      "category": "infrastructure",
+      "sha256": "655f3d96cf3ec17bef9bd27bdafd40b4a5b4786a0be92fec5baa0475115286bf"
+    },
+    {
+      "id": "rc-cloud-service-ops-deployment-feature-flags",
+      "category": "infrastructure",
+      "sha256": "2b7627dbb1ea48cbd09ed3ec582981841dffba5bd78d0bf43e60dc2b377cc128"
+    },
+    {
+      "id": "rc-cloud-service-ops-disaster-restore-drill",
+      "category": "infrastructure",
+      "sha256": "b83ac7f98ead107515e4c056fffc7373d6869e1970423f24cb0b58f5540fbf08"
+    },
+    {
+      "id": "rc-cloud-service-ops-infrastructure-cost-baseline",
+      "category": "infrastructure",
+      "sha256": "1b1fb82b3afa3e663d7b1b832d9d28535772b3a9e9cbc3964a23c7f3071043e1"
+    },
+    {
+      "id": "rc-cloud-service-ops-multi-region-routing",
+      "category": "infrastructure",
+      "sha256": "a04edc431577d30e2a4c063ded5aa0c3c81a28ec8e441872701c22fc7a015e87"
+    },
+    {
+      "id": "rc-cloud-service-ops-queue-worker-saturation",
+      "category": "infrastructure",
+      "sha256": "20233b77a6b8da23426a4b55a3e64a669c165596afb57e3d1b5b14bbd30c03c3"
+    },
+    {
+      "id": "rc-cloud-service-ops-request-trace-correlation",
+      "category": "infrastructure",
+      "sha256": "67b1cf1efb8d35872c406a8f5edd9f83ce94dfbfe11e969131775f06b2acfe1e"
+    },
+    {
+      "id": "rc-cloud-service-ops-rolling-deploy-health",
+      "category": "infrastructure",
+      "sha256": "39b42fe03f77928c0dce3b7b29d6da74acae50e195fa6226d42f0c9d58a352c7"
+    },
+    {
+      "id": "rc-cloud-service-ops-runbook-chaos-exercises",
+      "category": "infrastructure",
+      "sha256": "6047cab9df34e09661afd0347c664b216902d283f831d2d52cca5924aa7b5992"
+    },
+    {
+      "id": "rc-cloud-service-ops-secrets-rotation-check",
+      "category": "infrastructure",
+      "sha256": "12347d1d4d243429d2f1aa28adf55e05fec5cabf6f33f1a425a151de76230c87"
+    },
+    {
+      "id": "rc-cloud-service-ops-service-error-budget",
+      "category": "infrastructure",
+      "sha256": "b6cc88e9eafe12f722292a66bf7bc32f47e029ac3c4547904dfb4d1151b01580"
+    },
+    {
+      "id": "rc-cloud-service-ops-slo-latency-histograms",
+      "category": "infrastructure",
+      "sha256": "926dbfe186d9ee9c4155e8f9ef4d395b928dfc354ed67c60ee70f079392ef1c8"
+    },
+    {
+      "id": "rc-cloud-service-ops-tls-certificate-expiry",
+      "category": "infrastructure",
+      "sha256": "6532ba64c4b3e4b270a66705316fecbdcc8eb700cf85f2e6d095dc87b723a142"
+    },
+    {
+      "id": "rc-cloud-service-ops-zero-downtime-schema",
+      "category": "infrastructure",
+      "sha256": "d51f87f60d6f18df49083c8769390e1abd9236c1ee7be9e4f9fca7ffebdf2487"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-antenna-rf-keepout",
+      "category": "architecture",
+      "sha256": "82a044b9f655c15a6259bb48257a40b147561211eb1f2edfaf9afb7ed9e419e4"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-assembly-exploded-service",
+      "category": "architecture",
+      "sha256": "ac8590bbd480d0544218c81876b5d8c6f31f8f180c2ae2c31d9d529b3b403b99"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-battery-pack-envelope",
+      "category": "architecture",
+      "sha256": "c38bcf555334f2a212323ace07eff6d229ab872e8d03746b5a7a9dcd563654f8"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-board-outline-synchronization",
+      "category": "architecture",
+      "sha256": "3146a622f6f749a2cddfec98984c2a19e95b0ef92bf50837c4101edee9e48ab4"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-board-thickness-allowance",
+      "category": "architecture",
+      "sha256": "247c2ddb96c94d55dc7ca4624d4354e357f4b35c61c2f58953523f84c4094e39"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-cad-format-roundtrip",
+      "category": "architecture",
+      "sha256": "5f4ba80c98ba6e9843ae28b9dd1c310ff0c08117296161d736b6d0abdb083793"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-component-height-envelope",
+      "category": "architecture",
+      "sha256": "143b3dcc4b2a3660065a0631928a7545db2981bc87aa5daf69139dc8c53a5dea"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-connector-mating-sweep",
+      "category": "architecture",
+      "sha256": "139feb75c990fd3713be42754943fc36a51e0fa514376b2bf0791eaf2207fbf3"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-ecad-mcad-revision-diff",
+      "category": "architecture",
+      "sha256": "96eec8b9e550406361a1ebfff676ec57c4e450fb9755f3cca28160740e6d0257"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-fusion-3d-pcb-review",
+      "category": "architecture",
+      "sha256": "be96ea165cf209f3e7f9d137ebefb5e614c38150024ceb9af0a04a67368ce17d"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-mechanical-electrical-release",
+      "category": "architecture",
+      "sha256": "95fac1733f0fde48f5e1ff2cd50b58e270718f57a4055b35f655e639431a1cf3"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-mounting-hole-pattern",
+      "category": "architecture",
+      "sha256": "670eddd6bd766f4c078b4d132ea3f0cbc3f117dc1343d518a582a400859f3ed7"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-pcb-to-enclosure-step",
+      "category": "architecture",
+      "sha256": "1e873d33e21f51247c7b561f285719e5fc2b3e6ce4c7d6d83d68b3c68a8dbbb6"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-sensor-mount-orientation",
+      "category": "architecture",
+      "sha256": "5d4cb82c4027aab43cb6140414a9463f879556b15e27281e631ce97a816f84ee"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-thermal-enclosure-coupling",
+      "category": "architecture",
+      "sha256": "640dfd9badb9abd45c5f3b14cb76f497ff22c3edf52eacee920eebf7c9f0a63b"
+    },
+    {
+      "id": "rc-ecad-mcad-fit-waterproof-gasket-stack",
+      "category": "architecture",
+      "sha256": "7de3895cc9b17e9d25516013d0f26fa955d9a7993ad93592f5106f365c9c48c9"
+    },
+    {
+      "id": "rc-edge-machine-learning-anomaly-groundtruth-review",
+      "category": "data-ai",
+      "sha256": "7576b3633367d3a6a1c9dbf7662507d0f1cd69f8068a4a136143437b41184ab0"
+    },
+    {
+      "id": "rc-edge-machine-learning-battery-inference-duty",
+      "category": "data-ai",
+      "sha256": "a6dde548eae155fc1bbe8f186b54edda9f23bcafa4c0d366361f5e5a229c9fee"
+    },
+    {
+      "id": "rc-edge-machine-learning-concept-drift-alerting",
+      "category": "data-ai",
+      "sha256": "8f1f3f1e51f3688f6cd11819bfccba5a07ca68ad32c8e0d7ff56ac742e801d66"
+    },
+    {
+      "id": "rc-edge-machine-learning-edge-accelerator-compat",
+      "category": "data-ai",
+      "sha256": "de5eba22b615bf8a40b9404a1836656c75bbc456edc44a9c7a73476851066b5c"
+    },
+    {
+      "id": "rc-edge-machine-learning-embedding-distance-monitor",
+      "category": "data-ai",
+      "sha256": "9a71f148c0c64e82ad8c5b78a72e279d2fee71331e3eaf5adfa0020c86574022"
+    },
+    {
+      "id": "rc-edge-machine-learning-feature-pipeline-parity",
+      "category": "data-ai",
+      "sha256": "85e5d7b4628cf3865b6966d7432a17fce9f8bc62a406a09b33e7435b77466b87"
+    },
+    {
+      "id": "rc-edge-machine-learning-federated-update-review",
+      "category": "data-ai",
+      "sha256": "5b73aa0e45d8c0fee607dffd8342ff1e8ecd7e1c098188769b813e2208ad50eb"
+    },
+    {
+      "id": "rc-edge-machine-learning-feedback-loop-guardrail",
+      "category": "data-ai",
+      "sha256": "7309a082acb807248f8cece395244a76f0ddb023686a9ff00045353bfb0aa946"
+    },
+    {
+      "id": "rc-edge-machine-learning-inference-latency-profiling",
+      "category": "data-ai",
+      "sha256": "87a444e9ed7599f4626d2d78d39551e9d6d212d2a7fdfe3d4ab5fec9458473ff"
+    },
+    {
+      "id": "rc-edge-machine-learning-model-memory-budget",
+      "category": "data-ai",
+      "sha256": "ff723ee4d7dd202165d1c9eacb641c41002390a85819d59e5297e45ff57d0c5c"
+    },
+    {
+      "id": "rc-edge-machine-learning-model-rollout-shadow",
+      "category": "data-ai",
+      "sha256": "249f5d5200d3447ce4c2fbe669663663addbe6b0cdf8300f8ddd529752bb6e4d"
+    },
+    {
+      "id": "rc-edge-machine-learning-model-version-provenance",
+      "category": "data-ai",
+      "sha256": "4c664586e734573ca49aed3397c9629d47535d9f7bb74593f8041bd49f0f7d0c"
+    },
+    {
+      "id": "rc-edge-machine-learning-on-device-data-minimization",
+      "category": "data-ai",
+      "sha256": "5f901f644661604f8159e64429a4a7f170d63870b53a6d830a5ca09206bc0c7e"
+    },
+    {
+      "id": "rc-edge-machine-learning-on-device-threshold-calibration",
+      "category": "data-ai",
+      "sha256": "3e08116ecdc580a6cd7811cb59845ade053b8762ddb4e32b6f4d3b3d0c9eb646"
+    },
+    {
+      "id": "rc-edge-machine-learning-quantization-error-bounds",
+      "category": "data-ai",
+      "sha256": "28644cd067c30ec16f618eb5d8d9a99855554436b408fdb2e3ef6688e448c00c"
+    },
+    {
+      "id": "rc-edge-machine-learning-sensor-failure-fallback",
+      "category": "data-ai",
+      "sha256": "dc87a12936fdbfa93694776eadc48d9b22afba2a9be88cc0ecbe22faccf05c88"
+    },
+    {
+      "id": "rc-electromagnetic-compat-cable-harness-resonance",
+      "category": "testing",
+      "sha256": "961af973a556a918c5eeaec9cedc63413af98e2a76566108849f3c11840e6ed5"
+    },
+    {
+      "id": "rc-electromagnetic-compat-chassis-bond-resistance",
+      "category": "testing",
+      "sha256": "c33cb0c264a9d77dbedef0ded57bd74f0ff9bd3d4629732de9f196f9b60a3bac"
+    },
+    {
+      "id": "rc-electromagnetic-compat-clock-edge-noise-reduction",
+      "category": "testing",
+      "sha256": "baa5eeaeb09e8dce98675f58f6716a8b94d80b91c8f78bb819c807f85a2bf57c"
+    },
+    {
+      "id": "rc-electromagnetic-compat-common-mode-current",
+      "category": "testing",
+      "sha256": "5d85dd96bf44dbd50357f2b3a4ae4b8470a380f2c025263cf24b0b516891db92"
+    },
+    {
+      "id": "rc-electromagnetic-compat-conducted-emission-scans",
+      "category": "testing",
+      "sha256": "de1f62d8e03c44b2a0cac93e6e865aee5f767a5b1bdde44c6790ef25480b2b86"
+    },
+    {
+      "id": "rc-electromagnetic-compat-dc-dc-switch-harmonics",
+      "category": "testing",
+      "sha256": "30ea53c7fd5cf484876fcb420ae3c657962ac15edeca0934d742bc95ef10cbb9"
+    },
+    {
+      "id": "rc-electromagnetic-compat-emc-evidence-register",
+      "category": "testing",
+      "sha256": "a16fc23c0b6bb36a30043cf4e6ca74ed1df65a5e45544c41d5498ad8388774f4"
+    },
+    {
+      "id": "rc-electromagnetic-compat-esd-discharge-path",
+      "category": "testing",
+      "sha256": "59cb0b7cfe0b773b31e4492bf51c13e209d3f97617e9a390b43dbd783524a86a"
+    },
+    {
+      "id": "rc-electromagnetic-compat-ethernet-magnetics-layout",
+      "category": "testing",
+      "sha256": "53a39cb7540d18942011d39d3ff69d35b50e4160669f21e1ee02a7391b7f7f49"
+    },
+    {
+      "id": "rc-electromagnetic-compat-filter-insertion-loss",
+      "category": "testing",
+      "sha256": "6823b092abe2386aaba131fa058e3b76da6b19fc30ed439b3310ce7acfe7bb86"
+    },
+    {
+      "id": "rc-electromagnetic-compat-immunity-functional-monitor",
+      "category": "testing",
+      "sha256": "ec2976041109e0a23fd7dca9e67ee905df5c0aa9056aedcd833c609ce982cee5"
+    },
+    {
+      "id": "rc-electromagnetic-compat-pcb-revision-a-b",
+      "category": "testing",
+      "sha256": "9950987f4616502c3c0cd1b5c1c22ba77d01329cfc4971fe6a064dc153717982"
+    },
+    {
+      "id": "rc-electromagnetic-compat-radiated-near-field-map",
+      "category": "testing",
+      "sha256": "5b50d54d709da1a4d54829ad8a3add50cf94d979fd9f28bceda6103885e01557"
+    },
+    {
+      "id": "rc-electromagnetic-compat-sensor-emc-susceptibility",
+      "category": "testing",
+      "sha256": "702e29cf0a08da1bd4fc3ce667023e7c1621b503082be262491ae2a916324358"
+    },
+    {
+      "id": "rc-electromagnetic-compat-shield-termination-study",
+      "category": "testing",
+      "sha256": "9ab4d0c362061fa5366ca189ee6e9aea7240d8c11618016c4ecc4afcb02dfcc9"
+    },
+    {
+      "id": "rc-electromagnetic-compat-spread-spectrum-impact",
+      "category": "testing",
+      "sha256": "5559e48f0a49961987668825aa9da9314f35f2f6b53fc460825c22223043c2af"
+    },
+    {
+      "id": "rc-embedded-rtos-brownout-recovery-state",
+      "category": "development",
+      "sha256": "4cf65f1452d499529248bbc762d110158d5f4546af39ad7567e093ae075a46d6"
+    },
+    {
+      "id": "rc-embedded-rtos-clock-domain-transition",
+      "category": "development",
+      "sha256": "40c72cca8ba1ce149684aeb4a6727f9fa393bf9c87cc410fc8745d7de7c4dcc2"
+    },
+    {
+      "id": "rc-embedded-rtos-deadline-miss-telemetry",
+      "category": "development",
+      "sha256": "459082046cc342edfc52d25e58e129d6cb88ef9a77dbd629322946d9a4437519"
+    },
+    {
+      "id": "rc-embedded-rtos-dma-buffer-ownership",
+      "category": "development",
+      "sha256": "d10f56ce2f1744c539574af5803f9aa3941c353e37e38fe804d411af7f590d9a"
+    },
+    {
+      "id": "rc-embedded-rtos-fault-handler-snapshot",
+      "category": "development",
+      "sha256": "604a9d4937949e8ba209589974c6bf7d9a82f22f3f56ebcddd8b14042eca3164"
+    },
+    {
+      "id": "rc-embedded-rtos-interrupt-latency-profiling",
+      "category": "development",
+      "sha256": "ce0dbcae9b729b579229df03f760cead820a4dfda2c6ce8e8fb46223118e0262"
+    },
+    {
+      "id": "rc-embedded-rtos-memory-fragmentation-budget",
+      "category": "development",
+      "sha256": "59348de2bdb440ac8fa27c70ec5b52bd9966ae4d2665e6f19aa29ed9acd9a901"
+    },
+    {
+      "id": "rc-embedded-rtos-mutex-deadlock-triage",
+      "category": "development",
+      "sha256": "c2c6c88b046164d039108a1fd7677231aee355044ce8a8babc1cc76cacd5f267"
+    },
+    {
+      "id": "rc-embedded-rtos-peripheral-isr-splitting",
+      "category": "development",
+      "sha256": "ba5bf0e66f63e309e649fcb0605b30bcb49ffb8af0445e565454dd04f9aec8f5"
+    },
+    {
+      "id": "rc-embedded-rtos-priority-inversion-analysis",
+      "category": "development",
+      "sha256": "e3416b18e7f41c1b6f11c33fffb70b6ffa27d74f1dc82f75be5d2e938be5a7dc"
+    },
+    {
+      "id": "rc-embedded-rtos-rtos-message-queue-bounds",
+      "category": "development",
+      "sha256": "538f4dcd54ba2a42d9df5e0aea65e0ba6a125f4558d6bed2ebdf28132db9c04c"
+    },
+    {
+      "id": "rc-embedded-rtos-rtos-tickless-idle",
+      "category": "development",
+      "sha256": "6ffda4ce001f3ed6dcac97290f16e5183016fcf1cf2e3dfffd7cc1e9599282fb"
+    },
+    {
+      "id": "rc-embedded-rtos-scheduler-mode-transition",
+      "category": "development",
+      "sha256": "c7a7d2ee8636f31815722980dc77b14b4fe1cc09710b545a68e5d43a379fc6ef"
+    },
+    {
+      "id": "rc-embedded-rtos-stack-watermark-audit",
+      "category": "development",
+      "sha256": "1805ba3b6761176601ddd33974a3b1e1e40b638cef234424e96f33e96e89d651"
+    },
+    {
+      "id": "rc-embedded-rtos-watchdog-supervision-tree",
+      "category": "development",
+      "sha256": "20a3484d3bcae0b80de4acc327e1bd3ebf09be076f3f33ebdb0f7d8103b2bba9"
+    },
+    {
+      "id": "rc-embedded-rtos-wcet-scheduling-budget",
+      "category": "development",
+      "sha256": "b346cd83f6e521abc36f5783fbb8b83a3f5b3c2b09f5e9835470f236df1f09e5"
+    },
+    {
+      "id": "rc-event-streaming-broker-disaster-recovery",
+      "category": "architecture",
+      "sha256": "062fda376a21c9b67bcde30d3bc2b1fa908a02e47407d5c5d43b2d829c6efaaa"
+    },
+    {
+      "id": "rc-event-streaming-consumer-group-rebalance",
+      "category": "architecture",
+      "sha256": "b03e3ae1d97fadadd755e9125ecaa575247278a6427796ab9b2cc6658ed55598"
+    },
+    {
+      "id": "rc-event-streaming-consumer-offset-recovery",
+      "category": "architecture",
+      "sha256": "af0873b68d83fc3a02153a5050016f5ce8aa9bd816b9357d3fbde0cd5efd37d2"
+    },
+    {
+      "id": "rc-event-streaming-dead-letter-queue",
+      "category": "architecture",
+      "sha256": "f0cff04615a1623cb9e50558d0d8b91fcc958182b356fc5baf8b0ef784dc3858"
+    },
+    {
+      "id": "rc-event-streaming-delivery-latency-slo",
+      "category": "architecture",
+      "sha256": "ee952f19ddc579661687e8b87fe754ebc4bea5787e91dca1b1a04be3f26e48c3"
+    },
+    {
+      "id": "rc-event-streaming-event-contract-testing",
+      "category": "architecture",
+      "sha256": "343cbad27e5375ecdf789738572dbf6c1bd707a4e55434b1ba1b57f84737d20d"
+    },
+    {
+      "id": "rc-event-streaming-event-order-consistency",
+      "category": "architecture",
+      "sha256": "69f48a06cac1926b8ff727620e07f312e1a03b9188c3b352ab897933b5f23874"
+    },
+    {
+      "id": "rc-event-streaming-event-outbox-atomicity",
+      "category": "architecture",
+      "sha256": "6166be5fcc0eda999dfc39d313669b6da6c83776f3716ec7a26a82c2a361940a"
+    },
+    {
+      "id": "rc-event-streaming-idempotency-key-design",
+      "category": "architecture",
+      "sha256": "c9eda41db2f51a3721888db23c3e81f8c3b8b54e3c308957396c1cf8e99d3a66"
+    },
+    {
+      "id": "rc-event-streaming-partition-key-selection",
+      "category": "architecture",
+      "sha256": "bdbe26d332906b72c13ddbf6f6a96fd442d280fa7aeb551f6fd7f008402921a8"
+    },
+    {
+      "id": "rc-event-streaming-payload-size-guardrails",
+      "category": "architecture",
+      "sha256": "06ec87439798a6640bb3f2901c52564df442bbc4a6d8b0c5ff3203ce050cd103"
+    },
+    {
+      "id": "rc-event-streaming-retention-replay-policy",
+      "category": "architecture",
+      "sha256": "2a89baf6abd0a1d7baf854d65bf6a7f5b212bbb071579b005eb1067794db4d73"
+    },
+    {
+      "id": "rc-event-streaming-schema-registry-migration",
+      "category": "architecture",
+      "sha256": "b8cab3e18c4e1fdc34805783150add7a48bcd5dbf4078f25ebe83a0d674cc89c"
+    },
+    {
+      "id": "rc-event-streaming-stream-backpressure",
+      "category": "architecture",
+      "sha256": "85f5108e3eccde456b63ce0c3fc82802914802edb8f0b0ef1ae3c21bc0fc73b0"
+    },
+    {
+      "id": "rc-event-streaming-stream-window-aggregation",
+      "category": "architecture",
+      "sha256": "f1b68d308417fef648c6b82fd4e2bfdac1645d820c92204afd76a8d2f7f39ee0"
+    },
+    {
+      "id": "rc-event-streaming-topic-schema-contract",
+      "category": "architecture",
+      "sha256": "1d90b89cc8dd4badb0a8960e156ee70471a25347b1934da58ea1c51ce36da6e9"
+    },
+    {
+      "id": "rc-firmware-ota-ab-slot-state-machine",
+      "category": "security",
+      "sha256": "6b6b0d31a986308cc07e0386f1f945027cb27127437ec677d9ffd9608903f970"
+    },
+    {
+      "id": "rc-firmware-ota-anti-rollback-versioning",
+      "category": "security",
+      "sha256": "9ba3aa5048b72220ebd390e06421112970d0bf5529c2922fbbd01ac47696b3c2"
+    },
+    {
+      "id": "rc-firmware-ota-boot-health-commit",
+      "category": "security",
+      "sha256": "f6cd6eda1446f72d5aabfd605ea473959700d1514fd41e9dadbed462f1e99e55"
+    },
+    {
+      "id": "rc-firmware-ota-bootloader-recovery-console",
+      "category": "security",
+      "sha256": "48207bc4f5b575259255493b93dae7a4dbc9d5bae27a36cc7cace27b80f7e165"
+    },
+    {
+      "id": "rc-firmware-ota-delta-update-integrity",
+      "category": "security",
+      "sha256": "82b5e535596363b2aaa028610c64228e69343e5716f2344db4357bcad5582f1a"
+    },
+    {
+      "id": "rc-firmware-ota-encrypted-image-storage",
+      "category": "security",
+      "sha256": "25030dd8e1cc6c171022b8de957b572506db5f6cd77ae0bd134877e18cf8c35f"
+    },
+    {
+      "id": "rc-firmware-ota-firmware-bom-traceability",
+      "category": "security",
+      "sha256": "e30a6153a84e326399654fc1dea8d28d09ea7faa3b4763ae21c41bbd46053d62"
+    },
+    {
+      "id": "rc-firmware-ota-flash-wear-budgeting",
+      "category": "security",
+      "sha256": "ee57aa613defa789ff44659ac8d32ac69ddba31033d3980abf3a26b8f1964867"
+    },
+    {
+      "id": "rc-firmware-ota-fleet-rollout-canary",
+      "category": "security",
+      "sha256": "08b696618529a1c358bd9aa4c92e76f14ad8c8a82f3cbcdb23a934528aec6bae"
+    },
+    {
+      "id": "rc-firmware-ota-image-signature-verification",
+      "category": "security",
+      "sha256": "81858ab8760a1af512c84b2245e191ba381958d3ba0645c4321b1a573a7ca863"
+    },
+    {
+      "id": "rc-firmware-ota-manifest-schema-compatibility",
+      "category": "security",
+      "sha256": "f364cb8fbbe556d217ec3a3966574c372d65dfb32d818d46dacb840b3497c504"
+    },
+    {
+      "id": "rc-firmware-ota-ota-revocation-drill",
+      "category": "security",
+      "sha256": "ae78be69884081757f3c96ce338033aa64dd4e96fd7eb4bf7b1d1e15c571d869"
+    },
+    {
+      "id": "rc-firmware-ota-power-loss-injection",
+      "category": "security",
+      "sha256": "a2e828fbc49a45c07831b55e0aa780a51fc2fd7ef16d9ceb964746ad0c353872"
+    },
+    {
+      "id": "rc-firmware-ota-secure-key-rotation",
+      "category": "security",
+      "sha256": "131dce30be9473a1de5b638180eb0173af0fa6f60816828d55421b7b9eaa05a4"
+    },
+    {
+      "id": "rc-firmware-ota-update-bandwidth-throttle",
+      "category": "security",
+      "sha256": "f780284c129a2d9b2eded787946af5745d5288abe14d8c89cf2cc7c6f2329084"
+    },
+    {
+      "id": "rc-firmware-ota-update-resume-offset",
+      "category": "security",
+      "sha256": "50dd9c5acef56aa77450772b45b2268872e4777ece75f847a04e2f7d242b4c10"
+    },
+    {
+      "id": "rc-fleet-telematics-device-heartbeat-status",
+      "category": "development",
+      "sha256": "1501314ffd69664864d4871218bced914e33e2f677c62f616feb7fb46276d644"
+    },
+    {
+      "id": "rc-fleet-telematics-distance-odometer-reconcile",
+      "category": "development",
+      "sha256": "2c41df2dbf94779f35ee53e218dcbde236ce111e3c994cd359b04c2f62277afc"
+    },
+    {
+      "id": "rc-fleet-telematics-driver-assignment-boundary",
+      "category": "development",
+      "sha256": "b95515772207634d3282b44b9f5db73b440c2106de99b30e5c04676f52ba7312"
+    },
+    {
+      "id": "rc-fleet-telematics-engine-hours-consistency",
+      "category": "development",
+      "sha256": "e2411ed688c836a261d28c68dbc27108b404e06ef8175af102ff4d692ad39525"
+    },
+    {
+      "id": "rc-fleet-telematics-field-device-battery-health",
+      "category": "development",
+      "sha256": "4d177356a8dd7e7d6d726dfe368a45623991b7bc27a6d29e0a1656ae6da388ce"
+    },
+    {
+      "id": "rc-fleet-telematics-fleet-alert-dedup",
+      "category": "development",
+      "sha256": "a2a1249eb99bd19a9465ef00b12540ea4a20e34e3cd64fed6664d3a45987aa4a"
+    },
+    {
+      "id": "rc-fleet-telematics-fuel-level-smoothing",
+      "category": "development",
+      "sha256": "671cfda96b12b6ffddf4030d5f4288a0c813ae399ce0f394cf1050cb9471e29c"
+    },
+    {
+      "id": "rc-fleet-telematics-geofence-entry-exit",
+      "category": "development",
+      "sha256": "b3461bdf87798e0198dcd6abd1c73f79ef890a00faa1a3cf45d77b701025a2e6"
+    },
+    {
+      "id": "rc-fleet-telematics-harsh-braking-validation",
+      "category": "development",
+      "sha256": "ebf704c02e44c30de284fc70ddf703e32824a7ba772ce93f344d4503b7987ba3"
+    },
+    {
+      "id": "rc-fleet-telematics-idle-time-estimation",
+      "category": "development",
+      "sha256": "65d41f355f2d5a68dd14bc2a511eb7d8462f31b06f504413c849cd03ed1a4f6e"
+    },
+    {
+      "id": "rc-fleet-telematics-offline-buffer-ordering",
+      "category": "development",
+      "sha256": "f86fe61eacaa935e0c9d6fa06fd9ff068b9796deef1c8d70eca4248beae8ca5d"
+    },
+    {
+      "id": "rc-fleet-telematics-route-gap-reporting",
+      "category": "development",
+      "sha256": "cf6376e1c3bc7752a634a8581e84b7b6d6bc1c2aae6f3f3997f4c2bd4dd3b3df"
+    },
+    {
+      "id": "rc-fleet-telematics-speed-alert-hysteresis",
+      "category": "development",
+      "sha256": "7ecadf3e5f9610966025cdc12445d1cf581f597e117522e4166438d82dc6d9a3"
+    },
+    {
+      "id": "rc-fleet-telematics-stop-dwell-analysis",
+      "category": "development",
+      "sha256": "dbd037732b0247510181fc337de295696094abd0590a911ec1a46a558447e416"
+    },
+    {
+      "id": "rc-fleet-telematics-telemetry-retention-planning",
+      "category": "development",
+      "sha256": "d82208ef8eb444f9bcc3ea488fdc23b372aecbcaf131821e709589d804b02a10"
+    },
+    {
+      "id": "rc-fleet-telematics-trip-segmentation",
+      "category": "development",
+      "sha256": "a6787376889b5f07a6f244d40557ed6ecfa410df55a29227a9b3952dfa086888"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-addin-lifecycle",
+      "category": "development",
+      "sha256": "5c21795f357b7c93dd18788c29fbf89c9c1f2f2585ed133ca3bcffb01cba5e8b"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-batch-safety",
+      "category": "development",
+      "sha256": "2cb5393dd59f1c7ca243d608b6491b339050075b1c689bcd07425648cea6c5a2"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-component-occurrence",
+      "category": "development",
+      "sha256": "9f8d6ca48d0e481fcf0d037b997b88207ff4a5860f07faaadef56c9078d3f583"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-eagle-export",
+      "category": "development",
+      "sha256": "eaa5b0a9483abd38bb7ecb592351312eb9305fee4159ea29537d7e71f83df833"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-ecad-readonly",
+      "category": "development",
+      "sha256": "c71a49f7d0be3710a912f832d42dc7f5257bffb442eb59e2fba2ca8f858367cb"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-exception-report",
+      "category": "development",
+      "sha256": "1d54aac2df753792de1aea16ec8185266798acddf7971ea964cee1921129238e"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-export-step",
+      "category": "development",
+      "sha256": "93446d66fa84f2b06a6c55177aef047fa5ec7f2b5a3f106b8fee96f6a1001ea7"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-export-stl",
+      "category": "development",
+      "sha256": "65681f595dde732d106d861221bbbfb54109277f0f44fe9e85b74c6e1b2a2987"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-feature-timeline",
+      "category": "development",
+      "sha256": "b23ef2dca3feefe1d8d30a6bc2636ef6f8e3350c2d9ef8f9bd0b1caaf9cb03b7"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-parameter-units",
+      "category": "development",
+      "sha256": "87b4e24a86403305a2e63cfa0e1596e1755f1b9d63a778a80464f1039c82fcfc"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-product-cast",
+      "category": "development",
+      "sha256": "2890f86f68ddda8ec1abbc973218abcd427a40b24ce69ce7ea2296c0e7fe4114"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-script-benchmarks",
+      "category": "development",
+      "sha256": "232620162f78d5623ae56bb5db3927538e0b3ac597776ac24f886195ff87d984"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-script-scaffold",
+      "category": "development",
+      "sha256": "4fe0b06ba5b1b00dfea05ab64687585adced03d92ff037e944be7429f4e452f4"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-sketch-profile-read",
+      "category": "development",
+      "sha256": "0bdfa6affb3d0e23022a1d5aa0568c5d4d2d57e456293cf3edbf0844df847d6a"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-user-parameters",
+      "category": "development",
+      "sha256": "28cf501743d9d2ee0bd9ffda287c0a12b278922868a4be4944e1ce1aa85e49ad"
+    },
+    {
+      "id": "rc-fusion360-api-fusion-api-version-feature",
+      "category": "development",
+      "sha256": "978f0e85cb5db228b9765fab97f897ba31f55fdc00668d23f3b050a828a71068"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-3d-print-fit",
+      "category": "testing",
+      "sha256": "923b60f75682481bfb3b2cbe9e7af4c9bf95fcddf353b3e35c1d1fb18a9ca95e"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-additive-orientation",
+      "category": "testing",
+      "sha256": "cb3860f22a58edd31daea394310d6bfb908678c1954e5c834c2f988bd4dbd7ff"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-additive-slicing",
+      "category": "testing",
+      "sha256": "15c4838298190160ebb7ea41576579a736b011abc79b0a06f52e27cb4093820c"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-2d-contour",
+      "category": "testing",
+      "sha256": "f0f12c83c8286714119e8f4a875213b1bdbf2372bae4db51172947b55009ecc0"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-3axis-finish",
+      "category": "testing",
+      "sha256": "a37ae0c451e7bd59ec36692b53a0a54a9cea498242cb5ef27cb78449cd7b7dec"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-adaptive-clearing",
+      "category": "testing",
+      "sha256": "6ab78878c38452a497702adf1979c9951dcfbd70270b797bfc57221e71dc0381"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-drilling-cycles",
+      "category": "testing",
+      "sha256": "e864222dc39f42b27df444a6c089500f600f9d314c035f45fbf588faa993dc8b"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-first-article",
+      "category": "testing",
+      "sha256": "2315684c2d53d23c898df38fe451aecc318ab10fc9c20081b8fbfe228cf13a14"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-fixture-clearance",
+      "category": "testing",
+      "sha256": "4d029112a2b62ce183e6ad53041937e4af7f2a7b5fcbf31e855f540ecc61b82e"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-nc-traceability",
+      "category": "testing",
+      "sha256": "78dd8cc08dd877357de873920aa45b5008b5b355662c73a8a7ae25bfb11b60f8"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-postprocess-review",
+      "category": "testing",
+      "sha256": "b9deaffd85fdd5c4a1d75e3dc5b1844bc45afd037b91453b5d75ab10a46c792e"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-setup-variants",
+      "category": "testing",
+      "sha256": "ba28e7985b412e92cdcc822884ccff390746a63f6384fd250311a390be258910"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-setup-wcs",
+      "category": "testing",
+      "sha256": "9fefcbd761293e0c67f37c63bb093603a7fa94f5a711912ca2b955368f9f8d20"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-tool-library",
+      "category": "testing",
+      "sha256": "58b3bbdf1e124c9df519b225b707ce58206b1a63b3ee62d22260e5cc20c63796"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-cam-toolpath-verify",
+      "category": "testing",
+      "sha256": "aa3a6ec493f06ba7022de245358b4cd6b7e80d168fd8bf2c13f5c962c5efee9c"
+    },
+    {
+      "id": "rc-fusion360-cam-fusion-machining-stock-cost",
+      "category": "testing",
+      "sha256": "feb3d2e7d73b54b28d988681577eb2b94f94a18dde48d1a7b4e43c9246f8d42c"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-configured-variants",
+      "category": "development",
+      "sha256": "60793162b74b135ea34aece04174959cd6418b75e1545bdf7d539064ab43e7c2"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-design-parameter-table",
+      "category": "development",
+      "sha256": "532d7e1251712a5beac31775485a88e2b189011b65561b0e30c83329c2285df4"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-extrude-revolve",
+      "category": "development",
+      "sha256": "a9d2b7d004691244fb3614a08e307e0867e94423209e702ec5a261e2eaf244e3"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-fillet-chamfer",
+      "category": "development",
+      "sha256": "ca2189585fc83dd8f46ec85b2113ae94bc853de9dac4a7374e4f7f1edd7d74b4"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-interference-detection",
+      "category": "development",
+      "sha256": "c473577bfbe252311080b17a4e00feecad9f8b536ead38acdef97fa2fa6548be"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-joint-motion",
+      "category": "development",
+      "sha256": "e82cb4472b92288dc9198105f20bbf3deee4258e66ab287d6fc1862320e037db"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-loft-profile-match",
+      "category": "development",
+      "sha256": "49070dd0873965d665373211228cc99b6b76c1a0288fe82a6818a6e36ff3c659"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-mass-properties",
+      "category": "development",
+      "sha256": "4f27ba8004dbfd84a0cec5697072cbc1fc66f4c482fd756f5888a6f7f23dfcce"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-pattern-feature",
+      "category": "development",
+      "sha256": "324724d598022cd3cbd47592af574a38f2378949fc299559a8fd1b6c56768a25"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-reference-geometry",
+      "category": "development",
+      "sha256": "663968a7b68d3a369a0b8e3ba216a7a5eda008fb0fa949afe53231f783c14417"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-sheet-metal-flat",
+      "category": "development",
+      "sha256": "03fe6552e27d1c080c1bff246c3632a14528cb74c943877394fb023cc1fe39d4"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-shell-uniform-wall",
+      "category": "development",
+      "sha256": "2717f340d270231701a3b40527c373a647a2a0000e114333ea2f0177f030f5e9"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-sketch-constraint-audit",
+      "category": "development",
+      "sha256": "3457695b3847fcdce9ed40331160ac9e99282958ebef4d409820ab32564de272"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-step-stl-export",
+      "category": "development",
+      "sha256": "1359248908af3409d4c6a5de6a60cd0ded9fa9872eac03589701466399e0a09a"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-surface-stitch",
+      "category": "development",
+      "sha256": "16a8ab16d2577af05c748b6f8f5d185de27968512867f2e5e7bcae71c10a90d7"
+    },
+    {
+      "id": "rc-fusion360-parametric-fusion-sweep-path",
+      "category": "development",
+      "sha256": "abf1058ee9b353e7ab233c328f83954c7027b5f05d58b97642bfa7b00ddaace3"
+    },
+    {
+      "id": "rc-gnss-measurement-antenna-phase-center",
+      "category": "data-ai",
+      "sha256": "f2e151202c9da7aae12b1678173557136ae6ac347a370a7281e2765139cea0b9"
+    },
+    {
+      "id": "rc-gnss-measurement-carrier-cycle-slip",
+      "category": "data-ai",
+      "sha256": "0eb407fe719cfbbc2f4b5893784463f0549bcdd9238d0a6f514cd9cc0b458e55"
+    },
+    {
+      "id": "rc-gnss-measurement-cold-start-acquisition",
+      "category": "data-ai",
+      "sha256": "c7270bfe683cb3fab3a09054fb6ac066a3a08e73d70aea0dd00c7f05c057f240"
+    },
+    {
+      "id": "rc-gnss-measurement-cycle-ambiguity-status",
+      "category": "data-ai",
+      "sha256": "ddfca283a675866659fb6838cb0b0075d89bf5e636e4813fa71005d46a0137ae"
+    },
+    {
+      "id": "rc-gnss-measurement-doppler-velocity-check",
+      "category": "data-ai",
+      "sha256": "9459da91ba19d4d406d8c496e2fea9027add1dcbdc8a99dad4fffa11bab44075"
+    },
+    {
+      "id": "rc-gnss-measurement-ephemeris-age-screening",
+      "category": "data-ai",
+      "sha256": "a2d2bda61782f5dbcd98d69974897610d47d570a6120b4ccaef5f307341a3d34"
+    },
+    {
+      "id": "rc-gnss-measurement-geodetic-frame-transform",
+      "category": "data-ai",
+      "sha256": "55ae2027516621be0ce56c7378b66d57ab3cf5e8a146ba6d49622d86adb16515"
+    },
+    {
+      "id": "rc-gnss-measurement-geofence-position-uncertainty",
+      "category": "data-ai",
+      "sha256": "8d68bc02941a6e96226b234e51f77a3747e48925e69498cec7399bf5654e53c2"
+    },
+    {
+      "id": "rc-gnss-measurement-multi-constellation-time",
+      "category": "data-ai",
+      "sha256": "4a6afc93b8f56dd62f8322cc239c69a33a70a59aef07f5217037379d5ff16e4b"
+    },
+    {
+      "id": "rc-gnss-measurement-multipath-diagnostics",
+      "category": "data-ai",
+      "sha256": "9cdaa0fb1328bd07ad5812ac0668af5f8ecfae799639493e902edbd087c435c6"
+    },
+    {
+      "id": "rc-gnss-measurement-nmea-talker-validation",
+      "category": "data-ai",
+      "sha256": "bc827d2cbc2b44ba3986fc78a3718b6149de8178e39765fe371e87974fcf1745"
+    },
+    {
+      "id": "rc-gnss-measurement-pseudorange-residuals",
+      "category": "data-ai",
+      "sha256": "bb0e36296a791dd38ccafa7ee7f80a0cc2c5c89e96cf7199fe6fe9ca23ef0dfe"
+    },
+    {
+      "id": "rc-gnss-measurement-raim-integrity-residuals",
+      "category": "data-ai",
+      "sha256": "b4908d156e6ba07447ff7395233dd5ad63b9009760fa9ce632bba176bc76a926"
+    },
+    {
+      "id": "rc-gnss-measurement-rinex-observation-import",
+      "category": "data-ai",
+      "sha256": "59c2ac30f34bde64dbd12e4e387028367467914475223ceb5ea5f0307d4c0531"
+    },
+    {
+      "id": "rc-gnss-measurement-rtcm-correction-latency",
+      "category": "data-ai",
+      "sha256": "3a22daad2d427728e6ab0bd9749ab89c5f0c97fc1af0b54fd52bc75ac82b214a"
+    },
+    {
+      "id": "rc-gnss-measurement-satellite-visibility-masks",
+      "category": "data-ai",
+      "sha256": "315930ee525b17e067a47afef6ea8beddedba2e9fc33f9ff72b09ef1ca65ba9a"
+    },
+    {
+      "id": "rc-hardware-in-loop-adc-calibration-fixture",
+      "category": "testing",
+      "sha256": "e624dd1de80b6129b34626efd3c2f8ef3cfbde22865b0bfb2e2da1b787b81b78"
+    },
+    {
+      "id": "rc-hardware-in-loop-bootloader-fallback",
+      "category": "testing",
+      "sha256": "7790d4fd6fc2c0956566683548ab1328a82e39e4a5758492ea0650e7700cb367"
+    },
+    {
+      "id": "rc-hardware-in-loop-brownout-edge-sequences",
+      "category": "testing",
+      "sha256": "3ebd3afe8d03ade1601656e8da25e2a8136347b6db887b6bcdf071ea9e6f7aea"
+    },
+    {
+      "id": "rc-hardware-in-loop-can-traffic-replay",
+      "category": "testing",
+      "sha256": "2e0e88c089b421b03b05ca73af2fb9f5892e10a9155fc8bc4c0c78b1ba9c2a59"
+    },
+    {
+      "id": "rc-hardware-in-loop-fixture-pin-continuity",
+      "category": "testing",
+      "sha256": "6d3c427fb7cf263f45241bc52df1e14a80e02582cc535d84c86fcf3a94801260"
+    },
+    {
+      "id": "rc-hardware-in-loop-gpio-startup-glitch",
+      "category": "testing",
+      "sha256": "ec545ae8c180a172eb4b0afc4f14c75c3f6fa4b7cb14fdead17b22c5cd39fd2f"
+    },
+    {
+      "id": "rc-hardware-in-loop-hil-evidence-automation",
+      "category": "testing",
+      "sha256": "0df31807d81fa265ed2c9fce7493ea47fae6e527eb17d117b3827b8a058d947d"
+    },
+    {
+      "id": "rc-hardware-in-loop-motor-speed-dummy-load",
+      "category": "testing",
+      "sha256": "05494b10a6fd12317120f86a353f856e7ccdaaee6659a077b46c1484312f1767"
+    },
+    {
+      "id": "rc-hardware-in-loop-network-link-flap",
+      "category": "testing",
+      "sha256": "1e90563ee40003f2448e8707c440217f585b8dac1a8473438c6e321cad2631e7"
+    },
+    {
+      "id": "rc-hardware-in-loop-overtemperature-shutdown",
+      "category": "testing",
+      "sha256": "6d9c3275a2a81b66cb523adcfd6d2be19de769a885bb8480cb3b4baa27a3e51e"
+    },
+    {
+      "id": "rc-hardware-in-loop-power-cycle-endurance",
+      "category": "testing",
+      "sha256": "1b1646625ee1262c480cdeb98cf59462efafde3c36fd5df473d1a27d1a743bea"
+    },
+    {
+      "id": "rc-hardware-in-loop-relay-output-interlock",
+      "category": "testing",
+      "sha256": "32023f643700b07e3143aaac52f367a67888b96bc53a592a2d09be5ec4aafbec"
+    },
+    {
+      "id": "rc-hardware-in-loop-sensor-fault-injection",
+      "category": "testing",
+      "sha256": "4d45b1f2fb87e9d065bfb1ac74a101398db69547755e1d6e2416e00806c76565"
+    },
+    {
+      "id": "rc-hardware-in-loop-sensor-timing-skew",
+      "category": "testing",
+      "sha256": "e17cfbf409804cda5f1dd885e2fac8fb97525494900a5535febc211a766c0843"
+    },
+    {
+      "id": "rc-hardware-in-loop-uart-frame-loss",
+      "category": "testing",
+      "sha256": "83fb6698553ba5ffa8eea52f3753d9b8b3c9d421167eae86949402e8fd12ec6c"
+    },
+    {
+      "id": "rc-hardware-in-loop-watchdog-hang-recovery",
+      "category": "testing",
+      "sha256": "e43ac964b5f6b6cd87ac2912be9a3d7128b76e3ac7d2156692ddb4ed00daa5ed"
+    },
+    {
+      "id": "rc-industrial-ethernet-cable-pair-faults",
+      "category": "infrastructure",
+      "sha256": "d83880117500b59162413c78c4ae4a642944293bda99b0e8e4d02fe6afee1159"
+    },
+    {
+      "id": "rc-industrial-ethernet-ethernet-link-training",
+      "category": "infrastructure",
+      "sha256": "ad82f4d1d0b498caba6dc6d51cc49741678de366ea29b8c7a1fdf07cc3257745"
+    },
+    {
+      "id": "rc-industrial-ethernet-gateway-firewall-rules",
+      "category": "infrastructure",
+      "sha256": "8c916086c45018f0e588b9526b549e6e19e270b8fb912d58e3dc8a3e00f25cfb"
+    },
+    {
+      "id": "rc-industrial-ethernet-industrial-protocol-latency",
+      "category": "infrastructure",
+      "sha256": "690673487379fea601039869a385ee813d280c2ebc0acec8571e89d77de8454d"
+    },
+    {
+      "id": "rc-industrial-ethernet-mac-address-table-drift",
+      "category": "infrastructure",
+      "sha256": "fbc439785c9718bfb7eb2634090f35045dd5324b8eb9132bb03a27f363eede8b"
+    },
+    {
+      "id": "rc-industrial-ethernet-multicast-storm-control",
+      "category": "infrastructure",
+      "sha256": "aa00472b74e8687130e5b5ff6fe02fbff3c364785793fc9b7126dcfce6dd3511"
+    },
+    {
+      "id": "rc-industrial-ethernet-network-recovery-playbook",
+      "category": "infrastructure",
+      "sha256": "a1831664333e36f931ee37db485b7bb7e2ec059cdb35c265e95eb67a04fb6a92"
+    },
+    {
+      "id": "rc-industrial-ethernet-phy-emc-error-signature",
+      "category": "infrastructure",
+      "sha256": "2c05443b60fa0a2acf469813bb308bca7853601a5a3a42b1b1ed4038a4621fda"
+    },
+    {
+      "id": "rc-industrial-ethernet-poe-load-budget",
+      "category": "infrastructure",
+      "sha256": "c741c1835636411bbe09299c4ce400ec00cc613fe5d4f0995808b25f9a122547"
+    },
+    {
+      "id": "rc-industrial-ethernet-ptp-clock-error",
+      "category": "infrastructure",
+      "sha256": "f0f5e695299d7f0a428238bfc45fbb1d907f2ca21b6b92c9793867234be84086"
+    },
+    {
+      "id": "rc-industrial-ethernet-qos-priority-mapping",
+      "category": "infrastructure",
+      "sha256": "79bf9b106ab217e71b6542a9f92b94af9a9d4848e8a2ca6f76376d94e48a9884"
+    },
+    {
+      "id": "rc-industrial-ethernet-redundant-ring-convergence",
+      "category": "infrastructure",
+      "sha256": "227da8a49b768337a47c3251f6c47096149ea543f4f352d8df6a6cef36ed6448"
+    },
+    {
+      "id": "rc-industrial-ethernet-spanning-tree-loop-guard",
+      "category": "infrastructure",
+      "sha256": "71450ceb1a19c673763d96d614f4744f4ac194c42dfaf561bb6e235a17d35de5"
+    },
+    {
+      "id": "rc-industrial-ethernet-switch-buffer-tail-drop",
+      "category": "infrastructure",
+      "sha256": "a73af8bcd7b34117edb0a8bbb5d635bd4353ecf3349716f79998e451a50b3199"
+    },
+    {
+      "id": "rc-industrial-ethernet-time-sensitive-networking",
+      "category": "infrastructure",
+      "sha256": "e9a7b99fd0e8ec793de6341efccb389b704f83e76246a6c3ed7d93f6574c3279"
+    },
+    {
+      "id": "rc-industrial-ethernet-vlan-isolation-review",
+      "category": "infrastructure",
+      "sha256": "c8d365e056023cba26ab3bc8286d6b0959491d59ad110ae09b1d44ee014f0fd2"
+    },
+    {
+      "id": "rc-iot-device-security-cloud-policy-least-privilege",
+      "category": "security",
+      "sha256": "d97a119e4436c1fc5c1d6a60790591181decc60e4de03aeed4d2c7db43d356de"
+    },
+    {
+      "id": "rc-iot-device-security-configuration-hardening-diff",
+      "category": "security",
+      "sha256": "5c73de43104a48c20942837897d3a40159fb1332968b1c40d8f1d000b808b086"
+    },
+    {
+      "id": "rc-iot-device-security-credential-rotation-recovery",
+      "category": "security",
+      "sha256": "e035b7cd09ba18ab54ea53e7a8bb9127016af5118c13644a21c5d4f7ad2daa6f"
+    },
+    {
+      "id": "rc-iot-device-security-device-identity-provisioning",
+      "category": "security",
+      "sha256": "dd613a8cf62b90cd4fbf0385d5f35f450b3399fb673217a8349c363315d0ab5d"
+    },
+    {
+      "id": "rc-iot-device-security-device-privacy-minimization",
+      "category": "security",
+      "sha256": "5fbb5cfb0e908cbf61404b4a5f39dc1c6f0ce79daabb5b880c8ca4ba894bf080"
+    },
+    {
+      "id": "rc-iot-device-security-diagnostic-port-lockdown",
+      "category": "security",
+      "sha256": "dbcc848c6a35385e08645166baef0fad233a7da654b22f538b94ceee15eea0b5"
+    },
+    {
+      "id": "rc-iot-device-security-disconnected-auth-expiry",
+      "category": "security",
+      "sha256": "5b22aab37f9a43a77c6b58b90aef01cec16e6e98629794008db6391bac6b4fc3"
+    },
+    {
+      "id": "rc-iot-device-security-factory-reset-secrets",
+      "category": "security",
+      "sha256": "c7b6b45b75842c7704d2de9b4014dcd370111ad867d9f55ea74e314ae8f70559"
+    },
+    {
+      "id": "rc-iot-device-security-firmware-component-inventory",
+      "category": "security",
+      "sha256": "6f52d407b515710c0f2ec069b8412b6698dfe5c9c39fdfde92e5d57ddc580150"
+    },
+    {
+      "id": "rc-iot-device-security-incident-key-containment",
+      "category": "security",
+      "sha256": "dee64b05772c7df798fd1643d62429084fcf60d549f8798822c253262ec03d65"
+    },
+    {
+      "id": "rc-iot-device-security-mutual-tls-handshake-audit",
+      "category": "security",
+      "sha256": "856cd8432ebd429d70623bfb1502b675f9f33d334feee61e3b7973fbd72c9a4e"
+    },
+    {
+      "id": "rc-iot-device-security-network-segmentation-map",
+      "category": "security",
+      "sha256": "30af1855d518880c40b67ca327b8b8bac5a766e3377d3b810ee288fe655200af"
+    },
+    {
+      "id": "rc-iot-device-security-protocol-replay-protection",
+      "category": "security",
+      "sha256": "2438455c5ca4020bc66d9a8991f00dce3a51669addb55eaa96ad5b7ebed64b00"
+    },
+    {
+      "id": "rc-iot-device-security-provisioning-supply-chain",
+      "category": "security",
+      "sha256": "3de898c42b7eec35c947af1477b9dd1445f6ec72aa90980d772bb51739579f92"
+    },
+    {
+      "id": "rc-iot-device-security-secure-boot-measurement",
+      "category": "security",
+      "sha256": "6a2d758f835fce21d6e8ff9ef7cf774ecc30002e06d9e82a57ec0fb65573069e"
+    },
+    {
+      "id": "rc-iot-device-security-tamper-event-handling",
+      "category": "security",
+      "sha256": "754ff60ff1cc89d6ee5f2b851a5bd8919d1dc10b5ef4b3f580b234427ae2d03d"
+    },
+    {
+      "id": "rc-jt808-protocol-auth-token-transition",
+      "category": "development",
+      "sha256": "39e069e69d89df930e4d8952ada2538c07497ba7921b4593c179a046cd8810d8"
+    },
+    {
+      "id": "rc-jt808-protocol-byte-escape-decoding",
+      "category": "development",
+      "sha256": "59343ae52a73aa48fc549e5d4cf2de4e0a939718c1978940ea80e90e3e7316d1"
+    },
+    {
+      "id": "rc-jt808-protocol-checksum-xor-verification",
+      "category": "development",
+      "sha256": "70f96459396ff0fb1d78709d6961567e2e84f5e95011395ad6a43d6c95130d8e"
+    },
+    {
+      "id": "rc-jt808-protocol-command-ack-correlation",
+      "category": "development",
+      "sha256": "c0da8b3bf266d2c6de958fb720c274203f98bbab6024063925a3000354d3e956"
+    },
+    {
+      "id": "rc-jt808-protocol-command-timeout-retry",
+      "category": "development",
+      "sha256": "a0babc7c3b5ca77c89611b6c081b2bdceadc214721e560980762b55819a03a82"
+    },
+    {
+      "id": "rc-jt808-protocol-extension-field-parsing",
+      "category": "development",
+      "sha256": "a2c290c37c12e8befce0745dc35e5672b0541c5abfeaf1b658613dd769a53e84"
+    },
+    {
+      "id": "rc-jt808-protocol-frame-fuzz-negative-cases",
+      "category": "development",
+      "sha256": "77900aba2b338ecd96c246303261b39ca578d628389469efabf6fca8f2b35a6e"
+    },
+    {
+      "id": "rc-jt808-protocol-location-body-decode",
+      "category": "development",
+      "sha256": "9171038b5bce16f63dc79446930197a5d535db3f788dffa9be2a4894b22545db"
+    },
+    {
+      "id": "rc-jt808-protocol-message-id-allowlist",
+      "category": "development",
+      "sha256": "576e84ba7c3c11dfec6ac24838f9a3e9c3dd5c6cdaf81a869529909f836dd630"
+    },
+    {
+      "id": "rc-jt808-protocol-multipart-assembly",
+      "category": "development",
+      "sha256": "c2132afe0583e18a766b5b828b2e611d163da713341b38a95907f770e66d8f3b"
+    },
+    {
+      "id": "rc-jt808-protocol-packet-boundary-recovery",
+      "category": "development",
+      "sha256": "51f321f7402f51d060f7d1c66fc06db1c7770e91798785914fa7d3e9db34d6f4"
+    },
+    {
+      "id": "rc-jt808-protocol-reconnect-session-state",
+      "category": "development",
+      "sha256": "3a3acb65f2a4f5e21c8bac33187825e181af718d9b10d1d7a98efd3f2fccf0f6"
+    },
+    {
+      "id": "rc-jt808-protocol-sequence-wraparound",
+      "category": "development",
+      "sha256": "4ded2600ed9129cf0c1e25f757ddb2a76896d0e72bdf3c818150169154200d63"
+    },
+    {
+      "id": "rc-jt808-protocol-terminal-clock-drift",
+      "category": "development",
+      "sha256": "af34ad29675e2b62e1a840167970f332b3e1b92ed0ba8ab0d1033c0b676992f9"
+    },
+    {
+      "id": "rc-jt808-protocol-terminal-id-normalization",
+      "category": "development",
+      "sha256": "274d98b53e41ee92b05e5bedc985dc37f6155c38738dec08c2fa31a989414943"
+    },
+    {
+      "id": "rc-jt808-protocol-terminal-parameter-audit",
+      "category": "development",
+      "sha256": "b2acaa25496f7e849439fae05c02ae674877e7ecabb22cf4e1fc2055cc32129a"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-3d-model-links",
+      "category": "development",
+      "sha256": "77b436e7e08482d5f8e6b693e4b87d3a9f1c8700db5a2172d09b1d29f1ddfed2"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-board-stackup",
+      "category": "development",
+      "sha256": "b7d348ce525ccff67e2dd57a36f0a3899338abcf00fdec77aa0c3e5c5893adf4"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-bom-variant",
+      "category": "development",
+      "sha256": "1d1575b3a419e38a6b44ea46a0fbec4599c44da83f28c45324312cc4df6cfedf"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-cli-jobset",
+      "category": "development",
+      "sha256": "af1f4dcd3ae756db0e3e6ac52148a33a9e7e0cc66e127dbff8ed635839864a54"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-drc-ci",
+      "category": "development",
+      "sha256": "17b59fb000fc6a651f57db506b9b7cd3c11c8b0731fe0fdf6e0ed2844cafb2f8"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-ecad-release-gate",
+      "category": "development",
+      "sha256": "23e9ba2fe869d4823c3a2a6f6d8675e373130758f8c255460cb3360d0698cac2"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-erc-automation",
+      "category": "development",
+      "sha256": "8cd51cd705ac39431ed9bafc921a61c805ef20f130a92bc268d8681e5878bd6c"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-footprint-assignment",
+      "category": "development",
+      "sha256": "973a5e44861c46919d2c8b7ad34c364d02ae29872dc405b620ae07b5a791dc54"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-gerber-drill-package",
+      "category": "development",
+      "sha256": "99d20d6d68b5bfa16c41dc06454f7a174cb98b5321d7416287ac31e4e6693132"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-hierarchical-sheets",
+      "category": "development",
+      "sha256": "efbc5272dce452069ec2a8084457be02892d8a7718a0e5f8bc348face6cfeadf"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-library-versioning",
+      "category": "development",
+      "sha256": "423bfb3c6504bc385f671e1856ace76b62cd222fbda15bf5053a4ec4170ca886"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-netclass-routing",
+      "category": "development",
+      "sha256": "53445c43b9e9ce202d8fe0acfe5d0080ae4c7edc15837faa7b01a5d56813ad52"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-pickplace-origins",
+      "category": "development",
+      "sha256": "29dfcfab55a01c7806497f5d3c5f8956632d4c4cbf9e779e0f07274b59fc01aa"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-step-export",
+      "category": "development",
+      "sha256": "093c08ed7baeedf2c4b925588af1bacf87bb1f3f2ed0feb6e6a88caed5730f72"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-symbol-pin-types",
+      "category": "development",
+      "sha256": "a14adf33ef2fa94f2c2a671eadafc6caafa8979c8487df8467bd10ec80c91246"
+    },
+    {
+      "id": "rc-kicad-ecad-kicad-zone-return-paths",
+      "category": "development",
+      "sha256": "aec6350f8837265a0e681baeb5dda9d9e394169c000e8652ad52acf12d18ba66"
+    },
+    {
+      "id": "rc-machine-vibration-acceleration-to-velocity",
+      "category": "data-ai",
+      "sha256": "05e519c64d1300535d930db773c850614c666a4f24903a6ff86307fe8349255a"
+    },
+    {
+      "id": "rc-machine-vibration-alarm-threshold-validation",
+      "category": "data-ai",
+      "sha256": "145842ad81f0122afb962f517e2d354320dd04bb3dcaa1f1a40ef043f031b310"
+    },
+    {
+      "id": "rc-machine-vibration-axial-radial-coupling",
+      "category": "data-ai",
+      "sha256": "29d776fb564adf142f854784b6975af6c06d1e9df645009f4c0dadc7207a7c09"
+    },
+    {
+      "id": "rc-machine-vibration-bearing-defect-sidebands",
+      "category": "data-ai",
+      "sha256": "1b19623b2ea3b6ea67b2814922fc7ac0443fe9c4c4e4304134dd575b52a509f3"
+    },
+    {
+      "id": "rc-machine-vibration-envelope-bearing-features",
+      "category": "data-ai",
+      "sha256": "e75d0f3ff7231d66335ffcefd782b2ebb3d81e6dfe647fe76d30e54c0ef4669b"
+    },
+    {
+      "id": "rc-machine-vibration-fft-window-leakage",
+      "category": "data-ai",
+      "sha256": "5eb9eefbd03517d3fd04ad961f62a6f4d2ea33b20c1b3a2692f5f74c5217fa0d"
+    },
+    {
+      "id": "rc-machine-vibration-machine-running-speed",
+      "category": "data-ai",
+      "sha256": "4b66ae94585c217bf9981541b00234eae6135529a00c0045b2a0bd12e6cb5d7b"
+    },
+    {
+      "id": "rc-machine-vibration-order-tracked-spectrum",
+      "category": "data-ai",
+      "sha256": "6b13c3393f7d97fc33e58335931c9b8bc2c113d2c62b815d580e3e9b00784fa6"
+    },
+    {
+      "id": "rc-machine-vibration-phase-coherence-review",
+      "category": "data-ai",
+      "sha256": "a853597154af330f090cf1331993494b2c8b81f01468fc425fd31d5da74d2c8d"
+    },
+    {
+      "id": "rc-machine-vibration-sampling-alias-bound",
+      "category": "data-ai",
+      "sha256": "832bfc1caad7716c2b028097f705e3ce6829adb1ed2a64e3ddc26e1925133e06"
+    },
+    {
+      "id": "rc-machine-vibration-sensor-calibration-chain",
+      "category": "data-ai",
+      "sha256": "97d6155d98cdd558aed555d22f1029ba47feab6f6bf9911f26f23a6f759a9bf8"
+    },
+    {
+      "id": "rc-machine-vibration-sensor-mounting-bias",
+      "category": "data-ai",
+      "sha256": "25df35fc0373d17df3f27881b68b75f7a4d20dd6bfaaaaa25ca78fc1924598c8"
+    },
+    {
+      "id": "rc-machine-vibration-spectrum-baseline-comparison",
+      "category": "data-ai",
+      "sha256": "5726b1f0660cf1ca03ea36775a52e19924d93ee1fd629493c6881bb6cc48f5cd"
+    },
+    {
+      "id": "rc-machine-vibration-tachometer-dropout",
+      "category": "data-ai",
+      "sha256": "3499f9aa2256ae8b6e9973d9889af89e5fe63c0b46c06f375ad6aee8e7b91543"
+    },
+    {
+      "id": "rc-machine-vibration-thermal-vibration-correlation",
+      "category": "data-ai",
+      "sha256": "c7e2a2b795163befbe6883502500168710f69fe77f5a87ffc9bc38c26ff19e46"
+    },
+    {
+      "id": "rc-machine-vibration-waveform-impact-events",
+      "category": "data-ai",
+      "sha256": "520fb26b31cf643c2e0d368e6cd1ad3506b550b7d09e6b52cb8bf9a73985f81d"
+    },
+    {
+      "id": "rc-mobile-field-ops-android-background-limits",
+      "category": "development",
+      "sha256": "097cb51184699e14388de6f19ee931bf8693e9ecc6111d0ab73eceb6a65d5cab"
+    },
+    {
+      "id": "rc-mobile-field-ops-app-permission-recovery",
+      "category": "development",
+      "sha256": "1fa03e0ecccb78e1c5779189d8dc5c670904ad1beacdfd356cff83f83cfd1302"
+    },
+    {
+      "id": "rc-mobile-field-ops-app-release-smoke-matrix",
+      "category": "development",
+      "sha256": "3079b37955a1e17be190191e91386a20260e5f6eb6be88bfce430d7e600ae0b2"
+    },
+    {
+      "id": "rc-mobile-field-ops-barcode-scan-dedup",
+      "category": "development",
+      "sha256": "f2eaa8e0d5253d801719f4e60aefbb9c62e564b642b1f59ed439ad2f709fc5db"
+    },
+    {
+      "id": "rc-mobile-field-ops-bluetooth-pairing-ui",
+      "category": "development",
+      "sha256": "0f53b866882194480a985d10524f26082ceffef1a67b0357f5c794356d1fbfd1"
+    },
+    {
+      "id": "rc-mobile-field-ops-device-storage-encryption",
+      "category": "development",
+      "sha256": "0c450a11df419ee612f4f0d274438ed1e9bdfb5219d85591aa8800c15f325ef2"
+    },
+    {
+      "id": "rc-mobile-field-ops-field-camera-evidence",
+      "category": "development",
+      "sha256": "8c09ca495ddb4476a06496224e3d0e1e4511b03e0cc8aa8d7438a296f624d39a"
+    },
+    {
+      "id": "rc-mobile-field-ops-field-form-validation",
+      "category": "development",
+      "sha256": "4d4c9bcc7d06a9bbfd3f13fc4ed531cdebec42b98427628f71bcd900a9c11149"
+    },
+    {
+      "id": "rc-mobile-field-ops-ios-location-permissions",
+      "category": "development",
+      "sha256": "7588be10ee1295ee68ae761527aa97336ba52c3a205d31bb1f00300935ed8fe2"
+    },
+    {
+      "id": "rc-mobile-field-ops-map-coordinate-roundtrip",
+      "category": "development",
+      "sha256": "48d0f2f5f234f2b71e7b94c55853d1d8bfc68ba1f147c578d6bd927c9df86907"
+    },
+    {
+      "id": "rc-mobile-field-ops-mobile-battery-profiling",
+      "category": "development",
+      "sha256": "cad4f82e41f8a8d134d9cf21ee71c7ca8604e3c9fd9f79ced85aa47097a36504"
+    },
+    {
+      "id": "rc-mobile-field-ops-mobile-export-audit",
+      "category": "development",
+      "sha256": "4304f2264366285017317061cb0b17ddca01b6b3067b6028ecd72911a0310b8b"
+    },
+    {
+      "id": "rc-mobile-field-ops-multilingual-label-overflow",
+      "category": "development",
+      "sha256": "9907864dd073b322bd08aed9fdc12cf39246b6fa199f99ceb2ad522a42451d4c"
+    },
+    {
+      "id": "rc-mobile-field-ops-offline-edit-conflicts",
+      "category": "development",
+      "sha256": "6d7e78df2d2ab431edfd9994f2273ac1581179e7522a6cf63f001839ff8a3087"
+    },
+    {
+      "id": "rc-mobile-field-ops-push-alert-state",
+      "category": "development",
+      "sha256": "e0d1c0a8c3925f3cdf799ea66a65dbc0b842472308f4434ff48fff865b201a94"
+    },
+    {
+      "id": "rc-mobile-field-ops-sync-resume-after-loss",
+      "category": "development",
+      "sha256": "168daf32220ce58a74d305fe891470fef155ad7a3604823270340bd527493189"
+    },
+    {
+      "id": "rc-optimization-experiments-constraint-feasibility-audit",
+      "category": "data-ai",
+      "sha256": "dcb32b61955706f221474e18547028e262f15f17656d215b6277135ef4c8c1d8"
+    },
+    {
+      "id": "rc-optimization-experiments-decision-variable-scaling",
+      "category": "data-ai",
+      "sha256": "aa27d9c32bc256852cfa7d0035c244f7a56efdf27510d262fdb87165b63ca72a"
+    },
+    {
+      "id": "rc-optimization-experiments-experimental-design-spacefill",
+      "category": "data-ai",
+      "sha256": "bf6f3725455b1fe7766fdde6ce15c504d29c9fd9876f6397eadd6a8894460adc"
+    },
+    {
+      "id": "rc-optimization-experiments-gradient-finite-difference",
+      "category": "data-ai",
+      "sha256": "4954ed10442786a617bfe84ae8cb45d1fce630df9e66bd3491fa8faf7de38ea5"
+    },
+    {
+      "id": "rc-optimization-experiments-mixed-integer-rounding",
+      "category": "data-ai",
+      "sha256": "2ba0da51c88255e44dd3c3a6f06d377345e5472bf2ac5077195d4cf331357bd8"
+    },
+    {
+      "id": "rc-optimization-experiments-multiobjective-pareto-review",
+      "category": "data-ai",
+      "sha256": "74f9c86274911969ae89e425198c89fff536d2d05b9661d43759ba6d2df28aba"
+    },
+    {
+      "id": "rc-optimization-experiments-noisy-evaluation-budget",
+      "category": "data-ai",
+      "sha256": "fb030e7d215c481202722c7168494fb7f834e6255fde5730684639aa6e4bea85"
+    },
+    {
+      "id": "rc-optimization-experiments-objective-dimension-check",
+      "category": "data-ai",
+      "sha256": "dfbdca2af50ec0b89c6b4fa0db0d987b43f7dfcb32a078565864079a6031775c"
+    },
+    {
+      "id": "rc-optimization-experiments-optimization-result-audit",
+      "category": "data-ai",
+      "sha256": "34a45d05fbf417531d686045731f40f702a3c32cbc7ed89553d4829453db6ce1"
+    },
+    {
+      "id": "rc-optimization-experiments-performance-profile-benchmark",
+      "category": "data-ai",
+      "sha256": "3a56709bf9612dc1fcfdc445873dec54584f3c01498026a55c36f0ad98219b5b"
+    },
+    {
+      "id": "rc-optimization-experiments-robust-scenario-set",
+      "category": "data-ai",
+      "sha256": "06a326736d549cf1d6aabc3ac5291fccb43f69596089b7dc60009c8cf97ead8c"
+    },
+    {
+      "id": "rc-optimization-experiments-sensitivity-finite-change",
+      "category": "data-ai",
+      "sha256": "25b407f7623f09c119041942675b8075d1cf1aa55358b6ee7fb5ea6b12ffa5e9"
+    },
+    {
+      "id": "rc-optimization-experiments-solver-convergence-criteria",
+      "category": "data-ai",
+      "sha256": "247000b255e7c09d4ad7afe9d99fc2a2ad44ef3e4b255d5ad13b868086c7292d"
+    },
+    {
+      "id": "rc-optimization-experiments-stochastic-seed-variance",
+      "category": "data-ai",
+      "sha256": "8b4e949250de3ee9be027f44fe700a2a3d5e072104bbae1b92f61d3a9e4d6bab"
+    },
+    {
+      "id": "rc-optimization-experiments-surrogate-model-calibration",
+      "category": "data-ai",
+      "sha256": "6d64efcdf19e5720b3a143f8de53d62ec751e12fa6edd2a4dec43e5c1aded8d3"
+    },
+    {
+      "id": "rc-optimization-experiments-trust-region-step",
+      "category": "data-ai",
+      "sha256": "bb233c6ba5a5f4841d4273bdb610a22463c5308d3f2e612b343c5260c912d32f"
+    },
+    {
+      "id": "rc-pcb-design-review-analog-digital-partition",
+      "category": "development",
+      "sha256": "2efc667777d4759bcdc418ae7acd7bbbc9ee042ebd9d53e9bdc1b087de06797c"
+    },
+    {
+      "id": "rc-pcb-design-review-connector-orientation-proof",
+      "category": "development",
+      "sha256": "54dd59c7436a48b7bb469920ee1757e4045d0f991dc190776793c7d8963be56e"
+    },
+    {
+      "id": "rc-pcb-design-review-copper-pour-isolation",
+      "category": "development",
+      "sha256": "2ad5f7f6577d9a64be4f6071ca7dfdd54c328e2e3d56174453375c9f733e2b16"
+    },
+    {
+      "id": "rc-pcb-design-review-creepage-clearance-review",
+      "category": "development",
+      "sha256": "5d5d4d47c42967274adbe20cd6854ee4918aa2c31ef19f0f878cc0e0e2706691"
+    },
+    {
+      "id": "rc-pcb-design-review-decoupling-loop-inductance",
+      "category": "development",
+      "sha256": "949ef0ced9c2eea81bde33994b09acd862399204f82c3d7c3c9052c763f86c99"
+    },
+    {
+      "id": "rc-pcb-design-review-esd-entry-protection",
+      "category": "development",
+      "sha256": "20163ac83c146cf1cdaac0f6741d50f3f092822967939fa35cd8b50d34a2f45b"
+    },
+    {
+      "id": "rc-pcb-design-review-gerber-drill-review",
+      "category": "development",
+      "sha256": "9c0b8387924dc2fd39cdcc85f1ce8947305f0ffeafe89d530e113c9d98b1238c"
+    },
+    {
+      "id": "rc-pcb-design-review-ground-stitching-strategy",
+      "category": "development",
+      "sha256": "cc7db018276c8d530405121af9d0c9cb682e0ec4bfbff3d03c6322fcfa86f046"
+    },
+    {
+      "id": "rc-pcb-design-review-high-speed-differential-pairs",
+      "category": "development",
+      "sha256": "d7d43a6475fb79734ba894d27d3cd62da7fe4f490acd6fd17c0051c991a59ae3"
+    },
+    {
+      "id": "rc-pcb-design-review-measurement-test-points",
+      "category": "development",
+      "sha256": "a9e0eca74914cc234e1f89854533b45204efd6719fe9bf45a8a33987a8fcb8ed"
+    },
+    {
+      "id": "rc-pcb-design-review-mounting-hole-clearance",
+      "category": "development",
+      "sha256": "93f1ac40ff4a4f20043cd05eab140544673c2260c47fc4d729e03b3c193db8ac"
+    },
+    {
+      "id": "rc-pcb-design-review-power-return-loop",
+      "category": "development",
+      "sha256": "5cdf6115326a58bb1d68e75d87602c5238d9a8b579c10e37a6b8afbf1ecb55ba"
+    },
+    {
+      "id": "rc-pcb-design-review-schematic-pcb-net-parity",
+      "category": "development",
+      "sha256": "0c836171fb71f267794934918db8a9523923e7da1b1bab735ca636e7ee355e90"
+    },
+    {
+      "id": "rc-pcb-design-review-supply-rail-margin",
+      "category": "development",
+      "sha256": "8b1284fbcd5d96702a13697d20bcf07513e35f96579603302126546f296aaa0a"
+    },
+    {
+      "id": "rc-pcb-design-review-thermal-via-path",
+      "category": "development",
+      "sha256": "9b6a8a133b03ba0e345d274f34618e2663e0a1fa876d2653dd928acddbdd1e54"
+    },
+    {
+      "id": "rc-pcb-design-review-trace-impedance-stackup",
+      "category": "development",
+      "sha256": "90a04fd7ddd0bfbf7b198b1367e218daedc3fe67cf4bd5848643a0c619151d72"
+    },
+    {
+      "id": "rc-reproducible-research-ablation-baseline-design",
+      "category": "general",
+      "sha256": "dbf581e2250d5cd715a3753c7049b15d226b8ff6167ad618d4648f344880b119"
+    },
+    {
+      "id": "rc-reproducible-research-data-visualization-repro",
+      "category": "general",
+      "sha256": "79c9070183d5a3e51304392646017d85ffd604f34e99287dd870ae3455f7917d"
+    },
+    {
+      "id": "rc-reproducible-research-dataset-provenance-register",
+      "category": "general",
+      "sha256": "d58b96643bdaccc60bd9bb022ef0a7a2b384b285da37c20ad62a2c49aa211718"
+    },
+    {
+      "id": "rc-reproducible-research-experiment-seed-control",
+      "category": "general",
+      "sha256": "bde9c178b57c396f989bc2fcfe5a669a5137ca15de15c175e4b1b1aaeb047f70"
+    },
+    {
+      "id": "rc-reproducible-research-hypothesis-preregistration",
+      "category": "general",
+      "sha256": "50dc5d6e29433a8e1db5d57d1cd94322d30a99d0907bc41118b05db1130a39b4"
+    },
+    {
+      "id": "rc-reproducible-research-measurement-uncertainty-budget",
+      "category": "general",
+      "sha256": "f03f245bc329e1f89e59f4d7e56493e3055e3cfea9ed3f426b949b1c0a62383f"
+    },
+    {
+      "id": "rc-reproducible-research-missing-data-mechanism",
+      "category": "general",
+      "sha256": "99a7088749326d6d72864a11dfbceeb76aad67e00945d48dcff568f04c0dd2ec"
+    },
+    {
+      "id": "rc-reproducible-research-negative-result-reporting",
+      "category": "general",
+      "sha256": "78d581a1e2f2eee0881574be8bab101a5b2e37d323a51dae39b46099bbcef843"
+    },
+    {
+      "id": "rc-reproducible-research-preprocessing-leakage-review",
+      "category": "general",
+      "sha256": "b9fcc0b3c6fa7bf1a1207c428ae80ee0464063a0116df781946a607bf944b7e7"
+    },
+    {
+      "id": "rc-reproducible-research-publication-integrity-review",
+      "category": "general",
+      "sha256": "37d66438eb23b45f15744186d9d19419c59b72b3bb8779c75ef1f45f1f1fa211"
+    },
+    {
+      "id": "rc-reproducible-research-replication-package-layout",
+      "category": "general",
+      "sha256": "61f7fae2c20c5ab8ec2a5ccc91ede3368607eab57856195a4d0c085e6a034dde"
+    },
+    {
+      "id": "rc-reproducible-research-research-question-operationalize",
+      "category": "general",
+      "sha256": "df326e9f8332cc3339f91d575692f49b0c8855e4ecd050087a87684dde583e4c"
+    },
+    {
+      "id": "rc-reproducible-research-results-residual-validation",
+      "category": "general",
+      "sha256": "194773035adb5aa06c7f90fd34350d0df5fb64dc0df8673aa41f6e03338f9100"
+    },
+    {
+      "id": "rc-reproducible-research-software-hardware-parity",
+      "category": "general",
+      "sha256": "720834b7fd68e5501f59cf9602b1e0dc8960eed0620b755a846e3989c3b859d0"
+    },
+    {
+      "id": "rc-reproducible-research-source-to-claim-audit",
+      "category": "general",
+      "sha256": "1499883f0e627fb20430dacb8a51ae3983d76bef00a9d09fa006425cdd88fbde"
+    },
+    {
+      "id": "rc-reproducible-research-statistical-power-assumptions",
+      "category": "general",
+      "sha256": "f47976b6d2ee25b236c6fb2b35f249d0af998234cc3459e07b0d8ee9251972fa"
+    },
+    {
+      "id": "rc-rotor-mass-balance-angle-reference-polarity",
+      "category": "development",
+      "sha256": "e51480208919591cdbbf3744659819942839c3c83dc718611642f01e0eaa1975"
+    },
+    {
+      "id": "rc-rotor-mass-balance-balance-quality-grade",
+      "category": "development",
+      "sha256": "55ca80c20072afc3193e16c2c810ea25a5624293b6cd471d8ab44de9fbb3c958"
+    },
+    {
+      "id": "rc-rotor-mass-balance-balance-report-traceability",
+      "category": "development",
+      "sha256": "8fd2a19037107a291e838199b0ca16c97235d424760133b6e6bb1b9927d2fc36"
+    },
+    {
+      "id": "rc-rotor-mass-balance-correction-location-constraints",
+      "category": "development",
+      "sha256": "2996cc56741b40952d774d95ec316cea7562d1a41ba6e41b2880511ba41ef4cc"
+    },
+    {
+      "id": "rc-rotor-mass-balance-correction-safety-review",
+      "category": "development",
+      "sha256": "da0913b89cc94ac2f7cdb1801941315f8016a01343192c871f79ce59e2a902f2"
+    },
+    {
+      "id": "rc-rotor-mass-balance-hard-bearing-rig-identification",
+      "category": "development",
+      "sha256": "cfc2ba24c732fa9523ec62777312a3438530caee271d0f7242ec7309dc16e938"
+    },
+    {
+      "id": "rc-rotor-mass-balance-influence-matrix-conditioning",
+      "category": "development",
+      "sha256": "9b6249d839ce2b53eb9dfcc924376a8aeb92070fb295254421c3bed58aeba701"
+    },
+    {
+      "id": "rc-rotor-mass-balance-mass-radius-conversion",
+      "category": "development",
+      "sha256": "590ad5781339f2da9bd7a26ee32a9a3889a348b86c9c567e56465b70cd6fa618"
+    },
+    {
+      "id": "rc-rotor-mass-balance-multi-speed-balance-tradeoff",
+      "category": "development",
+      "sha256": "0906b39b2098b06dbf28c2c5ef295854fd3c2b4964c6cc6e9ed69ff162bfa891"
+    },
+    {
+      "id": "rc-rotor-mass-balance-phase-wrap-correction",
+      "category": "development",
+      "sha256": "b294a7157c29c73bc999d8016519d7952e28d5e471dd93e3e104bc28c1e9df29"
+    },
+    {
+      "id": "rc-rotor-mass-balance-residual-unbalance-check",
+      "category": "development",
+      "sha256": "6db880fa5d0f487985c9d3556ce2b0aad9f869bad4685545485ae036e033fd8a"
+    },
+    {
+      "id": "rc-rotor-mass-balance-single-plane-influence",
+      "category": "development",
+      "sha256": "384d4e61222e51e6058410870757c8964b9a9ce589afd64e796e36b0c331499b"
+    },
+    {
+      "id": "rc-rotor-mass-balance-soft-bearing-rig-identification",
+      "category": "development",
+      "sha256": "5af0c94dd1941b1d507d4d3b355820226afdf2259fb34d8df8d78bb3262c6897"
+    },
+    {
+      "id": "rc-rotor-mass-balance-trial-mass-selection",
+      "category": "development",
+      "sha256": "21b0b7804737bed88088836b2865852379d9473a59b11cd1a43b1797619335f1"
+    },
+    {
+      "id": "rc-rotor-mass-balance-trial-repeatability-test",
+      "category": "development",
+      "sha256": "27a73956e246b1570b0b1f186c386c2d825b9a0c875c01e5772890dbc2b1393c"
+    },
+    {
+      "id": "rc-rotor-mass-balance-two-plane-coupling",
+      "category": "development",
+      "sha256": "8a69af7f3787a90d4f445e993110151262210128a6e1b21b64c9ce64d09e9e68"
+    },
+    {
+      "id": "rc-rust-protocols-async-lock-order",
+      "category": "development",
+      "sha256": "fb6310ba710262aacf5e02b1769abf6c610f0a851b9145709ae6988bfc611e7c"
+    },
+    {
+      "id": "rc-rust-protocols-backpressure-channel-budget",
+      "category": "development",
+      "sha256": "6bc0b88ce64e5d9c3a2c2b08426ec89a5fdaa3a1bc0d1fdb536ed70cb793a61a"
+    },
+    {
+      "id": "rc-rust-protocols-cross-platform-socket-tests",
+      "category": "development",
+      "sha256": "708e402e8f56d547eebb362010e1a77ebfe9b0850796b695007550e8df0d5f02"
+    },
+    {
+      "id": "rc-rust-protocols-framed-codec-bounds",
+      "category": "development",
+      "sha256": "27cddbf1eca5c87dd927ddf3f4c64bad1655a3788239de6933c6eb91de0fba81"
+    },
+    {
+      "id": "rc-rust-protocols-graceful-shutdown-drain",
+      "category": "development",
+      "sha256": "ce02401f59655caca025ba99341f9df06766b228ebe30760872d1037a07ee2db"
+    },
+    {
+      "id": "rc-rust-protocols-latency-tail-profiling",
+      "category": "development",
+      "sha256": "44185337544fd2d913590489d971d4ec891f079cff9e3524ac8f2d407327b2a4"
+    },
+    {
+      "id": "rc-rust-protocols-rate-limit-admission-control",
+      "category": "development",
+      "sha256": "7b1c86b624a1653422b51b05940b36f31a37e7e1c8e1a8ea02f35d04a3705725"
+    },
+    {
+      "id": "rc-rust-protocols-reconnect-state-replay",
+      "category": "development",
+      "sha256": "708cc954251808b524a87ce2cdad7694b66957bbab0b5ed65dfb3cf620d60fcf"
+    },
+    {
+      "id": "rc-rust-protocols-rust-ffi-message-boundary",
+      "category": "development",
+      "sha256": "d517d27d43e869aab9cea3d4cbf7fe7383ed4171aa5c66ece9f5519484525499"
+    },
+    {
+      "id": "rc-rust-protocols-serde-fuzz-corpus",
+      "category": "development",
+      "sha256": "6688e4dbcd00cb56d1ca2048797fa6b0556e48a86e32b8715597059ae076211f"
+    },
+    {
+      "id": "rc-rust-protocols-serde-version-compatibility",
+      "category": "development",
+      "sha256": "3b5f9520f3596a1969a7f1499bb15f7246d3fe25094524c0a7c79399d54ddc73"
+    },
+    {
+      "id": "rc-rust-protocols-structured-error-taxonomy",
+      "category": "development",
+      "sha256": "99b1d5c1b4fe191ca0857677093c93be5546e8953722af3a7481a992f4188e82"
+    },
+    {
+      "id": "rc-rust-protocols-tls-peer-validation",
+      "category": "development",
+      "sha256": "936b295efced5ff3673f518d2862c7e0f89c6314aeb7a9488c8e2994fb9ca653"
+    },
+    {
+      "id": "rc-rust-protocols-tokio-cancellation-safety",
+      "category": "development",
+      "sha256": "c5b647f6c3e81f9aa37961e4c22d619efd396d83580a856afe11dd6a5d3f3a67"
+    },
+    {
+      "id": "rc-rust-protocols-trace-context-propagation",
+      "category": "development",
+      "sha256": "84048c79c0bee41b6335f25efb97cb69209da79f3b2d5b627951fbba35595351"
+    },
+    {
+      "id": "rc-rust-protocols-zero-copy-lifetime-audit",
+      "category": "development",
+      "sha256": "3edf674a0abae5ac385a1441ee7ad0d6c0f8ff5261ac298431898fa03cd4ed0b"
+    },
+    {
+      "id": "rc-safety-assurance-change-impact-matrix",
+      "category": "testing",
+      "sha256": "39882c3064af49373649aaa2dca102cd8869da0e2d32b0810aac5a59a36db506"
+    },
+    {
+      "id": "rc-safety-assurance-emergency-stop-interface",
+      "category": "testing",
+      "sha256": "b743b48bdc44ca2a49bef4688ca1cd2eaafb8fe01feeea3e8b191658633537ce"
+    },
+    {
+      "id": "rc-safety-assurance-fault-injection-boundary",
+      "category": "testing",
+      "sha256": "1074e4f7b3f7820f6e2604f37515945d029a1996c61cc79ab0fdb80794f1a1c9"
+    },
+    {
+      "id": "rc-safety-assurance-fault-tree-decomposition",
+      "category": "testing",
+      "sha256": "093165508a319073181e11f367cd2234b8c2ceffda8afa3998430f56c2351940"
+    },
+    {
+      "id": "rc-safety-assurance-fmea-detection-coverage",
+      "category": "testing",
+      "sha256": "a68546501db973cf9e30372c8a3ca0e3e4fa802e3ca9f9e9edfaafbeae7debdd"
+    },
+    {
+      "id": "rc-safety-assurance-hazard-register-traceability",
+      "category": "testing",
+      "sha256": "d3c43df5c4a912ab153cde75d509cdc73766b7e084e60bd01aef21663bd3e37b"
+    },
+    {
+      "id": "rc-safety-assurance-interlock-state-machine",
+      "category": "testing",
+      "sha256": "0d14e37d572e404b35eb8210f521a30114b4a8360e63b24385a4c69f0d70528a"
+    },
+    {
+      "id": "rc-safety-assurance-manual-override-authorization",
+      "category": "testing",
+      "sha256": "bc30f1cbd0be3497bb8f8cbf8ed4d68648bf99f86d0fa80755c161eae5dbcd3e"
+    },
+    {
+      "id": "rc-safety-assurance-release-safety-gate",
+      "category": "testing",
+      "sha256": "77501a09e2c53b687c2788d377d86711cf2c9e5ae7e70dd204b2baef1c310e61"
+    },
+    {
+      "id": "rc-safety-assurance-residual-risk-approval",
+      "category": "testing",
+      "sha256": "a20a3e2ccc9664263d05db1d678014511a316c59cd95bed34884db88c728654e"
+    },
+    {
+      "id": "rc-safety-assurance-safe-state-definition",
+      "category": "testing",
+      "sha256": "d1dfad3db7709622397632336cd18bfa031014ad3973dccdb4afeea56bdec91d"
+    },
+    {
+      "id": "rc-safety-assurance-safety-event-telemetry",
+      "category": "testing",
+      "sha256": "dc51fe7a3f455672769b150b1a8cf22c6c3f7dbaa3cc4112ee8f561bd85035dc"
+    },
+    {
+      "id": "rc-safety-assurance-software-assurance-argument",
+      "category": "testing",
+      "sha256": "c10f1986bb3a7a273c5aa1267d442dbb542add2cfdc398449044ee89bffc4014"
+    },
+    {
+      "id": "rc-safety-assurance-startup-self-test-coverage",
+      "category": "testing",
+      "sha256": "641b6d76627d79560a1ff78335882096df497e3bf5a1641d5009d65a8743d4f5"
+    },
+    {
+      "id": "rc-safety-assurance-test-independence-review",
+      "category": "testing",
+      "sha256": "a011f5e7df2bcc874a45844e30319d9397dfb99c36d58586d7cc195bf2c491df"
+    },
+    {
+      "id": "rc-safety-assurance-watchdog-safety-case",
+      "category": "testing",
+      "sha256": "e3759645fe96eabca4f0244e6397dab8e5b0b21b572b1ec0b7e1512a1faa8682"
+    },
+    {
+      "id": "rc-sensor-acquisition-accelerometer-sensitivity",
+      "category": "development",
+      "sha256": "ec3eda1c1e76d4067cc01f878aef9816ac808966f0f866d47d8070e71886160c"
+    },
+    {
+      "id": "rc-sensor-acquisition-adc-quantization-budget",
+      "category": "development",
+      "sha256": "0db309b13720e683f6ed6a4d17761788091d2eebf55c27f4e165b6213fb1d45b"
+    },
+    {
+      "id": "rc-sensor-acquisition-anti-alias-filter-choice",
+      "category": "development",
+      "sha256": "699f7d5ef4f827164eefa1e801322cf3468610c062526164aa3b26cd6b7256bc"
+    },
+    {
+      "id": "rc-sensor-acquisition-bridge-sensor-conditioning",
+      "category": "development",
+      "sha256": "1cdca89bfb3abd88e100814ad66027cc5f088cac5b006b8fa785a65049c473c0"
+    },
+    {
+      "id": "rc-sensor-acquisition-calibration-curve-fitting",
+      "category": "development",
+      "sha256": "531815d763a70c8dab1dd9752dbb05f2cffa99718465377b6368be7483b64820"
+    },
+    {
+      "id": "rc-sensor-acquisition-channel-skew-compensation",
+      "category": "development",
+      "sha256": "ab71adfb27a43c603f32aa8361cb709a1ba28f7a0382b4c473f41d5c86b3ad78"
+    },
+    {
+      "id": "rc-sensor-acquisition-differential-input-cmr",
+      "category": "development",
+      "sha256": "728bb068bcfd07cb28e0585372707741e0eec08ba0cbf38a43370354a5eff588"
+    },
+    {
+      "id": "rc-sensor-acquisition-dma-sample-integrity",
+      "category": "development",
+      "sha256": "0f09d644601f7a8adb7ffce4a259c12e4343dba3477fa0b36078d86005097af5"
+    },
+    {
+      "id": "rc-sensor-acquisition-measurement-metadata-schema",
+      "category": "development",
+      "sha256": "66dab1c60e1f560b30007bf301f1ed3784e8f77246507918f68f507b71f5e143"
+    },
+    {
+      "id": "rc-sensor-acquisition-noise-floor-characterization",
+      "category": "development",
+      "sha256": "1fa16bcb48d3e4f846f8ba66e423e620072c5d04210af0df6fcf5f55a8321821"
+    },
+    {
+      "id": "rc-sensor-acquisition-oversampling-decimation",
+      "category": "development",
+      "sha256": "5650e3178a5d9d8d166b35e8d3661f6f145e87625c6d170e94b8c3d9c3193f28"
+    },
+    {
+      "id": "rc-sensor-acquisition-reference-voltage-drift",
+      "category": "development",
+      "sha256": "f370cac4c0367fc464b69fdfbb97bfcc01a1ff5761c3c864f8d2cc1c9180756b"
+    },
+    {
+      "id": "rc-sensor-acquisition-sensor-excitation-stability",
+      "category": "development",
+      "sha256": "b305602ead5981e4810fe8cee6a6e0e6ec0492b2debcf7a6d9ee3d079d4a71e0"
+    },
+    {
+      "id": "rc-sensor-acquisition-synchronous-sampling-phase",
+      "category": "development",
+      "sha256": "aa4cd84e7b093c47414a9abee6fe748a114094957b4e18bfe4a9198aeb62c278"
+    },
+    {
+      "id": "rc-sensor-acquisition-timebase-oscillator-error",
+      "category": "development",
+      "sha256": "d21fe052d3ca26ac202f72fefda3f836a3b74934e721954c3be8b975c6e857ac"
+    },
+    {
+      "id": "rc-sensor-acquisition-transducer-open-wire",
+      "category": "development",
+      "sha256": "0f3811ded12f2e0a45fb1c57a6c2578a95631d17ff975918184ed6feb9ea3f22"
+    },
+    {
+      "id": "rc-timeseries-telemetry-continuous-query-replay",
+      "category": "data-ai",
+      "sha256": "53ba264f34dda35aab86f2955be5eb3407f68223420aea390a9f135ff1952cee"
+    },
+    {
+      "id": "rc-timeseries-telemetry-data-quality-quarantine",
+      "category": "data-ai",
+      "sha256": "fb3bca47fa4652be4d432a710ede2d7a4c4995de5663ecd778304310bbad1bf3"
+    },
+    {
+      "id": "rc-timeseries-telemetry-device-schema-evolution",
+      "category": "data-ai",
+      "sha256": "41fca538c2c97a4e2b2f00356acf92d3bf56f964659a3c11a56b761b9e21d938"
+    },
+    {
+      "id": "rc-timeseries-telemetry-downsample-aggregation",
+      "category": "data-ai",
+      "sha256": "4ad193b4377a6143e9e0509fd014d1dd9c914ff37c5fa37ac784f58c493eadc6"
+    },
+    {
+      "id": "rc-timeseries-telemetry-event-time-vs-ingest",
+      "category": "data-ai",
+      "sha256": "2b4f7d430bbb5212eaebb7573fdc953fb0e816da20e096ad24c93ab813236066"
+    },
+    {
+      "id": "rc-timeseries-telemetry-high-cardinality-labels",
+      "category": "data-ai",
+      "sha256": "47ca673f5577641de0d1b278bcf44565dfd3eb83e18fb94a3080918b5fdcd67a"
+    },
+    {
+      "id": "rc-timeseries-telemetry-historical-correction-audit",
+      "category": "data-ai",
+      "sha256": "c1837a021e7c7ad6884b5018cd5c7faef177f8d2a5eca38f9b717df1968b9f16"
+    },
+    {
+      "id": "rc-timeseries-telemetry-late-event-watermarks",
+      "category": "data-ai",
+      "sha256": "194be44ed247872a6612f4aa7efa595afa1725d3c434130a03c7a9c78a0437a5"
+    },
+    {
+      "id": "rc-timeseries-telemetry-out-of-order-upsert",
+      "category": "data-ai",
+      "sha256": "c4381748bf1357fc992208d3c94cbb72a993c28943382a94253bcbdc56acdc25"
+    },
+    {
+      "id": "rc-timeseries-telemetry-query-latency-budget",
+      "category": "data-ai",
+      "sha256": "047569b8b4935326ab858dd0a08df9124c5e3677c55d3dda81cf648d18f243ee"
+    },
+    {
+      "id": "rc-timeseries-telemetry-raw-to-derived-lineage",
+      "category": "data-ai",
+      "sha256": "247ce70a9d209e2f69fb084673615d1529b7f889bd30de73186eda4e002c4e40"
+    },
+    {
+      "id": "rc-timeseries-telemetry-retention-tier-rotation",
+      "category": "data-ai",
+      "sha256": "bb71da726d668cdff07b97e6aab7697c420efa1c513cda768a8095d712f26249"
+    },
+    {
+      "id": "rc-timeseries-telemetry-sensor-drift-detection",
+      "category": "data-ai",
+      "sha256": "bb3209322e65eb48df0eeba8759757d1bddb53b8fc25eff521355c51ba874837"
+    },
+    {
+      "id": "rc-timeseries-telemetry-sparse-series-display",
+      "category": "data-ai",
+      "sha256": "8bbc044f4e14f05098bef269f5c4c70e482db38501074a8f68cf10930a931d94"
+    },
+    {
+      "id": "rc-timeseries-telemetry-time-bucket-boundary",
+      "category": "data-ai",
+      "sha256": "8922fc71baf51529a0d5efb02ccd3a0282a49daeaa763a11b76dd1e3243fbcb1"
+    },
+    {
+      "id": "rc-timeseries-telemetry-timestamp-precision-storage",
+      "category": "data-ai",
+      "sha256": "b556a547174adbac2492bf414750762fbb8d15aa5ce6a1544a8a673791dc3e9e"
+    }
+  ]
+}

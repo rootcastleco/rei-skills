@@ -1,0 +1,90 @@
+# REI original skill expansion — technical briefs 03/05
+@machine-vibration|Machine Vibration Analysis|data-ai|critical|accelerometer waveforms, tachometer pulses, FFT spectra and machine operating logs|millimeters per second, meters per second squared, hertz and RPM|repeatable machine baseline at matched operating point and calibrated reference instrument|sensor mounting resonance, aliasing and speed drift|Do not infer mechanical fault from a single spectrum without speed, sensor transfer and operating context.
+order-tracked-spectrum: Resample vibration against shaft angle and compare rotating orders across changing RPM.
+envelope-bearing-features: Extract envelope bands with anti-alias filtering and compare known bearing geometry frequencies.
+axial-radial-coupling: Measure orthogonal channels to separate axial excitation from radial unbalance signatures.
+fft-window-leakage: Compare spectral leakage across window and segment choices without misreporting amplitude normalization.
+tachometer-dropout: Detect missed pulses and reject corrupted order estimates during acceleration and deceleration.
+sampling-alias-bound: Verify acquisition bandwidth, analogue anti-alias filter and Nyquist margin before diagnosis.
+sensor-mounting-bias: Compare magnetic, threaded and handheld transducer mounting transfer characteristics under safe conditions.
+acceleration-to-velocity: Convert acceleration spectra to velocity without singular integration near zero frequency.
+phase-coherence-review: Estimate stable cross-channel phase and coherence before assigning a mechanical fault angle.
+bearing-defect-sidebands: Verify defect-frequency harmonics and speed-dependent sidebands against geometry uncertainty.
+waveform-impact-events: Detect transient impacts while separating ADC clipping and electromagnetic impulses.
+machine-running-speed: Cross-check tachometer speed against dominant rotating-order peaks and nameplate expectations.
+thermal-vibration-correlation: Align bearing temperature and vibration changes using timestamp uncertainty and load context.
+spectrum-baseline-comparison: Normalize amplitude bands across comparable speed and load before computing change indicators.
+sensor-calibration-chain: Trace accelerometer sensitivity, cable conditioning and acquisition gain into physical units.
+alarm-threshold-validation: Define alert limits from repeated baseline variability and consequence-based review gates.
+
+@rotor-mass-balance|Rotor Mass Balancing|development|critical|1X vibration amplitudes, phase angles, trial masses, rotor geometry and bearing conditions|grams, milligrams, degrees, RPM and millimeters|repeatable baseline and verified trial-mass response at a declared speed|phase inversion, insufficient response and unsafe test-mass attachment|Do not command rotor spin or install mass without trained personnel and machine guarding.
+single-plane-influence: Derive complex influence coefficient from baseline and trial response while checking phase convention.
+two-plane-coupling: Invert the dual-plane response matrix and flag ill-conditioned corrections before rotor trials.
+trial-mass-selection: Choose trial mass from expected measurable response within independently approved safety limits.
+angle-reference-polarity: Validate keyphasor zero and rotation direction before converting phase to correction position.
+mass-radius-conversion: Convert eccentric mass between radii using moment conservation and unit-safe arithmetic.
+balance-quality-grade: Compute residual permissible unbalance from declared standard edition and rotor service conditions.
+influence-matrix-conditioning: Estimate sensitivity to sensor noise and phase uncertainty when influence columns nearly align.
+correction-location-constraints: Respect discrete blade or hole positions and available mass types in correction optimization.
+trial-repeatability-test: Quantify repeated trial response scatter to reject nonstationary measurement conditions.
+soft-bearing-rig-identification: Separate bearing-support dynamics from rotor response when selecting calibration assumptions.
+hard-bearing-rig-identification: Verify force-based transducer response and calibration against a known reference rotor.
+phase-wrap-correction: Normalize measured angles across zero-degree wrap without averaging phases arithmetically.
+balance-report-traceability: Record raw amplitudes, phases, trial mass IDs, geometry and every correction calculation step.
+residual-unbalance-check: Measure final 1X residual under unchanged speed and placement rules before acceptance.
+multi-speed-balance-tradeoff: Evaluate correction robustness across operating speeds without ignoring critical-speed proximity.
+correction-safety-review: Verify physical retention, clearance, machine energy and operator sign-off before any spin.
+
+@sensor-acquisition|Sensor Data Acquisition|development|critical|ADC traces, sensor datasheets, excitation circuits, timestamps and calibration records|volts, amperes, samples per second and engineering units|calibrated reference source and recorded end-to-end measurement uncertainty|ADC clipping, ground loops, settling delay and clock mismatch|Do not connect instruments to hazardous potentials without verified isolation and voltage ratings.
+adc-quantization-budget: Convert ADC code steps to input-referred error with gain, reference and effective-bit evidence.
+anti-alias-filter-choice: Place analogue filter corners relative to sample rate and desired signal band with phase impact noted.
+differential-input-cmr: Quantify common-mode rejection under realistic cable and sensor bias conditions.
+sensor-excitation-stability: Measure excitation drift and warm-up time before using fixed conversion constants.
+channel-skew-compensation: Estimate and compensate inter-channel timestamp skew without inventing simultaneous sampling.
+reference-voltage-drift: Map reference regulator thermal drift into final measurement uncertainty at operating extremes.
+calibration-curve-fitting: Fit linear or nonlinear calibration models with held-out points and residual diagnostics.
+transducer-open-wire: Distinguish disconnected, saturated and physically zero-valued sensors using safe diagnostics.
+oversampling-decimation: Prove effective bandwidth and noise reduction with matched prefilter and decimation design.
+dma-sample-integrity: Detect missing or duplicated DMA blocks during high-rate acquisition and queue saturation.
+synchronous-sampling-phase: Validate shared clock timing and phase alignment across simultaneous measurement channels.
+bridge-sensor-conditioning: Bound strain-gauge bridge offset, gain and common-mode swing in the instrumentation stage.
+accelerometer-sensitivity: Track IEPE or MEMS transducer scaling and bias removal into engineering units.
+timebase-oscillator-error: Quantify sampling-frequency error and drift against independently measured clock reference.
+noise-floor-characterization: Measure shorted-input and sensor-connected noise PSD without conflating environmental vibration.
+measurement-metadata-schema: Preserve channel ID, calibration revision, unit, timestamp source and quality flags with samples.
+
+@pcb-design-review|PCB Design Verification|development|critical|KiCad board files, schematics, stackup, net classes, fabrication outputs and component datasheets|millimeters, mils, volts, amperes and ohms|approved schematic netlist and manufacturer design-rule capabilities|hidden shorts, wrong connector pinout and insufficient insulation|Never assume fab-ready hardware from DRC alone; independently verify physical interfaces and supply safety.
+schematic-pcb-net-parity: Compare schematic pin-to-net mapping with routed pads and connector pin numbering before fabrication.
+power-return-loop: Identify high di/dt return paths and assess plane interruptions beneath power components.
+analog-digital-partition: Trace ADC reference, sensor ground and digital switching coupling without arbitrary split-plane dogma.
+trace-impedance-stackup: Calculate controlled impedance from confirmed dielectric and geometry rather than nominal widths alone.
+creepage-clearance-review: Check voltage-related spacing using the applicable equipment context and authoritative standard edition.
+decoupling-loop-inductance: Evaluate capacitor-via placement and loop area around fast switching device supply pins.
+connector-orientation-proof: Validate mating connector orientation from 3D and physical keyed reference before pinout release.
+esd-entry-protection: Place protection close to entry boundary with low-inductance return and functional signal integrity tests.
+thermal-via-path: Estimate heat transfer through copper and vias using measured dissipation and board thermal constraints.
+high-speed-differential-pairs: Validate pair reference, return-path continuity and skew from actual routing and stackup.
+supply-rail-margin: Check regulator dropout, sequencing, peak current and startup behavior against measured loads.
+measurement-test-points: Ensure safe access to power, reference and sensor signals without creating loading or short risks.
+ground-stitching-strategy: Quantify return-current transitions around layer changes and shielding interfaces.
+mounting-hole-clearance: Verify screw head, chassis standoff and copper clearance using actual mechanical tolerances.
+copper-pour-isolation: Recompute island copper and zone clearances after routing changes without orphaned unintended nets.
+gerber-drill-review: Cross-check fabrication layers, drill maps, board outline and polarity in an independent Gerber viewer.
+
+@electromagnetic-compat|EMC Precompliance Engineering|testing|critical|near-field scans, conducted-emission spectra, LISN readings and PCB design revisions|decibels microvolts, megahertz, amperes and millimeters|repeatable reference setup with documented probe calibration and cable arrangement|ground-loop artefacts, probe saturation and unsafe mains connection|Treat laboratory precompliance measurements as screening evidence, not certified conformity.
+conducted-emission-scans: Reproduce conducted noise peaks against defined LISN and instrument bandwidth settings.
+radiated-near-field-map: Localize dominant magnetic and electric field sources with fixed probe distance and orientation.
+common-mode-current: Measure cable-borne common-mode current and correlate peaks with board switching events.
+dc-dc-switch-harmonics: Relate regulator frequency and edges to noise spectrum without assuming a single culprit.
+ethernet-magnetics-layout: Check PHY-to-magnetics routing and chassis isolation near connector EMC entry points.
+esd-discharge-path: Document designed ESD return path and post-event functional recovery without unsafe live tests.
+shield-termination-study: Compare chassis bonding and shield connections while preserving personnel safety earth paths.
+filter-insertion-loss: Measure actual source/load impedance before trusting published differential filter attenuation.
+cable-harness-resonance: Investigate harness length and routing changes as contributors to radiated emission peaks.
+spread-spectrum-impact: Evaluate spread-spectrum switching changes against peak, average and receiver bandwidth behavior.
+pcb-revision-a-b: Hold test fixture and cable geometry constant when measuring EMC improvement between PCB revisions.
+sensor-emc-susceptibility: Inject bounded laboratory disturbances and check sensor output recovery and error flags.
+immunity-functional-monitor: Record functional state changes during disturbances without turning unsafe outputs on.
+chassis-bond-resistance: Verify mechanical bond path and contact resistance with an approved test method.
+clock-edge-noise-reduction: Compare slew-rate and termination changes against timing margin and unwanted emissions.
+emc-evidence-register: Produce measurement setup, limit source, calibration and confidence register without claiming accredited results.

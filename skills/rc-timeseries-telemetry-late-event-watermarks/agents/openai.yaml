@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Late Event Watermarks
+  short_description: Evidence-based late event watermarks checks

@@ -1,0 +1,3 @@
+interface:
+  display_name: Event Stream Processing — Partition Key Selection
+  short_description: Evidence-based partition key selection checks

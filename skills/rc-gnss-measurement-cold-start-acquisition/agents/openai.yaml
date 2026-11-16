@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Cold Start Acquisition
+  short_description: Evidence-based cold start acquisition checks

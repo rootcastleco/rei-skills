@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Update Bandwidth Throttle
+  short_description: Evidence-based update bandwidth throttle checks

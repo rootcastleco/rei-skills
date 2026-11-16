@@ -1,0 +1,3 @@
+interface:
+  display_name: Binary Forensics & Reconstruction — Static Taint Boundary
+  short_description: Evidence-based static taint boundary checks

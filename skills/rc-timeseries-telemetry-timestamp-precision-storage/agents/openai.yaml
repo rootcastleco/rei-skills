@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Timestamp Precision Storage
+  short_description: Evidence-based timestamp precision storage checks

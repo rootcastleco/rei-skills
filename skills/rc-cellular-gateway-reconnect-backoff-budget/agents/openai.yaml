@@ -1,0 +1,3 @@
+interface:
+  display_name: Cellular IoT Gateway — Reconnect Backoff Budget
+  short_description: Evidence-based reconnect backoff budget checks

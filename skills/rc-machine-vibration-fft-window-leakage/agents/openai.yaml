@@ -1,0 +1,3 @@
+interface:
+  display_name: Machine Vibration Analysis — Fft Window Leakage
+  short_description: Evidence-based fft window leakage checks

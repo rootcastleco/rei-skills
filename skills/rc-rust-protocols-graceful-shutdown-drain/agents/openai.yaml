@@ -1,0 +1,3 @@
+interface:
+  display_name: Rust Protocol Services — Graceful Shutdown Drain
+  short_description: Evidence-based graceful shutdown drain checks

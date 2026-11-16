@@ -479,7 +479,8 @@ function deriveTags(skill) {
 function detectCategory(skill, tags) {
   if (
     skill.explicitCategory &&
-    CATEGORY_RULES.some((r) => r.name === skill.explicitCategory)
+    (skill.explicitCategory === "general" ||
+      CATEGORY_RULES.some((r) => r.name === skill.explicitCategory))
   ) {
     return skill.explicitCategory;
   }

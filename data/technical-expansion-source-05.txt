@@ -1,0 +1,90 @@
+# REI original skill expansion — technical briefs 05/05
+@binary-forensics|Binary Forensics & Reconstruction|reverse-engineering|critical|user-authorized executable samples, firmware binaries, file hashes and disassembler exports|bytes, offsets, opcodes and addresses|original artifact hash and reproducible static analysis in isolated workspace|false function boundaries, packed data and misleading string references|Analyze only authorized artifacts; never bypass device access controls or execute unknown binaries outside a sandbox.
+binary-architecture-fingerprint: Infer instruction-set and endianness from headers and opcode patterns with explicit uncertainty notes.
+firmware-partition-map: Locate compression, filesystems and partition boundaries without silently changing source evidence.
+function-boundary-validation: Cross-check inferred functions with prologues, control-flow edges and independent disassemblers.
+control-flow-graph-audit: Detect indirect branches and exception paths missing from a reconstructed call graph.
+memory-mapped-registers: Correlate binary constants with verified SoC reference manuals before assigning peripheral roles.
+strings-reference-triage: Distinguish dead strings from reachable code paths through cross-reference evidence.
+protocol-frame-recovery: Reconstruct frame parsers from bounds checks and constants using known input-output captures.
+algorithm-numeric-parity: Compare recreated arithmetic with original outputs across edge cases and fixed-point overflow.
+binary-diff-provenance: Match code regions across firmware versions while separating compiler noise from functional changes.
+decompiler-type-repair: Validate pointer widths and calling conventions using observable dataflow before renaming symbols.
+bootloader-handoff-map: Trace boot stage transitions and memory remapping with authoritative reset-state evidence.
+static-taint-boundary: Track external input buffers to sensitive sinks without equating possible paths with proven exploits.
+unpacked-image-hash-chain: Record every extraction transform and resulting checksum to preserve investigation provenance.
+indirect-call-targets: Bound function-pointer targets using observed tables and memory relocation constraints.
+checksum-routine-identify: Identify candidate integrity algorithms from polynomial and table signatures with test vectors.
+reconstruction-coverage-map: Classify functions as proven equivalent, behaviorally approximated or not reconstructed.
+
+@hardware-in-loop|Hardware-in-the-Loop Testing|testing|critical|hardware test fixtures, firmware builds, I/O pin maps, captured waveforms and test protocols|volts, milliseconds, ohms and actuator cycles|golden fixture and approved safe-state behavior from device requirements|unsafe actuation, fixture wiring errors and intermittent reset|Use isolated fixtures; never energize high-power equipment without approved safety controls and independent wiring checks.
+fixture-pin-continuity: Confirm fixture pin mapping and contact resistance against the approved test-net matrix.
+sensor-fault-injection: Simulate open, short and out-of-range sensor states within verified electrical limits.
+power-cycle-endurance: Exercise controlled power loss and restart sequences while preserving flash consistency evidence.
+can-traffic-replay: Replay an approved CAN fixture capture and verify ECU responses without transmitting on public vehicle networks.
+uart-frame-loss: Inject partial serial frames and noise to test parser recovery without unbounded CPU consumption.
+watchdog-hang-recovery: Trigger isolated task stalls and confirm watchdog reset reason and safe output states.
+relay-output-interlock: Validate that mutually exclusive outputs cannot energize simultaneously under fault conditions.
+adc-calibration-fixture: Feed known reference voltages and inspect channel cross-talk and gain error across range.
+motor-speed-dummy-load: Simulate RPM and load changes with a safe substitute instead of an unguarded machine.
+overtemperature-shutdown: Inject controlled thermal input and verify shutdown latching and reset criteria.
+sensor-timing-skew: Stress inter-channel skew and validate time-alignment detection under concurrent sampling.
+brownout-edge-sequences: Probe supply dips near reset thresholds without exposing connected field equipment.
+bootloader-fallback: Verify safe image fallback after intentionally corrupted update staging in a recovery fixture.
+network-link-flap: Disconnect simulated gateway links and verify queue persistence and bounded reconnection behavior.
+gpio-startup-glitch: Capture startup GPIO behavior before firmware control initializes and compare to safe design states.
+hil-evidence-automation: Produce reproducible logs, equipment versions, fixture revision and pass-fail artifacts per test case.
+
+@safety-assurance|Safety Assurance Engineering|testing|critical|hazard logs, system requirements, interface specifications, failure analysis and verification records|failure rates, severity classes, response milliseconds and coverage|approved safety case with allocated requirements and witnessed test evidence|unhandled hazards, undocumented assumptions and ambiguous safe state|Do not assert certification, SIL or functional safety compliance without applicable authority and accredited evidence.
+hazard-register-traceability: Link each identified hazard to mitigations, software requirements and independent verification results.
+safe-state-definition: Define observable safe outputs and recovery conditions for power, sensor and communication failures.
+fault-tree-decomposition: Build event logic from top-level hazard down to verifiable component failure hypotheses.
+fmea-detection-coverage: Evaluate severity and detection rationale for each relevant component failure mode without arbitrary scores.
+emergency-stop-interface: Verify precedence of emergency stop input over application commands and restart behavior.
+interlock-state-machine: Enumerate mutually exclusive transitions and test that invalid states cannot energize actuators.
+software-assurance-argument: Tie software architecture, tests and unresolved defects to specific safety claims and evidence IDs.
+test-independence-review: Identify when the same implementation team designed and accepted its own safety-critical tests.
+watchdog-safety-case: Demonstrate watchdog coverage limits and fail-safe output behavior during recovery.
+manual-override-authorization: Define who can request overrides and which interlocks must remain non-bypassable.
+fault-injection-boundary: Select fault injection locations and conditions that prove mitigations without exposing personnel.
+residual-risk-approval: Record residual hazards, owners and formal approval rather than silently marking them accepted.
+change-impact-matrix: Trace firmware or PCB changes into affected requirements, hazard controls and regression tests.
+safety-event-telemetry: Capture critical state changes with ordering and retention sufficient for incident reconstruction.
+startup-self-test-coverage: Prove which power-on checks execute and which hardware faults remain undetected.
+release-safety-gate: Block unsafe deployment when required hazard mitigations or verification evidence are incomplete.
+
+@optimization-experiments|Applied Optimization Experiments|data-ai|safe|engineering objective models, bounds, measured datasets and solver logs|dimensioned variables, objective evaluations, residuals and CPU seconds|independent feasible baseline and fixed random seed experiments|unit mismatch, violated constraints and deceptive solver convergence|Optimization candidates are proposals until independently verified against real constraints and measurement uncertainty.
+objective-dimension-check: Verify that combined objective terms have compatible units or explicit nondimensional scaling.
+constraint-feasibility-audit: Recompute every inequality and equality residual outside the candidate solver.
+decision-variable-scaling: Normalize variables and gradients so numerical conditioning does not dominate algorithm behavior.
+multiobjective-pareto-review: Check nondominance of reported cost-performance candidates under reproducible objective evaluations.
+gradient-finite-difference: Compare analytical or autodiff gradients with scaled central difference probes.
+solver-convergence-criteria: Distinguish small step, low gradient and true constrained stationarity with explicit tolerances.
+noisy-evaluation-budget: Allocate evaluation counts for replicated measurements and confidence interval comparisons.
+surrogate-model-calibration: Evaluate emulator fit on held-out designs before selecting a Bayesian acquisition rule.
+mixed-integer-rounding: Verify discrete feasibility after relaxations and prevent silent invalid integer assignments.
+trust-region-step: Check actual versus predicted objective reduction and update region radius conservatively.
+sensitivity-finite-change: Evaluate engineering sensitivity around operating points with realistic parameter perturbations.
+robust-scenario-set: Compare candidate feasibility across declared worst-case and nominal uncertainty scenarios.
+experimental-design-spacefill: Choose space-filling points within valid operating bounds without extrapolating outside domain.
+stochastic-seed-variance: Report across-seed solver performance and failure rates instead of the best single run.
+performance-profile-benchmark: Build comparable solver performance profiles using identical stopping and evaluation budgets.
+optimization-result-audit: Produce independent reproducibility bundle with inputs, version, solver output and feasibility proof.
+
+@reproducible-research|Reproducible Engineering Research|general|safe|research hypotheses, datasets, notebooks, measurement protocols and source references|experiment-specific SI units, confidence intervals, seeds and file hashes|predeclared hypothesis and independently reproducible reference result|selection bias, p-hacking, measurement drift and undocumented exclusions|Never fabricate measurements, sources, confidence intervals or human-subject approval status.
+research-question-operationalize: Convert an engineering idea into testable variables, falsification criteria and measurable outcomes.
+dataset-provenance-register: Capture dataset lineage, licensing, collection conditions and checksum before processing.
+preprocessing-leakage-review: Detect target leakage and train-test contamination in temporal and grouped engineering data.
+experiment-seed-control: Record random-state initialization across libraries and hardware nondeterminism caveats.
+measurement-uncertainty-budget: Separate calibration, repeatability and model uncertainty with applicable unit conversions.
+ablation-baseline-design: Isolate component effects against a fixed baseline rather than stacking unexplained improvements.
+hypothesis-preregistration: State primary outcomes, exclusion rules and analysis thresholds before observing results.
+replication-package-layout: Organize data references, environment lockfiles and execution steps for independent recreation.
+source-to-claim-audit: Map each literature-based assertion to an identifiable primary source and quoted evidence scope.
+statistical-power-assumptions: Estimate detectable effect under explicit variance and sample-size assumptions.
+negative-result-reporting: Preserve failed and null experiments with instrumentation and stopping-rule context.
+data-visualization-repro: Generate figures from versioned tables and scripts with units, scales and uncertainty labels.
+software-hardware-parity: Record platform and device conditions when comparing simulation with physical experiments.
+missing-data-mechanism: Analyze whether missing observations reflect device dropout, experimental design or outcome bias.
+publication-integrity-review: Check citations, originality, authorship disclosure obligations and reproducible methods sections.
+results-residual-validation: Independently recompute reported results, residuals and boundary metrics before publication.

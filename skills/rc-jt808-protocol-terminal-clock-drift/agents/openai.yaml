@@ -1,0 +1,3 @@
+interface:
+  display_name: JT808 Device Protocol — Terminal Clock Drift
+  short_description: Evidence-based terminal clock drift checks

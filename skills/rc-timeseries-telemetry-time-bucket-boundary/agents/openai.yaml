@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Time Bucket Boundary
+  short_description: Evidence-based time bucket boundary checks

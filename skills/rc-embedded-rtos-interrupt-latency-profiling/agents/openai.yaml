@@ -1,0 +1,3 @@
+interface:
+  display_name: Embedded RTOS Engineering — Interrupt Latency Profiling
+  short_description: Evidence-based interrupt latency profiling checks

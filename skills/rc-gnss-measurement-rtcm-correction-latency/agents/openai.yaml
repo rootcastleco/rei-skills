@@ -1,0 +1,3 @@
+interface:
+  display_name: GNSS Measurement — Rtcm Correction Latency
+  short_description: Evidence-based rtcm correction latency checks

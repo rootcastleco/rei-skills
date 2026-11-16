@@ -1,6 +1,6 @@
 # 🏆 Quality Bar & Validation Standards
 
-To ensure **REI Skills** remains a trusted, engineering-grade skill layer for AI agents, every skill in the catalog (`895` skills) is validated against strict structural, metadata, and safety gates.
+To ensure **REI Skills** remains a trusted, engineering-grade skill layer for AI agents, every skill in the catalog (`1423` skills) is validated against strict structural, metadata, and safety gates.
 
 ---
 

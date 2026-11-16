@@ -9,7 +9,7 @@ Answers to common questions about **REI Skills** and the **REI Reverse Engineeri
 ### What are "skills" in REI Skills?
 Skills are structured `SKILL.md` playbooks that give AI coding assistants (Claude Code, Codex CLI, Gemini CLI, Cursor, Antigravity, OpenCode) domain-specific workflows, architectural constraints, and tool usage rules on demand.
 
-### Do I have to install all 895 skills?
+### Do I have to install all 1423 skills?
 **No.** With the upgraded REI Skill Manager CLI, you can install individual skills or curated role bundles selectively:
 ```bash
 npx rei-skills add brainstorming --cursor

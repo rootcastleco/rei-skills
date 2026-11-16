@@ -1,0 +1,3 @@
+interface:
+  display_name: Cellular IoT Gateway — Signal Quality Rsrp Sinr
+  short_description: Evidence-based signal quality rsrp sinr checks

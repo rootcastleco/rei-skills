@@ -1,0 +1,3 @@
+interface:
+  display_name: Hardware-in-the-Loop Testing — Overtemperature Shutdown
+  short_description: Evidence-based overtemperature shutdown checks

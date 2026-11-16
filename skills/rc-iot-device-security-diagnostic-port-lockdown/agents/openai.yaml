@@ -1,0 +1,3 @@
+interface:
+  display_name: IoT Device Security — Diagnostic Port Lockdown
+  short_description: Evidence-based diagnostic port lockdown checks

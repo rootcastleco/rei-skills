@@ -1,0 +1,3 @@
+interface:
+  display_name: Firmware OTA Lifecycle — Power Loss Injection
+  short_description: Evidence-based power loss injection checks

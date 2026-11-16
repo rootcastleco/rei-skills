@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Out Of Order Upsert
+  short_description: Evidence-based out of order upsert checks

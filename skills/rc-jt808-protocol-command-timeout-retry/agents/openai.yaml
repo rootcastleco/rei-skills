@@ -1,0 +1,3 @@
+interface:
+  display_name: JT808 Device Protocol — Command Timeout Retry
+  short_description: Evidence-based command timeout retry checks

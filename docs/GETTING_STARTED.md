@@ -29,7 +29,7 @@ npx rei-skills add rei-rea --claude
 npx rei-skills add systematic-debugging
 ```
 
-### Option B — Full Catalog Install (895 Skills)
+### Option B — Full Catalog Install (1423 Skills)
 
 ```bash
 npx rei-skills                 # Default: ~/.gemini/antigravity/skills

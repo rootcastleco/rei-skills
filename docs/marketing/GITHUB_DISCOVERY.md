@@ -8,7 +8,7 @@ Use these exact settings in the `rootcastleco/rei-skills` GitHub repository **Ab
 
 - **Description (158 chars):**
   ```text
-  The engineering-grade skill layer for AI agents. 895 validated skills, role bundles, workflows & REI Reverse Engineering (REA) for Claude Code, Codex & Cursor.
+  The engineering-grade skill layer for AI agents. 1423 validated skills, role bundles, workflows & REI Reverse Engineering (REA) for Claude Code, Codex & Cursor.
   ```
 - **Website:**
   ```text
@@ -52,7 +52,7 @@ Maintainers with admin access can apply the description, homepage, and topics in
 
 ```bash
 gh repo edit rootcastleco/rei-skills \
-  --description "The engineering-grade skill layer for AI agents. 895 validated skills, role bundles, workflows & REI Reverse Engineering (REA) for Claude Code, Codex & Cursor." \
+  --description "The engineering-grade skill layer for AI agents. 1423 validated skills, role bundles, workflows & REI Reverse Engineering (REA) for Claude Code, Codex & Cursor." \
   --homepage "https://rootcastle.com" \
   --add-topic ai-agents,agent-skills,claude-code,codex,gemini-cli,cursor,mcp,model-context-protocol,reverse-engineering,binary-analysis,cybersecurity,digital-forensics,firmware-analysis,developer-tools,prompt-engineering,llm-tools,opencode,antigravity,software-architecture,rootcastle
 ```

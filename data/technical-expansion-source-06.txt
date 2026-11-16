@@ -1,0 +1,145 @@
+# Rootcastle CAD & Electronics technical expansion (official Autodesk Fusion + KiCad sources, November 2026)
+# Format: @domain|title|category|risk|inputs|units|baseline|hazards|operational boundary
+@circuit-architecture|Electronic Circuit Architecture|development|critical|component datasheets, load profiles, schematic files, power trees, input requirements and wiring diagrams|volts, amperes, ohms, watts, hertz and degrees Celsius|approved electrical requirements and a measured or calculated reference circuit|overcurrent, incompatible logic, unstable feedback and wiring reversals|Do not connect unverified electronics to vehicles, mains or machinery; approve voltage ratings, isolation and safe failure states before energizing.
+power-tree-budgeting: Sum worst-case load and startup currents per supply rail, then check upstream regulator headroom and dissipation.
+ldo-dropout-analysis: Validate regulator dropout over battery voltage, transient load and junction temperature from specified data.
+buck-converter-selection: Size the inductor, switch current and input capacitance against ripple and worst-case transients.
+boost-startup-sequencing: Check startup current limiting and output overshoot before connecting sensitive downstream loads.
+analog-front-end-bias: Calculate sensor source impedance, input bias current and offset propagation for the selected amplifier.
+opamp-stability-margin: Evaluate closed-loop gain and output capacitive loading against amplifier bandwidth and phase-margin evidence.
+adc-reference-network: Bound voltage reference noise, input settling and source impedance against ADC sample-and-hold timing.
+mosfet-gate-drive: Calculate gate charge, transition loss and driver peak current across supply and thermal conditions.
+reverse-polarity-protection: Compare diode and ideal-MOSFET protections for reverse connection, inrush and power loss.
+isolated-interface-barrier: Establish isolation creepage, rated working voltage and return paths from the required equipment environment.
+rs485-bus-termination: Check differential termination, fail-safe bias and ground reference across cable length and node count.
+can-transceiver-protection: Review CAN common-mode limits, bus protection and termination against anticipated wiring faults.
+sensor-bridge-conditioning: Size instrumentation amplifier gain and common-mode window for a ratiometric bridge sensor.
+esd-tvs-coordination: Select protection standoff, clamp voltage and parasitic capacitance against component absolute maximums.
+connector-pinout-assurance: Compare electrical net names with physical mating connector orientation and alternate part drawings.
+design-power-derating: Compute component power, voltage and temperature derating with documented environmental assumptions.
+
+@circuit-simulation|Circuit Simulation and Verification|testing|safe|SPICE netlists, KiCad schematics, component models, oscilloscope data and supply specifications|volts, amperes, seconds, hertz, degrees and decibels|reproducible nominal circuit simulation with verified component model assumptions|convergence failure, idealized sources, omitted parasitics and model-validity gaps|Simulation alone does not certify safety, EMC or physical circuit operation; measure the circuit before production use.
+spice-operating-point: Solve DC node voltages and branch currents, cross-checking bias and device operating regions.
+spice-transient-startup: Simulate startup, load steps and source droops while checking numerical step and initial-condition sensitivity.
+spice-small-signal-ac: Generate gain and phase over frequency, validating model linearization and excitation assumptions.
+spice-noise-budget: Integrate output-referred or input-referred noise over the specified bandwidth using realistic model parameters.
+spice-monte-carlo: Explore component tolerance distributions with fixed random seeds and report yield confidence intervals.
+worst-case-corner-sweep: Sweep supply, temperature and nominal device extremes with traceable parameter ranges.
+opamp-loop-gain-test: Evaluate loop gain or injection-method evidence for feedback stability without relying on closed-loop peaking alone.
+switching-regulator-transient: Compare overshoot, ripple and recovery under worst-case current step and load behavior.
+adc-sampling-settling: Simulate source RC and hold capacitor charging to the required conversion error bound.
+esd-pulse-model-limits: Distinguish behavioral transient circuit stress models from laboratory IEC immunity evidence.
+spice-model-library-audit: Check semiconductor model provenance, supported simulator syntax and unknown device subcircuits.
+sensitivity-component-rank: Rank output sensitivity to component variation using parameter sweeps and dimensional scaling.
+filter-transfer-verification: Compare hand-derived transfer function poles and zeros against simulated Bode response.
+thermal-electrical-iterate: Recalculate temperature-dependent conduction loss and junction temperature with explicit heat-path assumptions.
+simulation-to-bench-parity: Align simulated node waveforms with calibrated oscilloscope captures under identical stimulus and load.
+spice-regression-harness: Create deterministic input decks and pass-fail measurement assertions across simulator version changes.
+
+@kicad-ecad|KiCad Schematic and PCB Automation|development|critical|KiCad project schematics, PCB files, symbol libraries, footprint mappings and fabrication constraints|millimeters, volts, amperes, mils and nanoseconds|version-pinned KiCad project with recorded ERC and DRC outputs|symbol-footprint mismatch, incorrect net classes, unrouted pads and manufacturing file errors|Run only approved KiCad CLI operations on backed-up project copies; DRC and ERC do not certify electrical or mechanical safety.
+kicad-hierarchical-sheets: Review hierarchical sheet pins and global labels for unintended cross-sheet electrical connections.
+kicad-symbol-pin-types: Inspect symbol electrical types and alternate units before approving electrical-rule exceptions.
+kicad-erc-automation: Run schematic ERC through the installed KiCad CLI and preserve all error and warning classifications.
+kicad-footprint-assignment: Reconcile pin-to-pad mapping, footprint geometry and selected supplier package identity.
+kicad-netclass-routing: Define clearance and track-width constraints from measured current and manufacturer capability.
+kicad-drc-ci: Run board DRC with schematic-parity checks when supported by the installed KiCad CLI version.
+kicad-zone-return-paths: Verify filled copper zones and return-current continuity after each important routing revision.
+kicad-3d-model-links: Verify the referenced STEP or WRL model path and mechanical orientation for every critical footprint.
+kicad-step-export: Export a board solid model for enclosure checking and record model coverage and coordinate origin.
+kicad-gerber-drill-package: Rebuild Gerber and drill outputs and independently check layer, drill and board-outline consistency.
+kicad-bom-variant: Generate BOM with DNI variants and verify manufacturer part numbers against assembly revision.
+kicad-pickplace-origins: Cross-check placement file origins, rotations and board-side conventions with assembled reference units.
+kicad-library-versioning: Preserve symbol and footprint library provenance while upgrading a shared KiCad project.
+kicad-board-stackup: Validate dielectric thickness, copper weight and impedance constraints against a fabricator stackup.
+kicad-cli-jobset: Define reusable KiCad CLI jobset inputs and verify the installed release supports each requested export.
+kicad-ecad-release-gate: Audit schematic parity, ERC/DRC, fabrication files, BOM, assembly drawings and mechanical fit evidence.
+
+@fusion360-parametric|Fusion 360 Parametric 3D Design|development|safe|Autodesk Fusion design history, sketch dimensions, user parameters, feature tree and part specifications|millimeters, centimeters, degrees, radians and cubic millimeters|approved dimensioned part drawing and a fixed set of reference design parameters|unit confusion, overconstrained sketches, broken references and non-manifold geometry|Preserve the native parametric model and document Fusion API database units; Design API linear dimensions are in centimeters internally.
+fusion-design-parameter-table: Define named dimensioned user parameters and equations that regenerate consistent part variants.
+fusion-sketch-constraint-audit: Eliminate unintended sketch degrees of freedom without overconstraining geometry or construction lines.
+fusion-extrude-revolve: Choose additive and subtractive features with stable planar references and timeline ordering.
+fusion-sweep-path: Build and verify profiles swept along guide paths without self-intersection or unexpected twists.
+fusion-loft-profile-match: Control section profile correspondence and surface continuity across changing cross sections.
+fusion-shell-uniform-wall: Establish enclosure wall-thickness constraints and test shell failures around narrow internal radii.
+fusion-fillet-chamfer: Order edge finishing features to reduce timeline fragility and preserve manufacturer tool access.
+fusion-pattern-feature: Compare rectangular and circular feature patterns under parameter changes and topology renaming.
+fusion-reference-geometry: Anchor sketches to origin planes and stable construction geometry rather than transient face IDs.
+fusion-joint-motion: Express assembly joint axes and limits from the actual component and occurrence transforms.
+fusion-configured-variants: Define consistent dimensional configurations and verify regenerated bodies across every variant.
+fusion-sheet-metal-flat: Evaluate bend rules, material thickness and flat-pattern validity before producing cut layouts.
+fusion-surface-stitch: Repair open surfaces with verified geometric tolerance and closed-body checks.
+fusion-mass-properties: Cross-check volume, center of mass and material density for dimensional and material correctness.
+fusion-interference-detection: Inspect mating parts and nearby features under maximum and minimum tolerance conditions.
+fusion-step-stl-export: Export native and neutral representations and compare bounding boxes, units and watertightness.
+
+@fusion360-api|Fusion 360 API and Script Automation|development|safe|Fusion scripts and add-ins, design documents, API object hierarchies and Python runtime constraints|centimeters, radians, kilograms, bytes and milliseconds|interactive Fusion design with known parameters and an approved read-only export target|wrong active product, unsupported Electronics API write methods and accidental document modification|Execute Autodesk Fusion API scripts only inside an authorized Fusion session; the current Electronics public API is read-only for design modifications.
+fusion-api-script-scaffold: Create a Fusion Python script entrypoint with run context and explicit active-product checks.
+fusion-api-addin-lifecycle: Design add-in start and stop lifecycle with event-handler ownership and deterministic cleanup.
+fusion-api-product-cast: Distinguish Design, CAM and Electronics products before accessing feature-specific objects.
+fusion-api-parameter-units: Use ValueInput expressions with explicit units instead of assuming raw numbers are millimeters.
+fusion-api-user-parameters: Read or modify named user parameters on a copy and verify the regeneration result.
+fusion-api-component-occurrence: Traverse component geometry and occurrence transforms without confusing prototype and instance space.
+fusion-api-sketch-profile-read: Inspect closed sketch profiles and construction geometry before attempting feature creation.
+fusion-api-feature-timeline: Audit design timeline dependencies and report features broken by parameter edits.
+fusion-api-export-step: Use Design.exportManager to export a selected design or component after verifying the active document.
+fusion-api-export-stl: Choose supported mesh export settings and check tessellation tolerance before printing.
+fusion-api-ecad-readonly: Read adsk.electron board or schematic data without calling unsupported public Electronics write operations.
+fusion-api-eagle-export: Export Electronics schematics or PCB boards to supported EAGLE file formats and verify the result.
+fusion-api-exception-report: Catch API errors with context and stack trace while avoiding disclosure of private design paths.
+fusion-api-batch-safety: Gate multi-file automation on explicit user consent, output directory validation and per-file rollbacks.
+fusion-api-version-feature: Detect optional API features at runtime rather than assuming preview interfaces are universally available.
+fusion-api-script-benchmarks: Record API traversal runtime and resulting object counts for representative CAD assembly sizes.
+
+@cad-3d-assembly|3D CAD Assembly and Mechanical Design|development|safe|part models, mechanical drawings, assembly constraints, material callouts and fit requirements|millimeters, degrees, newtons and kilograms|dimensioned reference assembly with explicit mating and datum definitions|clashing parts, tolerance accumulation and incorrect component instance transforms|Do not claim production mechanical fitness from rendered appearance; require tolerance analysis and physical fit verification.
+parametric-enclosure-layout: Establish PCB, connector and access volumes before selecting enclosure envelope dimensions.
+fastener-boss-placement: Compute screw boss and standoff geometry from real fastener sizes and manufacturing tolerances.
+thread-clearance-fit: Compare thread engagement, clearance hole and tap-drill references for the chosen material.
+o-ring-groove-design: Size seal gland geometry from manufacturer compression and stretch data rather than visual estimate.
+bearing-housing-tolerance: Define bearing fits and shoulder geometry from actual tolerance class and load cases.
+shafts-couplings-alignment: Evaluate shaft-axis alignment, coupling engagement and assembly reachability.
+mechanism-joint-clearance: Verify range of motion and collision clearance across constrained mechanism positions.
+sheet-metal-bend-allowance: Check blank development with material-specific bend radius and bend allowance assumptions.
+plastic-snap-fit-risk: Estimate strain at snap-fit features with printed or molded material properties and repeated cycles.
+injection-mold-draft: Review draft angle, tooling parting direction and undercuts on a molded enclosure.
+printed-part-anisotropy: Orient additive parts for load paths while accounting for layer-dependent material strength.
+assembly-bom-structure: Keep part numbers, component instances and mass properties consistent with drawing BOM.
+gdandt-datum-selection: Choose functional datum reference frames and tolerances tied to real assembly requirements.
+tolerance-stack-up: Compute worst-case and statistical accumulation of mating dimensions under an explicit assumptions ledger.
+mechanical-thermal-expansion: Check thermal clearance over specified materials and field temperature intervals.
+drawing-release-inspection: Verify dimensioned drawing revision, sections, hole tables and critical inspection dimensions.
+
+@ecad-mcad-fit|ECAD-MCAD Electronics Mechanical Integration|architecture|critical|KiCad or Fusion 3D PCB models, connector envelopes, enclosure STEP files and mounting specifications|millimeters, degrees and newton-millimeters|approved mechanical keep-out drawing and validated PCB schematic layout revision|collision, connector misorientation, mounting stress and incompatible export origins|Treat ECAD-to-MCAD translations as untrusted geometry until units, coordinate frames and physical connectors are independently verified.
+pcb-to-enclosure-step: Import a PCB STEP assembly into mechanical CAD while checking scale and coordinate origin.
+board-outline-synchronization: Compare PCB 2D outline against mechanical cavity under revision-controlled source ownership.
+component-height-envelope: Construct maximal 3D keep-out volumes for tall capacitors, coils and antennas.
+connector-mating-sweep: Confirm cable exit, latch travel and mating connector insertion clearances across assembly motion.
+mounting-hole-pattern: Reconcile hole-center distances, pad clearances and enclosure bosses under tolerance stackups.
+board-thickness-allowance: Include actual board stackup thickness and manufacturing variation in standoff gap checks.
+antenna-rf-keepout: Model antenna ground clearance and surrounding enclosure material restrictions from device references.
+thermal-enclosure-coupling: Estimate heat paths from power components to chassis and verify physical contact assumptions.
+sensor-mount-orientation: Align accelerometer or gyroscope axes to fixture datums and verify measurement orientation.
+waterproof-gasket-stack: Combine PCB mounting constraints with seal compression and assembly torque requirements.
+battery-pack-envelope: Verify battery swelling allowance, service access and protection component clearances.
+ecad-mcad-revision-diff: Compare PCB and mechanical revisions by part ID, body count and geometric deltas.
+fusion-3d-pcb-review: Use linked Electronics 3D PCB views to inspect component interference without assuming a write-capable API.
+cad-format-roundtrip: Validate STEP, STL and native document units and bounding boxes after geometry conversion.
+assembly-exploded-service: Confirm service sequence and access to connectors, screws and programming headers.
+mechanical-electrical-release: Gate manufacturing export on PCB ERC, DRC, fit analysis and approved assembly drawings.
+
+@fusion360-cam|Fusion 360 CAM and 3D Printing Preparation|testing|critical|manufacturing setups, tool libraries, machine definitions, process parameters and part geometry|millimeters, spindle RPM, millimeters per minute and cubic millimeters|approved machine setup, known-good postprocessor and independently checked stock and work origin|wrong work offset, tool collision, negative stock, unsafe tool load and layer delamination|Never stream unverified G-code to a physical machine; require isolated simulation, dry run and operator approval.
+fusion-cam-setup-wcs: Define machine, stock and work coordinate origin with an independent fixture reference.
+fusion-cam-tool-library: Validate toolholder geometry, diameter, stick-out and cutting parameters against actual tooling.
+fusion-cam-2d-contour: Generate contour allowances and check lead-in clearances near fixtures and tabs.
+fusion-cam-adaptive-clearing: Compare adaptive step-over, remaining stock and machine limits with simulated engagement.
+fusion-cam-drilling-cycles: Validate peck depth, retract plane and hole ordering under machine-specific controller behavior.
+fusion-cam-3axis-finish: Assess scallop height, tool radius and machining reach on curved part surfaces.
+fusion-cam-fixture-clearance: Include vise, clamp and fixture collision models in machining simulation.
+fusion-cam-postprocess-review: Inspect machine-specific postprocessor and emitted G-code before any machine transfer.
+fusion-cam-toolpath-verify: Compare stock simulation and machine kinematics against expected finished part dimensions.
+fusion-cam-setup-variants: Preserve toolpath setup ownership across parametric design configurations and revision changes.
+fusion-additive-orientation: Choose build orientation and support strategy from loads, surface requirements and material.
+fusion-additive-slicing: Verify watertight mesh, layer-height resolution and thin-wall feasibility before generating print data.
+fusion-3d-print-fit: Apply measured printer compensation and clearance coupons rather than assuming nominal CAD fit.
+fusion-machining-stock-cost: Estimate removal volume and cycle time from simulated cutting and measured machine baseline.
+fusion-cam-nc-traceability: Save machine, postprocessor version, tool list and program hash alongside each NC revision.
+fusion-cam-first-article: Define first-article inspection dimensions and a guarded dry-run acceptance checklist.

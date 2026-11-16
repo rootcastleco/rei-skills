@@ -6,14 +6,14 @@
 
 ## 1. Choose Your Installation Strategy
 
-Unlike legacy monolithic skill repositories, **REI Skills** lets you either install the complete 895-skill catalog or selectively install individual skills and role bundles:
+Unlike legacy monolithic skill repositories, **REI Skills** lets you either install the complete 1423-skill catalog or selectively install individual skills and role bundles:
 
 ```bash
 # Strategy A: Install only a specific skill or role bundle into your workspace
 npx rei-skills add brainstorming --cursor
 npx rei-skills add rei-rea --claude
 
-# Strategy B: Install the complete 895-skill catalog
+# Strategy B: Install the complete 1423-skill catalog
 npx rei-skills --cursor
 ```
 

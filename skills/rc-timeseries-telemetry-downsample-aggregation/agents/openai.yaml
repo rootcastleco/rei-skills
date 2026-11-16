@@ -1,0 +1,3 @@
+interface:
+  display_name: Time Series Telemetry — Downsample Aggregation
+  short_description: Evidence-based downsample aggregation checks
