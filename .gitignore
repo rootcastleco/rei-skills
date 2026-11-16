@@ -30,3 +30,6 @@ scripts/*count*.py
 
 # Optional baseline for legacy JS validator (scripts/validate-skills.js)
 validation-baseline.json
+
+# Rust build artifacts
+rust/**/target/

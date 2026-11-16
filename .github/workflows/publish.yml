@@ -1,6 +1,11 @@
 name: Publish REI Skills to npm
 
 on:
+  # A release merge is explicit: package.json changes on main and the merge
+  # commit includes [publish npm]. Other pushes never publish.
+  push:
+    branches: [main]
+    paths: [package.json]
   release:
     types: [published]
   workflow_dispatch:
@@ -20,6 +25,7 @@ concurrency:
 
 jobs:
   publish:
+    if: ${{ github.event_name != 'push' || contains(github.event.head_commit.message, '[publish npm]') }}
     name: Validate and publish rei-skills
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -54,6 +60,8 @@ jobs:
           if [ "$ACTION_EVENT" = "workflow_dispatch" ]; then
             test "$ACTION_REF" = "refs/heads/main" || { echo "Manual release must use main"; exit 1; }
             test "$REQUESTED_VERSION" = "$version" || { echo "Version mismatch"; exit 1; }
+          elif [ "$ACTION_EVENT" = "push" ]; then
+            test "$ACTION_REF" = "refs/heads/main" || { echo "Release push must use main"; exit 1; }
           else
             test "$ACTION_REF" = "refs/tags/v$version" || { echo "Release tag mismatch"; exit 1; }
           fi

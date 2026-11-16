@@ -1,6 +1,6 @@
 # AGENTS.md — REI Skills Universal AI Agent Router
 
-> **Repository:** [rootcastleco/rei-skills](https://github.com/rootcastleco/rei-skills) (`v6.2.0`)  
+> **Repository:** [rootcastleco/rei-skills](https://github.com/rootcastleco/rei-skills) (`v6.3.0`)
 > **Live Interactive Hub (GitHub Pages):** [https://rootcastleco.github.io/rei-skills/](https://rootcastleco.github.io/rei-skills/)  
 > **Brand Owner:** [Rootcastle Engineering & Innovation](https://rootcastle.com/) — *Engineering Beyond Boundaries.*  
 > **Compatibility:** OpenAI Codex, Anthropic Claude Code, Google Gemini CLI, Google Antigravity, Cursor, GitHub Copilot, Windsurf, Cline, Roo Code, Continue.dev, Aider, Amazon Q Developer, Zed AI, Block Goose, Trae, JetBrains Junie, OpenCode, Kiro, Sourcegraph Amp, Cognition Devin, and Multi-Model Agent SDKs.
@@ -39,7 +39,7 @@ Connect any MCP-capable AI client (Claude Code, Cursor, Windsurf, Cline, Roo Cod
 }
 ```
 
-### Exposed MCP Tools (`8` Tools)
+### Exposed MCP Tools (`10` Tools)
 - `rei_recommend_skills` — Multi-signal Smart Intent & Stack Router (English + Turkish + file extension detection)
 - `rei_search_skills` — Keyword, category, and risk-profile catalog search
 - `rei_get_skill` — On-demand loading of `SKILL.md` and `references/*`
@@ -48,6 +48,8 @@ Connect any MCP-capable AI client (Claude Code, Cursor, Windsurf, Cline, Roo Cod
 - `rei_install_skill` — Non-destructive installation into any of the 21 AI assistant formats
 - `rei_compile_skill` — Transpile any skill into `cursor-mdc`, `copilot-instructions`, `windsurf-rule`, `sdk-json`, etc.
 - `rei_list_ai_targets` — List all 21 supported AI assistants and target paths
+- `rei_compose_prompt` — Compose a review-only prompt using cached Rootcastle Prompt Archive references
+- `rei_propose_prompt_improvement` — Produce a review-required improvement proposal from task feedback
 
 ---
 
