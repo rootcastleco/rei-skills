@@ -16,6 +16,7 @@
         "rei-paper-orchestra",
         "rei-rea-orchestrator",
         "rei-reconstruction-parity",
+        "rei-ultimate-orchestrator",
         "rei-wasm-and-managed",
         "rei-web-and-protocols",
         "reverse-engineer"
@@ -413,6 +414,7 @@
         "rc-jt808-protocol-auth-token-transition",
         "rc-rust-protocols-trace-context-propagation",
         "rc-safety-assurance-residual-risk-approval",
+        "rei-ultimate-orchestrator",
         "reverse-engineer",
         "risk-manager",
         "risk-metrics-calculation",

@@ -2,7 +2,7 @@
 
 > **The engineering-grade skill layer for AI agents — Rootcastle Engineering & Innovation**
 
-Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1424**
+Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 
 ## architecture (99)
 
@@ -1393,7 +1393,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1424**
 | [`wordpress-penetration-testing`](skills/wordpress-penetration-testing/SKILL.md) | This skill should be used when the user asks to "pentest WordPress sites", "scan WordPress for vulnerabilities", "enumerate WordPress use... | `safe` | `community` | wordpress, penetration |
 | [`xss-html-injection`](skills/xss-html-injection/SKILL.md) | This skill should be used when the user asks to "test for XSS vulnerabilities", "perform cross-site scripting attacks", "identify HTML in... | `offensive` | `community` | xss, html, injection |
 
-## workflow (80)
+## workflow (81)
 
 | Skill | Description | Risk | Source | Tags |
 | --- | --- | --- | --- | --- |
@@ -1456,6 +1456,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1424**
 | [`posthog-automation`](skills/posthog-automation/SKILL.md) | Automate PostHog tasks via Rube MCP (Composio): events, feature flags, projects, user profiles, annotations. Always search tools first fo... | `safe` | `community` | posthog |
 | [`postmark-automation`](skills/postmark-automation/SKILL.md) | Automate Postmark email delivery tasks via Rube MCP (Composio): send templated emails, manage templates, monitor delivery stats and bounc... | `safe` | `community` | postmark |
 | [`reddit-automation`](skills/reddit-automation/SKILL.md) | Automate Reddit tasks via Rube MCP (Composio): search subreddits, create posts, manage comments, and browse top content. Always search to... | `safe` | `community` | reddit |
+| [`rei-ultimate-orchestrator`](skills/rei-ultimate-orchestrator/SKILL.md) | Coordinate OpenAI/ChatGPT native skills with Rootcastle REI Skills and Rootcastle Prompt Archive for engineering, coding, research, desig... | `safe` | `Rootcastle Engineering & Innovation` | rei, ultimate, orchestrator |
 | [`render-automation`](skills/render-automation/SKILL.md) | Automate Render tasks via Rube MCP (Composio): services, deployments, projects. Always search tools first for current schemas. | `safe` | `community` | render |
 | [`salesforce-automation`](skills/salesforce-automation/SKILL.md) | Automate Salesforce tasks via Rube MCP (Composio): leads, contacts, accounts, opportunities, SOQL queries. Always search tools first for ... | `safe` | `community` | salesforce |
 | [`segment-automation`](skills/segment-automation/SKILL.md) | Automate Segment tasks via Rube MCP (Composio): track events, identify users, manage groups, page views, aliases, batch operations. Alway... | `safe` | `community` | segment |
