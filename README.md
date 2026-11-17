@@ -16,7 +16,7 @@
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
-[![Validated Skills](https://img.shields.io/badge/skills-1423%20validated-228B55)](#explore-the-library)
+[![Validated Skills](https://img.shields.io/badge/skills-1424%20validated-228B55)](#explore-the-library)
 [![Gold 50](https://img.shields.io/badge/Gold%2050-50%2F50%20verified-228B55)](#registry-quality-engine--gold-50-program)
 [![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-97.3%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
@@ -70,7 +70,7 @@ flowchart LR
 
 ## Install in Seconds
 
-Install the complete **1423 validated skills** library or project focused skills into any assistant with a single command:
+Install the complete **1424 validated skills** library or project focused skills into any assistant with a single command:
 
 ```bash
 npx rei-skills
@@ -133,7 +133,7 @@ npx rei-skills prompt compose "Review telemetry firmware for failure modes"
 npx rei-skills improve --feedback "Add SPICE bench parity cross-check" --json
 
 # 6. Catalog Discovery, Quality Audits, Removal/Rollback, MCP Server & Format Export
-npx rei-skills search firmware           # Search across 1423 skills by domain, keyword, risk, or upstream source
+npx rei-skills search firmware           # Search across 1424 skills by domain, keyword, risk, or upstream source
 npx rei-skills quality rc-kicad-ecad-kicad-drc-ci --json
 npx rei-skills remove rei-rea-orchestrator --cursor -w
 npx rei-skills list --category reverse-engineering
@@ -259,12 +259,12 @@ Explore the searchable catalog, live Hybrid Intent & Stack Router (EN/TR), pre-c
 
 ## Explore the Library
 
-The registry currently contains **1423 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
+The registry currently contains **1424 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
 
 <!-- CATEGORY_TABLE_START -->
 | Category | Count | Focus Area | Representative Skills |
 | :--- | ---: | :--- | :--- |
-| **Data & AI** (`data-ai`) | 243 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
+| **Data & AI** (`data-ai`) | 244 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
 | **General Engineering** (`general`) | 170 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
 | **Software Development** (`development`) | 357 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
 | **Security & AppSec** (`security`) | 144 | Threat modeling, SAST, vulnerability auditing, authorized red-teaming | [`security-auditor`](skills/security-auditor/SKILL.md), [`threat-modeling-expert`](skills/threat-modeling-expert/SKILL.md), [`api-security-best-practices`](skills/api-security-best-practices/SKILL.md) |
@@ -370,6 +370,12 @@ Compatibility across adapters is verified via automated schema validation, `npx 
 
 ---
 
+## Google Research PaperOrchestra — Evidence-Gated Research Writing
+
+REI Skills includes [`rei-paper-orchestra`](skills/rei-paper-orchestra/SKILL.md), an isolated, opt-in bridge to [Google Research PaperOrchestra](https://github.com/google-research/paper-orchestra). It can draft LaTeX manuscripts from actual experiment notes through outline, literature, section-writing, refinement, and optional plotting agents. All external processing is opt-in; citation existence, experimental numbers, figures, originality, and venue compliance require independent human review. See [integration guide](docs/PAPER_ORCHESTRA_INTEGRATION.md). **Upstream Apache-2.0; original REI adapter MIT.** No upstream code is bundled.
+
+---
+
 ## Engineering Documentation & Reports
 
 | Document | Scope |
@@ -411,7 +417,7 @@ Compatibility across adapters is verified via automated schema validation, `npx 
 
 - **License:** Original code, tooling, and Rootcastle-authored skills are released under the **[MIT License](LICENSE)**.
 - **Upstream Attribution & Provenance:** Preserves upstream work from `anthropics/skills`, `microsoft/skills` ([`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT)), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`, and open-source contributors documented in [`CREDITS.md`](CREDITS.md) and [`docs/SOURCES.md`](docs/SOURCES.md).
-- **Security Policy & Guardrails:** All 1423 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
+- **Security Policy & Guardrails:** All 1424 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
 
 ---
 

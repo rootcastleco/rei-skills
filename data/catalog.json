@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1423,
+  "total": 1424,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -36229,6 +36229,34 @@
         "authorized"
       ],
       "path": "skills/rei-native-binaries/SKILL.md"
+    },
+    {
+      "id": "rei-paper-orchestra",
+      "name": "rei-paper-orchestra",
+      "description": "Turn verified research notes and experiment logs into a reviewable LaTeX paper using Google Research PaperOrchestra. Use for multi-agent manuscript drafting, literature synthesis, and scientific figure preparation; never treat generated claims as verified.",
+      "category": "data-ai",
+      "risk": "critical",
+      "source": "Rootcastle Engineering & Innovation integration of google-research/paper-orchestra",
+      "tags": [
+        "rei",
+        "paper",
+        "orchestra"
+      ],
+      "triggers": [
+        "rei",
+        "paper",
+        "orchestra",
+        "turn",
+        "verified",
+        "research",
+        "notes",
+        "experiment",
+        "logs",
+        "reviewable",
+        "latex",
+        "google"
+      ],
+      "path": "skills/rei-paper-orchestra/SKILL.md"
     },
     {
       "id": "rei-rea-orchestrator",

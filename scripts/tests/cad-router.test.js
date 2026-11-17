@@ -16,7 +16,8 @@ function assertRoutes(task, files, prefix) {
     "CAD router missed " + prefix + " for " + task + ". Top: " + ids.slice(0, 12).join(", "));
 }
 
-assert.equal(catalog.total, 1423, "CAD expansion index must be rebuilt");
+assert.equal(catalog.total, catalog.skills.length, "Catalog count must match indexed skills");
+assert(catalog.total >= 1423, "CAD expansion skills must be preserved");
 assertRoutes("Fusion 360 ile parametrik 3D çizim yap", ["enclosure.f3d"], "rc-fusion360");
 assertRoutes("Elektronik devre tasarımı güç kaynağı voltaj regülatörü", [], "rc-circuit-architecture");
 assertRoutes("KiCad PCB DRC doğrula", ["board.kicad_pcb"], "rc-kicad-ecad");

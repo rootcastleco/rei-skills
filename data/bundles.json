@@ -13,6 +13,7 @@
         "rei-firmware-and-iot",
         "rei-mobile-runtime",
         "rei-native-binaries",
+        "rei-paper-orchestra",
         "rei-rea-orchestrator",
         "rei-reconstruction-parity",
         "rei-wasm-and-managed",
