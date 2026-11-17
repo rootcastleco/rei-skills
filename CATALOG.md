@@ -2,7 +2,7 @@
 
 > **The engineering-grade skill layer for AI agents — Rootcastle Engineering & Innovation**
 
-Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1423**
+Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1424**
 
 ## architecture (99)
 
@@ -153,7 +153,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1423**
 | [`team-composition-analysis`](skills/team-composition-analysis/SKILL.md) | This skill should be used when the user asks to \\\"plan team structure", "determine hiring needs", "design org chart", "calculate compen... | `safe` | `community` | team, composition |
 | [`whatsapp-automation`](skills/whatsapp-automation/SKILL.md) | Automate WhatsApp Business tasks via Rube MCP (Composio): send messages, manage templates, upload media, and handle contacts. Always sear... | `safe` | `community` | whatsapp |
 
-## data-ai (243)
+## data-ai (244)
 
 | Skill | Description | Risk | Source | Tags |
 | --- | --- | --- | --- | --- |
@@ -371,6 +371,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1423**
 | [`rc-timeseries-telemetry-time-bucket-boundary`](skills/rc-timeseries-telemetry-time-bucket-boundary/SKILL.md) | Investigate time bucket boundary for time series telemetry with traceable evidence and reproducible negative-case testing. Use when asked... | `safe` | `rootcastle-original-technical-expansion-2026` | rootcastle, timeseries, telemetry, time, bucket, boundary |
 | [`rc-timeseries-telemetry-timestamp-precision-storage`](skills/rc-timeseries-telemetry-timestamp-precision-storage/SKILL.md) | Investigate timestamp precision storage for time series telemetry with traceable evidence and reproducible negative-case testing. Use whe... | `safe` | `rootcastle-original-technical-expansion-2026` | rootcastle, timeseries, telemetry, timestamp, precision, storage |
 | [`react-ui-patterns`](skills/react-ui-patterns/SKILL.md) | Modern React UI patterns for loading states, error handling, and data fetching. Use when building UI components, handling async data, or ... | `safe` | `community` | react, ui |
+| [`rei-paper-orchestra`](skills/rei-paper-orchestra/SKILL.md) | Turn verified research notes and experiment logs into a reviewable LaTeX paper using Google Research PaperOrchestra. Use for multi-agent ... | `critical` | `Rootcastle Engineering & Innovation integration of google-research/paper-orchestra` | rei, paper, orchestra |
 | [`scala-pro`](skills/scala-pro/SKILL.md) | Master enterprise-grade Scala development with functional programming, distributed systems, and big data processing. Expert in Apache Pek... | `safe` | `community` | scala |
 | [`schema-markup`](skills/schema-markup/SKILL.md) | Design, validate, and optimize schema.org structured data for eligibility, correctness, and measurable SEO impact. Use when the user want... | `safe` | `community` | schema, markup |
 | [`segment-cdp`](skills/segment-cdp/SKILL.md) | Expert patterns for Segment Customer Data Platform including Analytics.js, server-side tracking, tracking plans with Protocols, identity ... | `safe` | `vibeship-spawner-skills (Apache 2.0)` | segment, cdp |

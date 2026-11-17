@@ -3,6 +3,7 @@ name: rei-paper-orchestra
 description: "Turn verified research notes and experiment logs into a reviewable LaTeX paper using Google Research PaperOrchestra. Use for multi-agent manuscript drafting, literature synthesis, and scientific figure preparation; never treat generated claims as verified."
 source: "Rootcastle Engineering & Innovation integration of google-research/paper-orchestra"
 risk: critical
+category: data-ai
 license: MIT
 ---
 

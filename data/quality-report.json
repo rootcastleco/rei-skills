@@ -1,14 +1,14 @@
 {
   "summary": {
-    "total_skills": 1423,
-    "schema_valid_count": 1423,
-    "references_valid_count": 1423,
-    "security_compliant_count": 1423,
-    "tested_module_count": 58,
+    "total_skills": 1424,
+    "schema_valid_count": 1424,
+    "references_valid_count": 1424,
+    "security_compliant_count": 1424,
+    "tested_module_count": 59,
     "average_documentation_score": 82.3,
     "quality_framework_version": "14pt-v1",
     "tier_counts": {
-      "Q3": 346,
+      "Q3": 347,
       "Q2": 936,
       "Q1": 141,
       "Q0": 0
@@ -40310,6 +40310,39 @@
         "referenceValidated": true,
         "securityPolicyChecked": true,
         "evaluationPassed": true,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-paper-orchestra",
+      "name": "rei-paper-orchestra",
+      "source": "Rootcastle Engineering & Innovation integration of google-research/paper-orchestra",
+      "risk": "critical",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": true,
+      "has_helper_scripts": true,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 1,
+        "specificity": 2,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
         "humanReviewed": false,
         "hardwareVerified": "not_applicable"
       }

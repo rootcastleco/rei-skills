@@ -10962,6 +10962,15 @@
     "source": "rootcastle-rei"
   },
   {
+    "id": "rei-paper-orchestra",
+    "path": "skills/rei-paper-orchestra",
+    "category": "data-ai",
+    "name": "rei-paper-orchestra",
+    "description": "Turn verified research notes and experiment logs into a reviewable LaTeX paper using Google Research PaperOrchestra. Use for multi-agent manuscript drafting, literature synthesis, and scientific figure preparation; never treat generated claims as verified.",
+    "risk": "critical",
+    "source": "Rootcastle Engineering & Innovation integration of google-research/paper-orchestra"
+  },
+  {
     "id": "rei-rea-orchestrator",
     "path": "skills/rei-rea-orchestrator",
     "category": "reverse-engineering",
