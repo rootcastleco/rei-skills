@@ -370,6 +370,17 @@ Compatibility across adapters is verified via automated schema validation, `npx 
 
 ---
 
+## NVIDIA SkillEvaluator — Independent Skill Quality Checks
+
+The optional [NVIDIA SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator) integration adds an **independent skill-quality evaluation path** to REI Skills. Version **v0.9.0** is installed separately (not bundled in the npm package). The scoped [`skill-checks.yml`](.github/workflows/skill-checks.yml) GitHub Actions workflow runs **Tier 1** in advisory mode with pinned upstream artifacts. A green targeted run does **not** verify the full catalog or establish a security attestation.
+
+- [Integration guide and verified scope](docs/SKILLEVALUATOR_INTEGRATION.md)
+- [GitHub Actions skill checks](https://github.com/rootcastleco/rei-skills/actions/workflows/skill-checks.yml)
+- Optional local setup: `uv tool install skillevaluator==0.9.0`
+- Tier 2 and Tier 3 require separate model/provider or sandbox setup; these are **NOT VERIFIED** in the recorded integration evidence.
+
+---
+
 ## Google Research PaperOrchestra — Evidence-Gated Research Writing
 
 REI Skills includes [`rei-paper-orchestra`](skills/rei-paper-orchestra/SKILL.md), an isolated, opt-in bridge to [Google Research PaperOrchestra](https://github.com/google-research/paper-orchestra). It can draft LaTeX manuscripts from actual experiment notes through outline, literature, section-writing, refinement, and optional plotting agents. All external processing is opt-in; citation existence, experimental numbers, figures, originality, and venue compliance require independent human review. See [integration guide](docs/PAPER_ORCHESTRA_INTEGRATION.md). **Upstream Apache-2.0; original REI adapter MIT.** No upstream code is bundled.

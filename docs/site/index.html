@@ -542,6 +542,27 @@
     </div>
 
     <div id="tab-platform" class="hidden">
+      <section aria-label="Research and skill evaluation integrations" style="margin-bottom:20px;">
+        <h2 style="font-family:var(--font-mono);font-size:18px;margin-bottom:12px;">Research Writing &amp; Independent Skill Evaluation</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card-header">
+              <div class="card-title">Google Research PaperOrchestra</div>
+              <span class="badge badge-cat">Opt-in research writing</span>
+            </div>
+            <p class="card-desc">The <code>rei-paper-orchestra</code> skill coordinates a separately installed, upstream multi-agent pipeline for evidence-led literature synthesis, manuscript sections, optional plots and LaTeX output. No external processing runs without explicit consent. AI-generated citations and experimental claims require independent review.</p>
+            <p class="card-desc"><a href="https://github.com/rootcastleco/rei-skills/blob/main/skills/rei-paper-orchestra/SKILL.md" target="_blank" rel="noopener noreferrer">Skill instructions</a> · <a href="https://github.com/rootcastleco/rei-skills/blob/main/docs/PAPER_ORCHESTRA_INTEGRATION.md" target="_blank" rel="noopener noreferrer">Integration guide</a></p>
+          </article>
+          <article class="card">
+            <div class="card-header">
+              <div class="card-title">NVIDIA SkillEvaluator</div>
+              <span class="badge badge-cat">Independent Tier 1 checks</span>
+            </div>
+            <p class="card-desc">Optional NVIDIA SkillEvaluator v0.9.0 runs separately from the npm package. GitHub Actions provides scoped Tier 1 checks in <strong>advisory</strong> mode; a green workflow does not certify all skills, full security, or Tier 2/3 model-based evaluation.</p>
+            <p class="card-desc"><a href="https://github.com/rootcastleco/rei-skills/blob/main/docs/SKILLEVALUATOR_INTEGRATION.md" target="_blank" rel="noopener noreferrer">Setup and evidence</a> · <a href="https://github.com/rootcastleco/rei-skills/actions/workflows/skill-checks.yml" target="_blank" rel="noopener noreferrer">Skill checks workflow</a></p>
+          </article>
+        </div>
+      </section>
       <div id="platformOverview"></div>
     </div>
   </main>
