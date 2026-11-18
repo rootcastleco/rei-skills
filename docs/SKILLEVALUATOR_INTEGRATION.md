@@ -27,7 +27,9 @@ The smoke test is a **quality check only**; a passing score is not a security at
 
 Initial `enforcement-mode: advisory` collects results without turning baseline quality failures into a merge gate. Scanner failures, incomplete security evidence and configuration errors are still failures. When all scoped skills have been reviewed and scanner evidence is complete, the maintainers can remove the advisory setting to enforce strict checks.
 
-NVIDIA's scan `auto` mode checks changed skills in pull requests; main/manual runs are limited by the upstream selection cap of 100 skills. **Do not interpret one green run as validation of all 1,423 skills.** Use a reviewed batch plan for catalog-wide evaluation.
+NVIDIA's scan `auto` mode is not used by this workflow because main/manual runs can otherwise attempt a catalog-wide selection above the upstream 100-skill limit. Pull requests and main pushes run an explicit `changed` Tier 1 gate. Main pushes and `workflow_dispatch` additionally run an inspectable deterministic full-catalog partition in matrix batches of at most 100 skills. `data/skill-evaluator-batches.json` records the fixed catalog partition and catalog SHA-256; the workflow generates a commit-bound copy and aggregates every batch into `skill-evaluator-full-catalog-summary-<commit>`.
+
+A batch is `PASS`, `FAIL`, or `NOT VERIFIED` from its retained evidence. Missing or malformed evidence remains `NOT VERIFIED`; configuration and scan failures remain visible and make the aggregate fail. The workflow never converts unscanned skills into PASS. The `workflow_dispatch` event runs the same partitioned full-catalog scan as a main push, rather than invoking the previously unsupported over-100-skill `all` mode.
 
 No LLM keys or npm secrets are used. HTML/JSON/SARIF reports are retained as GitHub Actions artifacts; no report is automatically hosted on the existing GitHub Pages site.
 

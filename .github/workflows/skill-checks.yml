@@ -1,5 +1,5 @@
 # NVIDIA SkillEvaluator v0.9.0; immutable workflow and image pins.
-# REI Skills package version remains 6.6.0. This job does not publish npm or deploy Pages.
+# REI Skills package version remains independent of this evaluation workflow.
 name: Skill checks
 
 on:
@@ -18,13 +18,112 @@ permissions:
   contents: read
 
 jobs:
-  skills:
+  prepare-full-catalog:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.partition.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+      - name: Generate deterministic catalog partition
+        id: partition
+        env:
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          node scripts/skill-evaluator-batches.js generate \
+            --output "$RUNNER_TEMP/skill-evaluator-batches.json" \
+            --commit "$COMMIT_SHA"
+          node scripts/skill-evaluator-batches.js verify "$RUNNER_TEMP/skill-evaluator-batches.json"
+          node - "$RUNNER_TEMP/skill-evaluator-batches.json" "$GITHUB_OUTPUT" <<'NODE'
+          const fs = require("fs");
+          const manifest = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
+          const matrix = {
+            include: manifest.batches.map((batch) => ({
+              id: batch.id,
+              count: batch.count,
+              paths: batch.paths.join("\n"),
+            })),
+          };
+          fs.appendFileSync(process.argv[3], `matrix=${JSON.stringify(matrix)}\n`);
+          NODE
+      - name: Upload inspectable catalog manifest
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: skill-evaluator-batches-${{ github.sha }}
+          path: ${{ runner.temp }}/skill-evaluator-batches.json
+          if-no-files-found: error
+          retention-days: 14
+
+  changed-skills:
+    if: github.event_name == 'pull_request' || github.event_name == 'push'
+    name: Changed skills Tier 1
     uses: NVIDIA/SkillEvaluator/.github/workflows/evaluate-skills.yml@ba7779ad617c6444c98b6241a75bce92067e9d56
     with:
       image: ghcr.io/nvidia/skillevaluator-tier1@sha256:e96e3aaad89bf78c4f3f8c621e88005d18bd7c485b29c0d7945864700e5944e6
       paths: skills
       min-score: 70
       security-baselines: false
-      scan-mode: auto
+      scan-mode: changed
       enforcement-mode: advisory
       llm: false
+      artifact-name: skill-evaluator-tier1-changed
+
+  full-catalog:
+    if: github.event_name != 'pull_request'
+    needs: prepare-full-catalog
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.prepare-full-catalog.outputs.matrix) }}
+    name: Full catalog ${{ matrix.id }} (${{ matrix.count }})
+    uses: NVIDIA/SkillEvaluator/.github/workflows/evaluate-skills.yml@ba7779ad617c6444c98b6241a75bce92067e9d56
+    with:
+      image: ghcr.io/nvidia/skillevaluator-tier1@sha256:e96e3aaad89bf78c4f3f8c621e88005d18bd7c485b29c0d7945864700e5944e6
+      paths: ${{ matrix.paths }}
+      min-score: 70
+      security-baselines: false
+      scan-mode: all
+      enforcement-mode: advisory
+      llm: false
+      artifact-name: skill-evaluator-tier1-evidence-${{ matrix.id }}-${{ github.sha }}
+
+  aggregate-full-catalog:
+    if: ${{ always() && github.event_name != 'pull_request' }}
+    needs: [prepare-full-catalog, full-catalog]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
+          ref: ${{ github.sha }}
+      - name: Download batch evidence and manifest
+        run: |
+          mkdir -p evidence manifest
+          gh run download "$GITHUB_RUN_ID" --pattern "skill-evaluator-batches-${GITHUB_SHA}" --dir manifest || true
+          gh run download "$GITHUB_RUN_ID" --pattern "skill-evaluator-tier1-evidence-batch-*-${GITHUB_SHA}-*" --dir evidence || true
+      - name: Aggregate PASS/FAIL/NOT VERIFIED summary
+        env:
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          MANIFEST=$(find manifest -name skill-evaluator-batches.json -print -quit)
+          test -n "$MANIFEST"
+          node scripts/skill-evaluator-batches.js aggregate \
+            --manifest "$MANIFEST" \
+            --evidence evidence \
+            --commit "$COMMIT_SHA" \
+            --output "$RUNNER_TEMP/skill-evaluator-summary.json"
+          cat "$RUNNER_TEMP/skill-evaluator-summary.json" >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload aggregated summary
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: skill-evaluator-full-catalog-summary-${{ github.sha }}
+          path: ${{ runner.temp }}/skill-evaluator-summary.json
+          if-no-files-found: warn
+          retention-days: 14
