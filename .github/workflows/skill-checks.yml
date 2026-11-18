@@ -58,19 +58,67 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
+  prepare-changed:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.partition.outputs.matrix }}
+      count: ${{ steps.partition.outputs.count }}
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Partition changed skills without omissions
+        id: partition
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          node scripts/skill-evaluator-changed-batches.js generate \
+            --base "$BASE_SHA" --head "$HEAD_SHA" \
+            --output "$RUNNER_TEMP/changed-skill-batches.json"
+          node scripts/skill-evaluator-changed-batches.js verify "$RUNNER_TEMP/changed-skill-batches.json"
+          node - "$RUNNER_TEMP/changed-skill-batches.json" "$GITHUB_OUTPUT" <<'NODE'
+          const fs = require("fs");
+          const manifest = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));
+          const matrix = {
+            include: manifest.batches.map(batch => ({
+              id: batch.id,
+              count: batch.count,
+              paths: batch.paths.join("\n"),
+            })),
+          };
+          fs.appendFileSync(process.argv[3], "matrix=" + JSON.stringify(matrix) + "\ncount=" + manifest.totalChangedSkills + "\n");
+          NODE
+      - name: Upload changed skills manifest
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: skill-evaluator-changed-manifest-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/changed-skill-batches.json
+          retention-days: 14
+          if-no-files-found: error
+
   changed-skills:
-    if: github.event_name == 'pull_request' || github.event_name == 'push'
-    name: Changed skills Tier 1
+    if: github.event_name == 'pull_request' && needs.prepare-changed.outputs.count != '0'
+    needs: prepare-changed
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.prepare-changed.outputs.matrix) }}
+    name: Changed skills Tier 1 ${{ matrix.id }} (${{ matrix.count }})
     uses: NVIDIA/SkillEvaluator/.github/workflows/evaluate-skills.yml@ba7779ad617c6444c98b6241a75bce92067e9d56
     with:
       image: ghcr.io/nvidia/skillevaluator-tier1@sha256:e96e3aaad89bf78c4f3f8c621e88005d18bd7c485b29c0d7945864700e5944e6
-      paths: skills
+      paths: ${{ matrix.paths }}
       min-score: 70
       security-baselines: false
-      scan-mode: changed
+      scan-mode: all
       enforcement-mode: advisory
       llm: false
-      artifact-name: skill-evaluator-tier1-changed
+      artifact-name: skill-evaluator-tier1-changed-${{ matrix.id }}
 
   full-catalog:
     if: github.event_name != 'pull_request'
