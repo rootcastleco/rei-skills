@@ -1,0 +1,90 @@
+name: REI 6.7.0 materialize verified release
+on:
+  push:
+    branches: [feat/rei-skills-670]
+    paths:
+      - ".rei67-transfer/**"
+      - ".github/workflows/rei67-import.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rei670-materialize
+  cancel-in-progress: false
+
+jobs:
+  unpack-verify-commit:
+    if: github.ref == 'refs/heads/feat/rei-skills-670'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout controlled branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Validate archive integrity and extract source tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .rei67-transfer/chunk-* | base64 --decode > "$RUNNER_TEMP/rei670.tar.gz"
+          echo "832c7fe4e27e13c01c730bb1b8227573b908efcbd6ac5baff01bfad9b3ba75e4  $RUNNER_TEMP/rei670.tar.gz" | sha256sum --check
+          tar -tzf "$RUNNER_TEMP/rei670.tar.gz" | while IFS= read -r filename; do
+            case "$filename" in
+              /*|../*|*/../*|"") echo "Unsafe archive path: $filename" >&2; exit 1;;
+            esac
+          done
+          tar -xzf "$RUNNER_TEMP/rei670.tar.gz"
+          test "$(node -p 'require("./package.json").version')" = "6.7.0"
+          test -f "data/rei67-import-provenance.json"
+          test -f "skills/rei-design-studio/SKILL.md"
+      - name: Prepare Python and Node
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: "npm"
+      - name: Resolve pinned build dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pyyaml
+          npm ci --ignore-scripts --no-audit --no-fund
+      - name: Build and verify release artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run build
+          npm run validate:strict
+          npm run security-audit
+          npm test
+          python scripts/sync_rei_rea.py --check
+          npm pack --ignore-scripts --dry-run --json > "$RUNNER_TEMP/rei670-pack.json"
+          node - "$RUNNER_TEMP/rei670-pack.json" <<'NODE'
+          const fs=require("fs");
+          const p=JSON.parse(fs.readFileSync(process.argv[2],"utf8"))[0];
+          const f=new Set(p.files.map(x=>x.path));
+          if(p.filename!=="rei-skills-6.7.0.tgz")throw Error("wrong package version");
+          if(p.size>50*1024*1024||!p.size)throw Error("package too large or empty");
+          for(const x of ["data/rei67-import-provenance.json","skills/rei-design-studio/SKILL.md","skills/agent-supply-chain/SKILL.md"])
+            if(!f.has(x))throw Error("missing "+x);
+          console.log("PACK ACCEPTED",p.filename,p.size,p.files.length);
+          NODE
+      - name: Commit only validated source and generated files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git restore -- data/benchmarks/gold50-evaluation-report.json || true
+          git add --all -- . ':(exclude).rei67-transfer' ':(exclude).github/workflows/rei67-import.yml'
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo "No release payload changes found" >&2
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "feat(release): materialize audited 6.7.0 source-backed skills"
+          git push origin HEAD:feat/rei-skills-670
