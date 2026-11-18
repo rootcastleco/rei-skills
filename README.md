@@ -16,7 +16,7 @@
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
-[![Validated Skills](https://img.shields.io/badge/skills-1436%20validated-228B55)](#explore-the-library)
+[![Validated Skills](https://img.shields.io/badge/skills-1459%20validated-228B55)](#explore-the-library)
 [![Gold 50](https://img.shields.io/badge/Gold%2050-50%2F50%20verified-228B55)](#registry-quality-engine--gold-50-program)
 [![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-97.3%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
@@ -73,7 +73,7 @@ flowchart LR
 
 ## Install in Seconds
 
-Install the complete **1436 validated skills** library or project focused skills into any assistant with a single command:
+Install the complete **1459 validated skills** library or project focused skills into any assistant with a single command:
 
 ```bash
 npx rei-skills
@@ -136,7 +136,7 @@ npx rei-skills prompt compose "Review telemetry firmware for failure modes"
 npx rei-skills improve --feedback "Add SPICE bench parity cross-check" --json
 
 # 6. Catalog Discovery, Quality Audits, Removal/Rollback, MCP Server & Format Export
-npx rei-skills search firmware           # Search across 1436 skills by domain, keyword, risk, or upstream source
+npx rei-skills search firmware           # Search across 1459 skills by domain, keyword, risk, or upstream source
 npx rei-skills quality rc-kicad-ecad-kicad-drc-ci --json
 npx rei-skills remove rei-rea-orchestrator --cursor -w
 npx rei-skills list --category reverse-engineering
@@ -268,21 +268,21 @@ Explore the searchable catalog, live Hybrid Intent & Stack Router (EN/TR), pre-c
 
 ## Explore the Library
 
-The registry currently contains **1436 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
+The registry currently contains **1459 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
 
 <!-- CATEGORY_TABLE_START -->
 | Category | Count | Focus Area | Representative Skills |
 | :--- | ---: | :--- | :--- |
 | **Data & AI** (`data-ai`) | 248 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
-| **General Engineering** (`general`) | 171 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
-| **Software Development** (`development`) | 360 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
+| **General Engineering** (`general`) | 178 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
+| **Software Development** (`development`) | 361 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
 | **Security & AppSec** (`security`) | 144 | Threat modeling, SAST, vulnerability auditing, authorized red-teaming | [`security-auditor`](skills/security-auditor/SKILL.md), [`threat-modeling-expert`](skills/threat-modeling-expert/SKILL.md), [`api-security-best-practices`](skills/api-security-best-practices/SKILL.md) |
 | **Infrastructure & Cloud** (`infrastructure`) | 149 | Kubernetes, Terraform, CI/CD, observability, SRE, service mesh | [`kubernetes-architect`](skills/kubernetes-architect/SKILL.md), [`terraform-specialist`](skills/terraform-specialist/SKILL.md), [`observability-engineer`](skills/observability-engineer/SKILL.md) |
 | **Workflows & Automation** (`workflow`) | 84 | Multi-agent orchestration, task automation, integration pipelines | [`workflow-automation`](skills/workflow-automation/SKILL.md), [`mcp-builder`](skills/mcp-builder/SKILL.md), [`gitops-workflow`](skills/gitops-workflow/SKILL.md) |
 | **Architecture & DDD** (`architecture`) | 99 | System design, C4 modeling, DDD, CQRS, event-driven systems | [`backend-architect`](skills/backend-architect/SKILL.md), [`domain-driven-design`](skills/domain-driven-design/SKILL.md), [`c4-context`](skills/c4-context/SKILL.md) |
 | **Product & Business** (`business`) | 40 | Product management, technical SEO, pricing, GTM analysis | [`product-manager-toolkit`](skills/product-manager-toolkit/SKILL.md), [`seo-audit`](skills/seo-audit/SKILL.md), [`pricing-strategy`](skills/pricing-strategy/SKILL.md) |
-| **Testing & QA** (`testing`) | 111 | Test-driven development, E2E browser automation, regression suites | [`test-driven-development`](skills/test-driven-development/SKILL.md), [`browser-automation`](skills/browser-automation/SKILL.md), [`e2e-testing-patterns`](skills/e2e-testing-patterns/SKILL.md) |
-| **Reverse Engineering** (`reverse-engineering`) | 30 | Binary intelligence, firmware/IoT triage, APK/Electron/WASM, forensics | [`rei-rea-orchestrator`](skills/rei-rea-orchestrator/SKILL.md), [`rei-binary-intelligence`](skills/rei-binary-intelligence/SKILL.md), [`rei-firmware-and-iot`](skills/rei-firmware-and-iot/SKILL.md) |
+| **Testing & QA** (`testing`) | 125 | Test-driven development, E2E browser automation, regression suites | [`test-driven-development`](skills/test-driven-development/SKILL.md), [`browser-automation`](skills/browser-automation/SKILL.md), [`e2e-testing-patterns`](skills/e2e-testing-patterns/SKILL.md) |
+| **Reverse Engineering** (`reverse-engineering`) | 31 | Binary intelligence, firmware/IoT triage, APK/Electron/WASM, forensics | [`rei-rea-orchestrator`](skills/rei-rea-orchestrator/SKILL.md), [`rei-binary-intelligence`](skills/rei-binary-intelligence/SKILL.md), [`rei-firmware-and-iot`](skills/rei-firmware-and-iot/SKILL.md) |
 <!-- CATEGORY_TABLE_END -->
 
 - **Full Markdown Catalog:** [`CATALOG.md`](CATALOG.md)
@@ -462,7 +462,7 @@ Extend the existing **Workflow DAG Compiler**, **HOL Guard**, and **Prompt Archi
 
 - **License:** Original code, tooling, and Rootcastle-authored skills are released under the **[MIT License](LICENSE)**.
 - **Upstream Attribution & Provenance:** Preserves upstream work from `anthropics/skills`, `microsoft/skills` ([`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT)), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`, and open-source contributors documented in [`CREDITS.md`](CREDITS.md) and [`docs/SOURCES.md`](docs/SOURCES.md).
-- **Security Policy & Guardrails:** All 1436 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
+- **Security Policy & Guardrails:** All 1459 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
 
 ---
 
@@ -473,3 +473,13 @@ Maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com
 [Project overview](https://rootcastle.com/en/projects/rei-skills/) · [Engineering walkthrough](https://rootcastle.com/en/engineering-notes/evidence-based-reverse-engineering/)
 
 </div>
+
+
+## REI Design Studio + Creative Toolkit — 45 entries
+
+Two curated bundles route the original 20 design tools and the 25 follow-up creative, content, marketing, development and QA skills. They reuse existing skills or isolated opt-in adapters, not automatic third-party installs. See [integration guide](docs/DESIGN_STUDIO_20.md) and [source registry](data/design-studio-sources.json).
+
+
+### High-Signal Design Extensions
+
+An additional 9 source-verified design specialists (8 opt-in adapters, 1 reused skill) cover art direction, polish, diagrams, animation, and diff-aware interface review. See [curation register](data/design-studio-high-signal.json) and bundle `design-high-signal`. Source code, packages and external services are not installed by this registry.

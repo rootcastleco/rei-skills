@@ -673,6 +673,29 @@ function buildCatalog() {
 
   const aliases = buildAliases(catalog.skills);
   const bundleData = buildBundles(catalog.skills);
+  // Curated, source-backed domain bundles must survive full catalog rebuilds.
+  const customPath = path.join(ROOT, "data", "curated-design-bundles.json");
+  if (fs.existsSync(customPath)) {
+    const custom = JSON.parse(fs.readFileSync(customPath, "utf8"));
+    const available = new Set(catalog.skills.map((skill) => skill.id));
+    for (const [name, bundle] of Object.entries(custom)) {
+      if (bundleData.bundles[name]) {
+        throw new Error("Curated bundle collides with generated bundle: " + name);
+      }
+      if (!Array.isArray(bundle.skills) || !bundle.description) {
+        throw new Error("Invalid curated bundle definition: " + name);
+      }
+      for (const id of bundle.skills) {
+        if (!available.has(id)) {
+          throw new Error("Curated bundle contains unknown skill: " + id);
+        }
+      }
+      bundleData.bundles[name] = {
+        description: bundle.description,
+        skills: [...new Set(bundle.skills)].sort(),
+      };
+    }
+  }
 
   const catalogPath = path.join(ROOT, "data", "catalog.json");
   const catalogMarkdownPath = path.join(ROOT, "CATALOG.md");
