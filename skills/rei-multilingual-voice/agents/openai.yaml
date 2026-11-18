@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Multilingual Voice
+  short_description: Turkish/English technical text normalization & ZONOS3-Mini MIT TTS adapter
+  default_prompt: Use rei-multilingual-voice to normalize Turkish/English engineering text and run consent-gated ZONOS3-Mini or offline WAV synthesis.

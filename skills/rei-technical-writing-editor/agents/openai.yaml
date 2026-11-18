@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Technical Writing Editor
+  short_description: Humanizer EN/TR anti-filler editing with strict unit & citation locks
+  default_prompt: Use rei-technical-writing-editor to remove AI filler while proving all numbers, SI units, citations, and safety warnings remain intact.

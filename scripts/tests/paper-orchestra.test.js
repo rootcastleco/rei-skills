@@ -7,7 +7,9 @@ const cp = require('node:child_process');
 
 const root = path.resolve(__dirname, '../..');
 const bridge = path.join(root, 'skills/rei-paper-orchestra/scripts/paper_orchestra_bridge.py');
-const python = process.env.PYTHON || 'python3';
+const python =
+  process.env.PYTHON ||
+  (['python3', 'python'].find((cmd) => cp.spawnSync(cmd, ['--version'], { encoding: 'utf8' }).status === 0) || 'python3');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rei-paper-orchestra-'));
 const mkdir = name => { const p = path.join(tmp, name); fs.mkdirSync(p, {recursive: true}); return p; };
 const upstream = mkdir('upstream');

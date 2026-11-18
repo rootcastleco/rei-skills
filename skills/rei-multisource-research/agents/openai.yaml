@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Multisource Research
+  short_description: Grounded last30days-skill research with deduplication & citation tracking
+  default_prompt: Use rei-multisource-research to gather, deduplicate, and classify primary/secondary evidence with SHA-256 source IDs.

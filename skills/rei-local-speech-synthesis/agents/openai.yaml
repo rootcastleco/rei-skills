@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Local Speech Synthesis
+  short_description: License- & consent-gated Pocket TTS & Phonon CPU voice adapter
+  default_prompt: Use rei-local-speech-synthesis to enforce CC-BY-NC-4.0/CC-BY-4.0 model gates and voice-cloning consent for local TTS.

@@ -1,0 +1,4 @@
+interface:
+  display_name: REI PPTX Production
+  short_description: Genuine editable OpenXML PowerPoint authoring with shapes, tables & notes
+  default_prompt: Use rei-pptx-production to build and XML-verify genuinely editable PowerPoint (.pptx) presentations without rasterizing slides.

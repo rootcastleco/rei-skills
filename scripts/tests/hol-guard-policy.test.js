@@ -182,7 +182,9 @@ const prevExtended = process.env.REI_MCP_EXTENDED_TOOLS;
 try {
   process.env.REI_MCP_EXTENDED_TOOLS = "1";
   const extList = mcpServer.handleJsonRpcRequest({ jsonrpc: "2.0", id: 11, method: "tools/list", params: {} });
-  assert.equal(extList.result.tools.length, 13);
+  assert.equal(extList.result.tools.length, 15);
+  assert(extList.result.tools.some((t) => t.name === "rei_multimodal_providers"));
+  assert(extList.result.tools.some((t) => t.name === "rei_multimodal_pipeline_plan"));
   const secStatus = mcpServer.executeToolCall("rei_security_status", { include_events: true });
   assert.equal(secStatus.localEnforcement.mode, "deny_by_default");
 } finally {
