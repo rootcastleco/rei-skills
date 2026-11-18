@@ -1,6 +1,6 @@
 # AGENTS.md — REI Skills Universal AI Agent Router
 
-> **Repository:** [rootcastleco/rei-skills](https://github.com/rootcastleco/rei-skills) (`v6.6.1`)
+> **Repository:** [rootcastleco/rei-skills](https://github.com/rootcastleco/rei-skills) (`v6.6.2`)
 > **Live Interactive Hub (GitHub Pages):** [https://rootcastleco.github.io/rei-skills/](https://rootcastleco.github.io/rei-skills/)  
 > **Brand Owner:** [Rootcastle Engineering & Innovation](https://rootcastle.com/) — *Engineering Beyond Boundaries.*  
 > **Compatibility:** OpenAI Codex, Anthropic Claude Code, Google Gemini CLI, Google Antigravity, Cursor, GitHub Copilot, Windsurf, Cline, Roo Code, Continue.dev, Aider, Amazon Q Developer, Zed AI, Block Goose, Trae, JetBrains Junie, OpenCode, Kiro, Sourcegraph Amp, Cognition Devin, and Multi-Model Agent SDKs.

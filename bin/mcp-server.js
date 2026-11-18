@@ -44,7 +44,7 @@ const SKILLS_DIR = path.join(ROOT, "skills");
 
 const SERVER_INFO = {
   name: "rei-skills-mcp",
-  version: "6.6.1",
+  version: "6.6.2",
 };
 
 function loadJson(filePath, fallback = {}) {

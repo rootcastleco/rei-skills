@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [Unreleased] — Multimodal Content Production Pipeline & 11-Provider Capability Ecosystem (`feat/multimodal-content-pipeline`)
+## 6.6.2 — Multimodal Content Production Pipeline & 11-Provider Capability Ecosystem (2026-11-18)
 
 ### Added
 - **Auditable 11-Project Upstream Registry & Policy Engine (`data/multimodal-providers.json`, `lib/multimodal-registry.js`):** Cataloged exact commit SHAs, software vs model-weight licenses (`last30days-skill`, `claude-video`, `humanizer`, `frontend-slides`, `ppt-master`, `hyperframes`, `video-use`, `openmontage`, `pocket-tts`, `phonon`, `zonos3-mini`), host runtime probing (`detectWorkstationCapabilities`, `runMultimodalDoctor`), AGPL-3.0 isolation (`LICENSE_AGPL_BLOCKED`), `CC-BY-NC-4.0` `phonon-40m-*` commercial block (`MODEL_LICENSE_NON_COMMERCIAL_BLOCKED`), and mandatory voice-cloning owner consent (`VOICE_CLONING_CONSENT_REQUIRED`).

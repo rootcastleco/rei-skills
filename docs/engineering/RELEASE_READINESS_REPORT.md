@@ -1,4 +1,4 @@
-# REI Skills — Platform Release Readiness Report (`v6.6.0`)
+# REI Skills — Platform Release Readiness Report (`v6.6.2`)
 
 **Prepared By:** Principal Architecture & Release Engineering Review  
 **Branches / PR Lineage:**  
