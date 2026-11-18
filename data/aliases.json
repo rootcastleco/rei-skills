@@ -598,6 +598,7 @@
     "rc-timeseries-display": "rc-timeseries-telemetry-sparse-series-display",
     "rc-timeseries-boundary": "rc-timeseries-telemetry-time-bucket-boundary",
     "rc-timeseries-storage": "rc-timeseries-telemetry-timestamp-precision-storage",
+    "rei-technical-editor": "rei-technical-writing-editor",
     "security-compliance-check": "security-compliance-compliance-check",
     "security-scanning-dependencies": "security-scanning-security-dependencies",
     "security-scanning-hardening": "security-scanning-security-hardening",

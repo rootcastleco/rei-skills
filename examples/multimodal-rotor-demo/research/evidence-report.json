@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "rei.research-evidence-report.v1",
+  "topic": "Rotor Vibration Analysis & Single-Plane Balancing",
+  "primaryEvidenceCount": 3,
+  "secondaryEvidenceCount": 1,
+  "staleClaimsCount": 0,
+  "allClaimsTraceable": true,
+  "claims": [
+    {
+      "claimId": "CLM-1",
+      "statement": "Industrial rotating machinery RMS velocity is evaluated across 10 Hz - 1000 Hz per ISO 20816-1 / ISO 10816-3 [SRC-1].",
+      "citations": [
+        "SRC-1"
+      ],
+      "epistemicClass": "PRIMARY_EVIDENCE",
+      "verified": true
+    },
+    {
+      "claimId": "CLM-2",
+      "statement": "Synchronous 4-channel acquisition at 10 kHz preserves anti-aliased bearing harmonics (BPFO, BPFI) with Hanning amplitude correction [SRC-3].",
+      "citations": [
+        "SRC-3"
+      ],
+      "epistemicClass": "PRIMARY_EVIDENCE",
+      "verified": true
+    },
+    {
+      "claimId": "CLM-3",
+      "statement": "Single-plane vector balancing computes Wc = -V0 / A computationally while flagging physical mass attachment as NOT VERIFIED without lockout/tagout [SRC-2].",
+      "citations": [
+        "SRC-2"
+      ],
+      "epistemicClass": "PRIMARY_EVIDENCE",
+      "verified": true
+    }
+  ],
+  "verificationStatus": "PASS"
+}

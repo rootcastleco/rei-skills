@@ -2,7 +2,7 @@
 
 > **The engineering-grade skill layer for AI agents — Rootcastle Engineering & Innovation**
 
-Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
+Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1436**
 
 ## architecture (99)
 
@@ -153,7 +153,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`team-composition-analysis`](skills/team-composition-analysis/SKILL.md) | This skill should be used when the user asks to \\\"plan team structure", "determine hiring needs", "design org chart", "calculate compen... | `safe` | `community` | team, composition |
 | [`whatsapp-automation`](skills/whatsapp-automation/SKILL.md) | Automate WhatsApp Business tasks via Rube MCP (Composio): send messages, manage templates, upload media, and handle contacts. Always sear... | `safe` | `community` | whatsapp |
 
-## data-ai (244)
+## data-ai (248)
 
 | Skill | Description | Risk | Source | Tags |
 | --- | --- | --- | --- | --- |
@@ -371,7 +371,11 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`rc-timeseries-telemetry-time-bucket-boundary`](skills/rc-timeseries-telemetry-time-bucket-boundary/SKILL.md) | Investigate time bucket boundary for time series telemetry with traceable evidence and reproducible negative-case testing. Use when asked... | `safe` | `rootcastle-original-technical-expansion-2026` | rootcastle, timeseries, telemetry, time, bucket, boundary |
 | [`rc-timeseries-telemetry-timestamp-precision-storage`](skills/rc-timeseries-telemetry-timestamp-precision-storage/SKILL.md) | Investigate timestamp precision storage for time series telemetry with traceable evidence and reproducible negative-case testing. Use whe... | `safe` | `rootcastle-original-technical-expansion-2026` | rootcastle, timeseries, telemetry, timestamp, precision, storage |
 | [`react-ui-patterns`](skills/react-ui-patterns/SKILL.md) | Modern React UI patterns for loading states, error handling, and data fetching. Use when building UI components, handling async data, or ... | `safe` | `community` | react, ui |
+| [`rei-local-speech-synthesis`](skills/rei-local-speech-synthesis/SKILL.md) | Provider-independent CPU speech synthesis integrating kyutai-labs/pocket-tts (v4.0.1, MIT code / CC-BY-4.0 weights) and gradium-ai/xn-ptt... | `critical` | `rootcastle-rei` | tts, speech, pocket-tts, phonon, wav, license-gate |
+| [`rei-multilingual-voice`](skills/rei-multilingual-voice/SKILL.md) | Turkish and English technical speech normalization and MIT-licensed Zyphra/ZONOS3-Mini voice generation adapter (commit a50e141), pairing... | `critical` | `rootcastle-rei` | zonos3-mini, turkish-tts, multilingual, text-normalization, wav, speech |
+| [`rei-multisource-research`](skills/rei-multisource-research/SKILL.md) | Conduct grounded, deduplicated multi-source technical research integrating mvanhorn/last30days-skill (commit a854f3b) with primary/second... | `safe` | `rootcastle-rei` | research, last30days, citations, evidence, deduplication |
 | [`rei-paper-orchestra`](skills/rei-paper-orchestra/SKILL.md) | Turn verified research notes and experiment logs into a reviewable LaTeX paper using Google Research PaperOrchestra. Use for multi-agent ... | `critical` | `Rootcastle Engineering & Innovation integration of google-research/paper-orchestra` | rei, paper, orchestra |
+| [`rei-video-understanding`](skills/rei-video-understanding/SKILL.md) | Analyze video containers, durations, resolutions, audio channels, and extracted keyframes using bradautomates/claude-video patterns (comm... | `safe` | `rootcastle-rei` | video, claude-video, ffprobe, ffmpeg, keyframes, analysis |
 | [`scala-pro`](skills/scala-pro/SKILL.md) | Master enterprise-grade Scala development with functional programming, distributed systems, and big data processing. Expert in Apache Pek... | `safe` | `community` | scala |
 | [`schema-markup`](skills/schema-markup/SKILL.md) | Design, validate, and optimize schema.org structured data for eligibility, correctness, and measurable SEO impact. Use when the user want... | `safe` | `community` | schema, markup |
 | [`segment-cdp`](skills/segment-cdp/SKILL.md) | Expert patterns for Segment Customer Data Platform including Analytics.js, server-side tracking, tracking plans with Protocols, identity ... | `safe` | `vibeship-spawner-skills (Apache 2.0)` | segment, cdp |
@@ -402,7 +406,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`xlsx-official`](skills/xlsx-official/SKILL.md) | Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When C... | `safe` | `anthropics/skills` | xlsx, official |
 | [`youtube-automation`](skills/youtube-automation/SKILL.md) | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Alwa... | `safe` | `community` | youtube |
 
-## development (357)
+## development (360)
 
 | Skill | Description | Risk | Source | Tags |
 | --- | --- | --- | --- | --- |
@@ -740,6 +744,9 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`react-patterns`](skills/react-patterns/SKILL.md) | Modern React patterns and principles. Hooks, composition, performance, TypeScript best practices. | `safe` | `community` | react |
 | [`react-state-management`](skills/react-state-management/SKILL.md) | Master modern React state management with Redux Toolkit, Zustand, Jotai, and React Query. Use when setting up global state, managing serv... | `offensive` | `community` | react, state |
 | [`reference-builder`](skills/reference-builder/SKILL.md) | Creates exhaustive technical references and API documentation. Generates comprehensive parameter listings, configuration guides, and sear... | `safe` | `community` | reference, builder |
+| [`rei-agent-video-editing`](skills/rei-agent-video-editing/SKILL.md) | Perform safe, parameterized FFmpeg video cutting, concatenation, audio muxing, and color grading aligned with browser-use/video-use (MIT,... | `safe` | `rootcastle-rei` | video-editing, video-use, ffmpeg, srt, media |
+| [`rei-interactive-presentations`](skills/rei-interactive-presentations/SKILL.md) | Build zero-dependency, accessible interactive HTML5 presentations from shared SlideDeckSpec structures integrating zarazhangrui/frontend-... | `safe` | `rootcastle-rei` | presentations, html, frontend-slides, accessibility, slides |
+| [`rei-programmatic-video`](skills/rei-programmatic-video/SKILL.md) | Compose deterministic 1280x720 MP4 videos and timed SRT subtitles from storyboards, slide frames, and narration audio integrating heygen-... | `safe` | `rootcastle-rei` | video, hyperframes, ffmpeg, mp4, subtitles, storyboard |
 | [`remotion-best-practices`](skills/remotion-best-practices/SKILL.md) | Best practices for Remotion - Video creation in React | `safe` | `remotion-dev/skills` | remotion, video, react, animation, composition |
 | [`ruby-pro`](skills/ruby-pro/SKILL.md) | Write idiomatic Ruby code with metaprogramming, Rails patterns, and performance optimization. Specializes in Ruby on Rails, gem developme... | `safe` | `community` | ruby |
 | [`rust-async-patterns`](skills/rust-async-patterns/SKILL.md) | Master Rust async programming with Tokio, async traits, error handling, and concurrent patterns. Use when building async Rust application... | `safe` | `community` | rust, async |
@@ -764,7 +771,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`webapp-testing`](skills/webapp-testing/SKILL.md) | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI... | `offensive` | `anthropics/skills` | webapp |
 | [`zustand-store-ts`](skills/zustand-store-ts/SKILL.md) | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React stat... | `safe` | `microsoft/skills` | zustand, store, ts |
 
-## general (170)
+## general (171)
 
 | Skill | Description | Risk | Source | Tags |
 | --- | --- | --- | --- | --- |
@@ -906,6 +913,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`receiving-code-review`](skills/receiving-code-review/SKILL.md) | Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionabl... | `safe` | `community` | receiving, code |
 | [`red-team-tools`](skills/red-team-tools/SKILL.md) | This skill should be used when the user asks to "follow red team methodology", "perform bug bounty hunting", "automate reconnaissance", "... | `offensive` | `community` | red, team |
 | [`referral-program`](skills/referral-program/SKILL.md) | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the u... | `safe` | `community` | referral, program |
+| [`rei-technical-writing-editor`](skills/rei-technical-writing-editor/SKILL.md) | Refine English and Turkish technical drafts using blader/humanizer editorial patterns (commit b48c832) while strictly preserving numbers,... | `safe` | `rootcastle-rei` | writing, humanizer, editorial, turkish, citations |
 | [`requesting-code-review`](skills/requesting-code-review/SKILL.md) | Use when completing tasks, implementing major features, or before merging to verify work meets requirements | `safe` | `community` | requesting, code |
 | [`search-specialist`](skills/search-specialist/SKILL.md) | Expert web researcher using advanced search techniques and synthesis. Masters search operators, result filtering, and multi-source verifi... | `safe` | `community` | search |
 | [`sharp-edges`](skills/sharp-edges/SKILL.md) | Identify error-prone APIs and dangerous configurations | `safe` | `trailofbits/skills` | sharp, edges |
@@ -1393,7 +1401,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`wordpress-penetration-testing`](skills/wordpress-penetration-testing/SKILL.md) | This skill should be used when the user asks to "pentest WordPress sites", "scan WordPress for vulnerabilities", "enumerate WordPress use... | `safe` | `community` | wordpress, penetration |
 | [`xss-html-injection`](skills/xss-html-injection/SKILL.md) | This skill should be used when the user asks to "test for XSS vulnerabilities", "perform cross-site scripting attacks", "identify HTML in... | `offensive` | `community` | xss, html, injection |
 
-## workflow (81)
+## workflow (84)
 
 | Skill | Description | Risk | Source | Tags |
 | --- | --- | --- | --- | --- |
@@ -1456,7 +1464,10 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1425**
 | [`posthog-automation`](skills/posthog-automation/SKILL.md) | Automate PostHog tasks via Rube MCP (Composio): events, feature flags, projects, user profiles, annotations. Always search tools first fo... | `safe` | `community` | posthog |
 | [`postmark-automation`](skills/postmark-automation/SKILL.md) | Automate Postmark email delivery tasks via Rube MCP (Composio): send templated emails, manage templates, monitor delivery stats and bounc... | `safe` | `community` | postmark |
 | [`reddit-automation`](skills/reddit-automation/SKILL.md) | Automate Reddit tasks via Rube MCP (Composio): search subreddits, create posts, manage comments, and browse top content. Always search to... | `safe` | `community` | reddit |
+| [`rei-content-production`](skills/rei-content-production/SKILL.md) | Orchestrate the 10-stage auditable multimodal research-to-media pipeline (Research, Evidence Validation, Script, Editorial Review, Storyb... | `safe` | `rootcastle-rei` | multimodal, pipeline, presentation, video, tts, research |
+| [`rei-pptx-production`](skills/rei-pptx-production/SKILL.md) | Generate genuine editable PowerPoint (.pptx) decks with native OpenXML text shapes (<p:sp>), tables (<a:tbl>), and speaker notes (<p:note... | `safe` | `rootcastle-rei` | pptx, powerpoint, ppt-master, openxml, slides |
 | [`rei-ultimate-orchestrator`](skills/rei-ultimate-orchestrator/SKILL.md) | Coordinate OpenAI/ChatGPT native skills with Rootcastle REI Skills and Rootcastle Prompt Archive for engineering, coding, research, desig... | `safe` | `Rootcastle Engineering & Innovation` | rei, ultimate, orchestrator |
+| [`rei-video-production-studio`](skills/rei-video-production-studio/SKILL.md) | Isolated external adapter contract for OpenMontageInc/OpenMontage (AGPL-3.0, commit 2e003e6). Blocked by default under commercial clean-r... | `critical` | `rootcastle-rei` | openmontage, agpl-3.0, video, studio, license-gate |
 | [`render-automation`](skills/render-automation/SKILL.md) | Automate Render tasks via Rube MCP (Composio): services, deployments, projects. Always search tools first for current schemas. | `safe` | `community` | render |
 | [`salesforce-automation`](skills/salesforce-automation/SKILL.md) | Automate Salesforce tasks via Rube MCP (Composio): leads, contacts, accounts, opportunities, SOQL queries. Always search tools first for ... | `safe` | `community` | salesforce |
 | [`segment-automation`](skills/segment-automation/SKILL.md) | Automate Segment tasks via Rube MCP (Composio): track events, identify users, manage groups, page views, aliases, batch operations. Alway... | `safe` | `community` | segment |

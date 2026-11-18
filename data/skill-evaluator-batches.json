@@ -1,9 +1,9 @@
 {
   "schemaVersion": "rei.skill-evaluator-batches.v1",
-  "catalogSha256": "70db768bd45f35822cd96d430f27af812ac6e7cfe4708d48a1b28a6db75d7ce4",
+  "catalogSha256": "bb3f9bb3224316e2b5b30f55ab28d17d0a79a89471d3a52aea703262a2ababe7",
   "commit": null,
   "maxSkillsPerBatch": 100,
-  "totalSkills": 1425,
+  "totalSkills": 1436,
   "batchCount": 15,
   "batches": [
     {
@@ -1295,18 +1295,29 @@
         "skills/reddit-automation",
         "skills/reference-builder",
         "skills/referral-program",
+        "skills/rei-agent-video-editing",
         "skills/rei-android-apks",
         "skills/rei-binary-intelligence",
         "skills/rei-casebook-forensics",
+        "skills/rei-content-production",
         "skills/rei-electron-and-js",
         "skills/rei-evidence-ledger",
         "skills/rei-firmware-and-iot",
+        "skills/rei-interactive-presentations",
+        "skills/rei-local-speech-synthesis",
         "skills/rei-mobile-runtime",
+        "skills/rei-multilingual-voice",
+        "skills/rei-multisource-research",
         "skills/rei-native-binaries",
         "skills/rei-paper-orchestra",
+        "skills/rei-pptx-production",
+        "skills/rei-programmatic-video",
         "skills/rei-rea-orchestrator",
         "skills/rei-reconstruction-parity",
+        "skills/rei-technical-writing-editor",
         "skills/rei-ultimate-orchestrator",
+        "skills/rei-video-production-studio",
+        "skills/rei-video-understanding",
         "skills/rei-wasm-and-managed",
         "skills/rei-web-and-protocols",
         "skills/remotion-best-practices",
@@ -1370,7 +1381,13 @@
         "skills/similarity-search-patterns",
         "skills/skill-creator",
         "skills/skill-creator-ms",
-        "skills/skill-developer",
+        "skills/skill-developer"
+      ]
+    },
+    {
+      "id": "batch-14",
+      "count": 100,
+      "paths": [
         "skills/skill-rails-upgrade",
         "skills/skill-seekers",
         "skills/slack-automation",
@@ -1381,13 +1398,7 @@
         "skills/social-content",
         "skills/software-architecture",
         "skills/solidity-security",
-        "skills/spark-optimization"
-      ]
-    },
-    {
-      "id": "batch-14",
-      "count": 100,
-      "paths": [
+        "skills/spark-optimization",
         "skills/sql-injection-testing",
         "skills/sql-optimization-patterns",
         "skills/sql-pro",
@@ -1476,7 +1487,13 @@
         "skills/vexor",
         "skills/viral-generator-builder",
         "skills/voice-agents",
-        "skills/voice-ai-development",
+        "skills/voice-ai-development"
+      ]
+    },
+    {
+      "id": "batch-15",
+      "count": 36,
+      "paths": [
         "skills/voice-ai-engine-development",
         "skills/vulnerability-scanner",
         "skills/wcag-audit-patterns",
@@ -1487,13 +1504,7 @@
         "skills/webapp-testing",
         "skills/webflow-automation",
         "skills/whatsapp-automation",
-        "skills/wiki-architect"
-      ]
-    },
-    {
-      "id": "batch-15",
-      "count": 25,
-      "paths": [
+        "skills/wiki-architect",
         "skills/wiki-changelog",
         "skills/wiki-onboarding",
         "skills/wiki-page-writer",

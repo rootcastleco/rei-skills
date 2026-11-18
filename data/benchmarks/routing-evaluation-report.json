@@ -1,6 +1,6 @@
 {
   "schemaVersion": "rei.routing-comparison.v1",
-  "evaluatedAt": "2026-11-16T18:02:23.862Z",
+  "evaluatedAt": "2026-11-18T18:35:23.728Z",
   "benchmarkPath": "data/benchmarks/routing-benchmark-v1.json",
   "totalTasks": 260,
   "targetsMet": {
@@ -27,11 +27,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 1024,
       "latencyMs": {
-        "p50": 13.066,
-        "p95": 26.757,
-        "mean": 14.756
+        "p50": 16.048,
+        "p95": 29.947,
+        "mean": 17.626
       },
-      "memoryDeltaMb": 5.193,
+      "memoryDeltaMb": 8.831,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 45,
@@ -247,11 +247,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 1034,
       "latencyMs": {
-        "p50": 13.886,
-        "p95": 22.034,
-        "mean": 13.865
+        "p50": 14.505,
+        "p95": 24.385,
+        "mean": 15.213
       },
-      "memoryDeltaMb": -3.213,
+      "memoryDeltaMb": -2.822,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 36,
@@ -427,11 +427,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 1025,
       "latencyMs": {
-        "p50": 13.94,
-        "p95": 21.084,
-        "mean": 14.241
+        "p50": 15.884,
+        "p95": 24.59,
+        "mean": 16.587
       },
-      "memoryDeltaMb": 8.108,
+      "memoryDeltaMb": 1.579,
       "queryTypeBreakdown": {
         "ambiguous_multi_domain": {
           "count": 7,
@@ -689,11 +689,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 1027,
       "latencyMs": {
-        "p50": 13.093,
-        "p95": 21.928,
-        "mean": 13.901
+        "p50": 15.74,
+        "p95": 27.429,
+        "mean": 17.046
       },
-      "memoryDeltaMb": -3.716,
+      "memoryDeltaMb": -0.637,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 152,
@@ -982,11 +982,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 982,
       "latencyMs": {
-        "p50": 1.322,
-        "p95": 3.966,
-        "mean": 3.003
+        "p50": 3.559,
+        "p95": 9.926,
+        "mean": 7.269
       },
-      "memoryDeltaMb": 3.269,
+      "memoryDeltaMb": -1.826,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 45,
@@ -1078,11 +1078,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 1012,
       "latencyMs": {
-        "p50": 1.393,
-        "p95": 4.174,
-        "mean": 1.681
+        "p50": 2.864,
+        "p95": 7.987,
+        "mean": 3.364
       },
-      "memoryDeltaMb": -2.055,
+      "memoryDeltaMb": -1.367,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 36,
@@ -1188,11 +1188,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 994,
       "latencyMs": {
-        "p50": 1.322,
-        "p95": 3.41,
-        "mean": 1.551
+        "p50": 2.921,
+        "p95": 7.445,
+        "mean": 3.295
       },
-      "memoryDeltaMb": 0.521,
+      "memoryDeltaMb": 1.77,
       "queryTypeBreakdown": {
         "ambiguous_multi_domain": {
           "count": 7,
@@ -1314,11 +1314,11 @@
       "criticalRiskMisroutingCount": 0,
       "averageContextTokens": 994,
       "latencyMs": {
-        "p50": 1.082,
-        "p95": 2.659,
-        "mean": 1.235
+        "p50": 1.81,
+        "p95": 4.337,
+        "mean": 2.157
       },
-      "memoryDeltaMb": 4.744,
+      "memoryDeltaMb": 9.697,
       "queryTypeBreakdown": {
         "positive_en": {
           "count": 152,
@@ -1473,7 +1473,7 @@
       "ndcgAt5Delta": 0.1016,
       "falsePositiveRateDelta": -0.25,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.148
+      "p95LatencyRatio": 0.331
     },
     "dev": {
       "recallAt3Delta": 0.0714,
@@ -1481,7 +1481,7 @@
       "ndcgAt5Delta": 0.0558,
       "falsePositiveRateDelta": -0.25,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.189
+      "p95LatencyRatio": 0.328
     },
     "eval": {
       "recallAt3Delta": 0.0625,
@@ -1489,7 +1489,7 @@
       "ndcgAt5Delta": 0.095,
       "falsePositiveRateDelta": -0.375,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.162
+      "p95LatencyRatio": 0.303
     },
     "all": {
       "recallAt3Delta": 0.075,
@@ -1497,7 +1497,7 @@
       "ndcgAt5Delta": 0.0878,
       "falsePositiveRateDelta": -0.3,
       "criticalRiskMisroutingDelta": 0,
-      "p95LatencyRatio": 0.121
+      "p95LatencyRatio": 0.158
     }
   }
 }

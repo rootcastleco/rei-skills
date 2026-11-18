@@ -4,7 +4,7 @@
 
 ## Quick Commands for Gemini CLI & Antigravity
 
-- **Search the 895-skill catalog:** `node bin/install.js search "<query>"`
+- **Search the 1,436-skill catalog:** `node bin/install.js search "<query>"`
 - **Inspect a skill's metadata and files:** `node bin/install.js info <skill-id>`
 - **Install a skill or bundle for Gemini CLI (`~/.gemini/skills`):** `node bin/install.js add <skill-or-bundle> --gemini`
 - **Install a skill or bundle for Antigravity (`~/.gemini/rei/skills`):** `node bin/install.js add <skill-or-bundle> --antigravity`

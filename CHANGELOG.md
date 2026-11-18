@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased] — Multimodal Content Production Pipeline & 11-Provider Capability Ecosystem (`feat/multimodal-content-pipeline`)
+
+### Added
+- **Auditable 11-Project Upstream Registry & Policy Engine (`data/multimodal-providers.json`, `lib/multimodal-registry.js`):** Cataloged exact commit SHAs, software vs model-weight licenses (`last30days-skill`, `claude-video`, `humanizer`, `frontend-slides`, `ppt-master`, `hyperframes`, `video-use`, `openmontage`, `pocket-tts`, `phonon`, `zonos3-mini`), host runtime probing (`detectWorkstationCapabilities`, `runMultimodalDoctor`), AGPL-3.0 isolation (`LICENSE_AGPL_BLOCKED`), `CC-BY-NC-4.0` `phonon-40m-*` commercial block (`MODEL_LICENSE_NON_COMMERCIAL_BLOCKED`), and mandatory voice-cloning owner consent (`VOICE_CLONING_CONSENT_REQUIRED`).
+- **Modular Media & Editorial Adapters (`lib/multimodal-providers.js`, `lib/pptx-openxml.js`):** Added grounded deduplicated research + `last30days` preflight, EN/TR `humanizer` editor preserving all numbers/SI units/citations/`NOT VERIFIED` flags, shared `SlideDeckSpec` rendering both accessible HTML5 decks (`frontend-slides`) and genuine editable OpenXML `.pptx` slides/tables/notes (`verifyEditablePptx`), Turkish & English technical speech text normalization (`Hz`, `kHz`, `mm/s²`, `RPM`, `ISO`), deterministic offline WAV fallback, `claude-video` `ffprobe`/keyframe inspector, and `hyperframes`/FFmpeg `1280×720` MP4 + `.srt` rendering.
+- **10-Stage Resumable Pipeline & CLI/MCP Extensions (`lib/multimodal-pipeline.js`, `bin/install.js`, `bin/mcp-server.js`, `lib/hol-guard-policy.js`):** Added SHA-256 checkpointed `research -> evidence_validation -> script -> editorial_review -> storyboard -> slides -> narration -> video -> quality_assurance -> artifact_package` workflow with `--resume` fault recovery, CLI `pipeline` & `providers` commands, and 2 opt-in MCP tools (`rei_multimodal_providers`, `rei_multimodal_pipeline_plan`) under `REI_MCP_EXTENDED_TOOLS=1` (preserving all 10 default MCP tools).
+- **11 Multimodal Skills, Hybrid Router EN/TR Coverage, Tests & Demo:** Added `rei-content-production`, `rei-multisource-research`, `rei-video-understanding`, `rei-technical-writing-editor`, `rei-interactive-presentations`, `rei-pptx-production`, `rei-programmatic-video`, `rei-agent-video-editing`, `rei-video-production-studio`, `rei-local-speech-synthesis`, and `rei-multilingual-voice`; updated `lib/hybrid-router.js` and `data/workflows.json`; added `examples/multimodal-rotor-demo/`, `docs/MULTIMODAL_PRODUCTION_PIPELINE.md`, and 12-case acceptance suite `scripts/tests/multimodal-pipeline.test.js`.
+
+### Changed & Fixed
+- **Version Sync & Tarball Hygiene:** Synchronized `bin/mcp-server.js` (`SERVER_INFO.version`), `AGENTS.md` (`v6.6.1`), `CLAUDE.md`, and `GEMINI.md` catalog counts; added cross-platform Python executable fallback to `scripts/tests/paper-orchestra.test.js` for Windows hosts without a `python3` alias; and passed `allowBundledFallback: true` in `planMultimodalPipeline`.
+
+---
+
 ## 6.6.0 — Auditable Quality Engine, Gold 50 & Capability Controls (2026-11-16)
 
 ### Added

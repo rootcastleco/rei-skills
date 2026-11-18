@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:04,000
+Birinci bölümde rotor titreşim analizinin temellerini ve ISO 10816-3 ile ISO 20816-1 standartlarına göre on hertz ile bin hertz bandındaki etkin hız eşiklerini inceliyoruz.
+
+2
+00:00:04,000 --> 00:00:08,000
+İkinci bölümde dört kanallı on kilohertz eşzamanlı örnekleme mimarisini, Hanning pencereleme katsayılarını ve yatak arıza frekanslarını ele alıyoruz.
+
+3
+00:00:08,000 --> 00:00:12,000
+Üçüncü bölümde bin sekiz yüz devir dakika hızda deneme kütlesi ile etki katsayısı hesabını ve kilitleme etiketleme güvenlik sınırını inceliyoruz.

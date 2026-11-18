@@ -1,0 +1,25 @@
+{
+  "briefEdits": [
+    {
+      "ruleId": "HUM_02_FILLER_INTRO",
+      "category": "filler",
+      "occurrencesRemovedOrRewritten": 1,
+      "samples": [
+        "At its core, what matters is that "
+      ]
+    }
+  ],
+  "preservedInvariants": {
+    "allNumbersAndUnitsPreserved": true,
+    "allCitationsPreserved": true,
+    "allWarningsPreserved": true,
+    "missingNumbers": [],
+    "missingCitations": [],
+    "missingWarnings": [],
+    "checkedCount": {
+      "numbers": 11,
+      "citations": 3,
+      "safetyTags": 3
+    }
+  }
+}

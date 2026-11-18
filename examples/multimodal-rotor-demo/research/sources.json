@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "rei.research-sources.v1",
+  "topic": "Rotor Vibration Analysis & Single-Plane Balancing",
+  "provider": "last30days-skill",
+  "providerCommit": "a854f3bcb2c4344d7498426d653378510f8b253a",
+  "offlineMode": true,
+  "last30Preflight": {
+    "available": true,
+    "checked": true,
+    "scriptPath": "skills/last30days/scripts/last30days.py",
+    "exitCode": 2,
+    "status": "FALLBACK_OFFLINE_CORPUS"
+  },
+  "totalCandidateCount": 5,
+  "deduplicatedCount": 4,
+  "duplicatesRemoved": 1,
+  "staleCount": 0,
+  "sources": [
+    {
+      "id": "SRC-1",
+      "url": "https://www.iso.org/standard/78311.html",
+      "normalizedUrl": "https://www.iso.org/standard/78311.html",
+      "title": "ISO 20816-1 / ISO 10816-3 — Mechanical vibration measurement and evaluation of rotating machinery",
+      "evidenceType": "PRIMARY_EVIDENCE",
+      "publisher": "ISO",
+      "publishedAt": "2022-06-01",
+      "ageDays": 1631,
+      "stale": false,
+      "keyMetrics": [
+        "10 Hz - 1000 Hz",
+        "mm/s RMS",
+        "ISO 10816-3",
+        "ISO 20816-1"
+      ],
+      "summary": "Defines broad-band RMS vibration velocity severity zones (mm/s, 10 Hz to 1000 Hz) for rigid and flexible industrial rotor supports; Class I-IV thresholds anchor alarm vs trip envelopes.",
+      "contentSha256": "30a539fec842b1581f46e9d3b2e765bba8967b8c0853d956d985a0e366d8cdb5"
+    },
+    {
+      "id": "SRC-2",
+      "url": "https://github.com/rootcastleco/rei-skills/blob/main/skills/rc-rotor-mass-balance-two-plane-coupling/SKILL.md",
+      "normalizedUrl": "https://github.com/rootcastleco/rei-skills/blob/main/skills/rc-rotor-mass-balance-two-plane-coupling/skill.md",
+      "title": "REI Skills: Influence-Coefficient Single & Two-Plane Rotor Balancing Contract",
+      "evidenceType": "PRIMARY_EVIDENCE",
+      "publisher": "Rootcastle Engineering & Innovation",
+      "publishedAt": "2026-11-16",
+      "ageDays": 2,
+      "stale": false,
+      "keyMetrics": [
+        "1x synchronous phase",
+        "Wc = -V0 / A",
+        "lockout/tagout",
+        "COMPUTATIONAL_ONLY"
+      ],
+      "summary": "Formulates influence vector A = (V1 - V0) / Wt and correction mass Wc = -V0 / A, enforcing lockout/tagout and operator signoff before physical rotor weight attachment.",
+      "contentSha256": "bf2a7fa50d86b2c734af15a69de27eff66200a04eee7353abaca9c506d6eab7e"
+    },
+    {
+      "id": "SRC-3",
+      "url": "https://github.com/rootcastleco/rei-skills/blob/main/skills/rc-machine-vibration-hanning-window-leakage/SKILL.md",
+      "normalizedUrl": "https://github.com/rootcastleco/rei-skills/blob/main/skills/rc-machine-vibration-hanning-window-leakage/skill.md",
+      "title": "REI Skills: FFT Windowing, Anti-Aliasing & Bearing Defect Sidebands",
+      "evidenceType": "PRIMARY_EVIDENCE",
+      "publisher": "Rootcastle Engineering & Innovation",
+      "publishedAt": "2026-11-16",
+      "ageDays": 2,
+      "stale": false,
+      "keyMetrics": [
+        "4 channels",
+        "10 kHz",
+        "2.56x Nyquist factor",
+        "BPFO/BPFI"
+      ],
+      "summary": "Specifies synchronous sampling >= 2.56x f_max (e.g., 4 channels at 10 kHz), Hanning window amplitude correction factors, and bearing fault harmonics (BPFO, BPFI, BSF, FTF).",
+      "contentSha256": "6217e47f5c51f4b587499ed02ff7f08c0dffc12fccdd99a3ca2bc1c9d89c4c0e"
+    },
+    {
+      "id": "SRC-4",
+      "url": "https://promt.rootcastle.com/",
+      "normalizedUrl": "https://promt.rootcastle.com",
+      "title": "Rootcastle Public Prompt Archive Reference Policy",
+      "evidenceType": "SECONDARY_EVIDENCE",
+      "publisher": "Rootcastle Engineering & Innovation",
+      "publishedAt": "2026-11-16",
+      "ageDays": 2,
+      "stale": false,
+      "keyMetrics": [
+        "SHA-256",
+        "UNTRUSTED_EXTERNAL_REFERENCE"
+      ],
+      "summary": "Supplies versioned, SHA-256 checksummed technical review rubrics classified strictly as UNTRUSTED_EXTERNAL_REFERENCE.",
+      "contentSha256": "18e89ba8670af03b46f2ad8f521418c59363f75fb8d0e2b52f2581125220509c"
+    }
+  ]
+}
