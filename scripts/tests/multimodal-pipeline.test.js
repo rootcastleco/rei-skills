@@ -105,23 +105,56 @@ function main() {
     assert.equal(runRes.qualityReport.speechVerified.status, "PASS");
     assert.equal(fs.existsSync(path.join(runOut, "audio", "narration.wav")), true);
 
-    // Case 8 & 5: Playable MP4 validation & claude-video understanding audit when ffmpeg is installed
+    // Direct security tests on claude-video adapter (work independently of host ffmpeg)
+    const trav = runVideoUnderstandingStage("../../.ssh/id_rsa", { allowedRoots: [ROOT, os.tmpdir()] });
+    assert.equal(trav.status, "BLOCKED");
+    const badExt = runVideoUnderstandingStage(path.join(tmpRoot, "malicious.exe"), { allowedRoots: [ROOT, os.tmpdir()] });
+    assert.equal(badExt.status, "BLOCKED");
+    assert.equal(badExt.code, "UNSUPPORTED_MEDIA_FORMAT");
+
+    // Case 8 & 5: Real FFmpeg MP4 validation when installed; honest BLOCKED/NOT VERIFIED when absent
     if (hostCaps.binaries.ffmpeg.installed && hostCaps.binaries.ffprobe.installed) {
       const mp4Path = path.join(runOut, "video", "final.mp4");
       assert(fs.existsSync(mp4Path), "final.mp4 must exist when ffmpeg is installed");
+      assert.equal(runRes.manifest.stages.video.status, "PASS");
       assert.equal(runRes.qualityReport.videoAudit.status, "PASS");
-      assert(runRes.qualityReport.videoAudit.metadata.durationSec > 0);
+      assert.equal(runRes.qualityReport.videoAudit.metadata.durationSec > 0, true);
       assert.equal(runRes.qualityReport.videoAudit.metadata.video.width, 1280);
       assert.equal(runRes.qualityReport.videoAudit.metadata.video.height, 720);
-      assert(runRes.qualityReport.videoAudit.metadata.audio !== null, "MP4 must contain audio track");
-      assert(runRes.qualityReport.videoAudit.extractedFrameCount >= 1);
+      assert.equal(runRes.qualityReport.videoAudit.metadata.audio !== null, true, "MP4 must contain audio track");
+      assert.equal(runRes.qualityReport.videoAudit.extractedFrameCount >= 1, true);
 
-      // Direct security tests on claude-video adapter
-      const trav = runVideoUnderstandingStage("../../.ssh/id_rsa", { allowedRoots: [ROOT, os.tmpdir()] });
-      assert.equal(trav.status, "BLOCKED");
-      const badExt = runVideoUnderstandingStage(path.join(tmpRoot, "malicious.exe"), { allowedRoots: [ROOT, os.tmpdir()] });
-      assert.equal(badExt.status, "BLOCKED");
-      assert.equal(badExt.code, "UNSUPPORTED_MEDIA_FORMAT");
+      // Explicitly test graceful degradation when ffmpeg/ffprobe are unavailable
+      const noFfmpegOut = path.join(tmpRoot, "no-ffmpeg-run");
+      const noFfmpegRes = runMultimodalPipeline({
+        task: "Rotor vibration brief without ffmpeg",
+        outputDir: noFfmpegOut,
+        targetDurationSec: 4,
+        commercialUse: true,
+        checkUpstreamCli: false,
+        requireOffline: true,
+        capabilities: {
+          ...hostCaps,
+          binaries: {
+            ...hostCaps.binaries,
+            ffmpeg: { installed: false, version: null },
+            ffprobe: { installed: false, version: null },
+          },
+        },
+      });
+      assert.equal(noFfmpegRes.status, "PASS");
+      assert.equal(noFfmpegRes.manifest.stages.video.status, "BLOCKED");
+      assert.equal(noFfmpegRes.manifest.stages.video.code, "MISSING_FFMPEG");
+      assert.equal(noFfmpegRes.qualityReport.videoAudit.status, "NOT VERIFIED");
+      assert.equal(fs.existsSync(path.join(noFfmpegOut, "video", "subtitles.srt")), true);
+      assert.equal(fs.existsSync(path.join(noFfmpegOut, "video", "final.mp4")), false);
+      assert.equal(validateMultimodalArtifacts(noFfmpegOut).valid, true);
+    } else {
+      assert.equal(runRes.manifest.stages.video.status, "BLOCKED");
+      assert.equal(runRes.manifest.stages.video.code, "MISSING_FFMPEG");
+      assert.equal(runRes.qualityReport.videoAudit.status, "NOT VERIFIED");
+      assert.equal(fs.existsSync(path.join(runOut, "video", "subtitles.srt")), true);
+      assert.equal(fs.existsSync(path.join(runOut, "video", "final.mp4")), false);
     }
 
     // Validate hash integrity across all outputs
