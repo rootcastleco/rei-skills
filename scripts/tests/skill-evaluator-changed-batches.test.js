@@ -10,18 +10,39 @@ const base = "0e94b2422a1c48ea8d3cd2a5e9305c315409ca2e";
 const head = cp.execFileSync("git",["rev-parse","HEAD"],{cwd:root,encoding:"utf8"}).trim();
 const tmp=fs.mkdtempSync(path.join(os.tmpdir(),"rei-changed-partitions-"));
 const output=path.join(tmp,"changed.json");
-const generate = cp.spawnSync(process.execPath,[script,"generate","--base",base,"--head",head,"--output",output],{cwd:root,encoding:"utf8"});
-assert.equal(generate.status,0,generate.stderr);
-const verify = cp.spawnSync(process.execPath,[script,"verify",output],{cwd:root,encoding:"utf8"});
-assert.equal(verify.status,0,verify.stderr);
-const data = JSON.parse(fs.readFileSync(output,"utf8"));
-assert.ok(data.totalChangedSkills > 250);
-assert.ok(data.batches.length >= 3);
-assert.ok(data.batches.every(batch=>batch.count>0&&batch.count<=100));
-const all=data.batches.flatMap(x=>x.paths);
-assert.equal(new Set(all).size,all.length);
-assert.equal(all.length,data.totalChangedSkills);
-const expected=cp.execFileSync("git",["diff","--name-only",base,head,"--","skills"],{cwd:root,encoding:"utf8"}).split("\n").filter(Boolean);
-const dirset=new Set(expected.map(x=>x.split("/").slice(0,2).join("/")).filter(x=>fs.existsSync(path.join(root,x,"SKILL.md"))));
-assert.deepEqual(new Set(all),dirset);
-console.log("PASS: deterministic changed-skill partitioning and exact coverage "+data.totalChangedSkills+" across "+data.batches.length+" batches");
+const fixture=path.join(tmp,"paths.txt");
+const imported=JSON.parse(fs.readFileSync(path.join(root,"data/rei67-import-provenance.json"),"utf8"));
+const design=JSON.parse(fs.readFileSync(path.join(root,"data/design-studio-sources.json"),"utf8"));
+const high=JSON.parse(fs.readFileSync(path.join(root,"data/design-studio-high-signal.json"),"utf8"));
+const expected=new Set([
+  ...imported.imported.map(x=>"skills/"+x.id),
+  ...design.design20.filter(x=>x.mode==="adapter").map(x=>"skills/"+x.id),
+  ...high.items.filter(x=>!x.existing).map(x=>"skills/"+x.id),
+  "skills/rei-design-studio",
+]);
+assert.equal(expected.size,297);
+fs.writeFileSync(fixture,[...expected].sort().join("\n")+"\n");
+function run(args){
+  return cp.spawnSync(process.execPath,[script,...args],{cwd:root,encoding:"utf8"});
+}
+const generated=run(["generate","--base",base,"--head",head,"--paths-file",fixture,"--output",output]);
+assert.equal(generated.status,0,generated.stderr);
+const verified=run(["verify",output]);
+assert.equal(verified.status,0,verified.stderr);
+const data=JSON.parse(fs.readFileSync(output,"utf8"));
+assert.equal(data.totalChangedSkills,297);
+assert.equal(data.batches.length,3);
+assert.deepEqual(data.batches.map(x=>x.count),[100,100,97]);
+const observed=data.batches.flatMap(x=>x.paths);
+assert.deepEqual(new Set(observed),expected);
+assert.equal(new Set(observed).size,observed.length);
+// On full-history checkouts additionally prove the production git-diff path.
+const hasBase=cp.spawnSync("git",["cat-file","-e",base+"^{commit}"],{cwd:root}).status===0;
+if(hasBase){
+  const source=path.join(tmp,"git.json");
+  const result=run(["generate","--base",base,"--head",head,"--output",source]);
+  assert.equal(result.status,0,result.stderr);
+  const fromGit=JSON.parse(fs.readFileSync(source,"utf8"));
+  assert.deepEqual(new Set(fromGit.batches.flatMap(x=>x.paths)),expected);
+}
+console.log("PASS: 297 changed skill entries, deterministic 100/100/97 partitioning; git-diff path "+(hasBase?"PASS":"NOT VERIFIED in shallow checkout"));

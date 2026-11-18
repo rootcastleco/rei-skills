@@ -41,17 +41,26 @@ function changedPaths(base, head) {
   const output = runGit(["diff", "--name-only", "-z", "--diff-filter=ACMRT", base, head, "--", "skills"]);
   return output.toString("utf8").split("\0").filter(Boolean);
 }
-function createManifest(base, head) {
+function createManifest(base, head, fixtureFile) {
   if (!isSha(base) || !isSha(head)) fail("base/head must be exact commit SHAs");
   const all = currentSkills();
-  const paths = changedPaths(base, head);
   const changed = new Set();
-  for (const filename of paths) {
-    const pieces = filename.split("/");
-    if (pieces.length < 3 || pieces[0] !== "skills") continue;
-    // One REI skill per top-level directory. Support files also select that skill.
-    const candidate = pieces.slice(0, 2).join("/");
-    if (all.has(candidate)) changed.add(candidate);
+  if (fixtureFile) {
+    // Explicit test fixture mode: verify partitioning without assuming Git history exists.
+    const ids = fs.readFileSync(fixtureFile, "utf8").split("\n").filter(Boolean);
+    for (const id of ids) {
+      if (!all.has(id)) fail("unknown fixture skill: " + id);
+      changed.add(id);
+    }
+  } else {
+    const paths = changedPaths(base, head);
+    for (const filename of paths) {
+      const pieces = filename.split("/");
+      if (pieces.length < 3 || pieces[0] !== "skills") continue;
+      // One REI skill per top-level directory. Support files also select that skill.
+      const candidate = pieces.slice(0, 2).join("/");
+      if (all.has(candidate)) changed.add(candidate);
+    }
   }
   const sorted = [...changed].sort();
   const batches = [];
@@ -103,7 +112,7 @@ try {
     const head = getArg("--head");
     const dest = getArg("--output");
     if (!dest) fail("missing --output");
-    const manifest = createManifest(base, head);
+    const manifest = createManifest(base, head, getArg("--paths-file"));
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.writeFileSync(dest, JSON.stringify(manifest, null, 2) + "\n", "utf8");
     console.log(JSON.stringify({ count: manifest.totalChangedSkills, batches: manifest.batches.length, digest: manifest.digest }));
