@@ -53,4 +53,13 @@ assert.strictEqual(summary.incompleteBatches.length, 0);
 assert.strictEqual(summary.commit, "a".repeat(40));
 assert.strictEqual(summary.catalogSha256, manifest.catalogSha256);
 
+const incompleteBatch = manifest.batches[0];
+fs.rmSync(path.join(evidenceDir, `${incompleteBatch.id}-other`), { recursive: true });
+const incompleteSummaryPath = path.join(tempDir, "incomplete-summary.json");
+result = run(["aggregate", "--manifest", manifestPath, "--evidence", evidenceDir, "--commit", "a".repeat(40), "--output", incompleteSummaryPath]);
+assert.strictEqual(result.status, 1);
+const incompleteSummary = JSON.parse(fs.readFileSync(incompleteSummaryPath, "utf8"));
+assert.strictEqual(incompleteSummary.status, "FAIL");
+assert.deepStrictEqual(incompleteSummary.incompleteBatches, [incompleteBatch.id]);
+
 console.log("PASS: SkillEvaluator batch partitioning, exact coverage and aggregation");

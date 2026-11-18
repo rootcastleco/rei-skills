@@ -110,14 +110,18 @@ function evidenceStatus(files) {
     try {
       const data = JSON.parse(fs.readFileSync(file, "utf8"));
       const serialized = JSON.stringify(data).toUpperCase();
-      if (/"STATUS"\s*:\s*"FAIL"|<FAIL>|NOT VERIFIED/.test(serialized)) return "NOT VERIFIED";
-      if (/"CONCLUSION"\s*:\s*"FAILURE"|/"STATUS"\s*:\s*"FAILURE"/.test(serialized)) return "FAIL";
-      if (/"STATUS"\s*:\s*"PASS"|/"VERDICT"\s*:\s*"PASS"/.test(serialized)) return "PASS";
+      if (serialized.includes("NOT VERIFIED")) return "NOT VERIFIED";
+      if (serialized.includes('"STATUS":"FAIL"') ||
+          serialized.includes('"VERDICT":"FAIL"') ||
+          serialized.includes('"CONCLUSION":"FAILURE"') ||
+          serialized.includes('"STATUS":"FAILURE"')) return "FAIL";
+      if (serialized.includes('"STATUS":"PASS"') ||
+          serialized.includes('"VERDICT":"PASS"')) return "PASS";
     } catch {
       return "NOT VERIFIED";
     }
   }
-  return files.length ? "PASS" : "NOT VERIFIED";
+  return "NOT VERIFIED";
 }
 
 function aggregate(manifestPath, evidenceDir, commit, outputPath) {
