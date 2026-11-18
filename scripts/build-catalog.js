@@ -674,8 +674,13 @@ function buildCatalog() {
   const aliases = buildAliases(catalog.skills);
   const bundleData = buildBundles(catalog.skills);
   // Curated, source-backed domain bundles must survive full catalog rebuilds.
-  const customPath = path.join(ROOT, "data", "curated-design-bundles.json");
-  if (fs.existsSync(customPath)) {
+  const curatedSources = [
+    "data/curated-design-bundles.json",
+    "data/curated-expansion-bundles.json",
+  ];
+  for (const sourceFile of curatedSources) {
+    const customPath = path.join(ROOT, sourceFile);
+    if (!fs.existsSync(customPath)) continue;
     const custom = JSON.parse(fs.readFileSync(customPath, "utf8"));
     const available = new Set(catalog.skills.map((skill) => skill.id));
     for (const [name, bundle] of Object.entries(custom)) {
