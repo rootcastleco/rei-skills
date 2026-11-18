@@ -1,0 +1,71 @@
+{
+  "title": "Verified upstream design skill candidates",
+  "status": "Curated REI workflow adapters. Upstream source skill bodies not copied, external tools not installed.",
+  "selection": "Public active repository and confirmed specific upstream SKILL.md file. GitHub star rankings are only a discovery signal; counts not retained as quality evidence.",
+  "items": [
+    {
+      "id": "design-taste-frontend",
+      "repo": "Leonxlnx/taste-skill",
+      "source": "skills/taste-skill/SKILL.md",
+      "purpose": "Design production-grade company websites with distinctive art direction, real assets, and browser-verified polish.",
+      "checks": "Visual hierarchy, authentic asset licensing, layout consistency, screenshot evidence, and approved animation."
+    },
+    {
+      "id": "impeccable",
+      "repo": "pbakaus/impeccable",
+      "source": ".pi/skills/impeccable/SKILL.md",
+      "purpose": "Critique and polish layouts, typography, colors, responsive interactions, and accessibility of existing UIs.",
+      "checks": "Document critique findings and rerun visual and keyboard tests after improvements."
+    },
+    {
+      "id": "diagram-design",
+      "repo": "cathrynlavery/diagram-design",
+      "source": "skills/diagram-design/SKILL.md",
+      "purpose": "Produce editable, precise technical and architectural diagrams as HTML and SVG.",
+      "checks": "Verify labels, arrows, scale, meaning, contrast and export against the technical source."
+    },
+    {
+      "id": "hallmark",
+      "repo": "Nutlope/hallmark",
+      "source": "skills/hallmark/SKILL.md",
+      "purpose": "Create intentionally art-directed new web pages without repetitive generated styling.",
+      "checks": "Keep user-owned brand tokens and validate design originality and mobile layouts."
+    },
+    {
+      "id": "animate",
+      "repo": "emilkowalski/skills",
+      "source": "skills/animate/SKILL.md",
+      "purpose": "Implement appropriate motion and transitions in real components with interruption and reduced-motion behavior.",
+      "checks": "Measure motion performance, reduced-motion handling and exit timing."
+    },
+    {
+      "id": "review-animations",
+      "repo": "emilkowalski/skills",
+      "source": "skills/review-animations/SKILL.md",
+      "purpose": "Review and critique existing interface motion implementations with code and visual evidence.",
+      "checks": "Record actual animation review scope and verified regressions."
+    },
+    {
+      "id": "web-design-engineer",
+      "repo": "ConardLi/garden-skills",
+      "source": "skills/web-design-engineer/SKILL.md",
+      "purpose": "Build responsive browser-rendered design artifacts and verify visual outcomes in a running app.",
+      "checks": "Capture viewport screenshots and confirm meaningful interaction, keyboard behavior, and loading states."
+    },
+    {
+      "id": "interface-review",
+      "repo": "jakubkrehel/skills",
+      "source": "skills/interface-review/SKILL.md",
+      "purpose": "Review changed UI code and detect newly introduced layout, accessibility, text and interaction regressions.",
+      "checks": "Diff-based severity ratings, screenshots, verified fixes and regression tests."
+    },
+    {
+      "id": "web-design-guidelines",
+      "repo": "vercel-labs/agent-skills",
+      "source": "skills/web-design-guidelines/SKILL.md",
+      "purpose": "Audit implemented web interfaces against documented design and accessibility requirements.",
+      "checks": "Avoid claims of live audit without rendered screenshots and browser observations.",
+      "existing": true
+    }
+  ]
+}

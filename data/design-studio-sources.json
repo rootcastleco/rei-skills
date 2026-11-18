@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "verification": "catalogue-only; external systems are not installed or authenticated",
+  "design20": [
+    {
+      "id": "ui-ux-pro-max",
+      "upstream": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "mode": "existing"
+    },
+    {
+      "id": "canvas-design",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "pptx",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "theme-factory",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "stitch-design",
+      "upstream": "https://github.com/google-labs-code/stitch-skills",
+      "mode": "adapter"
+    },
+    {
+      "id": "frontend-design",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "design-md",
+      "upstream": "https://github.com/google-labs-code/stitch-skills",
+      "mode": "existing"
+    },
+    {
+      "id": "astryx-design",
+      "upstream": "https://github.com/meta/astryx",
+      "mode": "adapter"
+    },
+    {
+      "id": "shadcn-ui-design",
+      "upstream": "https://github.com/shadcn-ui/ui",
+      "mode": "adapter"
+    },
+    {
+      "id": "tailwind-css-design",
+      "upstream": "https://github.com/tailwindlabs/tailwindcss",
+      "mode": "adapter"
+    },
+    {
+      "id": "magic-ui-design",
+      "upstream": "https://github.com/magicuidesign/magicui",
+      "mode": "adapter"
+    },
+    {
+      "id": "magic-mcp-design",
+      "upstream": "https://github.com/21st-dev/magic-mcp",
+      "mode": "adapter"
+    },
+    {
+      "id": "figma-context-design",
+      "upstream": "https://github.com/GLips/Figma-Context-MCP",
+      "mode": "adapter"
+    },
+    {
+      "id": "penpot-design",
+      "upstream": "https://github.com/penpot/penpot",
+      "mode": "adapter"
+    },
+    {
+      "id": "excalidraw-design",
+      "upstream": "https://github.com/excalidraw/excalidraw",
+      "mode": "adapter"
+    },
+    {
+      "id": "tldraw-design",
+      "upstream": "https://github.com/tldraw/tldraw",
+      "mode": "adapter"
+    },
+    {
+      "id": "lucide-design",
+      "upstream": "https://github.com/lucide-icons/lucide",
+      "mode": "adapter"
+    },
+    {
+      "id": "leonardo-colors",
+      "upstream": "https://github.com/adobe/leonardo",
+      "mode": "adapter"
+    },
+    {
+      "id": "rembg-assets",
+      "upstream": "https://github.com/danielgatis/rembg",
+      "mode": "adapter"
+    },
+    {
+      "id": "agent-browser-qa",
+      "upstream": "https://github.com/vercel-labs/agent-browser",
+      "mode": "adapter"
+    }
+  ],
+  "toolkit25": [
+    {
+      "id": "frontend-design",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "canvas-design",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "algorithmic-art",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "theme-factory",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "remotion-best-practices",
+      "upstream": "https://github.com/remotion-dev/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "docx",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "pptx",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "xlsx",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "pdf",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "doc-coauthoring",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "copywriting",
+      "upstream": "https://github.com/coreyhaines31/marketingskills",
+      "mode": "existing"
+    },
+    {
+      "id": "seo-audit",
+      "upstream": "https://github.com/coreyhaines31/marketingskills",
+      "mode": "existing"
+    },
+    {
+      "id": "page-cro",
+      "upstream": "https://github.com/coreyhaines31/marketingskills",
+      "mode": "existing"
+    },
+    {
+      "id": "email-sequence",
+      "upstream": "https://github.com/coreyhaines31/marketingskills",
+      "mode": "existing"
+    },
+    {
+      "id": "social-content",
+      "upstream": "https://github.com/coreyhaines31/marketingskills",
+      "mode": "existing"
+    },
+    {
+      "id": "writing-plans",
+      "upstream": "https://github.com/obra/superpowers",
+      "mode": "existing"
+    },
+    {
+      "id": "subagent-driven-development",
+      "upstream": "https://github.com/obra/superpowers",
+      "mode": "existing"
+    },
+    {
+      "id": "using-git-worktrees",
+      "upstream": "https://github.com/obra/superpowers",
+      "mode": "existing"
+    },
+    {
+      "id": "mcp-builder",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "skill-creator",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "webapp-testing",
+      "upstream": "https://github.com/anthropics/skills",
+      "mode": "existing"
+    },
+    {
+      "id": "systematic-debugging",
+      "upstream": "https://github.com/obra/superpowers",
+      "mode": "existing"
+    },
+    {
+      "id": "test-driven-development",
+      "upstream": "https://github.com/obra/superpowers",
+      "mode": "existing"
+    },
+    {
+      "id": "requesting-code-review",
+      "upstream": "https://github.com/obra/superpowers",
+      "mode": "existing"
+    },
+    {
+      "id": "verification-before-completion",
+      "upstream": "https://github.com/obra/superpowers",
+      "mode": "existing"
+    }
+  ]
+}
