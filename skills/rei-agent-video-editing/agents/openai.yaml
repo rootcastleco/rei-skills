@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Agent Video Editing
+  short_description: Safe FFmpeg video cuts, color grading & audio muxing via video-use
+  default_prompt: Use rei-agent-video-editing to run path-confined FFmpeg edits and audio/subtitle muxing with ffprobe verification.

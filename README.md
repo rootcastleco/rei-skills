@@ -16,7 +16,7 @@
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
-[![Validated Skills](https://img.shields.io/badge/skills-1425%20validated-228B55)](#explore-the-library)
+[![Validated Skills](https://img.shields.io/badge/skills-1436%20validated-228B55)](#explore-the-library)
 [![Gold 50](https://img.shields.io/badge/Gold%2050-50%2F50%20verified-228B55)](#registry-quality-engine--gold-50-program)
 [![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-97.3%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
@@ -70,7 +70,7 @@ flowchart LR
 
 ## Install in Seconds
 
-Install the complete **1425 validated skills** library or project focused skills into any assistant with a single command:
+Install the complete **1436 validated skills** library or project focused skills into any assistant with a single command:
 
 ```bash
 npx rei-skills
@@ -133,7 +133,7 @@ npx rei-skills prompt compose "Review telemetry firmware for failure modes"
 npx rei-skills improve --feedback "Add SPICE bench parity cross-check" --json
 
 # 6. Catalog Discovery, Quality Audits, Removal/Rollback, MCP Server & Format Export
-npx rei-skills search firmware           # Search across 1425 skills by domain, keyword, risk, or upstream source
+npx rei-skills search firmware           # Search across 1436 skills by domain, keyword, risk, or upstream source
 npx rei-skills quality rc-kicad-ecad-kicad-drc-ci --json
 npx rei-skills remove rei-rea-orchestrator --cursor -w
 npx rei-skills list --category reverse-engineering
@@ -141,6 +141,12 @@ npx rei-skills targets
 npx rei-skills doctor
 npx rei-skills mcp                       # Start stdio JSON-RPC 2.0 MCP Server
 npx rei-skills export --format sdk-json --filter rei- --output ./dist-sdk
+
+# 7. Multimodal Production Pipeline & Provider Registry (License & Consent Gated)
+npx rei-skills providers doctor --json
+npx rei-skills pipeline plan "Rotor vibration presentation and educational video with Turkish narration" --json
+npx rei-skills pipeline run "Rotor vibration analysis brief with Turkish narration" --output ./artifacts-rotor --json
+npx rei-skills pipeline validate --output ./artifacts-rotor --json
 ```
 
 ---
@@ -259,17 +265,17 @@ Explore the searchable catalog, live Hybrid Intent & Stack Router (EN/TR), pre-c
 
 ## Explore the Library
 
-The registry currently contains **1425 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
+The registry currently contains **1436 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
 
 <!-- CATEGORY_TABLE_START -->
 | Category | Count | Focus Area | Representative Skills |
 | :--- | ---: | :--- | :--- |
-| **Data & AI** (`data-ai`) | 244 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
-| **General Engineering** (`general`) | 170 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
-| **Software Development** (`development`) | 357 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
+| **Data & AI** (`data-ai`) | 248 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
+| **General Engineering** (`general`) | 171 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
+| **Software Development** (`development`) | 360 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
 | **Security & AppSec** (`security`) | 144 | Threat modeling, SAST, vulnerability auditing, authorized red-teaming | [`security-auditor`](skills/security-auditor/SKILL.md), [`threat-modeling-expert`](skills/threat-modeling-expert/SKILL.md), [`api-security-best-practices`](skills/api-security-best-practices/SKILL.md) |
 | **Infrastructure & Cloud** (`infrastructure`) | 149 | Kubernetes, Terraform, CI/CD, observability, SRE, service mesh | [`kubernetes-architect`](skills/kubernetes-architect/SKILL.md), [`terraform-specialist`](skills/terraform-specialist/SKILL.md), [`observability-engineer`](skills/observability-engineer/SKILL.md) |
-| **Workflows & Automation** (`workflow`) | 81 | Multi-agent orchestration, task automation, integration pipelines | [`workflow-automation`](skills/workflow-automation/SKILL.md), [`mcp-builder`](skills/mcp-builder/SKILL.md), [`gitops-workflow`](skills/gitops-workflow/SKILL.md) |
+| **Workflows & Automation** (`workflow`) | 84 | Multi-agent orchestration, task automation, integration pipelines | [`workflow-automation`](skills/workflow-automation/SKILL.md), [`mcp-builder`](skills/mcp-builder/SKILL.md), [`gitops-workflow`](skills/gitops-workflow/SKILL.md) |
 | **Architecture & DDD** (`architecture`) | 99 | System design, C4 modeling, DDD, CQRS, event-driven systems | [`backend-architect`](skills/backend-architect/SKILL.md), [`domain-driven-design`](skills/domain-driven-design/SKILL.md), [`c4-context`](skills/c4-context/SKILL.md) |
 | **Product & Business** (`business`) | 40 | Product management, technical SEO, pricing, GTM analysis | [`product-manager-toolkit`](skills/product-manager-toolkit/SKILL.md), [`seo-audit`](skills/seo-audit/SKILL.md), [`pricing-strategy`](skills/pricing-strategy/SKILL.md) |
 | **Testing & QA** (`testing`) | 111 | Test-driven development, E2E browser automation, regression suites | [`test-driven-development`](skills/test-driven-development/SKILL.md), [`browser-automation`](skills/browser-automation/SKILL.md), [`e2e-testing-patterns`](skills/e2e-testing-patterns/SKILL.md) |
@@ -400,10 +406,22 @@ REI Skills includes [`rei-paper-orchestra`](skills/rei-paper-orchestra/SKILL.md)
 
 ---
 
+## Multimodal Content Production Ecosystem (`11` Providers, License & Consent Gated)
+
+Extend the existing **Workflow DAG Compiler**, **HOL Guard**, and **Prompt Archive** across an auditable 10-stage multimodal workflow (`Research → Evidence → Script → Editorial → Storyboard → HTML/PPTX Slides → Narration → Video → QA → Package`) via [`lib/multimodal-pipeline.js`](lib/multimodal-pipeline.js), [`lib/multimodal-registry.js`](lib/multimodal-registry.js), [`lib/multimodal-providers.js`](lib/multimodal-providers.js), and [`lib/pptx-openxml.js`](lib/pptx-openxml.js):
+
+- **Shared Slide & Media Authoring:** Compiles a single validated `SlideDeckSpec` into both accessible HTML5 presentations (`frontend-slides`) and natively editable OpenXML `.pptx` archives with `<p:sp>` text boxes, `<a:tbl>` tables, and `<p:notes>` speaker notes (`ppt-master`, never screenshot-flattened).
+- **Grounded Research, Video Audit & Editorial Locks:** Integrates `last30days-skill` deduplicated evidence, `claude-video` `ffprobe`/keyframe auditing, and `humanizer` EN/TR editing that strictly preserves numbers, SI units, `[SRC-*]` citations, and `NOT VERIFIED` boundaries.
+- **Commercial License & Voice-Cloning Gates:** Blocks `OpenMontage` (`AGPL-3.0`) and `gradium/phonon-40m-*` (`CC-BY-NC-4.0`) in commercial mode by default, requires explicit speaker owner consent before voice cloning (`pocket-tts`, `phonon`, `zonos3-mini`), ships zero heavy checkpoints in npm tarballs (`<25 MB`), and pairs with FFmpeg `1280×720` `.mp4`/`.srt` rendering + Turkish/English technical speech normalization.
+- **Full Matrix & Reproducible Demo:** [`docs/MULTIMODAL_PRODUCTION_PIPELINE.md`](docs/MULTIMODAL_PRODUCTION_PIPELINE.md) · [`examples/multimodal-rotor-demo/`](examples/multimodal-rotor-demo/README.md).
+
+---
+
 ## Engineering Documentation & Reports
 
 | Document | Scope |
 | :--- | :--- |
+| [`docs/MULTIMODAL_PRODUCTION_PIPELINE.md`](docs/MULTIMODAL_PRODUCTION_PIPELINE.md) | 11-provider integration & license matrix (`AGPL-3.0`/`CC-BY-NC-4.0` gates), STRIDE threat model, benchmarks & CLI |
 | [`docs/audits/BASELINE_AUDIT.md`](docs/audits/BASELINE_AUDIT.md) | Baseline repository, `npx skills`, bundle count & verification gap audit |
 | [`docs/QUALITY_METHODOLOGY.md`](docs/QUALITY_METHODOLOGY.md) | `14pt-v1` rubric (`Q3`–`Q0`), Q0 quarantine rules, and 6 separated verification axes |
 | [`docs/QUALITY_REPORT.md`](docs/QUALITY_REPORT.md) | Registry-wide quality summary (`346 Q3`, `936 Q2`, `141 Q1`, `0 Q0`) & Gold 50 (`50/50`) results |
@@ -441,7 +459,7 @@ REI Skills includes [`rei-paper-orchestra`](skills/rei-paper-orchestra/SKILL.md)
 
 - **License:** Original code, tooling, and Rootcastle-authored skills are released under the **[MIT License](LICENSE)**.
 - **Upstream Attribution & Provenance:** Preserves upstream work from `anthropics/skills`, `microsoft/skills` ([`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT)), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`, and open-source contributors documented in [`CREDITS.md`](CREDITS.md) and [`docs/SOURCES.md`](docs/SOURCES.md).
-- **Security Policy & Guardrails:** All 1425 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
+- **Security Policy & Guardrails:** All 1436 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
 
 ---
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Video Understanding
+  short_description: Grounded ffprobe/ffmpeg video inspection & timestamped keyframe audit
+  default_prompt: Use rei-video-understanding to inspect video streams, extract timestamped keyframes, and audit media integrity without fabricating transcripts.

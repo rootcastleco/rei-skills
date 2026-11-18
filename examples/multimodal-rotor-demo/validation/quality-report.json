@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "rei.multimodal-quality-report.v1",
+  "planId": "mm-70831577c5b5",
+  "editorialInvariantsPassed": true,
+  "pptxEditable": {
+    "validOpenXmlZip": true,
+    "slideCount": 3,
+    "noteSlideCount": 3,
+    "notesWithText": 3,
+    "editableShapeCount": 15,
+    "nativeTableCount": 3,
+    "imageOnlySlides": 0,
+    "isEditable": true,
+    "sampleTexts": [
+      "ROOTCASTLE ENGINEERING BRIEF · 1/3",
+      "Rotor Vibration Analysis: Severity &amp; Physics",
+      "Broad-band RMS velocity measured across 10 Hz - 1000 Hz establishes bearing housing severity [SRC-1].",
+      "1x synchronous unbalance vs 2x misalignment separation prevents blind tear-downs.",
+      "Physical rotor runs remain NOT VERIFIED until calibrated accelerometer telemetry is logged [SRC-2].",
+      "Zone",
+      "Velocity RMS (mm/s)",
+      "Operational Meaning",
+      "Zone A",
+      "&lt;= 1.8 mm/s",
+      "Newly commissioned rotor",
+      "Zone B"
+    ]
+  },
+  "htmlAccessible": {
+    "exists": true,
+    "hasAriaLive": true,
+    "hasReducedMotion": true
+  },
+  "speechVerified": {
+    "status": "PASS",
+    "providerRequested": "zonos3-mini",
+    "providerUsed": "deterministic-dsp-fallback",
+    "syntheticDiagnosticAudio": true,
+    "normalizedText": "Birinci bölümde rotor titreşim analizinin temellerini ve İSO on bin sekiz yüz on altı tire üç ile İSO yirmi bin sekiz yüz on altı tire bir standartlarına göre on hertz ile bin hertz bandındaki etkin hız eşiklerini inceliyoruz. İkinci bölümde dört kanallı on kilohertz eşzamanlı örnekleme mimarisini, Hanning pencereleme katsayılarını ve yatak arıza frekanslarını ele alıyoruz. Üçüncü bölümde bin sekiz yüz devir dakika hızda deneme kütlesi ile etki katsayısı hesabını ve kilitleme etiketleme güvenlik sınırını inceliyoruz.",
+    "outputs": {
+      "audio/narration.wav": "8f82aad4052f455b6e3d465f15cceb957c9949e1a2f85f5350cbb1558c6b5825"
+    }
+  },
+  "videoAudit": {
+    "status": "PASS",
+    "provider": "claude-video",
+    "providerCommit": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+    "inputSha256": "f8a4801ef4681e4aa11d8e1ae37e96ba3a5dbcdb0b4f125a3eef59db6d886b49",
+    "metadata": {
+      "ok": true,
+      "formatName": "mov,mp4,m4a,3gp,3g2,mj2",
+      "durationSec": 12,
+      "sizeBytes": 233816,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "frameRate": "24/1"
+      },
+      "audio": {
+        "codec": "aac",
+        "sampleRate": 24000,
+        "channels": 1
+      }
+    },
+    "extractedFrameCount": 6,
+    "segments": [
+      {
+        "timestampSec": 0,
+        "frameFile": "frame_001.jpg",
+        "observation": "Extracted keyframe #1 (1280x720) at t=0.00s"
+      },
+      {
+        "timestampSec": 2,
+        "frameFile": "frame_002.jpg",
+        "observation": "Extracted keyframe #2 (1280x720) at t=2.00s"
+      },
+      {
+        "timestampSec": 4,
+        "frameFile": "frame_003.jpg",
+        "observation": "Extracted keyframe #3 (1280x720) at t=4.00s"
+      },
+      {
+        "timestampSec": 6,
+        "frameFile": "frame_004.jpg",
+        "observation": "Extracted keyframe #4 (1280x720) at t=6.00s"
+      },
+      {
+        "timestampSec": 8,
+        "frameFile": "frame_005.jpg",
+        "observation": "Extracted keyframe #5 (1280x720) at t=8.00s"
+      },
+      {
+        "timestampSec": 10,
+        "frameFile": "frame_006.jpg",
+        "observation": "Extracted keyframe #6 (1280x720) at t=10.00s"
+      }
+    ],
+    "transcriptStatus": "NOT_VERIFIED (optional WhisperX 3.8.6 environment not installed; container & frames grounded)",
+    "uncertainty": [
+      "Semantic ASR transcription unavailable without optional WhisperX or authorized transcription API."
+    ],
+    "framesCleanedAfterAudit": 6
+  },
+  "hardwareVerified": "NOT VERIFIED",
+  "overallStatus": "PASS"
+}

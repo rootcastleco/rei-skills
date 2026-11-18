@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotor Vibration Analysis — REI Skills Presentation</title>
+  <style>
+    :root { --bg: #000000; --blue: #0E3D8A; --green: #228B55; --text: #F8FAFC; --muted: #94A3B8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+    header.deck-bar { background: var(--blue); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
+    main.deck { flex: 1; padding: 32px 24px; max-width: 1100px; width: 100%; margin: 0 auto; }
+    .slide { display: none; border: 1px solid #1E293B; border-radius: 12px; padding: 28px; background: #0B1120; }
+    .slide.active { display: block; animation: fadeIn 180ms ease-out; }
+    @keyframes fadeIn { from { opacity: 0.4; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .slide.active { animation: none; } }
+    .tag { display: inline-block; background: var(--green); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
+    h2 { margin: 14px 0 18px; font-size: 28px; }
+    .slide-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: start; }
+    ul { margin: 0; padding-left: 20px; line-height: 1.65; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th { background: var(--blue); text-align: left; padding: 8px; }
+    td { padding: 8px; border-bottom: 1px solid #1E293B; }
+    footer.citations { margin-top: 20px; color: var(--muted); font-size: 13px; }
+    .notes { margin-top: 14px; padding: 10px 12px; border-left: 3px solid var(--green); background: #0F172A; font-size: 13px; }
+    nav.controls { display: flex; gap: 10px; justify-content: center; padding: 16px; border-top: 1px solid #1E293B; }
+    button { background: var(--blue); color: #fff; border: 1px solid #38BDF8; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-weight: 600; }
+    button:focus-visible { outline: 3px solid #38BDF8; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <header class="deck-bar">
+    <strong>Rotor Vibration Analysis</strong>
+    <span id="counter" aria-live="polite">1 / 3</span>
+  </header>
+  <main class="deck" role="region" aria-label="Presentation Slides">
+    <section class="slide active" data-slide="0" aria-hidden="false" aria-labelledby="title-0">
+      <span class="tag">Rootcastle Engineering Brief · 1/3</span>
+      <h2 id="title-0">Rotor Vibration Analysis: Severity &amp; Physics</h2>
+      <div class="slide-body">
+        <ul>
+          <li>Broad-band RMS velocity measured across 10 Hz - 1000 Hz establishes bearing housing severity [SRC-1].</li>
+          <li>1x synchronous unbalance vs 2x misalignment separation prevents blind tear-downs.</li>
+          <li>Physical rotor runs remain NOT VERIFIED until calibrated accelerometer telemetry is logged [SRC-2].</li>
+        </ul>
+        <table aria-label="Slide metrics"><thead><tr><th>Zone</th><th>Velocity RMS (mm/s)</th><th>Operational Meaning</th></tr></thead><tbody><tr><td>Zone A</td><td>&lt;= 1.8 mm/s</td><td>Newly commissioned rotor</td></tr><tr><td>Zone B</td><td>1.8 - 4.5 mm/s</td><td>Unrestricted continuous operation</td></tr><tr><td>Zone C/D</td><td>&gt; 4.5 mm/s</td><td>Restricted / damage risk [SRC-1]</td></tr></tbody></table>
+      </div>
+      <aside class="notes" hidden><strong>Narration / Speaker Notes:</strong> TR Narration: ISO 10816-3 / 20816-1 10 Hz - 1000 Hz bandinda milimetre/saniye RMS siddet esiklerini aciklar [SRC-1]. Physical runs NOT VERIFIED.</aside>
+      <footer class="citations">Sources: SRC-1</footer>
+    </section>
+    <section class="slide" data-slide="1" aria-hidden="true" aria-labelledby="title-1">
+      <span class="tag">Signal Acquisition &amp; FFT · 2/3</span>
+      <h2 id="title-1">4-Channel 10 kHz DAQ &amp; Spectral Leakage Control</h2>
+      <div class="slide-body">
+        <ul>
+          <li>Sample 4 synchronous channels at 10 kHz (f_max = 3.9 kHz with 2.56x anti-alias factor) [SRC-3].</li>
+          <li>Apply Hanning window with coherent gain compensation before peak RMS integration.</li>
+          <li>Track bearing fault frequencies: BPFO, BPFI, BSF, and cage FTF sidebands [SRC-3].</li>
+        </ul>
+        <table aria-label="Slide metrics"><thead><tr><th>Parameter</th><th>Target Value</th><th>Control Reason</th></tr></thead><tbody><tr><td>Channels</td><td>4 synchronous</td><td>Phase coherence across X/Y probes</td></tr><tr><td>Sample Rate</td><td>10 kHz</td><td>Captures harmonics without aliasing</td></tr><tr><td>Window</td><td>Hanning</td><td>Suppresses FFT spectral leakage [SRC-3]</td></tr></tbody></table>
+      </div>
+      <aside class="notes" hidden><strong>Narration / Speaker Notes:</strong> TR Narration: 4 kanalli 10 kHz ornekleme ve Hanning pencereleme ile BPFO, BPFI yatak harmonikleri ayristirilir [SRC-3].</aside>
+      <footer class="citations">Sources: SRC-3</footer>
+    </section>
+    <section class="slide" data-slide="2" aria-hidden="true" aria-labelledby="title-2">
+      <span class="tag">Influence Vector Balancing · 3/3</span>
+      <h2 id="title-2">Single-Plane Vector Balancing &amp; Safety Boundary</h2>
+      <div class="slide-body">
+        <ul>
+          <li>Measure initial 1x phasor V0 and trial-weight response V1 at steady shaft speed (e.g., 1,800 RPM) [SRC-2].</li>
+          <li>Compute complex influence vector A = (V1 - V0) / Wt and correction mass Wc = -V0 / A.</li>
+          <li>Hardware warning: COMPUTATIONAL_ONLY — lockout/tagout and operator signoff mandatory before adding mass [SRC-2].</li>
+        </ul>
+        <table aria-label="Slide metrics"><thead><tr><th>Step</th><th>Formula / Gate</th><th>Classification</th></tr></thead><tbody><tr><td>1. Trial Vector</td><td>A = (V1 - V0) / Wt</td><td>COMPUTATIONAL_ONLY</td></tr><tr><td>2. Balance Mass</td><td>Wc = -V0 / A</td><td>COMPUTATIONAL_ONLY</td></tr><tr><td>3. Rotor Edit</td><td>Lockout/Tagout Signoff</td><td>NOT VERIFIED [SRC-2]</td></tr></tbody></table>
+      </div>
+      <aside class="notes" hidden><strong>Narration / Speaker Notes:</strong> TR Narration: 1800 RPM hizda A = (V1 - V0)/Wt etki vektoru ve Wc = -V0/A denge kutlesi hesabi; fiziksel montaj icin lockout/tagout zorunludur [SRC-2].</aside>
+      <footer class="citations">Sources: SRC-2</footer>
+    </section>
+  </main>
+  <nav class="controls" aria-label="Slide Navigation">
+    <button type="button" id="prevBtn" aria-label="Previous Slide">Previous (Left)</button>
+    <button type="button" id="notesBtn" aria-label="Toggle Speaker Notes">Notes (N)</button>
+    <button type="button" id="nextBtn" aria-label="Next Slide">Next (Right)</button>
+  </nav>
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const counter = document.getElementById('counter');
+      let current = 0;
+      function show(idx) {
+        current = Math.max(0, Math.min(slides.length - 1, idx));
+        slides.forEach((s, i) => {
+          const active = i === current;
+          s.classList.toggle('active', active);
+          s.setAttribute('aria-hidden', active ? 'false' : 'true');
+        });
+        counter.textContent = (current + 1) + ' / ' + slides.length;
+      }
+      function toggleNotes() {
+        const note = slides[current] && slides[current].querySelector('.notes');
+        if (note) note.hidden = !note.hidden;
+      }
+      document.getElementById('prevBtn').addEventListener('click', () => show(current - 1));
+      document.getElementById('nextBtn').addEventListener('click', () => show(current + 1));
+      document.getElementById('notesBtn').addEventListener('click', toggleNotes);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); show(current + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); show(current - 1); }
+        if (e.key === 'Home') show(0);
+        if (e.key === 'End') show(slides.length - 1);
+        if (e.key === 'n' || e.key === 'N') toggleNotes();
+      });
+    })();
+  </script>
+</body>
+</html>

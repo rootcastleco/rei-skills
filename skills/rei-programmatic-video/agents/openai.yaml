@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Programmatic Video
+  short_description: Deterministic storyboard-to-MP4 & SRT composition with FFmpeg/HyperFrames
+  default_prompt: Use rei-programmatic-video to render validated 1280x720 MP4 videos and synchronized SRT subtitles verified via ffprobe.

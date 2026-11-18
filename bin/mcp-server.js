@@ -27,6 +27,8 @@ const {
   getEngineeringAdapter,
   evaluateEngineeringAdapter,
 } = require("../lib/engineering-adapters");
+const { listMultimodalProviders, runMultimodalDoctor } = require("../lib/multimodal-registry");
+const { planMultimodalPipeline } = require("../lib/multimodal-pipeline");
 const {
   authorizeToolInvocation,
   sanitizeToolOutput,
@@ -42,7 +44,7 @@ const SKILLS_DIR = path.join(ROOT, "skills");
 
 const SERVER_INFO = {
   name: "rei-skills-mcp",
-  version: "6.6.0",
+  version: "6.6.1",
 };
 
 function loadJson(filePath, fallback = {}) {
@@ -348,6 +350,34 @@ const EXTENDED_MCP_TOOLS = [
       },
     },
   },
+  {
+    name: "rei_multimodal_providers",
+    description:
+      "Inspect the 11 integrated multimodal providers (research, video understanding, humanizer, frontend-slides, ppt-master, hyperframes, video-use, OpenMontage, Pocket TTS, Phonon, ZONOS3-Mini), host runtime availability, and license/consent policies. Read-only.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        domain: { type: "string" },
+        commercial_use: { type: "boolean" },
+        doctor: { type: "boolean" },
+      },
+    },
+  },
+  {
+    name: "rei_multimodal_pipeline_plan",
+    description:
+      "Compile a dry-run 10-stage multimodal research-to-media DAG plan with commercial licensing preflight, Prompt Archive status, and workstation resource budgets. Never executes media subprocesses.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        task: { type: "string" },
+        commercial_use: { type: "boolean" },
+        speech_provider: { type: "string" },
+        video_provider: { type: "string" },
+      },
+      required: ["task"],
+    },
+  },
 ];
 
 function getActiveMcpTools() {
@@ -605,6 +635,23 @@ function executeAuthorizedToolCall(name, args = {}) {
       ...getHolGuardIntegrationStatus(),
       recentEvents: args.include_events ? getSecurityAuditLog(20) : undefined,
     };
+  }
+
+  if (name === "rei_multimodal_providers") {
+    const opts = {
+      domain: args.domain || undefined,
+      commercialUse: args.commercial_use !== undefined ? Boolean(args.commercial_use) : true,
+    };
+    return args.doctor ? runMultimodalDoctor(opts) : listMultimodalProviders(opts);
+  }
+
+  if (name === "rei_multimodal_pipeline_plan") {
+    return planMultimodalPipeline({
+      task: args.task || "",
+      commercialUse: args.commercial_use !== undefined ? Boolean(args.commercial_use) : true,
+      speechProviderId: args.speech_provider || undefined,
+      videoProviderId: args.video_provider || undefined,
+    });
   }
 
   throw new Error(`Unknown MCP tool: ${name}`);

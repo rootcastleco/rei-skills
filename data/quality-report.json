@@ -1,14 +1,14 @@
 {
   "summary": {
-    "total_skills": 1425,
-    "schema_valid_count": 1425,
-    "references_valid_count": 1425,
-    "security_compliant_count": 1425,
-    "tested_module_count": 60,
-    "average_documentation_score": 82.3,
+    "total_skills": 1436,
+    "schema_valid_count": 1436,
+    "references_valid_count": 1436,
+    "security_compliant_count": 1436,
+    "tested_module_count": 71,
+    "average_documentation_score": 82.4,
     "quality_framework_version": "14pt-v1",
     "tier_counts": {
-      "Q3": 347,
+      "Q3": 358,
       "Q2": 937,
       "Q1": 141,
       "Q0": 0
@@ -18,7 +18,7 @@
     "evaluation_passed_count": 371,
     "human_reviewed_count": 0,
     "hardware_verified_count": 0,
-    "average_score_14": 9.76
+    "average_score_14": 9.78
   },
   "skills": [
     {
@@ -40051,6 +40051,39 @@
       }
     },
     {
+      "id": "rei-agent-video-editing",
+      "name": "rei-agent-video-editing",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 1,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
       "id": "rei-android-apks",
       "name": "rei-android-apks",
       "source": "rootcastle-rei",
@@ -40145,6 +40178,39 @@
         "referenceValidated": true,
         "securityPolicyChecked": true,
         "evaluationPassed": true,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-content-production",
+      "name": "rei-content-production",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 1,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
         "humanReviewed": false,
         "hardwareVerified": "not_applicable"
       }
@@ -40249,6 +40315,72 @@
       }
     },
     {
+      "id": "rei-interactive-presentations",
+      "name": "rei-interactive-presentations",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 1,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-local-speech-synthesis",
+      "name": "rei-local-speech-synthesis",
+      "source": "rootcastle-rei",
+      "risk": "critical",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 2,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 13,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
       "id": "rei-mobile-runtime",
       "name": "rei-mobile-runtime",
       "source": "rootcastle-rei",
@@ -40277,6 +40409,72 @@
         "referenceValidated": true,
         "securityPolicyChecked": true,
         "evaluationPassed": true,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-multilingual-voice",
+      "name": "rei-multilingual-voice",
+      "source": "rootcastle-rei",
+      "risk": "critical",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 2,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 13,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-multisource-research",
+      "name": "rei-multisource-research",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 1,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
         "humanReviewed": false,
         "hardwareVerified": "not_applicable"
       }
@@ -40330,6 +40528,72 @@
         "metadata": 2,
         "triggerPrecision": 1,
         "specificity": 2,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-pptx-production",
+      "name": "rei-pptx-production",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 1,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-programmatic-video",
+      "name": "rei-programmatic-video",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 1,
         "actionability": 2,
         "references": 2,
         "security": 2,
@@ -40414,6 +40678,39 @@
       }
     },
     {
+      "id": "rei-technical-writing-editor",
+      "name": "rei-technical-writing-editor",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 2,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 13,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
       "id": "rei-ultimate-orchestrator",
       "name": "rei-ultimate-orchestrator",
       "source": "Rootcastle Engineering & Innovation",
@@ -40436,6 +40733,72 @@
       },
       "quality_score_14": 10,
       "quality_tier": "Q2",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-video-production-studio",
+      "name": "rei-video-production-studio",
+      "source": "rootcastle-rei",
+      "risk": "critical",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 2,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 13,
+      "quality_tier": "Q3",
+      "quarantined": false,
+      "verification_dimensions": {
+        "schemaValid": true,
+        "referenceValidated": true,
+        "securityPolicyChecked": true,
+        "evaluationPassed": false,
+        "humanReviewed": false,
+        "hardwareVerified": "not_applicable"
+      }
+    },
+    {
+      "id": "rei-video-understanding",
+      "name": "rei-video-understanding",
+      "source": "rootcastle-rei",
+      "risk": "safe",
+      "schema_valid": true,
+      "references_valid": true,
+      "security_compliant": true,
+      "documentation_score": 100,
+      "has_progressive_references": false,
+      "has_helper_scripts": false,
+      "verification_tier": "tested-module",
+      "dimensions": {
+        "metadata": 2,
+        "triggerPrecision": 2,
+        "specificity": 1,
+        "actionability": 2,
+        "references": 2,
+        "security": 2,
+        "evaluation": 1
+      },
+      "quality_score_14": 12,
+      "quality_tier": "Q3",
       "quarantined": false,
       "verification_dimensions": {
         "schemaValid": true,

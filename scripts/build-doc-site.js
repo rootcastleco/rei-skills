@@ -24,6 +24,7 @@ const reaManifest = readJson(path.join(DATA_DIR, 'rei-rea-manifest.json'), { ski
 const evaluationReport = readJson(path.join(DATA_DIR, 'benchmarks', 'routing-evaluation-report.json'), null);
 const qualityReport = readJson(path.join(DATA_DIR, 'quality-report.json'), { summary: {} });
 const gold50Report = readJson(path.join(DATA_DIR, 'benchmarks', 'gold50-evaluation-report.json'), null);
+const multimodalProvidersData = readJson(path.join(DATA_DIR, 'multimodal-providers.json'), { providers: [] });
 
 const sampleWorkflowPlan = compileWorkflowPlan(
   'Design a four-channel vibration measurement PCB and its Fusion 360 enclosure.',
@@ -60,6 +61,18 @@ const platformSummary = {
     safetyClasses: ['read_only', 'state_changing', 'potentially_hazardous'],
     controls: ['Constant-time auth', 'Replay & dedup cache', 'Sliding-window rate limit', 'Concurrency backpressure', 'Sanitized audit ring buffer'],
   },
+  multimodalProviders: (multimodalProvidersData.providers || []).map(p => ({
+    id: p.id,
+    name: p.name,
+    domain: p.domain,
+    license: p.license,
+    modelLicense: p.model_license,
+    commercialUse: p.commercial_use,
+    integrationMode: p.integration_mode,
+    reiSkillId: p.rei_skill_id,
+    upstreamUrl: p.upstream_url,
+    commitSha: p.commit_sha,
+  })),
 };
 
 fs.mkdirSync(SITE_DIR, { recursive: true });
@@ -1062,6 +1075,16 @@ const html = `<!DOCTYPE html>
         </article>
       \`).join('');
 
+      const mmHtml = (PLATFORM.multimodalProviders || []).map(p => \`
+        <article class="card">
+          <div class="card-header">
+            <div class="card-title">\${escapeHtml(p.name)} (\${escapeHtml(p.domain)})</div>
+            <span class="badge badge-cat">\${escapeHtml(p.license)}</span>
+          </div>
+          <p class="card-desc">Skill: <code>\${escapeHtml(p.reiSkillId)}</code> · Commercial: <strong>\${escapeHtml(String(p.commercialUse))}</strong> · Mode: \${escapeHtml(p.integrationMode)} · Commit: <code>\${escapeHtml(String(p.commitSha || '').slice(0, 7))}</code></p>
+        </article>
+      \`).join('');
+
       const sec = PLATFORM.security || {};
       const gw = PLATFORM.rustGateway || {};
       const pa = PLATFORM.promptArchive || {};
@@ -1073,6 +1096,9 @@ const html = `<!DOCTYPE html>
         <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Plan ID: <code>\${escapeHtml(plan.planId)}</code> · Topological DAG (hasCycles=\${plan.dependencyGraph.hasCycles}) · claimedPhysicalExecution=<strong>\${plan.executionRecord.claimedPhysicalExecution}</strong></p>
         <div class="grid">\${stagesHtml}</div>
         \${capLevelsHtml}
+        <h3 style="margin:22px 0 10px;font-family:var(--font-mono);color:var(--accent);">🎬 Multimodal Content Production Providers (10-Stage Research-to-Media Pipeline)</h3>
+        <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">License &amp; consent-gated workflow: <code>Research → Evidence → Script → Editorial → Storyboard → HTML/PPTX → Narration → Video → QA → Package</code></p>
+        <div class="grid" style="margin-bottom:18px;">\${mmHtml}</div>
         <h3 style="margin:22px 0 10px;font-family:var(--font-mono);color:var(--accent);">🛡️ HOL Guard, Rust Secure Gateway &amp; Prompt Archive Provenance</h3>
         <div class="grid" style="margin-bottom:18px;">
           <article class="card">

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "rei.multimodal-provenance.v1",
+  "planId": "mm-70831577c5b5",
+  "correlationId": "919d360d-456f-4bd9-9ec3-1114a0ad65f2",
+  "promptArchive": {
+    "origin": "https://promt.rootcastle.com/",
+    "trustClass": "UNTRUSTED_EXTERNAL_REFERENCE",
+    "referenceCount": 0
+  },
+  "provenanceTags": [
+    {
+      "tag": "[EVIDENCE]",
+      "kind": "EVIDENCE",
+      "statement": "ISO 20816-1 / 10816-3 & Rei Skills rotor rules",
+      "evidenceSource": "SRC-1, SRC-2, SRC-3"
+    },
+    {
+      "tag": "[INFERENCE]",
+      "kind": "INFERENCE",
+      "statement": "Turkish technical speech normalization from English equations/units",
+      "evidenceSource": "normalizeTechnicalSpeechText"
+    },
+    {
+      "tag": "[UNKNOWN]",
+      "kind": "UNKNOWN",
+      "statement": "Physical rotor hardware telemetry / neural TTS human-likeness MOS",
+      "evidenceSource": "NOT VERIFIED"
+    }
+  ],
+  "artifactHashes": {
+    "research": {
+      "research/sources.json": "38d54733e3fb95465896c108887e08e50754eb44454300a4f6aa0faf03ed0bee"
+    },
+    "evidence_validation": {
+      "research/evidence-report.json": "1301c6ad351c5b8b8cd2c9c4391cbcef2a321123cfe8824b9ca5f61ba089bfd8"
+    },
+    "script": {
+      "writing/technical-brief.draft.md": "f27e7c6581f3da9446d2f4930f72b6a524b8ce188144391a310ab353d430a33b",
+      "writing/script.draft.md": "3d78cfee2044c31db0b42887bd0539a76edcd6c7add90ef4c41363127821e16d"
+    },
+    "editorial_review": {
+      "writing/technical-brief.md": "01f99540006eb8096c657122e5a437fa32730f2a0caf07754746481593b47976",
+      "writing/script.md": "934e13c52c1e755ad14ef5690eab59086049251b58cfbf2a654c2d6bc7a44172",
+      "writing/editorial-diff.json": "8038a7c56fd7843ebdd0367c0a7fab9f6b9f82d68631b427b8417de5ae9bc3ff"
+    },
+    "storyboard": {
+      "storyboard/storyboard.json": "049f9d76db7ce27542007f95c84904711f2514b6f4fba764fb7e8701efb0653f"
+    },
+    "slides": {
+      "presentations/presentation-html/index.html": "7909f863b77462da412dc023b6562a718dbf292f2cd7fa9c633021d1fa6d2b1a",
+      "presentations/presentation.pptx": "108565943093e5fca44bce0f27a527ae86ac017b1bba4b3d29184c6f7b622d52"
+    },
+    "narration": {
+      "audio/narration.wav": "8f82aad4052f455b6e3d465f15cceb957c9949e1a2f85f5350cbb1558c6b5825"
+    },
+    "video": {
+      "video/final.mp4": "f8a4801ef4681e4aa11d8e1ae37e96ba3a5dbcdb0b4f125a3eef59db6d886b49",
+      "video/subtitles.srt": "39df20c3e267383776c6d2a490c44beb0ac92bf9912c567c98cc14b919011c5f"
+    },
+    "quality_assurance": {
+      "validation/quality-report.json": "aae9eb5db3eb7152464b61dd538aa8bf885c3ea48eac650d1935b588a8bf0ae5"
+    }
+  }
+}

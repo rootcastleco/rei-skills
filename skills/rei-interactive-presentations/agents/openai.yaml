@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Interactive Presentations
+  short_description: Accessible zero-dependency HTML5 decks from shared SlideDeckSpec
+  default_prompt: Use rei-interactive-presentations to generate accessible, keyboard-navigable HTML5 slide decks sharing citations with PPTX exports.

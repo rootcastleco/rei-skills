@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Video Production Studio
+  short_description: Isolated AGPL-3.0 OpenMontage external worker boundary & license gate
+  default_prompt: Use rei-video-production-studio to enforce AGPL-3.0 isolation around OpenMontage or route safely to Apache-2.0/MIT video providers.

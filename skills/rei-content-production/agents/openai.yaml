@@ -1,0 +1,4 @@
+interface:
+  display_name: REI Content Production
+  short_description: 10-stage auditable research-to-media pipeline (HTML, PPTX, TTS, MP4)
+  default_prompt: Use rei-content-production to plan and run the 10-stage auditable research, editorial, slide, narration, and video pipeline.

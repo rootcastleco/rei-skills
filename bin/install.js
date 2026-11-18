@@ -54,6 +54,8 @@ const SUBCOMMANDS = new Set([
   "remove",
   "uninstall",
   "quality",
+  "pipeline",
+  "providers",
 ]);
 
 function resolveDir(p) {
@@ -86,6 +88,13 @@ function parseArgs(argv = process.argv.slice(2)) {
     taskArg: null,
     operationArg: null,
     tierArg: null,
+    domainArg: null,
+    speechProviderArg: null,
+    videoProviderArg: null,
+    resumeFlag: false,
+    commercialFlag: true,
+    allowAgplFlag: false,
+    skipVideoFlag: false,
     cursor: false,
     claude: false,
     gemini: false,
@@ -213,6 +222,38 @@ function parseArgs(argv = process.argv.slice(2)) {
     }
     if (arg === "--tier" && argv[i + 1]) {
       opts.tierArg = argv[++i].toUpperCase();
+      continue;
+    }
+    if (arg === "--domain" && argv[i + 1]) {
+      opts.domainArg = argv[++i].toLowerCase();
+      continue;
+    }
+    if (arg === "--speech-provider" && argv[i + 1]) {
+      opts.speechProviderArg = argv[++i].toLowerCase();
+      continue;
+    }
+    if (arg === "--video-provider" && argv[i + 1]) {
+      opts.videoProviderArg = argv[++i].toLowerCase();
+      continue;
+    }
+    if (arg === "--resume") {
+      opts.resumeFlag = true;
+      continue;
+    }
+    if (arg === "--commercial") {
+      opts.commercialFlag = true;
+      continue;
+    }
+    if (arg === "--non-commercial") {
+      opts.commercialFlag = false;
+      continue;
+    }
+    if (arg === "--allow-agpl") {
+      opts.allowAgplFlag = true;
+      continue;
+    }
+    if (arg === "--skip-video") {
+      opts.skipVideoFlag = true;
       continue;
     }
     if (arg === "--all-ai") {
@@ -343,6 +384,8 @@ Commands:
   doctor                   Inspect environment, 21 AI directories, and REI REA status
   verify                   Verify installed or repository skills (--path, --strict)
   update                   Safely update an existing installation with backup & rollback
+  pipeline <plan|run|status|validate>  Multimodal 10-stage research-to-media workflow
+  providers <list|doctor>  Inspect upstream media/speech providers, licenses & runtimes
 
 Universal AI Target Flags (21 Supported AI Assistants & Runtimes):
   --claude                 Anthropic Claude Code (~/.claude/skills or .claude/skills)
@@ -1645,6 +1688,102 @@ function handleSecurityStatus(opts) {
   );
 }
 
+function handleProviders(opts) {
+  const { listMultimodalProviders, runMultimodalDoctor } = require("../lib/multimodal-registry");
+  const sub = (opts.positional[0] || "list").toLowerCase();
+  const payload =
+    sub === "doctor"
+      ? runMultimodalDoctor({
+          domain: opts.domainArg,
+          commercialUse: opts.commercialFlag,
+          allowAgplProviders: opts.allowAgplFlag,
+        })
+      : listMultimodalProviders({
+          domain: opts.domainArg,
+          commercialUse: opts.commercialFlag,
+          allowAgplProviders: opts.allowAgplFlag,
+        });
+
+  if (opts.json) {
+    console.log(JSON.stringify(payload, null, 2));
+    return;
+  }
+
+  console.log(`\n🎬 Multimodal Providers (${payload.providers.length} total) | Host ffmpeg=${Boolean(payload.workstation.binaries.ffmpeg && payload.workstation.binaries.ffmpeg.installed)}`);
+  for (const p of payload.providers) {
+    console.log(`  - ${p.id} [${p.domain}] | license=${p.license} | policy=${p.policyDecision} (${p.policyCode}) | runtime=${p.runtimeStatus}`);
+  }
+  console.log("");
+}
+
+function handlePipeline(opts) {
+  const {
+    planMultimodalPipeline,
+    runMultimodalPipeline,
+    getPipelineStatus,
+    validateMultimodalArtifacts,
+  } = require("../lib/multimodal-pipeline");
+
+  const sub = (opts.positional[0] || "plan").toLowerCase();
+  const taskText = opts.taskArg || opts.positional.slice(1).join(" ").trim();
+  const outputDir = opts.outArg || opts.pathArg || undefined;
+  const pipelineOpts = {
+    task: taskText || undefined,
+    outputDir,
+    resume: Boolean(opts.resumeFlag),
+    commercialUse: opts.commercialFlag,
+    allowAgplProviders: opts.allowAgplFlag,
+    skipVideoRender: opts.skipVideoFlag || opts.dryRun,
+    speechProviderId: opts.speechProviderArg || undefined,
+    videoProviderId: opts.videoProviderArg || undefined,
+  };
+
+  if (sub === "status") {
+    const targetDir = outputDir || path.join(LOCAL_ROOT, "examples", "multimodal-rotor-demo");
+    const st = getPipelineStatus(targetDir);
+    if (opts.json) {
+      console.log(JSON.stringify(st, null, 2));
+    } else {
+      console.log(`\n📊 Pipeline Status [${targetDir}]: ${st.status} (${(st.completedStages || []).length}/10 stages completed)\n`);
+    }
+    return;
+  }
+
+  if (sub === "validate") {
+    const targetDir = outputDir || path.join(LOCAL_ROOT, "examples", "multimodal-rotor-demo");
+    const val = validateMultimodalArtifacts(targetDir);
+    if (opts.json) {
+      console.log(JSON.stringify(val, null, 2));
+    } else {
+      console.log(`\n✅ Pipeline Artifact Validation [${targetDir}]: ${val.status} (${val.checkedFiles || 0} files verified)\n`);
+    }
+    if (!val.valid) process.exitCode = 1;
+    return;
+  }
+
+  if (sub === "run") {
+    const res = runMultimodalPipeline(pipelineOpts);
+    if (opts.json) {
+      console.log(JSON.stringify(res, null, 2));
+    } else {
+      console.log(`\n🚀 Multimodal Pipeline Run [${res.planId || "n/a"}]: ${res.status} -> ${res.outputDir || ""}\n`);
+    }
+    if (res.status !== "PASS") process.exitCode = 1;
+    return;
+  }
+
+  const plan = planMultimodalPipeline(pipelineOpts);
+  if (opts.json) {
+    console.log(JSON.stringify(plan, null, 2));
+  } else {
+    console.log(`\n🧭 Multimodal Pipeline Plan [${plan.planId}] (${plan.stages.length} stages, dryRun=true):`);
+    for (const st of plan.stages) {
+      console.log(`  - ${st.id}: ${st.title} [${st.securityClassification}]`);
+    }
+    console.log("");
+  }
+}
+
 function handleImprove(opts) {
   const { runImprovementCycle } = require("../lib/improvement-engine");
   const benchmarkReport = loadLocalJsonSafe("data/benchmarks/routing-evaluation-report.json", null);
@@ -1712,6 +1851,12 @@ function main() {
       break;
     case "quality":
       handleQuality(opts);
+      break;
+    case "pipeline":
+      handlePipeline(opts);
+      break;
+    case "providers":
+      handleProviders(opts);
       break;
     case "remove":
     case "uninstall":

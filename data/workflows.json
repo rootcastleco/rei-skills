@@ -349,6 +349,54 @@
           "notes": "Verify every specification claim against fixture hashes and test outcomes."
         }
       ]
+    },
+    {
+      "id": "multimodal-research-to-media",
+      "name": "Multimodal Research-to-Media Production Pipeline",
+      "description": "10-stage auditable workflow converting scoped sources into editorial briefs, interactive HTML and editable PPTX decks, Turkish/English TTS narration, and ffprobe-verified MP4 video.",
+      "category": "workflow",
+      "relatedBundles": [
+        "core-dev"
+      ],
+      "steps": [
+        {
+          "title": "Grounded Research & Evidence Validation",
+          "goal": "Collect, deduplicate, and classify primary/secondary engineering sources with SHA-256 citation hashes.",
+          "recommendedSkills": [
+            "rei-multisource-research",
+            "rei-content-production"
+          ],
+          "notes": "Verify primary vs secondary provenance and avoid fabricating unreachable external URLs."
+        },
+        {
+          "title": "Script Drafting & Humanizer Editorial Pass",
+          "goal": "Draft technical briefs and scripts while removing AI filler without altering numeric units, citations, or warnings.",
+          "recommendedSkills": [
+            "rei-technical-writing-editor"
+          ],
+          "notes": "Assert all numeric thresholds, [SRC-*] citations, and NOT VERIFIED boundaries remain preserved."
+        },
+        {
+          "title": "Dual-Path Slides (HTML + Editable PPTX)",
+          "goal": "Compile a single SlideDeckSpec into accessible HTML5 slides and genuinely editable OpenXML PPTX shapes/tables/notes.",
+          "recommendedSkills": [
+            "rei-interactive-presentations",
+            "rei-pptx-production"
+          ],
+          "notes": "Verify editable <p:sp>, <a:tbl>, and <p:notes> XML structures without screenshot flattening."
+        },
+        {
+          "title": "License-Gated Speech, Video Rendering & QA",
+          "goal": "Normalize technical speech text, synthesize WAV audio under commercial/consent policy gates, render MP4 + SRT, and audit via ffprobe.",
+          "recommendedSkills": [
+            "rei-multilingual-voice",
+            "rei-local-speech-synthesis",
+            "rei-programmatic-video",
+            "rei-video-understanding"
+          ],
+          "notes": "Block CC-BY-NC-4.0 Phonon-40m and AGPL-3.0 OpenMontage by default in commercial mode."
+        }
+      ]
     }
   ]
 }
