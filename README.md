@@ -25,7 +25,7 @@
 
 **[npm package](https://www.npmjs.com/package/rei-skills)** · **[Interactive Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Publish workflow](https://github.com/rootcastleco/rei-skills/actions/workflows/publish.yml)**
 
-**[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Quality & Gold 50](#registry-quality-engine--gold-50-program)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[Docs & Reports](#engineering-documentation--reports)**
+**[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Quality & Gold 50](#registry-quality-engine--gold-50-program)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[Multimodal Pipeline](#multimodal-content-production-ecosystem-11-providers-license--consent-gated)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[Docs & Reports](#engineering-documentation--reports)**
 
 </div>
 
@@ -33,17 +33,19 @@
 
 ## Platform Architecture — Autonomous Skill Intelligence
 
-**REI Skills** evolves a 1,423-skill repository into a verified, evaluated, and defense-in-depth engineering intelligence platform maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)**:
+**REI Skills** evolves a 1,436-skill repository into a verified, evaluated, and defense-in-depth engineering intelligence platform maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)**:
 
 ```mermaid
 flowchart LR
     T[Task Input & Files] --> N[Intent & EN/TR Normalization]
     N --> HR[Hybrid BM25 + 256-dim Router]
     HR --> WC[Workflow DAG Compiler]
+    WC --> MM["Multimodal Production Pipeline\n10-Stage DAG · 11 Providers\nOpenXML PPTX · HTML5 · TTS · MP4"]
     WC --> PA[Prompt Archive v2 SHA-256]
     PA --> HG[HOL Guard Deny-by-Default Policy]
     HG --> EA[Capability-Aware Engineering Adapters]
     HG --> RG[Rust Secure Gateway v0.2.0 Loopback IPC]
+    MM --> OB
     EA --> OB[Observability & Provenance]
     RG --> OB
     OB --> EV[Split Evaluation Engine]
@@ -59,6 +61,7 @@ flowchart LR
 | **Hybrid Semantic Router** | [`lib/hybrid-router.js`](lib/hybrid-router.js), [`lib/smart-router.js`](lib/smart-router.js) | [`hybrid-router.test.js`](scripts/tests/hybrid-router.test.js) | Offline BM25 + 256-dim vectors, EN/TR normalization, Q0 quarantine, tool & overlap filters |
 | **14-Point Quality & Gold 50** | [`lib/quality-engine.js`](lib/quality-engine.js), [`scripts/validate_skills.py`](scripts/validate_skills.py), [`scripts/evaluate-gold50.js`](scripts/evaluate-gold50.js) | [`gold50-quality.test.js`](scripts/tests/gold50-quality.test.js) | `14pt-v1` tiers (`Q3`–`Q0`), 6 verification axes, Gold 50 (`50/50` verified) |
 | **Workflow DAG Compiler** | [`lib/workflow-compiler.js`](lib/workflow-compiler.js) | [`workflow-compiler.test.js`](scripts/tests/workflow-compiler.test.js) | Topological ordering, SI/Fusion unit checks, conflict gates, `claimedPhysicalExecution: false` |
+| **Multimodal Content Production Pipeline** | [`lib/multimodal-pipeline.js`](lib/multimodal-pipeline.js), [`lib/multimodal-registry.js`](lib/multimodal-registry.js), [`lib/multimodal-providers.js`](lib/multimodal-providers.js), [`lib/pptx-openxml.js`](lib/pptx-openxml.js) | [`multimodal-pipeline.test.js`](scripts/tests/multimodal-pipeline.test.js) | 10-stage resumable DAG (`11` pinned providers), editable OpenXML `.pptx` + HTML5 slides, EN/TR `humanizer` & technical speech TTS, `1280×720` `.mp4` + `.srt`, `AGPL-3.0`/`CC-BY-NC-4.0`/voice-consent gates |
 | **Rootcastle Prompt Archive** | [`lib/prompt-archive.js`](lib/prompt-archive.js) | [`prompt-archive.test.js`](scripts/tests/prompt-archive.test.js) | SHA-256 content verification, unsigned publisher disclosure, version pin & 1-step rollback |
 | **HOL Guard Policy Layer** | [`lib/hol-guard-policy.js`](lib/hol-guard-policy.js), [`bin/mcp-server.js`](bin/mcp-server.js) | [`hol-guard-policy.test.js`](scripts/tests/hol-guard-policy.test.js) | Deny-by-default MCP authorization, secret redaction, traversal gates |
 | **Engineering Adapters** | [`lib/engineering-adapters.js`](lib/engineering-adapters.js) | [`engineering-adapters.test.js`](scripts/tests/engineering-adapters.test.js) | 5-level `getEnvironmentCapabilityManifest` + software/hardware boundaries across 5 domains |
@@ -153,7 +156,7 @@ npx rei-skills pipeline validate --output ./artifacts-rotor --json
 
 ## Hybrid Semantic Skill Router & Benchmark Evaluation
 
-Instead of injecting all 1,423 skill manuals into an agent's context window, [`lib/hybrid-router.js`](lib/hybrid-router.js) ranks relevant skills in real time using:
+Instead of injecting all 1,436 skill manuals into an agent's context window, [`lib/hybrid-router.js`](lib/hybrid-router.js) ranks relevant skills in real time using:
 
 - **BM25 Weighted Inverted Index** (`WeakMap`-cached per catalog snapshot) paired with **256-dim offline character-trigram and domain-concept embeddings** (plus optional external `embeddingProvider` injection).
 - **Bilingual EN/TR Normalization:** Turkish ASCII folding, suffix stemming, domain lexicon expansion, deduplicated stack boosts, slug-specialty matching, and boundary-matched `PHRASE_RULES`.
@@ -176,9 +179,9 @@ Critical-risk misrouting across all splits and engines: **0**. Full breakdown: [
 
 ## Registry Quality Engine & Gold 50 Program
 
-Every skill in the 1,423-skill catalog is scored by the deterministic **14-Point Auditable Quality Engine** ([`lib/quality-engine.js`](lib/quality-engine.js), [`scripts/validate_skills.py`](scripts/validate_skills.py), [`data/quality-report.json`](data/quality-report.json)) across 7 × (`0..2`) = 14 dimensions, paired with **6 separated verification axes** (`schemaValid`, `referenceValidated`, `securityPolicyChecked`, `evaluationPassed`, `humanReviewed`, `hardwareVerified`):
+Every skill in the 1,436-skill catalog is scored by the deterministic **14-Point Auditable Quality Engine** ([`lib/quality-engine.js`](lib/quality-engine.js), [`scripts/validate_skills.py`](scripts/validate_skills.py), [`data/quality-report.json`](data/quality-report.json)) across 7 × (`0..2`) = 14 dimensions, paired with **6 separated verification axes** (`schemaValid`, `referenceValidated`, `securityPolicyChecked`, `evaluationPassed`, `humanReviewed`, `hardwareVerified`):
 
-- **Quality Tiers (`14pt-v1`):** `Q3` Gold (**346** skills), `Q2` Solid (**936** skills), `Q1` Basic (**141** skills), `Q0` Quarantine (**0** skills) · Average `14pt-v1` score: **`9.76 / 14`** (legacy doc score `82.3 / 100`).
+- **Quality Tiers (`14pt-v1`):** `Q3` Gold (**358** skills), `Q2` Solid (**937** skills), `Q1` Basic (**141** skills), `Q0` Quarantine (**0** skills) · Average `14pt-v1` score: **`9.78 / 14`** (legacy doc score `82.4 / 100`).
 - **Epistemic Integrity:** Failing schema, reference, or security checks force **`Q0` Quarantine** regardless of numerical score; unperformed checks remain explicit (`human_reviewed_count: 0`, `hardware_verified_count: 0` / `"not_verified"`).
 - **Gold 50 Engineering Program ([`data/gold50-manifest.json`](data/gold50-manifest.json), [`scripts/evaluate-gold50.js`](scripts/evaluate-gold50.js)):** Evaluates **50 priority skills across 10 engineering disciplines** — **50/50 (`100.0%`)** skills passing, **149/150 (`99.3%`)** positive EN & EN/TR scenarios passing, **100/100 (`100.0%`)** negative/injection triggers cleanly rejected, and **50/50** multi-AI adapter transpilations passing (`targetGte95PctMet: true`). See [`docs/QUALITY_METHODOLOGY.md`](docs/QUALITY_METHODOLOGY.md) and [`docs/QUALITY_REPORT.md`](docs/QUALITY_REPORT.md).
 
@@ -209,7 +212,7 @@ Planning never fabricates physical outcomes (`executionRecord.claimedPhysicalExe
 
 ### Domain Expansion Coverage (`+528` Original Engineering Skills)
 
-- **33 Technical Specialties:** Integrated alongside the original 895 skills (`528 + 895 = 1,423`) covering GNSS, JT808 telematics, BLE, cellular IoT, RTOS, firmware OTA, IoT security, Rust, industrial Ethernet, machinery vibration, rotor balancing, DAQ, PCB/EMC, time-series pipelines, edge ML, binary forensics, HIL testing, safety assurance, and reproducible research ([`docs/TECHNICAL_SKILL_EXPANSION.md`](docs/TECHNICAL_SKILL_EXPANSION.md)).
+- **33 Technical Specialties:** Integrated alongside the original 895 skills and 13 multimodal/orchestration skills (`528 + 895 + 13 = 1,436`) covering GNSS, JT808 telematics, BLE, cellular IoT, RTOS, firmware OTA, IoT security, Rust, industrial Ethernet, machinery vibration, rotor balancing, DAQ, PCB/EMC, time-series pipelines, edge ML, binary forensics, HIL testing, safety assurance, and reproducible research ([`docs/TECHNICAL_SKILL_EXPANSION.md`](docs/TECHNICAL_SKILL_EXPANSION.md)).
 - **128 CAD, Electronics & Fusion 360 Skills:** Circuit design, SPICE parity, KiCad ERC/DRC, Fusion 360 parametric modeling & Python API, PCB–enclosure tolerance fits, and CAM ([`docs/CAD_ELECTRONICS_FUSION.md`](docs/CAD_ELECTRONICS_FUSION.md)).
 - **Quality & capability boundary:** `getEnvironmentCapabilityManifest()` separates 5 operational levels (`L0` Documented → `L1` Software Installed → `L2` Offline Simulation → `L3` Configured Bridge → `L4` Physical Hardware Bench, strictly `not_verified` without attached calibrated bench instruments). Passing schema and security audits never certifies hardware, machining tolerances, or RF/EMC compliance (`claimedPhysicalExecution: false`).
 
@@ -234,12 +237,12 @@ Connect any MCP client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini C
 }
 ```
 
-### Registered MCP Tool Surface (`10` Core Tools + `3` Opt-In Extended)
+### Registered MCP Tool Surface (`10` Core Tools + `5` Opt-In Extended)
 
 - **Default Core Tools (`10`):**
   - *Policy Tier `inherit` (read / recommend / compose / compile):* `rei_recommend_skills`, `rei_search_skills`, `rei_get_skill`, `rei_get_workflow`, `rei_list_bundles`, `rei_compile_skill`, `rei_list_ai_targets`, `rei_compose_prompt`, `rei_propose_prompt_improvement`.
   - *Policy Tier `review` (staged workspace mutation):* `rei_install_skill` (`dry_run` preview, collision detection, `preview_token`, private `.rei-skills-backups/<transaction-id>/`, synchronous rollback).
-- **Opt-In Extended Tools (`REI_MCP_EXTENDED_TOOLS=1`):** `rei_compile_workflow_plan`, `rei_evaluate_adapter`, `rei_security_status`.
+- **Opt-In Extended Tools (`REI_MCP_EXTENDED_TOOLS=1`):** `rei_compile_workflow_plan`, `rei_evaluate_adapter`, `rei_security_status`, `rei_multimodal_providers`, `rei_multimodal_pipeline_plan`.
 
 ### HOL Guard Integration & Local Policy Engine ([`lib/hol-guard-policy.js`](lib/hol-guard-policy.js))
 
@@ -365,7 +368,7 @@ Compatibility across adapters is verified via automated schema validation, `npx 
 
 | AI Assistant / Client | Target Directory | Installer Flag | Verification Status | Invocation Pattern |
 | :--- | :--- | :--- | :--- | :--- |
-| **`npx skills` (`vercel-labs/skills`)** | `skills/<id>/SKILL.md` | `--list` / direct URL | **Tested** (`0` invalid names/descriptions across `1,423` skills) | `npx skills add rootcastleco/rei-skills` |
+| **`npx skills` (`vercel-labs/skills`)** | `skills/<id>/SKILL.md` | `--list` / direct URL | **Tested** (`0` invalid names/descriptions across `1,436` skills) | `npx skills add rootcastleco/rei-skills` |
 | **Claude Code** | `~/.claude/skills` | `--claude` | **Tested** (Installer + YAML schema + symlink materialization) | `/skill-name` or `@skill-name` |
 | **OpenAI Codex CLI** | `~/.codex/skills` | `--codex` | **Tested** (`agents/openai.yaml` metadata preserved) | `Use @skill-name ...` |
 | **Gemini CLI** | `~/.gemini/skills` | `--gemini` | **Tested** (Installer + `SKILL.md` frontmatter parser) | `Use skill-name to ...` |
@@ -424,7 +427,7 @@ Extend the existing **Workflow DAG Compiler**, **HOL Guard**, and **Prompt Archi
 | [`docs/MULTIMODAL_PRODUCTION_PIPELINE.md`](docs/MULTIMODAL_PRODUCTION_PIPELINE.md) | 11-provider integration & license matrix (`AGPL-3.0`/`CC-BY-NC-4.0` gates), STRIDE threat model, benchmarks & CLI |
 | [`docs/audits/BASELINE_AUDIT.md`](docs/audits/BASELINE_AUDIT.md) | Baseline repository, `npx skills`, bundle count & verification gap audit |
 | [`docs/QUALITY_METHODOLOGY.md`](docs/QUALITY_METHODOLOGY.md) | `14pt-v1` rubric (`Q3`–`Q0`), Q0 quarantine rules, and 6 separated verification axes |
-| [`docs/QUALITY_REPORT.md`](docs/QUALITY_REPORT.md) | Registry-wide quality summary (`346 Q3`, `936 Q2`, `141 Q1`, `0 Q0`) & Gold 50 (`50/50`) results |
+| [`docs/QUALITY_REPORT.md`](docs/QUALITY_REPORT.md) | Registry-wide quality summary (`358 Q3`, `937 Q2`, `141 Q1`, `0 Q0`) & Gold 50 (`50/50`) results |
 | [`docs/ADAPTER_COMPATIBILITY_MATRIX.md`](docs/ADAPTER_COMPATIBILITY_MATRIX.md) | 21-target transpiler & `vercel-labs/skills` (`npx skills`) verified compatibility semantics |
 | [`docs/PROMPT_ARCHIVE_SECURITY.md`](docs/PROMPT_ARCHIVE_SECURITY.md) | SHA-256 integrity vs unsigned publisher distinction, pinning & 1-step rollback contract |
 | [`docs/CONTROLLED_IMPROVEMENT_PROTOCOL.md`](docs/CONTROLLED_IMPROVEMENT_PROTOCOL.md) | Evidence-gated, review-only improvement workflow & held-out non-regression policy |
