@@ -36,6 +36,9 @@ jobs:
             esac
           done
           tar -xzf "$RUNNER_TEMP/rei670.tar.gz"
+          # Two source references are tracked explicitly because their names match the repository analysis-file ignore rule.
+          test -f skills/fluidsim/references/output_analysis.md
+          test -f skills/molecular-dynamics/references/mdanalysis_analysis.md
           test "$(node -p 'require("./package.json").version')" = "6.7.0"
           test -f "data/rei67-import-provenance.json"
           test -f "skills/rei-design-studio/SKILL.md"
