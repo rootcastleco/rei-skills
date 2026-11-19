@@ -40,7 +40,7 @@ Search **30,000+ catalog records**, explore **Rootcastle Originals**, and instal
 | [Live skill catalog](https://skills.rootcastle.com/catalog/) | Search 30,149 records across 11 engineering domains. Filter by domain, source, and available quality tier. External discovery records link to their publishers. |
 | [Rootcastle Originals](https://skills.rootcastle.com/catalog/?scope=rootcastle#browse) | Explore Rootcastle workflows for PCB manufacturing, firmware updates, power budgeting, and fleet telemetry. |
 | [Reviewed downloads](https://skills.rootcastle.com/catalog/?scope=verified#browse) | Download the first 11 reviewed MIT-licensed ZIPs directly from the site, or use its Python installer for Codex or Claude Code. See the pinned source, license, review scope, and SHA-256 checksums on each package page. |
-| [npm CLI](https://www.npmjs.com/package/rei-skills) | Search the bundled library and the complete external discovery snapshot. Install bundled skills and the 11 reviewed upstream packages, plan workflows, and connect through MCP. |
+| [npm CLI](https://www.npmjs.com/package/rei-skills) | Search the bundled library and the complete external discovery snapshot. Install bundled skills and 18 reviewed upstream packages, plan workflows, and connect through MCP. |
 
 The public discovery catalog includes the published registry subset, Rootcastle Originals, and external source references. The [provenance page](https://skills.rootcastle.com/quality/) explains the coverage and package review criteria.
 
@@ -53,6 +53,8 @@ npx rei-skills@latest add expo-dom --codex
 ```
 
 The npm package includes 29,101 external discovery references from two pinned metadata snapshots, plus reviewed upstream entries with their original license notices. Discovery results link to their sources. Reviewed packages are also available for offline installation using `add`. The [catalog provenance page](https://skills.rootcastle.com/quality/) lists the metadata sources and review criteria.
+
+The 6.7.2 intake screened all 29,101 metadata records, attempted source retrieval for 432 candidates, and screened 273 local packages. Seven passed content and license review for npm distribution. The [coverage summary](data/external-review-coverage.json) and [record outcomes](registry/external-review-6.7.2.jsonl.gz) document what remains under review.
 
 Discovery metadata comes from [Agent Skills Corpus](https://github.com/lawrence3699/agent-skills-corpus) (CC0-1.0) and [ClaudSkills](https://github.com/claudskills/catalog-public) (CC BY 4.0). REI selects and deduplicates records, maps categories, and adds technical search tags. The discovery index preserves ClaudSkills record attribution.
 

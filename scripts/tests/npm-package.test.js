@@ -2,10 +2,12 @@
 
 // Runs against the npm tarball, never the developer checkout.
 const assert = require("node:assert/strict");
+const { createHash } = require("node:crypto");
 const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
+const { gunzipSync } = require("node:zlib");
 const { getReleaseScope, isExcludedPath, stageRelease } = require("../stage-npm-release");
 
 const root = path.resolve(__dirname, "../..");
@@ -63,17 +65,58 @@ try {
   const installed = path.join(tmp, "node_modules", "rei-skills");
   const cli = path.join(installed, "bin", "install.js");
   const publicCatalog = require(path.join(installed, "data", "catalog.json"));
-  assert.equal(publicCatalog.total, sourceCatalog.total - excluded.size + 11);
+  const reviewedIndex = require(path.join(installed, "data", "external-reviewed.json"));
+  const coverage = require(path.join(installed, "data", "external-review-coverage.json"));
+  const digest = contents => createHash("sha256").update(contents).digest("hex");
+  assert.equal(publicCatalog.total, sourceCatalog.total - excluded.size + reviewedIndex.length);
   assert(publicCatalog.skills.every(item => item.risk !== "offensive" && !excluded.has(item.id)));
   const discovery = JSON.parse(run(process.execPath, [cli, "discover", "--stats"], tmp));
   assert.equal(discovery.externalCount, 29101);
-  assert.equal(discovery.reviewedCount, 11);
+  assert.equal(discovery.reviewedCount, reviewedIndex.length);
+  const snapshot = fs.readFileSync(path.join(installed, "data", "external-discovery.jsonl.gz"));
+  assert.equal(digest(snapshot), coverage.snapshotSha256);
+  assert.equal(coverage.metadataScanned, discovery.externalCount);
+  assert.equal(coverage.publishedReviewedTotal, reviewedIndex.length);
+  const [, ...external] = gunzipSync(snapshot).toString("utf8").trimEnd().split("\n").map(JSON.parse);
+  const externalById = new Map(external.map(item => [item.id, item]));
+  const outcomes = gunzipSync(fs.readFileSync(path.join(root, coverage.recordOutcomes)))
+    .toString("utf8").trimEnd().split("\n").map(JSON.parse);
+  assert.equal(outcomes.length, external.length);
+  assert.equal(new Set(outcomes.map(row => row.id)).size, external.length);
+  const counts = {};
+  for (const { id, status } of outcomes) {
+    assert(externalById.has(id), "Unknown discovery ID in review outcomes");
+    counts[status] = (counts[status] || 0) + 1;
+  }
+  assert.deepEqual(counts, coverage.outcomes);
+  const additions = reviewedIndex.filter(item => item.discoveryId);
+  assert.deepEqual(new Set(additions.map(item => item.discoveryId)),
+    new Set(outcomes.filter(row => row.status === "published").map(row => row.id)));
+  assert.equal(additions.length, coverage.publishedAdditions);
+  for (const item of reviewedIndex) {
+    if (item.discoveryId) {
+      const source = externalById.get(item.discoveryId);
+      assert.equal(source.name, item.id);
+      assert.equal(source.license, item.license);
+      if (source.sha256) assert.equal(item.files["SKILL.md"], source.sha256);
+    }
+    for (const [file, hash] of Object.entries(item.files)) {
+      assert(paths.has(`skills/${item.id}/${file}`));
+      assert.equal(digest(fs.readFileSync(path.join(installed, "skills", item.id, file))), hash);
+    }
+  }
   const discoveryMatch = JSON.parse(run(process.execPath, [cli, "discover", "expo-dom", "--reviewed", "--json"], tmp));
   assert.equal(discoveryMatch.results[0].name, "expo-dom");
   const verifiedTarget = path.join(tmp, "reviewed-install");
   run(process.execPath, [cli, "add", "maui-safe-area", "--codex", "--path", verifiedTarget], tmp);
   assert(fs.existsSync(path.join(verifiedTarget, "maui-safe-area", "references", "safe-area-api.md")));
   assert(fs.existsSync(path.join(verifiedTarget, "maui-safe-area", "LICENSE")));
+  for (const item of additions) {
+    run(process.execPath, [cli, "add", item.id, "--codex", "--path", verifiedTarget], tmp);
+    for (const [file, hash] of Object.entries(item.files)) {
+      assert.equal(digest(fs.readFileSync(path.join(verifiedTarget, item.id, file))), hash);
+    }
+  }
   const remote = spawnSync(process.execPath, [cli, "add", "maui-safe-area", "--remote", "--path", verifiedTarget], { encoding: "utf8" });
   assert.equal(remote.status, 1);
   assert(remote.stderr.includes("installs its bundled skills"));

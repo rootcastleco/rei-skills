@@ -1,5 +1,10 @@
 # Changelog
 
+## [6.7.2] - 2026-11-19
+
+- Add seven upstream skills with commit-pinned sources, original license files and verified npm installation. The public package contains 18 reviewed upstream skills and 1,610 installable skills in total.
+- Screen metadata for all 29,101 external references, attempt source retrieval for 432 candidates and screen 273 local packages. Record the outcome of each reference and the remaining review coverage.
+
 ## [6.7.1] - 2026-11-19
 
 - Publish a staged npm distribution containing 1,592 retained repository skills and 11 reviewed upstream packages with their license notices and references.

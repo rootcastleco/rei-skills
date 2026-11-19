@@ -174,5 +174,131 @@
       "SKILL.md": "821374e49293ffc40cd3266b27c403b4159d59421ed388beda7bef4a409a79c2"
     },
     "reviewUrl": "https://skills.rootcastle.com/catalog/skill/expo-dom/"
+  },
+  {
+    "id": "abp-localization",
+    "description": "ABP Framework v10.4 localization: localization resource, JSON files, culture fallback, L[] helper, IStringLocalizer. Use for multi-language, localization, or translation in ABP.",
+    "category": "development",
+    "source": "burakdmir/abp-skills",
+    "discoveryId": "external:f0bca336b93345970069",
+    "publisherUrl": "https://github.com/burakdmir/abp-skills/blob/2883a0c85c35a2f4fb7d6cfe84af1e2bfa6362b6/claude/abp-localization/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/burakdmir/abp-skills/blob/2883a0c85c35a2f4fb7d6cfe84af1e2bfa6362b6/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "ABP localization resources, culture fallback and representative C# and JSON examples reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "aca3f4ce63c87c5cb766f4dac2c33913d6cb5a2bfa54eeaa92f16ee13f9e5c16",
+      "SKILL.md": "281dc6b5b9cfbf485dec7a45bab25776f9888e61ce4502606801870cfe17460c"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/abp-localization/"
+  },
+  {
+    "id": "accessibility-a11y",
+    "description": "Implement web accessibility (a11y) best practices following WCAG guidelines to create inclusive, accessible user interfaces.",
+    "category": "development",
+    "source": "Mindrally/skills",
+    "discoveryId": "external:a7f8c781f8a5632810c5",
+    "publisherUrl": "https://github.com/Mindrally/skills/blob/47f47c12e62f62b5e171bd5af61d0fc24b329701/accessibility-a11y/SKILL.md",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://github.com/Mindrally/skills/blob/47f47c12e62f62b5e171bd5af61d0fc24b329701/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Semantic HTML, ARIA, keyboard behavior and accessibility testing guidance reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "SKILL.md": "790f2e77ff370c0402d0cc10a344a2d61d1d830e7f3474f6e2ffc81512e8c095"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/accessibility-a11y/"
+  },
+  {
+    "id": "accessibility-advocate",
+    "description": "Use when designing inclusive animations, addressing vestibular disorders and motion sensitivity, or ensuring animation accessibility compliance.",
+    "category": "development",
+    "source": "dylantarre/animation-principles",
+    "discoveryId": "external:5225ca1a053f4e7b1a2d",
+    "publisherUrl": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/skills/03-by-role-persona/accessibility-advocate/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Accessible motion design principles, reduced-motion CSS and assistive-technology checklist reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "7e09249863674813d53abced62e437aa37a2209fd4f15072f75ec89df56c86d4",
+      "SKILL.md": "b3130db7d7d2a0a94db5c823362e014f7233e8db0ff2335c8038f04bdf750a8a"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/accessibility-advocate/"
+  },
+  {
+    "id": "accessibility-issues",
+    "description": "Use when animation excludes users with vestibular disorders, cognitive disabilities, or assistive technology needs",
+    "category": "development",
+    "source": "dylantarre/animation-principles",
+    "discoveryId": "external:38d7aac073234fe110ea",
+    "publisherUrl": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/skills/12-by-problem-type/accessibility-issues/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/dylantarre/animation-principles/blob/83597134ba8ff59838270f94d7ac7282ffa3b54d/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Reduced-motion troubleshooting checklist and CSS and JavaScript preference examples reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "7e09249863674813d53abced62e437aa37a2209fd4f15072f75ec89df56c86d4",
+      "SKILL.md": "ac5e84d23e7307fc5fa1ca0c8fa12600718be4aa102ac892b14b5ccacf02e801"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/accessibility-issues/"
+  },
+  {
+    "id": "form-handling-react-hook-form",
+    "description": "To manage form state, validation, and submission efficiently without causing excessive re-renders, unlike controlled components. Use when: Complex forms with many fields; Forms requiring validation rules (required, pattern, minLength); When performance is a concern (typing lag).",
+    "category": "development",
+    "source": "jyjeanne/ai-setup-forge",
+    "discoveryId": "external:a90de6eb58dee580a45c",
+    "publisherUrl": "https://github.com/jyjeanne/ai-setup-forge/blob/5ddba3cc97bb68f68c0bdcd3112d850461285c19/skills/form-handling-react-hook-form/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/jyjeanne/ai-setup-forge/blob/5ddba3cc97bb68f68c0bdcd3112d850461285c19/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "React Hook Form field registration, validation and controlled component guidance reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "9fa29073ad6a60bec05c4cce28224886c236ead003c00f08cc8cf1435bc72ab0",
+      "SKILL.md": "cbee1845a41180cab6cbcd3fa48845f710c77c2dd7c9718432a0f3625a67d5c3"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/form-handling-react-hook-form/"
+  },
+  {
+    "id": "resume-formatter",
+    "description": "Ensure ATS-friendly formatting and create clean, scannable layouts. Use when the user mentions resume format, layout, template, design, or fixing formatting issues.",
+    "category": "general",
+    "source": "davila7/claude-code-templates",
+    "discoveryId": "external:7e99f6e158028235537d",
+    "publisherUrl": "https://github.com/davila7/claude-code-templates/blob/619db084fd2e94742710f74680db4168ca2bd470/cli-tool/components/skills/career/resume-formatter/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/davila7/claude-code-templates/blob/619db084fd2e94742710f74680db4168ca2bd470/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Resume typography, layout, document structure and formatting checklist reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "15cc073ffa3a01bb7da145aeae2a842b473860d142c92485536ee9c91195a705",
+      "SKILL.md": "7e99f6e158028235537d232a59fdfaae857e23fb53103c74c448570069d8d493"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/resume-formatter/"
+  },
+  {
+    "id": "reversa-design-system",
+    "description": "Extrai e documenta o sistema de design do projeto legado — paleta de cores, tipografia, espaçamentos, tokens e componentes a partir de CSS, arquivos de tema e screenshots. Use quando arquivos de estilo ou screenshots de interface estiverem disponíveis.",
+    "category": "development",
+    "source": "sandeco/reversa",
+    "discoveryId": "external:795e46846b6c7e7347dc",
+    "publisherUrl": "https://github.com/sandeco/reversa/blob/5aee5f453caf7500a00c65ec7281265634181353/agents/reversa-design-system/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/sandeco/reversa/blob/5aee5f453caf7500a00c65ec7281265634181353/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Portuguese guide to documenting design tokens from project styles and screenshots reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "40eaceaa16c64165e6a6b93a9e6d1de64e19a14cd9ca2618e4983eadd96e9b51",
+      "SKILL.md": "11a6f2c421161f8655f82a6b3c25187761622dd9f1d1f9cf2143ca0cb849f5af"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/reversa-design-system/"
   }
 ]

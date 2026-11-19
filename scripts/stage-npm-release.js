@@ -12,6 +12,8 @@ const additionallyExcluded = [
   "idor-testing", "metasploit-framework", "smtp-penetration-testing",
   "ssh-penetration-testing", "wordpress-penetration-testing",
 ];
+const reviewedLicenses = new Set(["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC"]);
+const pinnedSource = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/blob\/[a-f0-9]{40}\/(?:.+\/)?SKILL\.md$/;
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -49,18 +51,19 @@ function pruneRegistry(value, excluded) {
   }));
 }
 
-function makeReviewedSkills(target) {
+function makeReviewedSkills(target, excluded) {
   const index = readJson(path.join(ROOT, "data", "external-reviewed.json"));
   const records = [];
   for (const item of index) {
     const id = item.id;
-    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || item.license !== "MIT"
+    if (id.length > 64 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || excluded.has(id)
+        || !reviewedLicenses.has(item.license) || !pinnedSource.test(item.publisherUrl)
         || !item.files["SKILL.md"] || !item.files.LICENSE) throw new Error(`Invalid reviewed skill: ${id}`);
     const source = path.join(ROOT, "registry", "external-reviewed", id);
     const destination = path.join(target, "skills", id);
     if (fs.existsSync(destination)) throw new Error(`Reviewed skill collides with the package: ${id}`);
     for (const [file, expected] of Object.entries(item.files)) {
-      if (file !== "LICENSE" && !/^(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\.md$/.test(file)) {
+      if (!["LICENSE", "NOTICE"].includes(file) && !/^(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\.md$/.test(file)) {
         throw new Error(`Unexpected file in ${id}`);
       }
       const contents = fs.readFileSync(path.join(source, file));
@@ -72,8 +75,8 @@ function makeReviewedSkills(target) {
       fs.writeFileSync(output, contents, { flag: "wx" });
     }
     records.push({ id, name: id, path: `skills/${id}/SKILL.md`, description: item.description,
-      category: "development", tags: id.split("-"), triggers: id.split("-"), risk: "safe",
-      source: item.publisherUrl, license: "MIT", reviewUrl: item.reviewUrl });
+      category: item.category || "development", tags: id.split("-"), triggers: id.split("-"), risk: "safe",
+      source: item.publisherUrl, license: item.license, reviewUrl: item.reviewUrl });
   }
   return records;
 }
@@ -133,7 +136,7 @@ function stageRelease(target) {
   }
 
   const distribution = path.join(target, "data");
-  const reviewed = makeReviewedSkills(target);
+  const reviewed = makeReviewedSkills(target, excluded);
   const filtered = catalog.skills.filter(skill => !excluded.has(skill.id));
   const skills = [...filtered, ...reviewed].sort((a, b) => a.id.localeCompare(b.id, "en"));
   for (const skill of skills) {
