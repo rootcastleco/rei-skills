@@ -10,7 +10,7 @@ const config=read("data/curated-expansion-bundles.json");
 const generated=read("data/bundles.json").bundles;
 const pkg=read("package.json");
 const index=read("data/catalog.json");
-assert.equal(pkg.version,"6.7.0");
+assert.match(pkg.version,/^6\.7\.\d+$/);
 assert.equal(report.schemaVersion,1);
 assert.equal(report.imported.length,274);
 assert.equal(new Set(report.imported.map(x=>x.id)).size,274);

@@ -22,6 +22,7 @@ const REA_REPO = "https://github.com/rootcastleco/Rei-Reverse-engineer.git";
 const HOME = process.env.HOME || process.env.USERPROFILE || os.homedir() || "";
 const BRAND = "rei";
 const LOCAL_ROOT = path.resolve(__dirname, "..");
+const IS_NPM_DISTRIBUTION = require("../package.json").reiSkillsDistribution === true;
 
 const KNOWN_SYMLINK_ALIASES = {
   docx: "docx-official",
@@ -370,6 +371,7 @@ Usage:
   npx rei-skills [command] [options]
 
 Commands:
+  discover [query]              Search external catalog records and reviewed upstream packages
   install                  Install skills into target AI directory (default)
   recommend <task>         Smart Intent & Stack Router: recommend top skills, bundles & workflows
   mcp                      Start the REI Skills Smart MCP Server over stdio (JSON-RPC 2.0)
@@ -630,6 +632,9 @@ function resolveCatalogSourceRoot(opts) {
   }
 
   const hasLocalSkills = fs.existsSync(path.join(LOCAL_ROOT, "skills"));
+  if (IS_NPM_DISTRIBUTION && (opts.remote || opts.versionArg || opts.tagArg || !hasLocalSkills)) {
+    throw new Error("The npm distribution installs its bundled skills. Select a different npm package version to change releases.");
+  }
   if ((opts.local || !opts.remote) && hasLocalSkills && !opts.versionArg && !opts.tagArg) {
     return { root: LOCAL_ROOT, isTemp: false };
   }
@@ -1810,6 +1815,15 @@ function handleImprove(opts) {
 }
 
 function main() {
+  if (process.argv[2] === "discover") {
+    try {
+      require("../lib/external-discovery").runDiscovery(process.argv.slice(3));
+    } catch (error) {
+      console.error(error.message);
+      process.exitCode = 1;
+    }
+    return;
+  }
   const opts = parseArgs();
 
   if (opts.help) {

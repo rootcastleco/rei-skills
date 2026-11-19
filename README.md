@@ -40,14 +40,21 @@ Search **30,000+ catalog records**, explore **Rootcastle Originals**, and instal
 | [Live skill catalog](https://skills.rootcastle.com/catalog/) | Search 30,149 records across 11 engineering domains. Filter by domain, source, and available quality tier. External discovery records link to their publishers. |
 | [Rootcastle Originals](https://skills.rootcastle.com/catalog/?scope=rootcastle#browse) | Explore Rootcastle workflows for PCB manufacturing, firmware updates, power budgeting, and fleet telemetry. |
 | [Reviewed downloads](https://skills.rootcastle.com/catalog/?scope=verified#browse) | Download the first 11 reviewed MIT-licensed ZIPs directly from the site, or use its Python installer for Codex or Claude Code. See the pinned source, license, review scope, and SHA-256 checksums on each package page. |
-| [npm CLI](https://www.npmjs.com/package/rei-skills) | Search and install from the 1,733-skill repository library. Use the CLI for targeted installs, workflow planning, and MCP integration. |
+| [npm CLI](https://www.npmjs.com/package/rei-skills) | Search the bundled library and the complete external discovery snapshot. Install bundled skills and the 11 reviewed upstream packages, plan workflows, and connect through MCP. |
 
 The public discovery catalog includes the published registry subset, Rootcastle Originals, and external source references. The [provenance page](https://skills.rootcastle.com/quality/) explains the coverage and package review criteria.
 
 ```bash
 npx rei-skills@latest search kicad
 npx rei-skills@latest add rc-kicad-ecad-kicad-drc-ci --codex
+npx rei-skills@latest discover "react charts" --limit 5
+npx rei-skills@latest discover --reviewed --license MIT
+npx rei-skills@latest add expo-dom --codex
 ```
+
+The npm package includes 29,101 external discovery references from two pinned metadata snapshots, plus reviewed upstream entries with their original license notices. Discovery results link to their sources. Reviewed packages are also available for offline installation using `add`. The [catalog provenance page](https://skills.rootcastle.com/quality/) lists the metadata sources and review criteria.
+
+Discovery metadata comes from [Agent Skills Corpus](https://github.com/lawrence3699/agent-skills-corpus) (CC0-1.0) and [ClaudSkills](https://github.com/claudskills/catalog-public) (CC BY 4.0). REI selects and deduplicates records, maps categories, and adds technical search tags. The discovery index preserves ClaudSkills record attribution.
 
 ---
 
@@ -93,7 +100,7 @@ flowchart LR
 
 ## Install in Seconds
 
-Install the complete **1733 validated skills** library or project focused skills into any assistant with a single command:
+Install the npm release’s bundled library or select a specific skill with `add`. The npm release is staged from the repository and excludes offensive workflows. Use the GitHub catalog for the complete repository inventory.
 
 ```bash
 npx rei-skills

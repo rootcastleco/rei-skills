@@ -6,6 +6,7 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 const { spawnSync } = require("node:child_process");
+const { getReleaseScope, isExcludedPath, stageRelease } = require("../stage-npm-release");
 
 const root = path.resolve(__dirname, "../..");
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "rei-npm-smoke-"));
@@ -16,7 +17,7 @@ function run(command, args, cwd = root) {
     encoding: "utf8",
     maxBuffer: 40 * 1024 * 1024,
     timeout: 180000,
-    shell: process.platform === "win32",
+    shell: process.platform === "win32" && command === npm,
     env: { ...process.env, npm_config_audit: "false", npm_config_fund: "false" },
   });
   assert.equal(result.status, 0, [command, ...args].join(" ") + "\n" + result.stderr + "\n" + result.stdout);
@@ -24,8 +25,15 @@ function run(command, args, cwd = root) {
 }
 
 try {
-  const pack = JSON.parse(run(npm, ["pack", "--ignore-scripts", "--json", "--pack-destination", tmp]))[0];
+  const stage = path.join(tmp, "stage");
+  stageRelease(stage);
+  const pack = JSON.parse(run(npm, ["pack", "--ignore-scripts", "--json", "--pack-destination", tmp], stage))[0];
   const paths = new Set(pack.files.map((file) => file.path));
+  const { catalog: sourceCatalog, excluded } = getReleaseScope();
+  assert(![...paths].some(file => isExcludedPath(file, excluded)), "Tarball must exclude skill files and their resources");
+  for (const skill of sourceCatalog.skills) {
+    if (!excluded.has(skill.id)) assert(paths.has(skill.path), `Retained skill missing: ${skill.id}`);
+  }
   const required = [
     "bin/install.js", "bin/mcp-server.js", "bin/prompt-agent.js", "lib/ai-adapters.js",
     "lib/smart-router.js", "lib/mcp-safe-install.js", "lib/prompt-archive.js",
@@ -53,6 +61,22 @@ try {
   ], tmp);
 
   const installed = path.join(tmp, "node_modules", "rei-skills");
+  const cli = path.join(installed, "bin", "install.js");
+  const publicCatalog = require(path.join(installed, "data", "catalog.json"));
+  assert.equal(publicCatalog.total, sourceCatalog.total - excluded.size + 11);
+  assert(publicCatalog.skills.every(item => item.risk !== "offensive" && !excluded.has(item.id)));
+  const discovery = JSON.parse(run(process.execPath, [cli, "discover", "--stats"], tmp));
+  assert.equal(discovery.externalCount, 29101);
+  assert.equal(discovery.reviewedCount, 11);
+  const discoveryMatch = JSON.parse(run(process.execPath, [cli, "discover", "expo-dom", "--reviewed", "--json"], tmp));
+  assert.equal(discoveryMatch.results[0].name, "expo-dom");
+  const verifiedTarget = path.join(tmp, "reviewed-install");
+  run(process.execPath, [cli, "add", "maui-safe-area", "--codex", "--path", verifiedTarget], tmp);
+  assert(fs.existsSync(path.join(verifiedTarget, "maui-safe-area", "references", "safe-area-api.md")));
+  assert(fs.existsSync(path.join(verifiedTarget, "maui-safe-area", "LICENSE")));
+  const remote = spawnSync(process.execPath, [cli, "add", "maui-safe-area", "--remote", "--path", verifiedTarget], { encoding: "utf8" });
+  assert.equal(remote.status, 1);
+  assert(remote.stderr.includes("installs its bundled skills"));
   for (const binary of ["rei-skills", "rei-skills-prompt"]) {
     const file = path.join(installed, "bin", binary === "rei-skills" ? "install.js" : "prompt-agent.js");
     if (process.platform !== "win32") {

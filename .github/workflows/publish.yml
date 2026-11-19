@@ -86,15 +86,26 @@ jobs:
       - name: Verify tarball contents
         run: |
           set -euo pipefail
-          npm pack --ignore-scripts --dry-run --json > "$RUNNER_TEMP/rei-package.json"
+          stage="$RUNNER_TEMP/rei-npm-release"
+          node scripts/stage-npm-release.js "$stage"
+          npm pack "$stage" --ignore-scripts --pack-destination "$RUNNER_TEMP" --json > "$RUNNER_TEMP/rei-package.json"
           node - "$RUNNER_TEMP/rei-package.json" <<'NODE'
           const fs = require("node:fs");
+          const { getReleaseScope, isExcludedPath } = require("./scripts/stage-npm-release.js");
           const pack = JSON.parse(fs.readFileSync(process.argv[2], "utf8"))[0];
           const paths = new Set(pack.files.map(f => f.path));
+          const { catalog, excluded } = getReleaseScope();
+          if ([...paths].some(file => isExcludedPath(file, excluded))) {
+            throw Error("Tarball contains a restricted skill file");
+          }
+          for (const skill of catalog.skills) {
+            if (!excluded.has(skill.id) && !paths.has(skill.path)) throw Error("Tarball missing retained skill: " + skill.id);
+          }
           const required = [
             "bin/install.js", "bin/mcp-server.js", "lib/mcp-safe-install.js",
             "data/catalog.json", "data/bundles.json", "data/workflows.json",
-            "skills/rei-rea-orchestrator/SKILL.md"
+            "skills/rei-rea-orchestrator/SKILL.md", "data/external-discovery.jsonl.gz",
+            "skills/expo-dom/SKILL.md", "skills/maui-safe-area/LICENSE"
           ];
           for (const file of required) {
             if (!paths.has(file)) throw Error("Tarball missing: " + file);
@@ -120,7 +131,8 @@ jobs:
         # allow npm publish. Do not pass or store a long-lived npm token.
         run: |
           set -euo pipefail
-          npm publish --access public 2>&1 | tee "$RUNNER_TEMP/npm-publish.log"
+          version="$(node -p 'require("./package.json").version')"
+          npm publish "$RUNNER_TEMP/rei-skills-$version.tgz" --access public 2>&1 | tee "$RUNNER_TEMP/npm-publish.log"
 
       - name: Verify published npm version and dist-tag
         run: |

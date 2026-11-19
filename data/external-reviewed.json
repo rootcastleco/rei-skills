@@ -1,0 +1,178 @@
+[
+  {
+    "id": "dotnet-pinvoke",
+    "description": "Work with .NET native interop using P/Invoke, LibraryImport, safe handles, and portable marshaling.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-advanced/skills/dotnet-pinvoke/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Interop examples and two supporting reference documents reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "05f8fe734ec6b010b8c3eefb28cf594123fec1ce3688cd08f4a804097237037a",
+      "references/diagnostics.md": "5c3596bc66f89a20dc1216d133fda6cdcf3af951e8ce41bc35c4fc90861528a7",
+      "references/type-mapping.md": "b8987c9264dc44704dbfdcfe8071f702c7d976cf3aabb6b686850df600c36d7c"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/dotnet-pinvoke/"
+  },
+  {
+    "id": "maui-safe-area",
+    "description": "Configure safe areas and keyboard insets in .NET MAUI.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-maui/skills/maui-safe-area/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "MAUI layout guide and matching API reference reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "1eb72dc8bf706846dca9cfc200e82416580fe657cec2e414a8f2662d49798f62",
+      "references/safe-area-api.md": "65268e47d5ada6a7c09a100bb31392c31dd046b76e493bb7944e64e60fea3182"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/maui-safe-area/"
+  },
+  {
+    "id": "maui-collectionview",
+    "description": "Build and tune .NET MAUI CollectionView layouts, selection, grouping, and incremental loading.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-maui/skills/maui-collectionview/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "UI examples and collection-view API reference reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "decaa88a42e8f4e273ec9a718911518cd4c411a8555bb3838b5686d2def36888",
+      "references/collectionview-api.md": "3a444536710e3c21f2af1b78f551fe203fe9f5c9cdb55008e26644c05afb49ba"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/maui-collectionview/"
+  },
+  {
+    "id": "build-perf-baseline",
+    "description": "Measure cold, warm, incremental and no-op .NET builds.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-msbuild/skills/build-perf-baseline/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Build measurement guidance and local commands reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "cc693e751d464aefe15f35c4cd2b9cfbf9f0e50eb02b242f18e8142c83470486"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/build-perf-baseline/"
+  },
+  {
+    "id": "maui-app-lifecycle",
+    "description": "Handle .NET MAUI window and app lifecycle events for state restoration.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-maui/skills/maui-app-lifecycle/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Lifecycle examples and platform API reference reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "88b2b00a9cc5d6b4ce1d28b1d3f8bbdefe7d057f7cc7494a82aa1702c1c5d917",
+      "references/lifecycle-api.md": "634f93453789da981347e5ff046819f405b1b59a2506196d3530d6a6981ee0a1"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/maui-app-lifecycle/"
+  },
+  {
+    "id": "directory-build-organization",
+    "description": "Organize shared build configuration across .NET projects using Directory.Build files.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-msbuild/skills/directory-build-organization/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Build layout guidance and three supporting references reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "747e01fe8e1e78f65b52527b066d7e195375351749996c8e03dbed21e4720af4",
+      "references/common-patterns.md": "6e651cb87034e162e8a966228cbf837612e434c564fd7f9928d38ef44a12e7f3",
+      "references/multi-level-examples.md": "6120bf2b385eb2cf348c66173bb27ade493d570db8c497881cc8319f448c820a",
+      "references/targetframework-props-pitfall.md": "a5f0b84a3138e5fdf1fdf103268493006756a1c86312952926f3a10c3e5dd738"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/directory-build-organization/"
+  },
+  {
+    "id": "maui-theming",
+    "description": "Apply light and dark themes, resource dictionaries and system theme changes in .NET MAUI.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-maui/skills/maui-theming/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Theme guidance and corresponding MAUI API reference reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "efba5fb4950e1d608d59b0a6a35b81d6dc14bd9efce520d153f3548ed2e6e5d4",
+      "references/theming-api.md": "cb6be177eb98addf98b7f28b0859cf4260de73fadb17aa48932064a0c20116bd"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/maui-theming/"
+  },
+  {
+    "id": "maui-data-binding",
+    "description": "Set up compiled and runtime .NET MAUI data bindings and diagnose binding errors.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-maui/skills/maui-data-binding/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Binding guidance and corresponding MAUI API reference reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "7fd85f91cf1e3b78eba196da60620db833dcfd9b007f0b143813875e30acd414",
+      "references/data-binding-api.md": "a34c6a74f1174a0df58fe244e8520323d4e7174439b02c713d357f5b2e6b4468"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/maui-data-binding/"
+  },
+  {
+    "id": "maui-dependency-injection",
+    "description": "Register services and manage lifetimes in .NET MAUI dependency injection.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-maui/skills/maui-dependency-injection/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Dependency injection examples and API reference reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "0efbf7b9dd6c5da7023ba12b3e262f61b6a8d185467cb1cd77150353ce9790f1",
+      "references/dependency-injection-api.md": "b75e9be81633172770e447ea2092338ecce93f284a0f229c0da0c52ab76eb542"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/maui-dependency-injection/"
+  },
+  {
+    "id": "property-patterns",
+    "description": "Use MSBuild properties, defaults, conditions and evaluation order in .NET builds.",
+    "source": ".NET Foundation and Contributors",
+    "publisherUrl": "https://github.com/dotnet/skills/blob/2877c712edc20643b72f64e2983b168e6661d607/plugins/dotnet-msbuild/skills/property-patterns/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "MSBuild property and build configuration examples reviewed.",
+    "modified": false,
+    "files": {
+      "LICENSE": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "SKILL.md": "fa35856fde19371c9de57c518c468a02e8fe26a80b4ee99a5a680cf1449582fd"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/property-patterns/"
+  },
+  {
+    "id": "expo-dom",
+    "description": "Use Expo DOM components to run React web components in native webviews and on the web.",
+    "source": "Expo",
+    "publisherUrl": "https://github.com/expo/skills/blob/dfdebcc6c4c1bf7a9471cefd6b6f39c7ba6c884d/plugins/expo/skills/expo-dom/SKILL.md",
+    "license": "MIT",
+    "reviewDate": "2026-11-19",
+    "review": "Portable documentation edition. The optional hosted feedback command and agent-interface configuration are excluded.",
+    "modified": true,
+    "files": {
+      "LICENSE": "49c5f9c7097c9a940ff663a54c27a4c60e379df6cc2b3052df0d37a09a85df93",
+      "SKILL.md": "821374e49293ffc40cd3266b27c403b4159d59421ed388beda7bef4a409a79c2"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/expo-dom/"
+  }
+]

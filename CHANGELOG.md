@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.7.1] - 2026-11-19
+
+- Publish a staged npm distribution containing 1,592 retained repository skills and 11 reviewed upstream packages with their license notices and references.
+- Add `rei-skills discover` to search 29,101 external discovery records and find reviewed packages for offline installation.
+- Exclude 132 entries marked offensive and nine additional entries identified during release review from the npm distribution and its installable registry.
+- Update the npm description, keywords, and links to the live Rootcastle catalog and reviewed downloads.
+
 All notable changes to **REI Skills** (and its historical upstream lineage) are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
