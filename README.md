@@ -10,12 +10,14 @@
 
 # REI SKILLS
 
-**The auditable engineering skill platform for AI agents.**  
-*Discover capabilities, build workflows, enforce security policies, and verify engineering outcomes across AI tools.*
+**Rootcastle’s engineering skill platform for AI agents.**
+
+Search **30,000+ catalog records**, explore **Rootcastle Originals**, and install reviewed skills for your coding assistant.
 
 [![CI Status](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/rootcastleco/rei-skills/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
+[![Live catalog](https://img.shields.io/badge/live%20catalog-30%2C000%2B%20records-0E3D8A)](https://skills.rootcastle.com/catalog/)
 [![Validated Skills](https://img.shields.io/badge/skills-1733%20validated-228B55)](#explore-the-library)
 [![Gold 50](https://img.shields.io/badge/Gold%2050-50%2F50%20verified-228B55)](#registry-quality-engine--gold-50-program)
 [![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-97.3%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
@@ -23,7 +25,7 @@
 [![Rust Gateway](https://img.shields.io/badge/Rust%20Gateway-v0.2.0-228B55)](docs/engineering/RUST_GATEWAY_SPEC.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
 
-**[npm package](https://www.npmjs.com/package/rei-skills)** · **[Interactive Web Hub (GitHub Pages)](https://rootcastleco.github.io/rei-skills/)** · **[Publish workflow](https://github.com/rootcastleco/rei-skills/actions/workflows/publish.yml)**
+**[Live catalog](https://skills.rootcastle.com/catalog/)** · **[Rootcastle Originals](https://skills.rootcastle.com/catalog/?scope=rootcastle#browse)** · **[Reviewed downloads](https://skills.rootcastle.com/catalog/?scope=verified#browse)** · **[npm package](https://www.npmjs.com/package/rei-skills)**
 
 **[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Quality & Gold 50](#registry-quality-engine--gold-50-program)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[Multimodal Pipeline](#multimodal-content-production-ecosystem-11-providers-license--consent-gated)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[Docs & Reports](#engineering-documentation--reports)**
 
@@ -31,9 +33,27 @@
 
 ---
 
+## Find and Install Skills
+
+| Where to start | What you can do |
+| :--- | :--- |
+| [Live skill catalog](https://skills.rootcastle.com/catalog/) | Search 30,149 records across 11 engineering domains. Filter by domain, source, and available quality tier. External discovery records link to their publishers. |
+| [Rootcastle Originals](https://skills.rootcastle.com/catalog/?scope=rootcastle#browse) | Explore Rootcastle workflows for PCB manufacturing, firmware updates, power budgeting, and fleet telemetry. |
+| [Reviewed downloads](https://skills.rootcastle.com/catalog/?scope=verified#browse) | Download the first 11 reviewed MIT-licensed ZIPs directly from the site, or use its Python installer for Codex or Claude Code. See the pinned source, license, review scope, and SHA-256 checksums on each package page. |
+| [npm CLI](https://www.npmjs.com/package/rei-skills) | Search and install from the 1,733-skill repository library. Use the CLI for targeted installs, workflow planning, and MCP integration. |
+
+The public discovery catalog includes the published registry subset, Rootcastle Originals, and external source references. The [provenance page](https://skills.rootcastle.com/quality/) explains the coverage and package review criteria.
+
+```bash
+npx rei-skills@latest search kicad
+npx rei-skills@latest add rc-kicad-ecad-kicad-drc-ci --codex
+```
+
+---
+
 ## Platform Architecture — Autonomous Skill Intelligence
 
-**REI Skills** evolves a 1,436-skill repository into a verified, evaluated, and defense-in-depth engineering intelligence platform maintained by **[Rootcastle Engineering & Innovation](https://www.rootcastle.com)**:
+**REI Skills** connects the repository skill library to an engineering router, a workflow compiler, and evaluation tooling. The platform is maintained by **[Rootcastle Engineering & Innovation](https://rootcastle.com/)**.
 
 ```mermaid
 flowchart LR
@@ -156,7 +176,7 @@ npx rei-skills pipeline validate --output ./artifacts-rotor --json
 
 ## Hybrid Semantic Skill Router & Benchmark Evaluation
 
-Instead of injecting all 1,436 skill manuals into an agent's context window, [`lib/hybrid-router.js`](lib/hybrid-router.js) ranks relevant skills in real time using:
+[`lib/hybrid-router.js`](lib/hybrid-router.js) ranks relevant skills in real time and selects the smallest useful set for the agent’s context.
 
 - **BM25 Weighted Inverted Index** (`WeakMap`-cached per catalog snapshot) paired with **256-dim offline character-trigram and domain-concept embeddings** (plus optional external `embeddingProvider` injection).
 - **Bilingual EN/TR Normalization:** Turkish ASCII folding, suffix stemming, domain lexicon expansion, deduplicated stack boosts, slug-specialty matching, and boundary-matched `PHRASE_RULES`.
@@ -179,9 +199,9 @@ Critical-risk misrouting across all splits and engines: **0**. Full breakdown: [
 
 ## Registry Quality Engine & Gold 50 Program
 
-Every skill in the 1,436-skill catalog is scored by the deterministic **14-Point Auditable Quality Engine** ([`lib/quality-engine.js`](lib/quality-engine.js), [`scripts/validate_skills.py`](scripts/validate_skills.py), [`data/quality-report.json`](data/quality-report.json)) across 7 × (`0..2`) = 14 dimensions, paired with **6 separated verification axes** (`schemaValid`, `referenceValidated`, `securityPolicyChecked`, `evaluationPassed`, `humanReviewed`, `hardwareVerified`):
+The repository applies its deterministic **14-point quality engine** to each skill in the local catalog. The report tracks schema, references, security policy checks, evaluation, human review, and hardware verification separately. [Implementation](lib/quality-engine.js) · [Quality report](data/quality-report.json)
 
-- **Quality Tiers (`14pt-v1`):** `Q3` Gold (**358** skills), `Q2` Solid (**937** skills), `Q1` Basic (**141** skills), `Q0` Quarantine (**0** skills) · Average `14pt-v1` score: **`9.78 / 14`** (legacy doc score `82.4 / 100`).
+- **Quality tiers (`14pt-v1`)** are recorded in the [current report](data/quality-report.json), alongside the underlying scores and verification results.
 - **Epistemic Integrity:** Failing schema, reference, or security checks force **`Q0` Quarantine** regardless of numerical score; unperformed checks remain explicit (`human_reviewed_count: 0`, `hardware_verified_count: 0` / `"not_verified"`).
 - **Gold 50 Engineering Program ([`data/gold50-manifest.json`](data/gold50-manifest.json), [`scripts/evaluate-gold50.js`](scripts/evaluate-gold50.js)):** Evaluates **50 priority skills across 10 engineering disciplines** — **50/50 (`100.0%`)** skills passing, **149/150 (`99.3%`)** positive EN & EN/TR scenarios passing, **100/100 (`100.0%`)** negative/injection triggers cleanly rejected, and **50/50** multi-AI adapter transpilations passing (`targetGte95PctMet: true`). See [`docs/QUALITY_METHODOLOGY.md`](docs/QUALITY_METHODOLOGY.md) and [`docs/QUALITY_REPORT.md`](docs/QUALITY_REPORT.md).
 
@@ -262,7 +282,7 @@ Connect any MCP client (Claude Code, Cursor, Windsurf, Cline, Roo Code, Gemini C
 
 ## Interactive Web Hub
 
-Explore the searchable catalog, live Hybrid Intent & Stack Router (EN/TR), pre-compiled **Workflow DAG Preview**, **Benchmark Evaluation Dashboard**, **HOL Guard Status**, **Prompt Archive Provenance**, and **Rust Gateway** architecture on **[GitHub Pages](https://rootcastleco.github.io/rei-skills/)** or build locally via `npm run doc-site` ([`docs/site/index.html`](docs/site/index.html)).
+Use the [live Rootcastle catalog](https://skills.rootcastle.com/catalog/) to browse skills and open reviewed downloads. The [developer hub](https://rootcastleco.github.io/rei-skills/) documents the EN/TR router, workflow previews, benchmarks, and provenance. Build the developer hub locally with `npm run doc-site`.
 
 ---
 

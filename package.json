@@ -1,9 +1,9 @@
 {
   "name": "rei-skills",
   "version": "6.7.0",
-  "description": "The auditable engineering skill platform for AI agents. Discover capabilities, build workflows, enforce security policies, and verify engineering outcomes across AI tools.",
+  "description": "Rootcastle's engineering skill platform for AI agents. Discover 30,000+ catalog records, browse Rootcastle Originals and reviewed downloads, and use the CLI and MCP tools.",
   "author": "Rootcastle Engineering & Innovation <admin@rootcastle.com> (https://rootcastle.com)",
-  "homepage": "https://rootcastleco.github.io/rei-skills/",
+  "homepage": "https://skills.rootcastle.com/",
   "license": "MIT",
   "scripts": {
     "validate": "python scripts/validate_skills.py",
@@ -62,6 +62,11 @@
     "rootcastle",
     "ai-agents",
     "agent-skills",
+    "skill-catalog",
+    "skill-registry",
+    "engineering-workflows",
+    "skill-installation",
+    "technical-documentation",
     "claude-code",
     "codex",
     "gemini-cli",
