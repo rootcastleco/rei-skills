@@ -67,6 +67,7 @@ try {
   const publicCatalog = require(path.join(installed, "data", "catalog.json"));
   const reviewedIndex = require(path.join(installed, "data", "external-reviewed.json"));
   const coverage = require(path.join(installed, "data", "external-review-coverage.json"));
+  const evidence = require(path.join(installed, "data", "external-license-evidence.json"));
   const digest = contents => createHash("sha256").update(contents).digest("hex");
   assert.equal(publicCatalog.total, sourceCatalog.total - excluded.size + reviewedIndex.length);
   assert(publicCatalog.skills.every(item => item.risk !== "offensive" && !excluded.has(item.id)));
@@ -89,16 +90,36 @@ try {
     counts[status] = (counts[status] || 0) + 1;
   }
   assert.deepEqual(counts, coverage.outcomes);
-  const additions = reviewedIndex.filter(item => item.discoveryId);
-  assert.deepEqual(new Set(additions.map(item => item.discoveryId)),
+  const linkedReviews = reviewedIndex.filter(item => item.discoveryId);
+  const additions = linkedReviews.filter(item => item.introducedIn === coverage.release);
+  const proofById = new Map(evidence.map(item => [item.id, item]));
+  assert.equal(proofById.size, evidence.length);
+  assert.equal(evidence.length, coverage.verifiedLicenseRecords);
+  for (const proof of evidence) {
+    assert(externalById.has(proof.id));
+    assert.match(proof.licenseUrl, /^https:\/\/(?:github\.com|gitlab\.com|gitee\.com)\/.*\/blob\/[a-f0-9]{40}\//);
+  }
+  assert.equal(evidence.filter(item => !externalById.get(item.id).license).length, coverage.recoveredLicenseRecords);
+  assert.deepEqual(new Set(linkedReviews.map(item => item.discoveryId)),
     new Set(outcomes.filter(row => row.status === "published").map(row => row.id)));
   assert.equal(additions.length, coverage.publishedAdditions);
   for (const item of reviewedIndex) {
     if (item.discoveryId) {
       const source = externalById.get(item.discoveryId);
       assert.equal(source.name, item.id);
-      assert.equal(source.license, item.license);
-      if (source.sha256) assert.equal(item.files["SKILL.md"], source.sha256);
+      if (item.introducedIn) {
+        const proof = proofById.get(item.discoveryId);
+        assert.equal(proof.license, item.license);
+        assert.equal(proof.licenseUrl, item.licenseUrl);
+      } else {
+        assert.equal(source.license, item.license);
+      }
+      if (item.previousSnapshotSha256) {
+        assert.equal(item.previousSnapshotSha256, source.sha256);
+        assert.notEqual(item.files["SKILL.md"], source.sha256);
+      } else if (source.sha256) {
+        assert.equal(item.files["SKILL.md"], source.sha256);
+      }
     }
     for (const [file, hash] of Object.entries(item.files)) {
       assert(paths.has(`skills/${item.id}/${file}`));
@@ -116,6 +137,14 @@ try {
     for (const [file, hash] of Object.entries(item.files)) {
       assert.equal(digest(fs.readFileSync(path.join(verifiedTarget, item.id, file))), hash);
     }
+  }
+  const recovered = additions.find(item => !externalById.get(item.discoveryId).license);
+  assert.equal(additions.filter(item => !externalById.get(item.discoveryId).license).length,
+    coverage.publishedRecoveredLicenses);
+  if (recovered) {
+    const results = JSON.parse(run(process.execPath, [cli, "discover", recovered.id, "--reviewed", "--json"], tmp));
+    assert(results.results.some(row => row.id === recovered.discoveryId && row.npmSkill === recovered.id
+      && row.license === recovered.license && row.licenseUrl === recovered.licenseUrl));
   }
   const remote = spawnSync(process.execPath, [cli, "add", "maui-safe-area", "--remote", "--path", verifiedTarget], { encoding: "utf8" });
   assert.equal(remote.status, 1);

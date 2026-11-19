@@ -12,8 +12,10 @@ const additionallyExcluded = [
   "idor-testing", "metasploit-framework", "smtp-penetration-testing",
   "ssh-penetration-testing", "wordpress-penetration-testing",
 ];
-const reviewedLicenses = new Set(["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC"]);
-const pinnedSource = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/blob\/[a-f0-9]{40}\/(?:.+\/)?SKILL\.md$/;
+const reviewedLicenses = new Set([
+  "MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "0BSD", "MIT-0", "CC0-1.0", "Unlicense",
+]);
+const pinnedSource = /^https:\/\/(?:(?:github|gitee)\.com\/[\w.-]+\/[\w.-]+|gitlab\.com(?:\/[\w.-]+){2,}\/-)\/blob\/[a-f0-9]{40}\/(?:[^?#]*\/)?SKILL\.md$/;
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));

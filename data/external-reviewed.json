@@ -300,5 +300,277 @@
       "SKILL.md": "11a6f2c421161f8655f82a6b3c25187761622dd9f1d1f9cf2143ca0cb849f5af"
     },
     "reviewUrl": "https://skills.rootcastle.com/catalog/skill/reversa-design-system/"
+  },
+  {
+    "id": "angular-unit-testing",
+    "description": "Best practices for Angular unit testing with Jest in the blueprint frontend. Use this when writing or reviewing Angular/TypeScript spec files.",
+    "category": "testing",
+    "source": "enigmatry/entry-blueprint",
+    "discoveryId": "external:06d8c4e1a539757c6079",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/enigmatry/entry-blueprint/blob/868c8cd290ef2a32f79e6b16bb2f10dd3915a041/.claude/skills/angular-unit-testing/SKILL.md",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://github.com/enigmatry/entry-blueprint/blob/868c8cd290ef2a32f79e6b16bb2f10dd3915a041/LICENSE.md",
+    "reviewDate": "2026-11-19",
+    "review": "Project-specific Angular Jest patterns, local mocks, parameterized tests and coverage guidance reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "edae5e88c02f6b06dc799528aadef3ee388c6a9ef5745a95ddf1a6891da77f73",
+      "LICENSE": "9f4cac1841206e505f1c87974227221accb841d14f3962ea4b439b2908e202a9"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/angular-unit-testing/"
+  },
+  {
+    "id": "bun-file-io",
+    "description": "Use this when you are working on file operations like reading, writing, scanning, or deleting files. It summarizes the preferred file APIs and patterns used in this repo. It also notes when to use filesystem helpers for directories.",
+    "category": "development",
+    "source": "synthetic-sciences/openscience",
+    "discoveryId": "external:73524c6739712a3a0145",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/synthetic-sciences/openscience/blob/aecc570a4281d005c13729d4941b3ae545a0fd02/.openscience/skill/bun-file-io/SKILL.md",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://github.com/synthetic-sciences/openscience/blob/aecc570a4281d005c13729d4941b3ae545a0fd02/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Bun file and directory API reference, project scope and examples reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "73524c6739712a3a014503dbf73e3047293f4961f000336ad9f5f05346963892",
+      "NOTICE": "6e1543b0c00e722855e413666ac70385cf25ef65bdec73b730f7b98f0db57e0f",
+      "LICENSE": "d8ac5e917b2099e5cbe2999f297b56e2cc946e545f39aebc1e1aa91dd5cb0e9f"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/bun-file-io/"
+  },
+  {
+    "id": "choose-covariance-estimator",
+    "description": "Pick which precise covariance estimator to use for a given dataset. Use when you have data X and are unsure which estimator fits its dimension, conditioning, or tail behavior. Wraps precise.suggest() and covariance_features().",
+    "category": "data-ai",
+    "source": "microprediction/precise",
+    "discoveryId": "external:86073203da24202926a8",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/microprediction/precise/blob/587bf15c0a84eb9edad9c285c94d51c513a94887/.claude/skills/choose-covariance-estimator/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/microprediction/precise/blob/587bf15c0a84eb9edad9c285c94d51c513a94887/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Local statistical estimator selection example, feature interpretation, and out-of-sample validation caveats reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "86073203da24202926a8892eb00608974dccad4d94dc92cd958c901776be633a",
+      "LICENSE": "dde26a7b1c78bb4a0535d7f5d2baf6b3f7883f90589ccd082b0c3e337662a4d9"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/choose-covariance-estimator/"
+  },
+  {
+    "id": "cometchat-a11y",
+    "description": "Keep a CometChat integration accessible — the UI Kit is designed targeting WCAG 2.1 AA with keyboard navigation (verify per component in its docs; full conformance still needs manual testing), and this skill makes sure the HOST app doesn't break that, covering contrast, focus, screen-reader context, reduced motion, RTL, and calls accessibility. Cross-family. Triggers: 'is cometchat accessible', 'WCAG / 508 / ADA compliance', 'screen reader support', 'keyboard navigation', 'a11y audit', 'accessible chat', 'contrast/focus issues in chat'.",
+    "category": "development",
+    "source": "cometchat/cometchat-skills",
+    "discoveryId": "external:204e6eec49a33a9904b4",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/cometchat/cometchat-skills/blob/1156a8e5fd6cad24c5875ddda73f7da57622d7b2/skills/cometchat-a11y/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/cometchat/cometchat-skills/blob/1156a8e5fd6cad24c5875ddda73f7da57622d7b2/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Host-side accessibility checklist, reduced motion, screen-reader behavior and verification guidance for CometChat integrations reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "b7e7df412d6086d6ebcc2f563b0a55d203065f83895bb03f0d1a1b3537ee411d",
+      "LICENSE": "7681b86233758f04f5ef7afb8f3abef68b3266a2ab5c0fca51039887c883cd01"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/cometchat-a11y/",
+    "previousSnapshotSha256": "204e6eec49a33a9904b474ce40082aad95a9905b8c2392a922428c5d7273d71d"
+  },
+  {
+    "id": "content-analysis",
+    "description": "Content extraction and analysis for video, podcast, article, and YouTube content. Extracts structured insights, key takeaways, and wisdom. USE WHEN extract wisdom, content analysis, analyze content, insight report, analyze video, analyze podcast, extract insights, key takeaways, what did I miss, extract from YouTube.",
+    "category": "general",
+    "source": "fadrienne/MyGitHub",
+    "discoveryId": "external:f848cf5c62ed8a2221ce",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/fadrienne/MyGitHub/blob/4aa39efd1cdab0b4657ecee16c92a92011a5b10f/Personal_AI_Infrastructure/Releases/Pi/skills/content-analysis/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/fadrienne/MyGitHub/blob/4aa39efd1cdab0b4657ecee16c92a92011a5b10f/Personal_AI_Infrastructure/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Local content analysis framework and structured summary template reviewed. Original upstream copyright is retained.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "f848cf5c62ed8a2221ce87298c71b584908db92fe20eaf0c3aaa9eaf30edf8f7",
+      "LICENSE": "8d6cc5afd48157bca307e09dbb785e253e6202ccc048f64027bb6ed43bd599a2"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/content-analysis/"
+  },
+  {
+    "id": "docs-audit-and-refresh",
+    "description": "Audit the repository's docs/ content against the current codebase, find missing, incorrect, or stale documentation, and refresh the affected pages. Use when the user asks to review docs coverage, find outdated docs, compare docs with the current repo, or fix documentation drift across features, settings, tools, or integrations.",
+    "category": "general",
+    "source": "QwenLM/qwen-code",
+    "discoveryId": "external:dc961ab124638b33ae73",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/QwenLM/qwen-code/blob/aff136677b57aed5189e4d30e0e9093fb8a9689b/.qwen/skills/docs-audit-and-refresh/SKILL.md",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://github.com/QwenLM/qwen-code/blob/aff136677b57aed5189e4d30e0e9093fb8a9689b/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Qwen Code documentation audit workflow and its bundled scope and maintenance checklist reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "dc961ab124638b33ae737759fa1dd0dfadc144371cccb91fd2e955a602d76f38",
+      "references/audit-checklist.md": "952222ac476efe26d5cb39ed7234465f057d772b3658e8e0ddba368cfa1b7784",
+      "LICENSE": "55367b61ccd2a016a0159ad886bd66a3ee6cb5e873d0c75c803c897dd245b075"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/docs-audit-and-refresh/"
+  },
+  {
+    "id": "docs-update-from-diff",
+    "description": "Review local code changes with git diff and update the official docs under docs/ to match. Use when the user asks to document current uncommitted work, sync docs with local changes, update docs after a feature or refactor, or when phrases like \"git diff\", \"local changes\", \"update docs\", or \"official docs\" appear.",
+    "category": "general",
+    "source": "QwenLM/qwen-code",
+    "discoveryId": "external:70c14226e4b2d630ea50",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/QwenLM/qwen-code/blob/aff136677b57aed5189e4d30e0e9093fb8a9689b/.qwen/skills/docs-update-from-diff/SKILL.md",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://github.com/QwenLM/qwen-code/blob/aff136677b57aed5189e4d30e0e9093fb8a9689b/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Qwen Code local code-to-docs workflow and its bundled documentation surface map reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "70c14226e4b2d630ea50408c43bdd657a2525cc4c438d509d2949cfb896fe43a",
+      "references/docs-surface.md": "28406272783bd80d58595df3efff4ab00e43a89d06f772f56429da641cb59564",
+      "LICENSE": "55367b61ccd2a016a0159ad886bd66a3ee6cb5e873d0c75c803c897dd245b075"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/docs-update-from-diff/"
+  },
+  {
+    "id": "drupal-javascript",
+    "description": "Drupal JavaScript behaviors, libraries.yml, drupalSettings, attach_library(), and custom client-side AJAX commands using Drupal.AjaxCommands.prototype.",
+    "category": "development",
+    "source": "edutrul/drupal-ai",
+    "discoveryId": "external:5119e91ba57cd185c0fc",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/edutrul/drupal-ai/blob/4c4f448c13bec6542aa523fe909377fa19dc12e6/.claude/skills/drupal-javascript/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/edutrul/drupal-ai/blob/4c4f448c13bec6542aa523fe909377fa19dc12e6/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Drupal behaviors, libraries, settings and AJAX examples plus the bundled developer notes reviewed.",
+    "modified": false,
+    "files": {
+      "README.md": "44c83b22c8c3d92d913d2bba9a975e87da51517a4d5a713c4de827c164ff812b",
+      "SKILL.md": "daef6ee73162e970de638bfa3d16e913a290a5ce80e72f2f054923837169f72e",
+      "LICENSE": "0cf5db62370dfc5eb54d9a208cab6ef2b904d64f4c9389fa822b31cf32141ae0"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/drupal-javascript/"
+  },
+  {
+    "id": "ipsn-writing-style",
+    "description": "Use when revising an IPSN-lineage paper for a real sensing problem on the first page, a load-bearing information-processing or platform contribution, ground-truth methodology, energy/latency/accuracy budgets, honest deployment reporting, double-blind wording, and disciplined use of the ≤12-page ACM two-column budget.",
+    "category": "general",
+    "source": "brycewang-stanford/Awesome-Journal-Skills",
+    "discoveryId": "external:0db20f557b141228560e",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/brycewang-stanford/Awesome-Journal-Skills/blob/d08b584985bb7bd306607c40b47acdd061bb9c41/IPSN-Skills/skills/ipsn-writing-style/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/brycewang-stanford/Awesome-Journal-Skills/blob/d08b584985bb7bd306607c40b47acdd061bb9c41/IPSN-Skills/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Sensing research writing, measurement evidence, deployment reporting and paper revision guidance reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "e4121deb1416cd6560f3c4bd78f93b2110d2157d1145ee96052131f99bb6b8f8",
+      "LICENSE": "bad075617318f23249188e9f4561c8f5fa1a3e992d1e6c95a8740750aba98540"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/ipsn-writing-style/"
+  },
+  {
+    "id": "jsdocs",
+    "description": "Write, insert, or update Effect public API JSDoc so it satisfies the jsdocs oxlint rule. Use when adding or fixing JSDoc comments, resolving jsdocs diagnostics, preparing docs for JSON extraction, or reviewing public API documentation.",
+    "category": "general",
+    "source": "FreeRikato/docs",
+    "discoveryId": "external:07563abc0898c23a3fb7",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/FreeRikato/docs/blob/03e635508f38513cbabd5c4699aecd8840945580/effect/effect-smol/.agents/skills/jsdocs/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/FreeRikato/docs/blob/03e635508f38513cbabd5c4699aecd8840945580/effect/effect-smol/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Effect public API JSDoc format, tags, example rules and local validation guidance reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "07563abc0898c23a3fb7fd22edcfcb0194318c0dec0b0f5c2786876e6692bd22",
+      "LICENSE": "774c3bc5924ad8ae6c5a75f1c53db13feb238ade15989625c513d07b60dedf30"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/jsdocs/"
+  },
+  {
+    "id": "note-writing",
+    "description": "Write lecture notes in Markdown (400-900 words) with Intro/Concept/Example/Pitfalls/Recap structure and cross-references to slides. Use when turning class beats into a study-ready note.md document. Triggered by the note-writer agent.",
+    "category": "general",
+    "source": "tobyilee/course-builder",
+    "discoveryId": "external:37f9f60fc190e5441464",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/tobyilee/course-builder/blob/1913b09bd1bf947b5ee2d1a75eab4396e669fbd3/.claude/skills/note-writing/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/tobyilee/course-builder/blob/1913b09bd1bf947b5ee2d1a75eab4396e669fbd3/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Learner-facing lecture note structure, Markdown template, language guidance and review checklist reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "67115a412fb92cdde3cd4429eb78ce199513e6f156be3f4ae26809d4e1c9bd91",
+      "LICENSE": "774377053fc5ad0d896021c421939e1ca3ad0e9998104d1cee9d9903316afd17"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/note-writing/"
+  },
+  {
+    "id": "review-changelog",
+    "description": "檢查 changelog 是否需要根據最近的 commits 更新，並準備版本發佈。Use when the user wants to review or update changelogs before a version bump. Triggers on requests like \"review changelog\", \"update changelog\", \"檢查更新日誌\", \"準備發版\", or when the user invokes /review-changelog. Analyzes commits since the last git tag, drafts bilingual changelog entries, and guides through the commit-then-version-bump sequence.",
+    "category": "general",
+    "source": "nathanfhh/nbp-web-gen",
+    "discoveryId": "external:a269fddbf2bc6c055390",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/nathanfhh/nbp-web-gen/blob/dfc5a9314076544524751281190c9ead64a97557/.claude/skills/review-changelog/SKILL.md",
+    "license": "Apache-2.0",
+    "licenseUrl": "https://github.com/nathanfhh/nbp-web-gen/blob/dfc5a9314076544524751281190c9ead64a97557/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Bilingual local changelog workflow, release classification and explicit confirmation before version changes reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "7703275b2482169156d087731312552b7f0798fef11aec7b6e6a76c17bceed37",
+      "LICENSE": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/review-changelog/"
+  },
+  {
+    "id": "themed-color-picker",
+    "description": "Use ThemedColorPicker in a layrz Flutter widget. Apply when adding a color selection field — opens a dialog with wheel and/or palette pickers.",
+    "category": "development",
+    "source": "goldenm-software/layrz_theme",
+    "discoveryId": "external:566f72c7fae70cee60bc",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/goldenm-software/layrz_theme/blob/e8db541255c8674cf8be06e5d5d5423f1de30fe0/.claude/skills/themed-color-picker/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/goldenm-software/layrz_theme/blob/e8db541255c8674cf8be06e5d5d5423f1de30fe0/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "Layrz Flutter color picker usage, form conventions and its bundled Dart API reference reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "fbc0e8e7d4ab5ba746f394ee35b447b9270bdf5e86b36fc806618b27b106dc66",
+      "references/api.md": "2fdc07705ef9cd368a075353e183b3f720eeaefb0e9acdc3dd47b6692495213e",
+      "LICENSE": "8f31d3bbc645ba0352576bf198094fd10b0e425bb5a35d0eb40f8f796e85296c"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/themed-color-picker/"
+  },
+  {
+    "id": "typescript-style",
+    "description": "Apply TypeScript style rules that prefer checked literal typing with satisfies and as const satisfies over unsafe assertions. Use when writing or reviewing TypeScript or TSX code, test fixtures, typed object literals, mocks, config objects, or table-driven cases.",
+    "category": "development",
+    "source": "ryoppippi/dotfiles",
+    "discoveryId": "external:5bc75cce47e51592ef17",
+    "introducedIn": "6.7.3",
+    "publisherUrl": "https://github.com/ryoppippi/dotfiles/blob/faca04c1582380566cc4f214196585cdd93309a8/agents/skills/typescript-style/SKILL.md",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/ryoppippi/dotfiles/blob/faca04c1582380566cc4f214196585cdd93309a8/LICENSE",
+    "reviewDate": "2026-11-19",
+    "review": "TypeScript literal checking, local assertion boundaries and error suppression examples reviewed.",
+    "modified": false,
+    "files": {
+      "SKILL.md": "f9907ba4f0aa240bc18acc7da725eaede18f25ba99124916091eaf023d72ff6d",
+      "LICENSE": "3352e3e8e759cc4de30d67ac9636fc3cf2d67ae1177c48ea467edb0aacfd1d1c"
+    },
+    "reviewUrl": "https://skills.rootcastle.com/catalog/skill/typescript-style/"
   }
 ]

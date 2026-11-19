@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.7.3] - 2026-11-19
+
+- Add 14 reviewed upstream skills with commit-pinned sources and original license files. The npm release contains 1,624 installable skills, including 32 reviewed upstream packages.
+- Attempt source resolution for the remaining 29,094 external records and screen 7,715 local packages. Record scope-matched license evidence for 10,793 catalog records, including 609 with no previous license label.
+- Show source-verified licenses and their original license links in CLI discovery, including for four newly installable skills that previously had no catalog license.
+
 ## [6.7.2] - 2026-11-19
 
 - Add seven upstream skills with commit-pinned sources, original license files and verified npm installation. The public package contains 18 reviewed upstream skills and 1,610 installable skills in total.
