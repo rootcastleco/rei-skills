@@ -2,7 +2,7 @@
 
 > **The engineering-grade skill layer for AI agents — Rootcastle Engineering & Innovation**
 
-Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1733**
+Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1734**
 
 ## architecture (113)
 
@@ -472,7 +472,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1733**
 | [`xlsx-official`](skills/xlsx-official/SKILL.md) | Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When C... | `safe` | `anthropics/skills` | xlsx, official |
 | [`youtube-automation`](skills/youtube-automation/SKILL.md) | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Alwa... | `safe` | `community` | youtube |
 
-## development (381)
+## development (382)
 
 | Skill | Description | Risk | Source | Tags |
 | --- | --- | --- | --- | --- |
@@ -486,6 +486,7 @@ Generated at: `2026-02-08T00:00:00.000Z` · Total skills: **1733**
 | [`api-patterns`](skills/api-patterns/SKILL.md) | API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination. | `safe` | `community` | api |
 | [`app-store-optimization`](skills/app-store-optimization/SKILL.md) | Complete App Store Optimization (ASO) toolkit for researching, optimizing, and tracking mobile app performance on Apple App Store and Goo... | `safe` | `community` | app, store, optimization |
 | [`architecture-patterns`](skills/architecture-patterns/SKILL.md) | Implement proven backend architecture patterns including Clean Architecture, Hexagonal Architecture, and Domain-Driven Design. Use when a... | `safe` | `community` | architecture |
+| [`astryx-design-system`](skills/astryx-design-system/SKILL.md) | Meta Astryx design system skill with an auto-serving native Rust HTTP, MCP, and CLI server covering 176+ components, 87 hooks, 211 tokens... | `safe` | `https://github.com/meta/astryx` | design-system, astryx, react, stylex, rust, mcp |
 | [`async-python-patterns`](skills/async-python-patterns/SKILL.md) | Master Python asyncio, concurrent programming, and async/await patterns for high-performance applications. Use when building async APIs, ... | `safe` | `community` | async, python |
 | [`azure-appconfiguration-java`](skills/azure-appconfiguration-java/SKILL.md) | Azure App Configuration SDK for Java. Centralized application configuration management with key-value settings, feature flags, and snapsh... | `safe` | `microsoft/skills` | azure, appconfiguration, java |
 | [`azure-appconfiguration-py`](skills/azure-appconfiguration-py/SKILL.md) | Azure App Configuration SDK for Python. Use for centralized configuration management, feature flags, and dynamic settings. Triggers: "azu... | `safe` | `microsoft/skills` | azure, appconfiguration, py |

@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1733,
+  "total": 1734,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -2450,6 +2450,38 @@
         "upstream"
       ],
       "path": "skills/astryx-design/SKILL.md"
+    },
+    {
+      "id": "astryx-design-system",
+      "name": "astryx-design-system",
+      "description": "Meta Astryx design system skill with an auto-serving native Rust HTTP, MCP, and CLI server covering 176+ components, 87 hooks, 211 tokens, 7 themes, and 58 templates.",
+      "category": "development",
+      "risk": "safe",
+      "source": "https://github.com/meta/astryx",
+      "tags": [
+        "design-system",
+        "astryx",
+        "react",
+        "stylex",
+        "rust",
+        "mcp",
+        "ui"
+      ],
+      "triggers": [
+        "design-system",
+        "astryx",
+        "react",
+        "stylex",
+        "rust",
+        "mcp",
+        "ui",
+        "meta",
+        "skill",
+        "auto",
+        "serving",
+        "native"
+      ],
+      "path": "skills/astryx-design-system/SKILL.md"
     },
     {
       "id": "async-python-patterns",

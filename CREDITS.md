@@ -18,6 +18,7 @@
 - **[supabase/agent-skills](https://github.com/supabase/agent-skills)** — Supabase official skills. Postgres Best Practices.
 - **[microsoft/skills](https://github.com/microsoft/skills)** — Official Microsoft skills. Azure cloud services, Bot Framework, Cognitive Services, and enterprise development patterns across .NET, Python, TypeScript, Go, Rust, and Java.
 - **[google-gemini/gemini-skills](https://github.com/google-gemini/gemini-skills)** — Official Gemini skills. Gemini API, SDK and model interactions.
+- **[meta/astryx](https://github.com/meta/astryx)** — Meta's open-source React 19 + StyleX design system (MIT License), integrated into `skills/astryx-design-system/` with a zero-dependency native Rust HTTP/MCP/CLI server.
 
 ## Community Contributors
 

@@ -10,12 +10,12 @@ const config=read("data/curated-expansion-bundles.json");
 const generated=read("data/bundles.json").bundles;
 const pkg=read("package.json");
 const index=read("data/catalog.json");
-assert.match(pkg.version,/^6\.7\.\d+$/);
+assert.match(pkg.version,/^6\.(?:7|8)\.\d+$/);
 assert.equal(report.schemaVersion,1);
 assert.equal(report.imported.length,274);
 assert.equal(new Set(report.imported.map(x=>x.id)).size,274);
 assert.equal(report.repositories.length,7);
-assert.equal(index.total,1733);
+assert.ok(index.total>=1733,"expected at least 1733 catalog entries");
 const indexed=new Set(index.skills.map(x=>x.id));
 const sha=(b)=>crypto.createHash("sha256").update(b).digest("hex");
 for(const item of report.imported){

@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.8.0] - 2026-11-23
+
+- Add [`astryx-design-system`](skills/astryx-design-system/) implementing Meta's open-source [Astryx](https://github.com/meta/astryx) design system (`@astryxdesign/core@0.7.18`): 176 components, 87 hooks, 9 utilities, 211 CSS custom-property tokens across 13 families, 7 official themes (`neutral`, `butter`, `chocolate`, `gothic`, `matcha`, `stone`, `y2k`), 58 page templates, and 12 design guides.
+- Add zero-dependency native Rust design-system service (`skills/astryx-design-system/rust-server`, `astryx-ds-server`) serving multi-threaded HTTP/1.1 REST API (`127.0.0.1:7331`), live `/api/themes/<name>/tokens.css` compiler, interactive Design System Explorer UI, native MCP JSON-RPC 2.0 stdio server (`mcp`), static Astryx code auditor (`doctor`), and sub-millisecond CLI.
+- Add cross-platform auto-build and auto-serve launchers (`astryx-serve.mjs`, `astryx-serve.ps1`, `astryx-serve.sh`), `mcp.json`, and root `npm run astryx:{build,test,serve,mcp}` scripts.
+- Update catalog, quality report, README, and developer hub for `v6.8.0`.
+
 ## [6.7.3] - 2026-11-19
 
 - Add 14 reviewed upstream skills with commit-pinned sources and original license files. The npm release contains 1,624 installable skills, including 32 reviewed upstream packages.

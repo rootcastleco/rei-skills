@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "astryx-design-system": {
+      "command": "node",
+      "args": [
+        "skills/astryx-design-system/scripts/astryx-serve.mjs",
+        "mcp"
+      ],
+      "description": "Native Rust Meta Astryx design-system MCP server (auto-builds release binary on first launch)"
+    }
+  }
+}

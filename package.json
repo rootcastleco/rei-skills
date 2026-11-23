@@ -1,6 +1,6 @@
 {
   "name": "rei-skills",
-  "version": "6.7.3",
+  "version": "6.8.0",
   "private": true,
   "description": "Rootcastle's engineering skill platform for AI agents. Discover 30,000+ catalog records, browse Rootcastle Originals and reviewed downloads, and use the CLI and MCP tools.",
   "author": "Rootcastle Engineering & Innovation <admin@rootcastle.com> (https://rootcastle.com)",
@@ -29,7 +29,11 @@
     "sync:all-official": "npm run sync:rea && npm run sync:microsoft && npm run build",
     "test:package": "node scripts/tests/npm-package.test.js",
     "test:expansion": "python scripts/generate_technical_skills.py --check && python scripts/tests/test_technical_expansion.py",
-    "test:cad": "python scripts/tests/test_cad_ecad_verify.py && node scripts/tests/cad-router.test.js"
+    "test:cad": "python scripts/tests/test_cad_ecad_verify.py && node scripts/tests/cad-router.test.js",
+    "astryx:build": "cargo build --release --manifest-path skills/astryx-design-system/rust-server/Cargo.toml",
+    "astryx:test": "cargo test --manifest-path skills/astryx-design-system/rust-server/Cargo.toml",
+    "astryx:serve": "node skills/astryx-design-system/scripts/astryx-serve.mjs",
+    "astryx:mcp": "node skills/astryx-design-system/scripts/astryx-serve.mjs mcp"
   },
   "repository": {
     "type": "git",
@@ -85,7 +89,11 @@
     "digital-forensics",
     "cybersecurity",
     "firmware-analysis",
-    "developer-tools"
+    "developer-tools",
+    "astryx",
+    "design-system",
+    "stylex",
+    "rust"
   ],
   "dependencies": {
     "yaml": "^2.8.2"

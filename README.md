@@ -18,16 +18,17 @@ Search **30,000+ catalog records**, explore **Rootcastle Originals**, and instal
 [![GitHub Pages](https://github.com/rootcastleco/rei-skills/actions/workflows/pages.yml/badge.svg)](https://rootcastleco.github.io/rei-skills/)
 [![npm version](https://img.shields.io/npm/v/rei-skills?label=npm&color=0E3D8A&logo=npm)](https://www.npmjs.com/package/rei-skills)
 [![Live catalog](https://img.shields.io/badge/live%20catalog-30%2C000%2B%20records-0E3D8A)](https://skills.rootcastle.com/catalog/)
-[![Validated Skills](https://img.shields.io/badge/skills-1733%20validated-228B55)](#explore-the-library)
+[![Validated Skills](https://img.shields.io/badge/skills-1734%20validated-228B55)](#explore-the-library)
 [![Gold 50](https://img.shields.io/badge/Gold%2050-50%2F50%20verified-228B55)](#registry-quality-engine--gold-50-program)
 [![Hybrid Router](https://img.shields.io/badge/Hybrid%20Router-97.3%25%20Recall%403-0E3D8A)](#hybrid-semantic-skill-router--benchmark-evaluation)
 [![REI REA Workbench](https://img.shields.io/badge/REI%20REA-v0.2.0%20integrated-0E3D8A)](docs/REI_REA_INTEGRATION.md)
 [![Rust Gateway](https://img.shields.io/badge/Rust%20Gateway-v0.2.0-228B55)](docs/engineering/RUST_GATEWAY_SPEC.md)
+[![Astryx Design System](https://img.shields.io/badge/Astryx%20DS-Native%20Rust%20Server-CE422B)](skills/astryx-design-system/README.md)
 [![License: MIT](https://img.shields.io/badge/license-MIT-228B55)](LICENSE)
 
 **[Live catalog](https://skills.rootcastle.com/catalog/)** · **[Rootcastle Originals](https://skills.rootcastle.com/catalog/?scope=rootcastle#browse)** · **[Reviewed downloads](https://skills.rootcastle.com/catalog/?scope=verified#browse)** · **[npm package](https://www.npmjs.com/package/rei-skills)**
 
-**[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Quality & Gold 50](#registry-quality-engine--gold-50-program)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[Multimodal Pipeline](#multimodal-content-production-ecosystem-11-providers-license--consent-gated)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[Docs & Reports](#engineering-documentation--reports)**
+**[Platform Architecture](#platform-architecture--autonomous-skill-intelligence)** · **[Quick Start](#install-in-seconds)** · **[Astryx Design System (Rust)](#meta-astryx-design-system--native-rust-auto-server)** · **[Hybrid Router & Benchmarks](#hybrid-semantic-skill-router--benchmark-evaluation)** · **[Quality & Gold 50](#registry-quality-engine--gold-50-program)** · **[Workflows & Adapters](#workflow-dag-compiler--capability-aware-engineering-adapters)** · **[Multimodal Pipeline](#multimodal-content-production-ecosystem-11-providers-license--consent-gated)** · **[MCP & HOL Guard](#smart-mcp-server--hol-guard-defense-in-depth)** · **[Prompt Archive & Rust Gateway](#rootcastle-prompt-intelligence-rust-gateway-v020--continuous-improvement)** · **[Explore Skills](#explore-the-library)** · **[Docs & Reports](#engineering-documentation--reports)**
 
 </div>
 
@@ -95,6 +96,7 @@ flowchart LR
 | **HOL Guard Policy Layer** | [`lib/hol-guard-policy.js`](lib/hol-guard-policy.js), [`bin/mcp-server.js`](bin/mcp-server.js) | [`hol-guard-policy.test.js`](scripts/tests/hol-guard-policy.test.js) | Deny-by-default MCP authorization, secret redaction, traversal gates |
 | **Engineering Adapters** | [`lib/engineering-adapters.js`](lib/engineering-adapters.js) | [`engineering-adapters.test.js`](scripts/tests/engineering-adapters.test.js) | 5-level `getEnvironmentCapabilityManifest` + software/hardware boundaries across 5 domains |
 | **Rust Secure Gateway** | [`rust/rei-hook-gateway`](rust/rei-hook-gateway/) (`v0.2.0`) | `cargo test` (`8/8` passing) | Loopback IPC, replay/rate-limit/backpressure, boundary control-char rejection, mTLS closed |
+| **Astryx Design System Server** | [`skills/astryx-design-system/rust-server`](skills/astryx-design-system/rust-server/) (`v0.7.18`) | `cargo test` (`5/5` passing) | Zero-dependency native Rust HTTP/1.1 (`127.0.0.1:7331`), live theme CSS, Explorer UI, MCP stdio & static `doctor` for 176 components, 87 hooks, 211 tokens, 7 themes, 58 templates |
 | **Observability & Self-Improvement** | [`lib/observability.js`](lib/observability.js), [`lib/evaluation-engine.js`](lib/evaluation-engine.js), [`lib/improvement-engine.js`](lib/improvement-engine.js) | [`improvement-engine.test.js`](scripts/tests/improvement-engine.test.js) | Non-regression held-out gating; review-only PR drafts (`automaticWrites: false`) |
 | **Multi-AI Installer & Safe MCP Staging** | [`bin/install.js`](bin/install.js), [`lib/ai-adapters.js`](lib/ai-adapters.js), [`lib/mcp-safe-install.js`](lib/mcp-safe-install.js) | [`installer.test.js`](scripts/tests/installer.test.js), [`mcp-safe-installer.test.js`](scripts/tests/mcp-safe-installer.test.js) | 21 AI targets, `npx skills` compat, `remove`/`quality` CLI, transactional rollback |
 
@@ -165,7 +167,7 @@ npx rei-skills prompt compose "Review telemetry firmware for failure modes"
 npx rei-skills improve --feedback "Add SPICE bench parity cross-check" --json
 
 # 6. Catalog Discovery, Quality Audits, Removal/Rollback, MCP Server & Format Export
-npx rei-skills search firmware           # Search across 1733 skills by domain, keyword, risk, or upstream source
+npx rei-skills search firmware           # Search across 1734 skills by domain, keyword, risk, or upstream source
 npx rei-skills quality rc-kicad-ecad-kicad-drc-ci --json
 npx rei-skills remove rei-rea-orchestrator --cursor -w
 npx rei-skills list --category reverse-engineering
@@ -297,14 +299,14 @@ Use the [live Rootcastle catalog](https://skills.rootcastle.com/catalog/) to bro
 
 ## Explore the Library
 
-The registry currently contains **1733 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
+The registry currently contains **1734 validated skills** across **10 engineering categories**. Counts below are synchronized directly from [`data/catalog.json`](data/catalog.json):
 
 <!-- CATEGORY_TABLE_START -->
 | Category | Count | Focus Area | Representative Skills |
 | :--- | ---: | :--- | :--- |
 | **Data & AI** (`data-ai`) | 290 | LLM architectures, RAG, vector databases, data pipelines, Azure AI | [`rag-engineer`](skills/rag-engineer/SKILL.md), [`langgraph`](skills/langgraph/SKILL.md), [`postgres-best-practices`](skills/postgres-best-practices/SKILL.md) |
 | **General Engineering** (`general`) | 257 | Planning, technical documentation, debugging, specifications | [`brainstorming`](skills/brainstorming/SKILL.md), [`concise-planning`](skills/concise-planning/SKILL.md), [`doc-coauthoring`](skills/doc-coauthoring/SKILL.md) |
-| **Software Development** (`development`) | 381 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
+| **Software Development** (`development`) | 382 | TypeScript, Python, Go, Rust, Java, React, Next.js, mobile SDKs | [`typescript-pro`](skills/typescript-pro/SKILL.md), [`python-pro`](skills/python-pro/SKILL.md), [`react-best-practices`](skills/react-best-practices/SKILL.md) |
 | **Security & AppSec** (`security`) | 180 | Threat modeling, SAST, vulnerability auditing, authorized red-teaming | [`security-auditor`](skills/security-auditor/SKILL.md), [`threat-modeling-expert`](skills/threat-modeling-expert/SKILL.md), [`api-security-best-practices`](skills/api-security-best-practices/SKILL.md) |
 | **Infrastructure & Cloud** (`infrastructure`) | 205 | Kubernetes, Terraform, CI/CD, observability, SRE, service mesh | [`kubernetes-architect`](skills/kubernetes-architect/SKILL.md), [`terraform-specialist`](skills/terraform-specialist/SKILL.md), [`observability-engineer`](skills/observability-engineer/SKILL.md) |
 | **Workflows & Automation** (`workflow`) | 89 | Multi-agent orchestration, task automation, integration pipelines | [`workflow-automation`](skills/workflow-automation/SKILL.md), [`mcp-builder`](skills/mcp-builder/SKILL.md), [`gitops-workflow`](skills/gitops-workflow/SKILL.md) |
@@ -438,6 +440,32 @@ REI Skills includes [`rei-paper-orchestra`](skills/rei-paper-orchestra/SKILL.md)
 
 ---
 
+## Meta Astryx Design System — Native Rust Auto-Server
+
+REI Skills `v6.8.0` integrates **[Meta Astryx](https://github.com/meta/astryx)** (`@astryxdesign/core@0.7.18`, React 19 + StyleX v0.19) as [`astryx-design-system`](skills/astryx-design-system/SKILL.md), backed by a **zero-dependency native Rust server (`astryx-ds-server`)** that auto-compiles and serves the entire design system locally over loopback HTTP (`127.0.0.1:7331`), MCP JSON-RPC 2.0 stdio, and CLI:
+
+- **Embedded Upstream Catalog:** **176 components**, **87 hooks**, **9 utilities**, **211 CSS custom-property tokens** (13 families), **7 official themes** (`neutral`, `butter`, `chocolate`, `gothic`, `matcha`, `stone`, `y2k` with 94–109 OKLCH-resolved light/dark overrides each), **58 page templates**, and **12 core guides**.
+- **Automatic Build & Serve:** Cross-platform launchers (`astryx-serve.mjs`, `astryx-serve.ps1`, `astryx-serve.sh`) build the release binary offline on first run and keep the background HTTP server healthy via `ensure`.
+- **Interactive Web Explorer, Live Theme CSS & Static Doctor:** Serves an interactive 7-theme + Light/Dark Explorer UI at `GET /`, dynamic `[data-astryx-theme="<name>"]` stylesheets at `GET /api/themes/<name>/tokens.css`, ranked search (`GET /api/search`), page planning (`GET /api/build`), and static TSX/CSS anti-pattern auditing (`POST /api/doctor` / CLI `doctor`).
+
+```bash
+# Auto-build release binary (if needed) & start background HTTP server on http://127.0.0.1:7331
+npm run astryx:serve
+
+# Run as a native MCP JSON-RPC 2.0 server over stdio
+npm run astryx:mcp
+
+# Direct zero-latency CLI queries
+node skills/astryx-design-system/scripts/astryx-serve.mjs component Button
+node skills/astryx-design-system/scripts/astryx-serve.mjs theme matcha --css
+node skills/astryx-design-system/scripts/astryx-serve.mjs build "analytics dashboard with KPIs"
+node skills/astryx-design-system/scripts/astryx-serve.mjs doctor ./src
+```
+
+👉 **[Astryx Skill README](skills/astryx-design-system/README.md)** · **[SKILL.md](skills/astryx-design-system/SKILL.md)** · **[MCP Config](skills/astryx-design-system/mcp.json)**
+
+---
+
 ## Multimodal Content Production Ecosystem (`11` Providers, License & Consent Gated)
 
 Extend the existing **Workflow DAG Compiler**, **HOL Guard**, and **Prompt Archive** across an auditable 10-stage multimodal workflow (`Research → Evidence → Script → Editorial → Storyboard → HTML/PPTX Slides → Narration → Video → QA → Package`) via [`lib/multimodal-pipeline.js`](lib/multimodal-pipeline.js), [`lib/multimodal-registry.js`](lib/multimodal-registry.js), [`lib/multimodal-providers.js`](lib/multimodal-providers.js), and [`lib/pptx-openxml.js`](lib/pptx-openxml.js):
@@ -491,7 +519,7 @@ Extend the existing **Workflow DAG Compiler**, **HOL Guard**, and **Prompt Archi
 
 - **License:** Original code, tooling, and Rootcastle-authored skills are released under the **[MIT License](LICENSE)**.
 - **Upstream Attribution & Provenance:** Preserves upstream work from `anthropics/skills`, `microsoft/skills` ([`docs/LICENSE-MICROSOFT`](docs/LICENSE-MICROSOFT)), `openai/skills`, `vercel-labs/agent-skills`, `supabase/agent-skills`, `google-gemini/gemini-skills`, and open-source contributors documented in [`CREDITS.md`](CREDITS.md) and [`docs/SOURCES.md`](docs/SOURCES.md).
-- **Security Policy & Guardrails:** All 1733 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
+- **Security Policy & Guardrails:** All 1734 skills are scanned by [`scripts/security_audit.js`](scripts/security_audit.js) and [`scripts/validate_skills.py`](scripts/validate_skills.py). Offensive security skills carry mandatory `AUTHORIZED USE ONLY` disclaimers. See [`SECURITY.md`](SECURITY.md), [`docs/SECURITY_GUARDRAILS.md`](docs/SECURITY_GUARDRAILS.md), and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md).
 
 ---
 

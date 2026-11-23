@@ -810,6 +810,15 @@
     "source": "meta/astryx"
   },
   {
+    "id": "astryx-design-system",
+    "path": "skills/astryx-design-system",
+    "category": "uncategorized",
+    "name": "astryx-design-system",
+    "description": "Meta Astryx design system skill with an auto-serving native Rust HTTP, MCP, and CLI server covering 176+ components, 87 hooks, 211 tokens, 7 themes, and 58 templates.",
+    "risk": "safe",
+    "source": "https://github.com/meta/astryx"
+  },
+  {
     "id": "async-python-patterns",
     "path": "skills/async-python-patterns",
     "category": "uncategorized",
